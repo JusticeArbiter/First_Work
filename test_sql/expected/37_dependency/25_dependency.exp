@@ -1,0 +1,2 @@
+SET SESSION AUTHORIZATION regression_user0;
+SET

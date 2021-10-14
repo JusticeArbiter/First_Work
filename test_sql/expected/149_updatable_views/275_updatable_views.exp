@@ -1,0 +1,2 @@
+DELETE FROM rw_view1 WHERE a = 1.05;
+DELETE 1

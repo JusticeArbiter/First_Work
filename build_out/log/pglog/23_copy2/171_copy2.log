@@ -1,0 +1,2 @@
+LOG:  00000: statement: DROP ROLE regress_rls_copy_user_colperms;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,7 @@
+EXPLAIN (COSTS OFF)  SELECT * FROM test_tablesample_v1;
+                             QUERY PLAN                             
+--------------------------------------------------------------------
+ Sample Scan on test_tablesample
+   Sampling: system ('20'::real) REPEATABLE ('2'::double precision)
+(2 rows)
+

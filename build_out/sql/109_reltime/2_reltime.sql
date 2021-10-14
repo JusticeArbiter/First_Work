@@ -1,0 +1,1 @@
+INSERT INTO RELTIME_TBL (f1) VALUES ('@ 1 minute');

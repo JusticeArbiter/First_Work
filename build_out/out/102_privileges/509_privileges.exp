@@ -1,0 +1,2 @@
+SELECT lo_truncate(lo_open(1002, x'20000'::int), 10);
+ERROR:  42704: large object 1002 does not exist

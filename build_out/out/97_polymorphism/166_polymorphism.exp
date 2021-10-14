@@ -1,0 +1,6 @@
+select dfunc('Hi', 'City');
+  dfunc   
+----------
+ Hi, City
+(1 row)
+

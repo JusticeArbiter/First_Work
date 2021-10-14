@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT c, count(*) FROM test_missing_target GROUP BY 3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P10: GROUP BY position 3 is not in select list at character 54
+LOCATION:  findTargetlistEntrySQL92, parse_clause.c:1736
+STATEMENT:  SELECT c, count(*) FROM test_missing_target GROUP BY 3;

@@ -1,0 +1,6 @@
+SELECT 'truf'::jsonb;
+ERROR:  22P02: invalid input syntax for type json
+LINE 1: SELECT 'truf'::jsonb;
+               ^
+DETAIL:  Token "truf" is invalid.
+CONTEXT:  JSON data, line 1: truf

@@ -1,0 +1,4 @@
+DROP SERVER IF EXISTS nonexistent;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SERVER
+NOTICE:  00000: server "nonexistent" does not exist, skipping
+DROP SERVER

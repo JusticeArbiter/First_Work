@@ -1,0 +1,3 @@
+create function inoutparam_succeed(out i anyelement, inout r anyrange)  as $$ select upper($1), $1 $$ language sql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

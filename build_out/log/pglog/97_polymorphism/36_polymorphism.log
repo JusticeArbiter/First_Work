@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE AGGREGATE myaggp19a(BASETYPE = anyelement, SFUNC = tf1p,  STYPE = anyarray, FINALFUNC = ffp, INITCOND = '{}');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE AGGREGATE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE AGGREGATE myaggp19a(BASETYPE = anyelement, SFUNC = tf1p,  STYPE = anyarray, FINALFUNC = ffp, INITCOND = '{}');
+ERROR:  42883: function tf1p(anyarray, anyelement) does not exist
+LOCATION:  lookup_agg_function, pg_aggregate.c:702
+STATEMENT:  CREATE AGGREGATE myaggp19a(BASETYPE = anyelement, SFUNC = tf1p,  STYPE = anyarray, FINALFUNC = ffp, INITCOND = '{}');

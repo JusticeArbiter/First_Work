@@ -1,0 +1,6 @@
+LOG:  00000: statement: WITH RECURSIVE foo(i) AS  (SELECT i FROM (VALUES(1),(2)) t(i)  UNION ALL  SELECT (i+1)::numeric(10,0) FROM foo WHERE i < 10)  SELECT * FROM foo;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: recursive query "foo" column 1 has type integer in non-recursive term but type numeric overall at character 35
+HINT:  Cast the output of the non-recursive term to the correct type.
+LOCATION:  analyzeCTE, parse_cte.c:320
+STATEMENT:  WITH RECURSIVE foo(i) AS  (SELECT i FROM (VALUES(1),(2)) t(i)  UNION ALL  SELECT (i+1)::numeric(10,0) FROM foo WHERE i < 10)  SELECT * FROM foo;

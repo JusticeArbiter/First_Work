@@ -1,0 +1,2 @@
+LOG:  00000: statement: create cast (int8alias2 as int8) without function;
+LOCATION:  exec_simple_query, postgres.c:938

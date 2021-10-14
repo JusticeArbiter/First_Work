@@ -1,0 +1,6 @@
+SELECT jsonb '{"a":null, "b":"qq"}' ? 'b';
+ ?column? 
+----------
+ t
+(1 row)
+

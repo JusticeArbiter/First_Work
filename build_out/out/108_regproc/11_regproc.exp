@@ -1,0 +1,6 @@
+SELECT to_regprocedure('abs(numeric)');
+ to_regprocedure 
+-----------------
+ abs(numeric)
+(1 row)
+

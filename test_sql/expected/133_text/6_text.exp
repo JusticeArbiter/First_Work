@@ -1,0 +1,7 @@
+SELECT '' AS two, * FROM TEXT_TBL;
+ two |        f1         
+-----+-------------------
+     | doh!
+     | hi de ho neighbor
+(2 rows)
+

@@ -1,0 +1,2 @@
+CREATE TABLE collate_test4 (  a int,  b testdomain_p  );
+ERROR:  42P07: relation "collate_test4" already exists

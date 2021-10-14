@@ -1,0 +1,2 @@
+DROP TEXT SEARCH DICTIONARY test_tsdict_exists;
+ERROR:  42704: text search dictionary "test_tsdict_exists" does not exist

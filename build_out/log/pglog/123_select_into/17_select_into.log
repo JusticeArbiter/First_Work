@@ -1,0 +1,8 @@
+LOG:  00000: statement: SELECT oid AS clsoid, relname, relnatts + 10 AS x  INTO selinto_schema.tmp2  FROM pg_class WHERE relname like '%b%';
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start SELECT INTO
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT oid AS clsoid, relname, relnatts + 10 AS x  INTO selinto_schema.tmp2  FROM pg_class WHERE relname like '%b%';
+ERROR:  42P07: relation "tmp2" already exists
+LOCATION:  heap_create_with_catalog, heap.c:1066
+STATEMENT:  SELECT oid AS clsoid, relname, relnatts + 10 AS x  INTO selinto_schema.tmp2  FROM pg_class WHERE relname like '%b%';

@@ -1,0 +1,6 @@
+SELECT make_timestamptz(2014, 12, 10, 0, 0, 0, 'Europe/Prague') AT TIME ZONE 'UTC';
+      timezone       
+---------------------
+ 2014-12-09 23:00:00
+(1 row)
+

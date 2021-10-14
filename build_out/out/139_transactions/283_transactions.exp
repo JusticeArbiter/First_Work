@@ -1,0 +1,2 @@
+FETCH ok;
+ERROR:  34000: cursor "ok" does not exist

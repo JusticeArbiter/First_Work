@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into self_ref_trigger values (2, 1, 'root child A');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "self_ref_trigger" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  insert into self_ref_trigger values (2, 1, 'root child A');

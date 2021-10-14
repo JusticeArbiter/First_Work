@@ -1,0 +1,2 @@
+SELECT inet_merge(c, i) FROM INET_TBL;
+ERROR:  22023: cannot merge addresses from different families

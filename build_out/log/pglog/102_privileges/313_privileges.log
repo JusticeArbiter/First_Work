@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE CAST (testdomain1 AS testdomain3a) WITH FUNCTION castfunc(int);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE CAST
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE CAST (testdomain1 AS testdomain3a) WITH FUNCTION castfunc(int);
+WARNING:  42809: cast will be ignored because the source data type is a domain
+LOCATION:  CreateCast, functioncmds.c:1422
+STATEMENT:  CREATE CAST (testdomain1 AS testdomain3a) WITH FUNCTION castfunc(int);

@@ -1,0 +1,2 @@
+INSERT INTO orderstest VALUES (66, 6, false);
+INSERT 0 1

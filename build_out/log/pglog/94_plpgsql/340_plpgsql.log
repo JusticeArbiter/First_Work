@@ -1,0 +1,5 @@
+LOG:  00000: statement: create function subxact_rollback_semantics() returns int as $$  declare x int;  begin  x := 1;  insert into foo values(x);  begin  x := x + 1;  insert into foo values(x);  raise exception 'inner';  exception  when others then  x := x * 10;  end;  insert into foo values(x);  return x;  end$$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function subxact_rollback_semantics() returns int as $$  declare x int;  begin  x := 1;  insert into foo values(x);  begin  x := x + 1;  insert into foo values(x);  raise exception 'inner';  exception  when others then  x := x * 10;  end;  insert into foo values(x);  return x;  end$$ language plpgsql;

@@ -1,0 +1,6 @@
+SELECT table_name, is_updatable, is_insertable_into  FROM information_schema.views  WHERE table_name = 'rw_view2';
+ table_name | is_updatable | is_insertable_into 
+------------+--------------+--------------------
+ rw_view2   | YES          | YES
+(1 row)
+

@@ -1,0 +1,6 @@
+SELECT initcap('hi THOMAS');
+  initcap  
+-----------
+ Hi Thomas
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO BIT_SHIFT_TABLE SELECT b>>2 FROM BIT_SHIFT_TABLE;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE FUNCTION casttesttype_out(casttesttype)  RETURNS cstring  AS 'textout'  LANGUAGE internal STRICT IMMUTABLE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  42809: argument type casttesttype is only a shell
+LOCATION:  interpret_function_parameter_list, functioncmds.c:251
+STATEMENT:  CREATE FUNCTION casttesttype_out(casttesttype)  RETURNS cstring  AS 'textout'  LANGUAGE internal STRICT IMMUTABLE;

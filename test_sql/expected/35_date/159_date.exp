@@ -1,0 +1,20 @@
+SELECT f1 - date 'epoch' AS "Days From Epoch" FROM DATE_TBL;
+ Days From Epoch 
+-----------------
+           -4650
+           -4585
+            9554
+            9555
+            9556
+            9557
+            9920
+            9921
+            9922
+           11048
+           11049
+           11050
+           24934
+           25300
+           25667
+(15 rows)
+

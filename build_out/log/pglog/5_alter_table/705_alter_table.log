@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table dropColumnExists drop column if exists non_existing;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: column "non_existing" of relation "dropcolumnexists" does not exist, skipping
+LOCATION:  ATExecDropColumn, tablecmds.c:5714
+STATEMENT:  alter table dropColumnExists drop column if exists non_existing;

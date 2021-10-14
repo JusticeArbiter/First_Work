@@ -1,0 +1,6 @@
+SELECT session_user, current_user;
+ session_user | current_user 
+--------------+--------------
+ highgo       | highgo
+(1 row)
+

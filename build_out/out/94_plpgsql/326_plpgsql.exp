@@ -1,0 +1,6 @@
+SELECT perform_test_func();
+ perform_test_func 
+-------------------
+ 
+(1 row)
+

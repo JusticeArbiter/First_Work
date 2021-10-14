@@ -1,0 +1,4 @@
+CREATE TABLE PKTABLE (ptest1 int, ptest2 inet, ptest3 int, ptest4 inet, PRIMARY KEY(ptest1, ptest2), FOREIGN KEY(ptest4,  ptest3) REFERENCES pktable);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+ERROR:  42804: foreign key constraint "pktable_ptest4_fkey" cannot be implemented
+DETAIL:  Key columns "ptest4" and "ptest1" are of incompatible types: inet and integer.

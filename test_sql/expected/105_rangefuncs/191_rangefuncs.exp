@@ -1,0 +1,5 @@
+SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_sql(11,10+r) WITH ORDINALITY AS f(i,s,o);
+ERROR:  42883: function foo_sql(integer, integer) does not exist
+LINE 1: SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_sql(11,10+r) WI...
+                                                 ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

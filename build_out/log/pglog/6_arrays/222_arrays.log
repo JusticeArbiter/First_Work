@@ -1,0 +1,2 @@
+LOG:  00000: statement: create table comptable (c1 comptype, c2 comptype[]);
+LOCATION:  exec_simple_query, postgres.c:938

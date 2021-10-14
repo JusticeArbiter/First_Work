@@ -1,0 +1,6 @@
+SELECT EXTRACT(MILLENNIUM FROM CURRENT_DATE);
+ date_part 
+-----------
+         3
+(1 row)
+

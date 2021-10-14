@@ -1,0 +1,2 @@
+LOG:  00000: statement: REVOKE regressgroup2 FROM regressuser5;
+LOCATION:  exec_simple_query, postgres.c:938

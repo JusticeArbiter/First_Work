@@ -1,0 +1,3 @@
+DELETE FROM enumtest_parent;
+ERROR:  23503: update or delete on table "enumtest_parent" violates foreign key constraint "enumtest_child_parent_fkey" on table "enumtest_child"
+DETAIL:  Key (id)=(red) is still referenced from table "enumtest_child".

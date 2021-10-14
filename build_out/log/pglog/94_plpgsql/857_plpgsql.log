@@ -1,0 +1,2 @@
+LOG:  00000: statement: reset plpgsql.check_asserts;
+LOCATION:  exec_simple_query, postgres.c:938

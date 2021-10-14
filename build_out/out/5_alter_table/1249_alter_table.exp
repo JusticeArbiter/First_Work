@@ -1,0 +1,7 @@
+SELECT indexrelid::regclass::text as index, obj_description(indexrelid, 'pg_class') as comment FROM pg_index where indrelid = 'comment_test'::regclass ORDER BY 1, 2;
+       index        |                    comment                    
+--------------------+-----------------------------------------------
+ comment_test_index | Simple index on comment_test
+ comment_test_pk    | Index backing the PRIMARY KEY of comment_test
+(2 rows)
+

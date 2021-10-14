@@ -1,0 +1,2 @@
+alter table non_existent alter column bar set not null;
+ERROR:  42P01: relation "non_existent" does not exist

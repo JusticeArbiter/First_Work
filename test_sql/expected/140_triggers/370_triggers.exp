@@ -1,0 +1,4 @@
+insert into upsert values(1, 'black') on conflict (key) do update set color = 'updated ' || upsert.color;
+WARNING:  01000: before insert (new): (1,black)
+WARNING:  01000: after insert (new): (1,black)
+INSERT 0 1

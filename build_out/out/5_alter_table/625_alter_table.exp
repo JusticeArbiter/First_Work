@@ -1,0 +1,6 @@
+select * from child;
+ b  | c  |    d    
+----+----+---------
+ 12 | 13 | testing
+(1 row)
+

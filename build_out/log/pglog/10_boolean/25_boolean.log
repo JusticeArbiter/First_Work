@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT bool '000' AS error;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type boolean: "000" at character 13
+LOCATION:  boolin, bool.c:153
+STATEMENT:  SELECT bool '000' AS error;

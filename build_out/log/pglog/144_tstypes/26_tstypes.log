@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '!1|2'::tsquery;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+select * from foot(1) with ordinality as z(a,b,ord) where b > 100;
+ a |  b  | ord 
+---+-----+-----
+ 1 | 111 |   2
+(1 row)
+

@@ -1,0 +1,11 @@
+LOG:  00000: statement: select execute_into_test('eifoo');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: 10 1
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select execute_into_test('eifoo');
+NOTICE:  00000: 10 15
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select execute_into_test('eifoo');
+NOTICE:  00000: 10 15 20
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select execute_into_test('eifoo');

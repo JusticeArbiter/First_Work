@@ -1,0 +1,2 @@
+DROP COLLATION test0;
+ERROR:  42704: collation "test0" for encoding "UTF8" does not exist

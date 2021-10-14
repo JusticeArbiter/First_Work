@@ -1,0 +1,9 @@
+explain (costs off)  select thousand, tenthous from tenk1  where (thousand, tenthous) >= (997, 5000)  order by thousand, tenthous;
+                         QUERY PLAN                          
+-------------------------------------------------------------
+ Sort
+   Sort Key: thousand, tenthous
+   ->  Seq Scan on tenk1
+         Filter: (ROW(thousand, tenthous) >= ROW(997, 5000))
+(4 rows)
+

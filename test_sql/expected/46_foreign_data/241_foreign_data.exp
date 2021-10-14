@@ -1,0 +1,3 @@
+COMMENT ON COLUMN ft1.c1 IS 'foreign column';
+NOTICE:  00000: test_event_trigger: ddl_command_start COMMENT
+COMMENT

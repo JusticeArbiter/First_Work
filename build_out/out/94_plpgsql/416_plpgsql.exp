@@ -1,0 +1,5 @@
+create function bad_sql1() returns int as $$  declare a int;  begin  a := 5;  Johnny Yuma;  a := 10;  return a;  end$$ language plpgsql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42601: syntax error at or near "Johnny"
+LINE 1: ...eturns int as $$  declare a int;  begin  a := 5;  Johnny Yum...
+                                                             ^

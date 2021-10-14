@@ -1,0 +1,3 @@
+ALTER SEQUENCE truncate_a_id1 OWNED BY truncate_a.id1;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER SEQUENCE
+ALTER SEQUENCE

@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP SEQUENCE IF EXISTS no_such_schema.foo;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: schema "no_such_schema" does not exist, skipping
+LOCATION:  DropErrorMsgNonExistent, tablecmds.c:743
+STATEMENT:  DROP SEQUENCE IF EXISTS no_such_schema.foo;

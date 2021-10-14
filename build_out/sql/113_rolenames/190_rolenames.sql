@@ -1,0 +1,1 @@
+DROP USER MAPPING FOR nonexistent SERVER sv;

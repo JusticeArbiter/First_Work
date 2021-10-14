@@ -1,0 +1,4 @@
+SELECT * FROM polygon_tbl WHERE f1 ~ '((1,1),(2,2),(2,1))'::polygon  ORDER BY (poly_center(f1))[0];
+ERROR:  42P01: relation "polygon_tbl" does not exist
+LINE 1: SELECT * FROM polygon_tbl WHERE f1 ~ '((1,1),(2,2),(2,1))'::...
+                      ^

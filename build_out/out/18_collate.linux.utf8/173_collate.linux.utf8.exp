@@ -1,0 +1,3 @@
+DROP COLLATION IF EXISTS test0;
+NOTICE:  00000: collation "test0" does not exist, skipping
+DROP COLLATION

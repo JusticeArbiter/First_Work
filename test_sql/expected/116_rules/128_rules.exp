@@ -1,0 +1,2 @@
+insert into rtest_empmass values ('maier', '5000.00');
+INSERT 0 1

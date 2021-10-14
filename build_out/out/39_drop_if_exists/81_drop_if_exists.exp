@@ -1,0 +1,2 @@
+DROP TRIGGER test_trigger_exists ON test_exists;
+ERROR:  42704: trigger "test_trigger_exists" for table "test_exists" does not exist

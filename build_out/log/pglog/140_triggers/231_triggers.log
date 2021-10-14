@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TRIGGER after_ins_stmt_trig AFTER INSERT ON main_view  FOR EACH STATEMENT EXECUTE PROCEDURE view_trigger('after_view_ins_stmt');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TRIGGER after_ins_stmt_trig AFTER INSERT ON main_view  FOR EACH STATEMENT EXECUTE PROCEDURE view_trigger('after_view_ins_stmt');
+ERROR:  42P01: relation "main_view" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE TRIGGER after_ins_stmt_trig AFTER INSERT ON main_view  FOR EACH STATEMENT EXECUTE PROCEDURE view_trigger('after_view_ins_stmt');

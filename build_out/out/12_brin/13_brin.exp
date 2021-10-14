@@ -1,0 +1,4 @@
+SELECT brin_summarize_new_values('tenk1_unique1');
+ERROR:  42P01: relation "tenk1_unique1" does not exist
+LINE 1: SELECT brin_summarize_new_values('tenk1_unique1');
+                                         ^

@@ -1,0 +1,6 @@
+SELECT nextval('sequence_test'::regclass);
+ nextval 
+---------
+      99
+(1 row)
+

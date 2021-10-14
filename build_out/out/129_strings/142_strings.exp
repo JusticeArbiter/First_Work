@@ -1,0 +1,6 @@
+SELECT 'hawkeye' ILIKE 'H%Eye' AS "true";
+ true 
+------
+ t
+(1 row)
+

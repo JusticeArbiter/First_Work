@@ -1,0 +1,6 @@
+select reverse('abcde');
+ reverse 
+---------
+ edcba
+(1 row)
+

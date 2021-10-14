@@ -1,0 +1,11 @@
+EXPLAIN (costs off) UPDATE rw_view1 SET person=person WHERE snoop(person);
+                        QUERY PLAN                         
+-----------------------------------------------------------
+ Update on base_tbl base_tbl_1
+   ->  Subquery Scan on base_tbl
+         Filter: snoop(base_tbl.person)
+         ->  LockRows
+               ->  Seq Scan on base_tbl base_tbl_2
+                     Filter: (visibility = 'public'::text)
+(6 rows)
+

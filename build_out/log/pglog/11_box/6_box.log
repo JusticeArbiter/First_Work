@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO BOX_TBL (f1) VALUES ('(2.3, 4.5)');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type box: "(2.3, 4.5)" at character 34
+LOCATION:  box_in, geo_ops.c:399
+STATEMENT:  INSERT INTO BOX_TBL (f1) VALUES ('(2.3, 4.5)');

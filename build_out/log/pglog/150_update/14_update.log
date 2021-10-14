@@ -1,0 +1,6 @@
+LOG:  00000: statement: UPDATE update_test SET a = v.* FROM (VALUES(100, 20)) AS v(i, j)  WHERE update_test.b = v.j;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: column "a" is of type integer but expression is of type record at character 28
+HINT:  You will need to rewrite or cast the expression.
+LOCATION:  transformAssignedExpr, parse_target.c:540
+STATEMENT:  UPDATE update_test SET a = v.* FROM (VALUES(100, 20)) AS v(i, j)  WHERE update_test.b = v.j;

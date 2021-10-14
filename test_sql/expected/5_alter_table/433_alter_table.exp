@@ -1,0 +1,2 @@
+alter table atacc1 add column test2 int primary key;
+ERROR:  23502: column "test2" contains null values

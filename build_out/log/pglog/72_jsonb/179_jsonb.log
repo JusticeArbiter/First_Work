@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT jsonb '{"a":null, "b":"qq"}' ? 'a';
+LOCATION:  exec_simple_query, postgres.c:938

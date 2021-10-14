@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter table alterlock alter column f2 set storage extended;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from json_populate_record(null::jpop,'{"a":"blurfl","x":43.2}') q;
+LOCATION:  exec_simple_query, postgres.c:938

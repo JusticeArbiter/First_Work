@@ -1,0 +1,2 @@
+select format('Hello %x', 20);
+ERROR:  22023: unrecognized conversion type specifier "x"

@@ -1,0 +1,2 @@
+insert into derived (i) values (0);
+INSERT 0 1

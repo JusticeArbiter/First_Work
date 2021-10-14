@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO xmltest VALUES (5, '<menu><beers><name>Molson</name><cost>free</cost><name>Carling</name><cost>lots</cost></beers></menu>'::xml);
+LOCATION:  exec_simple_query, postgres.c:938

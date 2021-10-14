@@ -1,0 +1,3 @@
+CREATE INDEX id_ft1_c2 ON ft1 (c2);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+ERROR:  42809: cannot create index on foreign table "ft1"

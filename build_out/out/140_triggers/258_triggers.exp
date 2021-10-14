@@ -1,0 +1,9 @@
+INSERT INTO country_table (country_name, continent)  VALUES ('Japan', 'Asia'),  ('UK', 'Europe'),  ('USA', 'North America')  RETURNING *;
+ country_id | country_name |   continent   
+------------+--------------+---------------
+          1 | Japan        | Asia
+          2 | UK           | Europe
+          3 | USA          | North America
+(3 rows)
+
+INSERT 0 3

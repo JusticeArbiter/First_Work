@@ -1,0 +1,6 @@
+LOG:  00000: statement: select continue_test2();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: CONTINUE cannot be used outside a loop
+CONTEXT:  PL/pgSQL function continue_test2()
+LOCATION:  plpgsql_exec_function, pl_exec.c:439
+STATEMENT:  select continue_test2();

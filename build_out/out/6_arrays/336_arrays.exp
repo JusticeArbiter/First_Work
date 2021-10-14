@@ -1,0 +1,2 @@
+drop table dest;
+ERROR:  42P01: table "dest" does not exist

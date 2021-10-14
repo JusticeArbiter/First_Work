@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into ddtest2 values(11);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: value for domain posint2 violates check constraint "posint2_check"
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4060
+STATEMENT:  insert into ddtest2 values(11);

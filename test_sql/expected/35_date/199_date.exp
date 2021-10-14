@@ -1,0 +1,6 @@
+SELECT DATE_TRUNC('CENTURY', DATE '1970-03-20');
+       date_trunc       
+------------------------
+ 1901-01-01 00:00:00+08
+(1 row)
+

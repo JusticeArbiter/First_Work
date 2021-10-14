@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT * FROM my_credit_card_normal WHERE f_leak(cnum);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: f_leak => 1111-2222-3333-4444
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM my_credit_card_normal WHERE f_leak(cnum);

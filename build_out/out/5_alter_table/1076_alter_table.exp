@@ -1,0 +1,2 @@
+ALTER TYPE test_type ADD ATTRIBUTE b text;
+ERROR:  42701: column "b" of relation "test_type" already exists

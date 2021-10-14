@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO country_table (country_name, continent)  VALUES ('Japan', 'Asia'),  ('UK', 'Europe'),  ('USA', 'North America')  RETURNING *;
+LOCATION:  exec_simple_query, postgres.c:938

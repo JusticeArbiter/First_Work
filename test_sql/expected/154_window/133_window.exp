@@ -1,0 +1,11 @@
+SELECT STDDEV(n::bigint) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)  FROM (VALUES(0,NULL),(1,600),(2,470),(3,170),(4,430),(5,300)) r(i,n);
+       stddev        
+---------------------
+    164.711869639076
+    164.711869639076
+    135.984067694222
+    130.000000000000
+ 91.9238815542511782
+                    
+(6 rows)
+

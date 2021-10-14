@@ -1,0 +1,298 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SET DateStyle = 'Postgres, MDY';
+ statement: SELECT timestamp with time zone '20011227 040506+08';
+ statement: SELECT timestamp with time zone '20011227 040506-08';
+ statement: SELECT timestamp with time zone '20011227 040506.789+08';
+ statement: SELECT timestamp with time zone '20011227 040506.789-08';
+ statement: SELECT timestamp with time zone '20011227T040506+08';
+ statement: SELECT timestamp with time zone '20011227T040506-08';
+ statement: SELECT timestamp with time zone '20011227T040506.789+08';
+ statement: SELECT timestamp with time zone '20011227T040506.789-08';
+ statement: SELECT timestamp with time zone '2001-12-27 04:05:06.789-08';
+ statement: SELECT timestamp with time zone '2001.12.27 04:05:06.789-08';
+ statement: SELECT timestamp with time zone '2001/12/27 04:05:06.789-08';
+ statement: SELECT timestamp with time zone '12/27/2001 04:05:06.789-08';
+ statement: SELECT timestamp with time zone '27/12/2001 04:05:06.789-08';
+ statement: set datestyle to dmy;
+ statement: SELECT timestamp with time zone '27/12/2001 04:05:06.789-08';
+ statement: reset datestyle;
+ statement: SELECT timestamp with time zone 'Y2001M12D27H04M05S06.789+08';
+ statement: SELECT timestamp with time zone 'Y2001M12D27H04M05S06.789-08';
+ statement: SELECT timestamp with time zone 'Y2001M12D27H04MM05S06.789+08';
+ statement: SELECT timestamp with time zone 'Y2001M12D27H04MM05S06.789-08';
+ statement: SELECT timestamp with time zone 'J2452271+08';
+ statement: SELECT timestamp with time zone 'J2452271-08';
+ statement: SELECT timestamp with time zone 'J2452271.5+08';
+ statement: SELECT timestamp with time zone 'J2452271.5-08';
+ statement: SELECT timestamp with time zone 'J2452271 04:05:06+08';
+ statement: SELECT timestamp with time zone 'J2452271 04:05:06-08';
+ statement: SELECT timestamp with time zone 'J2452271T040506+08';
+ statement: SELECT timestamp with time zone 'J2452271T040506-08';
+ statement: SELECT timestamp with time zone 'J2452271T040506.789+08';
+ statement: SELECT timestamp with time zone 'J2452271T040506.789-08';
+ statement: SELECT timestamp with time zone '12.27.2001 04:05:06.789+08';
+ statement: SELECT timestamp with time zone '12.27.2001 04:05:06.789-08';
+ statement: SET DateStyle = 'German';
+ statement: SELECT timestamp with time zone '27.12.2001 04:05:06.789+08';
+ statement: SELECT timestamp with time zone '27.12.2001 04:05:06.789-08';
+ statement: SET DateStyle = 'ISO';
+ statement: SELECT time without time zone '040506.789+08';
+ statement: SELECT time without time zone '040506.789-08';
+ statement: SELECT time without time zone 'T040506.789+08';
+ statement: SELECT time without time zone 'T040506.789-08';
+ statement: SELECT time with time zone '040506.789+08';
+ statement: SELECT time with time zone '040506.789-08';
+ statement: SELECT time with time zone 'T040506.789+08';
+ statement: SELECT time with time zone 'T040506.789-08';
+ statement: SELECT time with time zone 'T040506.789 +08';
+ statement: SELECT time with time zone 'T040506.789 -08';
+ statement: SET DateStyle = 'Postgres, MDY';
+ statement: SELECT date 'J1520447' AS "Confucius' Birthday";
+ statement: SELECT date 'J0' AS "Julian Epoch";
+ statement: SELECT date '1981-02-03' + time '04:05:06' AS "Date + Time";
+ statement: SELECT date '1991-02-03' + time with time zone '04:05:06 PST' AS "Date + Time PST";
+ statement: SELECT date '2001-02-03' + time with time zone '04:05:06 UTC' AS "Date + Time UTC";
+ statement: SELECT date '1991-02-03' + interval '2 years' AS "Add Two Years";
+ statement: SELECT date '2001-12-13' - interval '2 years' AS "Subtract Two Years";
+ statement: SELECT date '1991-02-03' - time '04:05:06' AS "Subtract Time";
+ statement: SELECT date '1991-02-03' - time with time zone '04:05:06 UTC' AS "Subtract Time UTC";
+ statement: SELECT timestamp without time zone '1996-03-01' - interval '1 second' AS "Feb 29";
+ statement: SELECT timestamp without time zone '1999-03-01' - interval '1 second' AS "Feb 28";
+ statement: SELECT timestamp without time zone '2000-03-01' - interval '1 second' AS "Feb 29";
+ statement: SELECT timestamp without time zone '1999-12-01' + interval '1 month - 1 second' AS "Dec 31";
+ statement: SELECT timestamp without time zone 'Jan 1, 4713 BC' + interval '106000000 days' AS "Feb 23, 285506";
+ statement: SELECT timestamp without time zone 'Jan 1, 4713 BC' + interval '107000000 days' AS "Jan 20, 288244";
+ statement: SELECT timestamp without time zone 'Jan 1, 4713 BC' + interval '109203489 days' AS "Dec 31, 294276";
+ statement: SELECT timestamp without time zone '12/31/294276' - timestamp without time zone '12/23/1999' AS "106751991 Days";
+ statement: SELECT (timestamp without time zone 'today' = (timestamp without time zone 'yesterday' + interval '1 day')) as "True";
+ statement: SELECT (timestamp without time zone 'today' = (timestamp without time zone 'tomorrow' - interval '1 day')) as "True";
+ statement: SELECT (timestamp without time zone 'today 10:30' = (timestamp without time zone 'yesterday' + interval '1 day 10 hr 30 min')) as "True";
+ statement: SELECT (timestamp without time zone '10:30 today' = (timestamp without time zone 'yesterday' + interval '1 day 10 hr 30 min')) as "True";
+ statement: SELECT (timestamp without time zone 'tomorrow' = (timestamp without time zone 'yesterday' + interval '2 days')) as "True";
+ statement: SELECT (timestamp without time zone 'tomorrow 16:00:00' = (timestamp without time zone 'today' + interval '1 day 16 hours')) as "True";
+ statement: SELECT (timestamp without time zone '16:00:00 tomorrow' = (timestamp without time zone 'today' + interval '1 day 16 hours')) as "True";
+ statement: SELECT (timestamp without time zone 'yesterday 12:34:56' = (timestamp without time zone 'tomorrow' - interval '2 days - 12:34:56')) as "True";
+ statement: SELECT (timestamp without time zone '12:34:56 yesterday' = (timestamp without time zone 'tomorrow' - interval '2 days - 12:34:56')) as "True";
+ statement: SELECT (timestamp without time zone 'tomorrow' > 'now') as "True";
+ statement: SELECT date '1994-01-01' + time '11:00' AS "Jan_01_1994_11am";
+ statement: SELECT date '1994-01-01' + time '10:00' AS "Jan_01_1994_10am";
+ statement: SELECT date '1994-01-01' + timetz '11:00-5' AS "Jan_01_1994_8am";
+ statement: SELECT timestamptz(date '1994-01-01', time with time zone '11:00-5') AS "Jan_01_1994_8am";
+ statement: SELECT '' AS "64", d1 + interval '1 year' AS one_year FROM TIMESTAMP_TBL;
+ statement: SELECT '' AS "64", d1 - interval '1 year' AS one_year FROM TIMESTAMP_TBL;
+ statement: SELECT timestamp with time zone '1996-03-01' - interval '1 second' AS "Feb 29";
+ statement: SELECT timestamp with time zone '1999-03-01' - interval '1 second' AS "Feb 28";
+ statement: SELECT timestamp with time zone '2000-03-01' - interval '1 second' AS "Feb 29";
+ statement: SELECT timestamp with time zone '1999-12-01' + interval '1 month - 1 second' AS "Dec 31";
+ statement: SELECT (timestamp with time zone 'today' = (timestamp with time zone 'yesterday' + interval '1 day')) as "True";
+ statement: SELECT (timestamp with time zone 'today' = (timestamp with time zone 'tomorrow' - interval '1 day')) as "True";
+ statement: SELECT (timestamp with time zone 'tomorrow' = (timestamp with time zone 'yesterday' + interval '2 days')) as "True";
+ statement: SELECT (timestamp with time zone 'tomorrow' > 'now') as "True";
+ statement: SET TIME ZONE 'CST7CDT';
+ statement: SELECT timestamp with time zone '2005-04-02 12:00-07' + interval '1 day' as "Apr 3, 12:00";
+ statement: SELECT timestamp with time zone '2005-04-02 12:00-07' + interval '24 hours' as "Apr 3, 13:00";
+ statement: SELECT timestamp with time zone '2005-04-03 12:00-06' - interval '1 day' as "Apr 2, 12:00";
+ statement: SELECT timestamp with time zone '2005-04-03 12:00-06' - interval '24 hours' as "Apr 2, 11:00";
+ statement: RESET TIME ZONE;
+ statement: SELECT timestamptz(date '1994-01-01', time '11:00') AS "Jan_01_1994_10am";
+ statement: SELECT timestamptz(date '1994-01-01', time '10:00') AS "Jan_01_1994_9am";
+ statement: SELECT timestamptz(date '1994-01-01', time with time zone '11:00-8') AS "Jan_01_1994_11am";
+ statement: SELECT timestamptz(date '1994-01-01', time with time zone '10:00-8') AS "Jan_01_1994_10am";
+ statement: SELECT timestamptz(date '1994-01-01', time with time zone '11:00-5') AS "Jan_01_1994_8am";
+ statement: SELECT '' AS "64", d1 + interval '1 year' AS one_year FROM TIMESTAMPTZ_TBL;
+ statement: SELECT '' AS "64", d1 - interval '1 year' AS one_year FROM TIMESTAMPTZ_TBL;
+ statement: SELECT CAST(time '01:02' AS interval) AS "+01:02";
+ statement: SELECT CAST(interval '02:03' AS time) AS "02:03:00";
+ statement: SELECT time '01:30' + interval '02:01' AS "03:31:00";
+ statement: SELECT time '01:30' - interval '02:01' AS "23:29:00";
+ statement: SELECT time '02:30' + interval '36:01' AS "14:31:00";
+ statement: SELECT time '03:30' + interval '1 month 04:01' AS "07:31:00";
+ statement: SELECT CAST(time with time zone '01:02-08' AS interval) AS "+00:01";
+ statement: SELECT CAST(interval '02:03' AS time with time zone) AS "02:03:00-08";
+ statement: SELECT time with time zone '01:30-08' - interval '02:01' AS "23:29:00-08";
+ statement: SELECT time with time zone '02:30-08' + interval '36:01' AS "14:31:00-08";
+ statement: SELECT CAST(CAST(date 'today' + time with time zone '05:30'                                                                                   +
+             + interval '02:01' AS time with time zone) AS time) AS "07:31:00";
+ statement: SELECT CAST(cast(date 'today' + time with time zone '03:30'                                                                                   +
+   + interval '1 month 04:01' as timestamp without time zone) AS time) AS "07:31:00";
+ statement: SELECT t.d1 AS t, i.f1 AS i, t.d1 + i.f1 AS "add", t.d1 - i.f1 AS "subtract"                                                                  +
+   FROM TIMESTAMP_TBL t, INTERVAL_TBL i                                                                                                                   +
+   WHERE t.d1 BETWEEN '1990-01-01' AND '2001-01-01'                                                                                                       +
+     AND i.f1 BETWEEN '00:00' AND '23:00'                                                                                                                 +
+   ORDER BY 1,2;
+ statement: SELECT t.f1 AS t, i.f1 AS i, t.f1 + i.f1 AS "add", t.f1 - i.f1 AS "subtract"                                                                  +
+   FROM TIME_TBL t, INTERVAL_TBL i                                                                                                                        +
+   ORDER BY 1,2;
+ statement: SELECT t.f1 AS t, i.f1 AS i, t.f1 + i.f1 AS "add", t.f1 - i.f1 AS "subtract"                                                                  +
+   FROM TIMETZ_TBL t, INTERVAL_TBL i                                                                                                                      +
+   ORDER BY 1,2;
+ statement: SELECT (timestamp with time zone '2000-11-27', timestamp with time zone '2000-11-28')                                                         +
+   OVERLAPS (timestamp with time zone '2000-11-27 12:00', timestamp with time zone '2000-11-30') AS "True";
+ statement: SELECT (timestamp with time zone '2000-11-26', timestamp with time zone '2000-11-27')                                                         +
+   OVERLAPS (timestamp with time zone '2000-11-27 12:00', timestamp with time zone '2000-11-30') AS "False";
+ statement: SELECT (timestamp with time zone '2000-11-27', timestamp with time zone '2000-11-28')                                                         +
+   OVERLAPS (timestamp with time zone '2000-11-27 12:00', interval '1 day') AS "True";
+ statement: SELECT (timestamp with time zone '2000-11-27', interval '12 hours')                                                                           +
+   OVERLAPS (timestamp with time zone '2000-11-27 12:00', timestamp with time zone '2000-11-30') AS "False";
+ statement: SELECT (timestamp with time zone '2000-11-27', interval '12 hours')                                                                           +
+   OVERLAPS (timestamp with time zone '2000-11-27', interval '12 hours') AS "True";
+ statement: SELECT (timestamp with time zone '2000-11-27', interval '12 hours')                                                                           +
+   OVERLAPS (timestamp with time zone '2000-11-27 12:00', interval '12 hours') AS "False";
+ statement: SELECT (timestamp without time zone '2000-11-27', timestamp without time zone '2000-11-28')                                                   +
+   OVERLAPS (timestamp without time zone '2000-11-27 12:00', timestamp without time zone '2000-11-30') AS "True";
+ statement: SELECT (timestamp without time zone '2000-11-26', timestamp without time zone '2000-11-27')                                                   +
+   OVERLAPS (timestamp without time zone '2000-11-27 12:00', timestamp without time zone '2000-11-30') AS "False";
+ statement: SELECT (timestamp without time zone '2000-11-27', timestamp without time zone '2000-11-28')                                                   +
+   OVERLAPS (timestamp without time zone '2000-11-27 12:00', interval '1 day') AS "True";
+ statement: SELECT (timestamp without time zone '2000-11-27', interval '12 hours')                                                                        +
+   OVERLAPS (timestamp without time zone '2000-11-27 12:00', timestamp without time zone '2000-11-30') AS "False";
+ statement: SELECT (timestamp without time zone '2000-11-27', interval '12 hours')                                                                        +
+   OVERLAPS (timestamp without time zone '2000-11-27', interval '12 hours') AS "True";
+ statement: SELECT (timestamp without time zone '2000-11-27', interval '12 hours')                                                                        +
+   OVERLAPS (timestamp without time zone '2000-11-27 12:00', interval '12 hours') AS "False";
+ statement: SELECT (time '00:00', time '01:00')                                                                                                           +
+   OVERLAPS (time '00:30', time '01:30') AS "True";
+ statement: SELECT (time '00:00', interval '1 hour')                                                                                                      +
+   OVERLAPS (time '00:30', interval '1 hour') AS "True";
+ statement: SELECT (time '00:00', interval '1 hour')                                                                                                      +
+   OVERLAPS (time '01:30', interval '1 hour') AS "False";
+ statement: SELECT (time '00:00', interval '1 hour')                                                                                                      +
+   OVERLAPS (time '01:30', interval '1 day') AS "False";
+ statement: CREATE TABLE TEMP_TIMESTAMP (f1 timestamp with time zone);
+ statement: INSERT INTO TEMP_TIMESTAMP (f1)                                                                                                               +
+   SELECT d1 FROM TIMESTAMP_TBL                                                                                                                           +
+   WHERE d1 BETWEEN '13-jun-1957' AND '1-jan-1997'                                                                                                        +
+    OR d1 BETWEEN '1-jan-1999' AND '1-jan-2010';
+ statement: SELECT '' AS "16", f1 AS "timestamp"                                                                                                          +
+   FROM TEMP_TIMESTAMP                                                                                                                                    +
+   ORDER BY "timestamp";
+ statement: SELECT '' AS "160", d.f1 AS "timestamp", t.f1 AS "interval", d.f1 + t.f1 AS plus                                                              +
+   FROM TEMP_TIMESTAMP d, INTERVAL_TBL t                                                                                                                  +
+   ORDER BY plus, "timestamp", "interval";
+ statement: SELECT '' AS "160", d.f1 AS "timestamp", t.f1 AS "interval", d.f1 - t.f1 AS minus                                                             +
+   FROM TEMP_TIMESTAMP d, INTERVAL_TBL t                                                                                                                  +
+   WHERE isfinite(d.f1)                                                                                                                                   +
+   ORDER BY minus, "timestamp", "interval";
+ statement: SELECT '' AS "16", d.f1 AS "timestamp",                                                                                                       +
+    timestamp with time zone '1980-01-06 00:00 GMT' AS gpstime_zero,                                                                                      +
+    d.f1 - timestamp with time zone '1980-01-06 00:00 GMT' AS difference                                                                                  +
+   FROM TEMP_TIMESTAMP d                                                                                                                                  +
+   ORDER BY difference;
+ statement: SELECT '' AS "226", d1.f1 AS timestamp1, d2.f1 AS timestamp2, d1.f1 - d2.f1 AS difference                                                     +
+   FROM TEMP_TIMESTAMP d1, TEMP_TIMESTAMP d2                                                                                                              +
+   ORDER BY timestamp1, timestamp2, difference;
+ statement: SELECT '' AS ten, ABSTIME_TBL.f1 AS abstime, RELTIME_TBL.f1 AS reltime                                                                        +
+     FROM ABSTIME_TBL, RELTIME_TBL                                                                                                                        +
+    WHERE (ABSTIME_TBL.f1 + RELTIME_TBL.f1) < abstime 'Jan 14 14:00:00 1971'                                                                              +
+    ORDER BY abstime, reltime;
+ statement: SELECT '' AS three, * FROM ABSTIME_TBL                                                                                                        +
+   WHERE  (ABSTIME_TBL.f1 + reltime '@ 3 year')                                                                                                           +
+     < abstime 'Jan 14 14:00:00 1977';
+ statement: SELECT '' AS three, * FROM ABSTIME_TBL                                                                                                        +
+    WHERE  (ABSTIME_TBL.f1 + reltime '@ 3 year ago')                                                                                                      +
+      < abstime 'Jan 14 14:00:00 1971';
+ statement: SELECT '' AS three, * FROM ABSTIME_TBL                                                                                                        +
+    WHERE  (ABSTIME_TBL.f1 - reltime '@ 3 year')                                                                                                          +
+     < abstime 'Jan 14 14:00:00 1971';
+ statement: SELECT '' AS three, * FROM ABSTIME_TBL                                                                                                        +
+    WHERE  (ABSTIME_TBL.f1 - reltime '@ 3 year ago')                                                                                                      +
+      < abstime 'Jan 14 14:00:00 1977';
+ statement: SELECT '' AS "16", f1 AS "timestamp", date(f1) AS date                                                                                        +
+   FROM TEMP_TIMESTAMP                                                                                                                                    +
+   WHERE f1 <> timestamp 'now'                                                                                                                            +
+   ORDER BY date, "timestamp";
+ statement: SELECT '' AS "16", f1 AS "timestamp", abstime(f1) AS abstime                                                                                  +
+   FROM TEMP_TIMESTAMP                                                                                                                                    +
+   ORDER BY abstime;
+ statement: SELECT '' AS four, f1 AS abstime, date(f1) AS date                                                                                            +
+   FROM ABSTIME_TBL                                                                                                                                       +
+   WHERE isfinite(f1) AND f1 <> abstime 'now'                                                                                                             +
+   ORDER BY date, abstime;
+ statement: SELECT '' AS two, d1 AS "timestamp", abstime(d1) AS abstime                                                                                   +
+   FROM TIMESTAMP_TBL WHERE NOT isfinite(d1);
+ statement: SELECT '' AS three, f1 as abstime, cast(f1 as timestamp) AS "timestamp"                                                                       +
+   FROM ABSTIME_TBL WHERE NOT isfinite(f1);
+ statement: SELECT '' AS ten, f1 AS interval, reltime(f1) AS reltime                                                                                      +
+   FROM INTERVAL_TBL;
+ statement: SELECT '' AS six, f1 as reltime, CAST(f1 AS interval) AS interval                                                                             +
+   FROM RELTIME_TBL;
+ statement: DROP TABLE TEMP_TIMESTAMP;
+ statement: SET DateStyle TO 'US,Postgres';
+ statement: SHOW DateStyle;
+ statement: SELECT '' AS "64", d1 AS us_postgres FROM TIMESTAMP_TBL;
+ statement: SELECT '' AS seven, f1 AS us_postgres FROM ABSTIME_TBL;
+ statement: SET DateStyle TO 'US,ISO';
+ statement: SELECT '' AS "64", d1 AS us_iso FROM TIMESTAMP_TBL;
+ statement: SELECT '' AS seven, f1 AS us_iso FROM ABSTIME_TBL;
+ statement: SET DateStyle TO 'US,SQL';
+ statement: SHOW DateStyle;
+ statement: SELECT '' AS "64", d1 AS us_sql FROM TIMESTAMP_TBL;
+ statement: SELECT '' AS seven, f1 AS us_sql FROM ABSTIME_TBL;
+ statement: SET DateStyle TO 'European,Postgres';
+ statement: SHOW DateStyle;
+ statement: INSERT INTO TIMESTAMP_TBL VALUES('13/06/1957');
+ statement: SELECT count(*) as one FROM TIMESTAMP_TBL WHERE d1 = 'Jun 13 1957';
+ statement: SELECT '' AS "65", d1 AS european_postgres FROM TIMESTAMP_TBL;
+ statement: SELECT '' AS seven, f1 AS european_postgres FROM ABSTIME_TBL;
+ statement: SET DateStyle TO 'European,ISO';
+ statement: SHOW DateStyle;
+ statement: SELECT '' AS "65", d1 AS european_iso FROM TIMESTAMP_TBL;
+ statement: SELECT '' AS seven, f1 AS european_iso FROM ABSTIME_TBL;
+ statement: SET DateStyle TO 'European,SQL';
+ statement: SHOW DateStyle;
+ statement: SELECT '' AS "65", d1 AS european_sql FROM TIMESTAMP_TBL;
+ statement: SELECT '' AS seven, f1 AS european_sql FROM ABSTIME_TBL;
+ statement: RESET DateStyle;
+ statement: SELECT to_timestamp('0097/Feb/16 --> 08:14:30', 'YYYY/Mon/DD --> HH:MI:SS');
+ statement: SELECT to_timestamp('97/2/16 8:14:30', 'FMYYYY/FMMM/FMDD FMHH:FMMI:FMSS');
+ statement: SELECT to_timestamp('1985 January 12', 'YYYY FMMonth DD');
+ statement: SELECT to_timestamp('My birthday-> Year: 1976, Month: May, Day: 16',                                                                          +
+                     '"My birthday-> Year" YYYY, "Month:" FMMonth, "Day:" DD');
+ statement: SELECT to_timestamp('1,582nd VIII 21', 'Y,YYYth FMRM DD');
+ statement: SELECT to_timestamp('15 "text between quote marks" 98 54 45',                                                                                 +
+                     E'HH24 "\\text between quote marks\\"" YY MI SS');
+ statement: SELECT to_timestamp('05121445482000', 'MMDDHH24MISSYYYY');
+ statement: SELECT to_timestamp('2000January09Sunday', 'YYYYFMMonthDDFMDay');
+ statement: SELECT to_timestamp('97/Feb/16', 'YYMonDD');
+ statement: SELECT to_timestamp('19971116', 'YYYYMMDD');
+ statement: SELECT to_timestamp('20000-1116', 'YYYY-MMDD');
+ statement: SELECT to_timestamp('9-1116', 'Y-MMDD');
+ statement: SELECT to_timestamp('95-1116', 'YY-MMDD');
+ statement: SELECT to_timestamp('995-1116', 'YYY-MMDD');
+ statement: SELECT to_timestamp('2005426', 'YYYYWWD');
+ statement: SELECT to_timestamp('2005300', 'YYYYDDD');
+ statement: SELECT to_timestamp('2005527', 'IYYYIWID');
+ statement: SELECT to_timestamp('005527', 'IYYIWID');
+ statement: SELECT to_timestamp('05527', 'IYIWID');
+ statement: SELECT to_timestamp('5527', 'IIWID');
+ statement: SELECT to_timestamp('2005364', 'IYYYIDDD');
+ statement: SELECT to_timestamp('20050302', 'YYYYMMDD');
+ statement: SELECT to_timestamp('2005 03 02', 'YYYYMMDD');
+ statement: SELECT to_timestamp(' 2005 03 02', 'YYYYMMDD');
+ statement: SELECT to_timestamp('  20050302', 'YYYYMMDD');
+ statement: SELECT to_timestamp('2011-12-18 23:38:15', 'YYYY-MM-DD  HH24:MI:SS');
+ statement: SELECT to_timestamp('2011-12-18  23:38:15', 'YYYY-MM-DD  HH24:MI:SS');
+ statement: SELECT to_timestamp('2011-12-18   23:38:15', 'YYYY-MM-DD  HH24:MI:SS');
+ statement: SELECT to_timestamp('2011-12-18  23:38:15', 'YYYY-MM-DD HH24:MI:SS');
+ statement: SELECT to_timestamp('2011-12-18  23:38:15', 'YYYY-MM-DD  HH24:MI:SS');
+ statement: SELECT to_timestamp('2011-12-18  23:38:15', 'YYYY-MM-DD   HH24:MI:SS');
+ statement: SELECT to_date('2011 12  18', 'YYYY MM DD');
+ statement: SELECT to_date('2011 12  18', 'YYYY MM  DD');
+ statement: SELECT to_date('2011 12  18', 'YYYY MM   DD');
+ statement: SELECT to_date('2011 12 18', 'YYYY  MM DD');
+ statement: SELECT to_date('2011  12 18', 'YYYY  MM DD');
+ statement: SELECT to_date('2011   12 18', 'YYYY  MM DD');
+ statement: SELECT to_timestamp('2005527', 'YYYYIWID');
+ statement: SELECT to_timestamp('19971', 'YYYYMMDD');
+ statement: SELECT to_timestamp('19971)24', 'YYYYMMDD');
+ statement: SELECT to_timestamp('1997-11-Jan-16', 'YYYY-MM-Mon-DD');
+ statement: SELECT to_timestamp('199711xy', 'YYYYMMDD');
+ statement: SELECT to_timestamp('10000000000', 'FMYYYY');
+ statement: SET TIME ZONE 'America/New_York';
+ statement: SET TIME ZONE '-1.5';
+ statement: SHOW TIME ZONE;
+ statement: SELECT '2012-12-12 12:00'::timestamptz;
+ statement: SELECT '2012-12-12 12:00 America/New_York'::timestamptz;
+ statement: SELECT to_char('2012-12-12 12:00'::timestamptz, 'YYYY-MM-DD HH:MI:SS TZ');
+ statement: RESET TIME ZONE;
+

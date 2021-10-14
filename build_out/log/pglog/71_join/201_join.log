@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from a left join b on i = x and i = y and x = i;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "i" does not exist at character 32
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select * from a left join b on i = x and i = y and x = i;

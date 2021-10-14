@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE INDEX macaddr_data_hash ON macaddr_data USING hash (b);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE INDEX macaddr_data_hash ON macaddr_data USING hash (b);
+WARNING:  01000: hash indexes are not WAL-logged and their use is discouraged
+LOCATION:  DefineIndex, indexcmds.c:497
+STATEMENT:  CREATE INDEX macaddr_data_hash ON macaddr_data USING hash (b);

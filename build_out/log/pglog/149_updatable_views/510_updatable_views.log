@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE v1 SET a=100 WHERE snoop(a) AND leakproof(a) AND a = 3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" does not exist at character 33
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  UPDATE v1 SET a=100 WHERE snoop(a) AND leakproof(a) AND a = 3;

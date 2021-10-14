@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE rw_view14 SET b='ROW 3' WHERE a=3;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,3 @@
+CREATE TABLE country_table (  country_id serial primary key,  country_name text unique not null,  continent text not null  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

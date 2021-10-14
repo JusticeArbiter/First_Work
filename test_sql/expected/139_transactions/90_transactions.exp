@@ -1,0 +1,2 @@
+RELEASE SAVEPOINT one;
+ERROR:  25P01: RELEASE SAVEPOINT can only be used in transaction blocks

@@ -1,0 +1,6 @@
+SELECT to_timestamp('1,582nd VIII 21', 'Y,YYYth FMRM DD');
+         to_timestamp         
+------------------------------
+ 1582-08-21 00:00:00+08:05:43
+(1 row)
+

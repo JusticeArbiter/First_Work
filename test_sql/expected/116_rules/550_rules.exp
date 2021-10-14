@@ -1,0 +1,8 @@
+WITH data(hat_name, hat_color) AS (  VALUES ('h8', 'green'),  ('h9', 'blue'),  ('h7', 'forbidden')  )  INSERT INTO hats  SELECT * FROM data  RETURNING *;
+  hat_name  | hat_color  
+------------+------------
+ h8         | green     
+ h9         | blue      
+(2 rows)
+
+INSERT 0 2

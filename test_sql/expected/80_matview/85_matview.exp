@@ -1,0 +1,8 @@
+SELECT * FROM tm ORDER BY type;
+ type | totamt 
+------+--------
+ x    |      5
+ y    |     12
+ z    |     24
+(3 rows)
+

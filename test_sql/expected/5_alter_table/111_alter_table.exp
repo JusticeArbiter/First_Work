@@ -1,0 +1,2 @@
+DROP INDEX onek_unique1_constraint_foo;
+ERROR:  42704: index "onek_unique1_constraint_foo" does not exist

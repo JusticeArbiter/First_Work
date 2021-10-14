@@ -1,0 +1,6 @@
+SELECT pg_get_triggerdef(oid, true) FROM pg_trigger WHERE tgrelid = 'main_table'::regclass AND tgname = 'modified_any';
+                                                                      pg_get_triggerdef                                                                       
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+ CREATE TRIGGER modified_any BEFORE UPDATE OF a ON main_table FOR EACH ROW WHEN (old.* IS DISTINCT FROM new.*) EXECUTE PROCEDURE trigger_func('modified_any')
+(1 row)
+

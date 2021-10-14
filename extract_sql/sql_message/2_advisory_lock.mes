@@ -1,0 +1,87 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: BEGIN;
+ statement: SELECT                                                              +
+         pg_advisory_xact_lock(1), pg_advisory_xact_lock_shared(2),             +
+         pg_advisory_xact_lock(1, 1), pg_advisory_xact_lock_shared(2, 2);
+ statement: SELECT locktype, classid, objid, objsubid, mode, granted            +
+         FROM pg_locks WHERE locktype = 'advisory'                              +
+         ORDER BY classid, objid, objsubid;
+ statement: SELECT pg_advisory_unlock_all();
+ statement: SELECT count(*) FROM pg_locks WHERE locktype = 'advisory';
+ statement: SELECT                                                              +
+         pg_advisory_unlock(1), pg_advisory_unlock_shared(2),                   +
+         pg_advisory_unlock(1, 1), pg_advisory_unlock_shared(2, 2);
+ statement: COMMIT;
+ statement: SELECT count(*) FROM pg_locks WHERE locktype = 'advisory';
+ statement: BEGIN;
+ statement: SELECT                                                              +
+         pg_advisory_xact_lock(1), pg_advisory_xact_lock_shared(2),             +
+         pg_advisory_xact_lock(1, 1), pg_advisory_xact_lock_shared(2, 2);
+ statement: SELECT locktype, classid, objid, objsubid, mode, granted            +
+         FROM pg_locks WHERE locktype = 'advisory'                              +
+         ORDER BY classid, objid, objsubid;
+ statement: SELECT                                                              +
+         pg_advisory_lock(1), pg_advisory_lock_shared(2),                       +
+         pg_advisory_lock(1, 1), pg_advisory_lock_shared(2, 2);
+ statement: ROLLBACK;
+ statement: SELECT locktype, classid, objid, objsubid, mode, granted            +
+         FROM pg_locks WHERE locktype = 'advisory'                              +
+         ORDER BY classid, objid, objsubid;
+ statement: SELECT                                                              +
+         pg_advisory_unlock(1), pg_advisory_unlock(1),                          +
+         pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),            +
+         pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),                    +
+         pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);
+ statement: SELECT count(*) FROM pg_locks WHERE locktype = 'advisory';
+ statement: BEGIN;
+ statement: SELECT                                                              +
+         pg_advisory_lock(1), pg_advisory_lock_shared(2),                       +
+         pg_advisory_lock(1, 1), pg_advisory_lock_shared(2, 2);
+ statement: SELECT locktype, classid, objid, objsubid, mode, granted            +
+         FROM pg_locks WHERE locktype = 'advisory'                              +
+         ORDER BY classid, objid, objsubid;
+ statement: SELECT                                                              +
+         pg_advisory_xact_lock(1), pg_advisory_xact_lock_shared(2),             +
+         pg_advisory_xact_lock(1, 1), pg_advisory_xact_lock_shared(2, 2);
+ statement: ROLLBACK;
+ statement: SELECT locktype, classid, objid, objsubid, mode, granted            +
+         FROM pg_locks WHERE locktype = 'advisory'                              +
+         ORDER BY classid, objid, objsubid;
+ statement: SELECT pg_advisory_unlock_all();
+ statement: SELECT count(*) FROM pg_locks WHERE locktype = 'advisory';
+ statement: BEGIN;
+ statement: SELECT                                                              +
+         pg_advisory_xact_lock(1), pg_advisory_xact_lock(1),                    +
+         pg_advisory_xact_lock_shared(2), pg_advisory_xact_lock_shared(2),      +
+         pg_advisory_xact_lock(1, 1), pg_advisory_xact_lock(1, 1),              +
+         pg_advisory_xact_lock_shared(2, 2), pg_advisory_xact_lock_shared(2, 2);
+ statement: SELECT locktype, classid, objid, objsubid, mode, granted            +
+         FROM pg_locks WHERE locktype = 'advisory'                              +
+         ORDER BY classid, objid, objsubid;
+ statement: COMMIT;
+ statement: SELECT count(*) FROM pg_locks WHERE locktype = 'advisory';
+ statement: SELECT                                                              +
+         pg_advisory_lock(1), pg_advisory_lock(1),                              +
+         pg_advisory_lock_shared(2), pg_advisory_lock_shared(2),                +
+         pg_advisory_lock(1, 1), pg_advisory_lock(1, 1),                        +
+         pg_advisory_lock_shared(2, 2), pg_advisory_lock_shared(2, 2);
+ statement: SELECT locktype, classid, objid, objsubid, mode, granted            +
+         FROM pg_locks WHERE locktype = 'advisory'                              +
+         ORDER BY classid, objid, objsubid;
+ statement: SELECT                                                              +
+         pg_advisory_unlock(1), pg_advisory_unlock(1),                          +
+         pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),            +
+         pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),                    +
+         pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);
+ statement: SELECT count(*) FROM pg_locks WHERE locktype = 'advisory';
+ statement: SELECT                                                              +
+         pg_advisory_lock(1), pg_advisory_lock(1),                              +
+         pg_advisory_lock_shared(2), pg_advisory_lock_shared(2),                +
+         pg_advisory_lock(1, 1), pg_advisory_lock(1, 1),                        +
+         pg_advisory_lock_shared(2, 2), pg_advisory_lock_shared(2, 2);
+ statement: SELECT locktype, classid, objid, objsubid, mode, granted            +
+         FROM pg_locks WHERE locktype = 'advisory'                              +
+         ORDER BY classid, objid, objsubid;
+ statement: SELECT pg_advisory_unlock_all();
+ statement: SELECT count(*) FROM pg_locks WHERE locktype = 'advisory';
+

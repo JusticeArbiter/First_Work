@@ -1,0 +1,6 @@
+select * from dfunc('Hello World', b := 20, c := '2009-07-25'::date);
+      a      | b  |     c      
+-------------+----+------------
+ Hello World | 20 | 2009-07-25
+(1 row)
+

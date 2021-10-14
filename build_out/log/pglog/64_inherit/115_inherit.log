@@ -1,0 +1,8 @@
+LOG:  00000: statement: alter table oid_child inherit oid_parent;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  alter table oid_child inherit oid_parent;
+ERROR:  42809: table "oid_child" without OIDs cannot inherit from table "oid_parent" with OIDs
+LOCATION:  ATExecAddInherit, tablecmds.c:10214
+STATEMENT:  alter table oid_child inherit oid_parent;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT (-32768)::int2 * (-1)::int2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: smallint out of range
+LOCATION:  int2mul, int.c:845
+STATEMENT:  SELECT (-32768)::int2 * (-1)::int2;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TYPE test_type3 DROP ATTRIBUTE a, ADD ATTRIBUTE b int;
+LOCATION:  exec_simple_query, postgres.c:938

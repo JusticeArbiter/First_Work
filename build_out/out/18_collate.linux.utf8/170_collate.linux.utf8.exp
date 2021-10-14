@@ -1,0 +1,8 @@
+SELECT collname, nspname, obj_description(pg_collation.oid, 'pg_collation')  FROM pg_collation JOIN pg_namespace ON (collnamespace = pg_namespace.oid)  WHERE collname LIKE 'test%'  ORDER BY 1;
+ collname |   nspname   | obj_description 
+----------+-------------+-----------------
+ test0    | public      | US English
+ test11   | test_schema | 
+ test5    | public      | 
+(3 rows)
+

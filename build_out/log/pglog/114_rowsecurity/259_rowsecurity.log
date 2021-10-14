@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO bv1 VALUES (-1, 'xxx');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  44000: new row violates check option for view "bv1"
+DETAIL:  Failing row contains (-1, xxx).
+LOCATION:  ExecWithCheckOptions, execMain.c:1814
+STATEMENT:  INSERT INTO bv1 VALUES (-1, 'xxx');

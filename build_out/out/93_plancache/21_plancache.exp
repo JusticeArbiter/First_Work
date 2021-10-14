@@ -1,0 +1,5 @@
+CREATE OR REPLACE TEMP VIEW pcacheview AS  SELECT q1, q2/2 AS q2 FROM pcachetest;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+ERROR:  42P01: relation "pcachetest" does not exist
+LINE 1: ...MP VIEW pcacheview AS  SELECT q1, q2/2 AS q2 FROM pcachetest...
+                                                             ^

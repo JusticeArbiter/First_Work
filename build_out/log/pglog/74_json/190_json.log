@@ -1,0 +1,2 @@
+LOG:  00000: statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json #>> array['a','1','b'];
+LOCATION:  exec_simple_query, postgres.c:938

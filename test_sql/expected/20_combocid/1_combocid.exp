@@ -1,0 +1,2 @@
+CREATE TEMP TABLE combocidtest (foobar int);
+CREATE TABLE

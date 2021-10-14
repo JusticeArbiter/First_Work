@@ -1,0 +1,6 @@
+select concat_ws('',10,20,null,30);
+ concat_ws 
+-----------
+ 102030
+(1 row)
+

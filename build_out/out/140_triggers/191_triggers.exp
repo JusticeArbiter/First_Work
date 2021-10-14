@@ -1,0 +1,6 @@
+SELECT description FROM serializable_update_tab WHERE id = 1;
+    description     
+--------------------
+ updated in trigger
+(1 row)
+

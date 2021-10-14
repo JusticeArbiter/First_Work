@@ -1,0 +1,6 @@
+SELECT * FROM ctas_nodata_3;
+ ii | j 
+----+---
+  1 | 2
+(1 row)
+

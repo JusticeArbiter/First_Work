@@ -1,0 +1,13 @@
+LOG:  00000: statement: REFRESH MATERIALIZED VIEW CONCURRENTLY mvtest_mv_v;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start REFRESH MATERIALIZED VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  REFRESH MATERIALIZED VIEW CONCURRENTLY mvtest_mv_v;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE AS
+CONTEXT:  SQL statement "CREATE TEMP TABLE pg_temp_2.pg_temp_23038_2 AS SELECT mv.ctid AS tid, newdata FROM public.mvtest_mv_v mv FULL JOIN pg_temp_2.pg_temp_23038 newdata ON (newdata.ii OPERATOR(pg_catalog.=) mv.ii AND newdata OPERATOR(pg_catalog.*=) mv) WHERE newdata IS NULL OR mv IS NULL ORDER BY tid"
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  REFRESH MATERIALIZED VIEW CONCURRENTLY mvtest_mv_v;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+CONTEXT:  SQL statement "DROP TABLE pg_temp_2.pg_temp_23038_2, pg_temp_2.pg_temp_23038"
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  REFRESH MATERIALIZED VIEW CONCURRENTLY mvtest_mv_v;

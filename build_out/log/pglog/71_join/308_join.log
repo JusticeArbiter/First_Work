@@ -1,0 +1,6 @@
+LOG:  00000: statement: explain (costs off)  select d.* from d left join (select * from b group by b.id, b.c_id) s  on d.a = s.id;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column b.id does not exist at character 76
+HINT:  Perhaps you meant to reference the column "d.dd".
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  explain (costs off)  select d.* from d left join (select * from b group by b.id, b.c_id) s  on d.a = s.id;

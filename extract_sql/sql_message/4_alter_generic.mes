@@ -1,0 +1,395 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SET client_min_messages TO 'warning';
+ statement: DROP ROLE IF EXISTS regtest_alter_user1;
+ statement: DROP ROLE IF EXISTS regtest_alter_user2;
+ statement: DROP ROLE IF EXISTS regtest_alter_user3;
+ statement: RESET client_min_messages;
+ statement: CREATE USER regtest_alter_user3;
+ statement: CREATE USER regtest_alter_user2;
+ statement: CREATE USER regtest_alter_user1 IN ROLE regtest_alter_user3;
+ statement: CREATE SCHEMA alt_nsp1;
+ statement: CREATE SCHEMA alt_nsp2;
+ statement: GRANT ALL ON SCHEMA alt_nsp1, alt_nsp2 TO public;
+ statement: SET search_path = alt_nsp1, public;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user1;
+ statement: CREATE FUNCTION alt_func1(int) RETURNS int LANGUAGE sql                                                     +
+   AS 'SELECT $1 + 1';
+ statement: CREATE FUNCTION alt_func2(int) RETURNS int LANGUAGE sql                                                     +
+   AS 'SELECT $1 - 1';
+ statement: CREATE AGGREGATE alt_agg1 (                                                                                 +
+   sfunc1 = int4pl, basetype = int4, stype1 = int4, initcond = 0                                                        +
+ );
+ statement: CREATE AGGREGATE alt_agg2 (                                                                                 +
+   sfunc1 = int4mi, basetype = int4, stype1 = int4, initcond = 0                                                        +
+ );
+ statement: ALTER AGGREGATE alt_func1(int) RENAME TO alt_func3;
+ statement: ALTER AGGREGATE alt_func1(int) OWNER TO regtest_alter_user3;
+ statement: ALTER AGGREGATE alt_func1(int) SET SCHEMA alt_nsp2;
+ statement: ALTER FUNCTION alt_func1(int) RENAME TO alt_func2;
+ statement: ALTER FUNCTION alt_func1(int) RENAME TO alt_func3;
+ statement: ALTER FUNCTION alt_func2(int) OWNER TO regtest_alter_user2;
+ statement: ALTER FUNCTION alt_func2(int) OWNER TO regtest_alter_user3;
+ statement: ALTER FUNCTION alt_func2(int) SET SCHEMA alt_nsp2;
+ statement: ALTER AGGREGATE alt_agg1(int) RENAME TO alt_agg2;
+ statement: ALTER AGGREGATE alt_agg1(int) RENAME TO alt_agg3;
+ statement: ALTER AGGREGATE alt_agg2(int) OWNER TO regtest_alter_user2;
+ statement: ALTER AGGREGATE alt_agg2(int) OWNER TO regtest_alter_user3;
+ statement: ALTER AGGREGATE alt_agg2(int) SET SCHEMA alt_nsp2;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user2;
+ statement: CREATE FUNCTION alt_func1(int) RETURNS int LANGUAGE sql                                                     +
+   AS 'SELECT $1 + 2';
+ statement: CREATE FUNCTION alt_func2(int) RETURNS int LANGUAGE sql                                                     +
+   AS 'SELECT $1 - 2';
+ statement: CREATE AGGREGATE alt_agg1 (                                                                                 +
+   sfunc1 = int4pl, basetype = int4, stype1 = int4, initcond = 100                                                      +
+ );
+ statement: CREATE AGGREGATE alt_agg2 (                                                                                 +
+   sfunc1 = int4mi, basetype = int4, stype1 = int4, initcond = -100                                                     +
+ );
+ statement: ALTER FUNCTION alt_func3(int) RENAME TO alt_func4;
+ statement: ALTER FUNCTION alt_func1(int) RENAME TO alt_func4;
+ statement: ALTER FUNCTION alt_func3(int) OWNER TO regtest_alter_user2;
+ statement: ALTER FUNCTION alt_func2(int) OWNER TO regtest_alter_user3;
+ statement: ALTER FUNCTION alt_func3(int) SET SCHEMA alt_nsp2;
+ statement: ALTER FUNCTION alt_func2(int) SET SCHEMA alt_nsp2;
+ statement: ALTER AGGREGATE alt_agg3(int) RENAME TO alt_agg4;
+ statement: ALTER AGGREGATE alt_agg1(int) RENAME TO alt_agg4;
+ statement: ALTER AGGREGATE alt_agg3(int) OWNER TO regtest_alter_user2;
+ statement: ALTER AGGREGATE alt_agg2(int) OWNER TO regtest_alter_user3;
+ statement: ALTER AGGREGATE alt_agg3(int) SET SCHEMA alt_nsp2;
+ statement: ALTER AGGREGATE alt_agg2(int) SET SCHEMA alt_nsp2;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SELECT n.nspname, proname, prorettype::regtype, proisagg, a.rolname                                         +
+   FROM pg_proc p, pg_namespace n, pg_authid a                                                                          +
+   WHERE p.pronamespace = n.oid AND p.proowner = a.oid                                                                  +
+     AND n.nspname IN ('alt_nsp1', 'alt_nsp2')                                                                          +
+   ORDER BY nspname, proname;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user1;
+ statement: CREATE CONVERSION alt_conv1 FOR 'LATIN1' TO 'UTF8' FROM iso8859_1_to_utf8;
+ statement: CREATE CONVERSION alt_conv2 FOR 'LATIN1' TO 'UTF8' FROM iso8859_1_to_utf8;
+ statement: ALTER CONVERSION alt_conv1 RENAME TO alt_conv2;
+ statement: ALTER CONVERSION alt_conv1 RENAME TO alt_conv3;
+ statement: ALTER CONVERSION alt_conv2 OWNER TO regtest_alter_user2;
+ statement: ALTER CONVERSION alt_conv2 OWNER TO regtest_alter_user3;
+ statement: ALTER CONVERSION alt_conv2 SET SCHEMA alt_nsp2;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user2;
+ statement: CREATE CONVERSION alt_conv1 FOR 'LATIN1' TO 'UTF8' FROM iso8859_1_to_utf8;
+ statement: CREATE CONVERSION alt_conv2 FOR 'LATIN1' TO 'UTF8' FROM iso8859_1_to_utf8;
+ statement: ALTER CONVERSION alt_conv3 RENAME TO alt_conv4;
+ statement: ALTER CONVERSION alt_conv1 RENAME TO alt_conv4;
+ statement: ALTER CONVERSION alt_conv3 OWNER TO regtest_alter_user2;
+ statement: ALTER CONVERSION alt_conv2 OWNER TO regtest_alter_user3;
+ statement: ALTER CONVERSION alt_conv3 SET SCHEMA alt_nsp2;
+ statement: ALTER CONVERSION alt_conv2 SET SCHEMA alt_nsp2;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SELECT n.nspname, c.conname, a.rolname                                                                      +
+   FROM pg_conversion c, pg_namespace n, pg_authid a                                                                    +
+   WHERE c.connamespace = n.oid AND c.conowner = a.oid                                                                  +
+     AND n.nspname IN ('alt_nsp1', 'alt_nsp2')                                                                          +
+   ORDER BY nspname, conname;
+ statement: CREATE FOREIGN DATA WRAPPER alt_fdw1;
+ statement: CREATE FOREIGN DATA WRAPPER alt_fdw2;
+ statement: CREATE SERVER alt_fserv1 FOREIGN DATA WRAPPER alt_fdw1;
+ statement: CREATE SERVER alt_fserv2 FOREIGN DATA WRAPPER alt_fdw2;
+ statement: ALTER FOREIGN DATA WRAPPER alt_fdw1 RENAME TO alt_fdw2;
+ statement: ALTER FOREIGN DATA WRAPPER alt_fdw1 RENAME TO alt_fdw3;
+ statement: ALTER SERVER alt_fserv1 RENAME TO alt_fserv2;
+ statement: ALTER SERVER alt_fserv1 RENAME TO alt_fserv3;
+ statement: SELECT fdwname FROM pg_foreign_data_wrapper WHERE fdwname like 'alt_fdw%';
+ statement: SELECT srvname FROM pg_foreign_server WHERE srvname like 'alt_fserv%';
+ statement: CREATE LANGUAGE alt_lang1 HANDLER plpgsql_call_handler;
+ statement: CREATE LANGUAGE alt_lang2 HANDLER plpgsql_call_handler;
+ statement: ALTER LANGUAGE alt_lang1 OWNER TO regtest_alter_user1;
+ statement: ALTER LANGUAGE alt_lang2 OWNER TO regtest_alter_user2;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user1;
+ statement: ALTER LANGUAGE alt_lang1 RENAME TO alt_lang2;
+ statement: ALTER LANGUAGE alt_lang2 RENAME TO alt_lang3;
+ statement: ALTER LANGUAGE alt_lang1 RENAME TO alt_lang3;
+ statement: ALTER LANGUAGE alt_lang2 OWNER TO regtest_alter_user3;
+ statement: ALTER LANGUAGE alt_lang3 OWNER TO regtest_alter_user2;
+ statement: ALTER LANGUAGE alt_lang3 OWNER TO regtest_alter_user3;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SELECT lanname, a.rolname                                                                                   +
+   FROM pg_language l, pg_authid a                                                                                      +
+   WHERE l.lanowner = a.oid AND l.lanname like 'alt_lang%'                                                              +
+   ORDER BY lanname;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user1;
+ statement: CREATE OPERATOR @-@ ( leftarg = int4, rightarg = int4, procedure = int4mi );
+ statement: CREATE OPERATOR @+@ ( leftarg = int4, rightarg = int4, procedure = int4pl );
+ statement: ALTER OPERATOR @+@(int4, int4) OWNER TO regtest_alter_user2;
+ statement: ALTER OPERATOR @+@(int4, int4) OWNER TO regtest_alter_user3;
+ statement: ALTER OPERATOR @-@(int4, int4) SET SCHEMA alt_nsp2;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user2;
+ statement: CREATE OPERATOR @-@ ( leftarg = int4, rightarg = int4, procedure = int4mi );
+ statement: ALTER OPERATOR @+@(int4, int4) OWNER TO regtest_alter_user2;
+ statement: ALTER OPERATOR @-@(int4, int4) OWNER TO regtest_alter_user3;
+ statement: ALTER OPERATOR @+@(int4, int4) SET SCHEMA alt_nsp2;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SELECT n.nspname, oprname, a.rolname,                                                                       +
+     oprleft::regtype, oprright::regtype, oprcode::regproc                                                              +
+   FROM pg_operator o, pg_namespace n, pg_authid a                                                                      +
+   WHERE o.oprnamespace = n.oid AND o.oprowner = a.oid                                                                  +
+     AND n.nspname IN ('alt_nsp1', 'alt_nsp2')                                                                          +
+   ORDER BY nspname, oprname;
+ statement: CREATE OPERATOR FAMILY alt_opf1 USING hash;
+ statement: CREATE OPERATOR FAMILY alt_opf2 USING hash;
+ statement: ALTER OPERATOR FAMILY alt_opf1 USING hash OWNER TO regtest_alter_user1;
+ statement: ALTER OPERATOR FAMILY alt_opf2 USING hash OWNER TO regtest_alter_user1;
+ statement: CREATE OPERATOR CLASS alt_opc1 FOR TYPE uuid USING hash AS STORAGE uuid;
+ statement: CREATE OPERATOR CLASS alt_opc2 FOR TYPE uuid USING hash AS STORAGE uuid;
+ statement: ALTER OPERATOR CLASS alt_opc1 USING hash OWNER TO regtest_alter_user1;
+ statement: ALTER OPERATOR CLASS alt_opc2 USING hash OWNER TO regtest_alter_user1;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user1;
+ statement: ALTER OPERATOR FAMILY alt_opf1 USING hash RENAME TO alt_opf2;
+ statement: ALTER OPERATOR FAMILY alt_opf1 USING hash RENAME TO alt_opf3;
+ statement: ALTER OPERATOR FAMILY alt_opf2 USING hash OWNER TO regtest_alter_user2;
+ statement: ALTER OPERATOR FAMILY alt_opf2 USING hash OWNER TO regtest_alter_user3;
+ statement: ALTER OPERATOR FAMILY alt_opf2 USING hash SET SCHEMA alt_nsp2;
+ statement: ALTER OPERATOR CLASS alt_opc1 USING hash RENAME TO alt_opc2;
+ statement: ALTER OPERATOR CLASS alt_opc1 USING hash RENAME TO alt_opc3;
+ statement: ALTER OPERATOR CLASS alt_opc2 USING hash OWNER TO regtest_alter_user2;
+ statement: ALTER OPERATOR CLASS alt_opc2 USING hash OWNER TO regtest_alter_user3;
+ statement: ALTER OPERATOR CLASS alt_opc2 USING hash SET SCHEMA alt_nsp2;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: CREATE OPERATOR FAMILY alt_opf1 USING hash;
+ statement: CREATE OPERATOR FAMILY alt_opf2 USING hash;
+ statement: ALTER OPERATOR FAMILY alt_opf1 USING hash OWNER TO regtest_alter_user2;
+ statement: ALTER OPERATOR FAMILY alt_opf2 USING hash OWNER TO regtest_alter_user2;
+ statement: CREATE OPERATOR CLASS alt_opc1 FOR TYPE macaddr USING hash AS STORAGE macaddr;
+ statement: CREATE OPERATOR CLASS alt_opc2 FOR TYPE macaddr USING hash AS STORAGE macaddr;
+ statement: ALTER OPERATOR CLASS alt_opc1 USING hash OWNER TO regtest_alter_user2;
+ statement: ALTER OPERATOR CLASS alt_opc2 USING hash OWNER TO regtest_alter_user2;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user2;
+ statement: ALTER OPERATOR FAMILY alt_opf3 USING hash RENAME TO alt_opf4;
+ statement: ALTER OPERATOR FAMILY alt_opf1 USING hash RENAME TO alt_opf4;
+ statement: ALTER OPERATOR FAMILY alt_opf3 USING hash OWNER TO regtest_alter_user2;
+ statement: ALTER OPERATOR FAMILY alt_opf2 USING hash OWNER TO regtest_alter_user3;
+ statement: ALTER OPERATOR FAMILY alt_opf3 USING hash SET SCHEMA alt_nsp2;
+ statement: ALTER OPERATOR FAMILY alt_opf2 USING hash SET SCHEMA alt_nsp2;
+ statement: ALTER OPERATOR CLASS alt_opc3 USING hash RENAME TO alt_opc4;
+ statement: ALTER OPERATOR CLASS alt_opc1 USING hash RENAME TO alt_opc4;
+ statement: ALTER OPERATOR CLASS alt_opc3 USING hash OWNER TO regtest_alter_user2;
+ statement: ALTER OPERATOR CLASS alt_opc2 USING hash OWNER TO regtest_alter_user3;
+ statement: ALTER OPERATOR CLASS alt_opc3 USING hash SET SCHEMA alt_nsp2;
+ statement: ALTER OPERATOR CLASS alt_opc2 USING hash SET SCHEMA alt_nsp2;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SELECT nspname, opfname, amname, rolname                                                                    +
+   FROM pg_opfamily o, pg_am m, pg_namespace n, pg_authid a                                                             +
+   WHERE o.opfmethod = m.oid AND o.opfnamespace = n.oid AND o.opfowner = a.oid                                          +
+     AND n.nspname IN ('alt_nsp1', 'alt_nsp2')                                                                          +
+         AND NOT opfname LIKE 'alt_opc%'                                                                                +
+   ORDER BY nspname, opfname;
+ statement: SELECT nspname, opcname, amname, rolname                                                                    +
+   FROM pg_opclass o, pg_am m, pg_namespace n, pg_authid a                                                              +
+   WHERE o.opcmethod = m.oid AND o.opcnamespace = n.oid AND o.opcowner = a.oid                                          +
+     AND n.nspname IN ('alt_nsp1', 'alt_nsp2')                                                                          +
+   ORDER BY nspname, opcname;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE OPERATOR FAMILY alt_opf4 USING btree;
+ statement: ALTER OPERATOR FAMILY alt_opf4 USING btree ADD                                                              +
+                                                                                                                        +
+   OPERATOR 1 < (int4, int2) ,                                                                                          +
+   OPERATOR 2 <= (int4, int2) ,                                                                                         +
+   OPERATOR 3 = (int4, int2) ,                                                                                          +
+   OPERATOR 4 >= (int4, int2) ,                                                                                         +
+   OPERATOR 5 > (int4, int2) ,                                                                                          +
+   FUNCTION 1 btint42cmp(int4, int2);
+ statement: ALTER OPERATOR FAMILY alt_opf4 USING btree DROP                                                             +
+                                                                                                                        +
+   OPERATOR 1 (int4, int2) ,                                                                                            +
+   OPERATOR 2 (int4, int2) ,                                                                                            +
+   OPERATOR 3 (int4, int2) ,                                                                                            +
+   OPERATOR 4 (int4, int2) ,                                                                                            +
+   OPERATOR 5 (int4, int2) ,                                                                                            +
+   FUNCTION 1 (int4, int2) ;
+ statement: DROP OPERATOR FAMILY alt_opf4 USING btree;
+ statement: ROLLBACK;
+ statement: CREATE OPERATOR FAMILY alt_opf4 USING btree;
+ statement: ALTER OPERATOR FAMILY alt_opf4 USING invalid_index_method ADD  OPERATOR 1 < (int4, int2);
+ statement: ALTER OPERATOR FAMILY alt_opf4 USING btree ADD OPERATOR 6 < (int4, int2);
+ statement: ALTER OPERATOR FAMILY alt_opf4 USING btree ADD OPERATOR 0 < (int4, int2);
+ statement: ALTER OPERATOR FAMILY alt_opf4 USING btree ADD OPERATOR 1 < ;
+ statement: ALTER OPERATOR FAMILY alt_opf4 USING btree ADD FUNCTION 0 btint42cmp(int4, int2);
+ statement: ALTER OPERATOR FAMILY alt_opf4 USING btree ADD FUNCTION 6 btint42cmp(int4, int2);
+ statement: ALTER OPERATOR FAMILY alt_opf4 USING btree ADD STORAGE invalid_storage;
+ statement: DROP OPERATOR FAMILY alt_opf4 USING btree;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE ROLE regtest_alter_user5 NOSUPERUSER;
+ statement: CREATE OPERATOR FAMILY alt_opf5 USING btree;
+ statement: SET ROLE regtest_alter_user5;
+ statement: ALTER OPERATOR FAMILY alt_opf5 USING btree ADD OPERATOR 1 < (int4, int2), FUNCTION 1 btint42cmp(int4, int2);
+ statement: RESET ROLE;
+ statement: DROP OPERATOR FAMILY alt_opf5 USING btree;
+ statement: ROLLBACK;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE ROLE regtest_alter_user6;
+ statement: CREATE SCHEMA alt_nsp6;
+ statement: REVOKE ALL ON SCHEMA alt_nsp6 FROM regtest_alter_user6;
+ statement: CREATE OPERATOR FAMILY alt_nsp6.alt_opf6 USING btree;
+ statement: SET ROLE regtest_alter_user6;
+ statement: ALTER OPERATOR FAMILY alt_nsp6.alt_opf6 USING btree ADD OPERATOR 1 < (int4, int2);
+ statement: ROLLBACK;
+ statement: CREATE OPERATOR FAMILY alt_opf7 USING btree;
+ statement: ALTER OPERATOR FAMILY alt_opf7 USING btree ADD OPERATOR 1 < (int4, int2);
+ statement: ALTER OPERATOR FAMILY alt_opf7 USING btree DROP OPERATOR 1 (int4, int2, int8);
+ statement: DROP OPERATOR FAMILY alt_opf7 USING btree;
+ statement: CREATE OPERATOR FAMILY alt_opf8 USING btree;
+ statement: ALTER OPERATOR FAMILY alt_opf8 USING btree ADD OPERATOR 1 < (int4, int4);
+ statement: DROP OPERATOR FAMILY alt_opf8 USING btree;
+ statement: CREATE OPERATOR FAMILY alt_opf9 USING gist;
+ statement: ALTER OPERATOR FAMILY alt_opf9 USING gist ADD OPERATOR 1 < (int4, int4) FOR ORDER BY float_ops;
+ statement: DROP OPERATOR FAMILY alt_opf9 USING gist;
+ statement: CREATE OPERATOR FAMILY alt_opf10 USING btree;
+ statement: ALTER OPERATOR FAMILY alt_opf10 USING btree ADD OPERATOR 1 < (int4, int4) FOR ORDER BY float_ops;
+ statement: DROP OPERATOR FAMILY alt_opf10 USING btree;
+ statement: CREATE OPERATOR FAMILY alt_opf11 USING gist;
+ statement: ALTER OPERATOR FAMILY alt_opf11 USING gist ADD OPERATOR 1 < (int4, int4) FOR ORDER BY float_ops;
+ statement: ALTER OPERATOR FAMILY alt_opf11 USING gist DROP OPERATOR 1 (int4, int4);
+ statement: DROP OPERATOR FAMILY alt_opf11 USING gist;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE OPERATOR FAMILY alt_opf12 USING btree;
+ statement: CREATE FUNCTION fn_opf12  (int4, int2) RETURNS BIGINT AS 'SELECT NULL::BIGINT;' LANGUAGE SQL;
+ statement: ALTER OPERATOR FAMILY alt_opf12 USING btree ADD FUNCTION 1 fn_opf12(int4, int2);
+ statement: DROP OPERATOR FAMILY alt_opf12 USING btree;
+ statement: ROLLBACK;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE OPERATOR FAMILY alt_opf13 USING hash;
+ statement: CREATE FUNCTION fn_opf13  (int4) RETURNS BIGINT AS 'SELECT NULL::BIGINT;' LANGUAGE SQL;
+ statement: ALTER OPERATOR FAMILY alt_opf13 USING hash ADD FUNCTION 1 fn_opf13(int4);
+ statement: DROP OPERATOR FAMILY alt_opf13 USING hash;
+ statement: ROLLBACK;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE OPERATOR FAMILY alt_opf14 USING btree;
+ statement: CREATE FUNCTION fn_opf14 (int4) RETURNS BIGINT AS 'SELECT NULL::BIGINT;' LANGUAGE SQL;
+ statement: ALTER OPERATOR FAMILY alt_opf14 USING btree ADD FUNCTION 1 fn_opf14(int4);
+ statement: DROP OPERATOR FAMILY alt_opf14 USING btree;
+ statement: ROLLBACK;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE OPERATOR FAMILY alt_opf15 USING hash;
+ statement: CREATE FUNCTION fn_opf15 (int4, int2) RETURNS BIGINT AS 'SELECT NULL::BIGINT;' LANGUAGE SQL;
+ statement: ALTER OPERATOR FAMILY alt_opf15 USING hash ADD FUNCTION 1 fn_opf15(int4, int2);
+ statement: DROP OPERATOR FAMILY alt_opf15 USING hash;
+ statement: ROLLBACK;
+ statement: CREATE OPERATOR FAMILY alt_opf16 USING gist;
+ statement: ALTER OPERATOR FAMILY alt_opf16 USING gist ADD FUNCTION 1 btint42cmp(int4, int2);
+ statement: DROP OPERATOR FAMILY alt_opf16 USING gist;
+ statement: CREATE OPERATOR FAMILY alt_opf17 USING btree;
+ statement: ALTER OPERATOR FAMILY alt_opf17 USING btree ADD OPERATOR 1 < (int4, int4), OPERATOR 1 < (int4, int4);
+ statement: ALTER OPERATOR FAMILY alt_opf17 USING btree ADD OPERATOR 1 < (int4, int4);
+ statement: ALTER OPERATOR FAMILY alt_opf17 USING btree ADD OPERATOR 1 < (int4, int4);
+ statement: ALTER OPERATOR FAMILY alt_opf17 USING btree ADD                                                             +
+   OPERATOR 1 < (int4, int2) ,                                                                                          +
+   OPERATOR 2 <= (int4, int2) ,                                                                                         +
+   OPERATOR 3 = (int4, int2) ,                                                                                          +
+   OPERATOR 4 >= (int4, int2) ,                                                                                         +
+   OPERATOR 5 > (int4, int2) ,                                                                                          +
+   FUNCTION 1 btint42cmp(int4, int2) ,                                                                                  +
+   FUNCTION 1 btint42cmp(int4, int2);
+ statement: ALTER OPERATOR FAMILY alt_opf17 USING btree ADD                                                             +
+   OPERATOR 1 < (int4, int2) ,                                                                                          +
+   OPERATOR 2 <= (int4, int2) ,                                                                                         +
+   OPERATOR 3 = (int4, int2) ,                                                                                          +
+   OPERATOR 4 >= (int4, int2) ,                                                                                         +
+   OPERATOR 5 > (int4, int2) ,                                                                                          +
+   FUNCTION 1 btint42cmp(int4, int2);
+ statement: ALTER OPERATOR FAMILY alt_opf17 USING btree ADD                                                             +
+   OPERATOR 1 < (int4, int2) ,                                                                                          +
+   OPERATOR 2 <= (int4, int2) ,                                                                                         +
+   OPERATOR 3 = (int4, int2) ,                                                                                          +
+   OPERATOR 4 >= (int4, int2) ,                                                                                         +
+   OPERATOR 5 > (int4, int2) ,                                                                                          +
+   FUNCTION 1 btint42cmp(int4, int2);
+ statement: DROP OPERATOR FAMILY alt_opf17 USING btree;
+ statement: CREATE OPERATOR FAMILY alt_opf18 USING btree;
+ statement: ALTER OPERATOR FAMILY alt_opf18 USING btree DROP OPERATOR 1 (int4, int4);
+ statement: ALTER OPERATOR FAMILY alt_opf18 USING btree ADD                                                             +
+   OPERATOR 1 < (int4, int2) ,                                                                                          +
+   OPERATOR 2 <= (int4, int2) ,                                                                                         +
+   OPERATOR 3 = (int4, int2) ,                                                                                          +
+   OPERATOR 4 >= (int4, int2) ,                                                                                         +
+   OPERATOR 5 > (int4, int2) ,                                                                                          +
+   FUNCTION 1 btint42cmp(int4, int2);
+ statement: ALTER OPERATOR FAMILY alt_opf18 USING btree DROP FUNCTION 2 (int4, int4);
+ statement: DROP OPERATOR FAMILY alt_opf18 USING btree;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user1;
+ statement: CREATE TEXT SEARCH DICTIONARY alt_ts_dict1 (template=simple);
+ statement: CREATE TEXT SEARCH DICTIONARY alt_ts_dict2 (template=simple);
+ statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict1 RENAME TO alt_ts_dict2;
+ statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict1 RENAME TO alt_ts_dict3;
+ statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict2 OWNER TO regtest_alter_user2;
+ statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict2 OWNER TO regtest_alter_user3;
+ statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict2 SET SCHEMA alt_nsp2;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user2;
+ statement: CREATE TEXT SEARCH DICTIONARY alt_ts_dict1 (template=simple);
+ statement: CREATE TEXT SEARCH DICTIONARY alt_ts_dict2 (template=simple);
+ statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict3 RENAME TO alt_ts_dict4;
+ statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict1 RENAME TO alt_ts_dict4;
+ statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict3 OWNER TO regtest_alter_user2;
+ statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict2 OWNER TO regtest_alter_user3;
+ statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict3 SET SCHEMA alt_nsp2;
+ statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict2 SET SCHEMA alt_nsp2;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SELECT nspname, dictname, rolname                                                                           +
+   FROM pg_ts_dict t, pg_namespace n, pg_authid a                                                                       +
+   WHERE t.dictnamespace = n.oid AND t.dictowner = a.oid                                                                +
+     AND n.nspname in ('alt_nsp1', 'alt_nsp2')                                                                          +
+   ORDER BY nspname, dictname;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user1;
+ statement: CREATE TEXT SEARCH CONFIGURATION alt_ts_conf1 (copy=english);
+ statement: CREATE TEXT SEARCH CONFIGURATION alt_ts_conf2 (copy=english);
+ statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf1 RENAME TO alt_ts_conf2;
+ statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf1 RENAME TO alt_ts_conf3;
+ statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf2 OWNER TO regtest_alter_user2;
+ statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf2 OWNER TO regtest_alter_user3;
+ statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf2 SET SCHEMA alt_nsp2;
+ statement: SET SESSION AUTHORIZATION regtest_alter_user2;
+ statement: CREATE TEXT SEARCH CONFIGURATION alt_ts_conf1 (copy=english);
+ statement: CREATE TEXT SEARCH CONFIGURATION alt_ts_conf2 (copy=english);
+ statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf3 RENAME TO alt_ts_conf4;
+ statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf1 RENAME TO alt_ts_conf4;
+ statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf3 OWNER TO regtest_alter_user2;
+ statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf2 OWNER TO regtest_alter_user3;
+ statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf3 SET SCHEMA alt_nsp2;
+ statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf2 SET SCHEMA alt_nsp2;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SELECT nspname, cfgname, rolname                                                                            +
+   FROM pg_ts_config t, pg_namespace n, pg_authid a                                                                     +
+   WHERE t.cfgnamespace = n.oid AND t.cfgowner = a.oid                                                                  +
+     AND n.nspname in ('alt_nsp1', 'alt_nsp2')                                                                          +
+   ORDER BY nspname, cfgname;
+ statement: CREATE TEXT SEARCH TEMPLATE alt_ts_temp1 (lexize=dsimple_lexize);
+ statement: CREATE TEXT SEARCH TEMPLATE alt_ts_temp2 (lexize=dsimple_lexize);
+ statement: ALTER TEXT SEARCH TEMPLATE alt_ts_temp1 RENAME TO alt_ts_temp2;
+ statement: ALTER TEXT SEARCH TEMPLATE alt_ts_temp1 RENAME TO alt_ts_temp3;
+ statement: ALTER TEXT SEARCH TEMPLATE alt_ts_temp2 SET SCHEMA alt_nsp2;
+ statement: CREATE TEXT SEARCH TEMPLATE alt_ts_temp2 (lexize=dsimple_lexize);
+ statement: ALTER TEXT SEARCH TEMPLATE alt_ts_temp2 SET SCHEMA alt_nsp2;
+ statement: SELECT nspname, tmplname                                                                                    +
+   FROM pg_ts_template t, pg_namespace n                                                                                +
+   WHERE t.tmplnamespace = n.oid AND nspname like 'alt_nsp%'                                                            +
+   ORDER BY nspname, tmplname;
+ statement: CREATE TEXT SEARCH PARSER alt_ts_prs1                                                                       +
+     (start = prsd_start, gettoken = prsd_nexttoken, end = prsd_end, lextypes = prsd_lextype);
+ statement: CREATE TEXT SEARCH PARSER alt_ts_prs2                                                                       +
+     (start = prsd_start, gettoken = prsd_nexttoken, end = prsd_end, lextypes = prsd_lextype);
+ statement: ALTER TEXT SEARCH PARSER alt_ts_prs1 RENAME TO alt_ts_prs2;
+ statement: ALTER TEXT SEARCH PARSER alt_ts_prs1 RENAME TO alt_ts_prs3;
+ statement: ALTER TEXT SEARCH PARSER alt_ts_prs2 SET SCHEMA alt_nsp2;
+ statement: CREATE TEXT SEARCH PARSER alt_ts_prs2                                                                       +
+     (start = prsd_start, gettoken = prsd_nexttoken, end = prsd_end, lextypes = prsd_lextype);
+ statement: ALTER TEXT SEARCH PARSER alt_ts_prs2 SET SCHEMA alt_nsp2;
+ statement: SELECT nspname, prsname                                                                                     +
+   FROM pg_ts_parser t, pg_namespace n                                                                                  +
+   WHERE t.prsnamespace = n.oid AND nspname like 'alt_nsp%'                                                             +
+   ORDER BY nspname, prsname;
+ statement: DROP FOREIGN DATA WRAPPER alt_fdw2 CASCADE;
+ statement: DROP FOREIGN DATA WRAPPER alt_fdw3 CASCADE;
+ statement: DROP LANGUAGE alt_lang2 CASCADE;
+ statement: DROP LANGUAGE alt_lang3 CASCADE;
+ statement: DROP LANGUAGE alt_lang4 CASCADE;
+ statement: DROP SCHEMA alt_nsp1 CASCADE;
+ statement: DROP SCHEMA alt_nsp2 CASCADE;
+ statement: DROP USER regtest_alter_user1;
+ statement: DROP USER regtest_alter_user2;
+ statement: DROP USER regtest_alter_user3;
+

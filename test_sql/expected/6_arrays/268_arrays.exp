@@ -1,0 +1,6 @@
+select array_to_string('{}'::int4[], ',');
+ array_to_string 
+-----------------
+ 
+(1 row)
+

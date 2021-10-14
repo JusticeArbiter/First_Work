@@ -1,0 +1,2 @@
+insert into invalid_check_con values(0);
+INSERT 0 1

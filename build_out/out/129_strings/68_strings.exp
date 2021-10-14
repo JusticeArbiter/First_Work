@@ -1,0 +1,2 @@
+SELECT regexp_matches('foobarbequebaz', $re$(bar)(beque)$re$, 'gz');
+ERROR:  22023: invalid regexp option: "z"

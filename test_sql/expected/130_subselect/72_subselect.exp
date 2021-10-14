@@ -1,0 +1,4 @@
+insert into shipped_view (ordnum, partnum, value)  values (0, 1, (select cost from parts where partnum = '1'));
+ERROR:  42P01: relation "shipped_view" does not exist
+LINE 1: insert into shipped_view (ordnum, partnum, value)  values (0...
+                    ^

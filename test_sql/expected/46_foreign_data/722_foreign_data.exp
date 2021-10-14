@@ -1,0 +1,2 @@
+DROP ROLE unprivileged_role;
+DROP ROLE

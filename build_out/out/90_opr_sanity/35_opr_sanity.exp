@@ -1,0 +1,5 @@
+SELECT *  FROM pg_cast c  WHERE castsource = casttarget AND castfunc = 0;
+ castsource | casttarget | castfunc | castcontext | castmethod 
+------------+------------+----------+-------------+------------
+(0 rows)
+

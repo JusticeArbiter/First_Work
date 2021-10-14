@@ -1,0 +1,2 @@
+rollback to x;
+ERROR:  25P01: ROLLBACK TO SAVEPOINT can only be used in transaction blocks

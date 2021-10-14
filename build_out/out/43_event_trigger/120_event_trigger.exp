@@ -1,0 +1,5 @@
+ALTER POLICY p1 ON event_trigger_test USING (TRUE);
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER POLICY
+NOTICE:  00000: ALTER POLICY - ddl_command_start
+NOTICE:  00000: ALTER POLICY - ddl_command_end
+ALTER POLICY

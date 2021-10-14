@@ -1,0 +1,10 @@
+SELECT * from ts_debug('english', 'http://www.harewoodsolutions.co.uk/press.aspx</span>');
+  alias   |  description  |                 token                  | dictionaries | dictionary |                 lexemes                  
+----------+---------------+----------------------------------------+--------------+------------+------------------------------------------
+ protocol | Protocol head | http://                                | {}           |            | 
+ url      | URL           | www.harewoodsolutions.co.uk/press.aspx | {simple}     | simple     | {www.harewoodsolutions.co.uk/press.aspx}
+ host     | Host          | www.harewoodsolutions.co.uk            | {simple}     | simple     | {www.harewoodsolutions.co.uk}
+ url_path | URL path      | /press.aspx                            | {simple}     | simple     | {/press.aspx}
+ tag      | XML tag       | </span>                                | {}           |            | 
+(5 rows)
+

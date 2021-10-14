@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT regrole('Nonexistent');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: role "nonexistent" does not exist at character 16
+LOCATION:  get_role_oid, acl.c:5122
+STATEMENT:  SELECT regrole('Nonexistent');

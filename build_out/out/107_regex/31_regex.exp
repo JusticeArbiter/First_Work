@@ -1,0 +1,6 @@
+select 'aa x' ~ '(^(?!aa)(?!bb)(?!cc))+';
+ ?column? 
+----------
+ f
+(1 row)
+

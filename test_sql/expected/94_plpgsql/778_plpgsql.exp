@@ -1,0 +1,7 @@
+select * from conflict_test();
+ERROR:  42702: column reference "q1" is ambiguous
+LINE 1: select q1,q2 from int8_tbl
+               ^
+DETAIL:  It could refer to either a PL/pgSQL variable or a table column.
+QUERY:  select q1,q2 from int8_tbl
+CONTEXT:  PL/pgSQL function conflict_test() line 1 at FOR over SELECT rows

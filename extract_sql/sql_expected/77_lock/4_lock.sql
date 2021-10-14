@@ -1,0 +1,1 @@
+CREATE VIEW lock_view1 AS SELECT 1;

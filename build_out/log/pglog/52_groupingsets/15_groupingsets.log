@@ -1,0 +1,5 @@
+LOG:  00000: statement: select a, b, sum(c), sum(sum(c)) over (order by a,b) as rsum  from gstest2 group by rollup (a,b) order by rsum, a, b;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "gstest2" does not exist at character 68
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select a, b, sum(c), sum(sum(c)) over (order by a,b) as rsum  from gstest2 group by rollup (a,b) order by rsum, a, b;

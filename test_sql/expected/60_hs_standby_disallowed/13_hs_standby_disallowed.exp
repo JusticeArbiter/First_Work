@@ -1,0 +1,3 @@
+update hs1 set col1 = NULL where col1 > 0;
+ERROR:  23502: null value in column "col1" violates not-null constraint
+DETAIL:  Failing row contains (null).

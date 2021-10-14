@@ -1,0 +1,3 @@
+CREATE TRIGGER show_trigger_data_trig  BEFORE INSERT OR UPDATE OR DELETE ON trigger_test  FOR EACH ROW EXECUTE PROCEDURE trigger_data(23,'skidoo');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+ERROR:  42883: function trigger_data() does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP TEXT SEARCH CONFIGURATION test_tsconfig_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: text search configuration "test_tsconfig_exists" does not exist
+LOCATION:  get_ts_config_oid, namespace.c:2534
+STATEMENT:  DROP TEXT SEARCH CONFIGURATION test_tsconfig_exists;

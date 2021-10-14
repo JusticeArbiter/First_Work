@@ -1,0 +1,2 @@
+INSERT INTO trunc_fa VALUES (3, 'three');
+INSERT 0 1

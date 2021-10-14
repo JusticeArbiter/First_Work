@@ -1,0 +1,7 @@
+DROP SCHEMA selinto_schema CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SCHEMA
+NOTICE:  00000: drop cascades to 3 other objects
+DETAIL:  drop cascades to table selinto_schema.tmp1
+drop cascades to table selinto_schema.tmp2
+drop cascades to table selinto_schema.tmp3
+DROP SCHEMA

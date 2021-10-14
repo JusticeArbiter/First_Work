@@ -1,0 +1,4 @@
+drop table oid_parent cascade;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+NOTICE:  00000: drop cascades to table oid_child
+DROP TABLE

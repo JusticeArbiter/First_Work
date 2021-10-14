@@ -1,0 +1,3 @@
+DROP USER IF EXISTS rls_regress_exempt_user;
+NOTICE:  00000: role "rls_regress_exempt_user" does not exist, skipping
+DROP ROLE

@@ -1,0 +1,10 @@
+LOG:  00000: statement: DROP COLLATION test0 CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: drop cascades to 5 other objects
+DETAIL:  drop cascades to table collate_dep_test1 column b
+	drop cascades to type collate_dep_dom1
+	drop cascades to composite type collate_dep_test2 column y
+	drop cascades to view collate_dep_test3
+	drop cascades to index collate_dep_test4i
+LOCATION:  reportDependentObjects, dependency.c:1003
+STATEMENT:  DROP COLLATION test0 CASCADE;

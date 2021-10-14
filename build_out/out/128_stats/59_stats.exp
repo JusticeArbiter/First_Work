@@ -1,0 +1,4 @@
+SELECT pr.snap_ts < pg_stat_get_snapshot_timestamp() as snapshot_newer  FROM prevstats AS pr;
+ERROR:  42P01: relation "prevstats" does not exist
+LINE 1: ..._get_snapshot_timestamp() as snapshot_newer  FROM prevstats ...
+                                                             ^

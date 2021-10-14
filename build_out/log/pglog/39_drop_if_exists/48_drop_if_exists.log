@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP CONVERSION IF EXISTS test_conversion_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: conversion "test_conversion_exists" does not exist, skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:446
+STATEMENT:  DROP CONVERSION IF EXISTS test_conversion_exists;

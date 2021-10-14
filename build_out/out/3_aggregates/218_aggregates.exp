@@ -1,0 +1,2 @@
+select pg_get_viewdef('aggordview1');
+ERROR:  42P01: relation "aggordview1" does not exist

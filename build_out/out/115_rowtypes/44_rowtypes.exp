@@ -1,0 +1,5 @@
+select ROW('ABC','DEF') ~~ ROW('DEF','ABC') as fail;
+ERROR:  0A000: could not determine interpretation of row comparison operator ~~
+LINE 1: select ROW('ABC','DEF') ~~ ROW('DEF','ABC') as fail;
+                                ^
+HINT:  Row comparison operators must be associated with btree operator families.

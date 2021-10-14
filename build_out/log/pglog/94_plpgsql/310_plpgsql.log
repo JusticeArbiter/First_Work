@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from f1(42);
+LOCATION:  exec_simple_query, postgres.c:938

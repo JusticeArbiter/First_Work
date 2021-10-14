@@ -1,0 +1,6 @@
+select 10 as test01, 20 as test02, 'Hello' as test03 
+ test01 | test02 | test03 
+--------+--------+--------
+     10 |     20 | Hello
+(1 row)
+

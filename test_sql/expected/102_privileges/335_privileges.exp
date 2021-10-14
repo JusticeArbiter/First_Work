@@ -1,0 +1,3 @@
+CREATE FUNCTION castfunc(int) RETURNS testdomain3b AS $$ SELECT $1::testdomain3b $$ LANGUAGE SQL;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

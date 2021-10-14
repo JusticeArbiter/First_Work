@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT * FROM t1 FULL JOIN t2 USING (name) FULL JOIN t3 USING (name);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "name" specified in USING clause does not exist in right table
+LOCATION:  transformFromClauseItem, parse_clause.c:1156
+STATEMENT:  SELECT * FROM t1 FULL JOIN t2 USING (name) FULL JOIN t3 USING (name);

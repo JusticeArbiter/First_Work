@@ -1,0 +1,4 @@
+SELECT max(aggtest.b) AS max_324_78 FROM aggtest;
+ERROR:  42P01: relation "aggtest" does not exist
+LINE 1: SELECT max(aggtest.b) AS max_324_78 FROM aggtest;
+                                                 ^

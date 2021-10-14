@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP OPERATOR FAMILY test_operator_family USING btree;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: operator family "test_operator_family" does not exist for access method "btree"
+LOCATION:  OpFamilyCacheLookup, opclasscmds.c:127
+STATEMENT:  DROP OPERATOR FAMILY test_operator_family USING btree;

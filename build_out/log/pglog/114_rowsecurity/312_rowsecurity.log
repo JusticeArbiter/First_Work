@@ -1,0 +1,2 @@
+LOG:  00000: statement: PREPARE plancache_test2 AS WITH q AS (SELECT * FROM z1 WHERE f_leak(b)) SELECT * FROM q,z2;
+LOCATION:  exec_simple_query, postgres.c:938

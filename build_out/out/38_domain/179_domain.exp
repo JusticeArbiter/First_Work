@@ -1,0 +1,2 @@
+UPDATE thethings SET stuff = 10;
+UPDATE 1

@@ -1,0 +1,6 @@
+SELECT * FROM dup('xyz'::text);
+ dup 
+-----
+ xyz
+(1 row)
+

@@ -1,0 +1,8 @@
+LOG:  00000: statement: create function namedparmcursor_test3() returns void as $$  declare  c1 cursor (param1 int, param2 int) for select * from rc_test where a > param1 and b > param2;  begin  open c1(param2 := 20, 21);  end  $$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function namedparmcursor_test3() returns void as $$  declare  c1 cursor (param1 int, param2 int) for select * from rc_test where a > param1 and b > param2;  begin  open c1(param2 := 20, 21);  end  $$ language plpgsql;
+ERROR:  42601: value for parameter "param2" of cursor "c1" specified more than once at character 194
+LOCATION:  read_cursor_args, pl_gram.y:3706
+STATEMENT:  create function namedparmcursor_test3() returns void as $$  declare  c1 cursor (param1 int, param2 int) for select * from rc_test where a > param1 and b > param2;  begin  open c1(param2 := 20, 21);  end  $$ language plpgsql;

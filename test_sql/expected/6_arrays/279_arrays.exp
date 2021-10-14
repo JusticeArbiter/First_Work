@@ -1,0 +1,6 @@
+select cardinality(NULL::int[]);
+ cardinality 
+-------------
+            
+(1 row)
+

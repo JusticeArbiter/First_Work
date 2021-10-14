@@ -1,0 +1,6 @@
+SELECT regexp_matches('foobarbequebaz', $re$barbeque$re$);
+ regexp_matches 
+----------------
+ {barbeque}
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table pg_toast_stud_emp rename to stud_emp;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "pg_toast_stud_emp" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  alter table pg_toast_stud_emp rename to stud_emp;

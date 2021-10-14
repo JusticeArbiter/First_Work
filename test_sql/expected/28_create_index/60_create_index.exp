@@ -1,0 +1,4 @@
+SELECT count(*) FROM point_tbl WHERE f1 <@ polygon '(0,0),(0,100),(100,100),(50,50),(100,0),(0,0)';
+ERROR:  42P01: relation "point_tbl" does not exist
+LINE 1: SELECT count(*) FROM point_tbl WHERE f1 <@ polygon '(0,0),(0...
+                             ^

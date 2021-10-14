@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP RULE test_rule_exists ON test_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: rule "test_rule_exists" for relation "test_exists" does not exist
+LOCATION:  get_rewrite_oid, rewriteSupport.c:113
+STATEMENT:  DROP RULE test_rule_exists ON test_exists;

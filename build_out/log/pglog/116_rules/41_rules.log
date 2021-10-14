@@ -1,0 +1,5 @@
+LOG:  00000: statement: create rule rtest_order_r1 as on insert to rtest_order1 do instead  insert into rtest_order2 values (new.a, nextval('rtest_seq'),  'rule 1 - this should run 1st');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create rule rtest_order_r1 as on insert to rtest_order1 do instead  insert into rtest_order2 values (new.a, nextval('rtest_seq'),  'rule 1 - this should run 1st');

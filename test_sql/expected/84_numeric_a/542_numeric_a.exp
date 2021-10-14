@@ -1,0 +1,6 @@
+SELECT 'NaN'::float4::numeric;
+ numeric 
+---------
+     NaN
+(1 row)
+

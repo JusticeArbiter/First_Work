@@ -1,0 +1,6 @@
+SELECT plainto_tsquery('english', 'foo bar') || plainto_tsquery('english', 'asd fg');
+           ?column?           
+------------------------------
+ 'foo' & 'bar' | 'asd' & 'fg'
+(1 row)
+

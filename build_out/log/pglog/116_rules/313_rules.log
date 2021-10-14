@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE RULE log_shoelace AS ON UPDATE TO shoelace_data  WHERE NEW.sl_avail != OLD.sl_avail  DO INSERT INTO shoelace_log VALUES (  NEW.sl_name,  NEW.sl_avail,  'Al Bundy',  'epoch'  );
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE RULE log_shoelace AS ON UPDATE TO shoelace_data  WHERE NEW.sl_avail != OLD.sl_avail  DO INSERT INTO shoelace_log VALUES (  NEW.sl_name,  NEW.sl_avail,  'Al Bundy',  'epoch'  );

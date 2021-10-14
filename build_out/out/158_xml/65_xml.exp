@@ -1,0 +1,6 @@
+SELECT xmlpi(name "xml-stylesheet", 'href="mystyle.css" type="text/css"');
+                         xmlpi                         
+-------------------------------------------------------
+ <?xml-stylesheet href="mystyle.css" type="text/css"?>
+(1 row)
+

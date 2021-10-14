@@ -1,0 +1,2 @@
+CREATE VIEW collview3 AS SELECT a, lower((x || x) COLLATE "POSIX") FROM collate_test10;
+ERROR:  42P07: relation "collview3" already exists

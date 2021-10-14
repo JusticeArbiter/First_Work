@@ -1,0 +1,6 @@
+SELECT to_tsquery('SKIES & My | booKs');
+   to_tsquery   
+----------------
+ 'sky' | 'book'
+(1 row)
+

@@ -1,0 +1,6 @@
+select recurse(10);
+ recurse 
+---------
+       0
+(1 row)
+

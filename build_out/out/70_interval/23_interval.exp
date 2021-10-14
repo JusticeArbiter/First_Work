@@ -1,0 +1,4 @@
+INSERT INTO INTERVAL_TBL (f1) VALUES ('@ 30 eons ago');
+ERROR:  22007: invalid input syntax for type interval: "@ 30 eons ago"
+LINE 1: INSERT INTO INTERVAL_TBL (f1) VALUES ('@ 30 eons ago');
+                                              ^

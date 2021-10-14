@@ -1,0 +1,4 @@
+INSERT INTO RELTIME_TBL (f1) VALUES ('badly formatted reltime');
+ERROR:  22007: invalid input syntax for type reltime: "badly formatted reltime"
+LINE 1: INSERT INTO RELTIME_TBL (f1) VALUES ('badly formatted reltim...
+                                             ^

@@ -1,0 +1,3 @@
+DROP USER MAPPING FOR user SERVER ss4;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP USER MAPPING
+ERROR:  42704: server "ss4" does not exist

@@ -1,0 +1,6 @@
+select 'null'::jsonb #> '{}';
+ ?column? 
+----------
+ null
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT p1.oid, p2.oid  FROM pg_opclass AS p1, pg_opfamily AS p2  WHERE p1.opcfamily = p2.oid AND p1.opcmethod != p2.opfmethod;
+LOCATION:  exec_simple_query, postgres.c:938

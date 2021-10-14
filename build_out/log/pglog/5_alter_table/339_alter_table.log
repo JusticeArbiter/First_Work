@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into atacc3 (test2) values (-3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: new row for relation "atacc3" violates check constraint "foo"
+DETAIL:  Failing row contains (null, -3, null).
+LOCATION:  ExecConstraints, execMain.c:1725
+STATEMENT:  insert into atacc3 (test2) values (-3);

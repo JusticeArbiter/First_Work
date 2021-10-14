@@ -1,0 +1,3 @@
+alter table fktable2 drop constraint fktable2_f1_fkey;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+ERROR:  42704: constraint "fktable2_f1_fkey" of relation "fktable2" does not exist

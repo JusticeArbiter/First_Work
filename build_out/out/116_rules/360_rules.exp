@@ -1,0 +1,2 @@
+insert into cchild values (1,'descrip1');
+INSERT 0 1

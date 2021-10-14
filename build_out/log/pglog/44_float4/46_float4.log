@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS five, * FROM FLOAT4_TBL;
+LOCATION:  exec_simple_query, postgres.c:938

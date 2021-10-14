@@ -1,0 +1,6 @@
+SELECT table_name, is_insertable_into  FROM information_schema.tables  WHERE table_name = 'rw_view2';
+ table_name | is_insertable_into 
+------------+--------------------
+ rw_view2   | YES
+(1 row)
+

@@ -1,0 +1,3 @@
+ALTER SERVER s0 OPTIONS (a '1');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER SERVER
+ERROR:  42704: server "s0" does not exist

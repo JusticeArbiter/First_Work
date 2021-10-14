@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO PG_LSN_TBL VALUES ('ABCD/');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type pg_lsn: "ABCD/" at character 32
+LOCATION:  pg_lsn_in, pg_lsn.c:49
+STATEMENT:  INSERT INTO PG_LSN_TBL VALUES ('ABCD/');

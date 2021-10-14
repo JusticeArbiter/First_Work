@@ -1,0 +1,5 @@
+INSERT INTO xmltest VALUES (3, '<wrong');
+ERROR:  2200N: invalid XML content
+LINE 1: INSERT INTO xmltest VALUES (3, '<wrong');
+                                       ^
+DETAIL:  line 1: Couldn't find end of Start Tag wrong line 1

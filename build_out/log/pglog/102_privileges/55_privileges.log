@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM atest2 FOR UPDATE;
+LOCATION:  exec_simple_query, postgres.c:938

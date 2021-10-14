@@ -1,0 +1,2 @@
+COPY vistest FROM stdin CSV FREEZE;
+ERROR:  42P01: relation "vistest" does not exist

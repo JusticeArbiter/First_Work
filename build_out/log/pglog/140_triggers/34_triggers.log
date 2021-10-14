@@ -1,0 +1,2 @@
+LOG:  00000: statement: delete from pkeys where pkey1 = 40 and pkey2 = '4';
+LOCATION:  exec_simple_query, postgres.c:938

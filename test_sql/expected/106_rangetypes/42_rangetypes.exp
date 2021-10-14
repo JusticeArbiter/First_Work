@@ -1,0 +1,11 @@
+SELECT nr, lower_inc(nr), lower_inf(nr), upper_inc(nr), upper_inf(nr) FROM numrange_test;
+    nr     | lower_inc | lower_inf | upper_inc | upper_inf 
+-----------+-----------+-----------+-----------+-----------
+ (,)       | f         | t         | f         | t
+ [3,)      | t         | f         | f         | t
+ (,5)      | f         | t         | f         | f
+ [1.1,2.2) | t         | f         | f         | f
+ empty     | f         | f         | f         | f
+ [1.7,1.7] | t         | f         | t         | f
+(6 rows)
+

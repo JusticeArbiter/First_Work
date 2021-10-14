@@ -1,0 +1,4 @@
+explain (costs off)  select f1, (select min(unique1) from tenk1 where unique1 > f1) AS gt  from int4_tbl;
+ERROR:  42P01: relation "int4_tbl" does not exist
+LINE 1: ...nique1) from tenk1 where unique1 > f1) AS gt  from int4_tbl;
+                                                              ^

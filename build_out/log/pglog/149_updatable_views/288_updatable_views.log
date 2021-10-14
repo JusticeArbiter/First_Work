@@ -1,0 +1,2 @@
+LOG:  00000: statement: DELETE FROM rw_view3 WHERE s = sin(0.1);
+LOCATION:  exec_simple_query, postgres.c:938

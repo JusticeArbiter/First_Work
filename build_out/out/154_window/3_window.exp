@@ -1,0 +1,4 @@
+SELECT depname, empno, salary, sum(salary) OVER (PARTITION BY depname) FROM empsalary ORDER BY depname, salary;
+ERROR:  42P01: relation "empsalary" does not exist
+LINE 1: ...ary, sum(salary) OVER (PARTITION BY depname) FROM empsalary ...
+                                                             ^

@@ -1,0 +1,11 @@
+LOG:  00000: statement: create function func_with_bad_set() returns int as $$ select 1 $$ language sql  set default_text_search_config = no_such_config;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function func_with_bad_set() returns int as $$ select 1 $$ language sql  set default_text_search_config = no_such_config;
+NOTICE:  42704: text search configuration "no_such_config" does not exist
+LOCATION:  check_TSCurrentConfig, ts_cache.c:613
+STATEMENT:  create function func_with_bad_set() returns int as $$ select 1 $$ language sql  set default_text_search_config = no_such_config;
+ERROR:  22023: invalid value for parameter "default_text_search_config": "no_such_config"
+LOCATION:  call_string_check_hook, guc.c:9602
+STATEMENT:  create function func_with_bad_set() returns int as $$ select 1 $$ language sql  set default_text_search_config = no_such_config;

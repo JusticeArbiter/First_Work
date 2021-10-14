@@ -1,0 +1,1 @@
+ALTER FOREIGN DATA WRAPPER foo OWNER TO unprivileged_role;

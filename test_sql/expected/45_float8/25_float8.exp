@@ -1,0 +1,4 @@
+SELECT 'NaN x'::float8;
+ERROR:  22P02: invalid input syntax for type double precision: "NaN x"
+LINE 1: SELECT 'NaN x'::float8;
+               ^

@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT jsonb_build_object(VARIADIC '{a,b,c}'::text[]);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: argument list must have even number of elements
+HINT:  The arguments of jsonb_build_object() must consist of alternating keys and values.
+LOCATION:  jsonb_build_object, jsonb.c:1191
+STATEMENT:  SELECT jsonb_build_object(VARIADIC '{a,b,c}'::text[]);

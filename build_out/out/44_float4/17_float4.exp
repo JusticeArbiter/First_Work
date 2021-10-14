@@ -1,0 +1,4 @@
+INSERT INTO FLOAT4_TBL(f1) VALUES (' - 3.0');
+ERROR:  22P02: invalid input syntax for type real: " - 3.0"
+LINE 1: INSERT INTO FLOAT4_TBL(f1) VALUES (' - 3.0');
+                                           ^

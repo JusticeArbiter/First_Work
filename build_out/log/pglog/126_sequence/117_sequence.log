@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT currval('seq3');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  55000: currval of sequence "seq3" is not yet defined in this session
+LOCATION:  currval_oid, sequence.c:793
+STATEMENT:  SELECT currval('seq3');

@@ -1,0 +1,6 @@
+SELECT * FROM hat_data WHERE hat_name = 'h8';
+  hat_name  | hat_color  
+------------+------------
+ h8         | black     
+(1 row)
+

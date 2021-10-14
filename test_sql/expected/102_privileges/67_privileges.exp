@@ -1,0 +1,7 @@
+SELECT * FROM atest1;
+ a |  b  
+---+-----
+ 1 | two
+ 1 | two
+(2 rows)
+

@@ -1,0 +1,6 @@
+select count(*) from test_range_gist where ir @> int4range(10,20);
+ count 
+-------
+   111
+(1 row)
+

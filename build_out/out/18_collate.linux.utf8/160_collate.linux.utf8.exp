@@ -1,0 +1,2 @@
+CREATE COLLATION test4 FROM nonsense;
+ERROR:  42704: collation "nonsense" for encoding "UTF8" does not exist

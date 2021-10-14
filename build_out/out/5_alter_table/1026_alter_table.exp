@@ -1,0 +1,6 @@
+select non_strict(NULL);
+    non_strict     
+-------------------
+ got passed a null
+(1 row)
+

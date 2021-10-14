@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter table atacc1 add column test2 int default 0 primary key;
+LOCATION:  exec_simple_query, postgres.c:938

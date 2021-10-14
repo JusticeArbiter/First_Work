@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT make_timestamptz(2014, 10, 26, 1, 0, 0, 'MSK');
+LOCATION:  exec_simple_query, postgres.c:938

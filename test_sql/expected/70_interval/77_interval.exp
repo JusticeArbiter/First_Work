@@ -1,0 +1,6 @@
+SELECT interval '2' month;
+ interval 
+----------
+ 2 mons
+(1 row)
+

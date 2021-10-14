@@ -1,0 +1,6 @@
+select has_table_privilege(-999999,'pg_authid','update');
+ has_table_privilege 
+---------------------
+ f
+(1 row)
+

@@ -1,0 +1,4 @@
+delete from parent where aid = 1;
+ERROR:  42P01: relation "parent" does not exist
+LINE 1: delete from parent where aid = 1;
+                    ^

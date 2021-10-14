@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into insertconflicttest values (1, 'Apple') on conflict (keyy) do update set fruit = excluded.fruit;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "keyy" does not exist at character 64
+HINT:  Perhaps you meant to reference the column "insertconflicttest.key".
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  insert into insertconflicttest values (1, 'Apple') on conflict (keyy) do update set fruit = excluded.fruit;

@@ -1,0 +1,6 @@
+SELECT row_security_active('current_check');
+ row_security_active 
+---------------------
+ f
+(1 row)
+

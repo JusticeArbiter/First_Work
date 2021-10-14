@@ -1,0 +1,2 @@
+create table tt6 (c int, d int);
+ERROR:  42P07: relation "tt6" already exists

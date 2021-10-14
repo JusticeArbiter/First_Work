@@ -1,0 +1,2 @@
+LOG:  00000: statement: select pg_column_size('{}'::jsonb || '{}'::jsonb) = pg_column_size('{}'::jsonb);
+LOCATION:  exec_simple_query, postgres.c:938

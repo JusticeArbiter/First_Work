@@ -1,0 +1,2 @@
+insert into c1 values(123456789, 'hi', 42);
+INSERT 0 1

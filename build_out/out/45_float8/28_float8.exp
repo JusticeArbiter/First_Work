@@ -1,0 +1,6 @@
+SELECT 'Infinity'::float8 / 'Infinity'::float8;
+ ?column? 
+----------
+      NaN
+(1 row)
+

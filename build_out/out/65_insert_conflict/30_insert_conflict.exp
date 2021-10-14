@@ -1,0 +1,24 @@
+explain (costs off, format json) insert into insertconflicttest values (0, 'Bilberry') on conflict (key) do update set fruit = excluded.fruit where insertconflicttest.fruit != 'Lime' returning *;
+                               QUERY PLAN                               
+------------------------------------------------------------------------
+ [                                                                     +
+   {                                                                   +
+     "Plan": {                                                         +
+       "Node Type": "ModifyTable",                                     +
+       "Operation": "Insert",                                          +
+       "Relation Name": "insertconflicttest",                          +
+       "Alias": "insertconflicttest",                                  +
+       "Conflict Resolution": "UPDATE",                                +
+       "Conflict Arbiter Indexes": ["key_index"],                      +
+       "Conflict Filter": "(insertconflicttest.fruit <> 'Lime'::text)",+
+       "Plans": [                                                      +
+         {                                                             +
+           "Node Type": "Result",                                      +
+           "Parent Relationship": "Member"                             +
+         }                                                             +
+       ]                                                               +
+     }                                                                 +
+   }                                                                   +
+ ]
+(1 row)
+

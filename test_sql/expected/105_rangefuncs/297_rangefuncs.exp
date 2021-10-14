@@ -1,0 +1,7 @@
+select array_to_set(array['one', 'two']);
+ array_to_set 
+--------------
+ (1,one)
+ (2,two)
+(2 rows)
+

@@ -1,0 +1,58 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE INT2_TBL(f1 int2);
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('0   ');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('  1234 ');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('    -1234');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('34.5');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('32767');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('-32767');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('100000');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('asdf');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('    ');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('- 1234');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('4 444');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('123 dt');
+ statement: INSERT INTO INT2_TBL(f1) VALUES ('');
+ statement: SELECT '' AS five, * FROM INT2_TBL;
+ statement: SELECT '' AS four, i.* FROM INT2_TBL i WHERE i.f1 <> int2 '0';
+ statement: SELECT '' AS four, i.* FROM INT2_TBL i WHERE i.f1 <> int4 '0';
+ statement: SELECT '' AS one, i.* FROM INT2_TBL i WHERE i.f1 = int2 '0';
+ statement: SELECT '' AS one, i.* FROM INT2_TBL i WHERE i.f1 = int4 '0';
+ statement: SELECT '' AS two, i.* FROM INT2_TBL i WHERE i.f1 < int2 '0';
+ statement: SELECT '' AS two, i.* FROM INT2_TBL i WHERE i.f1 < int4 '0';
+ statement: SELECT '' AS three, i.* FROM INT2_TBL i WHERE i.f1 <= int2 '0';
+ statement: SELECT '' AS three, i.* FROM INT2_TBL i WHERE i.f1 <= int4 '0';
+ statement: SELECT '' AS two, i.* FROM INT2_TBL i WHERE i.f1 > int2 '0';
+ statement: SELECT '' AS two, i.* FROM INT2_TBL i WHERE i.f1 > int4 '0';
+ statement: SELECT '' AS three, i.* FROM INT2_TBL i WHERE i.f1 >= int2 '0';
+ statement: SELECT '' AS three, i.* FROM INT2_TBL i WHERE i.f1 >= int4 '0';
+ statement: SELECT '' AS one, i.* FROM INT2_TBL i WHERE (i.f1 % int2 '2') = int2 '1';
+ statement: SELECT '' AS three, i.* FROM INT2_TBL i WHERE (i.f1 % int4 '2') = int2 '0';
+ statement: SELECT '' AS five, i.f1, i.f1 * int2 '2' AS x FROM INT2_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 * int2 '2' AS x FROM INT2_TBL i              +
+ WHERE abs(f1) < 16384;
+ statement: SELECT '' AS five, i.f1, i.f1 * int4 '2' AS x FROM INT2_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 + int2 '2' AS x FROM INT2_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 + int2 '2' AS x FROM INT2_TBL i              +
+ WHERE f1 < 32766;
+ statement: SELECT '' AS five, i.f1, i.f1 + int4 '2' AS x FROM INT2_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 - int2 '2' AS x FROM INT2_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 - int2 '2' AS x FROM INT2_TBL i              +
+ WHERE f1 > -32767;
+ statement: SELECT '' AS five, i.f1, i.f1 - int4 '2' AS x FROM INT2_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 / int2 '2' AS x FROM INT2_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 / int4 '2' AS x FROM INT2_TBL i;
+ statement: SELECT (-1::int2<<15)::text;
+ statement: SELECT ((-1::int2<<15)+1::int2)::text;
+ statement: SELECT (-32768)::int2 * (-1)::int2;
+ statement: SELECT (-32768)::int2 / (-1)::int2;
+ statement: SELECT (-32768)::int2 % (-1)::int2;
+ statement: SELECT x, x::int2 AS int2_value                                            +
+ FROM (VALUES (-2.5::float8),                                                          +
+              (-1.5::float8),                                                          +
+              (-0.5::float8),                                                          +
+              (0.0::float8),                                                           +
+              (0.5::float8),                                                           +
+              (1.5::float8),                                                           +
+              (2.5::float8)) t(x);
+

@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('schema', '{one,two}', '{}');
+ERROR:  42601: schema name cannot be qualified

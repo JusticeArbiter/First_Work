@@ -1,0 +1,1 @@
+INSERT INTO wi SELECT i+164 FROM wi;

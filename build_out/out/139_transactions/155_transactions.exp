@@ -1,0 +1,8 @@
+SELECT a FROM savepoints WHERE a in (9, 10, 11);
+ a  
+----
+  9
+ 10
+ 11
+(3 rows)
+

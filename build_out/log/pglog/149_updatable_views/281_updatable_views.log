@@ -1,0 +1,6 @@
+LOG:  00000: statement: UPDATE rw_view2 SET t = t WHERE base_a = 1.1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: cannot update column "t" of view "rw_view2"
+DETAIL:  View columns that are not columns of their base relation are not updatable.
+LOCATION:  rewriteTargetView, rewriteHandler.c:2759
+STATEMENT:  UPDATE rw_view2 SET t = t WHERE base_a = 1.1;

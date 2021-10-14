@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT guid_field FROM guid1 ORDER BY guid_field ASC;
+LOCATION:  exec_simple_query, postgres.c:938

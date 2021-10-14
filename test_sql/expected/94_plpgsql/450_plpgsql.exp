@@ -1,0 +1,2 @@
+insert into conttesttbl(v) values(30);
+INSERT 0 1

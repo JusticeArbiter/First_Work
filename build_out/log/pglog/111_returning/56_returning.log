@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE RULE joinview_u AS ON UPDATE TO joinview DO INSTEAD  UPDATE foo SET f1 = new.f1, f3 = new.f3  FROM joinme WHERE f2 = f2j AND f2 = old.f2  RETURNING foo.*, other;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE RULE joinview_u AS ON UPDATE TO joinview DO INSTEAD  UPDATE foo SET f1 = new.f1, f3 = new.f3  FROM joinme WHERE f2 = f2j AND f2 = old.f2  RETURNING foo.*, other;
+ERROR:  42P01: relation "joinview" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE RULE joinview_u AS ON UPDATE TO joinview DO INSTEAD  UPDATE foo SET f1 = new.f1, f3 = new.f3  FROM joinme WHERE f2 = f2j AND f2 = old.f2  RETURNING foo.*, other;

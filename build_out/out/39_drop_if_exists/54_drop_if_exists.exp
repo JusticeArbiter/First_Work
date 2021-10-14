@@ -1,0 +1,3 @@
+DROP TEXT SEARCH DICTIONARY IF EXISTS test_tsdict_exists;
+NOTICE:  00000: text search dictionary "test_tsdict_exists" does not exist, skipping
+DROP TEXT SEARCH DICTIONARY

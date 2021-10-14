@@ -1,0 +1,2 @@
+LOG:  00000: statement: DELETE FROM PKTABLE where ptest1=2 and ptest2=3 and ptest3=4;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP FUNCTION base_fn_in(cstring);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: cannot drop function base_fn_in(cstring) because other objects depend on it
+DETAIL:  type base_type depends on function base_fn_in(cstring)
+	function base_fn_out(base_type) depends on type base_type
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+LOCATION:  reportDependentObjects, dependency.c:985
+STATEMENT:  DROP FUNCTION base_fn_in(cstring);

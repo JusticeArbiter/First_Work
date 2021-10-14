@@ -1,0 +1,2 @@
+LOG:  00000: statement: VACUUM ANALYZE num_exp_ln;
+LOCATION:  exec_simple_query, postgres.c:938

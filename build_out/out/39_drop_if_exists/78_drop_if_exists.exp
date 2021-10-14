@@ -1,0 +1,3 @@
+DROP LANGUAGE IF EXISTS test_language_exists;
+NOTICE:  00000: language "test_language_exists" does not exist, skipping
+DROP LANGUAGE

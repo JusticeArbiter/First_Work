@@ -1,0 +1,6 @@
+select subxact_rollback_semantics();
+ERROR:  42P01: relation "foo" does not exist
+LINE 1: insert into foo values(x)
+                    ^
+QUERY:  insert into foo values(x)
+CONTEXT:  PL/pgSQL function subxact_rollback_semantics() line 1 at SQL statement

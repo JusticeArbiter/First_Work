@@ -1,0 +1,6 @@
+SELECT var_pop(1.0), var_samp(2.0);
+ var_pop | var_samp 
+---------+----------
+       0 |         
+(1 row)
+

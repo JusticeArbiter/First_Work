@@ -1,0 +1,3 @@
+CREATE VIEW vx1 AS SELECT a FROM tx1 WHERE EXISTS(SELECT 1 FROM tx2 JOIN tx3 ON b=c);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+CREATE VIEW

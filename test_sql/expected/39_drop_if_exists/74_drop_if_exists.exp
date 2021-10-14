@@ -1,0 +1,3 @@
+DROP OPERATOR IF EXISTS @#@ (int, int);
+NOTICE:  00000: operator @#@ does not exist, skipping
+DROP OPERATOR

@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER FUNCTION alt_func3(int) SET SCHEMA alt_nsp2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: function alt_func3(integer) does not exist
+LOCATION:  LookupFuncName, parse_func.c:1922
+STATEMENT:  ALTER FUNCTION alt_func3(int) SET SCHEMA alt_nsp2;

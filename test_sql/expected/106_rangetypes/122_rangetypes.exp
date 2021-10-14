@@ -1,0 +1,6 @@
+select int4range(1, 2, '()');
+ int4range 
+-----------
+ empty
+(1 row)
+

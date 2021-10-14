@@ -1,0 +1,2 @@
+DROP TABLE PKTABLE;
+ERROR:  42P01: table "pktable" does not exist

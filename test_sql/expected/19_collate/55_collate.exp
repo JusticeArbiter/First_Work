@@ -1,0 +1,13 @@
+SELECT a, nullif(b, 'abc') FROM collate_test1 ORDER BY 2;
+ a | nullif 
+---+--------
+ 2 | Abc
+ 4 | ABC
+ 2 | äbc
+ 4 | ABD
+ 3 | bbc
+ 3 | bbc
+ 1 | 
+ 1 | 
+(8 rows)
+

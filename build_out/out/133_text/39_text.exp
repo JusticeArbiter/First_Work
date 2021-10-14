@@ -1,0 +1,6 @@
+select format('INSERT INTO %I VALUES(%L,%L)', 'mytab', 10, NULL);
+               format                
+-------------------------------------
+ INSERT INTO mytab VALUES('10',NULL)
+(1 row)
+

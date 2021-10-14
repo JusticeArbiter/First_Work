@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT count(*) FROM test_tsvector WHERE a @@ 'no_such_lexeme';
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+insert into ddtest2 values('{(-1)}');
+INSERT 0 1

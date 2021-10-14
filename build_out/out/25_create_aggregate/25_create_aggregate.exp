@@ -1,0 +1,7 @@
+SELECT n.nspname as "Schema",  p.proname AS "Name",  pg_catalog.format_type(p.prorettype, NULL) AS "Result data type",  CASE WHEN p.pronargs = 0  THEN CAST('*' AS pg_catalog.text)  ELSE pg_catalog.pg_get_function_arguments(p.oid)  END AS "Argument data types",  pg_catalog.obj_description(p.oid, 'pg_proc') as "Description"  FROM pg_catalog.pg_proc p  LEFT JOIN pg_catalog.pg_namespace n ON n.oid = p.pronamespace  WHERE p.proisagg  AND p.proname ~ '^(test_.*)$'  AND pg_catalog.pg_function_is_visible(p.oid)  ORDER BY 1, 2, 4;
+ Schema |         Name         | Result data type |          Argument data types           | Description 
+--------+----------------------+------------------+----------------------------------------+-------------
+ public | test_percentile_disc | anyelement       | double precision ORDER BY anyelement   | 
+ public | test_rank            | bigint           | VARIADIC "any" ORDER BY VARIADIC "any" | 
+(2 rows)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, provariadic  FROM pg_catalog.pg_proc fk  WHERE provariadic != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.provariadic);
+LOCATION:  exec_simple_query, postgres.c:938

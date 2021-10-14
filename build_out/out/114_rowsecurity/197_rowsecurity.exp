@@ -1,0 +1,7 @@
+EXPLAIN (COSTS OFF) SELECT * FROM s1 WHERE f_leak(b);
+     QUERY PLAN      
+---------------------
+ Seq Scan on s1
+   Filter: f_leak(b)
+(2 rows)
+

@@ -1,0 +1,22 @@
+DELETE FROM x1 WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => abc_updt_updt
+NOTICE:  00000: f_leak => bcd_updt_updt
+NOTICE:  00000: f_leak => cde_updt_updt
+NOTICE:  00000: f_leak => def_updt_updt
+NOTICE:  00000: f_leak => efg_updt_updt
+NOTICE:  00000: f_leak => fgh_updt_updt
+NOTICE:  00000: f_leak => fgh_updt_updt
+NOTICE:  00000: f_leak => fgh_updt_updt
+ a |       b       |         c         
+---+---------------+-------------------
+ 1 | abc_updt_updt | rls_regress_user1
+ 2 | bcd_updt_updt | rls_regress_user1
+ 3 | cde_updt_updt | rls_regress_user2
+ 4 | def_updt_updt | rls_regress_user2
+ 5 | efg_updt_updt | rls_regress_user1
+ 6 | fgh_updt_updt | rls_regress_user1
+ 7 | fgh_updt_updt | rls_regress_user2
+ 8 | fgh_updt_updt | rls_regress_user2
+(8 rows)
+
+DELETE 8

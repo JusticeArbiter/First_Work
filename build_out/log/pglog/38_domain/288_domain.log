@@ -1,0 +1,5 @@
+LOG:  00000: statement: select array[2,1]::orderedpair;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: value for domain orderedpair violates check constraint "orderedpair_check"
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4060
+STATEMENT:  select array[2,1]::orderedpair;

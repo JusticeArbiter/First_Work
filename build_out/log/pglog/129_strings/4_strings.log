@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT U&'d!0061t\+000061' UESCAPE '!' AS U&"d*0061t\+000061" UESCAPE '*';
+LOCATION:  exec_simple_query, postgres.c:938

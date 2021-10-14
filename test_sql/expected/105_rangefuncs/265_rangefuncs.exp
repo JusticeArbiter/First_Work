@@ -1,0 +1,6 @@
+SELECT * FROM foo() GROUP BY 1;
+   a   
+-------
+ hello
+(1 row)
+

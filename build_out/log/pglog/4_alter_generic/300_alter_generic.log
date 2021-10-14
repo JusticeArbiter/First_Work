@@ -1,0 +1,13 @@
+LOG:  00000: statement: DROP USER regtest_alter_user3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: role "regtest_alter_user3" cannot be dropped because some objects depend on it
+DETAIL:  owner of text search configuration alt_ts_conf2
+	owner of text search dictionary alt_ts_dict2
+	owner of operator class alt_opc2 for access method hash
+	owner of operator family alt_opf2 for access method hash
+	owner of operator @-@(integer,integer)
+	owner of conversion alt_conv2
+	owner of function alt_agg2(integer)
+	owner of function alt_func2(integer)
+LOCATION:  DropRole, user.c:1027
+STATEMENT:  DROP USER regtest_alter_user3;

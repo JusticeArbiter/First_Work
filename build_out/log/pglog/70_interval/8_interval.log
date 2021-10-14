@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT INTERVAL '1.5 weeks' AS "Ten days twelve hours";
+LOCATION:  exec_simple_query, postgres.c:938

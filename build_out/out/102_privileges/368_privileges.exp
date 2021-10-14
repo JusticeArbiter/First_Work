@@ -1,0 +1,15 @@
+DROP DOMAIN testdomain1;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP DOMAIN
+ERROR:  2BP01: cannot drop type testdomain1 because other objects depend on it
+DETAIL:  function testagg1a(testdomain1) depends on type testdomain1
+type testdomain2a depends on type testdomain1
+function testfunc5a(testdomain1) depends on type testdomain1
+function testfunc6a(integer) depends on type testdomain1
+table test5a column b depends on type testdomain1
+table test9a column c depends on type testdomain1
+table test9a column b depends on type testdomain1
+composite type test7a column b depends on type testdomain1
+composite type test8a column c depends on type testdomain1
+composite type test8a column b depends on type testdomain1
+table test11a column a depends on type testdomain1
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.

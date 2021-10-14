@@ -1,0 +1,1 @@
+ALTER TYPE test_type DROP ATTRIBUTE c;

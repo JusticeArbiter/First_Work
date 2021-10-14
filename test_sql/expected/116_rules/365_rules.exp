@@ -1,0 +1,7 @@
+select * from vview;
+ pid |   txt   | descrip 
+-----+---------+---------
+   1 | parent1 | test1
+   2 | parent2 | 
+(2 rows)
+

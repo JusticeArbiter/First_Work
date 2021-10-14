@@ -1,0 +1,2 @@
+insert into domcontest values (42);
+ERROR:  23514: value for domain con violates check constraint "t"

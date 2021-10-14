@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT relname, relkind, relpersistence FROM pg_class WHERE relname ~ '^unlogged\d' ORDER BY relname;
+LOCATION:  exec_simple_query, postgres.c:938

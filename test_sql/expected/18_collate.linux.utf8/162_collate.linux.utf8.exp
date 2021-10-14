@@ -1,0 +1,8 @@
+SELECT collname FROM pg_collation WHERE collname LIKE 'test%' ORDER BY 1;
+ collname 
+----------
+ test0
+ test1
+ test5
+(3 rows)
+

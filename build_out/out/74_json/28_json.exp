@@ -1,0 +1,6 @@
+SELECT '{"abc",1}'::json;
+ERROR:  22P02: invalid input syntax for type json
+LINE 1: SELECT '{"abc",1}'::json;
+               ^
+DETAIL:  Expected ":", but found ",".
+CONTEXT:  JSON data, line 1: {"abc",...

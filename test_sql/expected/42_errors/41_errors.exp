@@ -1,0 +1,2 @@
+select 1::float4/0;
+ERROR:  22012: division by zero

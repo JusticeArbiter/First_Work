@@ -1,0 +1,2 @@
+alter table dropColumnExists drop column non_existing;
+ERROR:  42703: column "non_existing" of relation "dropcolumnexists" does not exist

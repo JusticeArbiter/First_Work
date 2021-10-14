@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from (values(1)) x(lb),  lateral generate_series(lb,4) x4;
+LOCATION:  exec_simple_query, postgres.c:938

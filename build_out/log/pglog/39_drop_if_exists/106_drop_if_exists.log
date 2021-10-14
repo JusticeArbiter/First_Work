@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP OPERATOR FAMILY IF EXISTS test_operator_family USING btree;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: operator family "test_operator_family" does not exist for access method "btree", skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:448
+STATEMENT:  DROP OPERATOR FAMILY IF EXISTS test_operator_family USING btree;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO DATE_TBL VALUES ('1996-02-28');
+LOCATION:  exec_simple_query, postgres.c:938

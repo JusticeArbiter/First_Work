@@ -1,0 +1,7 @@
+SELECT xmlserialize(content data as character varying(20)) FROM xmltest;
+    xmlserialize    
+--------------------
+ <value>one</value>
+ <value>two</value>
+(2 rows)
+

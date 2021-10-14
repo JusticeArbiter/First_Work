@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO t2c VALUES ('vw'), ('cd'), ('mn'), ('ef');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "t2c" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  INSERT INTO t2c VALUES ('vw'), ('cd'), ('mn'), ('ef');

@@ -1,0 +1,2 @@
+INSERT INTO TINTERVAL_TBL (f1)  VALUES ('["-infinity" "infinity"]');
+INSERT 0 1

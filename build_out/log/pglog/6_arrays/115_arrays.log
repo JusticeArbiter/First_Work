@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ARRAY[[['hello','world']]] || ARRAY[[['happy','birthday']]] AS "ARRAY";
+LOCATION:  exec_simple_query, postgres.c:938

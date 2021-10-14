@@ -1,0 +1,2 @@
+LOG:  00000: statement: COMMENT ON INDEX comment_test_child_fk IS 'Index backing the FOREIGN KEY of comment_test_child';
+LOCATION:  exec_simple_query, postgres.c:938

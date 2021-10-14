@@ -1,0 +1,2 @@
+DECLARE _psql_cursor NO SCROLL CURSOR FOR  select 3 as x, 4 as y 
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

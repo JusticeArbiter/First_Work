@@ -1,0 +1,2 @@
+delete from rtest_t7;
+DELETE 1

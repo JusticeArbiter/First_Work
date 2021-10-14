@@ -1,0 +1,10 @@
+EXPLAIN (costs off)  CREATE MATERIALIZED VIEW tvm AS SELECT * FROM tv ORDER BY type;
+        QUERY PLAN         
+---------------------------
+ Sort
+   Sort Key: t.type
+   ->  HashAggregate
+         Group Key: t.type
+         ->  Seq Scan on t
+(5 rows)
+

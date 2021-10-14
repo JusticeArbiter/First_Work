@@ -1,0 +1,6 @@
+SELECT array_positions(ARRAY[1,2,3,4,5,6,1,2,3,4,5,6], 4);
+ array_positions 
+-----------------
+ {4,10}
+(1 row)
+

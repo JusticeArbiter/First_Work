@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict3 OWNER TO regtest_alter_user2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: text search dictionary "alt_ts_dict3" does not exist
+LOCATION:  get_ts_dict_oid, namespace.c:2281
+STATEMENT:  ALTER TEXT SEARCH DICTIONARY alt_ts_dict3 OWNER TO regtest_alter_user2;

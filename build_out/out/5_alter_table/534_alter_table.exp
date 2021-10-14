@@ -1,0 +1,4 @@
+select a,b,c,d from atacc1;
+ERROR:  42703: column "a" does not exist
+LINE 1: select a,b,c,d from atacc1;
+               ^

@@ -1,0 +1,5 @@
+LOG:  00000: statement: comment on column atacc1.a is 'testing';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" of relation "atacc1" does not exist
+LOCATION:  get_object_address_attribute, objectaddress.c:1339
+STATEMENT:  comment on column atacc1.a is 'testing';

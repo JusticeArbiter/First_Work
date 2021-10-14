@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TEMP VIEW fdv1 AS  SELECT id, keywords, title, body, created  FROM articles  GROUP BY body;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TEMP VIEW fdv1 AS  SELECT id, keywords, title, body, created  FROM articles  GROUP BY body;
+ERROR:  42P01: relation "articles" does not exist at character 75
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE TEMP VIEW fdv1 AS  SELECT id, keywords, title, body, created  FROM articles  GROUP BY body;

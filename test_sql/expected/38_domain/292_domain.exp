@@ -1,0 +1,4 @@
+update op set f1[2] = 3;
+ERROR:  42P01: relation "op" does not exist
+LINE 1: update op set f1[2] = 3;
+               ^

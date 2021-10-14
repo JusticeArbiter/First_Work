@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT table_name, view_definition FROM information_schema.views  WHERE table_name LIKE 'xmlview%' ORDER BY 1;
+LOCATION:  exec_simple_query, postgres.c:938

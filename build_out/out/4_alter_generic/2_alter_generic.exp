@@ -1,0 +1,3 @@
+DROP ROLE IF EXISTS regtest_alter_user1;
+NOTICE:  00000: role "regtest_alter_user1" does not exist, skipping
+DROP ROLE

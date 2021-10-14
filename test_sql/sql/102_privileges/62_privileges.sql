@@ -1,0 +1,1 @@
+GRANT ALL ON atest1 TO PUBLIC;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: PREPARE TRANSACTION 'foo5';
+LOCATION:  exec_simple_query, postgres.c:938
+WARNING:  25P01: there is no transaction in progress
+LOCATION:  EndTransactionBlock, xact.c:3573
+STATEMENT:  PREPARE TRANSACTION 'foo5';

@@ -1,0 +1,5 @@
+LOG:  00000: statement: create rule foorule as on insert to foo where f1 < 100  do instead insert into foo2 values (new.f1);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create rule foorule as on insert to foo where f1 < 100  do instead insert into foo2 values (new.f1);

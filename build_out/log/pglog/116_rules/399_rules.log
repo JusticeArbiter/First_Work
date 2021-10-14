@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into rule_and_refint_t3 values (1, 11, 13, 'row5');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: insert or update on table "rule_and_refint_t3" violates foreign key constraint "rule_and_refint_t3_id3a_fkey1"
+DETAIL:  Key (id3a, id3c)=(1, 13) is not present in table "rule_and_refint_t2".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3324
+STATEMENT:  insert into rule_and_refint_t3 values (1, 11, 13, 'row5');

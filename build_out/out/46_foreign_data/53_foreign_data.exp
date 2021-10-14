@@ -1,0 +1,3 @@
+ALTER FOREIGN DATA WRAPPER foo OWNER TO regress_test_role_super;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN DATA WRAPPER
+ALTER FOREIGN DATA WRAPPER

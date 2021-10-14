@@ -1,0 +1,8 @@
+EXPLAIN (costs off)  UPDATE rw_view1 v SET bb='Updated row 2' WHERE rw_view1_aa(v)=2  RETURNING rw_view1_aa(v), v.bb;
+                    QUERY PLAN                    
+--------------------------------------------------
+ Update on base_tbl
+   ->  Index Scan using base_tbl_pkey on base_tbl
+         Index Cond: (a = 2)
+(3 rows)
+

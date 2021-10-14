@@ -1,0 +1,2 @@
+LOG:  00000: statement: REINDEX INDEX unlogged1_pkey;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+TRUNCATE TABLE y;
+ERROR:  42P01: relation "y" does not exist

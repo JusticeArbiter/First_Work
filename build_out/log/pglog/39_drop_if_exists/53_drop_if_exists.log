@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP TEXT SEARCH DICTIONARY test_tsdict_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: text search dictionary "test_tsdict_exists" does not exist
+LOCATION:  get_ts_dict_oid, namespace.c:2281
+STATEMENT:  DROP TEXT SEARCH DICTIONARY test_tsdict_exists;

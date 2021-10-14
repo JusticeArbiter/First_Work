@@ -1,0 +1,6 @@
+select null::int >= all ('{}');
+ ?column? 
+----------
+ t
+(1 row)
+

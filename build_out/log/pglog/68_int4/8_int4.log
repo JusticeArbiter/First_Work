@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO INT4_TBL(f1) VALUES ('1000000000000');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: value "1000000000000" is out of range for type integer at character 34
+LOCATION:  pg_atoi, numutils.c:75
+STATEMENT:  INSERT INTO INT4_TBL(f1) VALUES ('1000000000000');

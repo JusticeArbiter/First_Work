@@ -1,0 +1,6 @@
+select isfinite('infinity'::date), isfinite('-infinity'::date), isfinite('today'::date);
+ isfinite | isfinite | isfinite 
+----------+----------+----------
+ f        | f        | t
+(1 row)
+

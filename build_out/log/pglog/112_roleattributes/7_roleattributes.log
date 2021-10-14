@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER ROLE test_superuser WITH SUPERUSER;
+LOCATION:  exec_simple_query, postgres.c:938

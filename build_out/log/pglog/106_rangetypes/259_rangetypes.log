@@ -1,0 +1,2 @@
+LOG:  00000: statement: select '[4,50)'::mydomainrange @> 7::mydomain;
+LOCATION:  exec_simple_query, postgres.c:938

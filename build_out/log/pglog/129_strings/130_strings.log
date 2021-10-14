@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 'ma%a' LIKE 'm%a%%a' ESCAPE '%' AS "true";
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+create function end_label3() returns void as $$  <<outer_label>>  begin  <<inner_label>>  for _i in 1 .. 10 loop  exit;  end loop outer_label;  end;  $$ language plpgsql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42601: end label "outer_label" differs from block's label "inner_label"
+LINE 1: ..._label>>  for _i in 1 .. 10 loop  exit;  end loop outer_labe...
+                                                             ^

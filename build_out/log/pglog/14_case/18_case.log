@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT CASE WHEN 1=0 THEN 1/0 WHEN 1=1 THEN 1 ELSE 2/0 END;
+LOCATION:  exec_simple_query, postgres.c:938

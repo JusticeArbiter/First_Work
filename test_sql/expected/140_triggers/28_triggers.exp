@@ -1,0 +1,2 @@
+insert into fkeys values (30, '3', 3);
+INSERT 0 1

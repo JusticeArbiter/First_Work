@@ -1,0 +1,3 @@
+CREATE OR REPLACE FUNCTION y_trigger() RETURNS trigger AS $$  begin  raise notice 'y_trigger';  return null;  end;  $$ LANGUAGE plpgsql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

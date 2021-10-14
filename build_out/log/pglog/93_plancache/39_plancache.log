@@ -1,0 +1,5 @@
+LOG:  00000: statement: prepare p1 as select f1 from abc;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "abc" does not exist at character 30
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  prepare p1 as select f1 from abc;

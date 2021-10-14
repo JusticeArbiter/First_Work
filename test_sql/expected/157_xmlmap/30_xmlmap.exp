@@ -1,0 +1,2 @@
+SELECT cursor_to_xmlschema('xc'::refcursor, true, false, '');
+ERROR:  34000: cursor "xc" does not exist

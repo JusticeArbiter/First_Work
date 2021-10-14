@@ -1,0 +1,1 @@
+REVOKE USAGE ON FOREIGN DATA WRAPPER foo FROM unprivileged_role;

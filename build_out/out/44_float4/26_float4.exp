@@ -1,0 +1,4 @@
+SELECT ' INFINITY x'::float4;
+ERROR:  22P02: invalid input syntax for type real: " INFINITY x"
+LINE 1: SELECT ' INFINITY x'::float4;
+               ^

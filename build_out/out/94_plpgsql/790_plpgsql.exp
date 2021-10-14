@@ -1,0 +1,10 @@
+select foreach_test(ARRAY[1,2,3,4]);
+NOTICE:  00000: 1
+NOTICE:  00000: 2
+NOTICE:  00000: 3
+NOTICE:  00000: 4
+ foreach_test 
+--------------
+ 
+(1 row)
+

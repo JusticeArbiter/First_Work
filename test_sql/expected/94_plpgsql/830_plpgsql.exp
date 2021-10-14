@@ -1,0 +1,12 @@
+explain (verbose, costs off)  select i, a from  (select returns_rw_array(1) as a offset 0) ss,  lateral consumes_rw_array(a) i;
+                           QUERY PLAN                            
+-----------------------------------------------------------------
+ Nested Loop
+   Output: i.i, (returns_rw_array(1))
+   ->  Result
+         Output: returns_rw_array(1)
+   ->  Function Scan on public.consumes_rw_array i
+         Output: i.i
+         Function Call: consumes_rw_array((returns_rw_array(1)))
+(7 rows)
+

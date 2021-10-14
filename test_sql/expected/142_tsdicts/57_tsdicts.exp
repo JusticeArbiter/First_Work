@@ -1,0 +1,6 @@
+SELECT to_tsvector('thesaurus_tst', 'one postgres one two one two three one');
+           to_tsvector            
+----------------------------------
+ '1':1,5 '12':3 '123':4 'pgsql':2
+(1 row)
+

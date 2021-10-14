@@ -1,0 +1,4 @@
+SELECT rank() OVER (ORDER BY 1), count(*) FROM empsalary GROUP BY 1;
+ERROR:  42P01: relation "empsalary" does not exist
+LINE 1: SELECT rank() OVER (ORDER BY 1), count(*) FROM empsalary GRO...
+                                                       ^

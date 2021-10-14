@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE UNIQUE INDEX CONCURRENTLY concur_index2 ON concur_heap(f1);
+LOCATION:  exec_simple_query, postgres.c:938

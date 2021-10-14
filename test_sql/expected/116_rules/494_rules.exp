@@ -1,0 +1,3 @@
+ALTER RULE InsertRule ON rule_v1 RENAME TO NewInsertRule;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER RULE
+ERROR:  42704: rule "insertrule" for relation "rule_v1" does not exist

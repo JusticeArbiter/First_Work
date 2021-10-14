@@ -1,0 +1,4 @@
+SELECT DISTINCT string4 FROM tmp ORDER BY 1;
+ERROR:  42P01: relation "tmp" does not exist
+LINE 1: SELECT DISTINCT string4 FROM tmp ORDER BY 1;
+                                     ^

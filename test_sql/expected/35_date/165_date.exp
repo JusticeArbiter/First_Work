@@ -1,0 +1,6 @@
+SELECT date 'tomorrow' - date 'yesterday' AS "Two days";
+ Two days 
+----------
+        2
+(1 row)
+

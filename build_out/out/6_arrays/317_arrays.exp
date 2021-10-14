@@ -1,0 +1,6 @@
+select array_replace(array['AB',NULL,'CDE'],NULL,'12');
+ array_replace 
+---------------
+ {AB,12,CDE}
+(1 row)
+

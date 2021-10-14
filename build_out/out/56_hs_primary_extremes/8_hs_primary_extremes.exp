@@ -1,0 +1,6 @@
+SELECT hs_subxids(257);
+ hs_subxids 
+------------
+ 
+(1 row)
+

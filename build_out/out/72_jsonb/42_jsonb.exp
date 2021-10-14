@@ -1,0 +1,6 @@
+SELECT 'true false'::jsonb;
+ERROR:  22P02: invalid input syntax for type json
+LINE 1: SELECT 'true false'::jsonb;
+               ^
+DETAIL:  Expected end of input, but found "false".
+CONTEXT:  JSON data, line 1: true false

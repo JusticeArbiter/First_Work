@@ -1,0 +1,6 @@
+SELECT enum_range('orange'::rainbow, NULL);
+            enum_range             
+-----------------------------------
+ {orange,yellow,green,blue,purple}
+(1 row)
+

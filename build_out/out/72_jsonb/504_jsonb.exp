@@ -1,0 +1,6 @@
+select jsonb_strip_nulls('"a string"');
+ jsonb_strip_nulls 
+-------------------
+ "a string"
+(1 row)
+

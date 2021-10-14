@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX onek2_u1_prtl ON onek2 USING btree(unique1 int4_ops)  where unique1 < 20 or unique1 > 980;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "onek2" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX onek2_u1_prtl ON onek2 USING btree(unique1 int4_ops)  where unique1 < 20 or unique1 > 980;

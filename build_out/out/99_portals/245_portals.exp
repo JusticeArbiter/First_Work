@@ -1,0 +1,4 @@
+DECLARE c CURSOR FOR SELECT f1,count(*) FROM uctest GROUP BY f1;
+ERROR:  42P01: relation "uctest" does not exist
+LINE 1: DECLARE c CURSOR FOR SELECT f1,count(*) FROM uctest GROUP BY...
+                                                     ^

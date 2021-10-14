@@ -1,0 +1,6 @@
+select 'foo' like any (array['%a', '%b']);
+ ?column? 
+----------
+ f
+(1 row)
+

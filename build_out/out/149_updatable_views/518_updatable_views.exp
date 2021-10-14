@@ -1,0 +1,3 @@
+DROP TABLE t1, t11, t12, t111 CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+DROP TABLE

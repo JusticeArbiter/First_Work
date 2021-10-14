@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP TRIGGER IF EXISTS test_trigger_exists ON no_such_table;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: relation "no_such_table" does not exist, skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:446
+STATEMENT:  DROP TRIGGER IF EXISTS test_trigger_exists ON no_such_table;

@@ -1,0 +1,3 @@
+CREATE FUNCTION int42_in(cstring)  RETURNS int42  AS 'int4in'  LANGUAGE internal STRICT IMMUTABLE;
+NOTICE:  42809: return type int42 is only a shell
+CREATE FUNCTION

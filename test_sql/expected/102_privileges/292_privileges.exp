@@ -1,0 +1,5 @@
+SELECT col1 FROM atest2 WHERE col2 = true;
+ col1 
+------
+(0 rows)
+

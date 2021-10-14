@@ -1,0 +1,41 @@
+LOG:  00000: statement: insert into depth_a values (1);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: depth_a_tr: depth = 1
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into depth_a values (1);
+NOTICE:  00000: depth_b_tr: depth = 2
+CONTEXT:  SQL statement "insert into depth_b values (new.id)"
+	PL/pgSQL function depth_a_tf() line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into depth_a values (1);
+NOTICE:  00000: depth_c_tr: depth = 3
+CONTEXT:  SQL statement "insert into depth_c values (1)"
+	PL/pgSQL function depth_b_tf() line 1 at EXECUTE
+	SQL statement "insert into depth_b values (new.id)"
+	PL/pgSQL function depth_a_tf() line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into depth_a values (1);
+NOTICE:  00000: SQLSTATE = U9999: depth = 2
+CONTEXT:  SQL statement "insert into depth_b values (new.id)"
+	PL/pgSQL function depth_a_tf() line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into depth_a values (1);
+NOTICE:  00000: depth_b_tr: depth = 2
+CONTEXT:  SQL statement "insert into depth_b values (new.id)"
+	PL/pgSQL function depth_a_tf() line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into depth_a values (1);
+NOTICE:  00000: depth_c_tr: depth = 3
+CONTEXT:  SQL statement "insert into depth_c values (1)"
+	PL/pgSQL function depth_b_tf() line 1 at EXECUTE
+	SQL statement "insert into depth_b values (new.id)"
+	PL/pgSQL function depth_a_tf() line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into depth_a values (1);
+ERROR:  U9999: U9999
+CONTEXT:  SQL statement "insert into depth_c values (1)"
+	PL/pgSQL function depth_b_tf() line 1 at EXECUTE
+	SQL statement "insert into depth_b values (new.id)"
+	PL/pgSQL function depth_a_tf() line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into depth_a values (1);

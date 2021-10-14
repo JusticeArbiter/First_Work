@@ -1,0 +1,6 @@
+SELECT lpad('hi', 5, 'xy');
+ lpad  
+-------
+ xyxhi
+(1 row)
+

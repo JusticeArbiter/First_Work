@@ -1,0 +1,6 @@
+SELECT xml_is_well_formed('<invalidentity>&</abc>');
+ xml_is_well_formed 
+--------------------
+ f
+(1 row)
+

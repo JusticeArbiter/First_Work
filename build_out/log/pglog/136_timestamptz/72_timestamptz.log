@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '205000-01-10 17:32:01 Europe/Helsinki'::timestamptz;
+LOCATION:  exec_simple_query, postgres.c:938

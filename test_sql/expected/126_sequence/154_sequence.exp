@@ -1,0 +1,6 @@
+SELECT nextval('seq3');
+ nextval 
+---------
+       9
+(1 row)
+

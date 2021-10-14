@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE VIEW v1 WITH (security_barrier = true) AS  SELECT * FROM t1 WHERE (a > 0)  WITH CHECK OPTION;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE VIEW v1 WITH (security_barrier = true) AS  SELECT * FROM t1 WHERE (a > 0)  WITH CHECK OPTION;
+ERROR:  42P07: relation "v1" already exists
+LOCATION:  heap_create_with_catalog, heap.c:1066
+STATEMENT:  CREATE VIEW v1 WITH (security_barrier = true) AS  SELECT * FROM t1 WHERE (a > 0)  WITH CHECK OPTION;

@@ -1,0 +1,2 @@
+copy test(a) to stdout;
+ERROR:  42703: column "a" of relation "test" does not exist

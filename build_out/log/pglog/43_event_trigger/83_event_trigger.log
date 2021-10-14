@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE SCHEMA evttrig  CREATE TABLE one (col_a SERIAL PRIMARY KEY, col_b text DEFAULT 'forty two')  CREATE INDEX one_idx ON one (col_b)  CREATE TABLE two (col_c INTEGER CHECK (col_c > 0) REFERENCES one DEFAULT 42);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SCHEMA
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE SCHEMA evttrig  CREATE TABLE one (col_a SERIAL PRIMARY KEY, col_b text DEFAULT 'forty two')  CREATE INDEX one_idx ON one (col_b)  CREATE TABLE two (col_c INTEGER CHECK (col_c > 0) REFERENCES one DEFAULT 42);

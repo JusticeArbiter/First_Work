@@ -1,0 +1,5 @@
+LOG:  00000: statement: create view tt15v as select row(i)::nestedcomposite from int8_tbl i;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "int8_tbl" does not exist at character 58
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  create view tt15v as select row(i)::nestedcomposite from int8_tbl i;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: select alter2.plus1(41);
+LOCATION:  exec_simple_query, postgres.c:938

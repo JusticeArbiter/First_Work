@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT SUBSTRING(NULL FROM '(b|c)' FOR '#') IS NULL AS "True";
+LOCATION:  exec_simple_query, postgres.c:938

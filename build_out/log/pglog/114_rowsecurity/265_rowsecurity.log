@@ -1,0 +1,5 @@
+LOG:  00000: statement: DELETE FROM bv1 WHERE a = 6 AND f_leak(b);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: f_leak => 1679091c5a880faf6fb5e6087eb1b2dc
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DELETE FROM bv1 WHERE a = 6 AND f_leak(b);

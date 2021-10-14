@@ -1,0 +1,7 @@
+SELECT * FROM pxtest1;
+ foobar 
+--------
+ bbb
+ ddd
+(2 rows)
+

@@ -1,0 +1,9 @@
+SELECT '' AS four, i.* FROM INT2_TBL i WHERE i.f1 <> int4 '0';
+ four |   f1   
+------+--------
+      |   1234
+      |  -1234
+      |  32767
+      | -32767
+(4 rows)
+

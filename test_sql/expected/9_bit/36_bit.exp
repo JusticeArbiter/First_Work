@@ -1,0 +1,2 @@
+select B'0010' # B'011101';
+ERROR:  22026: cannot XOR bit strings of different sizes

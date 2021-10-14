@@ -1,0 +1,6 @@
+SELECT '1 millisecond'::interval, '1 microsecond'::interval,  '500 seconds 99 milliseconds 51 microseconds'::interval;
+   interval   |    interval     |    interval     
+--------------+-----------------+-----------------
+ 00:00:00.001 | 00:00:00.000001 | 00:08:20.099051
+(1 row)
+

@@ -1,0 +1,5 @@
+SELECT * FROM persons;
+ id | name 
+----+------
+(0 rows)
+

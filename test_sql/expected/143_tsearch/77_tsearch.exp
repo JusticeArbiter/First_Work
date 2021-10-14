@@ -1,0 +1,6 @@
+SELECT to_tsquery('english', 'qwe & sKies ');
+  to_tsquery   
+---------------
+ 'qwe' & 'sky'
+(1 row)
+

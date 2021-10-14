@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ntile(3) OVER (ORDER BY ten, four), ten, four FROM tenk1 WHERE unique2 < 10;
+LOCATION:  exec_simple_query, postgres.c:938

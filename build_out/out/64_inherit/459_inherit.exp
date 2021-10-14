@@ -1,0 +1,9 @@
+explain (costs off)  SELECT min(x) FROM  (SELECT unique1 AS x FROM tenk1 a  UNION ALL  SELECT unique2 AS x FROM tenk1 b) s;
+           QUERY PLAN            
+---------------------------------
+ Aggregate
+   ->  Append
+         ->  Seq Scan on tenk1 a
+         ->  Seq Scan on tenk1 b
+(4 rows)
+

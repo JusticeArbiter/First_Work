@@ -1,0 +1,6 @@
+select * from domarrtest where testchar4arr is null;
+ testint4arr  | testchar4arr 
+--------------+--------------
+ {12,NULL,21} | 
+(1 row)
+

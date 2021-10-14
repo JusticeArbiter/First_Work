@@ -1,0 +1,8 @@
+LOG:  00000: statement: UPDATE toasttest SET cnt = cnt +1 RETURNING substring(toasttest::text, 1, 200);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: function make_tuple_indirect(toasttest) does not exist at character 8
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+QUERY:  SELECT make_tuple_indirect(NEW)
+CONTEXT:  PL/pgSQL function update_using_indirect() line 1 at assignment
+LOCATION:  ParseFuncOrColumn, parse_func.c:523
+STATEMENT:  UPDATE toasttest SET cnt = cnt +1 RETURNING substring(toasttest::text, 1, 200);

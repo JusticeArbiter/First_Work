@@ -1,0 +1,1 @@
+ALTER TABLE pt1 ADD COLUMN c8 integer;

@@ -1,0 +1,6 @@
+select 'x' ~ 'abcd(\m)+xyz';
+ ?column? 
+----------
+ f
+(1 row)
+

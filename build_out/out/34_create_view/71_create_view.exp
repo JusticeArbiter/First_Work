@@ -1,0 +1,6 @@
+SELECT count(*) FROM pg_class where relname = 'pubview'  AND relnamespace IN (SELECT OID FROM pg_namespace WHERE nspname = 'testviewschm2');
+ count 
+-------
+     0
+(1 row)
+

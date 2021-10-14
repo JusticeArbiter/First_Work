@@ -1,0 +1,2 @@
+create aggregate newcnt1 (sfunc = int4inc,  stype = int4,  initcond = '0');
+ERROR:  42P13: aggregate input type must be specified

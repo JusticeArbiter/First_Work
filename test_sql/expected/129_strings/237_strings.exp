@@ -1,0 +1,6 @@
+SELECT ltrim('zzzytrim', 'xyz');
+ ltrim 
+-------
+ trim
+(1 row)
+

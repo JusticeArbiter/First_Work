@@ -1,0 +1,2 @@
+select arrayrange(ARRAY[2,1], ARRAY[1,2]);
+ERROR:  22000: range lower bound must be less than or equal to range upper bound

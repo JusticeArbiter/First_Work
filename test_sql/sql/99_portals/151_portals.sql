@@ -1,0 +1,1 @@
+FETCH 2 FROM c1;

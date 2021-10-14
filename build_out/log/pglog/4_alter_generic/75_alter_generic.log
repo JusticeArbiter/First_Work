@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER SERVER alt_fserv1 RENAME TO alt_fserv2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: server "alt_fserv2" already exists
+LOCATION:  report_name_conflict, alter.c:98
+STATEMENT:  ALTER SERVER alt_fserv1 RENAME TO alt_fserv2;

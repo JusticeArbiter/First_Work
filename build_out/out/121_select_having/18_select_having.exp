@@ -1,0 +1,4 @@
+SELECT a FROM test_having HAVING min(a) < max(a);
+ERROR:  42803: column "test_having.a" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: SELECT a FROM test_having HAVING min(a) < max(a);
+               ^

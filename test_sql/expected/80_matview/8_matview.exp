@@ -1,0 +1,3 @@
+SELECT * FROM tm;
+ERROR:  55000: materialized view "tm" has not been populated
+HINT:  Use the REFRESH MATERIALIZED VIEW command.

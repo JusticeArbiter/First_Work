@@ -1,0 +1,13 @@
+SELECT * FROM information_schema.user_mapping_options ORDER BY 1, 2, 3, 4;
+ authorization_identifier | foreign_server_catalog | foreign_server_name | option_name  | option_value 
+--------------------------+------------------------+---------------------+--------------+--------------
+ highgo                   | highgo                 | s5                  | modified     | 1
+ highgo                   | highgo                 | s6                  | username     | test
+ highgo                   | highgo                 | s8                  | password     | public
+ highgo                   | highgo                 | t1                  | password     | boo
+ highgo                   | highgo                 | t1                  | username     | bob
+ PUBLIC                   | highgo                 | s4                  | modified     | 1
+ PUBLIC                   | highgo                 | s4                  | this mapping | is public
+ PUBLIC                   | highgo                 | t1                  | modified     | 1
+(8 rows)
+

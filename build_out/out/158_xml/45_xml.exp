@@ -1,0 +1,6 @@
+SELECT xmlparse(content '<relativens xmlns=''relative''/>');
+            xmlparse            
+--------------------------------
+ <relativens xmlns='relative'/>
+(1 row)
+

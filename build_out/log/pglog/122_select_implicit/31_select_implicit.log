@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT count(c) FROM test_missing_target  GROUP BY lower(test_missing_target.c)  ORDER BY lower(test_missing_target.c);
+LOCATION:  exec_simple_query, postgres.c:938

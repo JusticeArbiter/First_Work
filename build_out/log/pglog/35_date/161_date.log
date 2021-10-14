@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT date 'today' - date 'tomorrow' AS "One day";
+LOCATION:  exec_simple_query, postgres.c:938

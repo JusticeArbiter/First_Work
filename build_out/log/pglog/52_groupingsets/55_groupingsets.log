@@ -1,0 +1,5 @@
+LOG:  00000: statement: explain (costs off)  select a,count(*) from gstest2 group by rollup(a) having a is distinct from 1 order by a;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "gstest2" does not exist at character 45
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  explain (costs off)  select a,count(*) from gstest2 group by rollup(a) having a is distinct from 1 order by a;

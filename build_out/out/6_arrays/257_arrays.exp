@@ -1,0 +1,6 @@
+select string_to_array('', '|');
+ string_to_array 
+-----------------
+ {}
+(1 row)
+

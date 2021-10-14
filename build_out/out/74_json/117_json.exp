@@ -1,0 +1,6 @@
+select '"foo"'::json -> 1;
+ ?column? 
+----------
+ 
+(1 row)
+

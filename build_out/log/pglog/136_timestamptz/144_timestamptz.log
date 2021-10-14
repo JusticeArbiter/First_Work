@@ -1,0 +1,2 @@
+LOG:  00000: statement: SET timezone = '00:30';
+LOCATION:  exec_simple_query, postgres.c:938

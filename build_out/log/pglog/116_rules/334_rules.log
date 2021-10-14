@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM shoelace_obsolete ORDER BY sl_len_cm;
+LOCATION:  exec_simple_query, postgres.c:938

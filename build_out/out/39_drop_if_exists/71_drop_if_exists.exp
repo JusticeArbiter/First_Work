@@ -1,0 +1,2 @@
+DROP AGGREGATE test_aggregate_exists(int);
+ERROR:  42883: aggregate test_aggregate_exists(integer) does not exist

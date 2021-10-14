@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE SCHEMA test_schema_1  CREATE UNIQUE INDEX abc_a_idx ON abc (a)  CREATE VIEW abc_view AS  SELECT a+1 AS a, b+1 AS b FROM abc  CREATE TABLE abc (  a serial,  b int UNIQUE  );
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SCHEMA
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE SCHEMA test_schema_1  CREATE UNIQUE INDEX abc_a_idx ON abc (a)  CREATE VIEW abc_view AS  SELECT a+1 AS a, b+1 AS b FROM abc  CREATE TABLE abc (  a serial,  b int UNIQUE  );

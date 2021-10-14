@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT unique1, unique2 FROM onek_with_null WHERE unique2 >= 0  ORDER BY unique2 LIMIT 2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "onek_with_null" does not exist at character 30
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT unique1, unique2 FROM onek_with_null WHERE unique2 >= 0  ORDER BY unique2 LIMIT 2;

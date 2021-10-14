@@ -1,0 +1,2 @@
+alter table tt7 drop column xx;
+ERROR:  42703: column "xx" of relation "tt7" does not exist

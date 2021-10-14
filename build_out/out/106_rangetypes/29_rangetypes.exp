@@ -1,0 +1,6 @@
+select '[a,a]'::textrange;
+ textrange 
+-----------
+ [a,a]
+(1 row)
+

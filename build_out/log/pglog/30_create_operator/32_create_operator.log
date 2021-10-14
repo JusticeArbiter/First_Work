@@ -1,0 +1,2 @@
+LOG:  00000: statement: REVOKE USAGE ON TYPE type_op3 FROM regress_rol_op3;
+LOCATION:  exec_simple_query, postgres.c:938

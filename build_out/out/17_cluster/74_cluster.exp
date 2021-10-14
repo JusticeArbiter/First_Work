@@ -1,0 +1,2 @@
+CLUSTER clstr_2;
+ERROR:  42704: there is no previously clustered index for table "clstr_2"

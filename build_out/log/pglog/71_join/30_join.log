@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS "xxx", i, k, t  FROM J1_TBL CROSS JOIN J2_TBL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42702: column reference "i" is ambiguous at character 21
+LOCATION:  scanRTEForColumn, parse_relation.c:670
+STATEMENT:  SELECT '' AS "xxx", i, k, t  FROM J1_TBL CROSS JOIN J2_TBL;

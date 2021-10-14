@@ -1,0 +1,6 @@
+LOG:  00000: statement: create or replace view agg_view1 as  select aggfns(distinct a,b,c)  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),  generate_series(1,3) i;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: function aggfns(integer, integer, text) does not exist at character 45
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+LOCATION:  ParseFuncOrColumn, parse_func.c:523
+STATEMENT:  create or replace view agg_view1 as  select aggfns(distinct a,b,c)  from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),  generate_series(1,3) i;

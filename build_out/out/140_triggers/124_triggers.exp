@@ -1,0 +1,5 @@
+CREATE TRIGGER error_ins_when BEFORE INSERT OR UPDATE ON main_table  FOR EACH ROW WHEN (OLD.a <> NEW.a)  EXECUTE PROCEDURE trigger_func('error_ins_old');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+ERROR:  42P17: INSERT trigger's WHEN condition cannot reference OLD values
+LINE 1: ...NSERT OR UPDATE ON main_table  FOR EACH ROW WHEN (OLD.a <> N...
+                                                             ^

@@ -1,0 +1,9 @@
+explain (costs off)  select p, c from gist_tbl  where p <@ box(point(5,5), point(6, 6));
+                   QUERY PLAN                    
+-------------------------------------------------
+ Bitmap Heap Scan on gist_tbl
+   Recheck Cond: (p <@ '(6,6),(5,5)'::box)
+   ->  Bitmap Index Scan on gist_tbl_multi_index
+         Index Cond: (p <@ '(6,6),(5,5)'::box)
+(4 rows)
+

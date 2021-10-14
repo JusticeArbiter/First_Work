@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO ABSTIME_TBL (f1) VALUES ('Jun 10, 1843');
+LOCATION:  exec_simple_query, postgres.c:938

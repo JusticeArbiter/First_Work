@@ -1,0 +1,3 @@
+CREATE TRIGGER city_delete_trig INSTEAD OF DELETE ON city_view  FOR EACH ROW EXECUTE PROCEDURE city_delete();
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+CREATE TRIGGER

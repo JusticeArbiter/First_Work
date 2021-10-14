@@ -1,0 +1,8 @@
+LOG:  00000: statement: create function void_return_expr() returns void as $$  begin  return 5;  end;$$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function void_return_expr() returns void as $$  begin  return 5;  end;$$ language plpgsql;
+ERROR:  42804: RETURN cannot have a parameter in function returning void at character 70
+LOCATION:  make_return_stmt, pl_gram.y:3096
+STATEMENT:  create function void_return_expr() returns void as $$  begin  return 5;  end;$$ language plpgsql;

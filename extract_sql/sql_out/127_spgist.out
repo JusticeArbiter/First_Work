@@ -1,0 +1,14 @@
+create table spgist_point_tbl(id int4, p point);
+create index spgist_point_idx on spgist_point_tbl using spgist(p);
+insert into spgist_point_tbl (id, p)  select g, point(g*10, g*10) from generate_series(1, 10) g;
+delete from spgist_point_tbl where id < 5;
+vacuum spgist_point_tbl;
+insert into spgist_point_tbl (id, p)  select g, point(g*10, g*10) from generate_series(1, 10000) g;
+insert into spgist_point_tbl (id, p)  select g+100000, point(g*10+1, g*10+1) from generate_series(1, 10000) g;
+delete from spgist_point_tbl where id % 2 = 1;
+delete from spgist_point_tbl where id < 10000;
+vacuum spgist_point_tbl;
+create table spgist_text_tbl(id int4, t text);
+create index spgist_text_idx on spgist_text_tbl using spgist(t);
+insert into spgist_text_tbl (id, t)  select g, 'f' || repeat('o', 100) || g from generate_series(1, 10000) g  union all  select g, 'baaaaaaaaaaaaaar' || g from generate_series(1, 1000) g;
+insert into spgist_text_tbl (id, t)  select -g, 'f' || repeat('o', 100-g) || 'surprise' from generate_series(1, 100) g;

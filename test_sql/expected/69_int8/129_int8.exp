@@ -1,0 +1,2 @@
+SELECT (-9223372036854775808)::int8 * (-1)::int4;
+ERROR:  22003: bigint out of range

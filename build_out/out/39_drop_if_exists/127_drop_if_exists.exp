@@ -1,0 +1,3 @@
+DROP OPERATOR IF EXISTS no_such_schema.+ (int, int);
+NOTICE:  00000: schema "no_such_schema" does not exist, skipping
+DROP OPERATOR

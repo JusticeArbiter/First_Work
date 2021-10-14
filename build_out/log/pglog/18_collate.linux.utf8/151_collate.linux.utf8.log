@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX collate_test1_idx6 ON collate_test1 ((a COLLATE "C"));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: collations are not supported by type integer at character 54
+LOCATION:  transformCollateClause, parse_expr.c:2585
+STATEMENT:  CREATE INDEX collate_test1_idx6 ON collate_test1 ((a COLLATE "C"));

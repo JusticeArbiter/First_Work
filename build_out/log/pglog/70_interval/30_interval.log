@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS nine, * FROM INTERVAL_TBL  WHERE INTERVAL_TBL.f1 > interval '@ 3 seconds ago';
+LOCATION:  exec_simple_query, postgres.c:938

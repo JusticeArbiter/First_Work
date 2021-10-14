@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE ONLY constraint_rename_test RENAME CONSTRAINT con1 TO con1foo;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: inherited constraint "con1" must be renamed in child tables too
+LOCATION:  rename_constraint_internal, tablecmds.c:2462
+STATEMENT:  ALTER TABLE ONLY constraint_rename_test RENAME CONSTRAINT con1 TO con1foo;

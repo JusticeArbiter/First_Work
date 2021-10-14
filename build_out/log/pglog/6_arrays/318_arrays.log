@@ -1,0 +1,2 @@
+LOG:  00000: statement: select array(select array[i,i/2] from generate_series(1,5) i);
+LOCATION:  exec_simple_query, postgres.c:938

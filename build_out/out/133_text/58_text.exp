@@ -1,0 +1,6 @@
+select format('Hello', variadic NULL::int[]);
+ format 
+--------
+ Hello
+(1 row)
+

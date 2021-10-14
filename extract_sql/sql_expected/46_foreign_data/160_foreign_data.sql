@@ -1,0 +1,1 @@
+SELECT s.srvname AS "Name",  pg_catalog.pg_get_userbyid(s.srvowner) AS "Owner",  f.fdwname AS "Foreign-data wrapper"  FROM pg_catalog.pg_foreign_server s  JOIN pg_catalog.pg_foreign_data_wrapper f ON f.oid=s.srvfdw  ORDER BY 1;

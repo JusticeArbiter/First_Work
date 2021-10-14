@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP TEXT SEARCH PARSER test_tsparser_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: text search parser "test_tsparser_exists" does not exist
+LOCATION:  get_ts_parser_oid, namespace.c:2155
+STATEMENT:  DROP TEXT SEARCH PARSER test_tsparser_exists;

@@ -1,0 +1,6 @@
+SELECT ts_lexize('english_stem', 'identity');
+ ts_lexize 
+-----------
+ {ident}
+(1 row)
+

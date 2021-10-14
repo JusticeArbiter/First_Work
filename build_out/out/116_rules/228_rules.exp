@@ -1,0 +1,7 @@
+select * from rtest_nothn3;
+  a  | b  
+-----+----
+ 100 | OK
+ 200 | OK
+(2 rows)
+

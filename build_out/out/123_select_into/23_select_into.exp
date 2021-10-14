@@ -1,0 +1,2 @@
+INSERT INTO ctas_base VALUES (1, 2);
+INSERT 0 1

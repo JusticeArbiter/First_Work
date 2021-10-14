@@ -1,0 +1,9 @@
+SELECT * FROM update_test;
+  a  | b  |  c  
+-----+----+-----
+ 100 | 20 | foo
+ 100 | 20 | 
+ 100 | 21 | foo
+ 100 | 21 | 
+(4 rows)
+

@@ -1,0 +1,23 @@
+LOG:  00000: statement: EXPLAIN (COSTS OFF) SELECT * FROM atest12 WHERE a >>> 0;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: leak 5000 0
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  EXPLAIN (COSTS OFF) SELECT * FROM atest12 WHERE a >>> 0;
+NOTICE:  00000: leak 2500 0
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  EXPLAIN (COSTS OFF) SELECT * FROM atest12 WHERE a >>> 0;
+NOTICE:  00000: leak 1200 0
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  EXPLAIN (COSTS OFF) SELECT * FROM atest12 WHERE a >>> 0;
+NOTICE:  00000: leak 600 0
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  EXPLAIN (COSTS OFF) SELECT * FROM atest12 WHERE a >>> 0;
+NOTICE:  00000: leak 300 0
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  EXPLAIN (COSTS OFF) SELECT * FROM atest12 WHERE a >>> 0;
+NOTICE:  00000: leak 100 0
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  EXPLAIN (COSTS OFF) SELECT * FROM atest12 WHERE a >>> 0;
+NOTICE:  00000: leak 1 0
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  EXPLAIN (COSTS OFF) SELECT * FROM atest12 WHERE a >>> 0;

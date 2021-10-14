@@ -1,0 +1,2 @@
+alter domain dcomptypea add constraint c2 check (value[1].r > value[1].i);
+ERROR:  23514: column "d1" of table "dcomptable" contains values that violate the new constraint

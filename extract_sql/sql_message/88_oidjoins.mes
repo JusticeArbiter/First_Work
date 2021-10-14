@@ -1,0 +1,674 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT       ctid, aggfnoid                                                           +
+ FROM    pg_catalog.pg_aggregate fk                                                               +
+ WHERE   aggfnoid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.aggfnoid);
+ statement: SELECT       ctid, aggtransfn                                                         +
+ FROM    pg_catalog.pg_aggregate fk                                                               +
+ WHERE   aggtransfn != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.aggtransfn);
+ statement: SELECT       ctid, aggfinalfn                                                         +
+ FROM    pg_catalog.pg_aggregate fk                                                               +
+ WHERE   aggfinalfn != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.aggfinalfn);
+ statement: SELECT       ctid, aggmtransfn                                                        +
+ FROM    pg_catalog.pg_aggregate fk                                                               +
+ WHERE   aggmtransfn != 0 AND                                                                     +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.aggmtransfn);
+ statement: SELECT       ctid, aggminvtransfn                                                     +
+ FROM    pg_catalog.pg_aggregate fk                                                               +
+ WHERE   aggminvtransfn != 0 AND                                                                  +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.aggminvtransfn);
+ statement: SELECT       ctid, aggmfinalfn                                                        +
+ FROM    pg_catalog.pg_aggregate fk                                                               +
+ WHERE   aggmfinalfn != 0 AND                                                                     +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.aggmfinalfn);
+ statement: SELECT       ctid, aggsortop                                                          +
+ FROM    pg_catalog.pg_aggregate fk                                                               +
+ WHERE   aggsortop != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.aggsortop);
+ statement: SELECT       ctid, aggtranstype                                                       +
+ FROM    pg_catalog.pg_aggregate fk                                                               +
+ WHERE   aggtranstype != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.aggtranstype);
+ statement: SELECT       ctid, aggmtranstype                                                      +
+ FROM    pg_catalog.pg_aggregate fk                                                               +
+ WHERE   aggmtranstype != 0 AND                                                                   +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.aggmtranstype);
+ statement: SELECT       ctid, amkeytype                                                          +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   amkeytype != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.amkeytype);
+ statement: SELECT       ctid, aminsert                                                           +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   aminsert != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.aminsert);
+ statement: SELECT       ctid, ambeginscan                                                        +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   ambeginscan != 0 AND                                                                     +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.ambeginscan);
+ statement: SELECT       ctid, amgettuple                                                         +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   amgettuple != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.amgettuple);
+ statement: SELECT       ctid, amgetbitmap                                                        +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   amgetbitmap != 0 AND                                                                     +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.amgetbitmap);
+ statement: SELECT       ctid, amrescan                                                           +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   amrescan != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.amrescan);
+ statement: SELECT       ctid, amendscan                                                          +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   amendscan != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.amendscan);
+ statement: SELECT       ctid, ammarkpos                                                          +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   ammarkpos != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.ammarkpos);
+ statement: SELECT       ctid, amrestrpos                                                         +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   amrestrpos != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.amrestrpos);
+ statement: SELECT       ctid, ambuild                                                            +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   ambuild != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.ambuild);
+ statement: SELECT       ctid, ambuildempty                                                       +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   ambuildempty != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.ambuildempty);
+ statement: SELECT       ctid, ambulkdelete                                                       +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   ambulkdelete != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.ambulkdelete);
+ statement: SELECT       ctid, amvacuumcleanup                                                    +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   amvacuumcleanup != 0 AND                                                                 +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.amvacuumcleanup);
+ statement: SELECT       ctid, amcanreturn                                                        +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   amcanreturn != 0 AND                                                                     +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.amcanreturn);
+ statement: SELECT       ctid, amcostestimate                                                     +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   amcostestimate != 0 AND                                                                  +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.amcostestimate);
+ statement: SELECT       ctid, amoptions                                                          +
+ FROM    pg_catalog.pg_am fk                                                                      +
+ WHERE   amoptions != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.amoptions);
+ statement: SELECT       ctid, amopfamily                                                         +
+ FROM    pg_catalog.pg_amop fk                                                                    +
+ WHERE   amopfamily != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_opfamily pk WHERE pk.oid = fk.amopfamily);
+ statement: SELECT       ctid, amoplefttype                                                       +
+ FROM    pg_catalog.pg_amop fk                                                                    +
+ WHERE   amoplefttype != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.amoplefttype);
+ statement: SELECT       ctid, amoprighttype                                                      +
+ FROM    pg_catalog.pg_amop fk                                                                    +
+ WHERE   amoprighttype != 0 AND                                                                   +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.amoprighttype);
+ statement: SELECT       ctid, amopopr                                                            +
+ FROM    pg_catalog.pg_amop fk                                                                    +
+ WHERE   amopopr != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.amopopr);
+ statement: SELECT       ctid, amopmethod                                                         +
+ FROM    pg_catalog.pg_amop fk                                                                    +
+ WHERE   amopmethod != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_am pk WHERE pk.oid = fk.amopmethod);
+ statement: SELECT       ctid, amopsortfamily                                                     +
+ FROM    pg_catalog.pg_amop fk                                                                    +
+ WHERE   amopsortfamily != 0 AND                                                                  +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_opfamily pk WHERE pk.oid = fk.amopsortfamily);
+ statement: SELECT       ctid, amprocfamily                                                       +
+ FROM    pg_catalog.pg_amproc fk                                                                  +
+ WHERE   amprocfamily != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_opfamily pk WHERE pk.oid = fk.amprocfamily);
+ statement: SELECT       ctid, amproclefttype                                                     +
+ FROM    pg_catalog.pg_amproc fk                                                                  +
+ WHERE   amproclefttype != 0 AND                                                                  +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.amproclefttype);
+ statement: SELECT       ctid, amprocrighttype                                                    +
+ FROM    pg_catalog.pg_amproc fk                                                                  +
+ WHERE   amprocrighttype != 0 AND                                                                 +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.amprocrighttype);
+ statement: SELECT       ctid, amproc                                                             +
+ FROM    pg_catalog.pg_amproc fk                                                                  +
+ WHERE   amproc != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.amproc);
+ statement: SELECT       ctid, adrelid                                                            +
+ FROM    pg_catalog.pg_attrdef fk                                                                 +
+ WHERE   adrelid != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.adrelid);
+ statement: SELECT       ctid, attrelid                                                           +
+ FROM    pg_catalog.pg_attribute fk                                                               +
+ WHERE   attrelid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.attrelid);
+ statement: SELECT       ctid, atttypid                                                           +
+ FROM    pg_catalog.pg_attribute fk                                                               +
+ WHERE   atttypid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.atttypid);
+ statement: SELECT       ctid, attcollation                                                       +
+ FROM    pg_catalog.pg_attribute fk                                                               +
+ WHERE   attcollation != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_collation pk WHERE pk.oid = fk.attcollation);
+ statement: SELECT       ctid, castsource                                                         +
+ FROM    pg_catalog.pg_cast fk                                                                    +
+ WHERE   castsource != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.castsource);
+ statement: SELECT       ctid, casttarget                                                         +
+ FROM    pg_catalog.pg_cast fk                                                                    +
+ WHERE   casttarget != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.casttarget);
+ statement: SELECT       ctid, castfunc                                                           +
+ FROM    pg_catalog.pg_cast fk                                                                    +
+ WHERE   castfunc != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.castfunc);
+ statement: SELECT       ctid, relnamespace                                                       +
+ FROM    pg_catalog.pg_class fk                                                                   +
+ WHERE   relnamespace != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.relnamespace);
+ statement: SELECT       ctid, reltype                                                            +
+ FROM    pg_catalog.pg_class fk                                                                   +
+ WHERE   reltype != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.reltype);
+ statement: SELECT       ctid, reloftype                                                          +
+ FROM    pg_catalog.pg_class fk                                                                   +
+ WHERE   reloftype != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.reloftype);
+ statement: SELECT       ctid, relowner                                                           +
+ FROM    pg_catalog.pg_class fk                                                                   +
+ WHERE   relowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.relowner);
+ statement: SELECT       ctid, relam                                                              +
+ FROM    pg_catalog.pg_class fk                                                                   +
+ WHERE   relam != 0 AND                                                                           +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_am pk WHERE pk.oid = fk.relam);
+ statement: SELECT       ctid, reltablespace                                                      +
+ FROM    pg_catalog.pg_class fk                                                                   +
+ WHERE   reltablespace != 0 AND                                                                   +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_tablespace pk WHERE pk.oid = fk.reltablespace);
+ statement: SELECT       ctid, reltoastrelid                                                      +
+ FROM    pg_catalog.pg_class fk                                                                   +
+ WHERE   reltoastrelid != 0 AND                                                                   +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.reltoastrelid);
+ statement: SELECT       ctid, collnamespace                                                      +
+ FROM    pg_catalog.pg_collation fk                                                               +
+ WHERE   collnamespace != 0 AND                                                                   +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.collnamespace);
+ statement: SELECT       ctid, collowner                                                          +
+ FROM    pg_catalog.pg_collation fk                                                               +
+ WHERE   collowner != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.collowner);
+ statement: SELECT       ctid, connamespace                                                       +
+ FROM    pg_catalog.pg_constraint fk                                                              +
+ WHERE   connamespace != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.connamespace);
+ statement: SELECT       ctid, conrelid                                                           +
+ FROM    pg_catalog.pg_constraint fk                                                              +
+ WHERE   conrelid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.conrelid);
+ statement: SELECT       ctid, contypid                                                           +
+ FROM    pg_catalog.pg_constraint fk                                                              +
+ WHERE   contypid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.contypid);
+ statement: SELECT       ctid, conindid                                                           +
+ FROM    pg_catalog.pg_constraint fk                                                              +
+ WHERE   conindid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.conindid);
+ statement: SELECT       ctid, confrelid                                                          +
+ FROM    pg_catalog.pg_constraint fk                                                              +
+ WHERE   confrelid != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.confrelid);
+ statement: SELECT       ctid, connamespace                                                       +
+ FROM    pg_catalog.pg_conversion fk                                                              +
+ WHERE   connamespace != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.connamespace);
+ statement: SELECT       ctid, conowner                                                           +
+ FROM    pg_catalog.pg_conversion fk                                                              +
+ WHERE   conowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.conowner);
+ statement: SELECT       ctid, conproc                                                            +
+ FROM    pg_catalog.pg_conversion fk                                                              +
+ WHERE   conproc != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.conproc);
+ statement: SELECT       ctid, datdba                                                             +
+ FROM    pg_catalog.pg_database fk                                                                +
+ WHERE   datdba != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.datdba);
+ statement: SELECT       ctid, dattablespace                                                      +
+ FROM    pg_catalog.pg_database fk                                                                +
+ WHERE   dattablespace != 0 AND                                                                   +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_tablespace pk WHERE pk.oid = fk.dattablespace);
+ statement: SELECT       ctid, setdatabase                                                        +
+ FROM    pg_catalog.pg_db_role_setting fk                                                         +
+ WHERE   setdatabase != 0 AND                                                                     +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_database pk WHERE pk.oid = fk.setdatabase);
+ statement: SELECT       ctid, classid                                                            +
+ FROM    pg_catalog.pg_depend fk                                                                  +
+ WHERE   classid != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.classid);
+ statement: SELECT       ctid, refclassid                                                         +
+ FROM    pg_catalog.pg_depend fk                                                                  +
+ WHERE   refclassid != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.refclassid);
+ statement: SELECT       ctid, classoid                                                           +
+ FROM    pg_catalog.pg_description fk                                                             +
+ WHERE   classoid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.classoid);
+ statement: SELECT       ctid, enumtypid                                                          +
+ FROM    pg_catalog.pg_enum fk                                                                    +
+ WHERE   enumtypid != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.enumtypid);
+ statement: SELECT       ctid, extowner                                                           +
+ FROM    pg_catalog.pg_extension fk                                                               +
+ WHERE   extowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.extowner);
+ statement: SELECT       ctid, extnamespace                                                       +
+ FROM    pg_catalog.pg_extension fk                                                               +
+ WHERE   extnamespace != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.extnamespace);
+ statement: SELECT       ctid, fdwowner                                                           +
+ FROM    pg_catalog.pg_foreign_data_wrapper fk                                                    +
+ WHERE   fdwowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.fdwowner);
+ statement: SELECT       ctid, srvowner                                                           +
+ FROM    pg_catalog.pg_foreign_server fk                                                          +
+ WHERE   srvowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.srvowner);
+ statement: SELECT       ctid, srvfdw                                                             +
+ FROM    pg_catalog.pg_foreign_server fk                                                          +
+ WHERE   srvfdw != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_foreign_data_wrapper pk WHERE pk.oid = fk.srvfdw);
+ statement: SELECT       ctid, indexrelid                                                         +
+ FROM    pg_catalog.pg_index fk                                                                   +
+ WHERE   indexrelid != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.indexrelid);
+ statement: SELECT       ctid, indrelid                                                           +
+ FROM    pg_catalog.pg_index fk                                                                   +
+ WHERE   indrelid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.indrelid);
+ statement: SELECT       ctid, inhrelid                                                           +
+ FROM    pg_catalog.pg_inherits fk                                                                +
+ WHERE   inhrelid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.inhrelid);
+ statement: SELECT       ctid, inhparent                                                          +
+ FROM    pg_catalog.pg_inherits fk                                                                +
+ WHERE   inhparent != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.inhparent);
+ statement: SELECT       ctid, lanowner                                                           +
+ FROM    pg_catalog.pg_language fk                                                                +
+ WHERE   lanowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.lanowner);
+ statement: SELECT       ctid, lanplcallfoid                                                      +
+ FROM    pg_catalog.pg_language fk                                                                +
+ WHERE   lanplcallfoid != 0 AND                                                                   +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.lanplcallfoid);
+ statement: SELECT       ctid, laninline                                                          +
+ FROM    pg_catalog.pg_language fk                                                                +
+ WHERE   laninline != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.laninline);
+ statement: SELECT       ctid, lanvalidator                                                       +
+ FROM    pg_catalog.pg_language fk                                                                +
+ WHERE   lanvalidator != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.lanvalidator);
+ statement: SELECT       ctid, loid                                                               +
+ FROM    pg_catalog.pg_largeobject fk                                                             +
+ WHERE   loid != 0 AND                                                                            +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_largeobject_metadata pk WHERE pk.oid = fk.loid);
+ statement: SELECT       ctid, lomowner                                                           +
+ FROM    pg_catalog.pg_largeobject_metadata fk                                                    +
+ WHERE   lomowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.lomowner);
+ statement: SELECT       ctid, nspowner                                                           +
+ FROM    pg_catalog.pg_namespace fk                                                               +
+ WHERE   nspowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.nspowner);
+ statement: SELECT       ctid, opcmethod                                                          +
+ FROM    pg_catalog.pg_opclass fk                                                                 +
+ WHERE   opcmethod != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_am pk WHERE pk.oid = fk.opcmethod);
+ statement: SELECT       ctid, opcnamespace                                                       +
+ FROM    pg_catalog.pg_opclass fk                                                                 +
+ WHERE   opcnamespace != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.opcnamespace);
+ statement: SELECT       ctid, opcowner                                                           +
+ FROM    pg_catalog.pg_opclass fk                                                                 +
+ WHERE   opcowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.opcowner);
+ statement: SELECT       ctid, opcfamily                                                          +
+ FROM    pg_catalog.pg_opclass fk                                                                 +
+ WHERE   opcfamily != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_opfamily pk WHERE pk.oid = fk.opcfamily);
+ statement: SELECT       ctid, opcintype                                                          +
+ FROM    pg_catalog.pg_opclass fk                                                                 +
+ WHERE   opcintype != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.opcintype);
+ statement: SELECT       ctid, opckeytype                                                         +
+ FROM    pg_catalog.pg_opclass fk                                                                 +
+ WHERE   opckeytype != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.opckeytype);
+ statement: SELECT       ctid, oprnamespace                                                       +
+ FROM    pg_catalog.pg_operator fk                                                                +
+ WHERE   oprnamespace != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.oprnamespace);
+ statement: SELECT       ctid, oprowner                                                           +
+ FROM    pg_catalog.pg_operator fk                                                                +
+ WHERE   oprowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.oprowner);
+ statement: SELECT       ctid, oprleft                                                            +
+ FROM    pg_catalog.pg_operator fk                                                                +
+ WHERE   oprleft != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.oprleft);
+ statement: SELECT       ctid, oprright                                                           +
+ FROM    pg_catalog.pg_operator fk                                                                +
+ WHERE   oprright != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.oprright);
+ statement: SELECT       ctid, oprresult                                                          +
+ FROM    pg_catalog.pg_operator fk                                                                +
+ WHERE   oprresult != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.oprresult);
+ statement: SELECT       ctid, oprcom                                                             +
+ FROM    pg_catalog.pg_operator fk                                                                +
+ WHERE   oprcom != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.oprcom);
+ statement: SELECT       ctid, oprnegate                                                          +
+ FROM    pg_catalog.pg_operator fk                                                                +
+ WHERE   oprnegate != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.oprnegate);
+ statement: SELECT       ctid, oprcode                                                            +
+ FROM    pg_catalog.pg_operator fk                                                                +
+ WHERE   oprcode != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.oprcode);
+ statement: SELECT       ctid, oprrest                                                            +
+ FROM    pg_catalog.pg_operator fk                                                                +
+ WHERE   oprrest != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.oprrest);
+ statement: SELECT       ctid, oprjoin                                                            +
+ FROM    pg_catalog.pg_operator fk                                                                +
+ WHERE   oprjoin != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.oprjoin);
+ statement: SELECT       ctid, opfmethod                                                          +
+ FROM    pg_catalog.pg_opfamily fk                                                                +
+ WHERE   opfmethod != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_am pk WHERE pk.oid = fk.opfmethod);
+ statement: SELECT       ctid, opfnamespace                                                       +
+ FROM    pg_catalog.pg_opfamily fk                                                                +
+ WHERE   opfnamespace != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.opfnamespace);
+ statement: SELECT       ctid, opfowner                                                           +
+ FROM    pg_catalog.pg_opfamily fk                                                                +
+ WHERE   opfowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.opfowner);
+ statement: SELECT       ctid, pronamespace                                                       +
+ FROM    pg_catalog.pg_proc fk                                                                    +
+ WHERE   pronamespace != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.pronamespace);
+ statement: SELECT       ctid, proowner                                                           +
+ FROM    pg_catalog.pg_proc fk                                                                    +
+ WHERE   proowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.proowner);
+ statement: SELECT       ctid, prolang                                                            +
+ FROM    pg_catalog.pg_proc fk                                                                    +
+ WHERE   prolang != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_language pk WHERE pk.oid = fk.prolang);
+ statement: SELECT       ctid, provariadic                                                        +
+ FROM    pg_catalog.pg_proc fk                                                                    +
+ WHERE   provariadic != 0 AND                                                                     +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.provariadic);
+ statement: SELECT       ctid, protransform                                                       +
+ FROM    pg_catalog.pg_proc fk                                                                    +
+ WHERE   protransform != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.protransform);
+ statement: SELECT       ctid, prorettype                                                         +
+ FROM    pg_catalog.pg_proc fk                                                                    +
+ WHERE   prorettype != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.prorettype);
+ statement: SELECT       ctid, rngtypid                                                           +
+ FROM    pg_catalog.pg_range fk                                                                   +
+ WHERE   rngtypid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.rngtypid);
+ statement: SELECT       ctid, rngsubtype                                                         +
+ FROM    pg_catalog.pg_range fk                                                                   +
+ WHERE   rngsubtype != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.rngsubtype);
+ statement: SELECT       ctid, rngcollation                                                       +
+ FROM    pg_catalog.pg_range fk                                                                   +
+ WHERE   rngcollation != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_collation pk WHERE pk.oid = fk.rngcollation);
+ statement: SELECT       ctid, rngsubopc                                                          +
+ FROM    pg_catalog.pg_range fk                                                                   +
+ WHERE   rngsubopc != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_opclass pk WHERE pk.oid = fk.rngsubopc);
+ statement: SELECT       ctid, rngcanonical                                                       +
+ FROM    pg_catalog.pg_range fk                                                                   +
+ WHERE   rngcanonical != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.rngcanonical);
+ statement: SELECT       ctid, rngsubdiff                                                         +
+ FROM    pg_catalog.pg_range fk                                                                   +
+ WHERE   rngsubdiff != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.rngsubdiff);
+ statement: SELECT       ctid, ev_class                                                           +
+ FROM    pg_catalog.pg_rewrite fk                                                                 +
+ WHERE   ev_class != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.ev_class);
+ statement: SELECT       ctid, refclassid                                                         +
+ FROM    pg_catalog.pg_shdepend fk                                                                +
+ WHERE   refclassid != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.refclassid);
+ statement: SELECT       ctid, classoid                                                           +
+ FROM    pg_catalog.pg_shdescription fk                                                           +
+ WHERE   classoid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.classoid);
+ statement: SELECT       ctid, starelid                                                           +
+ FROM    pg_catalog.pg_statistic fk                                                               +
+ WHERE   starelid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.starelid);
+ statement: SELECT       ctid, staop1                                                             +
+ FROM    pg_catalog.pg_statistic fk                                                               +
+ WHERE   staop1 != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.staop1);
+ statement: SELECT       ctid, staop2                                                             +
+ FROM    pg_catalog.pg_statistic fk                                                               +
+ WHERE   staop2 != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.staop2);
+ statement: SELECT       ctid, staop3                                                             +
+ FROM    pg_catalog.pg_statistic fk                                                               +
+ WHERE   staop3 != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.staop3);
+ statement: SELECT       ctid, staop4                                                             +
+ FROM    pg_catalog.pg_statistic fk                                                               +
+ WHERE   staop4 != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.staop4);
+ statement: SELECT       ctid, staop5                                                             +
+ FROM    pg_catalog.pg_statistic fk                                                               +
+ WHERE   staop5 != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.staop5);
+ statement: SELECT       ctid, spcowner                                                           +
+ FROM    pg_catalog.pg_tablespace fk                                                              +
+ WHERE   spcowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.spcowner);
+ statement: SELECT       ctid, trftype                                                            +
+ FROM    pg_catalog.pg_transform fk                                                               +
+ WHERE   trftype != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.trftype);
+ statement: SELECT       ctid, trflang                                                            +
+ FROM    pg_catalog.pg_transform fk                                                               +
+ WHERE   trflang != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_language pk WHERE pk.oid = fk.trflang);
+ statement: SELECT       ctid, trffromsql                                                         +
+ FROM    pg_catalog.pg_transform fk                                                               +
+ WHERE   trffromsql != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.trffromsql);
+ statement: SELECT       ctid, trftosql                                                           +
+ FROM    pg_catalog.pg_transform fk                                                               +
+ WHERE   trftosql != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.trftosql);
+ statement: SELECT       ctid, tgrelid                                                            +
+ FROM    pg_catalog.pg_trigger fk                                                                 +
+ WHERE   tgrelid != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.tgrelid);
+ statement: SELECT       ctid, tgfoid                                                             +
+ FROM    pg_catalog.pg_trigger fk                                                                 +
+ WHERE   tgfoid != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.tgfoid);
+ statement: SELECT       ctid, tgconstrrelid                                                      +
+ FROM    pg_catalog.pg_trigger fk                                                                 +
+ WHERE   tgconstrrelid != 0 AND                                                                   +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.tgconstrrelid);
+ statement: SELECT       ctid, tgconstrindid                                                      +
+ FROM    pg_catalog.pg_trigger fk                                                                 +
+ WHERE   tgconstrindid != 0 AND                                                                   +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.tgconstrindid);
+ statement: SELECT       ctid, tgconstraint                                                       +
+ FROM    pg_catalog.pg_trigger fk                                                                 +
+ WHERE   tgconstraint != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_constraint pk WHERE pk.oid = fk.tgconstraint);
+ statement: SELECT       ctid, cfgnamespace                                                       +
+ FROM    pg_catalog.pg_ts_config fk                                                               +
+ WHERE   cfgnamespace != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.cfgnamespace);
+ statement: SELECT       ctid, cfgowner                                                           +
+ FROM    pg_catalog.pg_ts_config fk                                                               +
+ WHERE   cfgowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.cfgowner);
+ statement: SELECT       ctid, cfgparser                                                          +
+ FROM    pg_catalog.pg_ts_config fk                                                               +
+ WHERE   cfgparser != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_ts_parser pk WHERE pk.oid = fk.cfgparser);
+ statement: SELECT       ctid, mapcfg                                                             +
+ FROM    pg_catalog.pg_ts_config_map fk                                                           +
+ WHERE   mapcfg != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_ts_config pk WHERE pk.oid = fk.mapcfg);
+ statement: SELECT       ctid, mapdict                                                            +
+ FROM    pg_catalog.pg_ts_config_map fk                                                           +
+ WHERE   mapdict != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_ts_dict pk WHERE pk.oid = fk.mapdict);
+ statement: SELECT       ctid, dictnamespace                                                      +
+ FROM    pg_catalog.pg_ts_dict fk                                                                 +
+ WHERE   dictnamespace != 0 AND                                                                   +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.dictnamespace);
+ statement: SELECT       ctid, dictowner                                                          +
+ FROM    pg_catalog.pg_ts_dict fk                                                                 +
+ WHERE   dictowner != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.dictowner);
+ statement: SELECT       ctid, dicttemplate                                                       +
+ FROM    pg_catalog.pg_ts_dict fk                                                                 +
+ WHERE   dicttemplate != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_ts_template pk WHERE pk.oid = fk.dicttemplate);
+ statement: SELECT       ctid, prsnamespace                                                       +
+ FROM    pg_catalog.pg_ts_parser fk                                                               +
+ WHERE   prsnamespace != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.prsnamespace);
+ statement: SELECT       ctid, prsstart                                                           +
+ FROM    pg_catalog.pg_ts_parser fk                                                               +
+ WHERE   prsstart != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.prsstart);
+ statement: SELECT       ctid, prstoken                                                           +
+ FROM    pg_catalog.pg_ts_parser fk                                                               +
+ WHERE   prstoken != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.prstoken);
+ statement: SELECT       ctid, prsend                                                             +
+ FROM    pg_catalog.pg_ts_parser fk                                                               +
+ WHERE   prsend != 0 AND                                                                          +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.prsend);
+ statement: SELECT       ctid, prsheadline                                                        +
+ FROM    pg_catalog.pg_ts_parser fk                                                               +
+ WHERE   prsheadline != 0 AND                                                                     +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.prsheadline);
+ statement: SELECT       ctid, prslextype                                                         +
+ FROM    pg_catalog.pg_ts_parser fk                                                               +
+ WHERE   prslextype != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.prslextype);
+ statement: SELECT       ctid, tmplnamespace                                                      +
+ FROM    pg_catalog.pg_ts_template fk                                                             +
+ WHERE   tmplnamespace != 0 AND                                                                   +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.tmplnamespace);
+ statement: SELECT       ctid, tmplinit                                                           +
+ FROM    pg_catalog.pg_ts_template fk                                                             +
+ WHERE   tmplinit != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.tmplinit);
+ statement: SELECT       ctid, tmpllexize                                                         +
+ FROM    pg_catalog.pg_ts_template fk                                                             +
+ WHERE   tmpllexize != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.tmpllexize);
+ statement: SELECT       ctid, typnamespace                                                       +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typnamespace != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.typnamespace);
+ statement: SELECT       ctid, typowner                                                           +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typowner != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.typowner);
+ statement: SELECT       ctid, typrelid                                                           +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typrelid != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.typrelid);
+ statement: SELECT       ctid, typelem                                                            +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typelem != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.typelem);
+ statement: SELECT       ctid, typarray                                                           +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typarray != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.typarray);
+ statement: SELECT       ctid, typinput                                                           +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typinput != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.typinput);
+ statement: SELECT       ctid, typoutput                                                          +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typoutput != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.typoutput);
+ statement: SELECT       ctid, typreceive                                                         +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typreceive != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.typreceive);
+ statement: SELECT       ctid, typsend                                                            +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typsend != 0 AND                                                                         +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.typsend);
+ statement: SELECT       ctid, typmodin                                                           +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typmodin != 0 AND                                                                        +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.typmodin);
+ statement: SELECT       ctid, typmodout                                                          +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typmodout != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.typmodout);
+ statement: SELECT       ctid, typanalyze                                                         +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typanalyze != 0 AND                                                                      +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.typanalyze);
+ statement: SELECT       ctid, typbasetype                                                        +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typbasetype != 0 AND                                                                     +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.typbasetype);
+ statement: SELECT       ctid, typcollation                                                       +
+ FROM    pg_catalog.pg_type fk                                                                    +
+ WHERE   typcollation != 0 AND                                                                    +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_collation pk WHERE pk.oid = fk.typcollation);
+ statement: SELECT       ctid, conpfeqop                                                          +
+ FROM    (SELECT ctid, unnest(conpfeqop) AS conpfeqop FROM pg_catalog.pg_constraint) fk           +
+ WHERE   conpfeqop != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.conpfeqop);
+ statement: SELECT       ctid, conppeqop                                                          +
+ FROM    (SELECT ctid, unnest(conppeqop) AS conppeqop FROM pg_catalog.pg_constraint) fk           +
+ WHERE   conppeqop != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.conppeqop);
+ statement: SELECT       ctid, conffeqop                                                          +
+ FROM    (SELECT ctid, unnest(conffeqop) AS conffeqop FROM pg_catalog.pg_constraint) fk           +
+ WHERE   conffeqop != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.conffeqop);
+ statement: SELECT       ctid, conexclop                                                          +
+ FROM    (SELECT ctid, unnest(conexclop) AS conexclop FROM pg_catalog.pg_constraint) fk           +
+ WHERE   conexclop != 0 AND                                                                       +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.conexclop);
+ statement: SELECT       ctid, proallargtypes                                                     +
+ FROM    (SELECT ctid, unnest(proallargtypes) AS proallargtypes FROM pg_catalog.pg_proc) fk       +
+ WHERE   proallargtypes != 0 AND                                                                  +
+         NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.proallargtypes);
+

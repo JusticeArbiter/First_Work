@@ -1,0 +1,26 @@
+LOG:  00000: statement: SELECT  pg_advisory_unlock(1), pg_advisory_unlock(1),  pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),  pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),  pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);
+LOCATION:  exec_simple_query, postgres.c:938
+WARNING:  01000: you don't own a lock of type ExclusiveLock
+LOCATION:  LockRelease, lock.c:1778
+STATEMENT:  SELECT  pg_advisory_unlock(1), pg_advisory_unlock(1),  pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),  pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),  pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);
+WARNING:  01000: you don't own a lock of type ExclusiveLock
+LOCATION:  LockRelease, lock.c:1778
+STATEMENT:  SELECT  pg_advisory_unlock(1), pg_advisory_unlock(1),  pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),  pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),  pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);
+WARNING:  01000: you don't own a lock of type ShareLock
+LOCATION:  LockRelease, lock.c:1778
+STATEMENT:  SELECT  pg_advisory_unlock(1), pg_advisory_unlock(1),  pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),  pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),  pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);
+WARNING:  01000: you don't own a lock of type ShareLock
+LOCATION:  LockRelease, lock.c:1778
+STATEMENT:  SELECT  pg_advisory_unlock(1), pg_advisory_unlock(1),  pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),  pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),  pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);
+WARNING:  01000: you don't own a lock of type ExclusiveLock
+LOCATION:  LockRelease, lock.c:1778
+STATEMENT:  SELECT  pg_advisory_unlock(1), pg_advisory_unlock(1),  pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),  pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),  pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);
+WARNING:  01000: you don't own a lock of type ExclusiveLock
+LOCATION:  LockRelease, lock.c:1778
+STATEMENT:  SELECT  pg_advisory_unlock(1), pg_advisory_unlock(1),  pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),  pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),  pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);
+WARNING:  01000: you don't own a lock of type ShareLock
+LOCATION:  LockRelease, lock.c:1778
+STATEMENT:  SELECT  pg_advisory_unlock(1), pg_advisory_unlock(1),  pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),  pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),  pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);
+WARNING:  01000: you don't own a lock of type ShareLock
+LOCATION:  LockRelease, lock.c:1778
+STATEMENT:  SELECT  pg_advisory_unlock(1), pg_advisory_unlock(1),  pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),  pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),  pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);

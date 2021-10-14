@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * from ts_debug('english', 'http://www.harewoodsolutions.co.uk/press.aspx</span>');
+LOCATION:  exec_simple_query, postgres.c:938

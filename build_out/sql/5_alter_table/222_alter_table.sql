@@ -1,0 +1,1 @@
+INSERT INTO tmp7 VALUES (8, 18);

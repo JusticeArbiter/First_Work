@@ -1,0 +1,2 @@
+create domain posint as int4;
+CREATE DOMAIN

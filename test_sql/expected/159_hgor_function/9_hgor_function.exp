@@ -1,0 +1,6 @@
+select add_months('2016-11-16'::date,3);
+ add_months 
+------------
+ 2017-02-16
+(1 row)
+

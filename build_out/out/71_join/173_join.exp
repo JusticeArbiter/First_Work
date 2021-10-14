@@ -1,0 +1,4 @@
+select * from tt5,tt6 where tt5.f1 = tt6.f1 and tt5.f1 = tt5.f2 - tt6.f2;
+ERROR:  42703: column tt5.f1 does not exist
+LINE 1: select * from tt5,tt6 where tt5.f1 = tt6.f1 and tt5.f1 = tt5...
+                                    ^

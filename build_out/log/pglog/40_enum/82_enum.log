@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX enumtest_hash ON enumtest USING hash (col);
+LOCATION:  exec_simple_query, postgres.c:938
+WARNING:  01000: hash indexes are not WAL-logged and their use is discouraged
+LOCATION:  DefineIndex, indexcmds.c:497
+STATEMENT:  CREATE INDEX enumtest_hash ON enumtest USING hash (col);

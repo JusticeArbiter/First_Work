@@ -1,0 +1,4 @@
+select rank(3) within group (order by x) from (values ('fred'),('jim')) v(x);
+ERROR:  42804: WITHIN GROUP types text and integer cannot be matched
+LINE 1: select rank(3) within group (order by x) from (values ('fred...
+                    ^

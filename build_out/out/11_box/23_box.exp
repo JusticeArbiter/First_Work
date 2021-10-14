@@ -1,0 +1,9 @@
+SELECT '' AS four, @@(b1.f1) AS p  FROM BOX_TBL b1;
+ four |    p    
+------+---------
+      | (1,1)
+      | (2,2)
+      | (2.5,3)
+      | (3,3)
+(4 rows)
+

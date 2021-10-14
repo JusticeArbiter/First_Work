@@ -1,0 +1,2 @@
+alter table gc1 drop column name;
+ERROR:  42703: column "name" of relation "gc1" does not exist

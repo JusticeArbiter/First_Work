@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT * FROM collate_test1 WHERE b COLLATE "C" >= 'bbc' COLLATE "POSIX";
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P21: collation mismatch between explicit collations "C" and "POSIX" at character 58
+LOCATION:  merge_collation_state, parse_collate.c:837
+STATEMENT:  SELECT * FROM collate_test1 WHERE b COLLATE "C" >= 'bbc' COLLATE "POSIX";

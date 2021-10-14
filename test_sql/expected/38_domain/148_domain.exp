@@ -1,0 +1,2 @@
+create table domdeftest (col1 ddef1);
+CREATE TABLE

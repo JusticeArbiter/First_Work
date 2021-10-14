@@ -1,0 +1,5 @@
+SELECT * FROM atestv4;
+ one | two | three 
+-----+-----+-------
+(0 rows)
+

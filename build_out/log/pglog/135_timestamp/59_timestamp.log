@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO TIMESTAMP_TBL VALUES ('97FEB10 5:32:01PM UTC');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type timestamp: "97FEB10 5:32:01PM UTC" at character 35
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  INSERT INTO TIMESTAMP_TBL VALUES ('97FEB10 5:32:01PM UTC');

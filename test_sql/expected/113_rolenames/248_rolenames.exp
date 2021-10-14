@@ -1,0 +1,3 @@
+DROP OWNED BY testrol0, "Public", "current_user", testrol1, testrol2, testrolx CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP OWNED
+DROP OWNED

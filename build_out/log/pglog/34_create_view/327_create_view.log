@@ -1,0 +1,5 @@
+LOG:  00000: statement: select row(i.*::int8_tbl)::nestedcomposite from int8_tbl i;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "int8_tbl" does not exist at character 49
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select row(i.*::int8_tbl)::nestedcomposite from int8_tbl i;

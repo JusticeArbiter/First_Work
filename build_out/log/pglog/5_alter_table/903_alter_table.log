@@ -1,0 +1,6 @@
+LOG:  00000: statement: ALTER TABLE test_type_diff2 ALTER COLUMN int_four TYPE int4 USING (pg_column_size(test_type_diff2));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: cannot convert whole-row table reference
+DETAIL:  USING expression contains a whole-row table reference.
+LOCATION:  ATPrepAlterColumnType, tablecmds.c:8073
+STATEMENT:  ALTER TABLE test_type_diff2 ALTER COLUMN int_four TYPE int4 USING (pg_column_size(test_type_diff2));

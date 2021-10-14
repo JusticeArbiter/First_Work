@@ -1,0 +1,2 @@
+INSERT INTO arrtest(a) VALUES('{1,null,3}');
+INSERT 0 1

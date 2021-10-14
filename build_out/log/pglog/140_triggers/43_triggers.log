@@ -1,0 +1,8 @@
+LOG:  00000: statement: create trigger ttserial  before insert or update on tttest  for each row  execute procedure  autoinc (price_on, ttdummy_seq);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create trigger ttserial  before insert or update on tttest  for each row  execute procedure  autoinc (price_on, ttdummy_seq);
+ERROR:  42883: function autoinc() does not exist
+LOCATION:  LookupFuncName, parse_func.c:1922
+STATEMENT:  create trigger ttserial  before insert or update on tttest  for each row  execute procedure  autoinc (price_on, ttdummy_seq);

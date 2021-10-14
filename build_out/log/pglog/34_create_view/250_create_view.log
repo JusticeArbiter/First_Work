@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table tt3 rename c to d;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "c" does not exist
+LOCATION:  renameatt_internal, tablecmds.c:2284
+STATEMENT:  alter table tt3 rename c to d;

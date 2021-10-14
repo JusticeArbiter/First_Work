@@ -1,0 +1,3 @@
+CREATE RULE r2 AS ON UPDATE TO x DO INSTEAD  WITH t AS (SELECT OLD.*) UPDATE y SET a = t.n FROM t;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+ERROR:  42P01: relation "x" does not exist

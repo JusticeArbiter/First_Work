@@ -1,0 +1,3 @@
+ALTER POLICY p1 ON s1 USING (a in (select x from v2));
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER POLICY
+ALTER POLICY

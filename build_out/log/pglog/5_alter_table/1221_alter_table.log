@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE IF EXISTS tt8 RENAME COLUMN f TO f1;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: relation "tt8" does not exist, skipping
+LOCATION:  renameatt, tablecmds.c:2371
+STATEMENT:  ALTER TABLE IF EXISTS tt8 RENAME COLUMN f TO f1;

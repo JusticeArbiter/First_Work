@@ -1,0 +1,3 @@
+alter table atacc2 inherit atacc2;
+ERROR:  42P07: circular inheritance not allowed
+DETAIL:  "atacc2" is already a child of "atacc2".

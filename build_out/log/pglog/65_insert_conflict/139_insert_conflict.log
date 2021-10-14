@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into capitals values ('Las Vegas', 5.83E+5, 2222, 'NV') on conflict (name) do update set population = excluded.population;
+LOCATION:  exec_simple_query, postgres.c:938

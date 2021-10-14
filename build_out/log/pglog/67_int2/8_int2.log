@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO INT2_TBL(f1) VALUES ('100000');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: value "100000" is out of range for type smallint at character 34
+LOCATION:  pg_atoi, numutils.c:81
+STATEMENT:  INSERT INTO INT2_TBL(f1) VALUES ('100000');

@@ -1,0 +1,95 @@
+--KEY
+-- For table REGION
+ALTER TABLE REGION ADD CONSTRAINT REGION_PK PRIMARY KEY (R_REGIONKEY);
+
+-- For table NATION
+ALTER TABLE NATION ADD CONSTRAINT NATION_PK PRIMARY KEY (N_NATIONKEY);
+ALTER TABLE NATION ADD CONSTRAINT NATION_FK1 FOREIGN KEY (N_REGIONKEY) references REGION;
+
+-- For table PART
+ALTER TABLE PART ADD CONSTRAINT PART_PK PRIMARY KEY (P_PARTKEY);
+
+-- For table SUPPLIER
+ALTER TABLE SUPPLIER ADD CONSTRAINT SUPPLIER_PK PRIMARY KEY (S_SUPPKEY);
+ALTER TABLE SUPPLIER ADD CONSTRAINT SUPPLIER_FK1 FOREIGN KEY (S_NATIONKEY) references NATION;
+
+-- For table PARTSUPP
+ALTER TABLE PARTSUPP ADD CONSTRAINT PARTSUPP_PK PRIMARY KEY (PS_PARTKEY,PS_SUPPKEY);
+
+-- For table CUSTOMER
+ALTER TABLE CUSTOMER ADD CONSTRAINT CUSTOMER_PKEY PRIMARY KEY (C_CUSTKEY);
+ALTER TABLE CUSTOMER ADD CONSTRAINT CUSTOMER_FK1 FOREIGN KEY (C_NATIONKEY) references NATION;
+
+-- For table LINEITEM
+ALTER TABLE LINEITEM ADD CONSTRAINT LINEITEM_PK PRIMARY KEY (L_ORDERKEY,L_LINENUMBER);
+
+-- For table ORDERS
+ALTER TABLE ORDERS ADD CONSTRAINT ORDERS_PK PRIMARY KEY (O_ORDERKEY);
+
+-- For table PARTSUPP
+ALTER TABLE PARTSUPP ADD CONSTRAINT PARTSUPP_FK1 FOREIGN KEY (PS_SUPPKEY) references SUPPLIER;
+ALTER TABLE PARTSUPP ADD CONSTRAINT PARTSUPP_FK2 FOREIGN KEY (PS_PARTKEY) references PART;
+
+-- For table ORDERS
+ALTER TABLE ORDERS ADD CONSTRAINT ORDERS_FK1 FOREIGN KEY (O_CUSTKEY) references CUSTOMER;
+
+-- For table LINEITEM
+ALTER TABLE LINEITEM ADD CONSTRAINT LINEITEM_FK1 FOREIGN KEY (L_ORDERKEY)  references ORDERS;
+ALTER TABLE LINEITEM ADD CONSTRAINT LINEITEM_FK2 FOREIGN KEY (L_PARTKEY,L_SUPPKEY) references PARTSUPP;
+
+--INDEX
+CREATE INDEX IDX_SUPPLIER_NATION_KEY ON SUPPLIER (S_NATIONKEY);
+
+CREATE INDEX IDX_PARTSUPP_PARTKEY ON PARTSUPP (PS_PARTKEY);
+
+CREATE INDEX IDX_PARTSUPP_SUPPKEY ON PARTSUPP (PS_SUPPKEY);
+
+CREATE INDEX IDX_CUSTOMER_NATIONKEY ON CUSTOMER (C_NATIONKEY);
+
+CREATE INDEX IDX_ORDERS_CUSTKEY ON ORDERS (O_CUSTKEY);
+
+CREATE INDEX IDX_LINEITEM_ORDERKEY ON LINEITEM (L_ORDERKEY);
+
+CREATE INDEX IDX_LINEITEM_PART_SUPP ON LINEITEM (L_PARTKEY,L_SUPPKEY);
+
+CREATE INDEX IDX_NATION_REGIONKEY ON NATION (N_REGIONKEY);
+
+CREATE INDEX IDX_LINEITEM_SHIPDATE ON LINEITEM (L_SHIPDATE, L_DISCOUNT, L_QUANTITY);
+
+CREATE INDEX IDX_ORDERS_ORDERDATE ON ORDERS (O_ORDERDATE);
+
+
+--RF_INDEX
+create index on orders0(o_orderkey);
+create index on orders1(o_orderkey);
+create index on orders2(o_orderkey);
+create index on orders3(o_orderkey);
+create index on orders4(o_orderkey);
+create index on orders5(o_orderkey);
+create index on orders6(o_orderkey);
+create index on orders7(o_orderkey);
+create index on orders8(o_orderkey);
+create index on orders9(o_orderkey);
+
+create index on lineitem0(l_orderkey);
+create index on lineitem1(l_orderkey);
+create index on lineitem2(l_orderkey);
+create index on lineitem3(l_orderkey);
+create index on lineitem4(l_orderkey);
+create index on lineitem5(l_orderkey);
+create index on lineitem6(l_orderkey);
+create index on lineitem7(l_orderkey);
+create index on lineitem8(l_orderkey);
+create index on lineitem9(l_orderkey);
+
+create index on delete0(id);
+create index on delete1(id);
+create index on delete2(id);
+create index on delete3(id);
+create index on delete4(id);
+create index on delete5(id);
+create index on delete6(id);
+create index on delete7(id);
+create index on delete8(id);
+create index on delete9(id);
+

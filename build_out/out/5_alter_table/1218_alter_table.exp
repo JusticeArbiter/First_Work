@@ -1,0 +1,3 @@
+ALTER TABLE IF EXISTS tt8 ADD CONSTRAINT xxx PRIMARY KEY(f);
+NOTICE:  00000: relation "tt8" does not exist, skipping
+ALTER TABLE

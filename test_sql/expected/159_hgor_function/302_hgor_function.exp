@@ -1,0 +1,6 @@
+select timestamp_mi_int32('2016-11-18 14:00:59'::timestamp,-1::int4);
+ timestamp_mi_int32  
+---------------------
+ 2016-11-19 14:00:59
+(1 row)
+

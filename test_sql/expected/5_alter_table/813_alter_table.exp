@@ -1,0 +1,2 @@
+alter table recur1 alter column f2 type recur2;
+ERROR:  42P01: relation "recur1" does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE AGGREGATE wrongreturntype (float8)  (  stype = float8,  sfunc = float8pl,  mstype = float8,  msfunc = float8pl,  minvfunc = float8mi_int  );
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: return type of inverse transition function float8mi_int is not double precision
+LOCATION:  AggregateCreate, pg_aggregate.c:329
+STATEMENT:  CREATE AGGREGATE wrongreturntype (float8)  (  stype = float8,  sfunc = float8pl,  mstype = float8,  msfunc = float8pl,  minvfunc = float8mi_int  );

@@ -1,0 +1,2 @@
+insert into ddtest2 values(row(-1));
+INSERT 0 1

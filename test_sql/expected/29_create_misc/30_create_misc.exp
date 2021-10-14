@@ -1,0 +1,4 @@
+INSERT INTO d_star (class, a, c, d)  VALUES ('d', 10, 'hi kristin'::name, '10.01'::float8);
+ERROR:  42P01: relation "d_star" does not exist
+LINE 1: INSERT INTO d_star (class, a, c, d)  VALUES ('d', 10, 'hi kr...
+                    ^

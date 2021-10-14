@@ -1,0 +1,11 @@
+LOG:  00000: statement: DROP SCHEMA selinto_schema CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SCHEMA
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP SCHEMA selinto_schema CASCADE;
+NOTICE:  00000: drop cascades to 3 other objects
+DETAIL:  drop cascades to table selinto_schema.tmp1
+	drop cascades to table selinto_schema.tmp2
+	drop cascades to table selinto_schema.tmp3
+LOCATION:  reportDependentObjects, dependency.c:1003
+STATEMENT:  DROP SCHEMA selinto_schema CASCADE;

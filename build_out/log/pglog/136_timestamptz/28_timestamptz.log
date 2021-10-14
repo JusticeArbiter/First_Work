@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO TIMESTAMPTZ_TBL VALUES ('invalid');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: date/time value "invalid" is no longer supported at character 37
+LOCATION:  timestamptz_in, timestamp.c:463
+STATEMENT:  INSERT INTO TIMESTAMPTZ_TBL VALUES ('invalid');

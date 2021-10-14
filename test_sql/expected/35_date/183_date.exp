@@ -1,0 +1,6 @@
+SELECT EXTRACT(DECADE FROM DATE '1994-12-25');
+ date_part 
+-----------
+       199
+(1 row)
+

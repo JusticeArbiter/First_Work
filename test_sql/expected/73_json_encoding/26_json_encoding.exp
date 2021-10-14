@@ -1,0 +1,6 @@
+SELECT octet_length('"\uaBcD"'::jsonb::text);
+ octet_length 
+--------------
+            5
+(1 row)
+

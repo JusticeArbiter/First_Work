@@ -1,0 +1,6 @@
+select multi_datum_use(42);
+ multi_datum_use 
+-----------------
+ 
+(1 row)
+

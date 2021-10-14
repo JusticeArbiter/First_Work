@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE INDEX collate_test1_idx4 ON collate_test1 (((b||'foo') COLLATE "POSIX"));
+LOCATION:  exec_simple_query, postgres.c:938

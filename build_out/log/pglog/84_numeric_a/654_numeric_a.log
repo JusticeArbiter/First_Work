@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from generate_series(0::numeric, 'nan'::numeric, 10::numeric);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: stop value cannot be NaN
+LOCATION:  generate_series_step_numeric, numeric.c:1341
+STATEMENT:  select * from generate_series(0::numeric, 'nan'::numeric, 10::numeric);

@@ -1,0 +1,3 @@
+/* The next *should* fail, but it's not implemented that way yet. */  CREATE VIEW atestv2 AS SELECT * FROM atest2;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+CREATE VIEW

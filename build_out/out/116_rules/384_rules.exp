@@ -1,0 +1,3 @@
+create table rule_and_refint_t1 (  id1a integer,  id1b integer,  primary key (id1a, id1b)  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

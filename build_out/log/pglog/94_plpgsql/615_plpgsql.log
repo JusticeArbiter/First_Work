@@ -1,0 +1,6 @@
+LOG:  00000: statement: select compos();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: cannot return non-composite value from function returning composite type
+CONTEXT:  PL/pgSQL function compos() line 1 at RETURN
+LOCATION:  exec_stmt_return, pl_exec.c:2654
+STATEMENT:  select compos();

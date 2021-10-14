@@ -1,0 +1,9 @@
+SELECT * FROM city_view;
+ city_id |   city_name   | population | country_name |   continent   
+---------+---------------+------------+--------------+---------------
+       1 | Tokyo         |   13010279 | Japan        | Asia
+  123456 | New York      |    8391881 | USA          | North America
+       2 | London        |    7556900 | UK           | Europe
+       3 | Washington DC |     599657 | USA          | North America
+(4 rows)
+

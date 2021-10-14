@@ -1,0 +1,4 @@
+SELECT E'\\xDeAdBeEx'::bytea;
+ERROR:  22023: invalid hexadecimal digit: "x"
+LINE 1: SELECT E'\\xDeAdBeEx'::bytea;
+               ^

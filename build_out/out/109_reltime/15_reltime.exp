@@ -1,0 +1,7 @@
+SELECT '' AS two, * FROM RELTIME_TBL  WHERE RELTIME_TBL.f1 >= reltime '@ 1 month';
+ two |    f1    
+-----+----------
+     | 34 years
+     | 3 mons
+(2 rows)
+

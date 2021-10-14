@@ -1,0 +1,1 @@
+CREATE USER MAPPING FOR "Public" SERVER sv7 OPTIONS (user '"Public"');

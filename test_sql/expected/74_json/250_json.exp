@@ -1,0 +1,6 @@
+SELECT json_build_array();
+ json_build_array 
+------------------
+ []
+(1 row)
+

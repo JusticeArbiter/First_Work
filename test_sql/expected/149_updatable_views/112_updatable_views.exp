@@ -1,0 +1,7 @@
+SELECT table_name, is_updatable, is_insertable_into  FROM information_schema.views  WHERE table_name LIKE 'rw_view%'  ORDER BY table_name;
+ table_name | is_updatable | is_insertable_into 
+------------+--------------+--------------------
+ rw_view1   | NO           | NO
+ rw_view2   | NO           | NO
+(2 rows)
+

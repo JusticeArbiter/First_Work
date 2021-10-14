@@ -1,0 +1,10 @@
+select ceiling(f1) as ceiling_f1 from float8_tbl f;
+      ceiling_f1      
+----------------------
+                    0
+                 1005
+                  -34
+ 1.2345678901234e+200
+                    1
+(5 rows)
+

@@ -1,0 +1,163 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE truncate_a (col1 integer primary key);
+ statement: INSERT INTO truncate_a VALUES (1);
+ statement: INSERT INTO truncate_a VALUES (2);
+ statement: SELECT * FROM truncate_a;
+ statement: BEGIN;
+ statement: TRUNCATE truncate_a;
+ statement: ROLLBACK;
+ statement: SELECT * FROM truncate_a;
+ statement: BEGIN;
+ statement: TRUNCATE truncate_a;
+ statement: COMMIT;
+ statement: SELECT * FROM truncate_a;
+ statement: CREATE TABLE trunc_b (a int REFERENCES truncate_a);
+ statement: CREATE TABLE trunc_c (a serial PRIMARY KEY);
+ statement: CREATE TABLE trunc_d (a int REFERENCES trunc_c);
+ statement: CREATE TABLE trunc_e (a int REFERENCES truncate_a, b int REFERENCES trunc_c);
+ statement: TRUNCATE TABLE truncate_a;
+ statement: TRUNCATE TABLE truncate_a,trunc_b;
+ statement: TRUNCATE TABLE truncate_a,trunc_b,trunc_e;
+ statement: TRUNCATE TABLE truncate_a,trunc_e;
+ statement: TRUNCATE TABLE trunc_c;
+ statement: TRUNCATE TABLE trunc_c,trunc_d;
+ statement: TRUNCATE TABLE trunc_c,trunc_d,trunc_e;
+ statement: TRUNCATE TABLE trunc_c,trunc_d,trunc_e,truncate_a;
+ statement: TRUNCATE TABLE trunc_c,trunc_d,trunc_e,truncate_a,trunc_b;
+ statement: TRUNCATE TABLE truncate_a RESTRICT;
+ statement: TRUNCATE TABLE truncate_a CASCADE;
+ statement: ALTER TABLE truncate_a ADD FOREIGN KEY (col1) REFERENCES trunc_c;
+ statement: INSERT INTO trunc_c VALUES (1);
+ statement: INSERT INTO truncate_a VALUES (1);
+ statement: INSERT INTO trunc_b VALUES (1);
+ statement: INSERT INTO trunc_d VALUES (1);
+ statement: INSERT INTO trunc_e VALUES (1,1);
+ statement: TRUNCATE TABLE trunc_c;
+ statement: TRUNCATE TABLE trunc_c,truncate_a;
+ statement: TRUNCATE TABLE trunc_c,truncate_a,trunc_d;
+ statement: TRUNCATE TABLE trunc_c,truncate_a,trunc_d,trunc_e;
+ statement: TRUNCATE TABLE trunc_c,truncate_a,trunc_d,trunc_e,trunc_b;
+ statement: SELECT * FROM truncate_a                                                     +
+    UNION ALL                                                                            +
+  SELECT * FROM trunc_c                                                                  +
+    UNION ALL                                                                            +
+  SELECT * FROM trunc_b                                                                  +
+    UNION ALL                                                                            +
+  SELECT * FROM trunc_d;
+ statement: SELECT * FROM trunc_e;
+ statement: INSERT INTO trunc_c VALUES (1);
+ statement: INSERT INTO truncate_a VALUES (1);
+ statement: INSERT INTO trunc_b VALUES (1);
+ statement: INSERT INTO trunc_d VALUES (1);
+ statement: INSERT INTO trunc_e VALUES (1,1);
+ statement: TRUNCATE TABLE trunc_c CASCADE;
+ statement: SELECT * FROM truncate_a                                                     +
+    UNION ALL                                                                            +
+  SELECT * FROM trunc_c                                                                  +
+    UNION ALL                                                                            +
+  SELECT * FROM trunc_b                                                                  +
+    UNION ALL                                                                            +
+  SELECT * FROM trunc_d;
+ statement: SELECT * FROM trunc_e;
+ statement: DROP TABLE truncate_a,trunc_c,trunc_b,trunc_d,trunc_e CASCADE;
+ statement: CREATE TABLE trunc_f (col1 integer primary key);
+ statement: INSERT INTO trunc_f VALUES (1);
+ statement: INSERT INTO trunc_f VALUES (2);
+ statement: CREATE TABLE trunc_fa (col2a text) INHERITS (trunc_f);
+ statement: INSERT INTO trunc_fa VALUES (3, 'three');
+ statement: CREATE TABLE trunc_fb (col2b int) INHERITS (trunc_f);
+ statement: INSERT INTO trunc_fb VALUES (4, 444);
+ statement: CREATE TABLE trunc_faa (col3 text) INHERITS (trunc_fa);
+ statement: INSERT INTO trunc_faa VALUES (5, 'five', 'FIVE');
+ statement: BEGIN;
+ statement: SELECT * FROM trunc_f;
+ statement: TRUNCATE trunc_f;
+ statement: SELECT * FROM trunc_f;
+ statement: ROLLBACK;
+ statement: BEGIN;
+ statement: SELECT * FROM trunc_f;
+ statement: TRUNCATE ONLY trunc_f;
+ statement: SELECT * FROM trunc_f;
+ statement: ROLLBACK;
+ statement: BEGIN;
+ statement: SELECT * FROM trunc_f;
+ statement: SELECT * FROM trunc_fa;
+ statement: SELECT * FROM trunc_faa;
+ statement: TRUNCATE ONLY trunc_fb, ONLY trunc_fa;
+ statement: SELECT * FROM trunc_f;
+ statement: SELECT * FROM trunc_fa;
+ statement: SELECT * FROM trunc_faa;
+ statement: ROLLBACK;
+ statement: BEGIN;
+ statement: SELECT * FROM trunc_f;
+ statement: SELECT * FROM trunc_fa;
+ statement: SELECT * FROM trunc_faa;
+ statement: TRUNCATE ONLY trunc_fb, trunc_fa;
+ statement: SELECT * FROM trunc_f;
+ statement: SELECT * FROM trunc_fa;
+ statement: SELECT * FROM trunc_faa;
+ statement: ROLLBACK;
+ statement: DROP TABLE trunc_f CASCADE;
+ statement: CREATE TABLE trunc_trigger_test (f1 int, f2 text, f3 text);
+ statement: CREATE TABLE trunc_trigger_log (tgop text, tglevel text, tgwhen text,        +
+         tgargv text, tgtable name, rowcount bigint);
+ statement: CREATE FUNCTION trunctrigger() RETURNS trigger as $$                         +
+ declare c bigint;                                                                       +
+ begin                                                                                   +
+     execute 'select count(*) from ' || quote_ident(tg_table_name) into c;               +
+     insert into trunc_trigger_log values                                                +
+       (TG_OP, TG_LEVEL, TG_WHEN, TG_ARGV[0], tg_table_name, c);                         +
+     return null;                                                                        +
+ end;                                                                                    +
+ $$ LANGUAGE plpgsql;
+ statement: INSERT INTO trunc_trigger_test VALUES(1, 'foo', 'bar'), (2, 'baz', 'quux');
+ statement: CREATE TRIGGER t                                                             +
+ BEFORE TRUNCATE ON trunc_trigger_test                                                   +
+ FOR EACH STATEMENT                                                                      +
+ EXECUTE PROCEDURE trunctrigger('before trigger truncate');
+ statement: SELECT count(*) as "Row count in test table" FROM trunc_trigger_test;
+ statement: SELECT * FROM trunc_trigger_log;
+ statement: TRUNCATE trunc_trigger_test;
+ statement: SELECT count(*) as "Row count in test table" FROM trunc_trigger_test;
+ statement: SELECT * FROM trunc_trigger_log;
+ statement: DROP TRIGGER t ON trunc_trigger_test;
+ statement: truncate trunc_trigger_log;
+ statement: INSERT INTO trunc_trigger_test VALUES(1, 'foo', 'bar'), (2, 'baz', 'quux');
+ statement: CREATE TRIGGER tt                                                            +
+ AFTER TRUNCATE ON trunc_trigger_test                                                    +
+ FOR EACH STATEMENT                                                                      +
+ EXECUTE PROCEDURE trunctrigger('after trigger truncate');
+ statement: SELECT count(*) as "Row count in test table" FROM trunc_trigger_test;
+ statement: SELECT * FROM trunc_trigger_log;
+ statement: TRUNCATE trunc_trigger_test;
+ statement: SELECT count(*) as "Row count in test table" FROM trunc_trigger_test;
+ statement: SELECT * FROM trunc_trigger_log;
+ statement: DROP TABLE trunc_trigger_test;
+ statement: DROP TABLE trunc_trigger_log;
+ statement: DROP FUNCTION trunctrigger();
+ statement: CREATE SEQUENCE truncate_a_id1 START WITH 33;
+ statement: CREATE TABLE truncate_a (id serial,                                          +
+                          id1 integer default nextval('truncate_a_id1'));
+ statement: ALTER SEQUENCE truncate_a_id1 OWNED BY truncate_a.id1;
+ statement: INSERT INTO truncate_a DEFAULT VALUES;
+ statement: INSERT INTO truncate_a DEFAULT VALUES;
+ statement: SELECT * FROM truncate_a;
+ statement: TRUNCATE truncate_a;
+ statement: INSERT INTO truncate_a DEFAULT VALUES;
+ statement: INSERT INTO truncate_a DEFAULT VALUES;
+ statement: SELECT * FROM truncate_a;
+ statement: TRUNCATE truncate_a RESTART IDENTITY;
+ statement: INSERT INTO truncate_a DEFAULT VALUES;
+ statement: INSERT INTO truncate_a DEFAULT VALUES;
+ statement: SELECT * FROM truncate_a;
+ statement: BEGIN;
+ statement: TRUNCATE truncate_a RESTART IDENTITY;
+ statement: INSERT INTO truncate_a DEFAULT VALUES;
+ statement: SELECT * FROM truncate_a;
+ statement: ROLLBACK;
+ statement: INSERT INTO truncate_a DEFAULT VALUES;
+ statement: INSERT INTO truncate_a DEFAULT VALUES;
+ statement: SELECT * FROM truncate_a;
+ statement: DROP TABLE truncate_a;
+ statement: SELECT nextval('truncate_a_id1');
+

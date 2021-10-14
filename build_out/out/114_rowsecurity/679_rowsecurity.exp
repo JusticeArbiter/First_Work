@@ -1,0 +1,5 @@
+SELECT * FROM r2;
+ a 
+---
+(0 rows)
+

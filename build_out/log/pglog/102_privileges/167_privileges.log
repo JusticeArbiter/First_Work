@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT atest1.*,atest5.one FROM atest1 JOIN atest5 ON (atest1.a = atest5.one);
+LOCATION:  exec_simple_query, postgres.c:938

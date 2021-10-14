@@ -1,0 +1,9 @@
+EXPLAIN (verbose, costs off) UPDATE rw_view1 SET b = b + 1 RETURNING *;
+                         QUERY PLAN                          
+-------------------------------------------------------------
+ Update on public.base_tbl
+   Output: base_tbl.a, base_tbl.b
+   ->  Seq Scan on public.base_tbl
+         Output: base_tbl.a, (base_tbl.b + 1), base_tbl.ctid
+(4 rows)
+

@@ -1,0 +1,6 @@
+SELECT has_table_privilege('regressuser1', 'testns.t1', 'SELECT');
+ has_table_privilege 
+---------------------
+ f
+(1 row)
+

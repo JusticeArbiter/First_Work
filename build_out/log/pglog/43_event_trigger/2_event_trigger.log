@@ -1,0 +1,2 @@
+LOG:  00000: statement: create function test_event_trigger() returns event_trigger as $$  BEGIN  RAISE NOTICE 'test_event_trigger: % %', tg_event, tg_tag;  END  $$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938

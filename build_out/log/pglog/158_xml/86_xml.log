@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT xmlelement(name employees, xmlagg(xmlelement(name name, name))) FROM emp;
+LOCATION:  exec_simple_query, postgres.c:938

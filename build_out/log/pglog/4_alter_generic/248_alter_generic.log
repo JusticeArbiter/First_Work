@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict3 RENAME TO alt_ts_dict4;
+LOCATION:  exec_simple_query, postgres.c:938

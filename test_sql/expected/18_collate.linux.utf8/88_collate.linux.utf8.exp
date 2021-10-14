@@ -1,0 +1,9 @@
+SELECT a, b, greatest(b, 'CCC') FROM collate_test2 ORDER BY 3;
+ a |  b  | greatest 
+---+-----+----------
+ 1 | abc | CCC
+ 3 | bbc | CCC
+ 4 | ABC | CCC
+ 2 | äbc | äbc
+(4 rows)
+

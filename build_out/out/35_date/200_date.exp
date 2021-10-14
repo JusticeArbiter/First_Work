@@ -1,0 +1,6 @@
+SELECT DATE_TRUNC('CENTURY', DATE '2004-08-10');
+       date_trunc       
+------------------------
+ 2001-01-01 00:00:00+08
+(1 row)
+

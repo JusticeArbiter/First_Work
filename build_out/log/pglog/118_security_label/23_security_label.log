@@ -1,0 +1,5 @@
+LOG:  00000: statement: SECURITY LABEL ON ROLE seclabel_user1 IS '...invalid label...';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: no security label providers have been loaded
+LOCATION:  ExecSecLabelStmt, seclabel.c:60
+STATEMENT:  SECURITY LABEL ON ROLE seclabel_user1 IS '...invalid label...';

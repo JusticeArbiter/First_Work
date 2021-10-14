@@ -1,0 +1,2 @@
+INSERT INTO domarrtest values (NULL, '{{"toolong","b","c"},{"d","e","f"}}');
+ERROR:  22001: value too long for type character varying(4)

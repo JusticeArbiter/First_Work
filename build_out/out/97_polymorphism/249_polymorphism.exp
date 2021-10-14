@@ -1,0 +1,6 @@
+select * from testfoo(37);
+ a  
+----
+ 37
+(1 row)
+

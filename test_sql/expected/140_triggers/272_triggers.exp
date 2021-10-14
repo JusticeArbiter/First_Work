@@ -1,0 +1,2 @@
+UPDATE city_view SET country_name = 'Japon' WHERE city_name = 'Tokyo';
+ERROR:  P0001: No such country: "Japon"

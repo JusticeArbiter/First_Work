@@ -1,0 +1,4 @@
+SELECT row_to_json(q,true)  FROM rows q;
+ERROR:  42P01: relation "rows" does not exist
+LINE 1: SELECT row_to_json(q,true)  FROM rows q;
+                                         ^

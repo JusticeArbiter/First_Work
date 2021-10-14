@@ -1,0 +1,2 @@
+create domain domainint4 int4;
+CREATE DOMAIN

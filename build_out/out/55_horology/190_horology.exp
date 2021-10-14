@@ -1,0 +1,6 @@
+SELECT to_timestamp('20000-1116', 'YYYY-MMDD');
+      to_timestamp       
+-------------------------
+ 20000-11-16 00:00:00+08
+(1 row)
+

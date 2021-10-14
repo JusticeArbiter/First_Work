@@ -1,0 +1,2 @@
+LOG:  00000: statement: COPY atest2 FROM stdin;
+LOCATION:  exec_simple_query, postgres.c:938

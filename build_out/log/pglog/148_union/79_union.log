@@ -1,0 +1,2 @@
+LOG:  00000: statement: explain (costs off)  SELECT * FROM  (SELECT 1 AS t, * FROM tenk1 a  UNION ALL  SELECT 2 AS t, * FROM tenk1 b) c  WHERE t = 2;
+LOCATION:  exec_simple_query, postgres.c:938

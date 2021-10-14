@@ -1,0 +1,2 @@
+LOG:  00000: statement: DROP EVENT TRIGGER regress_event_trigger_drop_objects;
+LOCATION:  exec_simple_query, postgres.c:938

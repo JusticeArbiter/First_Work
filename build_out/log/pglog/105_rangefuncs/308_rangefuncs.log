@@ -1,0 +1,6 @@
+LOG:  00000: statement: select * from testfoo() as t(f1 int8,f2 int8);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: function testfoo() does not exist at character 15
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+LOCATION:  ParseFuncOrColumn, parse_func.c:523
+STATEMENT:  select * from testfoo() as t(f1 int8,f2 int8);

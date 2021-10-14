@@ -1,0 +1,6 @@
+UPDATE main_table SET a = 50;
+NOTICE:  00000: trigger_func(before_upd_a_stmt) called: action = UPDATE, when = BEFORE, level = STATEMENT
+NOTICE:  00000: trigger_func(before_upd_a_row) called: action = UPDATE, when = BEFORE, level = ROW
+NOTICE:  00000: trigger_func(before_upd_a_row) called: action = UPDATE, when = BEFORE, level = ROW
+NOTICE:  00000: trigger_func(after_upd_stmt) called: action = UPDATE, when = AFTER, level = STATEMENT
+UPDATE 0

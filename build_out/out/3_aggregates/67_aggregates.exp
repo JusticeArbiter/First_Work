@@ -1,0 +1,2 @@
+COPY bool_test FROM STDIN NULL 'null';
+ERROR:  42P01: relation "bool_test" does not exist

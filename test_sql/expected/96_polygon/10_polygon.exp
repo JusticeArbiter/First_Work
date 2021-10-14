@@ -1,0 +1,4 @@
+INSERT INTO POLYGON_TBL(f1) VALUES ('asdf');
+ERROR:  22P02: invalid input syntax for type polygon: "asdf"
+LINE 1: INSERT INTO POLYGON_TBL(f1) VALUES ('asdf');
+                                            ^

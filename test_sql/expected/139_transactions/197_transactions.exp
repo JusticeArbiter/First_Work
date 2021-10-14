@@ -1,0 +1,2 @@
+DECLARE c CURSOR FOR SELECT unique2 FROM tenk1 ORDER BY unique2;
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

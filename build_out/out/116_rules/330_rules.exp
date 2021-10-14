@@ -1,0 +1,3 @@
+CREATE VIEW shoelace_candelete AS  SELECT * FROM shoelace_obsolete WHERE sl_avail = 0;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+CREATE VIEW

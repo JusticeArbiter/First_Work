@@ -1,0 +1,2 @@
+insert into Room values ('001', 'Entrance');
+INSERT 0 1

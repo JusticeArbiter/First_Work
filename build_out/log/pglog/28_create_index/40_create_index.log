@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX sp_quad_ind ON quad_point_tbl USING spgist (p);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "quad_point_tbl" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX sp_quad_ind ON quad_point_tbl USING spgist (p);

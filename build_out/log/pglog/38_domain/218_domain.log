@@ -1,0 +1,7 @@
+LOG:  00000: statement: drop domain vchar4 cascade;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to type dinter
+	drop cascades to type dtop
+LOCATION:  reportDependentObjects, dependency.c:1003
+STATEMENT:  drop domain vchar4 cascade;

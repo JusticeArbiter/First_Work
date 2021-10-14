@@ -1,0 +1,6 @@
+LOG:  00000: statement: select raise_test();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: RAISE option already specified: ERRCODE
+CONTEXT:  PL/pgSQL function raise_test() line 1 at RAISE
+LOCATION:  exec_stmt_raise, pl_exec.c:3146
+STATEMENT:  select raise_test();

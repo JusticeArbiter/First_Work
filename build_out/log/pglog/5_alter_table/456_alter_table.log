@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table non_existent alter column bar drop not null;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "non_existent" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  alter table non_existent alter column bar drop not null;

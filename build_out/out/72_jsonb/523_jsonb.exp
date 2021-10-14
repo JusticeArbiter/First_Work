@@ -1,0 +1,6 @@
+select '[]'::jsonb || '["a"]'::jsonb;
+ ?column? 
+----------
+ ["a"]
+(1 row)
+

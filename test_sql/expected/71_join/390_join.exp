@@ -1,0 +1,12 @@
+explain (verbose, costs off)  select * from  int8_tbl a left join  lateral (select *, coalesce(a.q2, 42) as x from int8_tbl b) ss on a.q2 = ss.q1;
+                            QUERY PLAN                            
+------------------------------------------------------------------
+ Nested Loop Left Join
+   Output: a.q1, a.q2, b.q1, b.q2, (COALESCE(a.q2, '42'::bigint))
+   ->  Seq Scan on public.int8_tbl a
+         Output: a.q1, a.q2
+   ->  Seq Scan on public.int8_tbl b
+         Output: b.q1, b.q2, COALESCE(a.q2, '42'::bigint)
+         Filter: (a.q2 = b.q1)
+(7 rows)
+

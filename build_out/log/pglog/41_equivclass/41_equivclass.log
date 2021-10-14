@@ -1,0 +1,2 @@
+LOG:  00000: statement: explain (costs off)  select * from ec1, ec2 where ff = x1 and '42'::int8 = x1;
+LOCATION:  exec_simple_query, postgres.c:938

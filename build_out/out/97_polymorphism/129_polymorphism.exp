@@ -1,0 +1,6 @@
+select concat('|', variadic array[1,2,33]);
+ concat 
+--------
+ 1|2|33
+(1 row)
+

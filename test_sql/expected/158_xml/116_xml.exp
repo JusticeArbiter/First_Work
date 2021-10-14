@@ -1,0 +1,6 @@
+SELECT xpath('''<<invalid>>''', '<root/>');
+           xpath           
+---------------------------
+ {&lt;&lt;invalid&gt;&gt;}
+(1 row)
+

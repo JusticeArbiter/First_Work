@@ -1,0 +1,4 @@
+SELECT '' AS twentyfour, b.f1 + p.f1 AS translation  FROM BOX_TBL b, POINT_TBL p;
+ERROR:  42P01: relation "point_tbl" does not exist
+LINE 1: ...four, b.f1 + p.f1 AS translation  FROM BOX_TBL b, POINT_TBL ...
+                                                             ^

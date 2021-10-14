@@ -1,0 +1,6 @@
+select case_test(1);
+ case_test 
+-----------
+ one
+(1 row)
+

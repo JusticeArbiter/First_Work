@@ -1,0 +1,8 @@
+LOG:  00000: statement: select 0;
+LOCATION:  exec_simple_query, postgres.c:938
+LOG:  00000: statement: copy test3 from stdin;
+LOCATION:  exec_simple_query, postgres.c:938
+LOG:  00000: statement: copy test3 from stdin;
+LOCATION:  exec_simple_query, postgres.c:938
+LOG:  00000: statement: select 1;
+LOCATION:  exec_simple_query, postgres.c:938

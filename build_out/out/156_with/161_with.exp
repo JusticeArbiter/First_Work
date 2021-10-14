@@ -1,0 +1,4 @@
+WITH t AS (  INSERT INTO y  VALUES  (31),  (32),  (33)  RETURNING *  )  SELECT * FROM t LIMIT 1;
+ERROR:  42P01: relation "y" does not exist
+LINE 1: WITH t AS (  INSERT INTO y  VALUES  (31),  (32),  (33)  RETU...
+                                 ^

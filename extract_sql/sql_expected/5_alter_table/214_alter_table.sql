@@ -1,0 +1,1 @@
+CREATE TABLE tmp6 () INHERITS (tmp3);

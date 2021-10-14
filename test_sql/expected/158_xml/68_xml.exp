@@ -1,0 +1,6 @@
+SELECT xmlroot(xml '<foo/>', version '2.0');
+           xmlroot           
+-----------------------------
+ <?xml version="2.0"?><foo/>
+(1 row)
+

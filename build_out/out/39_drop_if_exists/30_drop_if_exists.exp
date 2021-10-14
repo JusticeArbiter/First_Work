@@ -1,0 +1,3 @@
+DROP DOMAIN IF EXISTS test_domain_exists;
+NOTICE:  00000: type "test_domain_exists" does not exist, skipping
+DROP DOMAIN

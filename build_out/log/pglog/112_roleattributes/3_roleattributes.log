@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE ROLE test_superuser WITH SUPERUSER;
+LOCATION:  exec_simple_query, postgres.c:938

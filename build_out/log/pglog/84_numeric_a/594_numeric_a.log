@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS to_char_24, to_char('100'::numeric, 'FM999.9');
+LOCATION:  exec_simple_query, postgres.c:938

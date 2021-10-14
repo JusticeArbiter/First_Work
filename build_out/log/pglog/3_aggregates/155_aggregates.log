@@ -1,0 +1,5 @@
+LOG:  00000: statement: drop view agg_view1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: view "agg_view1" does not exist
+LOCATION:  DropErrorMsgNonExistent, tablecmds.c:756
+STATEMENT:  drop view agg_view1;

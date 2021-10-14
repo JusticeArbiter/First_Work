@@ -1,0 +1,5 @@
+LOG:  00000: statement: create table pktable(ptest1 int, ptest2 int, primary key(base1, ptest1), foreign key(base2, ptest2) references  pktable(base1, ptest1)) inherits (pktable_base);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create table pktable(ptest1 int, ptest2 int, primary key(base1, ptest1), foreign key(base2, ptest2) references  pktable(base1, ptest1)) inherits (pktable_base);

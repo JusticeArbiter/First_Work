@@ -1,0 +1,2 @@
+create table btree_tall_tbl(id int4, t text);
+CREATE TABLE

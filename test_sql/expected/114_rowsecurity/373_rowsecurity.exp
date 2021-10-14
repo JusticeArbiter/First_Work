@@ -1,0 +1,21 @@
+SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;
+NOTICE:  00000: f_leak => abc
+NOTICE:  00000: f_leak => bcd
+NOTICE:  00000: f_leak => cde
+NOTICE:  00000: f_leak => def
+NOTICE:  00000: f_leak => efg
+NOTICE:  00000: f_leak => fgh
+NOTICE:  00000: f_leak => fgh
+NOTICE:  00000: f_leak => fgh
+ a |  b  |         c         
+---+-----+-------------------
+ 1 | abc | rls_regress_user1
+ 2 | bcd | rls_regress_user1
+ 3 | cde | rls_regress_user2
+ 4 | def | rls_regress_user2
+ 5 | efg | rls_regress_user1
+ 6 | fgh | rls_regress_user1
+ 7 | fgh | rls_regress_user2
+ 8 | fgh | rls_regress_user2
+(8 rows)
+

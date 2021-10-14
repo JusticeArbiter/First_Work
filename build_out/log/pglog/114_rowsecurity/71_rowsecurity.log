@@ -1,0 +1,6 @@
+LOG:  00000: statement: UPDATE document SET did = 8, dauthor = 'rls_regress_user2' WHERE did = 5;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: duplicate key value violates unique constraint "document_pkey"
+DETAIL:  Key (did)=(8) already exists.
+LOCATION:  _bt_check_unique, nbtinsert.c:432
+STATEMENT:  UPDATE document SET did = 8, dauthor = 'rls_regress_user2' WHERE did = 5;

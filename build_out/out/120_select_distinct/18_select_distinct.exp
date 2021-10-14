@@ -1,0 +1,6 @@
+SELECT null IS DISTINCT FROM null as "no";
+ no 
+----
+ f
+(1 row)
+

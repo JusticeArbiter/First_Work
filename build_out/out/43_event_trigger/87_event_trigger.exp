@@ -1,0 +1,4 @@
+DROP INDEX evttrig.one_idx;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP INDEX
+NOTICE:  00000: NORMAL: orig=t normal=f istemp=f type=index identity=evttrig.one_idx name={evttrig,one_idx} args={}
+DROP INDEX

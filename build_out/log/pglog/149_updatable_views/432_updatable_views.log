@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE RULE rw_view1_ins_rule AS ON INSERT TO rw_view1  DO INSTEAD INSERT INTO base_tbl VALUES (NEW.a, 10);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE RULE rw_view1_ins_rule AS ON INSERT TO rw_view1  DO INSTEAD INSERT INTO base_tbl VALUES (NEW.a, 10);

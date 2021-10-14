@@ -1,0 +1,8 @@
+select * from rtest_view4;
+ a |   b    | c 
+---+--------+---
+ 3 | item 3 | 0
+ 6 | item 6 | 0
+ 8 | item 8 | 0
+(3 rows)
+

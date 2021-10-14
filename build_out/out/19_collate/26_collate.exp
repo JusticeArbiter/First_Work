@@ -1,0 +1,2 @@
+CREATE DOMAIN testdomain_i AS int COLLATE "POSIX";
+ERROR:  42804: collations are not supported by type integer

@@ -1,0 +1,4 @@
+SELECT a::varchar(3) FROM tt1;
+ERROR:  42703: column "a" does not exist
+LINE 1: SELECT a::varchar(3) FROM tt1;
+               ^

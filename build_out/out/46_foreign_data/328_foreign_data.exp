@@ -1,0 +1,6 @@
+SELECT * FROM information_schema.foreign_tables ORDER BY 1, 2, 3;
+ foreign_table_catalog | foreign_table_schema | foreign_table_name | foreign_server_catalog | foreign_server_name 
+-----------------------+----------------------+--------------------+------------------------+---------------------
+ highgo                | foreign_schema       | foreign_table_1    | highgo                 | s0
+(1 row)
+

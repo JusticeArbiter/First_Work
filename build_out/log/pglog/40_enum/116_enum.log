@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO enumtest_child VALUES ('blue');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: insert or update on table "enumtest_child" violates foreign key constraint "enumtest_child_parent_fkey"
+DETAIL:  Key (parent)=(blue) is not present in table "enumtest_parent".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3324
+STATEMENT:  INSERT INTO enumtest_child VALUES ('blue');

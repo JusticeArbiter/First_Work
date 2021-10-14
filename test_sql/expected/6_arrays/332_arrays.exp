@@ -1,0 +1,4 @@
+select length(md5((f1[1]).c2)) from dest;
+ERROR:  42P01: relation "dest" does not exist
+LINE 1: select length(md5((f1[1]).c2)) from dest;
+                                            ^

@@ -1,0 +1,4 @@
+insert into b (a, num) values ('p', 1);
+ERROR:  42703: column "a" of relation "b" does not exist
+LINE 1: insert into b (a, num) values ('p', 1);
+                       ^

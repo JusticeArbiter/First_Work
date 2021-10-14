@@ -1,0 +1,5 @@
+LOG:  00000: statement: select array_agg('{}'::int[]) from generate_series(1,2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2202E: cannot accumulate empty arrays
+LOCATION:  accumArrayResultArr, arrayfuncs.c:5215
+STATEMENT:  select array_agg('{}'::int[]) from generate_series(1,2);

@@ -1,0 +1,6 @@
+LOG:  00000: statement: CREATE TABLE test_u AS SELECT a, b FROM collate_test1 UNION ALL SELECT a, b FROM collate_test2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P22: no collation was derived for column "b" with collatable type text
+HINT:  Use the COLLATE clause to set the collation explicitly.
+LOCATION:  intorel_startup, createas.c:500
+STATEMENT:  CREATE TABLE test_u AS SELECT a, b FROM collate_test1 UNION ALL SELECT a, b FROM collate_test2;

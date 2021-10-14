@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM getfoo5(1) WITH ORDINALITY AS t1(a,b,c,o);
+LOCATION:  exec_simple_query, postgres.c:938

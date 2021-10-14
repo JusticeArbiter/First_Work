@@ -1,0 +1,68 @@
+LOG:  00000: statement: SELECT * FROM s1 WHERE f_leak(b);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: f_leak => 1b0fd9efa5279c4203b7c70233f86dbf
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => 252e691406782824eec43d7eadc3d256
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => a8d2ec85eaf98407310b72eb73dda247
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => 74687a12d3915d3c4d83f1af7b3683d5
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => 596a3d04481816330f07e4f97510c28f
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => 47c1b025fa18ea96c33fbb6718688c0f
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => 0267aaf632e87a63288a08331f22c7c3
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => b3149ecea4628efd23d2f86e5a723472
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => 5d7b9adcbe1c629ec722529dd12e5129
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => 6bb61e3b7bce0931da574d19d1d82c88
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => cfcd208495d565ef66e7dff9f98764da
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => c4ca4238a0b923820dcc509a6f75849b
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => c81e728d9d4c2f636f067f89cc14862c
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => eccbc87e4b5ce2fe28308fd9f2a7baf3
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => a87ff679a2f3e71d9181a67b7542122c
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => e4da3b7fbbce2345d7772b0674a318d5
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => 1679091c5a880faf6fb5e6087eb1b2dc
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => 8f14e45fceea167a5a36dedd4bea2543
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => c9f0f895fb98ab9159f51fd0297e236d
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => 45c48cce2e2d7fbdea1afc51c7c6ad26
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => d3d9446802a44259755d38e6d163e820
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => foo
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM s1 WHERE f_leak(b);

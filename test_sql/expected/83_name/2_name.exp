@@ -1,0 +1,6 @@
+SELECT name 'name string' = name 'name string ' AS "False";
+ False 
+-------
+ f
+(1 row)
+

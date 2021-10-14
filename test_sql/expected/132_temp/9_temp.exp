@@ -1,0 +1,3 @@
+DROP INDEX i_temptest;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP INDEX
+ERROR:  42704: index "i_temptest" does not exist

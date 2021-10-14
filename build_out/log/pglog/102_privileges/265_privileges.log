@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT fy FROM atestc;
+LOCATION:  exec_simple_query, postgres.c:938

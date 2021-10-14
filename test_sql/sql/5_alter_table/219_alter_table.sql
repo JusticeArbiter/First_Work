@@ -1,0 +1,1 @@
+DELETE FROM tmp6 WHERE b > 20;

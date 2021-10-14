@@ -1,0 +1,4 @@
+INSERT INTO FLOAT8_TBL(f1) VALUES ('123 5');
+ERROR:  22P02: invalid input syntax for type double precision: "123 5"
+LINE 1: INSERT INTO FLOAT8_TBL(f1) VALUES ('123 5');
+                                           ^

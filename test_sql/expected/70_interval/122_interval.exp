@@ -1,0 +1,4 @@
+SELECT interval '1 2.3456' minute to second(2);
+ERROR:  22007: invalid input syntax for type interval: "1 2.3456"
+LINE 1: SELECT interval '1 2.3456' minute to second(2);
+                        ^

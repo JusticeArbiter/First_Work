@@ -1,0 +1,5 @@
+select '[a,z) - '::textrange;
+ERROR:  22P02: malformed range literal: "[a,z) - "
+LINE 1: select '[a,z) - '::textrange;
+               ^
+DETAIL:  Junk after right parenthesis or bracket.

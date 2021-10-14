@@ -1,0 +1,2 @@
+alter table atacc1 rename "........pg.dropped.1........" to x;
+ERROR:  42703: column "........pg.dropped.1........" does not exist

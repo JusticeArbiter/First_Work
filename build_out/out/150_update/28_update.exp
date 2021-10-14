@@ -1,0 +1,9 @@
+SELECT * FROM update_test;
+ a  |  b  |  c  
+----+-----+-----
+ 21 | 101 | 
+ 41 |  12 | car
+ 42 |  12 | car
+    |     | 
+(4 rows)
+

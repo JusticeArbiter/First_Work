@@ -1,0 +1,9 @@
+EXPLAIN (COSTS OFF)  SELECT i FROM inet_tbl WHERE i << '192.168.1.0/24'::cidr ORDER BY i;
+                  QUERY PLAN                   
+-----------------------------------------------
+ Sort
+   Sort Key: i
+   ->  Seq Scan on inet_tbl
+         Filter: (i << '192.168.1.0/24'::inet)
+(4 rows)
+

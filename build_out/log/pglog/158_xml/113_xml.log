@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT xpath('//b', '<a>one <b>two</b> three <b>etc</b></a>');
+LOCATION:  exec_simple_query, postgres.c:938

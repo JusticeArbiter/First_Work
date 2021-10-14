@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, typelem  FROM pg_catalog.pg_type fk  WHERE typelem != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.typelem);
+LOCATION:  exec_simple_query, postgres.c:938

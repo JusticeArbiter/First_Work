@@ -1,0 +1,2 @@
+insert into public.whereami values ('public');
+INSERT 0 1

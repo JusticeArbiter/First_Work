@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table tt7 drop column xx;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "xx" of relation "tt7" does not exist
+LOCATION:  ATExecDropColumn, tablecmds.c:5708
+STATEMENT:  alter table tt7 drop column xx;

@@ -1,0 +1,4 @@
+CREATE TABLE vistest (LIKE testeoc);
+ERROR:  42P01: relation "testeoc" does not exist
+LINE 1: CREATE TABLE vistest (LIKE testeoc);
+                                   ^

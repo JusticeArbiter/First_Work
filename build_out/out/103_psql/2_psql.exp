@@ -1,0 +1,6 @@
+select 10 as "bad name"
+ bad name 
+----------
+       10
+(1 row)
+

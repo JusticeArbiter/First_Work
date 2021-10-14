@@ -1,0 +1,4 @@
+UPDATE only t1 SET b = b WHERE f_leak(b) RETURNING oid, *, t1;
+ERROR:  42703: column "b" does not exist
+LINE 1: UPDATE only t1 SET b = b WHERE f_leak(b) RETURNING oid, *, t...
+                                              ^

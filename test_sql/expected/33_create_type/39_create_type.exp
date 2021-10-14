@@ -1,0 +1,4 @@
+CREATE TEMP TABLE mytab (foo widget(42,13,7));
+ERROR:  42704: type "widget" does not exist
+LINE 1: CREATE TEMP TABLE mytab (foo widget(42,13,7));
+                                     ^

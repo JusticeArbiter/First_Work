@@ -1,0 +1,26 @@
+LOG:  00000: statement: SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: f_leak => abc_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;
+NOTICE:  00000: f_leak => bcd_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;
+NOTICE:  00000: f_leak => cde_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;
+NOTICE:  00000: f_leak => def_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;
+NOTICE:  00000: f_leak => efg_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;
+NOTICE:  00000: f_leak => fgh_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;
+NOTICE:  00000: f_leak => fgh_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;
+NOTICE:  00000: f_leak => fgh_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;

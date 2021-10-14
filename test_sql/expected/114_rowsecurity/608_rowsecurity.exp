@@ -1,0 +1,6 @@
+SELECT * FROM coll_t;
+  c  
+-----
+ bar
+(1 row)
+

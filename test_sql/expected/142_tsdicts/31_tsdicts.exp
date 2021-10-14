@@ -1,0 +1,6 @@
+SELECT ts_lexize('hunspell', 'ballyklubber');
+   ts_lexize    
+----------------
+ {ball,klubber}
+(1 row)
+

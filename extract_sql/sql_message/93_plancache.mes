@@ -1,0 +1,90 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TEMP TABLE pcachetest AS SELECT * FROM int8_tbl;
+ statement: PREPARE prepstmt AS SELECT * FROM pcachetest;
+ statement: EXECUTE prepstmt;
+ statement: PREPARE prepstmt2(bigint) AS SELECT * FROM pcachetest WHERE q1 = $1;
+ statement: EXECUTE prepstmt2(123);
+ statement: DROP TABLE pcachetest;
+ statement: EXECUTE prepstmt;
+ statement: EXECUTE prepstmt2(123);
+ statement: CREATE TEMP TABLE pcachetest AS SELECT * FROM int8_tbl ORDER BY 2;
+ statement: EXECUTE prepstmt;
+ statement: EXECUTE prepstmt2(123);
+ statement: ALTER TABLE pcachetest ADD COLUMN q3 bigint;
+ statement: EXECUTE prepstmt;
+ statement: EXECUTE prepstmt2(123);
+ statement: ALTER TABLE pcachetest DROP COLUMN q3;
+ statement: EXECUTE prepstmt;
+ statement: EXECUTE prepstmt2(123);
+ statement: CREATE TEMP VIEW pcacheview AS                                      +
+   SELECT * FROM pcachetest;
+ statement: PREPARE vprep AS SELECT * FROM pcacheview;
+ statement: EXECUTE vprep;
+ statement: CREATE OR REPLACE TEMP VIEW pcacheview AS                           +
+   SELECT q1, q2/2 AS q2 FROM pcachetest;
+ statement: EXECUTE vprep;
+ statement: create function cache_test(int) returns int as $$                   +
+ declare total int;                                                             +
+ begin                                                                          +
+         create temp table t1(f1 int);                                          +
+         insert into t1 values($1);                                             +
+         insert into t1 values(11);                                             +
+         insert into t1 values(12);                                             +
+         insert into t1 values(13);                                             +
+         select sum(f1) into total from t1;                                     +
+         drop table t1;                                                         +
+         return total;                                                          +
+ end                                                                            +
+ $$ language plpgsql;
+ statement: select cache_test(1);
+ statement: select cache_test(2);
+ statement: select cache_test(3);
+ statement: create temp view v1 as                                              +
+   select 2+2 as f1;
+ statement: create function cache_test_2() returns int as $$                    +
+ begin                                                                          +
+         return f1 from v1;                                                     +
+ end$$ language plpgsql;
+ statement: select cache_test_2();
+ statement: create or replace temp view v1 as                                   +
+   select 2+2+4 as f1;
+ statement: select cache_test_2();
+ statement: create or replace temp view v1 as                                   +
+   select 2+2+4+(select max(unique1) from tenk1) as f1;
+ statement: select cache_test_2();
+ statement: create schema s1                                                    +
+   create table abc (f1 int);
+ statement: create schema s2                                                    +
+   create table abc (f1 int);
+ statement: insert into s1.abc values(123);
+ statement: insert into s2.abc values(456);
+ statement: set search_path = s1;
+ statement: prepare p1 as select f1 from abc;
+ statement: execute p1;
+ statement: set search_path = s2;
+ statement: select f1 from abc;
+ statement: execute p1;
+ statement: alter table s1.abc add column f2 float8;
+ statement: execute p1;
+ statement: drop schema s1 cascade;
+ statement: drop schema s2 cascade;
+ statement: reset search_path;
+ statement: create temp sequence seq;
+ statement: prepare p2 as select nextval('seq');
+ statement: execute p2;
+ statement: drop sequence seq;
+ statement: create temp sequence seq;
+ statement: execute p2;
+ statement: create function cachebug() returns void as $$                       +
+ declare r int;                                                                 +
+ begin                                                                          +
+   drop table if exists temptable cascade;                                      +
+   create temp table temptable as select * from generate_series(1,3) as f1;     +
+   create temp view vv as select * from temptable;                              +
+   for r in select * from vv loop                                               +
+     raise notice '%', r;                                                       +
+   end loop;                                                                    +
+ end$$ language plpgsql;
+ statement: select cachebug();
+ statement: select cachebug();
+

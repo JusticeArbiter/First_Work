@@ -1,0 +1,4 @@
+INSERT INTO f_star (class, a, c)  VALUES ('f', 24, 'hi marc'::name);
+ERROR:  42P01: relation "f_star" does not exist
+LINE 1: INSERT INTO f_star (class, a, c)  VALUES ('f', 24, 'hi marc'...
+                    ^

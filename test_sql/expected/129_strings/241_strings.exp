@@ -1,0 +1,6 @@
+SELECT ascii('');
+ ascii 
+-------
+     0
+(1 row)
+

@@ -1,0 +1,6 @@
+select txid_current();
+ txid_current 
+--------------
+         6352
+(1 row)
+

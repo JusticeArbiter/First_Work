@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 'bbc' COLLATE "en_US" > 'äbc' COLLATE "en_US" AS "true";
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+COMMENT ON INDEX six_wrong IS 'bad index';
+ERROR:  42P01: relation "six_wrong" does not exist

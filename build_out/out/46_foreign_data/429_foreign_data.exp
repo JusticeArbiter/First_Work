@@ -1,0 +1,3 @@
+DROP TRIGGER trigtest_before_stmt ON foreign_schema.foreign_table_1;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TRIGGER
+DROP TRIGGER

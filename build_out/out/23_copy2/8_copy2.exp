@@ -1,0 +1,2 @@
+COPY x (b, d) from stdin;
+ERROR:  42P01: relation "x" does not exist

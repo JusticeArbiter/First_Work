@@ -1,0 +1,6 @@
+select to_binary_double(3.141592653::float4);
+ to_binary_double 
+------------------
+ 3.14159274101257
+(1 row)
+

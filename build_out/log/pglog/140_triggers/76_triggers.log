@@ -1,0 +1,11 @@
+LOG:  00000: statement: INSERT INTO main_table (a, b) VALUES (5, 10) ON CONFLICT (a)  DO UPDATE SET b = EXCLUDED.b;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: trigger_func(before_ins_stmt) called: action = INSERT, when = BEFORE, level = STATEMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  INSERT INTO main_table (a, b) VALUES (5, 10) ON CONFLICT (a)  DO UPDATE SET b = EXCLUDED.b;
+NOTICE:  00000: trigger_func(after_upd_stmt) called: action = UPDATE, when = AFTER, level = STATEMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  INSERT INTO main_table (a, b) VALUES (5, 10) ON CONFLICT (a)  DO UPDATE SET b = EXCLUDED.b;
+NOTICE:  00000: trigger_func(after_ins_stmt) called: action = INSERT, when = AFTER, level = STATEMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  INSERT INTO main_table (a, b) VALUES (5, 10) ON CONFLICT (a)  DO UPDATE SET b = EXCLUDED.b;

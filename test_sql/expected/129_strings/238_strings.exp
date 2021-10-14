@@ -1,0 +1,6 @@
+SELECT translate('', '14', 'ax');
+ translate 
+-----------
+ 
+(1 row)
+

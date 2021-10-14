@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 'bear' LIKE 'b_ear' ESCAPE '_' AS "true";
+LOCATION:  exec_simple_query, postgres.c:938

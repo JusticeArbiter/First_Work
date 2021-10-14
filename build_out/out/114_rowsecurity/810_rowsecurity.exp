@@ -1,0 +1,5 @@
+DROP ROLE rls_regress_group1;
+ERROR:  2BP01: role "rls_regress_group1" cannot be dropped because some objects depend on it
+DETAIL:  target of policy p1 on table z1
+privileges for table z2
+privileges for table z1

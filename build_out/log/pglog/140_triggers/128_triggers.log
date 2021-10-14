@@ -1,0 +1,12 @@
+LOG:  00000: statement: ALTER TABLE main_table DROP COLUMN b;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER TABLE main_table DROP COLUMN b;
+ERROR:  2BP01: cannot drop table main_table column b because other objects depend on it
+DETAIL:  trigger after_upd_b_row_trig on table main_table depends on table main_table column b
+	trigger after_upd_a_b_row_trig on table main_table depends on table main_table column b
+	trigger after_upd_b_stmt_trig on table main_table depends on table main_table column b
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+LOCATION:  reportDependentObjects, dependency.c:985
+STATEMENT:  ALTER TABLE main_table DROP COLUMN b;

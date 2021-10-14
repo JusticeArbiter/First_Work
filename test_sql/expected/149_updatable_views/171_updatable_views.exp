@@ -1,0 +1,2 @@
+CREATE USER view_user1;
+CREATE ROLE

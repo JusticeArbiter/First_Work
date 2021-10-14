@@ -1,0 +1,4 @@
+select (select grouping(a,b) from gstest2) from gstest2 group by a,b;
+ERROR:  42P01: relation "gstest2" does not exist
+LINE 1: select (select grouping(a,b) from gstest2) from gstest2 grou...
+                                                        ^

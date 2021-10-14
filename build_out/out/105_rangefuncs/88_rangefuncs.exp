@@ -1,0 +1,7 @@
+SELECT * FROM vw_getfoo;
+ getfoo3 
+---------
+ Joe
+ Ed
+(2 rows)
+

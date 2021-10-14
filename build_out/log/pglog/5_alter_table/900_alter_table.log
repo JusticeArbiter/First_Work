@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO test_type_diff2_c2 VALUES (4, 5, 6);
+LOCATION:  exec_simple_query, postgres.c:938

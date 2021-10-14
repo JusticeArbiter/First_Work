@@ -1,0 +1,5 @@
+LOG:  00000: statement: GRANT regressgroup2 TO regressuser5;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: role "regressuser5" is already a member of role "regressgroup2"
+LOCATION:  AddRoleMems, user.c:1460
+STATEMENT:  GRANT regressgroup2 TO regressuser5;

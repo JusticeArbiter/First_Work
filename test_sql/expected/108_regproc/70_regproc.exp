@@ -1,0 +1,6 @@
+SELECT to_regrole('"Nonexistent"');
+ to_regrole 
+------------
+ 
+(1 row)
+

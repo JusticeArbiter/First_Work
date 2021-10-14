@@ -1,0 +1,2 @@
+LOG:  00000: statement: DELETE FROM rw_view2 WHERE base_a = 1.05 RETURNING base_a, s, c, t;
+LOCATION:  exec_simple_query, postgres.c:938

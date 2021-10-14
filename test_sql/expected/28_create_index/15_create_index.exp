@@ -1,0 +1,2 @@
+CREATE INDEX six ON shighway USING btree (name text_ops);
+ERROR:  42P01: relation "shighway" does not exist

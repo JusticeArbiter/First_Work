@@ -1,0 +1,3 @@
+ALTER POLICY p ON tbl1 TO bob USING (true);
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER POLICY
+ALTER POLICY

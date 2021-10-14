@@ -1,0 +1,6 @@
+select pg_typeof(pg_typeof(0));
+ pg_typeof 
+-----------
+ regtype
+(1 row)
+

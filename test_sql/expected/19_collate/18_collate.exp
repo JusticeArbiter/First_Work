@@ -1,0 +1,2 @@
+CREATE TABLE collate_test2 (  a int,  b text COLLATE "POSIX"  );
+ERROR:  42P07: relation "collate_test2" already exists

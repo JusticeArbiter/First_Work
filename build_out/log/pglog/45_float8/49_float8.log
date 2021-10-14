@@ -1,0 +1,2 @@
+LOG:  00000: statement: select sign(f1) as sign_f1 from float8_tbl f;
+LOCATION:  exec_simple_query, postgres.c:938

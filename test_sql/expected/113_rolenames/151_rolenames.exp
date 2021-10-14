@@ -1,0 +1,14 @@
+SELECT p.proname, r.rolname  FROM pg_proc p JOIN pg_roles r ON (r.oid = p.proowner)  WHERE proname LIKE 'testagg_'  ORDER BY 1;
+ proname  |   rolname    
+----------+--------------
+ testagg1 | highgo
+ testagg2 | current_user
+ testagg3 | highgo
+ testagg4 | testrolx
+ testagg5 | Public
+ testagg6 | highgo
+ testagg7 | highgo
+ testagg8 | highgo
+ testagg9 | highgo
+(9 rows)
+

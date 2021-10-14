@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE OPERATOR CLASS alt_opc2 FOR TYPE macaddr USING hash AS STORAGE macaddr;
+LOCATION:  exec_simple_query, postgres.c:938

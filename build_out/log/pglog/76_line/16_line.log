@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM LINE_TBL WHERE (s <-> line '[(1,2),(3,4)]') < 10;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,8 @@
+LOG:  00000: statement: create or replace function footest() returns void as $$  declare x record;  begin  -- should fail, too many rows  execute 'select * from foo where f1 > 3' into strict x;  raise notice 'x.f1 = %, x.f2 = %', x.f1, x.f2;  end$$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create or replace function footest() returns void as $$  declare x record;  begin  -- should fail, too many rows  execute 'select * from foo where f1 > 3' into strict x;  raise notice 'x.f1 = %, x.f2 = %', x.f1, x.f2;  end$$ language plpgsql;
+ERROR:  42601: syntax error at end of input at character 223
+LOCATION:  plpgsql_yyerror, pl_scanner.c:623
+STATEMENT:  create or replace function footest() returns void as $$  declare x record;  begin  -- should fail, too many rows  execute 'select * from foo where f1 > 3' into strict x;  raise notice 'x.f1 = %, x.f2 = %', x.f1, x.f2;  end$$ language plpgsql;

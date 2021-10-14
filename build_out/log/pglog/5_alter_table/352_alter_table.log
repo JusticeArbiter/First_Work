@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc3 inherit atacc2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: child table is missing constraint "foo"
+LOCATION:  MergeConstraintsIntoExisting, tablecmds.c:10529
+STATEMENT:  alter table atacc3 inherit atacc2;

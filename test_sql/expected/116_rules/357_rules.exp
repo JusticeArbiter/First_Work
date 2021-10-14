@@ -1,0 +1,2 @@
+insert into pparent values (1,'parent1');
+INSERT 0 1

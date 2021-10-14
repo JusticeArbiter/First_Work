@@ -1,0 +1,2 @@
+LOG:  00000: statement: select '1'::text in (select '1'::name union all select '1'::name);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,3 @@
+ALTER FOREIGN TABLE ft1 SET TABLESPACE ts;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN TABLE
+ERROR:  42P01: relation "ft1" does not exist

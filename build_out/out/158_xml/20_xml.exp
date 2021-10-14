@@ -1,0 +1,4 @@
+SELECT xmlelement(name element,  xmlattributes ('unnamed and wrong'));
+ERROR:  42601: unnamed XML attribute value must be a column reference
+LINE 1: SELECT xmlelement(name element,  xmlattributes ('unnamed and...
+                                                        ^

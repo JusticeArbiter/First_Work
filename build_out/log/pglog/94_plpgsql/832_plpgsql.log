@@ -1,0 +1,2 @@
+LOG:  00000: statement: explain (verbose, costs off)  select consumes_rw_array(a), a from returns_rw_array(1) a;
+LOCATION:  exec_simple_query, postgres.c:938

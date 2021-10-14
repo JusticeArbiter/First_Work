@@ -1,0 +1,2 @@
+delete from rtest_v1;
+DELETE 3

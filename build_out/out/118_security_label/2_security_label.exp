@@ -1,0 +1,3 @@
+DROP ROLE IF EXISTS seclabel_user1;
+NOTICE:  00000: role "seclabel_user1" does not exist, skipping
+DROP ROLE

@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH t1 AS ( DELETE FROM bug6051 RETURNING * )  INSERT INTO bug6051 SELECT * FROM t1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "bug6051" does not exist at character 26
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  WITH t1 AS ( DELETE FROM bug6051 RETURNING * )  INSERT INTO bug6051 SELECT * FROM t1;

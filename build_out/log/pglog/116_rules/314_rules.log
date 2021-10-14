@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE shoelace_data SET sl_avail = 6 WHERE sl_name = 'sl7';
+LOCATION:  exec_simple_query, postgres.c:938

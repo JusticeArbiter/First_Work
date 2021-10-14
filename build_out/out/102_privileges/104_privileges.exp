@@ -1,0 +1,11 @@
+EXPLAIN (COSTS OFF) SELECT * FROM atest12v x, atest12v y WHERE x.a = y.b;
+                   QUERY PLAN                    
+-------------------------------------------------
+ Nested Loop
+   ->  Seq Scan on atest12 atest12_1
+         Filter: (b <<< 5)
+   ->  Index Scan using atest12_a_idx on atest12
+         Index Cond: (a = atest12_1.b)
+         Filter: (b <<< 5)
+(6 rows)
+

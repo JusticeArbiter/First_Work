@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP GROUP IF EXISTS tg1, tg2;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: role "tg2" does not exist, skipping
+LOCATION:  DropRole, user.c:978
+STATEMENT:  DROP GROUP IF EXISTS tg1, tg2;

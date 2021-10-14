@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT lo_put(1002, 1, 'abcd');
+LOCATION:  exec_simple_query, postgres.c:938

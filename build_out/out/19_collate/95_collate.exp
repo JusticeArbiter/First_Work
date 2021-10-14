@@ -1,0 +1,17 @@
+SELECT a, dup(b) FROM collate_test2 ORDER BY 2;
+ a | dup 
+---+-----
+ 1 | abc
+ 1 | abc
+ 1 | abc
+ 2 | Abc
+ 4 | ABC
+ 4 | ABC
+ 4 | ABD
+ 3 | bbc
+ 3 | bbc
+ 3 | bbc
+ 2 | äbc
+ 2 | äbc
+(12 rows)
+

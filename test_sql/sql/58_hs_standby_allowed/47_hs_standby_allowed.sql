@@ -1,0 +1,1 @@
+reset synchronous_commit;

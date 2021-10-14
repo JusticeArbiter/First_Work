@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO t1 VALUES ( 'bb', 11 );
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for integer: "bb" at character 25
+LOCATION:  pg_atoi, numutils.c:62
+STATEMENT:  INSERT INTO t1 VALUES ( 'bb', 11 );

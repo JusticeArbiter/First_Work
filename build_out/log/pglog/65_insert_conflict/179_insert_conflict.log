@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into twoconstraints values(1, '((2,2),(3,3))');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: duplicate key value violates unique constraint "twoconstraints_f1_key"
+DETAIL:  Key (f1)=(1) already exists.
+LOCATION:  _bt_check_unique, nbtinsert.c:432
+STATEMENT:  insert into twoconstraints values(1, '((2,2),(3,3))');

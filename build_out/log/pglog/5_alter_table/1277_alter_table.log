@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE new_system_table SET SCHEMA pg_catalog;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P07: table new_system_table is already in schema "pg_catalog"
+LOCATION:  CheckSetNamespace, namespace.c:2788
+STATEMENT:  ALTER TABLE new_system_table SET SCHEMA pg_catalog;

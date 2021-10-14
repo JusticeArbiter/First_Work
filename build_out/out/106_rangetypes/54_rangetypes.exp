@@ -1,0 +1,6 @@
+select * from numrange_test where nr <= 'empty';
+  nr   
+-------
+ empty
+(1 row)
+

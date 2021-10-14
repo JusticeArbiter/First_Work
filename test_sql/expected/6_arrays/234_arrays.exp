@@ -1,0 +1,2 @@
+drop function unnest1(anyarray);
+DROP FUNCTION

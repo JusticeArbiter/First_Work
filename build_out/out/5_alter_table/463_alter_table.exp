@@ -1,0 +1,2 @@
+alter table atacc1 alter test set not null;
+ERROR:  23502: column "test" contains null values

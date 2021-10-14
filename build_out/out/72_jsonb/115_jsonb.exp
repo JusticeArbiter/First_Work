@@ -1,0 +1,6 @@
+select '{"a": "c", "b": null}'::jsonb ->> 'b';
+ ?column? 
+----------
+ 
+(1 row)
+

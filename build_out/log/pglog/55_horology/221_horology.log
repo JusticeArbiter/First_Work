@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT to_timestamp('199711xy', 'YYYYMMDD');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid value "xy" for "DD"
+DETAIL:  Value must be an integer.
+LOCATION:  from_char_parse_int_len, formatting.c:2225
+STATEMENT:  SELECT to_timestamp('199711xy', 'YYYYMMDD');

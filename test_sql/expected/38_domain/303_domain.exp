@@ -1,0 +1,3 @@
+select dom_check(0);
+ERROR:  23514: value for domain di violates check constraint "pos"
+CONTEXT:  PL/pgSQL function dom_check(integer) line 1 at assignment

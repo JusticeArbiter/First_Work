@@ -1,0 +1,20 @@
+explain (costs off)  select count(*) from  tenk1 a join tenk1 b on a.unique1 = b.unique2  left join tenk1 c on a.unique2 = b.unique1 and c.thousand = a.thousand  join int4_tbl on b.thousand = f1;
+                          QUERY PLAN                          
+--------------------------------------------------------------
+ Aggregate
+   ->  Hash Join
+         Hash Cond: (int4_tbl.f1 = b.thousand)
+         ->  Seq Scan on int4_tbl
+         ->  Hash
+               ->  Hash Left Join
+                     Hash Cond: (a.thousand = c.thousand)
+                     Join Filter: (a.unique2 = b.unique1)
+                     ->  Hash Join
+                           Hash Cond: (a.unique1 = b.unique2)
+                           ->  Seq Scan on tenk1 a
+                           ->  Hash
+                                 ->  Seq Scan on tenk1 b
+                     ->  Hash
+                           ->  Seq Scan on tenk1 c
+(15 rows)
+

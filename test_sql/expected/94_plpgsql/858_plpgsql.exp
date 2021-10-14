@@ -1,0 +1,3 @@
+do $$  declare var text := 'some value';  begin  assert 1=0, format('assertion failed, var = "%s"', var);  end;  $$;
+ERROR:  P0004: assertion failed, var = "some value"
+CONTEXT:  PL/pgSQL function inline_code_block line 1 at ASSERT

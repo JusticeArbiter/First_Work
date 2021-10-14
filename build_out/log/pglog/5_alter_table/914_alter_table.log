@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT conname, conrelid::pg_catalog.regclass,  pg_catalog.pg_get_constraintdef(c.oid, true) as condef  FROM pg_catalog.pg_constraint c  WHERE c.confrelid = '17274' AND c.contype = 'f' ORDER BY 1;
+LOCATION:  exec_simple_query, postgres.c:938

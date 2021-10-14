@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO INT8_TBL(q1) VALUES (' 345 5');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for integer: " 345 5" at character 34
+LOCATION:  scanint8, int8.c:134
+STATEMENT:  INSERT INTO INT8_TBL(q1) VALUES (' 345 5');

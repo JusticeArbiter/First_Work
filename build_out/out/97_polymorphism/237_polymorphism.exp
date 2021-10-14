@@ -1,0 +1,6 @@
+select * from dfunc(c := 100);
+  _a   | _c  
+-------+-----
+ def a | 100
+(1 row)
+

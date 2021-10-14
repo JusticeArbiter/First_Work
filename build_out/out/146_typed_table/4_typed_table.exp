@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS persons OF person_type;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  42P07: relation "persons" already exists, skipping
+CREATE TABLE

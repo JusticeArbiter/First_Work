@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE RULE "_RETURN" AS ON SELECT TO t DO INSTEAD  SELECT * FROM generate_series(1,5) t0(c);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE RULE "_RETURN" AS ON SELECT TO t DO INSTEAD  SELECT * FROM generate_series(1,5) t0(c);
+ERROR:  55000: could not convert table "t" to a view because it has row security enabled
+LOCATION:  DefineQueryRewrite, rewriteDefine.c:460
+STATEMENT:  CREATE RULE "_RETURN" AS ON SELECT TO t DO INSTEAD  SELECT * FROM generate_series(1,5) t0(c);

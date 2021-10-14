@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP POLICY p1 ON dob_t1;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP POLICY
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP POLICY p1 ON dob_t1;
+ERROR:  42704: policy "p1" for table "dob_t1" does not exist
+LOCATION:  get_relation_policy_oid, policy.c:1348
+STATEMENT:  DROP POLICY p1 ON dob_t1;

@@ -1,0 +1,2 @@
+DROP INDEX onek_nulltest;
+ERROR:  42704: index "onek_nulltest" does not exist

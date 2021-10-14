@@ -1,0 +1,5 @@
+LOG:  00000: statement: create rule rtest_pers_upd as on update to rtest_person do also  update rtest_admin set pname = new.pname where pname = old.pname;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create rule rtest_pers_upd as on update to rtest_person do also  update rtest_admin set pname = new.pname where pname = old.pname;

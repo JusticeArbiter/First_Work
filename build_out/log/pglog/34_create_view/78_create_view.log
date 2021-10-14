@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW mysecview5 WITH (security_barrier=100)  AS SELECT * FROM tbl1 WHERE a > 100;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: invalid value for boolean option "security_barrier": 100
+LOCATION:  parse_one_reloption, reloptions.c:1021
+STATEMENT:  CREATE VIEW mysecview5 WITH (security_barrier=100)  AS SELECT * FROM tbl1 WHERE a > 100;

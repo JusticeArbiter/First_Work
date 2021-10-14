@@ -1,0 +1,5 @@
+LOG:  00000: statement: select rank('adam'::text collate "C") within group (order by x collate "POSIX")  from (values ('fred'),('jim')) v(x);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P21: collation mismatch between explicit collations "C" and "POSIX" at character 64
+LOCATION:  merge_collation_state, parse_collate.c:837
+STATEMENT:  select rank('adam'::text collate "C") within group (order by x collate "POSIX")  from (values ('fred'),('jim')) v(x);

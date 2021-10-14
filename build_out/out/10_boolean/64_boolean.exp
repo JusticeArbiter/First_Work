@@ -1,0 +1,6 @@
+SELECT '' AS "False", f1  FROM BOOLTBL1  WHERE f1 IS FALSE;
+ False | f1 
+-------+----
+       | f
+(1 row)
+

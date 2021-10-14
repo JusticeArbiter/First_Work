@@ -1,0 +1,2 @@
+DROP TABLE FKTABLE;
+ERROR:  42P01: table "fktable" does not exist

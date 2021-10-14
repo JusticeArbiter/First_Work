@@ -1,0 +1,6 @@
+SELECT has_sequence_privilege('x_seq', 'USAGE');
+ has_sequence_privilege 
+------------------------
+ t
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter domain ddef1 set default '42';
+LOCATION:  exec_simple_query, postgres.c:938

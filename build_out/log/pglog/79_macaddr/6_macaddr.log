@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO macaddr_data VALUES (5, '0800.2b01.0203');
+LOCATION:  exec_simple_query, postgres.c:938

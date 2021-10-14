@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter table def_test alter column c2 set default 'new_default';
+LOCATION:  exec_simple_query, postgres.c:938

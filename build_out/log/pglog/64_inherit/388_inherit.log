@@ -1,0 +1,8 @@
+LOG:  00000: statement: alter table p1 add constraint inh_check_constraint2 check (f1 < 10);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  alter table p1 add constraint inh_check_constraint2 check (f1 < 10);
+NOTICE:  00000: merging constraint "inh_check_constraint2" with inherited definition
+LOCATION:  MergeWithExistingConstraint, heap.c:2493
+STATEMENT:  alter table p1 add constraint inh_check_constraint2 check (f1 < 10);

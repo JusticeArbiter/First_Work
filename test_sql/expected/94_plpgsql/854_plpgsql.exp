@@ -1,0 +1,4 @@
+do $$  begin  assert NULL; -- should fail  end;  $$;
+ERROR:  42601: syntax error at end of input
+LINE 1: do $$  begin  assert NULL; -- should fail  end;  $$;
+                                                         ^

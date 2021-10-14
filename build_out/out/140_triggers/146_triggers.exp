@@ -1,0 +1,2 @@
+insert into trigtest default values;
+INSERT 0 1

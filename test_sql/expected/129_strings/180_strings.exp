@@ -1,0 +1,6 @@
+SELECT length(c), c::text FROM toasttest;
+ length | c 
+--------+---
+      1 | x
+(1 row)
+

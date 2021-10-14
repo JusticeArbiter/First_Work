@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE OR REPLACE VIEW viewtest AS  SELECT a, b, 0 AS c FROM viewtest_tbl;
+LOCATION:  exec_simple_query, postgres.c:938

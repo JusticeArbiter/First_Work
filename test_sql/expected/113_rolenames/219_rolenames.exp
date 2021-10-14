@@ -1,0 +1,14 @@
+SELECT proname, proacl FROM pg_proc WHERE proname LIKE 'testagg_';
+ proname  | proacl 
+----------+--------
+ testagg1 | 
+ testagg2 | 
+ testagg3 | 
+ testagg4 | 
+ testagg5 | 
+ testagg6 | 
+ testagg7 | 
+ testagg8 | 
+ testagg9 | 
+(9 rows)
+

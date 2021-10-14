@@ -1,0 +1,5 @@
+select uunique1 from  tenk1 t1 join tenk2 t2 on t1.two = t2.two;
+ERROR:  42703: column "uunique1" does not exist
+LINE 1: select uunique1 from  tenk1 t1 join tenk2 t2 on t1.two = t2....
+               ^
+HINT:  Perhaps you meant to reference the column "t1.unique1" or the column "t2.unique1".

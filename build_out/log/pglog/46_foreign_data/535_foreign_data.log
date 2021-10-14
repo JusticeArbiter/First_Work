@@ -1,0 +1,8 @@
+LOG:  00000: statement: ALTER TABLE pt1 ALTER COLUMN c8 TYPE char(10) USING '0';
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER TABLE pt1 ALTER COLUMN c8 TYPE char(10) USING '0';
+ERROR:  42809: "ft2" is not a table
+LOCATION:  ATPrepAlterColumnType, tablecmds.c:8002
+STATEMENT:  ALTER TABLE pt1 ALTER COLUMN c8 TYPE char(10) USING '0';

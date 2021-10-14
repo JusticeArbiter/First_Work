@@ -1,0 +1,6 @@
+select * from domdeftest;
+ col1 
+------
+    3
+(1 row)
+

@@ -1,0 +1,3 @@
+CREATE INDEX enumtest_hash ON enumtest USING hash (col);
+WARNING:  01000: hash indexes are not WAL-logged and their use is discouraged
+CREATE INDEX

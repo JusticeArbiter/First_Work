@@ -1,0 +1,6 @@
+LOG:  00000: statement: alter event trigger regress_event_trigger owner to regression_bob;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42501: permission denied to change owner of event trigger "regress_event_trigger"
+HINT:  The owner of an event trigger must be a superuser.
+LOCATION:  AlterEventTriggerOwner_internal, event_trigger.c:618
+STATEMENT:  alter event trigger regress_event_trigger owner to regression_bob;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE test_tsquery SET keyword = to_tsquery('english', txtkeyword);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter domain con drop constraint if exists nonexistent;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: constraint "nonexistent" of domain "con" does not exist, skipping
+LOCATION:  AlterDomainDropConstraint, typecmds.c:2464
+STATEMENT:  alter domain con drop constraint if exists nonexistent;

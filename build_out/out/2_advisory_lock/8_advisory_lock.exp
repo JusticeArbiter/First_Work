@@ -1,0 +1,6 @@
+SELECT count(*) FROM pg_locks WHERE locktype = 'advisory';
+ count 
+-------
+     0
+(1 row)
+

@@ -1,0 +1,5 @@
+SELECT * FROM t1 WHERE a=100;
+ a | b | c 
+---+---+---
+(0 rows)
+

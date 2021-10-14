@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP CAST IF EXISTS (text AS text);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: cast from type text to type text does not exist, skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:448
+STATEMENT:  DROP CAST IF EXISTS (text AS text);

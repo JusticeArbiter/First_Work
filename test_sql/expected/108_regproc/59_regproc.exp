@@ -1,0 +1,6 @@
+SELECT to_regtype('int3');
+ to_regtype 
+------------
+ 
+(1 row)
+

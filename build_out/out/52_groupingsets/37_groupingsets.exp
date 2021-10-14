@@ -1,0 +1,5 @@
+CREATE VIEW gstest_view AS select a, b, grouping(a,b), sum(c), count(*), max(c)  from gstest2 group by rollup ((a,b,c),(c,d));
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+ERROR:  42P01: relation "gstest2" does not exist
+LINE 1: ... b, grouping(a,b), sum(c), count(*), max(c)  from gstest2 gr...
+                                                             ^

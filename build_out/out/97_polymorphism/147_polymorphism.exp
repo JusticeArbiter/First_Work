@@ -1,0 +1,6 @@
+select pg_typeof(myleast(10, 1, 20, 33));
+ pg_typeof 
+-----------
+ integer
+(1 row)
+

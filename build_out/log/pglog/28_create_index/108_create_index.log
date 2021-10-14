@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM circle_tbl WHERE f1 && circle(point(1,-2), 1)  ORDER BY area(f1);
+LOCATION:  exec_simple_query, postgres.c:938

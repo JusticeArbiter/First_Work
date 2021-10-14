@@ -1,0 +1,4 @@
+SELECT ctid,cmin,* FROM combocidtest FOR UPDATE;
+ERROR:  42P01: relation "combocidtest" does not exist
+LINE 1: SELECT ctid,cmin,* FROM combocidtest FOR UPDATE;
+                                ^

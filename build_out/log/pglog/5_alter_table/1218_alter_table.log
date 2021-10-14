@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE IF EXISTS tt8 ADD CONSTRAINT xxx PRIMARY KEY(f);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: relation "tt8" does not exist, skipping
+LOCATION:  ProcessUtilitySlow, utility.c:1105
+STATEMENT:  ALTER TABLE IF EXISTS tt8 ADD CONSTRAINT xxx PRIMARY KEY(f);

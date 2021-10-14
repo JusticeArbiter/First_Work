@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '((200,800),(800,800),(800,200),(200,200))' && '(1000,1000,0,0)'::polygon AS "true";
+LOCATION:  exec_simple_query, postgres.c:938

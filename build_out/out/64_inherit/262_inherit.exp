@@ -1,0 +1,3 @@
+ALTER TABLE inhts RENAME aa TO aaa;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+ERROR:  42P16: cannot rename inherited column "aa"

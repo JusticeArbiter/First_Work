@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT json_agg(q ORDER BY x NULLS FIRST, y)  FROM rows q;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "rows" does not exist at character 52
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT json_agg(q ORDER BY x NULLS FIRST, y)  FROM rows q;

@@ -1,0 +1,1 @@
+DROP USER IF EXISTS tu1, tu2;

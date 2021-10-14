@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT jsonb_typeof('"1.0"') AS string;
+LOCATION:  exec_simple_query, postgres.c:938

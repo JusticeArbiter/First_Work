@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE DOMAIN collate_dep_dom1 AS text COLLATE test0;
+LOCATION:  exec_simple_query, postgres.c:938

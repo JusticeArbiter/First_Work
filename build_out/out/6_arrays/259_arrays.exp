@@ -1,0 +1,6 @@
+select string_to_array(NULL, '|') IS NULL;
+ ?column? 
+----------
+ t
+(1 row)
+

@@ -1,0 +1,4 @@
+insert into self_ref_trigger values (3, 1, 'root child B');
+ERROR:  42P01: relation "self_ref_trigger" does not exist
+LINE 1: insert into self_ref_trigger values (3, 1, 'root child B');
+                    ^

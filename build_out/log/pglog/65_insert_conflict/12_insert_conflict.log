@@ -1,0 +1,2 @@
+LOG:  00000: statement: explain (costs off) insert into insertconflicttest values(0, 'Crowberry') on conflict (key, fruit text_pattern_ops) do nothing;
+LOCATION:  exec_simple_query, postgres.c:938

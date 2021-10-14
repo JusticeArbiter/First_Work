@@ -1,0 +1,4 @@
+SELECT c, count(*) FROM test_missing_target GROUP BY 3;
+ERROR:  42P10: GROUP BY position 3 is not in select list
+LINE 1: SELECT c, count(*) FROM test_missing_target GROUP BY 3;
+                                                             ^

@@ -1,0 +1,6 @@
+SELECT * FROM tvmm;
+ grandtot 
+----------
+       28
+(1 row)
+

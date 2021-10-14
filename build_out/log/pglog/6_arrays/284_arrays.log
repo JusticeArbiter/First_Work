@@ -1,0 +1,2 @@
+LOG:  00000: statement: select cardinality('{{1,2},{3,4},{5,6}}'::int[]);
+LOCATION:  exec_simple_query, postgres.c:938

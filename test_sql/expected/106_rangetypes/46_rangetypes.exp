@@ -1,0 +1,8 @@
+SELECT * FROM numrange_test WHERE 1.9 <@ nr;
+    nr     
+-----------
+ (,)
+ (,5)
+ [1.1,2.2)
+(3 rows)
+

@@ -1,0 +1,4 @@
+select * from t1 left join t2 on (t1.a = t2.a);
+ERROR:  42703: column t1.a does not exist
+LINE 1: select * from t1 left join t2 on (t1.a = t2.a);
+                                          ^

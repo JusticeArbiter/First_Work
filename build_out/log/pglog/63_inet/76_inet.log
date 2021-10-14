@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '127::1'::inet + 10000000000;
+LOCATION:  exec_simple_query, postgres.c:938

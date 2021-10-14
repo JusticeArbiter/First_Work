@@ -1,0 +1,1 @@
+ALTER USER SESSION_USER RESET application_name;

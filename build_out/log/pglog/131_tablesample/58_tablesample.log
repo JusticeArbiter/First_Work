@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT id FROM test_tablesample_v1 TABLESAMPLE BERNOULLI (1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: TABLESAMPLE clause can only be applied to tables and materialized views at character 16
+LOCATION:  transformFromClauseItem, parse_clause.c:939
+STATEMENT:  SELECT id FROM test_tablesample_v1 TABLESAMPLE BERNOULLI (1);

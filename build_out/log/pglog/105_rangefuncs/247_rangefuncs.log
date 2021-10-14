@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE FUNCTION dup (f1 anyelement, f2 out anyelement, f3 out anyarray)  AS 'select $1, array[$1,$1]' LANGUAGE sql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE FUNCTION dup (f1 anyelement, f2 out anyelement, f3 out anyarray)  AS 'select $1, array[$1,$1]' LANGUAGE sql;
+ERROR:  42723: function "dup" already exists with same argument types
+LOCATION:  ProcedureCreate, pg_proc.c:402
+STATEMENT:  CREATE FUNCTION dup (f1 anyelement, f2 out anyelement, f3 out anyarray)  AS 'select $1, array[$1,$1]' LANGUAGE sql;

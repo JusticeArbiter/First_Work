@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc1 alter a set storage plain;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" of relation "atacc1" does not exist
+LOCATION:  ATExecSetStorage, tablecmds.c:5612
+STATEMENT:  alter table atacc1 alter a set storage plain;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: select jsonb_set('{"a": {"b": [1, 2, 3]}}', '{a, b, non_integer}', '"new_value"');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: path element at position 3 is not an integer: "non_integer"
+LOCATION:  setPathArray, jsonfuncs.c:3903
+STATEMENT:  select jsonb_set('{"a": {"b": [1, 2, 3]}}', '{a, b, non_integer}', '"new_value"');

@@ -1,0 +1,2 @@
+LOG:  00000: statement: create view at_view_1 as select * from at_base_table bt;
+LOCATION:  exec_simple_query, postgres.c:938

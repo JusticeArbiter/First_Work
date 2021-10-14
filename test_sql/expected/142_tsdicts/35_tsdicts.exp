@@ -1,0 +1,6 @@
+SELECT ts_lexize('synonym', 'Gogle');
+ ts_lexize 
+-----------
+ {googl}
+(1 row)
+

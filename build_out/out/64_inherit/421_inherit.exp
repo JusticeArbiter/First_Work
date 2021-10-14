@@ -1,0 +1,4 @@
+create table matest2 (id integer primary key) inherits (matest0);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  00000: merging column "id" with inherited definition
+CREATE TABLE

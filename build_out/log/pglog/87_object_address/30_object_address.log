@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT pg_get_object_address('table', '{NULL}', '{}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: name or argument lists may not contain nulls
+LOCATION:  textarray_to_strvaluelist, objectaddress.c:1825
+STATEMENT:  SELECT pg_get_object_address('table', '{NULL}', '{}');

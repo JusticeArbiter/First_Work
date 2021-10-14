@@ -1,0 +1,5 @@
+LOG:  00000: statement: COMMENT ON SEQUENCE sequence_test2 IS 'will work';
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start COMMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  COMMENT ON SEQUENCE sequence_test2 IS 'will work';

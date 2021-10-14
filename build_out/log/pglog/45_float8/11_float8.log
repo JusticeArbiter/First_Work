@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type double precision: "" at character 36
+LOCATION:  float8in, float.c:415
+STATEMENT:  INSERT INTO FLOAT8_TBL(f1) VALUES ('');

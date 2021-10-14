@@ -1,0 +1,2 @@
+CREATE DOMAIN testdomain AS text;
+ERROR:  42710: type "testdomain" already exists

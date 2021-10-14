@@ -1,0 +1,3 @@
+DROP TEXT SEARCH TEMPLATE IF EXISTS test_tstemplate_exists;
+NOTICE:  00000: text search template "test_tstemplate_exists" does not exist, skipping
+DROP TEXT SEARCH TEMPLATE

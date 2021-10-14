@@ -1,0 +1,6 @@
+SELECT nextval('sequence_test'::text);
+ nextval 
+---------
+      99
+(1 row)
+

@@ -1,0 +1,4 @@
+CREATE CONSTRAINT TRIGGER trigtest_constraint AFTER INSERT OR UPDATE OR DELETE  ON foreign_schema.foreign_table_1  FOR EACH ROW  EXECUTE PROCEDURE dummy_trigger();
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+ERROR:  42809: "foreign_table_1" is a foreign table
+DETAIL:  Foreign tables cannot have constraint triggers.

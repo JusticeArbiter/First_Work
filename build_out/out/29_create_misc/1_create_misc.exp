@@ -1,0 +1,4 @@
+INSERT INTO tenk2 SELECT * FROM tenk1;
+ERROR:  42P01: relation "tenk2" does not exist
+LINE 1: INSERT INTO tenk2 SELECT * FROM tenk1;
+                    ^

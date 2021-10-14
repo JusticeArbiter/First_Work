@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP OWNED BY regress_test_role2 CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP OWNED
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP OWNED BY regress_test_role2 CASCADE;
+NOTICE:  00000: drop cascades to user mapping for highgo on server s5
+LOCATION:  reportDependentObjects, dependency.c:1009
+STATEMENT:  DROP OWNED BY regress_test_role2 CASCADE;

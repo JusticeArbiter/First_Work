@@ -1,0 +1,3 @@
+ALTER TABLE t3 INHERIT t1;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+ERROR:  42804: child table is missing column "num"

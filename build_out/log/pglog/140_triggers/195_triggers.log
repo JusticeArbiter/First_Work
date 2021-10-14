@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO min_updates_test VALUES ('a',1,2),('b','2',null);
+LOCATION:  exec_simple_query, postgres.c:938

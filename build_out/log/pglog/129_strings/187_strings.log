@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT replace('yabadabadoo', 'ba', '123') AS "ya123da123doo";
+LOCATION:  exec_simple_query, postgres.c:938

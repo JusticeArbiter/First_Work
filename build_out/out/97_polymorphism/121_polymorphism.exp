@@ -1,0 +1,6 @@
+select myleast('z'::text);
+ myleast 
+---------
+ z
+(1 row)
+

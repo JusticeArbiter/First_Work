@@ -1,0 +1,2 @@
+alter table atacc3 no inherit atacc2;
+ERROR:  42P01: relation "atacc2" is not a parent of relation "atacc3"

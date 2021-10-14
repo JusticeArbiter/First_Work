@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from array_to_set(array['one', 'two']);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: a column definition list is required for functions returning "record" at character 15
+LOCATION:  addRangeTableEntryForFunction, parse_relation.c:1476
+STATEMENT:  select * from array_to_set(array['one', 'two']);

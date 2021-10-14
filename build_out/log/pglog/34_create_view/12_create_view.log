@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE OR REPLACE VIEW viewtest AS  SELECT a, b FROM viewtest_tbl WHERE a > 5 ORDER BY b DESC;
+LOCATION:  exec_simple_query, postgres.c:938

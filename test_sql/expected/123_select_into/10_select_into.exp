@@ -1,0 +1,3 @@
+SELECT * INTO TABLE selinto_schema.tmp1  FROM pg_class WHERE relname like '%a%';
+NOTICE:  00000: test_event_trigger: ddl_command_start SELECT INTO
+SELECT 643

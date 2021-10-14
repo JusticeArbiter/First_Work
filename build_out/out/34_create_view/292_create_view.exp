@@ -1,0 +1,20 @@
+select pg_get_viewdef('vv2', true);
+                 pg_get_viewdef                 
+------------------------------------------------
+  SELECT v.a,                                  +
+     v.b,                                      +
+     v.c,                                      +
+     v.d,                                      +
+     v.e                                       +
+    FROM ( VALUES (1,2,3,4,5)) v(a, b, c, d, e)+
+ UNION ALL                                     +
+  SELECT x AS a,                               +
+     tt7.y AS b,                               +
+     tt8.z AS c,                               +
+     tt8x.x_1 AS d,                            +
+     tt8x.z AS e                               +
+    FROM tt7                                   +
+      FULL JOIN tt8 USING (x),                 +
+     tt8 tt8x(x_1, z, z2);
+(1 row)
+

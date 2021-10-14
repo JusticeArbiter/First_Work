@@ -1,0 +1,4 @@
+INSERT INTO t2 VALUES ( 'cc', 22 );
+ERROR:  22P02: invalid input syntax for integer: "cc"
+LINE 1: INSERT INTO t2 VALUES ( 'cc', 22 );
+                                ^

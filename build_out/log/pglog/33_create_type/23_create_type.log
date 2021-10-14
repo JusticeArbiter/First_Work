@@ -1,0 +1,2 @@
+LOG:  00000: statement: COMMENT ON TYPE default_test_row IS 'good comment';
+LOCATION:  exec_simple_query, postgres.c:938

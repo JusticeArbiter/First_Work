@@ -1,0 +1,1 @@
+REVOKE USAGE ON LANGUAGE sql FROM regressuser1;

@@ -1,0 +1,2 @@
+GRANT regressgroup2 TO regressuser5;
+GRANT ROLE

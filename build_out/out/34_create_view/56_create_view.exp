@@ -1,0 +1,4 @@
+CREATE VIEW temporal1 AS SELECT * FROM t1 CROSS JOIN tt;
+ERROR:  42P01: relation "tt" does not exist
+LINE 1: CREATE VIEW temporal1 AS SELECT * FROM t1 CROSS JOIN tt;
+                                                             ^

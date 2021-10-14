@@ -1,0 +1,5 @@
+LOG:  00000: statement: select stacked_diagnostics_test();
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: message: custom exception, detail: some detail of custom exception, hint: some hint related to custom exception
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select stacked_diagnostics_test();

@@ -1,0 +1,3 @@
+CREATE FUNCTION dogrant_fails() RETURNS void LANGUAGE sql SECURITY DEFINER AS  'GRANT regressgroup2 TO regressuser5';
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

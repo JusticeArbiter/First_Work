@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM collate_test1 WHERE b ~* '^abc';
+LOCATION:  exec_simple_query, postgres.c:938

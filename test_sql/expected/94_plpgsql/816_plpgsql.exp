@@ -1,0 +1,6 @@
+select arrayassign1();
+ERROR:  42704: type "rtype" does not exist
+LINE 1: SELECT row(12, '{foo,bar,baz}')::rtype
+                                         ^
+QUERY:  SELECT row(12, '{foo,bar,baz}')::rtype
+CONTEXT:  PL/pgSQL function arrayassign1() line 1 at assignment

@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE brinopers (colname name, typ text,  op text[], value text[], matches int[],  check (cardinality(op) = cardinality(value)),  check (cardinality(op) = cardinality(matches)));
+LOCATION:  exec_simple_query, postgres.c:938

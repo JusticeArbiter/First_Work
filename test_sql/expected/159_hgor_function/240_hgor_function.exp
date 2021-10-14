@@ -1,0 +1,6 @@
+select to_dsinterval('00 00:01:00')*121;
+ ?column? 
+----------
+ 02:01:00
+(1 row)
+

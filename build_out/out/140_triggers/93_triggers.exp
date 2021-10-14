@@ -1,0 +1,5 @@
+UPDATE main_table SET a = 50, b = 60;
+NOTICE:  00000: trigger_func(modified_any) called: action = UPDATE, when = BEFORE, level = ROW
+NOTICE:  00000: trigger_func(modified_a) called: action = UPDATE, when = BEFORE, level = ROW
+NOTICE:  00000: trigger_func(after_upd_stmt) called: action = UPDATE, when = AFTER, level = STATEMENT
+UPDATE 0

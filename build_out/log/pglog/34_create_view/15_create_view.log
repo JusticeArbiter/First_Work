@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE OR REPLACE VIEW viewtest AS  SELECT 1, * FROM viewtest_tbl;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: cannot change name of view column "a" to "?column?"
+LOCATION:  checkViewTupleDesc, view.c:299
+STATEMENT:  CREATE OR REPLACE VIEW viewtest AS  SELECT 1, * FROM viewtest_tbl;

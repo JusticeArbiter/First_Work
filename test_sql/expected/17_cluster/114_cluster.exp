@@ -1,0 +1,2 @@
+cluster clstr_temp using clstr_temp_pkey;
+ERROR:  42P01: relation "clstr_temp" does not exist

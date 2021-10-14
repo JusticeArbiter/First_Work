@@ -1,0 +1,4 @@
+INSERT INTO foo VALUES (847003,'sub-alpha','GESS90');
+ERROR:  42P01: relation "foo" does not exist
+LINE 1: INSERT INTO foo VALUES (847003,'sub-alpha','GESS90');
+                    ^

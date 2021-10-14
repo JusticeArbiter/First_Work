@@ -1,0 +1,2 @@
+alter table only dropColumn drop column e;
+ALTER TABLE

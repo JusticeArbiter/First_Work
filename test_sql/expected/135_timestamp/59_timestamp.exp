@@ -1,0 +1,4 @@
+INSERT INTO TIMESTAMP_TBL VALUES ('97FEB10 5:32:01PM UTC');
+ERROR:  22007: invalid input syntax for type timestamp: "97FEB10 5:32:01PM UTC"
+LINE 1: INSERT INTO TIMESTAMP_TBL VALUES ('97FEB10 5:32:01PM UTC');
+                                          ^

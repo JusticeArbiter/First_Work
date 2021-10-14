@@ -1,0 +1,4 @@
+select f1, q.c1 from quadtable;
+ERROR:  42P01: relation "quadtable" does not exist
+LINE 1: select f1, q.c1 from quadtable;
+                             ^

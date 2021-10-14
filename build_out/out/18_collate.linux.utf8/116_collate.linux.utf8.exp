@@ -1,0 +1,5 @@
+SELECT a, b FROM collate_test1 UNION SELECT a, b FROM collate_test3 ORDER BY 2;
+ERROR:  42P21: collation mismatch between implicit collations "en_US" and "C"
+LINE 1: SELECT a, b FROM collate_test1 UNION SELECT a, b FROM collat...
+                                                       ^
+HINT:  You can choose the collation by applying the COLLATE clause to one or both expressions.

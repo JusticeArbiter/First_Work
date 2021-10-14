@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE INDEX gcircleind ON circle_tbl USING gist (f1);
+LOCATION:  exec_simple_query, postgres.c:938

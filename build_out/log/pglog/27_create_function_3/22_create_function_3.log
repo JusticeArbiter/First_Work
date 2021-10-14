@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER FUNCTION functext_C_2(int) SECURITY INVOKER;
+LOCATION:  exec_simple_query, postgres.c:938

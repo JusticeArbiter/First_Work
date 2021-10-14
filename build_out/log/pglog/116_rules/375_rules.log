@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT viewname, definition FROM pg_views WHERE schemaname <> 'information_schema' ORDER BY viewname;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,14 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE bmscantest (a int, b int, t text);
+ statement: INSERT INTO bmscantest                                                                                                     +
+   SELECT (r%53), (r%59), 'foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo'+
+   FROM generate_series(1,70000) r;
+ statement: CREATE INDEX i_bmtest_a ON bmscantest(a);
+ statement: CREATE INDEX i_bmtest_b ON bmscantest(b);
+ statement: set enable_indexscan=false;
+ statement: set enable_seqscan=false;
+ statement: set work_mem = 64;
+ statement: SELECT count(*) FROM bmscantest WHERE a = 1 AND b = 1;
+ statement: SELECT count(*) FROM bmscantest WHERE a = 1 OR b = 1;
+ statement: DROP TABLE bmscantest;
+

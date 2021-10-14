@@ -1,0 +1,2 @@
+CREATE INDEX intarrayidx ON array_index_op_test USING gin (i);
+ERROR:  42P01: relation "array_index_op_test" does not exist

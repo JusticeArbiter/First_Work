@@ -1,0 +1,13 @@
+SELECT * FROM rls_view;
+NOTICE:  00000: f_leak => aba
+NOTICE:  00000: f_leak => bbb
+NOTICE:  00000: f_leak => ccc
+NOTICE:  00000: f_leak => dad
+ a |  b  
+---+-----
+ 1 | aba
+ 2 | bbb
+ 3 | ccc
+ 4 | dad
+(4 rows)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT make_timestamp(2014,12,28,6,30,45.887);
+LOCATION:  exec_simple_query, postgres.c:938

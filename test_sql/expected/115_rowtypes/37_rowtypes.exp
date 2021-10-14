@@ -1,0 +1,6 @@
+select ROW(11,'ABC') > ROW(11,'DEF') as false;
+ false 
+-------
+ f
+(1 row)
+

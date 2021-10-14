@@ -1,0 +1,6 @@
+LOG:  00000: statement: alter table atacc1 add constraint atacc_test1 unique (test);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: could not create unique index "atacc_test1"
+DETAIL:  Key (test)=(2) is duplicated.
+LOCATION:  comparetup_index_btree, tuplesort.c:3616
+STATEMENT:  alter table atacc1 add constraint atacc_test1 unique (test);

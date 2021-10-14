@@ -1,0 +1,4 @@
+SELECT f1, f1 IS DISTINCT FROM f1+1 as "not null" FROM disttable;
+ERROR:  42P01: relation "disttable" does not exist
+LINE 1: ...T f1, f1 IS DISTINCT FROM f1+1 as "not null" FROM disttable;
+                                                             ^

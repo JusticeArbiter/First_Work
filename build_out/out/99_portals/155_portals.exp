@@ -1,0 +1,2 @@
+MOVE BACKWARD ALL IN c1;
+ERROR:  34000: cursor "c1" does not exist

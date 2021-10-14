@@ -1,0 +1,2 @@
+insert into IFace values ('IF', 'orion', 'ethernet_interface_name_too_long', '');
+ERROR:  P0001: IFace slotname "IF.orion.ethernet_interface_name_too_long" too long (20 char max)

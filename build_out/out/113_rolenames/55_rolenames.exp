@@ -1,0 +1,2 @@
+ALTER USER "public" WITH NOREPLICATION;
+ERROR:  42704: role "public" does not exist

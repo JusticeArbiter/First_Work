@@ -1,0 +1,6 @@
+SELECT testfunc1(5);
+ testfunc1 
+-----------
+        10
+(1 row)
+

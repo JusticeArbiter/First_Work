@@ -1,0 +1,4 @@
+DROP USER MAPPING IF EXISTS FOR regress_test_missing_role SERVER s4;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP USER MAPPING
+NOTICE:  00000: role "regress_test_missing_role" does not exist, skipping
+DROP USER MAPPING

@@ -1,0 +1,9 @@
+SELECT a, b FROM collate_test5 ORDER BY b;
+ a |  b  
+---+-----
+ 1 | abc
+ 4 | ABC
+ 2 | äbc
+ 3 | bbc
+(4 rows)
+

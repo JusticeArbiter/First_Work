@@ -1,0 +1,8 @@
+SELECT type, m.totamt AS mtot, v.totamt AS vtot FROM tm m LEFT JOIN tv v USING (type) ORDER BY type;
+ type | mtot | vtot 
+------+------+------
+ x    |    5 |    5
+ y    |   12 |   12
+ z    |   24 |   24
+(3 rows)
+

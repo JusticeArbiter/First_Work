@@ -1,0 +1,5 @@
+LOG:  00000: statement: create table c1(age int) inherits(p1,p2);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging multiple inherited definitions of column "name"
+LOCATION:  MergeAttributes, tablecmds.c:1605
+STATEMENT:  create table c1(age int) inherits(p1,p2);

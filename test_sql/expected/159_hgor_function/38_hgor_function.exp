@@ -1,0 +1,6 @@
+select nvl(12345::smallint,9876::int4);
+  nvl  
+-------
+ 12345
+(1 row)
+

@@ -1,0 +1,8 @@
+SELECT b,  SUBSTRING(b FROM 2 FOR 4) AS sub_2_4,  SUBSTRING(b FROM 7 FOR 13) AS sub_7_13,  SUBSTRING(b FROM 6) AS sub_6  FROM BIT_TABLE;
+      b      | sub_2_4 | sub_7_13 | sub_6  
+-------------+---------+----------+--------
+ 00000000000 | 0000    | 00000    | 000000
+ 11011000000 | 1011    | 00000    | 000000
+ 01010101010 | 1010    | 01010    | 101010
+(3 rows)
+

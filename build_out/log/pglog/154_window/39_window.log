@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT sum(salary) OVER w, rank() OVER w FROM empsalary WINDOW w AS (PARTITION BY depname ORDER BY salary DESC);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "empsalary" does not exist at character 47
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT sum(salary) OVER w, rank() OVER w FROM empsalary WINDOW w AS (PARTITION BY depname ORDER BY salary DESC);

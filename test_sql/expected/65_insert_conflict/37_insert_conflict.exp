@@ -1,0 +1,5 @@
+insert into insertconflicttest values (1, 'Apple') on conflict (key) do update set fruit = excluded.fruitt;
+ERROR:  42703: column excluded.fruitt does not exist
+LINE 1: ... 'Apple') on conflict (key) do update set fruit = excluded.f...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "excluded.fruit".

@@ -1,0 +1,6 @@
+SELECT sqrt(float8 '64') AS eight;
+ eight 
+-------
+     8
+(1 row)
+

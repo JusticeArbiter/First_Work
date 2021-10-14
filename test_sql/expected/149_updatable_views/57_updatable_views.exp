@@ -1,0 +1,3 @@
+ALTER VIEW rw_view15 ALTER COLUMN upper SET DEFAULT 'NOT SET';
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER VIEW
+ALTER VIEW

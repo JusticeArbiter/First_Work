@@ -1,0 +1,5 @@
+insert into insertconflicttest AS ict values (6, 'Passionfruit') on conflict (key) do update set fruit = insertconflicttest.fruit;
+ERROR:  42P01: invalid reference to FROM-clause entry for table "insertconflicttest"
+LINE 1: ...onfruit') on conflict (key) do update set fruit = insertconf...
+                                                             ^
+HINT:  Perhaps you meant to reference the table alias "ict".

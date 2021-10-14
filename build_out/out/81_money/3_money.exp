@@ -1,0 +1,6 @@
+SELECT * FROM money_data;
+    m    
+---------
+ $123.00
+(1 row)
+

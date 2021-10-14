@@ -1,0 +1,6 @@
+/*  * various string functions  */  select concat('one');
+ concat 
+--------
+ one
+(1 row)
+

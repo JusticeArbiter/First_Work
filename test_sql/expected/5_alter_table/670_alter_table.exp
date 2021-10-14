@@ -1,0 +1,5 @@
+select f1 from c1;
+ f1 
+----
+(0 rows)
+

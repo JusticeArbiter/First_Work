@@ -1,0 +1,6 @@
+select months_between('2016-11-16'::date,'2017-08-16'::date);
+ months_between 
+----------------
+             -9
+(1 row)
+

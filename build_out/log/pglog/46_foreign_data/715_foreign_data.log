@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP USER MAPPING FOR regress_test_role SERVER s6;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP USER MAPPING
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP USER MAPPING FOR regress_test_role SERVER s6;
+ERROR:  42704: user mapping "regress_test_role" does not exist for the server
+LOCATION:  RemoveUserMapping, foreigncmds.c:1376
+STATEMENT:  DROP USER MAPPING FOR regress_test_role SERVER s6;

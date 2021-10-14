@@ -1,0 +1,5 @@
+CREATE TEMP VIEW ucview AS SELECT * FROM uctest;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+ERROR:  42P01: relation "uctest" does not exist
+LINE 1: CREATE TEMP VIEW ucview AS SELECT * FROM uctest;
+                                                 ^

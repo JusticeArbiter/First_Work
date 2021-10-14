@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO BOOLTBL2 (f1)  VALUES (bool 'XXX');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type boolean: "XXX" at character 41
+LOCATION:  boolin, bool.c:153
+STATEMENT:  INSERT INTO BOOLTBL2 (f1)  VALUES (bool 'XXX');

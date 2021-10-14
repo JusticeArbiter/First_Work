@@ -1,0 +1,3 @@
+DROP SERVER nonexistent;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SERVER
+ERROR:  42704: server "nonexistent" does not exist

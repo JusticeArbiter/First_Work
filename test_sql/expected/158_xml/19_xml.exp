@@ -1,0 +1,6 @@
+SELECT xmlelement(name element,  xmlattributes (1 as one, 'deuce' as two),  'content');
+                   xmlelement                   
+------------------------------------------------
+ <element one="1" two="deuce">content</element>
+(1 row)
+

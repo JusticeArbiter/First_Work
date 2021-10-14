@@ -1,0 +1,12 @@
+explain (costs off)  select * from tenk1 a full join tenk1 b using(unique2) where unique2 = 42;
+              QUERY PLAN              
+--------------------------------------
+ Hash Full Join
+   Hash Cond: (a.unique2 = b.unique2)
+   ->  Seq Scan on tenk1 a
+         Filter: (unique2 = 42)
+   ->  Hash
+         ->  Seq Scan on tenk1 b
+               Filter: (unique2 = 42)
+(7 rows)
+

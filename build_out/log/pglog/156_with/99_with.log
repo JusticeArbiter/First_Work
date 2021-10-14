@@ -1,0 +1,7 @@
+LOG:  00000: statement: WITH outermost(x) AS (  SELECT 1  UNION (WITH innermost as (SELECT 2)  SELECT * FROM outermost  UNION SELECT * FROM innermost)  )  SELECT * FROM outermost;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "outermost" does not exist at character 86
+DETAIL:  There is a WITH item named "outermost", but it cannot be referenced from this part of the query.
+HINT:  Use WITH RECURSIVE, or re-order the WITH items to remove forward references.
+LOCATION:  parserOpenTable, parse_relation.c:1155
+STATEMENT:  WITH outermost(x) AS (  SELECT 1  UNION (WITH innermost as (SELECT 2)  SELECT * FROM outermost  UNION SELECT * FROM innermost)  )  SELECT * FROM outermost;

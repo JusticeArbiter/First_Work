@@ -1,0 +1,6 @@
+select decode('hgdb'::varchar,'hgdB'::varchar,'hdb'::bpchar);
+ decode 
+--------
+ 
+(1 row)
+

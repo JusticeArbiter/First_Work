@@ -1,0 +1,4 @@
+SELECT * FROM parent;
+ERROR:  42P01: relation "parent" does not exist
+LINE 1: SELECT * FROM parent;
+                      ^

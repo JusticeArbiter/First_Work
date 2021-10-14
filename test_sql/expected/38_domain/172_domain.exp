@@ -1,0 +1,3 @@
+alter domain con drop constraint if exists nonexistent;
+NOTICE:  00000: constraint "nonexistent" of domain "con" does not exist, skipping
+ALTER DOMAIN

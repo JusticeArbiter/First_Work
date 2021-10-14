@@ -1,0 +1,4 @@
+insert into master values(1);
+ERROR:  42P01: relation "master" does not exist
+LINE 1: insert into master values(1);
+                    ^

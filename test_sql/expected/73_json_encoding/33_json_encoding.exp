@@ -1,0 +1,6 @@
+SELECT jsonb '{ "a": "dollar \u0024 character" }' as correct_everywhere;
+     correct_everywhere      
+-----------------------------
+ {"a": "dollar $ character"}
+(1 row)
+

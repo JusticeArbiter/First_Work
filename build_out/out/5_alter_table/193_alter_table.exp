@@ -1,0 +1,2 @@
+INSERT INTO tmp3 values (1,20);
+INSERT 0 1

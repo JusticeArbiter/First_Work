@@ -1,0 +1,2 @@
+insert into foo values(1001);
+INSERT 0 1

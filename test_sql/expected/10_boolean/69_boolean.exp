@@ -1,0 +1,9 @@
+SELECT '' AS "Not True", f1  FROM BOOLTBL2  WHERE f1 IS NOT TRUE;
+ Not True | f1 
+----------+----
+          | f
+          | f
+          | f
+          | f
+(4 rows)
+

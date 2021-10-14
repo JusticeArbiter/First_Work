@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE INDEX comment_test_child_fk ON comment_test_child(id);
+LOCATION:  exec_simple_query, postgres.c:938

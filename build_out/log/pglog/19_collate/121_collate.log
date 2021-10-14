@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TEMP TABLE vctable (f1 varchar(25));
+LOCATION:  exec_simple_query, postgres.c:938

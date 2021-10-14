@@ -1,0 +1,142 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE CASE_TBL (                                                             +
+   i integer,                                                                                   +
+   f double precision                                                                           +
+ );
+ statement: CREATE TABLE CASE2_TBL (                                                            +
+   i integer,                                                                                   +
+   j integer                                                                                    +
+ );
+ statement: INSERT INTO CASE_TBL VALUES (1, 10.1);
+ statement: INSERT INTO CASE_TBL VALUES (2, 20.2);
+ statement: INSERT INTO CASE_TBL VALUES (3, -30.3);
+ statement: INSERT INTO CASE_TBL VALUES (4, NULL);
+ statement: INSERT INTO CASE2_TBL VALUES (1, -1);
+ statement: INSERT INTO CASE2_TBL VALUES (2, -2);
+ statement: INSERT INTO CASE2_TBL VALUES (3, -3);
+ statement: INSERT INTO CASE2_TBL VALUES (2, -4);
+ statement: INSERT INTO CASE2_TBL VALUES (1, NULL);
+ statement: INSERT INTO CASE2_TBL VALUES (NULL, -6);
+ statement: SELECT '3' AS "One",                                                                +
+   CASE                                                                                         +
+     WHEN 1 < 2 THEN 3                                                                          +
+   END AS "Simple WHEN";
+ statement: SELECT '<NULL>' AS "One",                                                           +
+   CASE                                                                                         +
+     WHEN 1 > 2 THEN 3                                                                          +
+   END AS "Simple default";
+ statement: SELECT '3' AS "One",                                                                +
+   CASE                                                                                         +
+     WHEN 1 < 2 THEN 3                                                                          +
+     ELSE 4                                                                                     +
+   END AS "Simple ELSE";
+ statement: SELECT '4' AS "One",                                                                +
+   CASE                                                                                         +
+     WHEN 1 > 2 THEN 3                                                                          +
+     ELSE 4                                                                                     +
+   END AS "ELSE default";
+ statement: SELECT '6' AS "One",                                                                +
+   CASE                                                                                         +
+     WHEN 1 > 2 THEN 3                                                                          +
+     WHEN 4 < 5 THEN 6                                                                          +
+     ELSE 7                                                                                     +
+   END AS "Two WHEN with default";
+ statement: SELECT CASE WHEN 1=0 THEN 1/0 WHEN 1=1 THEN 1 ELSE 2/0 END;
+ statement: SELECT CASE 1 WHEN 0 THEN 1/0 WHEN 1 THEN 1 ELSE 2/0 END;
+ statement: SELECT CASE WHEN i > 100 THEN 1/0 ELSE 0 END FROM case_tbl;
+ statement: SELECT CASE 'a' WHEN 'a' THEN 1 ELSE 2 END;
+ statement: SELECT '' AS "Five",                                                                +
+   CASE                                                                                         +
+     WHEN i >= 3 THEN i                                                                         +
+   END AS ">= 3 or Null"                                                                        +
+   FROM CASE_TBL;
+ statement: SELECT '' AS "Five",                                                                +
+   CASE WHEN i >= 3 THEN (i + i)                                                                +
+        ELSE i                                                                                  +
+   END AS "Simplest Math"                                                                       +
+   FROM CASE_TBL;
+ statement: SELECT '' AS "Five", i AS "Value",                                                  +
+   CASE WHEN (i < 0) THEN 'small'                                                               +
+        WHEN (i = 0) THEN 'zero'                                                                +
+        WHEN (i = 1) THEN 'one'                                                                 +
+        WHEN (i = 2) THEN 'two'                                                                 +
+        ELSE 'big'                                                                              +
+   END AS "Category"                                                                            +
+   FROM CASE_TBL;
+ statement: SELECT '' AS "Five",                                                                +
+   CASE WHEN ((i < 0) or (i < 0)) THEN 'small'                                                  +
+        WHEN ((i = 0) or (i = 0)) THEN 'zero'                                                   +
+        WHEN ((i = 1) or (i = 1)) THEN 'one'                                                    +
+        WHEN ((i = 2) or (i = 2)) THEN 'two'                                                    +
+        ELSE 'big'                                                                              +
+   END AS "Category"                                                                            +
+   FROM CASE_TBL;
+ statement: SELECT * FROM CASE_TBL WHERE COALESCE(f,i) = 4;
+ statement: SELECT * FROM CASE_TBL WHERE NULLIF(f,i) = 2;
+ statement: SELECT COALESCE(a.f, b.i, b.j)                                                      +
+   FROM CASE_TBL a, CASE2_TBL b;
+ statement: SELECT *                                                                            +
+   FROM CASE_TBL a, CASE2_TBL b                                                                 +
+   WHERE COALESCE(a.f, b.i, b.j) = 2;
+ statement: SELECT '' AS Five, NULLIF(a.i,b.i) AS "NULLIF(a.i,b.i)",                            +
+   NULLIF(b.i, 4) AS "NULLIF(b.i,4)"                                                            +
+   FROM CASE_TBL a, CASE2_TBL b;
+ statement: SELECT '' AS "Two", *                                                               +
+   FROM CASE_TBL a, CASE2_TBL b                                                                 +
+   WHERE COALESCE(f,b.i) = 2;
+ statement: UPDATE CASE_TBL                                                                     +
+   SET i = CASE WHEN i >= 3 THEN (- i)                                                          +
+                 ELSE (2 * i) END;
+ statement: SELECT * FROM CASE_TBL;
+ statement: UPDATE CASE_TBL                                                                     +
+   SET i = CASE WHEN i >= 2 THEN (2 * i)                                                        +
+                 ELSE (3 * i) END;
+ statement: SELECT * FROM CASE_TBL;
+ statement: UPDATE CASE_TBL                                                                     +
+   SET i = CASE WHEN b.i >= 2 THEN (2 * j)                                                      +
+                 ELSE (3 * j) END                                                               +
+   FROM CASE2_TBL b                                                                             +
+   WHERE j = -CASE_TBL.i;
+ statement: SELECT * FROM CASE_TBL;
+ statement: BEGIN;
+ statement: CREATE FUNCTION vol(text) returns text as                                           +
+   'begin return $1; end' language plpgsql volatile;
+ statement: SELECT CASE                                                                         +
+   (CASE vol('bar')                                                                             +
+     WHEN 'foo' THEN 'it was foo!'                                                              +
+     WHEN vol(null) THEN 'null input'                                                           +
+     WHEN 'bar' THEN 'it was bar!' END                                                          +
+   )                                                                                            +
+   WHEN 'it was foo!' THEN 'foo recognized'                                                     +
+   WHEN 'it was bar!' THEN 'bar recognized'                                                     +
+   ELSE 'unrecognized' END;
+ statement: CREATE DOMAIN foodomain AS text;
+ statement: CREATE FUNCTION volfoo(text) returns foodomain as                                   +
+   'begin return $1::foodomain; end' language plpgsql volatile;
+ statement: CREATE FUNCTION inline_eq(foodomain, foodomain) returns boolean as                  +
+   'SELECT CASE $2::text WHEN $1::text THEN true ELSE false END' language sql;
+ statement: CREATE OPERATOR = (procedure = inline_eq,                                           +
+                    leftarg = foodomain, rightarg = foodomain);
+ statement: SELECT CASE volfoo('bar') WHEN 'foo'::foodomain THEN 'is foo' ELSE 'is not foo' END;
+ statement: ROLLBACK;
+ statement: BEGIN;
+ statement: CREATE DOMAIN arrdomain AS int[];
+ statement: CREATE FUNCTION make_ad(int,int) returns arrdomain as                               +
+   'declare x arrdomain;                                                                        +
+    begin                                                                                       +
+      x := array[$1,$2];                                                                        +
+      return x;                                                                                 +
+    end' language plpgsql volatile;
+ statement: CREATE FUNCTION ad_eq(arrdomain, arrdomain) returns boolean as                      +
+   'begin return array_eq($1, $2); end' language plpgsql;
+ statement: CREATE OPERATOR = (procedure = ad_eq,                                               +
+                    leftarg = arrdomain, rightarg = arrdomain);
+ statement: SELECT CASE make_ad(1,2)                                                            +
+   WHEN array[2,4]::arrdomain THEN 'wrong'                                                      +
+   WHEN array[2,5]::arrdomain THEN 'still wrong'                                                +
+   WHEN array[1,2]::arrdomain THEN 'right'                                                      +
+   END;
+ statement: ROLLBACK;
+ statement: DROP TABLE CASE_TBL;
+ statement: DROP TABLE CASE2_TBL;
+

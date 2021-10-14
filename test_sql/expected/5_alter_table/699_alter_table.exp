@@ -1,0 +1,2 @@
+alter table gc1 drop column name;
+ERROR:  42P16: cannot drop inherited column "name"

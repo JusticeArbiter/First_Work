@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE tt1 OF tt_t0;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: table "tt1" has different type for column "y"
+LOCATION:  ATExecAddOf, tablecmds.c:10897
+STATEMENT:  ALTER TABLE tt1 OF tt_t0;

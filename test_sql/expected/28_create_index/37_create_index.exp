@@ -1,0 +1,4 @@
+CREATE TABLE quad_point_tbl AS  SELECT point(unique1,unique2) AS p FROM tenk1;
+ERROR:  42P01: relation "tenk1" does not exist
+LINE 1: ...point_tbl AS  SELECT point(unique1,unique2) AS p FROM tenk1;
+                                                                 ^

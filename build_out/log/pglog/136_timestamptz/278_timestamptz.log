@@ -1,0 +1,2 @@
+LOG:  00000: statement: select count(distinct utc_offset) >= 24 as ok from pg_timezone_abbrevs;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+select sys_context('USERENV','DB_NAME',100);
+ sys_context 
+-------------
+ highgo
+(1 row)
+

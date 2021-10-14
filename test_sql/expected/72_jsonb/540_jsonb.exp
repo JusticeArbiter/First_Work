@@ -1,0 +1,6 @@
+select jsonb_delete('{"a":1 , "b":2, "c":3}'::jsonb, 'b');
+   jsonb_delete   
+------------------
+ {"a": 1, "c": 3}
+(1 row)
+

@@ -1,0 +1,6 @@
+SELECT array_to_json(array_agg(q),false) from (select x as b, x * 2 as c from generate_series(1,3) x) q;
+                array_to_json                
+---------------------------------------------
+ [{"b":1,"c":2},{"b":2,"c":4},{"b":3,"c":6}]
+(1 row)
+

@@ -1,0 +1,4 @@
+CREATE VIEW v9_temp AS SELECT * FROM base_table WHERE NOT EXISTS (SELECT 1 FROM temp_table);
+ERROR:  42P01: relation "base_table" does not exist
+LINE 1: CREATE VIEW v9_temp AS SELECT * FROM base_table WHERE NOT EX...
+                                             ^

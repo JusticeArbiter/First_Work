@@ -1,0 +1,2 @@
+declare c cursor for select * from int8_tbl limit nochange(3);
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

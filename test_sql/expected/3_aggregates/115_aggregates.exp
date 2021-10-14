@@ -1,0 +1,4 @@
+select (select max(min(unique1)) from int8_tbl) from tenk1;
+ERROR:  42P01: relation "tenk1" does not exist
+LINE 1: select (select max(min(unique1)) from int8_tbl) from tenk1;
+                                                             ^

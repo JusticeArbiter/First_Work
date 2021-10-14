@@ -1,0 +1,2 @@
+INSERT INTO foo SELECT * FROM foo;
+INSERT 0 1

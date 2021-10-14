@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT i, c, i | c AS "or" FROM inet_tbl;
+LOCATION:  exec_simple_query, postgres.c:938

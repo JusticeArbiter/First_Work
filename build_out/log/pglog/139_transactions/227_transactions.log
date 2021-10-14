@@ -1,0 +1,2 @@
+LOG:  00000: statement: update xacttest set a = max_xacttest() + 10 where a > 0;
+LOCATION:  exec_simple_query, postgres.c:938

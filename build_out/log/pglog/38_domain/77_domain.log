@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into dcomptable (d1[1].r, d1[1].i) values(99, 100);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+SELECT 'infinity'::float4;
+  float4  
+----------
+ Infinity
+(1 row)
+

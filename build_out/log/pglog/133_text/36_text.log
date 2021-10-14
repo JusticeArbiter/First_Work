@@ -1,0 +1,5 @@
+LOG:  00000: statement: select format('Hello %x', 20);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: unrecognized conversion type specifier "x"
+LOCATION:  text_format, varlena.c:4709
+STATEMENT:  select format('Hello %x', 20);

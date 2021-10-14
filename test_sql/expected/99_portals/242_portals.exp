@@ -1,0 +1,2 @@
+DELETE FROM tenk1 WHERE CURRENT OF c;
+ERROR:  34000: cursor "c" does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT (-9223372036854775808)::money;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: bigint out of range
+LOCATION:  int8mul, int8.c:581
+STATEMENT:  SELECT (-9223372036854775808)::money;

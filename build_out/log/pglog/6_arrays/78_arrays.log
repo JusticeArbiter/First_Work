@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into arrtest_i values(8,'cat2',32);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "arrtest_i" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  insert into arrtest_i values(8,'cat2',32);

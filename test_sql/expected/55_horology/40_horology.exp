@@ -1,0 +1,6 @@
+SELECT time without time zone 'T040506.789+08';
+     time     
+--------------
+ 04:05:06.789
+(1 row)
+

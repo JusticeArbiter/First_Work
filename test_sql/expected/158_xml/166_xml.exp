@@ -1,0 +1,6 @@
+SELECT xpath('/*', '<invalidns xmlns=''&lt;''/>');
+ERROR:  2200M: could not parse XML document
+DETAIL:  line 1: xmlns: '<' is not a valid URI
+<invalidns xmlns='&lt;'/>
+                       ^
+CONTEXT:  SQL function "xpath" statement 1

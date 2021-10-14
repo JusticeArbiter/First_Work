@@ -1,0 +1,6 @@
+SELECT 'h%awkeye' LIKE 'h#%a%k%e' ESCAPE '#' AS "true";
+ true 
+------
+ t
+(1 row)
+

@@ -1,0 +1,6 @@
+SELECT POSITION(B'1010' IN B'00000101');
+ position 
+----------
+        0
+(1 row)
+

@@ -1,0 +1,9 @@
+LOG:  00000: statement: SELECT xmlparse(document '<twoerrors>&idontexist;</unbalanced>');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2200M: invalid XML document
+DETAIL:  line 1: Entity 'idontexist' not defined
+	<twoerrors>&idontexist;</unbalanced>
+	                       ^
+	line 1: Opening and ending tag mismatch: twoerrors line 1 and unbalanced
+LOCATION:  xml_ereport, xml.c:1555
+STATEMENT:  SELECT xmlparse(document '<twoerrors>&idontexist;</unbalanced>');

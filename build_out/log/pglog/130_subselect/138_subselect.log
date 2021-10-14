@@ -1,0 +1,5 @@
+LOG:  00000: statement: select nextval('ts1');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "ts1" does not exist at character 16
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  select nextval('ts1');

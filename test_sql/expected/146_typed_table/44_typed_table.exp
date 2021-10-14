@@ -1,0 +1,2 @@
+INSERT INTO persons VALUES (1, 'test');
+INSERT 0 1

@@ -1,0 +1,2 @@
+insert into shoelace_ok select * from shoelace_arrive;
+INSERT 0 0

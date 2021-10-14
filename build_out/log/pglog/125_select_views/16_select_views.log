@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW my_credit_card_usage_normal AS  SELECT * FROM my_credit_card_secure l NATURAL JOIN credit_usage r;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE VIEW my_credit_card_usage_normal AS  SELECT * FROM my_credit_card_secure l NATURAL JOIN credit_usage r;

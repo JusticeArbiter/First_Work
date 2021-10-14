@@ -1,0 +1,2 @@
+LOG:  00000: statement: select md5('message digest'::bytea) = 'f96b697d7cb7938d525a2f31aaf161d0' AS "TRUE";
+LOCATION:  exec_simple_query, postgres.c:938

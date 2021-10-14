@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO b(aa) VALUES('bbb');
+LOCATION:  exec_simple_query, postgres.c:938

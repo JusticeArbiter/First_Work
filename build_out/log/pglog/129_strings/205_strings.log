@@ -1,0 +1,2 @@
+LOG:  00000: statement: select md5('abc'::bytea) = '900150983cd24fb0d6963f7d28e17f72' AS "TRUE";
+LOCATION:  exec_simple_query, postgres.c:938

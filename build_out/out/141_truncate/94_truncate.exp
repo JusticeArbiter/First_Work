@@ -1,0 +1,5 @@
+SELECT * FROM trunc_trigger_log;
+ tgop | tglevel | tgwhen | tgargv | tgtable | rowcount 
+------+---------+--------+--------+---------+----------
+(0 rows)
+

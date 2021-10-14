@@ -1,0 +1,5 @@
+LOG:  00000: statement: select string_agg(distinct f1, ',' order by f1) from varchar_tbl;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "varchar_tbl" does not exist at character 54
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select string_agg(distinct f1, ',' order by f1) from varchar_tbl;

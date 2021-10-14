@@ -1,0 +1,5 @@
+LOG:  00000: statement: drop event trigger if exists regress_event_trigger2;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: event trigger "regress_event_trigger2" does not exist, skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:446
+STATEMENT:  drop event trigger if exists regress_event_trigger2;

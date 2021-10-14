@@ -1,0 +1,6 @@
+SELECT count(distinct j) FROM testjsonb;
+ count 
+-------
+     0
+(1 row)
+

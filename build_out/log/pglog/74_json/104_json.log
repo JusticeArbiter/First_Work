@@ -1,0 +1,5 @@
+LOG:  00000: statement: select (test_json->>'field3') is null as expect_true  from test_json  where json_type = 'object';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "test_json" does not exist at character 60
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select (test_json->>'field3') is null as expect_true  from test_json  where json_type = 'object';

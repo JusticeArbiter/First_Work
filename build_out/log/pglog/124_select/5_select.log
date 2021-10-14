@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT onek.unique1, onek.string4 FROM onek  WHERE onek.unique1 > 980  ORDER BY string4 using >, unique1 using <;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+select myfunc(0), current_setting('work_mem');
+ myfunc | current_setting 
+--------+-----------------
+ 2MB    | 2MB
+(1 row)
+

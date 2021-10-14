@@ -1,0 +1,2 @@
+LOG:  00000: statement: select interval '-10 mons -3 days +03:55:06.70';
+LOCATION:  exec_simple_query, postgres.c:938

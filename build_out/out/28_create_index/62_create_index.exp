@@ -1,0 +1,4 @@
+SELECT count(*) FROM point_tbl p WHERE p.f1 << '(0.0, 0.0)';
+ERROR:  42P01: relation "point_tbl" does not exist
+LINE 1: SELECT count(*) FROM point_tbl p WHERE p.f1 << '(0.0, 0.0)';
+                             ^

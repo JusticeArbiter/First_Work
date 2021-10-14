@@ -1,0 +1,5 @@
+CREATE POLICY p1 ON event_trigger_test USING (FALSE);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE POLICY
+NOTICE:  00000: CREATE POLICY - ddl_command_start
+NOTICE:  00000: CREATE POLICY - ddl_command_end
+CREATE POLICY

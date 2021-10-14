@@ -1,0 +1,3 @@
+COMMENT ON RULE rtest_v1_del ON rtest_v1 IS NULL;
+NOTICE:  00000: test_event_trigger: ddl_command_start COMMENT
+COMMENT

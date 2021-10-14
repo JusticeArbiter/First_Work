@@ -1,0 +1,12 @@
+LOG:  00000: statement: SELECT mvtest_func();
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE MATERIALIZED VIEW
+CONTEXT:  SQL statement "CREATE MATERIALIZED VIEW mvtest1 AS SELECT 1 AS x"
+	PL/pgSQL function mvtest_func() line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT mvtest_func();
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE MATERIALIZED VIEW
+CONTEXT:  SQL statement "CREATE MATERIALIZED VIEW mvtest2 AS SELECT 1 AS x WITH NO DATA"
+	PL/pgSQL function mvtest_func() line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT mvtest_func();

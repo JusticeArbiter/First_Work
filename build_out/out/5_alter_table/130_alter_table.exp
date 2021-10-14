@@ -1,0 +1,2 @@
+ALTER TABLE ONLY constraint_rename_test RENAME CONSTRAINT con1 TO con1foo;
+ERROR:  42P16: inherited constraint "con1" must be renamed in child tables too

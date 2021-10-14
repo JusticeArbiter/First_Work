@@ -1,0 +1,6 @@
+SELECT interval '123 11' day to hour;
+     interval      
+-------------------
+ 123 days 11:00:00
+(1 row)
+

@@ -1,0 +1,9 @@
+select execute_into_test('eifoo');
+NOTICE:  00000: 10 1
+NOTICE:  00000: 10 15
+NOTICE:  00000: 10 15 20
+ execute_into_test 
+-------------------
+ (1,2)
+(1 row)
+

@@ -1,0 +1,2 @@
+declare c1 cursor for select count_tt1_v(), count_tt1_s();
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

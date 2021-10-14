@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('event trigger', '{one,two}', '{}');
+ERROR:  42601: event trigger name cannot be qualified

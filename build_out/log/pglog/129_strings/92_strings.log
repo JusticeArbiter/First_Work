@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT OVERLAY('yabadoo' PLACING 'daba' FROM 5 FOR 0) AS "yabadabadoo";
+LOCATION:  exec_simple_query, postgres.c:938

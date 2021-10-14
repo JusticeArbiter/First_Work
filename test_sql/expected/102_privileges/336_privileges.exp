@@ -1,0 +1,4 @@
+CREATE CAST (testdomain1 AS testdomain3b) WITH FUNCTION castfunc(int);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE CAST
+WARNING:  42809: cast will be ignored because the source data type is a domain
+CREATE CAST

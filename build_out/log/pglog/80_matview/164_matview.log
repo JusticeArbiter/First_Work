@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE MATERIALIZED VIEW mvtest_mv_v_3 (ii, jj) AS SELECT i, j FROM mvtest_v WITH NO DATA;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE MATERIALIZED VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE MATERIALIZED VIEW mvtest_mv_v_3 (ii, jj) AS SELECT i, j FROM mvtest_v WITH NO DATA;

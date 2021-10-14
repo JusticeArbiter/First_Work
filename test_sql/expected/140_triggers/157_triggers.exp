@@ -1,0 +1,8 @@
+select * from trigtest;
+ i 
+---
+ 3
+ 4
+ 5
+(3 rows)
+

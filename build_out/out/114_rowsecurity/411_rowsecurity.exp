@@ -1,0 +1,11 @@
+EXPLAIN (COSTS OFF) SELECT * FROM y2 JOIN test_qual_pushdown ON (b = abc) WHERE f_leak(b);
+                  QUERY PLAN                  
+----------------------------------------------
+ Hash Join
+   Hash Cond: (test_qual_pushdown.abc = y2.b)
+   ->  Seq Scan on test_qual_pushdown
+   ->  Hash
+         ->  Seq Scan on y2
+               Filter: f_leak(b)
+(6 rows)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: DELETE FROM foo  USING int4_tbl i  WHERE foo.f1 + 123455 = i.f1  RETURNING foo.*, i.f1 as "i.f1";
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "foo" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  DELETE FROM foo  USING int4_tbl i  WHERE foo.f1 + 123455 = i.f1  RETURNING foo.*, i.f1 as "i.f1";

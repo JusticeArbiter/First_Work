@@ -1,0 +1,5 @@
+SELECT * FROM trunc_f;
+ col1 
+------
+(0 rows)
+

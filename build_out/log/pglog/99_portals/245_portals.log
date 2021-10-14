@@ -1,0 +1,5 @@
+LOG:  00000: statement: DECLARE c CURSOR FOR SELECT f1,count(*) FROM uctest GROUP BY f1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "uctest" does not exist at character 46
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  DECLARE c CURSOR FOR SELECT f1,count(*) FROM uctest GROUP BY f1;

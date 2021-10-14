@@ -1,0 +1,7 @@
+SELECT refclassid::regclass, deptype  FROM pg_shdepend  WHERE classid = 'pg_policy'::regclass  AND refobjid IN ('alice'::regrole, 'bob'::regrole);
+ refclassid | deptype 
+------------+---------
+ pg_authid  | r
+ pg_authid  | r
+(2 rows)
+

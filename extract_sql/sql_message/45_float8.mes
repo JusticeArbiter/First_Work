@@ -1,0 +1,97 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE FLOAT8_TBL(f1 float8);
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('    0.0   ');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('1004.30  ');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('   -34.84');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('1.2345678901234e+200');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('1.2345678901234e-200');
+ statement: SELECT '10e400'::float8;
+ statement: SELECT '-10e400'::float8;
+ statement: SELECT '10e-400'::float8;
+ statement: SELECT '-10e-400'::float8;
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('     ');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('xyz');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('5.0.0');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('5 . 0');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('5.   0');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('    - 3');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('123           5');
+ statement: SELECT 'NaN'::float8;
+ statement: SELECT 'nan'::float8;
+ statement: SELECT '   NAN  '::float8;
+ statement: SELECT 'infinity'::float8;
+ statement: SELECT '          -INFINiTY   '::float8;
+ statement: SELECT 'N A N'::float8;
+ statement: SELECT 'NaN x'::float8;
+ statement: SELECT ' INFINITY    x'::float8;
+ statement: SELECT 'Infinity'::float8 + 100.0;
+ statement: SELECT 'Infinity'::float8 / 'Infinity'::float8;
+ statement: SELECT 'nan'::float8 / 'nan'::float8;
+ statement: SELECT 'nan'::numeric::float8;
+ statement: SELECT '' AS five, * FROM FLOAT8_TBL;
+ statement: SELECT '' AS four, f.* FROM FLOAT8_TBL f WHERE f.f1 <> '1004.3';
+ statement: SELECT '' AS one, f.* FROM FLOAT8_TBL f WHERE f.f1 = '1004.3';
+ statement: SELECT '' AS three, f.* FROM FLOAT8_TBL f WHERE '1004.3' > f.f1;
+ statement: SELECT '' AS three, f.* FROM FLOAT8_TBL f WHERE  f.f1 < '1004.3';
+ statement: SELECT '' AS four, f.* FROM FLOAT8_TBL f WHERE '1004.3' >= f.f1;
+ statement: SELECT '' AS four, f.* FROM FLOAT8_TBL f WHERE  f.f1 <= '1004.3';
+ statement: SELECT '' AS three, f.f1, f.f1 * '-10' AS x                      +
+    FROM FLOAT8_TBL f                                                        +
+    WHERE f.f1 > '0.0';
+ statement: SELECT '' AS three, f.f1, f.f1 + '-10' AS x                      +
+    FROM FLOAT8_TBL f                                                        +
+    WHERE f.f1 > '0.0';
+ statement: SELECT '' AS three, f.f1, f.f1 / '-10' AS x                      +
+    FROM FLOAT8_TBL f                                                        +
+    WHERE f.f1 > '0.0';
+ statement: SELECT '' AS three, f.f1, f.f1 - '-10' AS x                      +
+    FROM FLOAT8_TBL f                                                        +
+    WHERE f.f1 > '0.0';
+ statement: SELECT '' AS one, f.f1 ^ '2.0' AS square_f1                      +
+    FROM FLOAT8_TBL f where f.f1 = '1004.3';
+ statement: SELECT '' AS five, f.f1, @f.f1 AS abs_f1                         +
+    FROM FLOAT8_TBL f;
+ statement: SELECT '' AS five, f.f1, trunc(f.f1) AS trunc_f1                 +
+    FROM FLOAT8_TBL f;
+ statement: SELECT '' AS five, f.f1, round(f.f1) AS round_f1                 +
+    FROM FLOAT8_TBL f;
+ statement: select ceil(f1) as ceil_f1 from float8_tbl f;
+ statement: select ceiling(f1) as ceiling_f1 from float8_tbl f;
+ statement: select floor(f1) as floor_f1 from float8_tbl f;
+ statement: select sign(f1) as sign_f1 from float8_tbl f;
+ statement: SELECT sqrt(float8 '64') AS eight;
+ statement: SELECT |/ float8 '64' AS eight;
+ statement: SELECT '' AS three, f.f1, |/f.f1 AS sqrt_f1                      +
+    FROM FLOAT8_TBL f                                                        +
+    WHERE f.f1 > '0.0';
+ statement: SELECT power(float8 '144', float8 '0.5');
+ statement: SELECT '' AS three, f.f1, exp(ln(f.f1)) AS exp_ln_f1             +
+    FROM FLOAT8_TBL f                                                        +
+    WHERE f.f1 > '0.0';
+ statement: SELECT ||/ float8 '27' AS three;
+ statement: SELECT '' AS five, f.f1, ||/f.f1 AS cbrt_f1 FROM FLOAT8_TBL f;
+ statement: SELECT '' AS five, * FROM FLOAT8_TBL;
+ statement: UPDATE FLOAT8_TBL                                                +
+    SET f1 = FLOAT8_TBL.f1 * '-1'                                            +
+    WHERE FLOAT8_TBL.f1 > '0.0';
+ statement: SELECT '' AS bad, f.f1 * '1e200' from FLOAT8_TBL f;
+ statement: SELECT '' AS bad, f.f1 ^ '1e200' from FLOAT8_TBL f;
+ statement: SELECT 0 ^ 0 + 0 ^ 1 + 0 ^ 0.0 + 0 ^ 0.5;
+ statement: SELECT '' AS bad, ln(f.f1) from FLOAT8_TBL f where f.f1 = '0.0' ;
+ statement: SELECT '' AS bad, ln(f.f1) from FLOAT8_TBL f where f.f1 < '0.0' ;
+ statement: SELECT '' AS bad, exp(f.f1) from FLOAT8_TBL f;
+ statement: SELECT '' AS bad, f.f1 / '0.0' from FLOAT8_TBL f;
+ statement: SELECT '' AS five, * FROM FLOAT8_TBL;
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('10e400');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('-10e400');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('10e-400');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('-10e-400');
+ statement: DELETE FROM FLOAT8_TBL;
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('0.0');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('-34.84');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('-1004.30');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('-1.2345678901234e+200');
+ statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('-1.2345678901234e-200');
+ statement: SELECT '' AS five, * FROM FLOAT8_TBL;
+

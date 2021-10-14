@@ -1,0 +1,2 @@
+ALTER COLLATION test1 RENAME TO test22;
+ERROR:  42704: collation "test1" for encoding "UTF8" does not exist

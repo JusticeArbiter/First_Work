@@ -1,0 +1,5 @@
+select xmin, * from fooview;
+ xmin | x | y 
+------+---+---
+(0 rows)
+

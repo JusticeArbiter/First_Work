@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf13 USING hash ADD FUNCTION 1 fn_opf13(int4);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P17: hash procedures must return integer
+LOCATION:  assignProcTypes, opclasscmds.c:1209
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf13 USING hash ADD FUNCTION 1 fn_opf13(int4);

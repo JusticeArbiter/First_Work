@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT COUNT(*) FROM point_gist_tbl WHERE f1 ~= '(0.0000009,0.0000009)'::point;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "point_gist_tbl" does not exist at character 22
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT COUNT(*) FROM point_gist_tbl WHERE f1 ~= '(0.0000009,0.0000009)'::point;

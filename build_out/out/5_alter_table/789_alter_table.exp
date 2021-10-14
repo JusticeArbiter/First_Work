@@ -1,0 +1,2 @@
+alter table anothertab drop constraint anothertab_chk;
+ERROR:  42704: constraint "anothertab_chk" of relation "anothertab" does not exist

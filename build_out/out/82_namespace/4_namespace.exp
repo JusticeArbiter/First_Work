@@ -1,0 +1,2 @@
+INSERT INTO test_schema_1.abc DEFAULT VALUES;
+INSERT 0 1

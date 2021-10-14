@@ -1,0 +1,2 @@
+ALTER TYPE test_type1 ALTER ATTRIBUTE b TYPE varchar;
+ERROR:  0A000: cannot alter type "test_type1" because column "test_tbl1.y" uses it

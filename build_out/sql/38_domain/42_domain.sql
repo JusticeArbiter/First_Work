@@ -1,0 +1,1 @@
+COPY domarrtest FROM stdin;

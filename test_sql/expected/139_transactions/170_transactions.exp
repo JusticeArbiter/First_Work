@@ -1,0 +1,11 @@
+SELECT a FROM savepoints WHERE a BETWEEN 12 AND 17;
+ a  
+----
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+(6 rows)
+

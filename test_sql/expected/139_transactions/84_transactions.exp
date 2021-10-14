@@ -1,0 +1,5 @@
+SELECT * FROM baz;
+ a 
+---
+(0 rows)
+

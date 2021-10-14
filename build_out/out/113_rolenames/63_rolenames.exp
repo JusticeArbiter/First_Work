@@ -1,0 +1,7 @@
+SELECT * FROM chksetconfig();
+ db  |     role     | rolkeyword |         setconfig         
+-----+--------------+------------+---------------------------
+ ALL | Public       | -          | {application_name=BARBAR}
+ ALL | current_user | -          | {application_name=FOOFOO}
+(2 rows)
+

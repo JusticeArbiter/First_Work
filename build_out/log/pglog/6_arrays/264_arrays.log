@@ -1,0 +1,2 @@
+LOG:  00000: statement: select string_to_array('1,2,3,4,,6', ',');
+LOCATION:  exec_simple_query, postgres.c:938

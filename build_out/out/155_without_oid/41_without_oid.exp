@@ -1,0 +1,4 @@
+SELECT count(oid) FROM execute_without;
+ERROR:  42P01: relation "execute_without" does not exist
+LINE 1: SELECT count(oid) FROM execute_without;
+                               ^

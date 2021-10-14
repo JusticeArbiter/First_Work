@@ -1,0 +1,6 @@
+SELECT * FROM tmm;
+ grandtot 
+----------
+       28
+(1 row)
+

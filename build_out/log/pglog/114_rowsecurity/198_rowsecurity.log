@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT (SELECT x FROM s1 LIMIT 1) xx, * FROM s2 WHERE y like '%28%';
+LOCATION:  exec_simple_query, postgres.c:938

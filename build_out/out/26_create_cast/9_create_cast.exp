@@ -1,0 +1,6 @@
+SELECT casttestfunc('foo'::text::casttesttype);
+ casttestfunc 
+--------------
+            1
+(1 row)
+

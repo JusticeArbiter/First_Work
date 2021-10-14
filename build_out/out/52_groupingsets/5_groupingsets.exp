@@ -1,0 +1,2 @@
+copy gstest3 from stdin;
+ERROR:  42P01: relation "gstest3" does not exist

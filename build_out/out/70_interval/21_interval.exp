@@ -1,0 +1,2 @@
+INSERT INTO INTERVAL_TBL (f1) VALUES ('5 months 12 hours');
+INSERT 0 1

@@ -1,0 +1,2 @@
+COPY y TO STDOUT (FORMAT CSV, FORCE_QUOTE (col2), ESCAPE E'\\')
+ERROR:  42P01: relation "y" does not exist

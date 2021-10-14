@@ -1,0 +1,4 @@
+SELECT to_timestamp('19971', 'YYYYMMDD');
+ERROR:  22007: source string too short for "MM" formatting field
+DETAIL:  Field requires 2 characters, but only 1 remain.
+HINT:  If your source string is not fixed-width, try using the "FM" modifier.

@@ -1,0 +1,4 @@
+select '12:16:14,13'::txid_snapshot;
+ERROR:  22P02: invalid input syntax for type txid_snapshot: "12:16:14,13"
+LINE 1: select '12:16:14,13'::txid_snapshot;
+               ^

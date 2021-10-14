@@ -1,0 +1,4 @@
+SELECT regtype('int3');
+ERROR:  42704: type "int3" does not exist
+LINE 1: SELECT regtype('int3');
+                       ^

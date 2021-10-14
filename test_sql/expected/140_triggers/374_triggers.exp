@@ -1,0 +1,7 @@
+insert into upsert values(5, 'purple') on conflict (key) do update set color = 'updated ' || upsert.color;
+WARNING:  01000: before insert (new): (5,purple)
+WARNING:  01000: before update (old): (5,"green trig modified")
+WARNING:  01000: before update (new): (5,"updated green trig modified")
+WARNING:  01000: after update (old): (5,"green trig modified")
+WARNING:  01000: after update (new): (5,"updated green trig modified")
+INSERT 0 1

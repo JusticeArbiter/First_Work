@@ -1,0 +1,2 @@
+copy test("........pg.dropped.1........") from stdin;
+ERROR:  42703: column "........pg.dropped.1........" of relation "test" does not exist

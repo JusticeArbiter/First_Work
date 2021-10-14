@@ -1,0 +1,2 @@
+insert into minmaxtest3 values(17), (18);
+INSERT 0 2

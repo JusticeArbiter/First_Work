@@ -1,0 +1,6 @@
+select concat(variadic NULL::int[]) is NULL;
+ ?column? 
+----------
+ t
+(1 row)
+

@@ -1,0 +1,2 @@
+ALTER USER PUBLIC SET application_name to 'BOMB';
+ERROR:  42704: role "public" does not exist

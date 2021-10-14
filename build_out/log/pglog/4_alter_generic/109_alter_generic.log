@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE OPERATOR CLASS alt_opc1 FOR TYPE uuid USING hash AS STORAGE uuid;
+LOCATION:  exec_simple_query, postgres.c:938

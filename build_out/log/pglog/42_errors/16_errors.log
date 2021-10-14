@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table emp rename column salary to manager;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42701: column "manager" of relation "stud_emp" already exists
+LOCATION:  check_for_column_name_collision, tablecmds.c:5083
+STATEMENT:  alter table emp rename column salary to manager;

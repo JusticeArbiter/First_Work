@@ -1,0 +1,6 @@
+SELECT jsonb_build_array(VARIADIC '{}'::text[]);
+ jsonb_build_array 
+-------------------
+ []
+(1 row)
+

@@ -1,0 +1,3 @@
+DROP OPERATOR IF EXISTS # (NONE, no_such_schema.no_such_type);
+NOTICE:  00000: schema "no_such_schema" does not exist, skipping
+DROP OPERATOR

@@ -1,0 +1,2 @@
+delete from rtest_view4;
+DELETE 3

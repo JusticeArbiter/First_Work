@@ -1,0 +1,2 @@
+LOG:  00000: statement: DROP USER rls_regress_exempt_user;
+LOCATION:  exec_simple_query, postgres.c:938

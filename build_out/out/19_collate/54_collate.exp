@@ -1,0 +1,9 @@
+SELECT a, x, y, lower(greatest(x, 'foo')), lower(greatest(y, 'foo')) FROM collate_test10;
+ a |  x  |  y  | lower | lower 
+---+-----+-----+-------+-------
+ 1 | hij | hij | hij   | hij
+ 2 | HIJ | HIJ | hij   | hıj
+ 1 | hij | hij | hij   | hij
+ 2 | HIJ | HIJ | hij   | hıj
+(4 rows)
+

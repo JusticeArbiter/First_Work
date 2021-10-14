@@ -1,0 +1,6 @@
+SELECT EXTRACT(CENTURY FROM TIMESTAMP '1970-03-20 04:30:00.00000');
+ date_part 
+-----------
+        20
+(1 row)
+

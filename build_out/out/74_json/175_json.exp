@@ -1,0 +1,6 @@
+select '"foo"'::json #> array['z'];
+ ?column? 
+----------
+ 
+(1 row)
+

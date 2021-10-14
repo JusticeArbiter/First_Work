@@ -1,0 +1,3 @@
+COMMENT ON CONSTRAINT constrname_wrong ON FKTABLE IS 'fk constraint comment';
+NOTICE:  00000: test_event_trigger: ddl_command_start COMMENT
+ERROR:  42704: constraint "constrname_wrong" for table "fktable" does not exist

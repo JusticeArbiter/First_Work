@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE hash_name_heap  SET seqno = 20000  WHERE hash_name_heap.random = '76652222'::name;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM numrange_test WHERE 1.9 <@ nr;
+LOCATION:  exec_simple_query, postgres.c:938

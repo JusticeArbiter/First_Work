@@ -1,0 +1,6 @@
+SELECT 'jack' LIKE '%____%' AS t;
+ t 
+---
+ t
+(1 row)
+

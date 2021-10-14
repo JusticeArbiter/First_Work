@@ -1,0 +1,7 @@
+LOG:  00000: statement: select json '{ "a": "\ud83dX" }' -> 'a';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type json
+DETAIL:  Unicode low surrogate must follow a high surrogate.
+CONTEXT:  JSON data, line 1: { "a":...
+LOCATION:  json_lex_string, json.c:976
+STATEMENT:  select json '{ "a": "\ud83dX" }' -> 'a';

@@ -1,0 +1,7 @@
+select * from basictest;
+ testint4 | testtext | testvarchar | testnumeric 
+----------+----------+-------------+-------------
+       88 | haha     | short       |      123.12
+       88 | haha     | short       |      123.12
+(2 rows)
+

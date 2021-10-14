@@ -1,0 +1,2 @@
+select array_fill(1, array[2,2], null);
+ERROR:  22004: dimension array or low bound array cannot be null

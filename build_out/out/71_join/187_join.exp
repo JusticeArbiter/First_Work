@@ -1,0 +1,4 @@
+insert into zt2 values(53);
+ERROR:  42P01: relation "zt2" does not exist
+LINE 1: insert into zt2 values(53);
+                    ^

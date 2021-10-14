@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO guid1(guid_field) VALUES('{22222222-2222-2222-2222-222222222222 ');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for uuid: "{22222222-2222-2222-2222-222222222222 " at character 38
+LOCATION:  string_to_uuid, uuid.c:129
+STATEMENT:  INSERT INTO guid1(guid_field) VALUES('{22222222-2222-2222-2222-222222222222 ');

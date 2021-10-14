@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP SERVER IF EXISTS test_server_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: server "test_server_exists" does not exist, skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:446
+STATEMENT:  DROP SERVER IF EXISTS test_server_exists;

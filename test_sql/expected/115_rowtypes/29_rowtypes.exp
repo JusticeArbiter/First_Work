@@ -1,0 +1,4 @@
+insert into pp values (repeat('abcdefghijkl', 100000));
+ERROR:  42P01: relation "pp" does not exist
+LINE 1: insert into pp values (repeat('abcdefghijkl', 100000));
+                    ^

@@ -1,0 +1,4 @@
+SELECT * FROM tvm ORDER BY type;
+ERROR:  42P01: relation "tvm" does not exist
+LINE 1: SELECT * FROM tvm ORDER BY type;
+                      ^

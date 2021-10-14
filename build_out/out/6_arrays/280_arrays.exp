@@ -1,0 +1,6 @@
+select cardinality('{}'::int[]);
+ cardinality 
+-------------
+           0
+(1 row)
+

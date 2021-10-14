@@ -1,0 +1,6 @@
+LOG:  00000: statement: DELETE FROM PKTABLE where ptest1=1 and ptest2=2 and ptest3=3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: update or delete on table "pktable" violates foreign key constraint "constrname3" on table "fktable"
+DETAIL:  Key (ptest1, ptest2, ptest3)=(1, 2, 3) is still referenced from table "fktable".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3338
+STATEMENT:  DELETE FROM PKTABLE where ptest1=1 and ptest2=2 and ptest3=3;

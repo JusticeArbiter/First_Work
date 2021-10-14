@@ -1,0 +1,6 @@
+SELECT nextval('foo_seq_new');
+ nextval 
+---------
+       2
+(1 row)
+

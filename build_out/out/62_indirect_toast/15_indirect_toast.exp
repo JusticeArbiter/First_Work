@@ -1,0 +1,3 @@
+CREATE TRIGGER toasttest_update_indirect  BEFORE INSERT OR UPDATE  ON toasttest  FOR EACH ROW  EXECUTE PROCEDURE update_using_indirect();
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+CREATE TRIGGER

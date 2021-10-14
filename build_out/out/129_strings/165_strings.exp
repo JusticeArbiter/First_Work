@@ -1,0 +1,9 @@
+SELECT substr(f1, 99995, 10) from toasttest;
+ substr 
+--------
+ 567890
+ 567890
+ 567890
+ 567890
+(4 rows)
+

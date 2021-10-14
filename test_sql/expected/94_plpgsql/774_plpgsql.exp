@@ -1,0 +1,6 @@
+select scope_test();
+ scope_test 
+------------
+       4443
+(1 row)
+

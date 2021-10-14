@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'WIN1251', 'ISO-8859-5');

@@ -1,0 +1,14 @@
+LOG:  00000: statement: DROP USER rls_regress_user1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: role "rls_regress_user1" cannot be dropped because some objects depend on it
+DETAIL:  target of policy dep_p1 on table dep1
+	privileges for table t1
+	privileges for table y2
+	privileges for table y1
+	privileges for table z2
+	privileges for table z1
+	privileges for table b1
+	privileges for table s2
+	privileges for table s1
+LOCATION:  DropRole, user.c:1027
+STATEMENT:  DROP USER rls_regress_user1;

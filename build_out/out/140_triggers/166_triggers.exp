@@ -1,0 +1,3 @@
+DROP TRIGGER show_trigger_data_trig on trigger_test;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TRIGGER
+ERROR:  42704: trigger "show_trigger_data_trig" for table "trigger_test" does not exist

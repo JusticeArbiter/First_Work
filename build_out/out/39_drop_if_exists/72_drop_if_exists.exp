@@ -1,0 +1,3 @@
+DROP AGGREGATE IF EXISTS test_aggregate_exists(int);
+NOTICE:  00000: aggregate test_aggregate_exists(pg_catalog.int4) does not exist, skipping
+DROP AGGREGATE

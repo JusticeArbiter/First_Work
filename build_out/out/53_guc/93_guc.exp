@@ -1,0 +1,6 @@
+SHOW vacuum_cost_delay;
+ vacuum_cost_delay 
+-------------------
+ 0
+(1 row)
+

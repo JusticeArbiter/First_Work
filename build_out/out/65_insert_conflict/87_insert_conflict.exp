@@ -1,0 +1,3 @@
+create unique index partial_key_index on insertconflicttest(key) where fruit like '%berry';
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+CREATE INDEX

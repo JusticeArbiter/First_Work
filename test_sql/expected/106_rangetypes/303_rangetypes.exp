@@ -1,0 +1,6 @@
+select * from table_succeed(123, int4range(1,11));
+  i  |   r    
+-----+--------
+ 123 | [1,11)
+(1 row)
+

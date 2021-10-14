@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table anothertab alter column atcol1 type boolean  using case when atcol1 % 2 = 0 then true else false end;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: default for column "atcol1" cannot be cast automatically to type boolean
+LOCATION:  ATExecAlterColumnType, tablecmds.c:8208
+STATEMENT:  alter table anothertab alter column atcol1 type boolean  using case when atcol1 % 2 = 0 then true else false end;

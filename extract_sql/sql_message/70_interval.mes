@@ -1,0 +1,211 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SET DATESTYLE = 'ISO';
+ statement: SET IntervalStyle to postgres;
+ statement: SELECT INTERVAL '01:00' AS "One hour";
+ statement: SELECT INTERVAL '+02:00' AS "Two hours";
+ statement: SELECT INTERVAL '-08:00' AS "Eight hours";
+ statement: SELECT INTERVAL '-1 +02:03' AS "22 hours ago...";
+ statement: SELECT INTERVAL '-1 days +02:03' AS "22 hours ago...";
+ statement: SELECT INTERVAL '1.5 weeks' AS "Ten days twelve hours";
+ statement: SELECT INTERVAL '1.5 months' AS "One month 15 days";
+ statement: SELECT INTERVAL '10 years -11 month -12 days +13:14' AS "9 years...";
+ statement: CREATE TABLE INTERVAL_TBL (f1 interval);
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('@ 1 minute');
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('@ 5 hour');
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('@ 10 day');
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('@ 34 year');
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('@ 3 months');
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('@ 14 seconds ago');
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('1 day 2 hours 3 minutes 4 seconds');
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('6 years');
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('5 months');
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('5 months 12 hours');
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('badly formatted interval');
+ statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('@ 30 eons ago');
+ statement: SELECT '' AS ten, * FROM INTERVAL_TBL;
+ statement: SELECT '' AS nine, * FROM INTERVAL_TBL                                                                                    +
+    WHERE INTERVAL_TBL.f1 <> interval '@ 10 days';
+ statement: SELECT '' AS three, * FROM INTERVAL_TBL                                                                                   +
+    WHERE INTERVAL_TBL.f1 <= interval '@ 5 hours';
+ statement: SELECT '' AS three, * FROM INTERVAL_TBL                                                                                   +
+    WHERE INTERVAL_TBL.f1 < interval '@ 1 day';
+ statement: SELECT '' AS one, * FROM INTERVAL_TBL                                                                                     +
+    WHERE INTERVAL_TBL.f1 = interval '@ 34 years';
+ statement: SELECT '' AS five, * FROM INTERVAL_TBL                                                                                    +
+    WHERE INTERVAL_TBL.f1 >= interval '@ 1 month';
+ statement: SELECT '' AS nine, * FROM INTERVAL_TBL                                                                                    +
+    WHERE INTERVAL_TBL.f1 > interval '@ 3 seconds ago';
+ statement: SELECT '' AS fortyfive, r1.*, r2.*                                                                                        +
+    FROM INTERVAL_TBL r1, INTERVAL_TBL r2                                                                                             +
+    WHERE r1.f1 > r2.f1                                                                                                               +
+    ORDER BY r1.f1, r2.f1;
+ statement: CREATE TEMP TABLE INTERVAL_TBL_OF (f1 interval);
+ statement: INSERT INTO INTERVAL_TBL_OF (f1) VALUES                                                                                   +
+   ('2147483647 days 2147483647 months'),                                                                                             +
+   ('2147483647 days -2147483648 months'),                                                                                            +
+   ('1 year'),                                                                                                                        +
+   ('-2147483648 days 2147483647 months'),                                                                                            +
+   ('-2147483648 days -2147483648 months');
+ statement: INSERT INTO INTERVAL_TBL_OF (f1) VALUES ('2147483648 days');
+ statement: INSERT INTO INTERVAL_TBL_OF (f1) VALUES ('-2147483649 days');
+ statement: INSERT INTO INTERVAL_TBL_OF (f1) VALUES ('2147483647 years');
+ statement: INSERT INTO INTERVAL_TBL_OF (f1) VALUES ('-2147483648 years');
+ statement: SELECT r1.*, r2.*                                                                                                         +
+    FROM INTERVAL_TBL_OF r1, INTERVAL_TBL_OF r2                                                                                       +
+    WHERE r1.f1 > r2.f1                                                                                                               +
+    ORDER BY r1.f1, r2.f1;
+ statement: CREATE INDEX ON INTERVAL_TBL_OF USING btree (f1);
+ statement: SET enable_seqscan TO false;
+ statement: EXPLAIN (COSTS OFF)                                                                                                       +
+ SELECT f1 FROM INTERVAL_TBL_OF r1 ORDER BY f1;
+ statement: SELECT f1 FROM INTERVAL_TBL_OF r1 ORDER BY f1;
+ statement: RESET enable_seqscan;
+ statement: DROP TABLE INTERVAL_TBL_OF;
+ statement: CREATE TABLE INTERVAL_MULDIV_TBL (span interval);
+ statement: COPY INTERVAL_MULDIV_TBL FROM STDIN;
+ statement: SELECT span * 0.3 AS product                                                                                              +
+ FROM INTERVAL_MULDIV_TBL;
+ statement: SELECT span * 8.2 AS product                                                                                              +
+ FROM INTERVAL_MULDIV_TBL;
+ statement: SELECT span / 10 AS quotient                                                                                              +
+ FROM INTERVAL_MULDIV_TBL;
+ statement: SELECT span / 100 AS quotient                                                                                             +
+ FROM INTERVAL_MULDIV_TBL;
+ statement: DROP TABLE INTERVAL_MULDIV_TBL;
+ statement: SET DATESTYLE = 'postgres';
+ statement: SET IntervalStyle to postgres_verbose;
+ statement: SELECT '' AS ten, * FROM INTERVAL_TBL;
+ statement: select avg(f1) from interval_tbl;
+ statement: select '4 millenniums 5 centuries 4 decades 1 year 4 months 4 days 17 minutes 31 seconds'::interval;
+ statement: select '100000000y 10mon -1000000000d -100000h -10min -10.000001s ago'::interval;
+ statement: SELECT justify_hours(interval '6 months 3 days 52 hours 3 minutes 2 seconds') as "6 mons 5 days 4 hours 3 mins 2 seconds";
+ statement: SELECT justify_days(interval '6 months 36 days 5 hours 4 minutes 3 seconds') as "7 mons 6 days 5 hours 4 mins 3 seconds";
+ statement: SELECT justify_interval(interval '1 month -1 hour') as "1 month -1 hour";
+ statement: SET DATESTYLE = 'ISO';
+ statement: SET IntervalStyle TO postgres;
+ statement: SELECT '1 millisecond'::interval, '1 microsecond'::interval,                                                              +
+        '500 seconds 99 milliseconds 51 microseconds'::interval;
+ statement: SELECT '3 days 5 milliseconds'::interval;
+ statement: SELECT '1 second 2 seconds'::interval;
+ statement: SELECT '10 milliseconds 20 milliseconds'::interval;
+ statement: SELECT '5.5 seconds 3 milliseconds'::interval;
+ statement: SELECT '1:20:05 5 microseconds'::interval;
+ statement: SELECT '1 day 1 day'::interval;
+ statement: SELECT interval '1-2';
+ statement: SELECT interval '999' second;
+ statement: SELECT interval '999' minute;
+ statement: SELECT interval '999' hour;
+ statement: SELECT interval '999' day;
+ statement: SELECT interval '999' month;
+ statement: SELECT interval '1' year;
+ statement: SELECT interval '2' month;
+ statement: SELECT interval '3' day;
+ statement: SELECT interval '4' hour;
+ statement: SELECT interval '5' minute;
+ statement: SELECT interval '6' second;
+ statement: SELECT interval '1' year to month;
+ statement: SELECT interval '1-2' year to month;
+ statement: SELECT interval '1 2' day to hour;
+ statement: SELECT interval '1 2:03' day to hour;
+ statement: SELECT interval '1 2:03:04' day to hour;
+ statement: SELECT interval '1 2' day to minute;
+ statement: SELECT interval '1 2:03' day to minute;
+ statement: SELECT interval '1 2:03:04' day to minute;
+ statement: SELECT interval '1 2' day to second;
+ statement: SELECT interval '1 2:03' day to second;
+ statement: SELECT interval '1 2:03:04' day to second;
+ statement: SELECT interval '1 2' hour to minute;
+ statement: SELECT interval '1 2:03' hour to minute;
+ statement: SELECT interval '1 2:03:04' hour to minute;
+ statement: SELECT interval '1 2' hour to second;
+ statement: SELECT interval '1 2:03' hour to second;
+ statement: SELECT interval '1 2:03:04' hour to second;
+ statement: SELECT interval '1 2' minute to second;
+ statement: SELECT interval '1 2:03' minute to second;
+ statement: SELECT interval '1 2:03:04' minute to second;
+ statement: SELECT interval '1 +2:03' minute to second;
+ statement: SELECT interval '1 +2:03:04' minute to second;
+ statement: SELECT interval '1 -2:03' minute to second;
+ statement: SELECT interval '1 -2:03:04' minute to second;
+ statement: SELECT interval '123 11' day to hour;
+ statement: SELECT interval '123 11' day;
+ statement: SELECT interval '123 11';
+ statement: SELECT interval '123 2:03 -2:04';
+ statement: SELECT interval(0) '1 day 01:23:45.6789';
+ statement: SELECT interval(2) '1 day 01:23:45.6789';
+ statement: SELECT interval '12:34.5678' minute to second(2);
+ statement: SELECT interval '1.234' second;
+ statement: SELECT interval '1.234' second(2);
+ statement: SELECT interval '1 2.345' day to second(2);
+ statement: SELECT interval '1 2:03' day to second(2);
+ statement: SELECT interval '1 2:03.4567' day to second(2);
+ statement: SELECT interval '1 2:03:04.5678' day to second(2);
+ statement: SELECT interval '1 2.345' hour to second(2);
+ statement: SELECT interval '1 2:03.45678' hour to second(2);
+ statement: SELECT interval '1 2:03:04.5678' hour to second(2);
+ statement: SELECT interval '1 2.3456' minute to second(2);
+ statement: SELECT interval '1 2:03.5678' minute to second(2);
+ statement: SELECT interval '1 2:03:04.5678' minute to second(2);
+ statement: SELECT f1, f1::INTERVAL DAY TO MINUTE AS "minutes",                                                                       +
+   (f1 + INTERVAL '1 month')::INTERVAL MONTH::INTERVAL YEAR AS "years"                                                                +
+   FROM interval_tbl;
+ statement: SET IntervalStyle TO sql_standard;
+ statement: SELECT  interval '0'                       AS "zero",                                                                     +
+         interval '1-2' year to month       AS "year-month",                                                                          +
+         interval '1 2:03:04' day to second AS "day-time",                                                                            +
+         - interval '1-2'                   AS "negative year-month",                                                                 +
+         - interval '1 2:03:04'             AS "negative day-time";
+ statement: SET IntervalStyle TO postgres;
+ statement: SELECT  interval '+1 -1:00:00',                                                                                           +
+         interval '-1 +1:00:00',                                                                                                      +
+         interval '+1-2 -3 +4:05:06.789',                                                                                             +
+         interval '-1-2 +3 -4:05:06.789';
+ statement: SET IntervalStyle TO sql_standard;
+ statement: SELECT  interval '1 day -1 hours',                                                                                        +
+         interval '-1 days +1 hours',                                                                                                 +
+         interval '1 years 2 months -3 days 4 hours 5 minutes 6.789 seconds',                                                         +
+         - interval '1 years 2 months -3 days 4 hours 5 minutes 6.789 seconds';
+ statement: SET IntervalStyle to iso_8601;
+ statement: select  interval '0'                                AS "zero",                                                            +
+         interval '1-2'                              AS "a year 2 months",                                                            +
+         interval '1 2:03:04'                        AS "a bit over a day",                                                           +
+         interval '2:03:04.45679'                    AS "a bit over 2 hours",                                                         +
+         (interval '1-2' + interval '3 4:05:06.7')   AS "all fields",                                                                 +
+         (interval '1-2' - interval '3 4:05:06.7')   AS "mixed sign",                                                                 +
+         (- interval '1-2' + interval '3 4:05:06.7') AS "negative";
+ statement: SET IntervalStyle to sql_standard;
+ statement: select  interval 'P0Y'                    AS "zero",                                                                      +
+         interval 'P1Y2M'                  AS "a year 2 months",                                                                      +
+         interval 'P1W'                    AS "a week",                                                                               +
+         interval 'P1DT2H3M4S'             AS "a bit over a day",                                                                     +
+         interval 'P1Y2M3DT4H5M6.7S'       AS "all fields",                                                                           +
+         interval 'P-1Y-2M-3DT-4H-5M-6.7S' AS "negative",                                                                             +
+         interval 'PT-0.1S'                AS "fractional second";
+ statement: SET IntervalStyle to postgres;
+ statement: select  interval 'P00021015T103020'       AS "ISO8601 Basic Format",                                                      +
+         interval 'P0002-10-15T10:30:20'   AS "ISO8601 Extended Format";
+ statement: select  interval 'P0002'                  AS "year only",                                                                 +
+         interval 'P0002-10'               AS "year month",                                                                           +
+         interval 'P0002-10-15'            AS "year month day",                                                                       +
+         interval 'P0002T1S'               AS "year only plus time",                                                                  +
+         interval 'P0002-10T1S'            AS "year month plus time",                                                                 +
+         interval 'P0002-10-15T1S'         AS "year month day plus time",                                                             +
+         interval 'PT10'                   AS "hour only",                                                                            +
+         interval 'PT10:30'                AS "hour minute";
+ statement: SET IntervalStyle to postgres_verbose;
+ statement: select interval '-10 mons -3 days +03:55:06.70';
+ statement: select interval '1 year 2 mons 3 days 04:05:06.699999';
+ statement: select interval '0:0:0.7', interval '@ 0.70 secs', interval '0.7 seconds';
+ statement: select '30 days'::interval = '1 month'::interval as t;
+ statement: select interval_hash('30 days'::interval) = interval_hash('1 month'::interval) as t;
+ statement: select make_interval(years := 2);
+ statement: select make_interval(years := 1, months := 6);
+ statement: select make_interval(years := 1, months := -1, weeks := 5, days := -7, hours := 25, mins := -180);
+ statement: select make_interval() = make_interval(years := 0, months := 0, weeks := 0, days := 0, mins := 0, secs := 0.0);
+ statement: select make_interval(hours := -2, mins := -10, secs := -25.3);
+ statement: select make_interval(years := 'inf'::float::int);
+ statement: select make_interval(months := 'NaN'::float::int);
+ statement: select make_interval(secs := 'inf');
+ statement: select make_interval(secs := 'NaN');
+ statement: select make_interval(secs := 7e12);
+

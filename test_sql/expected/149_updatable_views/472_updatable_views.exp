@@ -1,0 +1,6 @@
+UPDATE rw_view2 SET person=person WHERE snoop(person);
+NOTICE:  00000: snooped value: Tom
+NOTICE:  00000: snooped value: Tom
+NOTICE:  00000: snooped value: Harry
+NOTICE:  00000: snooped value: Harry
+UPDATE 2

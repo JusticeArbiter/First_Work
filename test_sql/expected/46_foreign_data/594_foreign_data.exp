@@ -1,0 +1,3 @@
+ALTER FOREIGN TABLE ft2 INHERIT pt1;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN TABLE
+ERROR:  42804: child table is missing constraint "pt1chk2"

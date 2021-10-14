@@ -1,0 +1,15 @@
+SELECT um.srvname AS "Server",  um.usename AS "User name"  FROM pg_catalog.pg_user_mappings um  ORDER BY 1, 2;
+     Server     |   User name    
+----------------+----------------
+ s4             | highgo
+ s4             | public
+ s5             | highgo
+ s6             | highgo
+ s7             | highgo
+ s8             | highgo
+ s8             | public
+ t1             | highgo
+ t1             | public
+ useless_server | regression_bob
+(10 rows)
+

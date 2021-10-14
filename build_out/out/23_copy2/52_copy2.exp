@@ -1,0 +1,2 @@
+COPY testnull FROM stdin WITH NULL AS E'\\0';
+ERROR:  42P01: relation "testnull" does not exist

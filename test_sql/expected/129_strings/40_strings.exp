@@ -1,0 +1,6 @@
+SELECT TRIM(TRAILING FROM ' bunch o blanks ') = ' bunch o blanks' AS " bunch o blanks";
+  bunch o blanks 
+-----------------
+ t
+(1 row)
+

@@ -1,0 +1,3 @@
+CREATE TABLE trunc_b (a int REFERENCES truncate_a);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

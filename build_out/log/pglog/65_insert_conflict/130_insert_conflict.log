@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into capitals values ('Sacramento', 3.694E+5, 30, 'CA');
+LOCATION:  exec_simple_query, postgres.c:938

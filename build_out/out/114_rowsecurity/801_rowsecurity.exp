@@ -1,0 +1,2 @@
+DROP USER dob_role2;
+DROP ROLE

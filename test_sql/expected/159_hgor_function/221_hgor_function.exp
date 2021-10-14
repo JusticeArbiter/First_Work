@@ -1,0 +1,6 @@
+select set(array['a','b','c','A','a','B','A']);
+     set     
+-------------
+ {a,b,c,A,B}
+(1 row)
+

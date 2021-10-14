@@ -1,0 +1,3 @@
+DROP USER regression_user2;
+ERROR:  2BP01: role "regression_user2" cannot be dropped because some objects depend on it
+DETAIL:  privileges for table deptest1

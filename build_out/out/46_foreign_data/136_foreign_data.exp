@@ -1,0 +1,3 @@
+ALTER SERVER s8 OPTIONS (connect_timeout '30', SET dbname 'db1', DROP host);
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER SERVER
+ALTER SERVER

@@ -1,0 +1,3 @@
+COMMENT ON FOREIGN TABLE ft1 IS 'foreign table';
+NOTICE:  00000: test_event_trigger: ddl_command_start COMMENT
+COMMENT

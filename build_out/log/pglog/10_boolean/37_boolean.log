@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ' true '::text::boolean AS true,  ' FALSE'::text::boolean AS false;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+COPY t1 FROM stdin WITH (oids);
+ERROR:  42703: table "t1" does not have OIDs

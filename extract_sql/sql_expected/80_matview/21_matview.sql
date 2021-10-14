@@ -1,0 +1,1 @@
+EXPLAIN (costs off)  CREATE MATERIALIZED VIEW tvvm AS SELECT * FROM tvv;

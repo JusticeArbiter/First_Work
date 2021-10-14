@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 'bıt' ILIKE 'BIT' COLLATE "en_US" AS "false";
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into PField values ('PF1_1', 'should fail due to unique index');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: duplicate key value violates unique constraint "pfield_name"
+DETAIL:  Key (name)=(PF1_1) already exists.
+LOCATION:  _bt_check_unique, nbtinsert.c:432
+STATEMENT:  insert into PField values ('PF1_1', 'should fail due to unique index');

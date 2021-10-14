@@ -1,0 +1,2 @@
+select make_time(24, 0, 2.1);
+ERROR:  22008: time field value out of range: 24:00:2.1

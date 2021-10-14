@@ -1,0 +1,9 @@
+LOG:  00000: statement: create function raise_test2(int) returns int as $$  begin  raise notice 'This message has too few parameters: %, %, %', $1, $1;  return $1;  end;  $$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function raise_test2(int) returns int as $$  begin  raise notice 'This message has too few parameters: %, %, %', $1, $1;  return $1;  end;  $$ language plpgsql;
+ERROR:  42601: too few parameters specified for RAISE
+CONTEXT:  compilation of PL/pgSQL function "raise_test2" near line 1
+LOCATION:  check_raise_parameters, pl_gram.y:3873
+STATEMENT:  create function raise_test2(int) returns int as $$  begin  raise notice 'This message has too few parameters: %, %, %', $1, $1;  return $1;  end;  $$ language plpgsql;

@@ -1,0 +1,6 @@
+select instrb('hello,highgo db'::text,'g'::text);
+ instrb 
+--------
+      9
+(1 row)
+

@@ -1,0 +1,6 @@
+SELECT null IS NOT DISTINCT FROM null as "yes";
+ yes 
+-----
+ t
+(1 row)
+

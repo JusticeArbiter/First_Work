@@ -1,0 +1,6 @@
+SELECT * FROM tx1;
+ a 
+---
+ 1
+(1 row)
+

@@ -1,0 +1,6 @@
+SELECT to_tsquery('synonym_tst', 'Index & indices');
+     to_tsquery      
+---------------------
+ 'index' & 'index':*
+(1 row)
+

@@ -1,0 +1,4 @@
+SELECT '1:20:05 5 microseconds'::interval;
+ERROR:  22007: invalid input syntax for type interval: "1:20:05 5 microseconds"
+LINE 1: SELECT '1:20:05 5 microseconds'::interval;
+               ^

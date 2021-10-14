@@ -1,0 +1,4 @@
+insert into child values (1, 100), (4, 400);
+ERROR:  42P01: relation "child" does not exist
+LINE 1: insert into child values (1, 100), (4, 400);
+                    ^

@@ -1,0 +1,4 @@
+delete from arrtest1;
+ERROR:  42P01: relation "arrtest1" does not exist
+LINE 1: delete from arrtest1;
+                    ^

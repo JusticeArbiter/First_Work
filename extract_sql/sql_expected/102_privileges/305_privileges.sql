@@ -1,0 +1,1 @@
+REVOKE USAGE on DOMAIN testdomain1 FROM PUBLIC;

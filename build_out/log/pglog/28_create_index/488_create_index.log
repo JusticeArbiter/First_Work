@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP TABLE onek_with_null;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: table "onek_with_null" does not exist
+LOCATION:  DropErrorMsgNonExistent, tablecmds.c:756
+STATEMENT:  DROP TABLE onek_with_null;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter domain dcomptypea add constraint c2 check (value[1].r > value[1].i);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: column "d1" of table "dcomptable" contains values that violate the new constraint
+LOCATION:  validateDomainConstraint, typecmds.c:2757
+STATEMENT:  alter domain dcomptypea add constraint c2 check (value[1].r > value[1].i);

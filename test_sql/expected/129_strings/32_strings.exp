@@ -1,0 +1,4 @@
+SELECT CAST(f1 AS char(20)) AS "char(text)" FROM TEXT_TBL;
+ERROR:  42P01: relation "text_tbl" does not exist
+LINE 1: SELECT CAST(f1 AS char(20)) AS "char(text)" FROM TEXT_TBL;
+                                                         ^

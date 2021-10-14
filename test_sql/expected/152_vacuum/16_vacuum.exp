@@ -1,0 +1,2 @@
+DELETE FROM vactst WHERE i != 0;
+DELETE 2048

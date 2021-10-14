@@ -1,0 +1,2 @@
+LOG:  00000: statement: select daterange('2000-01-10'::date, '2000-01-20'::date, '[]');
+LOCATION:  exec_simple_query, postgres.c:938

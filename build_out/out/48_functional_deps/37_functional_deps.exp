@@ -1,0 +1,4 @@
+PREPARE foo AS  SELECT id, keywords, title, body, created  FROM articles  GROUP BY id;
+ERROR:  42P01: relation "articles" does not exist
+LINE 1: ...  SELECT id, keywords, title, body, created  FROM articles  ...
+                                                             ^

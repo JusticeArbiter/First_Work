@@ -1,0 +1,8 @@
+LOG:  00000: statement: COMMENT ON FUNCTION tg_hub_adjustslots_wrong(bpchar, integer, integer) IS 'function with args';
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start COMMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  COMMENT ON FUNCTION tg_hub_adjustslots_wrong(bpchar, integer, integer) IS 'function with args';
+ERROR:  42883: function tg_hub_adjustslots_wrong(character, integer, integer) does not exist
+LOCATION:  LookupFuncName, parse_func.c:1922
+STATEMENT:  COMMENT ON FUNCTION tg_hub_adjustslots_wrong(bpchar, integer, integer) IS 'function with args';

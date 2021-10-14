@@ -1,0 +1,1 @@
+GRANT SELECT ON atest4 TO GROUP regressgroup1 WITH GRANT OPTION;

@@ -1,0 +1,30 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE PG_LSN_TBL (f1 pg_lsn);
+ statement: INSERT INTO PG_LSN_TBL VALUES ('0/0');
+ statement: INSERT INTO PG_LSN_TBL VALUES ('FFFFFFFF/FFFFFFFF');
+ statement: INSERT INTO PG_LSN_TBL VALUES ('G/0');
+ statement: INSERT INTO PG_LSN_TBL VALUES ('-1/0');
+ statement: INSERT INTO PG_LSN_TBL VALUES (' 0/12345678');
+ statement: INSERT INTO PG_LSN_TBL VALUES ('ABCD/');
+ statement: INSERT INTO PG_LSN_TBL VALUES ('/ABCD');
+ statement: DROP TABLE PG_LSN_TBL;
+ statement: SELECT '0/16AE7F8' = '0/16AE7F8'::pg_lsn;
+ statement: SELECT '0/16AE7F8'::pg_lsn != '0/16AE7F7';
+ statement: SELECT '0/16AE7F7' < '0/16AE7F8'::pg_lsn;
+ statement: SELECT '0/16AE7F8' > pg_lsn '0/16AE7F7';
+ statement: SELECT '0/16AE7F7'::pg_lsn - '0/16AE7F8'::pg_lsn;
+ statement: SELECT '0/16AE7F8'::pg_lsn - '0/16AE7F7'::pg_lsn;
+ statement: EXPLAIN (COSTS OFF)                                 +
+ SELECT DISTINCT (i || '/' || j)::pg_lsn f                      +
+   FROM generate_series(1, 10) i,                               +
+        generate_series(1, 10) j,                               +
+        generate_series(1, 5) k                                 +
+   WHERE i <= 10 AND j > 0 AND j <= 10                          +
+   ORDER BY f;
+ statement: SELECT DISTINCT (i || '/' || j)::pg_lsn f           +
+   FROM generate_series(1, 10) i,                               +
+        generate_series(1, 10) j,                               +
+        generate_series(1, 5) k                                 +
+   WHERE i <= 10 AND j > 0 AND j <= 10                          +
+   ORDER BY f;
+

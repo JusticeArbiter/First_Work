@@ -1,0 +1,4 @@
+select concat_ws(',', variadic 10);
+ERROR:  42804: VARIADIC argument must be an array
+LINE 1: select concat_ws(',', variadic 10);
+                                       ^

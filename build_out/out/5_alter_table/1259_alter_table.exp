@@ -1,0 +1,7 @@
+SELECT conname as constraint, obj_description(oid, 'pg_constraint') as comment FROM pg_constraint where conrelid = 'comment_test'::regclass ORDER BY 1, 2;
+           constraint            |                    comment                    
+---------------------------------+-----------------------------------------------
+ comment_test_pk                 | PRIMARY KEY constraint of comment_test
+ comment_test_positive_col_check | CHECK constraint on comment_test.positive_col
+(2 rows)
+

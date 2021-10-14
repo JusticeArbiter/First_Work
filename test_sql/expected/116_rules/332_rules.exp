@@ -1,0 +1,2 @@
+insert into shoelace values ('sl10', 1000, 'magenta', 40.0, 'inch', 0.0);
+INSERT 0 1

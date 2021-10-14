@@ -1,0 +1,4 @@
+INSERT INTO ABSTIME_TBL (f1) VALUES ('bad date format');
+ERROR:  22007: invalid input syntax for type abstime: "bad date format"
+LINE 1: INSERT INTO ABSTIME_TBL (f1) VALUES ('bad date format');
+                                             ^

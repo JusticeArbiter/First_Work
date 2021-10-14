@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER FOREIGN DATA WRAPPER alt_fdw1 RENAME TO alt_fdw2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: foreign-data wrapper "alt_fdw2" already exists
+LOCATION:  report_name_conflict, alter.c:98
+STATEMENT:  ALTER FOREIGN DATA WRAPPER alt_fdw1 RENAME TO alt_fdw2;

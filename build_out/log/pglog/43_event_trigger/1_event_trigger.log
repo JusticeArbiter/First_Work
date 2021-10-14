@@ -1,0 +1,5 @@
+LOG:  00000: statement: create event trigger regress_event_trigger  on ddl_command_start  execute procedure pg_backend_pid();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P17: function "pg_backend_pid" must return type "event_trigger"
+LOCATION:  CreateEventTrigger, event_trigger.c:240
+STATEMENT:  create event trigger regress_event_trigger  on ddl_command_start  execute procedure pg_backend_pid();

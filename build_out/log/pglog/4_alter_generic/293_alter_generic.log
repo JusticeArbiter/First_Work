@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP LANGUAGE alt_lang2 CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: language "alt_lang2" does not exist
+LOCATION:  get_language_oid, proclang.c:560
+STATEMENT:  DROP LANGUAGE alt_lang2 CASCADE;

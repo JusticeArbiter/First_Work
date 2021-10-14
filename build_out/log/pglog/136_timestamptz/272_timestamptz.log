@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '2014-10-25 22:00:00 UTC'::timestamptz AT TIME ZONE 'MSK';
+LOCATION:  exec_simple_query, postgres.c:938

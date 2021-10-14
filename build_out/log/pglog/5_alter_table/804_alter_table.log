@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table tab1 alter column b type varchar;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: cannot alter table "tab1" because column "tab2.y" uses its row type
+LOCATION:  find_composite_type_dependencies, tablecmds.c:4573
+STATEMENT:  alter table tab1 alter column b type varchar;

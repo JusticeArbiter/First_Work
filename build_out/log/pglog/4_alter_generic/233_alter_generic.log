@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf18 USING btree DROP OPERATOR 1 (int4, int4);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: operator 1(integer,integer) does not exist in operator family "alt_opf18"
+LOCATION:  dropOperators, opclasscmds.c:1524
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf18 USING btree DROP OPERATOR 1 (int4, int4);

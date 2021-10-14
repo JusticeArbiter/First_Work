@@ -1,0 +1,6 @@
+SELECT '878.08'::money / 11::float8;
+ ?column? 
+----------
+   $79.83
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: select 33 = all ('{1,null,3}');
+LOCATION:  exec_simple_query, postgres.c:938

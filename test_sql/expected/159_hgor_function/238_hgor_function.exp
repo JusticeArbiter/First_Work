@@ -1,0 +1,7 @@
+SELECT bin_float, NANVL(bin_float,0) FROM float_point_demo;
+ bin_float |  nanvl  
+-----------+---------
+   1234.56 | 1234.56
+       NaN |       0
+(2 rows)
+

@@ -1,0 +1,2 @@
+select make_interval(years := 'inf'::float::int);
+ERROR:  22003: integer out of range

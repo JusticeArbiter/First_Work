@@ -1,0 +1,2 @@
+LOG:  00000: statement: explain (costs off)  select p from gist_tbl where p <@ box(point(0,0), point(0.5, 0.5));
+LOCATION:  exec_simple_query, postgres.c:938

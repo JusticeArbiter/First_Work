@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from (values(1)) x(lb),  lateral (select lb from int4_tbl) y(lbcopy);
+LOCATION:  exec_simple_query, postgres.c:938

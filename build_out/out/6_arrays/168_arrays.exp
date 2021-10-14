@@ -1,0 +1,6 @@
+select 33 = all ('{33,null,33}');
+ ?column? 
+----------
+ 
+(1 row)
+

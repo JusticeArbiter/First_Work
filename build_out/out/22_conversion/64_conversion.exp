@@ -1,0 +1,6 @@
+SELECT CONVERT('foo', 'UTF8', 'SQL_ASCII');
+ convert  
+----------
+ \x666f6f
+(1 row)
+

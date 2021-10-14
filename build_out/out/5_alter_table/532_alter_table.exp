@@ -1,0 +1,4 @@
+select atacc1.a from atacc1;
+ERROR:  42703: column atacc1.a does not exist
+LINE 1: select atacc1.a from atacc1;
+               ^

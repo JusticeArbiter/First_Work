@@ -1,0 +1,3 @@
+DROP FOREIGN DATA WRAPPER alt_fdw2 CASCADE;
+NOTICE:  00000: drop cascades to server alt_fserv2
+DROP FOREIGN DATA WRAPPER

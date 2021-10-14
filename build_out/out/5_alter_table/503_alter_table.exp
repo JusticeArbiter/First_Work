@@ -1,0 +1,2 @@
+insert into def_test default values;
+INSERT 0 1

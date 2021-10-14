@@ -1,0 +1,4 @@
+SELECT '' AS four, polygon(f1)  FROM PATH_TBL WHERE isclosed(f1);
+ERROR:  42P01: relation "path_tbl" does not exist
+LINE 1: SELECT '' AS four, polygon(f1)  FROM PATH_TBL WHERE isclosed...
+                                             ^

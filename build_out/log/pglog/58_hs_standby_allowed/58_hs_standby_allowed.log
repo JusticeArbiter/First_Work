@@ -1,0 +1,2 @@
+LOG:  00000: statement: PREPARE hsp AS select count(*) from hs1;
+LOCATION:  exec_simple_query, postgres.c:938

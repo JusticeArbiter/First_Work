@@ -1,0 +1,11 @@
+SELECT tablename, rulename, definition FROM pg_rules  WHERE tablename = 'hats';
+ tablename |  rulename  |                                                               definition                                                                
+-----------+------------+-----------------------------------------------------------------------------------------------------------------------------------------
+ hats      | hat_upsert | CREATE RULE hat_upsert AS                                                                                                              +
+           |            |     ON INSERT TO hats DO INSTEAD  INSERT INTO hat_data (hat_name, hat_color)                                                           +
+           |            |   VALUES (new.hat_name, new.hat_color) ON CONFLICT(hat_name) DO UPDATE SET hat_name = hat_data.hat_name, hat_color = excluded.hat_color+
+           |            |   WHERE ((excluded.hat_color <> 'forbidden'::bpchar) AND (hat_data.* <> excluded.*))                                                   +
+           |            |   RETURNING hat_data.hat_name,                                                                                                         +
+           |            |     hat_data.hat_color;
+(1 row)
+

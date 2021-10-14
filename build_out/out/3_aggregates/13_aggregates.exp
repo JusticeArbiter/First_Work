@@ -1,0 +1,4 @@
+SELECT stddev_pop(b) FROM aggtest;
+ERROR:  42P01: relation "aggtest" does not exist
+LINE 1: SELECT stddev_pop(b) FROM aggtest;
+                                  ^

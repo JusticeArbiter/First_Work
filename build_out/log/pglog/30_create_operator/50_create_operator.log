@@ -1,0 +1,2 @@
+LOG:  00000: statement: REVOKE EXECUTE ON FUNCTION fn_op5(int8, int8) FROM regress_rol_op5;
+LOCATION:  exec_simple_query, postgres.c:938

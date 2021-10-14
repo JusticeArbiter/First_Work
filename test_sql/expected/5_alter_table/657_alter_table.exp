@@ -1,0 +1,2 @@
+alter table renameColumnChild rename column a to d;
+ERROR:  42P16: cannot rename inherited column "a"

@@ -1,0 +1,3 @@
+CREATE TABLE J1_TBL (  i integer,  j integer,  t text  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

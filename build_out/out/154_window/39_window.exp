@@ -1,0 +1,4 @@
+SELECT sum(salary) OVER w, rank() OVER w FROM empsalary WINDOW w AS (PARTITION BY depname ORDER BY salary DESC);
+ERROR:  42P01: relation "empsalary" does not exist
+LINE 1: SELECT sum(salary) OVER w, rank() OVER w FROM empsalary WIND...
+                                                      ^

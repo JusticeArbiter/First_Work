@@ -1,0 +1,6 @@
+select uid();
+ uid 
+-----
+  10
+(1 row)
+

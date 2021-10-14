@@ -1,0 +1,4 @@
+INSERT INTO equipment_r (name, hobby) VALUES ('peet''s coffee', 'posthacking');
+ERROR:  42P01: relation "equipment_r" does not exist
+LINE 1: INSERT INTO equipment_r (name, hobby) VALUES ('peet''s coffe...
+                    ^

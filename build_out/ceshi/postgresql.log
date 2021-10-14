@@ -1,0 +1,3 @@
+ERROR:  58P01: directory "/home/highgo/dasfas" does not exist
+LOCATION:  create_tablespace_directories, tablespace.c:586
+STATEMENT:  create tablespace tbs1 location '/home/highgo/dasfas';

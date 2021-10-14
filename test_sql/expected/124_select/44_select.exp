@@ -1,0 +1,4 @@
+SELECT * FROM foo ORDER BY f1;
+ERROR:  42P01: relation "foo" does not exist
+LINE 1: SELECT * FROM foo ORDER BY f1;
+                      ^

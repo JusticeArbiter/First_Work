@@ -1,0 +1,1 @@
+SHOW allow_system_table_mods;

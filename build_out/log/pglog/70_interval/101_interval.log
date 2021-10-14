@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT interval '1 2:03:04' minute to second;
+LOCATION:  exec_simple_query, postgres.c:938

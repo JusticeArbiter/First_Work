@@ -1,0 +1,7 @@
+select * from rules_src;
+ f1 | f2  
+----+-----
+  1 |  30
+ 11 | 130
+(2 rows)
+

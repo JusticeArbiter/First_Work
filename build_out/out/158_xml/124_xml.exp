@@ -1,0 +1,6 @@
+SELECT xmlexists('count(/nosuchtag)' PASSING BY REF '<root/>');
+ xmlexists 
+-----------
+ t
+(1 row)
+

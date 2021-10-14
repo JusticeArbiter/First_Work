@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP AGGREGATE IF EXISTS test_aggregate_exists(int);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: aggregate test_aggregate_exists(pg_catalog.int4) does not exist, skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:448
+STATEMENT:  DROP AGGREGATE IF EXISTS test_aggregate_exists(int);

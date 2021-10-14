@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from (x left join y on (x1 = y1)) left join x xx(xx1,xx2)  on (x1 = xx1) where (xx2 is not null);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "x" does not exist at character 16
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select * from (x left join y on (x1 = y1)) left join x xx(xx1,xx2)  on (x1 = xx1) where (xx2 is not null);

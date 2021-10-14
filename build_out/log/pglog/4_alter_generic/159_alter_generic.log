@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf4 USING btree ADD OPERATOR 1 < ;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: operator argument types must be specified in ALTER OPERATOR FAMILY
+LOCATION:  AlterOpFamilyAdd, opclasscmds.c:875
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf4 USING btree ADD OPERATOR 1 < ;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: create or replace function array_elem_check(numeric) returns numeric as $$  declare  x mynums2;  begin  x[1] := $1;  return x[1];  end$$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938

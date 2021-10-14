@@ -1,0 +1,7 @@
+select raise_exprs();
+NOTICE:  00000: {10,20,30}; 20; xyz; xyzabc; (10,aaa,,30); <NULL>
+ raise_exprs 
+-------------
+ 
+(1 row)
+

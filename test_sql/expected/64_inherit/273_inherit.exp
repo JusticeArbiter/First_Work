@@ -1,0 +1,5 @@
+CREATE TABLE inht4 (z int) INHERITS (inht2, inht3);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  00000: merging multiple inherited definitions of column "aa"
+NOTICE:  00000: merging multiple inherited definitions of column "b"
+CREATE TABLE

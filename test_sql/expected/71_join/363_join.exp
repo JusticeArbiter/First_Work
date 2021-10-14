@@ -1,0 +1,9 @@
+explain (costs off)  select count(*) from tenk1 a, generate_series(1,two) g;
+                   QUERY PLAN                   
+------------------------------------------------
+ Aggregate
+   ->  Nested Loop
+         ->  Seq Scan on tenk1 a
+         ->  Function Scan on generate_series g
+(4 rows)
+

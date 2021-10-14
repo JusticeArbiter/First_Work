@@ -1,0 +1,4 @@
+CREATE TEMP TABLE public.temp_to_perm (a int primary key);
+ERROR:  42P16: cannot create temporary relation in non-temporary schema
+LINE 1: CREATE TEMP TABLE public.temp_to_perm (a int primary key);
+                          ^

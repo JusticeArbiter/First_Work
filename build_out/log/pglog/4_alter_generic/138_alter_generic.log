@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf3 USING hash SET SCHEMA alt_nsp2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: operator family "alt_opf3" does not exist for access method "hash"
+LOCATION:  OpFamilyCacheLookup, opclasscmds.c:127
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf3 USING hash SET SCHEMA alt_nsp2;

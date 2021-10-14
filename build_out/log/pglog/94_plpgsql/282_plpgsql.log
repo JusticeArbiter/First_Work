@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into IFace values ('IF', 'orion', 'ethernet_interface_name_too_long', '');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  P0001: IFace slotname "IF.orion.ethernet_interface_name_too_long" too long (20 char max)
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into IFace values ('IF', 'orion', 'ethernet_interface_name_too_long', '');

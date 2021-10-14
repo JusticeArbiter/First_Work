@@ -1,0 +1,4 @@
+SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ERROR:  42P01: relation "foo_rescan_seq1" does not exist
+LINE 1: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_...
+                      ^

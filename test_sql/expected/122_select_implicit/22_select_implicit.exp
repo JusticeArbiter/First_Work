@@ -1,0 +1,4 @@
+SELECT count(*) FROM test_missing_target x, test_missing_target y  WHERE x.a = y.a  GROUP BY b ORDER BY b;
+ERROR:  42702: column reference "b" is ambiguous
+LINE 1: ...st_missing_target y  WHERE x.a = y.a  GROUP BY b ORDER BY b;
+                                                                     ^

@@ -1,0 +1,2 @@
+drop operator === (int4, int4);
+ERROR:  42883: operator does not exist: integer === integer

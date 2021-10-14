@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into insertconflicttest values (8, 'Lime') on conflict (fruit, key) do update set fruit = excluded.fruit;
+LOCATION:  exec_simple_query, postgres.c:938

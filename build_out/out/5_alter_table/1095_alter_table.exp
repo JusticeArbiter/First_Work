@@ -1,0 +1,2 @@
+ALTER TYPE test_type RENAME ATTRIBUTE a TO aa;
+ERROR:  42703: column "a" does not exist

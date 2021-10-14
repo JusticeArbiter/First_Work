@@ -1,0 +1,2 @@
+INSERT INTO xmltest VALUES (2, '<value>two</value>');
+INSERT 0 1

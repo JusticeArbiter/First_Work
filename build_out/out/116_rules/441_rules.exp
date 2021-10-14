@@ -1,0 +1,5 @@
+create rule t1_ins_2 as on insert to t1  where new.a >= 10 and new.a < 20  do instead  insert into t1_2 values (new.a);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+ERROR:  42P01: relation "t1_2" does not exist
+LINE 1: ...w.a >= 10 and new.a < 20  do instead  insert into t1_2 value...
+                                                             ^

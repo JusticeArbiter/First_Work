@@ -1,0 +1,6 @@
+select instr('HighGo DB','h',1,1);
+ instr 
+-------
+     4
+(1 row)
+

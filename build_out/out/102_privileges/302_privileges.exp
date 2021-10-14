@@ -1,0 +1,4 @@
+GRANT USAGE ON TYPE _testtype1 TO regressuser2;
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+ERROR:  0LP01: cannot set privileges of array types
+HINT:  Set the privileges of the element type instead.

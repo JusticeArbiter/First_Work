@@ -1,0 +1,2 @@
+create table dropColumnChild (c int) inherits (dropColumn);
+CREATE TABLE

@@ -1,0 +1,6 @@
+SELECT justify_interval(interval '1 month -1 hour') as "1 month -1 hour";
+ 1 month -1 hour  
+------------------
+ 29 days 23:00:00
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TRIGGER trg_x_before BEFORE INSERT ON x  FOR EACH ROW EXECUTE PROCEDURE fn_x_before();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "x" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE TRIGGER trg_x_before BEFORE INSERT ON x  FOR EACH ROW EXECUTE PROCEDURE fn_x_before();

@@ -1,0 +1,5 @@
+LOG:  00000: statement: ROLLBACK TO first_sp;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  25P01: ROLLBACK TO SAVEPOINT can only be used in transaction blocks
+LOCATION:  CheckTransactionChain, xact.c:3222
+STATEMENT:  ROLLBACK TO first_sp;

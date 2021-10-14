@@ -1,0 +1,6 @@
+select pg_typeof(0);
+ pg_typeof 
+-----------
+ integer
+(1 row)
+

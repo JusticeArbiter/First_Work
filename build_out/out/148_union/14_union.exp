@@ -1,0 +1,8 @@
+SELECT 1.1 AS three UNION SELECT 2 UNION SELECT 3;
+ three 
+-------
+   1.1
+     2
+     3
+(3 rows)
+

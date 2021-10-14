@@ -1,0 +1,5 @@
+create rule t1_upd_1 as on update to t1  where old.a >= 0 and old.a < 10  do instead  update t1_1 set a = new.a where a = old.a;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+ERROR:  42P01: relation "t1_1" does not exist
+LINE 1: ...ere old.a >= 0 and old.a < 10  do instead  update t1_1 set a...
+                                                             ^

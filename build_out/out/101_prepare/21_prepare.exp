@@ -1,0 +1,2 @@
+EXECUTE q3(5::smallint, 10.5::float, false, 500::oid, 4::bigint, 'bytea');
+ERROR:  26000: prepared statement "q3" does not exist

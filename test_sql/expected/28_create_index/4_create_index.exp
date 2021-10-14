@@ -1,0 +1,2 @@
+CREATE INDEX onek_hundred ON onek USING btree(hundred int4_ops);
+ERROR:  42P01: relation "onek" does not exist

@@ -1,0 +1,14 @@
+SELECT  pg_advisory_unlock(1), pg_advisory_unlock(1),  pg_advisory_unlock_shared(2), pg_advisory_unlock_shared(2),  pg_advisory_unlock(1, 1), pg_advisory_unlock(1, 1),  pg_advisory_unlock_shared(2, 2), pg_advisory_unlock_shared(2, 2);
+WARNING:  01000: you don't own a lock of type ExclusiveLock
+WARNING:  01000: you don't own a lock of type ExclusiveLock
+WARNING:  01000: you don't own a lock of type ShareLock
+WARNING:  01000: you don't own a lock of type ShareLock
+WARNING:  01000: you don't own a lock of type ExclusiveLock
+WARNING:  01000: you don't own a lock of type ExclusiveLock
+WARNING:  01000: you don't own a lock of type ShareLock
+WARNING:  01000: you don't own a lock of type ShareLock
+ pg_advisory_unlock | pg_advisory_unlock | pg_advisory_unlock_shared | pg_advisory_unlock_shared | pg_advisory_unlock | pg_advisory_unlock | pg_advisory_unlock_shared | pg_advisory_unlock_shared 
+--------------------+--------------------+---------------------------+---------------------------+--------------------+--------------------+---------------------------+---------------------------
+ f                  | f                  | f                         | f                         | f                  | f                  | f                         | f
+(1 row)
+

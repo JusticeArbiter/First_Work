@@ -1,0 +1,5 @@
+select namedparmcursor_test8();
+ERROR:  42883: function namedparmcursor_test8() does not exist
+LINE 1: select namedparmcursor_test8();
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

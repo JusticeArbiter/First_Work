@@ -1,0 +1,6 @@
+SELECT time with time zone '040506.789+08';
+     timetz      
+-----------------
+ 04:05:06.789+08
+(1 row)
+

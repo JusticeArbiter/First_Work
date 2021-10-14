@@ -1,0 +1,6 @@
+SELECT 'before multi-line' AS fourth;
+      fourth       
+-------------------
+ before multi-line
+(1 row)
+

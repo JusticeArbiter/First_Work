@@ -1,0 +1,4 @@
+INSERT INTO TIMETZ_TBL VALUES ('15:36:39 America/New_York');
+ERROR:  22007: invalid input syntax for type time with time zone: "15:36:39 America/New_York"
+LINE 1: INSERT INTO TIMETZ_TBL VALUES ('15:36:39 America/New_York');
+                                       ^

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ARRAY[['a','bc'],['def','hijk']]::text[]::varchar[] is of (varchar[]) as "TRUE";
+LOCATION:  exec_simple_query, postgres.c:938

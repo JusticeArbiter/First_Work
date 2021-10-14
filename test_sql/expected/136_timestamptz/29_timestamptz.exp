@@ -1,0 +1,4 @@
+INSERT INTO TIMESTAMPTZ_TBL VALUES ('undefined');
+ERROR:  0A000: date/time value "undefined" is no longer supported
+LINE 1: INSERT INTO TIMESTAMPTZ_TBL VALUES ('undefined');
+                                            ^

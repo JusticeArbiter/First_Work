@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into test_range_excl  values(int4range(123, 123, '[]'), int4range(3, 3, '[]'), '[2010-01-02 10:10, 2010-01-02 11:00)');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23P01: conflicting key value violates exclusion constraint "test_range_excl_room_during_excl"
+DETAIL:  Key (room, during)=([123,124), ["2010-01-02 10:10:00","2010-01-02 11:00:00")) conflicts with existing key (room, during)=([123,124), ["2010-01-02 10:00:00","2010-01-02 11:00:00")).
+LOCATION:  check_exclusion_or_unique_constraint, execIndexing.c:839
+STATEMENT:  insert into test_range_excl  values(int4range(123, 123, '[]'), int4range(3, 3, '[]'), '[2010-01-02 10:10, 2010-01-02 11:00)');

@@ -1,0 +1,1 @@
+UPDATE r2 SET a = 2 RETURNING *;

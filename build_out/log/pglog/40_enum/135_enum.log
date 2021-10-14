@@ -1,0 +1,2 @@
+LOG:  00000: statement: DROP TABLE enumtest_child;
+LOCATION:  exec_simple_query, postgres.c:938

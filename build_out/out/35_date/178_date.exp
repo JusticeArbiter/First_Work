@@ -1,0 +1,6 @@
+SELECT EXTRACT(MILLENNIUM FROM DATE '1000-12-31');
+ date_part 
+-----------
+         1
+(1 row)
+

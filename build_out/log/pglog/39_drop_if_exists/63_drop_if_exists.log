@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP EXTENSION test_extension_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: extension "test_extension_exists" does not exist
+LOCATION:  get_extension_oid, extension.c:153
+STATEMENT:  DROP EXTENSION test_extension_exists;

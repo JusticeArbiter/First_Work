@@ -1,0 +1,7 @@
+EXPLAIN (COSTS OFF) SELECT * FROM rls_view;
+     QUERY PLAN      
+---------------------
+ Seq Scan on z1
+   Filter: f_leak(b)
+(2 rows)
+

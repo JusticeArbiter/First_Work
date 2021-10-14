@@ -1,0 +1,7 @@
+SELECT  array_position(ids, (1, 1)),  array_positions(ids, (1, 1))  FROM  (VALUES  (ARRAY[(0, 0), (1, 1)]),  (ARRAY[(1, 1)])  ) AS f (ids);
+ array_position | array_positions 
+----------------+-----------------
+              2 | {2}
+              1 | {1}
+(2 rows)
+

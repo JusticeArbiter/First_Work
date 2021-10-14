@@ -1,0 +1,6 @@
+select make_interval(secs := 7e12);
+  make_interval   
+------------------
+ 1944444444:26:40
+(1 row)
+

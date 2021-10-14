@@ -1,0 +1,2 @@
+EXECUTE prepstmt2(123);
+ERROR:  26000: prepared statement "prepstmt2" does not exist

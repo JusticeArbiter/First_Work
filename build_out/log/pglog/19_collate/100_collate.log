@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX collate_test1_idx5 ON collate_test1 (a COLLATE "POSIX");
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: collations are not supported by type integer
+LOCATION:  ComputeIndexAttrs, indexcmds.c:1096
+STATEMENT:  CREATE INDEX collate_test1_idx5 ON collate_test1 (a COLLATE "POSIX");

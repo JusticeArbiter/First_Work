@@ -1,0 +1,2 @@
+CREATE INDEX sp_quad_ind ON quad_point_tbl USING spgist (p);
+ERROR:  42P01: relation "quad_point_tbl" does not exist

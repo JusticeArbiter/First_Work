@@ -1,0 +1,6 @@
+SELECT '4' AS "One",  CASE  WHEN 1 > 2 THEN 3  ELSE 4  END AS "ELSE default";
+ One | ELSE default 
+-----+--------------
+ 4   |            4
+(1 row)
+

@@ -1,0 +1,6 @@
+LOG:  00000: statement: select array[];
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P18: cannot determine type of empty array at character 8
+HINT:  Explicitly cast to the desired type, for example ARRAY[]::integer[].
+LOCATION:  transformArrayExpr, parse_expr.c:1971
+STATEMENT:  select array[];

@@ -1,0 +1,4 @@
+CREATE OR REPLACE FUNCTION foo(in f1 int, out f2 int, out f3 text)  RETURNS record  AS 'select $1+1' LANGUAGE sql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42P13: cannot change return type of existing function
+HINT:  Use DROP FUNCTION foo(integer) first.

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CLUSTER clstr_2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: there is no previously clustered index for table "clstr_2"
+LOCATION:  cluster, cluster.c:158
+STATEMENT:  CLUSTER clstr_2;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf4 USING invalid_index_method ADD OPERATOR 1 < (int4, int2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: access method "invalid_index_method" does not exist
+LOCATION:  AlterOpFamily, opclasscmds.c:787
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf4 USING invalid_index_method ADD OPERATOR 1 < (int4, int2);

@@ -1,0 +1,4 @@
+INSERT INTO arraggtest (f1, f2, f3) VALUES  ('{2}','{{black,red},{green,orange}}','{1.6,2.2,2.6,0.4}');
+ERROR:  42P01: relation "arraggtest" does not exist
+LINE 1: INSERT INTO arraggtest (f1, f2, f3) VALUES  ('{2}','{{black,...
+                    ^

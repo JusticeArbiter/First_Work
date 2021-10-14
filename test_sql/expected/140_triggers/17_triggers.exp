@@ -1,0 +1,3 @@
+COMMENT ON TRIGGER check_fkeys2_pkey_bad ON fkeys2 IS 'wrong';
+NOTICE:  00000: test_event_trigger: ddl_command_start COMMENT
+ERROR:  42704: trigger "check_fkeys2_pkey_bad" for table "fkeys2" does not exist

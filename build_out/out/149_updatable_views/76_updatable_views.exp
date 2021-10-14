@@ -1,0 +1,4 @@
+DROP SEQUENCE seq CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SEQUENCE
+NOTICE:  00000: drop cascades to view ro_view19
+DROP SEQUENCE

@@ -1,0 +1,8 @@
+LOG:  00000: statement: create materialized view mvtest_error as select 1/0 as x;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE MATERIALIZED VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create materialized view mvtest_error as select 1/0 as x;
+ERROR:  22012: division by zero
+LOCATION:  int4div, int.c:719
+STATEMENT:  create materialized view mvtest_error as select 1/0 as x;

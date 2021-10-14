@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from t1 left join t2 on (t1.a = t2.a);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column t1.a does not exist at character 35
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select * from t1 left join t2 on (t1.a = t2.a);

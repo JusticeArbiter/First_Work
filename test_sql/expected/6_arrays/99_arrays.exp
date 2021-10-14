@@ -1,0 +1,6 @@
+SELECT array_positions(NULL, 10);
+ array_positions 
+-----------------
+ 
+(1 row)
+

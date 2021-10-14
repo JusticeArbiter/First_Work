@@ -1,0 +1,8 @@
+LOG:  00000: statement: drop table if exists hs_extreme;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  drop table if exists hs_extreme;
+NOTICE:  00000: table "hs_extreme" does not exist, skipping
+LOCATION:  DropErrorMsgNonExistent, tablecmds.c:760
+STATEMENT:  drop table if exists hs_extreme;

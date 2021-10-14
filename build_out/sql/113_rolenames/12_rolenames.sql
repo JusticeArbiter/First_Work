@@ -1,0 +1,1 @@
+CREATE ROLE testrol1 SUPERUSER LOGIN IN ROLE testrol2;

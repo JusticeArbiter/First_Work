@@ -1,0 +1,6 @@
+select json '{ "a": "null \u0000 escape" }' as not_unescaped;
+         not_unescaped         
+-------------------------------
+ { "a": "null \u0000 escape" }
+(1 row)
+

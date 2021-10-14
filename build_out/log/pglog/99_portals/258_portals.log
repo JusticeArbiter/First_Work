@@ -1,0 +1,5 @@
+LOG:  00000: statement: DECLARE c1 CURSOR FOR SELECT * FROM ucview;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "ucview" does not exist at character 37
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  DECLARE c1 CURSOR FOR SELECT * FROM ucview;

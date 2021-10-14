@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT inet_merge(c, i) FROM INET_TBL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: cannot merge addresses from different families
+LOCATION:  inet_merge, network.c:917
+STATEMENT:  SELECT inet_merge(c, i) FROM INET_TBL;

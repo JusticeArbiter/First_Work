@@ -1,0 +1,4 @@
+SELECT date '99-08-Jan';
+ERROR:  22007: invalid input syntax for type date: "99-08-Jan"
+LINE 1: SELECT date '99-08-Jan';
+                    ^

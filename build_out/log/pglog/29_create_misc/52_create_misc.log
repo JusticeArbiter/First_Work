@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO f_star (class, a, c, f)  VALUES ('f', 21, 'hi marcel'::name, '(11,44),(22,55),(33,66)'::polygon);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "f_star" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  INSERT INTO f_star (class, a, c, f)  VALUES ('f', 21, 'hi marcel'::name, '(11,44),(22,55),(33,66)'::polygon);

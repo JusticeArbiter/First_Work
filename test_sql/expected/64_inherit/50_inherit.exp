@@ -1,0 +1,2 @@
+UPDATE b SET aa='new';
+UPDATE 12

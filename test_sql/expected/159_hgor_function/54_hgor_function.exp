@@ -1,0 +1,6 @@
+select userenv('current_schema'::text);
+ userenv 
+---------
+ public
+(1 row)
+

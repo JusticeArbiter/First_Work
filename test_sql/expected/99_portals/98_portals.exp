@@ -1,0 +1,2 @@
+FETCH BACKWARD FROM foo25;
+ERROR:  34000: cursor "foo25" does not exist

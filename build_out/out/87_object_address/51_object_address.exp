@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('foreign-data wrapper', '{one,two}', '{}');
+ERROR:  42601: foreign-data wrapper name cannot be qualified

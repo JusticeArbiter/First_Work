@@ -1,0 +1,2 @@
+CREATE OR REPLACE VIEW viewtest AS  SELECT 1, * FROM viewtest_tbl;
+ERROR:  42P16: cannot change name of view column "a" to "?column?"

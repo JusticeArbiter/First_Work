@@ -1,0 +1,3 @@
+CREATE FUNCTION text_w_default_out(text_w_default)  RETURNS cstring  AS 'textout'  LANGUAGE internal STRICT IMMUTABLE;
+NOTICE:  42809: argument type text_w_default is only a shell
+CREATE FUNCTION

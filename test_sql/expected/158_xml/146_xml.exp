@@ -1,0 +1,6 @@
+SELECT xml_is_well_formed_document('abc');
+ xml_is_well_formed_document 
+-----------------------------
+ f
+(1 row)
+

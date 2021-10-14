@@ -1,0 +1,5 @@
+INSERT INTO INET_TBL (c, i) VALUES ('192.168.1.2/30', '192.168.1.226');
+ERROR:  22P02: invalid cidr value: "192.168.1.2/30"
+LINE 1: INSERT INTO INET_TBL (c, i) VALUES ('192.168.1.2/30', '192.1...
+                                            ^
+DETAIL:  Value has bits set to right of mask.

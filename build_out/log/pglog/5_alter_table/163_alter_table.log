@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE constraint_rename_test ADD CONSTRAINT con3 PRIMARY KEY (a);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,133 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: select 10 as test01, 20 as test02, 'Hello' as test03 
+ statement: select 10 as "bad name"
+ statement: select 1 as x, 2 as y 
+ statement: select 3 as x, 4 as y 
+ statement: select 5 as x, 6 as y 
+ statement: select 5 as x, 6 as y 
+ statement: select 7 as x, 8 as y 
+ statement: select 7 as x, 8 as y 
+ statement: select 1 as var1, NULL as var2, 3 as var3 
+ statement: select 10 as test01, 20 as test02 from generate_series(1,3) 
+ statement: select 10 as test01, 20 as test02 from generate_series(1,0) 
+ statement: BEGIN
+ statement: DECLARE _psql_cursor NO SCROLL CURSOR FOR                                                                                                                                                 +
+ select 1 as x, 2 as y 
+ statement: FETCH FORWARD 2 FROM _psql_cursor
+ statement: CLOSE _psql_cursor
+ statement: COMMIT
+ statement: BEGIN
+ statement: DECLARE _psql_cursor NO SCROLL CURSOR FOR                                                                                                                                                 +
+ select 3 as x, 4 as y 
+ statement: FETCH FORWARD 2 FROM _psql_cursor
+ statement: CLOSE _psql_cursor
+ statement: COMMIT
+ statement: BEGIN
+ statement: DECLARE _psql_cursor NO SCROLL CURSOR FOR                                                                                                                                                 +
+ select 10 as test01, 20 as test02 from generate_series(1,3) 
+ statement: FETCH FORWARD 2 FROM _psql_cursor
+ statement: CLOSE _psql_cursor
+ statement: ROLLBACK
+ statement: BEGIN
+ statement: DECLARE _psql_cursor NO SCROLL CURSOR FOR                                                                                                                                                 +
+ select 10 as test01, 20 as test02 from generate_series(1,0) 
+ statement: FETCH FORWARD 2 FROM _psql_cursor
+ statement: CLOSE _psql_cursor
+ statement: ROLLBACK
+ statement: prepare q as select array_to_string(array_agg(repeat('x',2*n)),E'\n') as "ab                                                                                                              +
+                                                                                                                                                                                                      +
+ c", array_to_string(array_agg(repeat('y',20-2*n)),E'\n') as "a                                                                                                                                       +
+ bc" from generate_series(1,10) as n(n) group by n>1 ;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: deallocate q;
+ statement: prepare q as select repeat('x',2*n) as "0123456789abcdef", repeat('y',20-2*n) as "0123456789" from generate_series(1,10) as n;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: deallocate q;
+ statement: prepare q as select ' | = | lkjsafi\\/ /oeu rio)(!@&*#)*(!&@*) \ (&' as " | -- | 012345678 9abc def!*@#&!@(*&*~~_+-=\ \", '11' as "0123456789", 11 as int from generate_series(1,10) as n;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: execute q;
+ statement: deallocate q;
+

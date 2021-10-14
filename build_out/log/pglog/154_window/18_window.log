@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ntile(NULL) OVER (ORDER BY ten, four), ten, four FROM tenk1 LIMIT 2;
+LOCATION:  exec_simple_query, postgres.c:938

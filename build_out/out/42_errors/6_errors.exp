@@ -1,0 +1,4 @@
+select * from pg_database where pg_database.datname = nonesuch;
+ERROR:  42703: column "nonesuch" does not exist
+LINE 1: ...ect * from pg_database where pg_database.datname = nonesuch;
+                                                              ^

@@ -1,0 +1,5 @@
+LOG:  00000: statement: update arrtest1 set i[0] = 0, t[0] = 'zero';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "arrtest1" does not exist at character 8
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  update arrtest1 set i[0] = 0, t[0] = 'zero';

@@ -1,0 +1,3 @@
+select array_fill(1, array[2,2], '{}');
+ERROR:  2202E: wrong number of array subscripts
+DETAIL:  Low bound array has different size than dimensions array.

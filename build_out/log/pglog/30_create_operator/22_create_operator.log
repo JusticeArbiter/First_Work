@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE OR REPLACE FUNCTION fn_op2(boolean, boolean)  RETURNS boolean AS $$  SELECT NULL::BOOLEAN;  $$ LANGUAGE sql IMMUTABLE;
+LOCATION:  exec_simple_query, postgres.c:938

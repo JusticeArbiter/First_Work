@@ -1,0 +1,5 @@
+LOG:  00000: statement: select id, txid_visible_in_snapshot(id, snap)  from snapshot_test, generate_series(90, 160) id  where nr = 4;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "snapshot_test" does not exist at character 53
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select id, txid_visible_in_snapshot(id, snap)  from snapshot_test, generate_series(90, 160) id  where nr = 4;

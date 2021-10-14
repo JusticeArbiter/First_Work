@@ -1,0 +1,13 @@
+copy (select 1) to stdout; copy (select 2) to stdout; select 0; select 3;
+1
+2
+ ?column? 
+----------
+        0
+(1 row)
+
+ ?column? 
+----------
+        3
+(1 row)
+

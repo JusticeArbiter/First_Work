@@ -1,0 +1,4 @@
+SELECT regrole('"Nonexistent"');
+ERROR:  42704: role "Nonexistent" does not exist
+LINE 1: SELECT regrole('"Nonexistent"');
+                       ^

@@ -1,0 +1,6 @@
+select '-infinity'::date < 'today'::date as t;
+ t 
+---
+ t
+(1 row)
+

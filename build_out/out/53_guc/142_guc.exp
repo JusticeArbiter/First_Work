@@ -1,0 +1,5 @@
+SELECT name FROM pg_prepared_statements;
+ name 
+------
+(0 rows)
+

@@ -1,0 +1,2 @@
+CREATE ROLE regress_rol_op5;
+CREATE ROLE

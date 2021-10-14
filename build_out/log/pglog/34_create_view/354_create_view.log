@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP SCHEMA temp_view_test CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: drop cascades to 3 other objects
+DETAIL:  drop cascades to table temp_view_test.base_table
+	drop cascades to table temp_view_test.base_table2
+	drop cascades to table temp_view_test.tx1
+LOCATION:  reportDependentObjects, dependency.c:1003
+STATEMENT:  DROP SCHEMA temp_view_test CASCADE;

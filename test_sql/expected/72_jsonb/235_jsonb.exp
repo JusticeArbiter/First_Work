@@ -1,0 +1,3 @@
+SELECT jsonb_build_object('a', 'b', 'c');
+ERROR:  22023: argument list must have even number of elements
+HINT:  The arguments of jsonb_build_object() must consist of alternating keys and values.

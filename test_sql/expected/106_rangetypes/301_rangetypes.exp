@@ -1,0 +1,6 @@
+select * from inoutparam_succeed(int4range(1,2));
+ i |   r   
+---+-------
+ 2 | [1,2)
+(1 row)
+

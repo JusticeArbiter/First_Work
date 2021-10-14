@@ -1,0 +1,9 @@
+LOG:  00000: statement: create temp view usersview as  SELECT * FROM ROWS FROM(get_users(), generate_series(10,11)) WITH ORDINALITY;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create temp view usersview as  SELECT * FROM ROWS FROM(get_users(), generate_series(10,11)) WITH ORDINALITY;
+ERROR:  42883: function get_users() does not exist at character 56
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+LOCATION:  ParseFuncOrColumn, parse_func.c:523
+STATEMENT:  create temp view usersview as  SELECT * FROM ROWS FROM(get_users(), generate_series(10,11)) WITH ORDINALITY;

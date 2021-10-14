@@ -1,0 +1,4 @@
+ALTER USER MAPPING FOR current_user SERVER s8 OPTIONS (username 'test');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER USER MAPPING
+ERROR:  42601: invalid option "username"
+HINT:  Valid options in this context are: user, password

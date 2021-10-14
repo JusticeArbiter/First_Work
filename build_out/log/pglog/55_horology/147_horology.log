@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS "16", f1 AS "timestamp", abstime(f1) AS abstime  FROM TEMP_TIMESTAMP  ORDER BY abstime;
+LOCATION:  exec_simple_query, postgres.c:938

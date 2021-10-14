@@ -1,0 +1,2 @@
+insert into rtest_emp values ('gates', '80000.00');
+INSERT 0 1

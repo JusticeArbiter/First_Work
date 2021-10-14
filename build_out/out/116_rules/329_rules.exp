@@ -1,0 +1,3 @@
+CREATE VIEW shoelace_obsolete AS  SELECT * FROM shoelace WHERE NOT EXISTS  (SELECT shoename FROM shoe WHERE slcolor = sl_color);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+CREATE VIEW

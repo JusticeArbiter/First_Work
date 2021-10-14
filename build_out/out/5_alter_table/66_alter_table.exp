@@ -1,0 +1,4 @@
+SELECT * FROM tmp;
+ERROR:  42P01: relation "tmp" does not exist
+LINE 1: SELECT * FROM tmp;
+                      ^

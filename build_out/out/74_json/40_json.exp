@@ -1,0 +1,6 @@
+SELECT 'null'::json;
+ json 
+------
+ null
+(1 row)
+

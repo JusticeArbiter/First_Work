@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TRIGGER y_trig BEFORE INSERT ON y FOR EACH ROW  EXECUTE PROCEDURE y_trigger();
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TRIGGER y_trig BEFORE INSERT ON y FOR EACH ROW  EXECUTE PROCEDURE y_trigger();
+ERROR:  42P01: relation "y" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE TRIGGER y_trig BEFORE INSERT ON y FOR EACH ROW  EXECUTE PROCEDURE y_trigger();

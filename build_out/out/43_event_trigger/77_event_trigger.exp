@@ -1,0 +1,7 @@
+SELECT * FROM dropped_objects WHERE type = 'schema';
+  type  | schema |   object   
+--------+--------+------------
+ schema |        | schema_two
+ schema |        | schema_one
+(2 rows)
+

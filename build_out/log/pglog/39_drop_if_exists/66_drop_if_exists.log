@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP FUNCTION IF EXISTS test_function_exists();
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: function test_function_exists() does not exist, skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:448
+STATEMENT:  DROP FUNCTION IF EXISTS test_function_exists();

@@ -1,0 +1,4 @@
+SELECT *  INTO TABLE ramp  FROM road  WHERE name ~ '.*Ramp';
+ERROR:  42P01: relation "road" does not exist
+LINE 1: SELECT *  INTO TABLE ramp  FROM road  WHERE name ~ '.*Ramp';
+                                        ^

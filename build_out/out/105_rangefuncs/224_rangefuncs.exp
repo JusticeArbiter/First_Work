@@ -1,0 +1,3 @@
+DROP FUNCTION foo_sql(int,int);
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FUNCTION
+ERROR:  42883: function foo_sql(integer, integer) does not exist

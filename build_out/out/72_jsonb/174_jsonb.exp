@@ -1,0 +1,10 @@
+SELECT * FROM jsonb_each_text('{"a":{"b":"c","c":"b","1":"first"},"b":[1,2],"c":"cc","1":"first","n":null}'::jsonb) AS q;
+ key |               value                
+-----+------------------------------------
+ 1   | first
+ a   | {"1": "first", "b": "c", "c": "b"}
+ b   | [1, 2]
+ c   | cc
+ n   | 
+(5 rows)
+

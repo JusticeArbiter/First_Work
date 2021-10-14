@@ -1,0 +1,8 @@
+SELECT arrtest.a[1],  arrtest.b[1][1][1],  arrtest.c[1],  arrtest.d[1][1],  arrtest.e[0]  FROM arrtest;
+ a  | b |   c    |  d   |  e  
+----+---+--------+------+-----
+  1 | 0 |        |      | 1.1
+ 11 |   | foobar | elt1 |    
+    |   | foo    |      |    
+(3 rows)
+

@@ -1,0 +1,4 @@
+DROP USER regtest_alter_user2;
+ERROR:  2BP01: role "regtest_alter_user2" cannot be dropped because some objects depend on it
+DETAIL:  owner of operator class alt_opc1 for access method hash
+owner of operator family alt_opf1 for access method hash

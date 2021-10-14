@@ -1,0 +1,2 @@
+INSERT INTO default_test DEFAULT VALUES;
+INSERT 0 1

@@ -1,0 +1,2 @@
+INSERT INTO savepoints VALUES (2);
+INSERT 0 1

@@ -1,0 +1,10 @@
+SELECT '' AS five, f1 FROM TEMP_INT2  ORDER BY f1;
+ five |  f1   
+------+-------
+      | -1004
+      |   -35
+      |     0
+      |     0
+      |     0
+(5 rows)
+

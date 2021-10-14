@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS three, f1 as abstime, cast(f1 as timestamp) AS "timestamp"  FROM ABSTIME_TBL WHERE NOT isfinite(f1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: cannot convert abstime "invalid" to timestamp
+LOCATION:  abstime_timestamp, nabstime.c:481
+STATEMENT:  SELECT '' AS three, f1 as abstime, cast(f1 as timestamp) AS "timestamp"  FROM ABSTIME_TBL WHERE NOT isfinite(f1);

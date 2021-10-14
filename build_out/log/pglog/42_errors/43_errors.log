@@ -1,0 +1,2 @@
+LOG:  00000: statement: create function infinite_recurse() returns int as  'select infinite_recurse()' language sql;
+LOCATION:  exec_simple_query, postgres.c:938

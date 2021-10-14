@@ -1,0 +1,3 @@
+select compos();
+ERROR:  22P02: invalid input syntax for integer: "(1,hello)"
+CONTEXT:  PL/pgSQL function compos() while casting return value to function's return type

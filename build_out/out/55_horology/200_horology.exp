@@ -1,0 +1,6 @@
+SELECT to_timestamp('2005364', 'IYYYIDDD');
+      to_timestamp      
+------------------------
+ 2006-01-01 00:00:00+08
+(1 row)
+

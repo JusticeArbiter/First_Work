@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO base_tbl VALUES (1, 'Row 1', false), (2, 'Row 2', true);
+LOCATION:  exec_simple_query, postgres.c:938

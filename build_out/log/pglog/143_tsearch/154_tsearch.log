@@ -1,0 +1,2 @@
+LOG:  00000: statement: SET default_text_search_config=simple;
+LOCATION:  exec_simple_query, postgres.c:938

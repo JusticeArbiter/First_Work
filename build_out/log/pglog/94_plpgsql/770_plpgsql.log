@@ -1,0 +1,5 @@
+LOG:  00000: statement: DO LANGUAGE plpgsql $$begin return 1; end$$;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: RETURN cannot have a parameter in function returning void at character 36
+LOCATION:  make_return_stmt, pl_gram.y:3096
+STATEMENT:  DO LANGUAGE plpgsql $$begin return 1; end$$;

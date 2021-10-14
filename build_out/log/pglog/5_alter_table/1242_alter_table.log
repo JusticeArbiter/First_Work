@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE INDEX comment_test_index ON comment_test(indexed_col);
+LOCATION:  exec_simple_query, postgres.c:938

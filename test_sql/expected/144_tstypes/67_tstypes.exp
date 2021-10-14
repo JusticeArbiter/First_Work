@@ -1,0 +1,6 @@
+SELECT 'foo & bar'::tsquery || 'asd & fg';
+           ?column?           
+------------------------------
+ 'foo' & 'bar' | 'asd' & 'fg'
+(1 row)
+

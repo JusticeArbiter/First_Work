@@ -1,0 +1,4 @@
+drop table event_trigger_fire1;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+NOTICE:  00000: test_event_trigger: ddl_command_end DROP TABLE
+DROP TABLE

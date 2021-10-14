@@ -1,0 +1,2 @@
+ALTER FUNCTION alt_func1(int) RENAME TO alt_func4;
+ERROR:  42723: function alt_func4(integer) already exists in schema "public"

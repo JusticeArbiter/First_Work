@@ -1,0 +1,6 @@
+SELECT * FROM pg_user_mapping;
+ umuser | umserver | umoptions 
+--------+----------+-----------
+  19470 |    19476 | 
+(1 row)
+

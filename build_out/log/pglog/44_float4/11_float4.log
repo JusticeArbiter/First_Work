@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO FLOAT4_TBL(f1) VALUES ('');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type real: "" at character 36
+LOCATION:  float4in, float.c:216
+STATEMENT:  INSERT INTO FLOAT4_TBL(f1) VALUES ('');

@@ -1,0 +1,5 @@
+LOG:  00000: statement: GRANT CREATE ON DATABASE regression TO regression_user1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  3D000: database "regression" does not exist
+LOCATION:  get_database_oid, dbcommands.c:2012
+STATEMENT:  GRANT CREATE ON DATABASE regression TO regression_user1;

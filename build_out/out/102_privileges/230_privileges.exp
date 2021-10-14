@@ -1,0 +1,8 @@
+DROP TABLE t1;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+ERROR:  2BP01: cannot drop table t1 because other objects depend on it
+DETAIL:  view nontemp1 depends on table t1
+view nontemp2 depends on table t1
+view nontemp3 depends on table t1
+view nontemp4 depends on table t1
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.

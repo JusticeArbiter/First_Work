@@ -1,0 +1,6 @@
+SELECT xmlagg(data) FROM xmltest WHERE id > 10;
+ xmlagg 
+--------
+ 
+(1 row)
+

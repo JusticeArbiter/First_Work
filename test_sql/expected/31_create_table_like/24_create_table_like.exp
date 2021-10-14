@@ -1,0 +1,7 @@
+/* fails due to constraint */  SELECT * FROM inhg;
+ x |  xx  | y 
+---+------+---
+ x | text | y
+ x | text | y
+(2 rows)
+

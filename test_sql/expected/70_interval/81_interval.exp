@@ -1,0 +1,6 @@
+SELECT interval '6' second;
+ interval 
+----------
+ 00:00:06
+(1 row)
+

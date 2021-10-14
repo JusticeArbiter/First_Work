@@ -1,0 +1,2 @@
+ALTER LANGUAGE alt_lang1 RENAME TO alt_lang3;
+ERROR:  42710: language "alt_lang3" already exists

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT EXTRACT(CENTURY FROM DATE '0001-01-01 AD');
+LOCATION:  exec_simple_query, postgres.c:938

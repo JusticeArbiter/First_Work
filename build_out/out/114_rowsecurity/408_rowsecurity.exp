@@ -1,0 +1,7 @@
+SELECT * FROM y2 JOIN test_qual_pushdown ON (b = abc) WHERE f_leak(abc);
+NOTICE:  00000: f_leak => abc
+NOTICE:  00000: f_leak => def
+ a | b | abc 
+---+---+-----
+(0 rows)
+

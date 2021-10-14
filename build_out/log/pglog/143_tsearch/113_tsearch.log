@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE UNIQUE INDEX bt_tsq ON test_tsquery (keyword);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE UNIQUE INDEX bt_tsq ON test_tsquery (keyword);

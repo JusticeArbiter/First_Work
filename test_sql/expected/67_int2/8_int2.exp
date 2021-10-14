@@ -1,0 +1,4 @@
+INSERT INTO INT2_TBL(f1) VALUES ('100000');
+ERROR:  22003: value "100000" is out of range for type smallint
+LINE 1: INSERT INTO INT2_TBL(f1) VALUES ('100000');
+                                         ^

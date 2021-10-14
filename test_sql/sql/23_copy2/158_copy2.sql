@@ -1,0 +1,1 @@
+SET SESSION AUTHORIZATION regress_rls_copy_user_colperms;

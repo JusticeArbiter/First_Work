@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from  int8_tbl x cross join (int4_tbl x cross join lateral (select x.f1) ss);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P09: table reference "x" is ambiguous at character 77
+LOCATION:  scanNameSpaceForRefname, parse_relation.c:177
+STATEMENT:  select * from  int8_tbl x cross join (int4_tbl x cross join lateral (select x.f1) ss);

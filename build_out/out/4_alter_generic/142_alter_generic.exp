@@ -1,0 +1,2 @@
+ALTER OPERATOR CLASS alt_opc3 USING hash OWNER TO regtest_alter_user2;
+ERROR:  42704: operator class "alt_opc3" does not exist for access method "hash"

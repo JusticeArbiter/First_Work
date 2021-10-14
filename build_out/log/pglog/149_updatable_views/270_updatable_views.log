@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO rw_view1 VALUES (null, null, 1.1, null);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: cannot insert into column "ctid" of view "rw_view1"
+DETAIL:  View columns that refer to system columns are not updatable.
+LOCATION:  rewriteTargetView, rewriteHandler.c:2751
+STATEMENT:  INSERT INTO rw_view1 VALUES (null, null, 1.1, null);

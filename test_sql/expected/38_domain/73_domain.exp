@@ -1,0 +1,2 @@
+select array[row(2,1)]::dcomptypea;
+ERROR:  23514: value for domain dcomptypea violates check constraint "c1"

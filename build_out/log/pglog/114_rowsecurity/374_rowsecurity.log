@@ -1,0 +1,26 @@
+LOG:  00000: statement: UPDATE x1 SET b = b || '_updt' WHERE f_leak(b) RETURNING *;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: f_leak => abc
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE x1 SET b = b || '_updt' WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => bcd
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE x1 SET b = b || '_updt' WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => cde
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE x1 SET b = b || '_updt' WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => def
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE x1 SET b = b || '_updt' WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => efg
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE x1 SET b = b || '_updt' WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => fgh
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE x1 SET b = b || '_updt' WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => fgh
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE x1 SET b = b || '_updt' WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => fgh
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE x1 SET b = b || '_updt' WHERE f_leak(b) RETURNING *;

@@ -1,0 +1,8 @@
+SELECT '' AS three, p1.f1 AS point1, p2.f1 AS point2, (p1.f1 <-> p2.f1) AS distance  FROM POINT_TBL p1, POINT_TBL p2  WHERE (p1.f1 <-> p2.f1) > 3 and p1.f1 << p2.f1 and p1.f1 >^ p2.f1  ORDER BY distance;
+ three |   point1   |  point2  |     distance     
+-------+------------+----------+------------------
+       | (-3,4)     | (0,0)    |                5
+       | (-10,0)    | (-5,-12) |               13
+       | (5.1,34.5) | (10,10)  | 24.9851956166046
+(3 rows)
+

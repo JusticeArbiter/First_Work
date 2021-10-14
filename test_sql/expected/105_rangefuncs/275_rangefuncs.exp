@@ -1,0 +1,5 @@
+create or replace function insert_tt2(text,text) returns setof int as  $$ insert into tt(data) values($1),($2) returning f1 $$  language sql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42P01: relation "tt" does not exist
+LINE 1: ...2(text,text) returns setof int as  $$ insert into tt(data) v...
+                                                             ^

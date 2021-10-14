@@ -1,0 +1,11 @@
+SELECT c.relname, r.rolname  FROM pg_class c JOIN pg_roles r ON (r.oid = c.relowner)  WHERE relname LIKE 'testtab_'  ORDER BY 1;
+ relname  |   rolname    
+----------+--------------
+ testtab1 | highgo
+ testtab2 | current_user
+ testtab3 | highgo
+ testtab4 | testrolx
+ testtab5 | Public
+ testtab6 | highgo
+(6 rows)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc1 alter column test drop not null;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: column "test" is in a primary key
+LOCATION:  ATExecDropNotNull, tablecmds.c:5227
+STATEMENT:  alter table atacc1 alter column test drop not null;

@@ -1,0 +1,2 @@
+create table ddtest2(f1 ddtest1d);
+CREATE TABLE

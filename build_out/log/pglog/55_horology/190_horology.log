@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT to_timestamp('20000-1116', 'YYYY-MMDD');
+LOCATION:  exec_simple_query, postgres.c:938

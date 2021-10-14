@@ -1,0 +1,6 @@
+select * from outparam_succeed(int4range(1,2));
+   r   |  t  
+-------+-----
+ [1,2) | foo
+(1 row)
+

@@ -1,0 +1,6 @@
+SELECT nspname, tmplname  FROM pg_ts_template t, pg_namespace n  WHERE t.tmplnamespace = n.oid AND nspname like 'alt_nsp%'  ORDER BY nspname, tmplname;
+ nspname  |   tmplname   
+----------+--------------
+ alt_nsp2 | alt_ts_temp2
+(1 row)
+

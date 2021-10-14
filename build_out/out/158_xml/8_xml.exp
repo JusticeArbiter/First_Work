@@ -1,0 +1,2 @@
+SELECT xmlcomment('test-');
+ERROR:  2200S: invalid XML comment

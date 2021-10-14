@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX onek2_stu1_prtl ON onek2 USING btree(stringu1 name_ops)  where onek2.stringu1 >= 'J' and onek2.stringu1 < 'K';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "onek2" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX onek2_stu1_prtl ON onek2 USING btree(stringu1 name_ops)  where onek2.stringu1 >= 'J' and onek2.stringu1 < 'K';

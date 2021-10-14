@@ -1,0 +1,2 @@
+LOG:  00000: statement: create temp table src (f1 text);
+LOCATION:  exec_simple_query, postgres.c:938

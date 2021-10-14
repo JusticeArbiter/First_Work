@@ -1,0 +1,5 @@
+select for_vect();
+ERROR:  42883: function for_vect() does not exist
+LINE 1: select for_vect();
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

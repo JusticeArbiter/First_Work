@@ -1,0 +1,6 @@
+SELECT cash_words(m) FROM money_data;
+                   cash_words                    
+-------------------------------------------------
+ One hundred twenty three dollars and zero cents
+(1 row)
+

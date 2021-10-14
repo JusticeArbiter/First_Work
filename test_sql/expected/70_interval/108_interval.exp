@@ -1,0 +1,4 @@
+SELECT interval '123 11';
+ERROR:  22007: invalid input syntax for type interval: "123 11"
+LINE 1: SELECT interval '123 11';
+                        ^

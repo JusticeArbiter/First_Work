@@ -1,0 +1,4 @@
+INSERT INTO b_star (class, a, b) VALUES ('b', 3, 'mumble'::text);
+ERROR:  42P01: relation "b_star" does not exist
+LINE 1: INSERT INTO b_star (class, a, b) VALUES ('b', 3, 'mumble'::t...
+                    ^

@@ -1,0 +1,7 @@
+LOG:  00000: statement: select compos();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: returned record type does not match expected record type
+DETAIL:  Returned type unknown does not match expected type character varying in column 2.
+CONTEXT:  PL/pgSQL function compos() while casting return value to function's return type
+LOCATION:  convert_tuples_by_position, tupconvert.c:113
+STATEMENT:  select compos();

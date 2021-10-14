@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into c1 values(11,'xyz',33,0);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: new row for relation "c1" violates check constraint "p1_a1_check"
+DETAIL:  Failing row contains (11, xyz, 33, 0).
+LOCATION:  ExecConstraints, execMain.c:1725
+STATEMENT:  insert into c1 values(11,'xyz',33,0);

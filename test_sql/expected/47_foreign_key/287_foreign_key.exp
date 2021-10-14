@@ -1,0 +1,3 @@
+insert into pktable (base1, ptest1, base2, ptest2) values (2, 3, 3, 2);
+ERROR:  23503: insert or update on table "pktable" violates foreign key constraint "pktable_base2_fkey"
+DETAIL:  Key (base2, ptest2)=(3, 2) is not present in table "pktable".

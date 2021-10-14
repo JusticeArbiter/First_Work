@@ -1,0 +1,3 @@
+alter table anothertab drop constraint IF EXISTS anothertab_chk;
+NOTICE:  00000: constraint "anothertab_chk" of relation "anothertab" does not exist, skipping
+ALTER TABLE

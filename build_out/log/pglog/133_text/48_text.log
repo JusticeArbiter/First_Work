@@ -1,0 +1,5 @@
+LOG:  00000: statement: select format('%1$', 1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: unterminated format specifier
+LOCATION:  text_format_parse_format, varlena.c:4936
+STATEMENT:  select format('%1$', 1);

@@ -1,0 +1,2 @@
+LOG:  00000: statement: COMMENT ON INDEX ctlt1_b_key IS 'index b_key';
+LOCATION:  exec_simple_query, postgres.c:938

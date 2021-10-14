@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT to_timestamp('2005527', 'YYYYIWID');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid combination of date conventions
+HINT:  Do not mix Gregorian and ISO week date conventions in a formatting template.
+LOCATION:  from_char_set_mode, formatting.c:2116
+STATEMENT:  SELECT to_timestamp('2005527', 'YYYYIWID');

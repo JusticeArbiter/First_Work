@@ -1,0 +1,3 @@
+create temp table self_ref_trigger (  id int primary key,  parent int references self_ref_trigger,  data text,  nchildren int not null default 0  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

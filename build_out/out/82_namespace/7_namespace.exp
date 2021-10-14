@@ -1,0 +1,8 @@
+SELECT * FROM test_schema_1.abc_view;
+ a | b 
+---+---
+ 2 |  
+ 3 |  
+ 4 |  
+(3 rows)
+

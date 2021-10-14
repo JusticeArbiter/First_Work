@@ -1,0 +1,13 @@
+EXPLAIN (costs off) DELETE FROM rw_view2 WHERE NOT snoop(person);
+                           QUERY PLAN                            
+-----------------------------------------------------------------
+ Delete on base_tbl base_tbl_1
+   ->  Subquery Scan on base_tbl
+         Filter: (NOT snoop(base_tbl.person))
+         ->  Subquery Scan on base_tbl_2
+               Filter: snoop(base_tbl_2.person)
+               ->  LockRows
+                     ->  Seq Scan on base_tbl base_tbl_3
+                           Filter: (visibility = 'public'::text)
+(8 rows)
+

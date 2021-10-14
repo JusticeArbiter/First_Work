@@ -1,0 +1,4 @@
+explain (costs off)  SELECT * FROM  (SELECT a || b AS ab FROM t1  UNION ALL  SELECT * FROM t2) t  WHERE ab = 'ab';
+ERROR:  42P01: relation "t1" does not exist
+LINE 1: ...ts off)  SELECT * FROM  (SELECT a || b AS ab FROM t1  UNION ...
+                                                             ^

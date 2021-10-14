@@ -1,0 +1,2 @@
+LOG:  00000: statement: COPY hs1 TO '/tmp/copy_test';
+LOCATION:  exec_simple_query, postgres.c:938

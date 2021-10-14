@@ -1,0 +1,6 @@
+select decode('h'::char,'h'::char,2016::smallint,3);
+ decode 
+--------
+   2016
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: EXPLAIN (COSTS OFF) EXECUTE p1(2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  26000: prepared statement "p1" does not exist
+LOCATION:  FetchPreparedStatement, prepare.c:504
+STATEMENT:  EXPLAIN (COSTS OFF) EXECUTE p1(2);

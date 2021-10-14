@@ -1,0 +1,15 @@
+select * from test_ret_set_scalar(1,10);
+ test_ret_set_scalar 
+---------------------
+                   2
+                   3
+                   4
+                   5
+                   6
+                   7
+                   8
+                   9
+                  10
+                  11
+(10 rows)
+

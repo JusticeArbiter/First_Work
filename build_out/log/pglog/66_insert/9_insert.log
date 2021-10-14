@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into inserttest (col1, col2, col3) values (1, 2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: INSERT has more target columns than expressions at character 37
+LOCATION:  transformInsertRow, analyze.c:836
+STATEMENT:  insert into inserttest (col1, col2, col3) values (1, 2);

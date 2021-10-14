@@ -1,0 +1,5 @@
+LOG:  00000: statement: /* Has ee entry */  CREATE TABLE inhf (LIKE inhx, LIKE inhx);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42701: column "xx" specified more than once
+LOCATION:  MergeAttributes, tablecmds.c:1487
+STATEMENT:  /* Has ee entry */  CREATE TABLE inhf (LIKE inhx, LIKE inhx);

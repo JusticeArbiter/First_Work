@@ -1,0 +1,5 @@
+select fcompos2(row(2,'two'));
+ERROR:  42883: function fcompos2(record) does not exist
+LINE 1: select fcompos2(row(2,'two'));
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

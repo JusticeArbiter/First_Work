@@ -1,0 +1,5 @@
+LOG:  00000: statement: PREPARE p1(int) AS SELECT * FROM t1 WHERE a <= $1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" does not exist at character 43
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  PREPARE p1(int) AS SELECT * FROM t1 WHERE a <= $1;

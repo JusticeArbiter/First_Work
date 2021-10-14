@@ -1,0 +1,6 @@
+select quote_literal(e'\\');
+ quote_literal 
+---------------
+ E'\\'
+(1 row)
+

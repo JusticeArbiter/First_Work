@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT count(*) OVER (PARTITION BY four) FROM (SELECT * FROM tenk1 WHERE FALSE)s;
+LOCATION:  exec_simple_query, postgres.c:938

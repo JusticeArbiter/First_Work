@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE main_table SET a = a + 2 WHERE b > 100;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: trigger_func(after_upd_stmt) called: action = UPDATE, when = AFTER, level = STATEMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE main_table SET a = a + 2 WHERE b > 100;

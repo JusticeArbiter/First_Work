@@ -1,0 +1,2 @@
+CREATE TABLE deptest (a serial primary key, b text);
+ERROR:  42P07: relation "deptest" already exists

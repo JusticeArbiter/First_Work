@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '0/16AE7F7' < '0/16AE7F8'::pg_lsn;
+LOCATION:  exec_simple_query, postgres.c:938

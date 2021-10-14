@@ -1,0 +1,2 @@
+CREATE INDEX iix ON ihighway USING btree (name text_ops);
+ERROR:  42P01: relation "ihighway" does not exist

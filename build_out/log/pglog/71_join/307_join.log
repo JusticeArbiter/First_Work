@@ -1,0 +1,5 @@
+LOG:  00000: statement: explain (costs off)  select d.* from d left join (select distinct * from b) s  on d.a = s.id and d.b = s.c_id;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column d.a does not exist at character 83
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  explain (costs off)  select d.* from d left join (select distinct * from b) s  on d.a = s.id and d.b = s.c_id;

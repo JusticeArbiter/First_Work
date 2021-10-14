@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT xmlconcat('bad', '<syntax');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2200N: invalid XML content at character 25
+DETAIL:  line 1: Couldn't find end of Start Tag syntax line 1
+LOCATION:  xml_ereport, xml.c:1555
+STATEMENT:  SELECT xmlconcat('bad', '<syntax');

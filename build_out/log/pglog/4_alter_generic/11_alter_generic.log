@@ -1,0 +1,2 @@
+LOG:  00000: statement: GRANT ALL ON SCHEMA alt_nsp1, alt_nsp2 TO public;
+LOCATION:  exec_simple_query, postgres.c:938

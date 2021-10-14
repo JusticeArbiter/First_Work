@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TRIGGER after_upd_b_stmt_trig AFTER UPDATE OF b ON main_table  FOR EACH STATEMENT EXECUTE PROCEDURE trigger_func('after_upd_b_stmt');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TRIGGER after_upd_b_stmt_trig AFTER UPDATE OF b ON main_table  FOR EACH STATEMENT EXECUTE PROCEDURE trigger_func('after_upd_b_stmt');

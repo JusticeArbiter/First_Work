@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP TYPE default_test_row CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: drop cascades to function get_default_test()
+LOCATION:  reportDependentObjects, dependency.c:1009
+STATEMENT:  DROP TYPE default_test_row CASCADE;

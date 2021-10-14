@@ -1,0 +1,6 @@
+SELECT 'a | f | g' < 'b & c'::tsquery as "false";
+ false 
+-------
+ f
+(1 row)
+

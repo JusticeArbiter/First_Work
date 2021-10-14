@@ -1,0 +1,3 @@
+create table PSlot (  slotname char(20),  pfname text,  slotlink char(20),  backlink char(20)  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

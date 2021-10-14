@@ -1,0 +1,2 @@
+alter table atacc1 alter a set default 3;
+ERROR:  42703: column "a" of relation "atacc1" does not exist

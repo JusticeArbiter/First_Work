@@ -1,0 +1,6 @@
+select concat('|', variadic array[]::int[]);
+ concat 
+--------
+ 
+(1 row)
+

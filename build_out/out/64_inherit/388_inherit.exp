@@ -1,0 +1,4 @@
+alter table p1 add constraint inh_check_constraint2 check (f1 < 10);
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+NOTICE:  00000: merging constraint "inh_check_constraint2" with inherited definition
+ALTER TABLE

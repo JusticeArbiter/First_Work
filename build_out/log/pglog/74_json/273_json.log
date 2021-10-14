@@ -1,0 +1,2 @@
+LOG:  00000: statement: select json_object('{a,b,c,"d e f"}','{1,2,3,"a b c"}');
+LOCATION:  exec_simple_query, postgres.c:938

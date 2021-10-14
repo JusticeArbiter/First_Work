@@ -1,0 +1,4 @@
+REFRESH MATERIALIZED VIEW CONCURRENTLY mv;
+NOTICE:  00000: test_event_trigger: ddl_command_start REFRESH MATERIALIZED VIEW
+ERROR:  21000: new data for materialized view "mv" contains duplicate rows without any null columns
+DETAIL:  Row: (1,10)

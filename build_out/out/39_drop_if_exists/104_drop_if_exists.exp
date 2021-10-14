@@ -1,0 +1,2 @@
+DROP OPERATOR CLASS IF EXISTS test_operator_class USING no_such_am;
+ERROR:  42704: access method "no_such_am" does not exist

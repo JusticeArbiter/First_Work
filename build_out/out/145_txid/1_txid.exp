@@ -1,0 +1,6 @@
+select '12:13:'::txid_snapshot;
+ txid_snapshot 
+---------------
+ 12:13:
+(1 row)
+

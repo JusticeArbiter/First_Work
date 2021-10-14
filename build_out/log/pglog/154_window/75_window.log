@@ -1,0 +1,5 @@
+LOG:  00000: statement: EXPLAIN (COSTS OFF)  SELECT * FROM  (SELECT depname,  sum(salary) OVER (PARTITION BY depname) depsalary,  min(salary) OVER (PARTITION BY depname || 'A', depname) depminsalary  FROM empsalary) emp  WHERE depname = 'sales';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "empsalary" does not exist at character 182
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  EXPLAIN (COSTS OFF)  SELECT * FROM  (SELECT depname,  sum(salary) OVER (PARTITION BY depname) depsalary,  min(salary) OVER (PARTITION BY depname || 'A', depname) depminsalary  FROM empsalary) emp  WHERE depname = 'sales';

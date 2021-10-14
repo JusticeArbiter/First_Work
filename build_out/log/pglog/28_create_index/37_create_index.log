@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE quad_point_tbl AS  SELECT point(unique1,unique2) AS p FROM tenk1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tenk1" does not exist at character 73
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE TABLE quad_point_tbl AS  SELECT point(unique1,unique2) AS p FROM tenk1;

@@ -1,0 +1,6 @@
+SELECT atest5 FROM atest5;
+  atest5  
+----------
+ (1,2,3,)
+(1 row)
+

@@ -1,0 +1,2 @@
+create domain ddtest1d as ddtest1[];
+CREATE DOMAIN

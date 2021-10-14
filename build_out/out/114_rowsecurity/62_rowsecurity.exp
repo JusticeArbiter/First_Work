@@ -1,0 +1,13 @@
+SELECT * FROM document d FULL OUTER JOIN category c on d.cid = c.cid;
+ did | cid | dlevel |      dauthor      |        dtitle         | cid |      cname      
+-----+-----+--------+-------------------+-----------------------+-----+-----------------
+   1 |  11 |      1 | rls_regress_user1 | my first novel        |  11 | novel
+   2 |  11 |      2 | rls_regress_user1 | my second novel       |  11 | novel
+   3 |  22 |      2 | rls_regress_user1 | my science fiction    |  22 | science fiction
+   4 |  44 |      1 | rls_regress_user1 | my first manga        |  44 | manga
+   5 |  44 |      2 | rls_regress_user1 | my second manga       |  44 | manga
+   6 |  22 |      1 | rls_regress_user2 | great science fiction |  22 | science fiction
+   7 |  33 |      2 | rls_regress_user2 | great technology book |  33 | technology
+   8 |  44 |      1 | rls_regress_user2 | great manga           |  44 | manga
+(8 rows)
+

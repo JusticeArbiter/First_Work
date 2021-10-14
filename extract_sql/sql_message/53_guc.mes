@@ -1,0 +1,205 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SHOW datestyle;
+ statement: SET vacuum_cost_delay TO 40;
+ statement: SET datestyle = 'ISO, YMD';
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: SET LOCAL vacuum_cost_delay TO 50;
+ statement: SHOW vacuum_cost_delay;
+ statement: SET LOCAL datestyle = 'SQL';
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: BEGIN;
+ statement: SET LOCAL vacuum_cost_delay TO 50;
+ statement: SHOW vacuum_cost_delay;
+ statement: SET LOCAL datestyle = 'SQL';
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: COMMIT;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: BEGIN;
+ statement: SET vacuum_cost_delay TO 60;
+ statement: SHOW vacuum_cost_delay;
+ statement: SET datestyle = 'German';
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: ROLLBACK;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: BEGIN;
+ statement: SET vacuum_cost_delay TO 70;
+ statement: SET datestyle = 'MDY';
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: SAVEPOINT first_sp;
+ statement: SET vacuum_cost_delay TO 80;
+ statement: SHOW vacuum_cost_delay;
+ statement: SET datestyle = 'German, DMY';
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: ROLLBACK TO first_sp;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: SAVEPOINT second_sp;
+ statement: SET vacuum_cost_delay TO 90;
+ statement: SET datestyle = 'SQL, YMD';
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: SAVEPOINT third_sp;
+ statement: SET vacuum_cost_delay TO 100;
+ statement: SHOW vacuum_cost_delay;
+ statement: SET datestyle = 'Postgres, MDY';
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: ROLLBACK TO third_sp;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: ROLLBACK TO second_sp;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: ROLLBACK;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: BEGIN;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: SAVEPOINT sp;
+ statement: SET LOCAL vacuum_cost_delay TO 30;
+ statement: SHOW vacuum_cost_delay;
+ statement: SET LOCAL datestyle = 'Postgres, MDY';
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: ROLLBACK TO sp;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: ROLLBACK;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: BEGIN;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: SAVEPOINT sp;
+ statement: SET LOCAL vacuum_cost_delay TO 30;
+ statement: SHOW vacuum_cost_delay;
+ statement: SET LOCAL datestyle = 'Postgres, MDY';
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: RELEASE SAVEPOINT sp;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: ROLLBACK;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: BEGIN;
+ statement: SET vacuum_cost_delay TO 40;
+ statement: SET LOCAL vacuum_cost_delay TO 50;
+ statement: SHOW vacuum_cost_delay;
+ statement: SET datestyle = 'ISO, DMY';
+ statement: SET LOCAL datestyle = 'Postgres, MDY';
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: COMMIT;
+ statement: SHOW vacuum_cost_delay;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: SET datestyle = iso, ymd;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: RESET datestyle;
+ statement: SHOW datestyle;
+ statement: SELECT '2006-08-13 12:34:56'::timestamptz;
+ statement: CREATE TEMP TABLE reset_test ( data text ) ON COMMIT DELETE ROWS;
+ statement: SELECT relname FROM pg_class WHERE relname = 'reset_test';
+ statement: DISCARD TEMP;
+ statement: SELECT relname FROM pg_class WHERE relname = 'reset_test';
+ statement: DECLARE foo CURSOR WITH HOLD FOR SELECT 1;
+ statement: PREPARE foo AS SELECT 1;
+ statement: LISTEN foo_event;
+ statement: SET vacuum_cost_delay = 13;
+ statement: CREATE TEMP TABLE tmp_foo (data text) ON COMMIT DELETE ROWS;
+ statement: CREATE ROLE temp_reset_user;
+ statement: SET SESSION AUTHORIZATION temp_reset_user;
+ statement: SELECT pg_listening_channels();
+ statement: SELECT name FROM pg_prepared_statements;
+ statement: SELECT name FROM pg_cursors;
+ statement: SHOW vacuum_cost_delay;
+ statement: SELECT relname from pg_class where relname = 'tmp_foo';
+ statement: SELECT current_user = 'temp_reset_user';
+ statement: DISCARD ALL;
+ statement: SELECT pg_listening_channels();
+ statement: SELECT name FROM pg_prepared_statements;
+ statement: SELECT name FROM pg_cursors;
+ statement: SHOW vacuum_cost_delay;
+ statement: SELECT relname from pg_class where relname = 'tmp_foo';
+ statement: SELECT current_user = 'temp_reset_user';
+ statement: DROP ROLE temp_reset_user;
+ statement: set search_path = foo, public, not_there_initially;
+ statement: select current_schemas(false);
+ statement: create schema not_there_initially;
+ statement: select current_schemas(false);
+ statement: drop schema not_there_initially;
+ statement: select current_schemas(false);
+ statement: reset search_path;
+ statement: set work_mem = '3MB';
+ statement: create function report_guc(text) returns text as                 +
+ $$ select current_setting($1) $$ language sql                               +
+ set work_mem = '1MB';
+ statement: select report_guc('work_mem'), current_setting('work_mem');
+ statement: alter function report_guc(text) set work_mem = '2MB';
+ statement: select report_guc('work_mem'), current_setting('work_mem');
+ statement: alter function report_guc(text) reset all;
+ statement: select report_guc('work_mem'), current_setting('work_mem');
+ statement: create or replace function myfunc(int) returns text as $$        +
+ begin                                                                       +
+   set local work_mem = '2MB';                                               +
+   return current_setting('work_mem');                                       +
+ end $$                                                                      +
+ language plpgsql                                                            +
+ set work_mem = '1MB';
+ statement: select myfunc(0), current_setting('work_mem');
+ statement: alter function myfunc(int) reset all;
+ statement: select myfunc(0), current_setting('work_mem');
+ statement: set work_mem = '3MB';
+ statement: create or replace function myfunc(int) returns text as $$        +
+ begin                                                                       +
+   set work_mem = '2MB';                                                     +
+   return current_setting('work_mem');                                       +
+ end $$                                                                      +
+ language plpgsql                                                            +
+ set work_mem = '1MB';
+ statement: select myfunc(0), current_setting('work_mem');
+ statement: set work_mem = '3MB';
+ statement: create or replace function myfunc(int) returns text as $$        +
+ begin                                                                       +
+   set work_mem = '2MB';                                                     +
+   perform 1/$1;                                                             +
+   return current_setting('work_mem');                                       +
+ end $$                                                                      +
+ language plpgsql                                                            +
+ set work_mem = '1MB';
+ statement: select myfunc(0);
+ statement: select current_setting('work_mem');
+ statement: select myfunc(1), current_setting('work_mem');
+ statement: create function func_with_bad_set() returns int as $$ select 1 $$+
+ language sql                                                                +
+ set default_text_search_config = no_such_config;
+ statement: set check_function_bodies = off;
+ statement: create function func_with_bad_set() returns int as $$ select 1 $$+
+ language sql                                                                +
+ set default_text_search_config = no_such_config;
+ statement: select func_with_bad_set();
+ statement: reset check_function_bodies;
+

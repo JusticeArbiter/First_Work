@@ -1,0 +1,9 @@
+LOG:  00000: statement: create function outparam_fail(i anyelement, out r anyrange, out t text)  as $$ select '[1,10]', 'foo' $$ language sql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function outparam_fail(i anyelement, out r anyrange, out t text)  as $$ select '[1,10]', 'foo' $$ language sql;
+ERROR:  42P13: cannot determine result data type
+DETAIL:  A function returning "anyrange" must have at least one "anyrange" argument.
+LOCATION:  ProcedureCreate, pg_proc.c:253
+STATEMENT:  create function outparam_fail(i anyelement, out r anyrange, out t text)  as $$ select '[1,10]', 'foo' $$ language sql;

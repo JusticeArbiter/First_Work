@@ -1,0 +1,6 @@
+SELECT count(oid) FROM create_table_test2;
+ count 
+-------
+     0
+(1 row)
+

@@ -1,0 +1,5 @@
+select f1 from c1;
+ERROR:  42703: column "f1" does not exist
+LINE 1: select f1 from c1;
+               ^
+HINT:  Perhaps you meant to reference the column "c1.f2".

@@ -1,0 +1,5 @@
+LOG:  00000: statement: with aa as (select 'int4_tbl' u from int4_tbl limit 1)  insert into upsert values (1, 'x'), (999, 'y')  on conflict (key) do update set val = (select u from aa)  returning *;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "upsert" does not exist at character 69
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  with aa as (select 'int4_tbl' u from int4_tbl limit 1)  insert into upsert values (1, 'x'), (999, 'y')  on conflict (key) do update set val = (select u from aa)  returning *;

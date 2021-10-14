@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM numrange_test WHERE range_contained_by(numrange(-1e7,-10000.1), nr);
+LOCATION:  exec_simple_query, postgres.c:938

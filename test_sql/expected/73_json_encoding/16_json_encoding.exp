@@ -1,0 +1,6 @@
+select json '{ "a": "the Copyright \u00a9 sign" }' ->> 'a' as correct_in_utf8;
+   correct_in_utf8    
+----------------------
+ the Copyright © sign
+(1 row)
+

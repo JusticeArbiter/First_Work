@@ -1,0 +1,2 @@
+SET row_security = off;
+SET

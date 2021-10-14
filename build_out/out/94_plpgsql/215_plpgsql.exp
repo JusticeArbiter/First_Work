@@ -1,0 +1,11 @@
+select * from WSlot where roomno = '001' order by slotname;
+       slotname       |  roomno  |       slotlink       |       backlink       
+----------------------+----------+----------------------+----------------------
+ WS.001.1a            | 001      |                      | PS.base.a1          
+ WS.001.1b            | 001      |                      | PS.base.a2          
+ WS.001.2a            | 001      |                      | PS.base.a3          
+ WS.001.2b            | 001      |                      | PS.base.a4          
+ WS.001.3a            | 001      |                      | PS.base.a6          
+ WS.001.3b            | 001      |                      |                     
+(6 rows)
+

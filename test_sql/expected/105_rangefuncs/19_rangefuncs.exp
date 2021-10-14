@@ -1,0 +1,7 @@
+select * from rows from(foot(1),foot(2)) with ordinality as z(a,b,c,d,ord);
+ a |  b  | c | d  | ord 
+---+-----+---+----+-----
+ 1 |  11 | 2 | 22 |   1
+ 1 | 111 |   |    |   2
+(2 rows)
+

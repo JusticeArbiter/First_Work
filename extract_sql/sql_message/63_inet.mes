@@ -1,0 +1,95 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: DROP TABLE INET_TBL;
+ statement: CREATE TABLE INET_TBL (c cidr, i inet);
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('192.168.1', '192.168.1.226/24');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('192.168.1.0/26', '192.168.1.226');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('192.168.1', '192.168.1.0/24');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('192.168.1', '192.168.1.0/25');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('192.168.1', '192.168.1.255/24');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('192.168.1', '192.168.1.255/25');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('10', '10.1.2.3/8');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('10.0.0.0', '10.1.2.3/8');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('10.1.2.3', '10.1.2.3/32');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('10.1.2', '10.1.2.3/24');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('10.1', '10.1.2.3/16');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('10', '10.1.2.3/8');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('10', '11.1.2.3/8');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('10', '9.1.2.3/8');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('10:23::f1', '10:23::f1/64');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('10:23::8000/113', '10:23::ffff');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('::ffff:1.2.3.4', '::4.3.2.1/24');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('192.168.1.2/30', '192.168.1.226');
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('1234::1234::1234', '::1.2.3.4');
+ statement: INSERT INTO INET_TBL (c, i) VALUES (cidr('192.168.1.2/30'), '192.168.1.226');
+ statement: INSERT INTO INET_TBL (c, i) VALUES (cidr('ffff:ffff:ffff:ffff::/24'), '::192.168.1.226');
+ statement: SELECT '' AS ten, c AS cidr, i AS inet FROM INET_TBL;
+ statement: SELECT '' AS ten, i AS inet, host(i), text(i), family(i) FROM INET_TBL;
+ statement: SELECT '' AS ten, c AS cidr, broadcast(c),                                               +
+   i AS inet, broadcast(i) FROM INET_TBL;
+ statement: SELECT '' AS ten, c AS cidr, network(c) AS "network(cidr)",                              +
+   i AS inet, network(i) AS "network(inet)" FROM INET_TBL;
+ statement: SELECT '' AS ten, c AS cidr, masklen(c) AS "masklen(cidr)",                              +
+   i AS inet, masklen(i) AS "masklen(inet)" FROM INET_TBL;
+ statement: SELECT '' AS four, c AS cidr, masklen(c) AS "masklen(cidr)",                             +
+   i AS inet, masklen(i) AS "masklen(inet)" FROM INET_TBL                                            +
+   WHERE masklen(c) <= 8;
+ statement: SELECT '' AS six, c AS cidr, i AS inet FROM INET_TBL                                     +
+   WHERE c = i;
+ statement: SELECT '' AS ten, i, c,                                                                  +
+   i < c AS lt, i <= c AS le, i = c AS eq,                                                           +
+   i >= c AS ge, i > c AS gt, i <> c AS ne,                                                          +
+   i << c AS sb, i <<= c AS sbe,                                                                     +
+   i >> c AS sup, i >>= c AS spe,                                                                    +
+   i && c AS ovr                                                                                     +
+   FROM INET_TBL;
+ statement: SELECT max(i) AS max, min(i) AS min FROM INET_TBL;
+ statement: SELECT max(c) AS max, min(c) AS min FROM INET_TBL;
+ statement: SELECT '' AS ten, set_masklen(inet(text(i)), 24) FROM INET_TBL;
+ statement: CREATE INDEX inet_idx1 ON inet_tbl(i);
+ statement: SET enable_seqscan TO off;
+ statement: SELECT * FROM inet_tbl WHERE i<<'192.168.1.0/24'::cidr;
+ statement: SELECT * FROM inet_tbl WHERE i<<='192.168.1.0/24'::cidr;
+ statement: SET enable_seqscan TO on;
+ statement: DROP INDEX inet_idx1;
+ statement: CREATE INDEX inet_idx2 ON inet_tbl using gist (i inet_ops);
+ statement: SET enable_seqscan TO off;
+ statement: SELECT * FROM inet_tbl WHERE i << '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SELECT * FROM inet_tbl WHERE i <<= '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SELECT * FROM inet_tbl WHERE i && '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SELECT * FROM inet_tbl WHERE i >>= '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SELECT * FROM inet_tbl WHERE i >> '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SELECT * FROM inet_tbl WHERE i < '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SELECT * FROM inet_tbl WHERE i <= '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SELECT * FROM inet_tbl WHERE i = '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SELECT * FROM inet_tbl WHERE i >= '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SELECT * FROM inet_tbl WHERE i > '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SELECT * FROM inet_tbl WHERE i <> '192.168.1.0/24'::cidr ORDER BY i;
+ statement: EXPLAIN (COSTS OFF)                                                                      +
+ SELECT i FROM inet_tbl WHERE i << '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SELECT i FROM inet_tbl WHERE i << '192.168.1.0/24'::cidr ORDER BY i;
+ statement: SET enable_seqscan TO on;
+ statement: DROP INDEX inet_idx2;
+ statement: SELECT i, ~i AS "~i" FROM inet_tbl;
+ statement: SELECT i, c, i & c AS "and" FROM inet_tbl;
+ statement: SELECT i, c, i | c AS "or" FROM inet_tbl;
+ statement: SELECT i, i + 500 AS "i+500" FROM inet_tbl;
+ statement: SELECT i, i - 500 AS "i-500" FROM inet_tbl;
+ statement: SELECT i, c, i - c AS "minus" FROM inet_tbl;
+ statement: SELECT '127.0.0.1'::inet + 257;
+ statement: SELECT ('127.0.0.1'::inet + 257) - 257;
+ statement: SELECT '127::1'::inet + 257;
+ statement: SELECT ('127::1'::inet + 257) - 257;
+ statement: SELECT '127.0.0.2'::inet  - ('127.0.0.2'::inet + 500);
+ statement: SELECT '127.0.0.2'::inet  - ('127.0.0.2'::inet - 500);
+ statement: SELECT '127::2'::inet  - ('127::2'::inet + 500);
+ statement: SELECT '127::2'::inet  - ('127::2'::inet - 500);
+ statement: SELECT '127.0.0.1'::inet + 10000000000;
+ statement: SELECT '127.0.0.1'::inet - 10000000000;
+ statement: SELECT '126::1'::inet - '127::2'::inet;
+ statement: SELECT '127::1'::inet - '126::2'::inet;
+ statement: SELECT '127::1'::inet + 10000000000;
+ statement: SELECT '127::1'::inet - '127::2'::inet;
+ statement: INSERT INTO INET_TBL (c, i) VALUES ('10', '10::/8');
+ statement: SELECT inet_merge(c, i) FROM INET_TBL;
+ statement: SELECT inet_merge(c, i) FROM INET_TBL WHERE inet_same_family(c, i);
+

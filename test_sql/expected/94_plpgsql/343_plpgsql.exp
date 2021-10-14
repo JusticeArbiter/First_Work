@@ -1,0 +1,3 @@
+drop table foo;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+ERROR:  42P01: table "foo" does not exist

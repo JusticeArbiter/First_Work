@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf7 USING btree DROP OPERATOR 1 (int4, int2, int8);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: one or two argument types must be specified
+LOCATION:  processTypesSpec, opclasscmds.c:1062
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf7 USING btree DROP OPERATOR 1 (int4, int2, int8);

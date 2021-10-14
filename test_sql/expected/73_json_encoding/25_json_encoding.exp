@@ -1,0 +1,6 @@
+SELECT '"\u0000"'::jsonb;
+ERROR:  22P05: unsupported Unicode escape sequence
+LINE 1: SELECT '"\u0000"'::jsonb;
+               ^
+DETAIL:  \u0000 cannot be converted to text.
+CONTEXT:  JSON data, line 1: ...

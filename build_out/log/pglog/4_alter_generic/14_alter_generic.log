@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION alt_func1(int) RETURNS int LANGUAGE sql  AS 'SELECT $1 + 1';
+LOCATION:  exec_simple_query, postgres.c:938

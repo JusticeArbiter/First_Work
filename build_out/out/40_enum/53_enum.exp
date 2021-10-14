@@ -1,0 +1,37 @@
+SELECT enumlabel,  case when enumsortorder > 20 then null else enumsortorder end as so  FROM pg_enum  WHERE enumtypid = 'insenum'::regtype  ORDER BY enumsortorder;
+ enumlabel | so 
+-----------+----
+ L1        |  1
+ i1        |  2
+ i2        |  3
+ i3        |  4
+ i4        |  5
+ i5        |  6
+ i6        |  7
+ i7        |  8
+ i8        |  9
+ i9        | 10
+ i10       | 11
+ i11       | 12
+ i12       | 13
+ i13       | 14
+ i14       | 15
+ i15       | 16
+ i16       | 17
+ i17       | 18
+ i18       | 19
+ i19       | 20
+ i20       |   
+ i21       |   
+ i22       |   
+ i23       |   
+ i24       |   
+ i25       |   
+ i26       |   
+ i27       |   
+ i28       |   
+ i29       |   
+ i30       |   
+ L2        |   
+(32 rows)
+

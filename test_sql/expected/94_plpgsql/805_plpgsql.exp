@@ -1,0 +1,10 @@
+select foreach_test(ARRAY[[(10,20),(40,69)],[(35,78),(88,76)]]::xy_tuple[]);
+NOTICE:  00000: (10,20)
+NOTICE:  00000: (40,69)
+NOTICE:  00000: (35,78)
+NOTICE:  00000: (88,76)
+ foreach_test 
+--------------
+ 
+(1 row)
+

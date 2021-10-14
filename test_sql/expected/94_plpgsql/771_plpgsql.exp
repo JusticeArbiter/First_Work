@@ -1,0 +1,6 @@
+DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, foo FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+ERROR:  42703: column "foo" does not exist
+LINE 1: SELECT rtrim(roomno) AS roomno, foo FROM Room ORDER BY roomn...
+                                        ^
+QUERY:  SELECT rtrim(roomno) AS roomno, foo FROM Room ORDER BY roomno
+CONTEXT:  PL/pgSQL function inline_code_block line 1 at FOR over SELECT rows

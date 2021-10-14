@@ -1,0 +1,6 @@
+SELECT '20500710 173201 Europe/Helsinki'::timestamptz;
+      timestamptz       
+------------------------
+ 2050-07-10 22:32:01+08
+(1 row)
+

@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TRIGGER error_ins_when BEFORE INSERT OR UPDATE ON main_table  FOR EACH ROW WHEN (OLD.a <> NEW.a)  EXECUTE PROCEDURE trigger_func('error_ins_old');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TRIGGER error_ins_when BEFORE INSERT OR UPDATE ON main_table  FOR EACH ROW WHEN (OLD.a <> NEW.a)  EXECUTE PROCEDURE trigger_func('error_ins_old');
+ERROR:  42P17: INSERT trigger's WHEN condition cannot reference OLD values at character 89
+LOCATION:  CreateTrigger, trigger.c:373
+STATEMENT:  CREATE TRIGGER error_ins_when BEFORE INSERT OR UPDATE ON main_table  FOR EACH ROW WHEN (OLD.a <> NEW.a)  EXECUTE PROCEDURE trigger_func('error_ins_old');

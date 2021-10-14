@@ -1,0 +1,3 @@
+ALTER TYPE test8a ALTER ATTRIBUTE b TYPE testdomain1;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TYPE
+ALTER TYPE

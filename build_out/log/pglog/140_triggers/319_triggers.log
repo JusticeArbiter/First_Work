@@ -1,0 +1,5 @@
+LOG:  00000: statement: create temp table parent (  aid int not null primary key,  val1 text,  val2 text,  val3 text,  val4 text,  bcnt int not null default 0);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create temp table parent (  aid int not null primary key,  val1 text,  val2 text,  val3 text,  val4 text,  bcnt int not null default 0);

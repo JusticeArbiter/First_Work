@@ -1,0 +1,3 @@
+SELECT xmlpi(name foo, 'in?>valid');
+ERROR:  2200T: invalid XML processing instruction
+DETAIL:  XML processing instruction cannot contain "?>".

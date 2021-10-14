@@ -1,0 +1,6 @@
+SELECT text 'text' || ' and unknown' AS "Concat text to unknown type";
+ Concat text to unknown type 
+-----------------------------
+ text and unknown
+(1 row)
+

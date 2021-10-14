@@ -1,0 +1,4 @@
+prepare p2 as select nextval('seq');
+ERROR:  42P01: relation "seq" does not exist
+LINE 1: prepare p2 as select nextval('seq');
+                                     ^

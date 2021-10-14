@@ -1,0 +1,4 @@
+insert into arrtest1 values(array[1,2,null,4], array['one','two',null,'four']);
+ERROR:  42P01: relation "arrtest1" does not exist
+LINE 1: insert into arrtest1 values(array[1,2,null,4], array['one','...
+                    ^

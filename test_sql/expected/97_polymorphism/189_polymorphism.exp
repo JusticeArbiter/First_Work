@@ -1,0 +1,6 @@
+select dfunc(10);
+ dfunc 
+-------
+     1
+(1 row)
+

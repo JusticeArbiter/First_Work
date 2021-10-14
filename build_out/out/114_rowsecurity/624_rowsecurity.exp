@@ -1,0 +1,3 @@
+DROP ROLE alice;
+ERROR:  2BP01: role "alice" cannot be dropped because some objects depend on it
+DETAIL:  privileges for table tbl1

@@ -1,0 +1,6 @@
+SELECT text 'this is a text string' = text 'this is a text string' AS true;
+ true 
+------
+ t
+(1 row)
+

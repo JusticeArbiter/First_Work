@@ -1,0 +1,2 @@
+alter table tab1 alter column b type varchar;
+ERROR:  0A000: cannot alter table "tab1" because column "tab2.y" uses its row type

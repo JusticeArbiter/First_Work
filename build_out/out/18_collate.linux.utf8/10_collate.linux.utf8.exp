@@ -1,0 +1,4 @@
+CREATE TABLE collate_test_fail (  a int,  b text COLLATE "foo"  );
+ERROR:  42704: collation "foo" for encoding "UTF8" does not exist
+LINE 1: CREATE TABLE collate_test_fail (  a int,  b text COLLATE "fo...
+                                                         ^

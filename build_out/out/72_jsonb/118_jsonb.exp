@@ -1,0 +1,6 @@
+SELECT '{"x":"y"}'::jsonb = '{"x":"y"}'::jsonb;
+ ?column? 
+----------
+ t
+(1 row)
+

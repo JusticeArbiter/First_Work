@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE main_view SET b = 31 WHERE a = 20;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "main_view" does not exist at character 8
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  UPDATE main_view SET b = 31 WHERE a = 20;

@@ -1,0 +1,4 @@
+select a,b from test_table where (a,b) > ('a','a') order by a,b;
+ERROR:  42P01: relation "test_table" does not exist
+LINE 1: select a,b from test_table where (a,b) > ('a','a') order by ...
+                        ^

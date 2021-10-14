@@ -1,0 +1,5 @@
+CREATE TEMP VIEW voo AS SELECT f1, f2 FROM foo;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+ERROR:  42P01: relation "foo" does not exist
+LINE 1: CREATE TEMP VIEW voo AS SELECT f1, f2 FROM foo;
+                                                   ^

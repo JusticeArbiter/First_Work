@@ -1,0 +1,6 @@
+SELECT * FROM shoelace_candelete;
+  sl_name   | sl_avail |  sl_color  | sl_len | sl_unit  | sl_len_cm 
+------------+----------+------------+--------+----------+-----------
+ sl9        |        0 | pink       |     35 | inch     |      88.9
+(1 row)
+

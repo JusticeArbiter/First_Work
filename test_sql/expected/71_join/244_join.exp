@@ -1,0 +1,16 @@
+explain (costs off)  select * from  tenk1, int8_tbl a, int8_tbl b  where thousand = a.q1 and tenthous = b.q1 and a.q2 = 1 and b.q2 = 2;
+                    QUERY PLAN                    
+--------------------------------------------------
+ Hash Join
+   Hash Cond: (b.q1 = tenk1.tenthous)
+   ->  Seq Scan on int8_tbl b
+         Filter: (q2 = 2)
+   ->  Hash
+         ->  Hash Join
+               Hash Cond: (tenk1.thousand = a.q1)
+               ->  Seq Scan on tenk1
+               ->  Hash
+                     ->  Seq Scan on int8_tbl a
+                           Filter: (q2 = 1)
+(11 rows)
+

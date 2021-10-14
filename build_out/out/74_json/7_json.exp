@@ -1,0 +1,6 @@
+SELECT '"\v"'::json;
+ERROR:  22P02: invalid input syntax for type json
+LINE 1: SELECT '"\v"'::json;
+               ^
+DETAIL:  Escape sequence "\v" is invalid.
+CONTEXT:  JSON data, line 1: "\v...

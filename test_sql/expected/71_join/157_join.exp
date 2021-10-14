@@ -1,0 +1,5 @@
+insert into tt3 select x, repeat('xyzzy', 100) from generate_series(1,10000) x;
+ERROR:  42804: column "x" is of type integer but expression is of type text
+LINE 1: insert into tt3 select x, repeat('xyzzy', 100) from generate...
+                                  ^
+HINT:  You will need to rewrite or cast the expression.

@@ -1,0 +1,3 @@
+create function expensivefunc(int) returns int  language plpgsql immutable strict cost 10000  as $$begin return $1; end$$;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

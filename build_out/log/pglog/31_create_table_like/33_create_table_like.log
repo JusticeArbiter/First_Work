@@ -1,0 +1,2 @@
+LOG:  00000: statement: /* Ok to create multiple unique indexes */  CREATE TABLE inhg (x text UNIQUE, LIKE inhz INCLUDING INDEXES);
+LOCATION:  exec_simple_query, postgres.c:938

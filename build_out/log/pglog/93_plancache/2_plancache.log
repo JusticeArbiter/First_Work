@@ -1,0 +1,5 @@
+LOG:  00000: statement: PREPARE prepstmt AS SELECT * FROM pcachetest;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "pcachetest" does not exist at character 35
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  PREPARE prepstmt AS SELECT * FROM pcachetest;

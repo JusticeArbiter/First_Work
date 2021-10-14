@@ -1,0 +1,9 @@
+select sillysrf(-1) order by 1;
+ sillysrf 
+----------
+       -1
+        1
+        2
+       10
+(4 rows)
+

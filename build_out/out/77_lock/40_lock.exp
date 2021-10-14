@@ -1,0 +1,2 @@
+LOCK TABLE ONLY lock_tbl1;
+ERROR:  25P01: LOCK TABLE can only be used in transaction blocks

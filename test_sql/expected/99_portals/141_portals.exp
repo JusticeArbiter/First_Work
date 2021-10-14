@@ -1,0 +1,2 @@
+DECLARE foo2 CURSOR WITHOUT HOLD FOR SELECT 1;
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION functest_A_3() RETURNS bool LANGUAGE 'sql'  AS 'SELECT false';
+LOCATION:  exec_simple_query, postgres.c:938

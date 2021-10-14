@@ -1,0 +1,7 @@
+DELETE FROM city_view WHERE city_name = 'Birmingham' RETURNING *;
+ city_id | city_name  | population | country_name | continent 
+---------+------------+------------+--------------+-----------
+  234567 | Birmingham |    1016800 | UK           | Europe
+(1 row)
+
+DELETE 1

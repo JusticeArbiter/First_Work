@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into PSlot values ('PS.first.c3', 'PF1_1', '', 'WS.105.2a');
+LOCATION:  exec_simple_query, postgres.c:938

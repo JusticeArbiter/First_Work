@@ -1,0 +1,3 @@
+GRANT SELECT ON atest1 TO regressuser3, regressuser4;
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+GRANT

@@ -1,0 +1,2 @@
+LOG:  00000: statement: GRANT SELECT ON TABLE deptest TO GROUP regression_group;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,3 @@
+INSERT INTO collate_test21 VALUES ('baz');
+ERROR:  23503: insert or update on table "collate_test21" violates foreign key constraint "collate_test21_f2_fkey"
+DETAIL:  Key (f2)=(baz) is not present in table "collate_test20".

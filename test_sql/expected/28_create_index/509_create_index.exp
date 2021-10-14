@@ -1,0 +1,4 @@
+REINDEX (VERBOSE) TABLE reindex_verbose;
+INFO:  00000: index "reindex_verbose_pkey" was reindexed
+DETAIL:  CPU 0.00s/0.00u sec elapsed 0.00 sec
+REINDEX

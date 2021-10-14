@@ -1,0 +1,3 @@
+DROP TEXT SEARCH PARSER IF EXISTS test_tsparser_exists;
+NOTICE:  00000: text search parser "test_tsparser_exists" does not exist, skipping
+DROP TEXT SEARCH PARSER

@@ -1,0 +1,4 @@
+CREATE SCHEMA IF NOT EXISTS newschema1 AUTHORIZATION CURRENT_USER;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SCHEMA
+NOTICE:  42P06: schema "newschema1" already exists, skipping
+CREATE SCHEMA

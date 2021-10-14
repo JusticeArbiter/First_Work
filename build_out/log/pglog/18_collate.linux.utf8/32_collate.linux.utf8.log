@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE DOMAIN testdomain_sv AS text COLLATE "sv_SE";
+LOCATION:  exec_simple_query, postgres.c:938

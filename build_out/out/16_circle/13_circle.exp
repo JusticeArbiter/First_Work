@@ -1,0 +1,11 @@
+SELECT '' AS six, radius(f1) AS radius  FROM CIRCLE_TBL;
+ six | radius 
+-----+--------
+     |      3
+     |    100
+     |      5
+     |      3
+     |     10
+     |    115
+(6 rows)
+

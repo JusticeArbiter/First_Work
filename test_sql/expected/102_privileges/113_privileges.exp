@@ -1,0 +1,3 @@
+GRANT DELETE ON atest3 TO GROUP regressgroup2;
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+GRANT

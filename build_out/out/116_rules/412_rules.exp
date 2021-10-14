@@ -1,0 +1,3 @@
+create rule "_RETURN" as on select to fooview do instead  select 1 as x, 'aaa'::text as y;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+CREATE RULE

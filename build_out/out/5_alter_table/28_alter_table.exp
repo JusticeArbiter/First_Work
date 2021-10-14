@@ -1,0 +1,2 @@
+ALTER TABLE tmp ADD COLUMN x float8[];
+ALTER TABLE

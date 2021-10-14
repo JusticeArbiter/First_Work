@@ -1,0 +1,2 @@
+SET SESSION AUTHORIZATION rls_regress_user0;
+SET

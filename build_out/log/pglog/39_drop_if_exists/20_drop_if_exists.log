@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP SCHEMA IF EXISTS test_schema_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: schema "test_schema_exists" does not exist, skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:446
+STATEMENT:  DROP SCHEMA IF EXISTS test_schema_exists;

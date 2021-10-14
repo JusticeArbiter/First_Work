@@ -1,0 +1,2 @@
+LISTEN foo_event;
+LISTEN

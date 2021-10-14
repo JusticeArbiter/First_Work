@@ -1,0 +1,11 @@
+LOG:  00000: statement: COPY main_table FROM stdin;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: trigger_func(before_ins_stmt) called: action = INSERT, when = BEFORE, level = STATEMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  COPY main_table FROM stdin;
+NOTICE:  00000: trigger_func(insert_when) called: action = INSERT, when = BEFORE, level = STATEMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  COPY main_table FROM stdin;
+NOTICE:  00000: trigger_func(after_ins_stmt) called: action = INSERT, when = AFTER, level = STATEMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  COPY main_table FROM stdin;

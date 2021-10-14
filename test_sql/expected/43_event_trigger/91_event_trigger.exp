@@ -1,0 +1,2 @@
+select pg_event_trigger_table_rewrite_oid();
+ERROR:  39P03: pg_event_trigger_table_rewrite_oid() can only be called in a table_rewrite event trigger function

@@ -1,0 +1,5 @@
+LOG:  00000: statement: select a from atacc1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" does not exist at character 8
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select a from atacc1;

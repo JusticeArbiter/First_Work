@@ -1,0 +1,6 @@
+SELECT regprocedure('pg_catalog.abs(numeric)');
+ regprocedure 
+--------------
+ abs(numeric)
+(1 row)
+

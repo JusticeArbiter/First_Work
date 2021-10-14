@@ -1,0 +1,6 @@
+SELECT * FROM base_tbl;
+ a 
+---
+ 5
+(1 row)
+

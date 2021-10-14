@@ -1,0 +1,2 @@
+CREATE INDEX hash_txt_index ON hash_txt_heap USING hash (random text_ops);
+ERROR:  42P01: relation "hash_txt_heap" does not exist

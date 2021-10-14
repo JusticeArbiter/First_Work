@@ -1,0 +1,4 @@
+select rank('adam'::text collate "C") within group (order by x collate "POSIX")  from (values ('fred'),('jim')) v(x);
+ERROR:  42P21: collation mismatch between explicit collations "C" and "POSIX"
+LINE 1: ...adam'::text collate "C") within group (order by x collate "P...
+                                                             ^

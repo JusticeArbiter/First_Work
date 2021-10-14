@@ -1,0 +1,8 @@
+EXPLAIN (COSTS OFF)  SELECT * FROM collate_test10 ORDER BY x DESC, y COLLATE "C" ASC NULLS FIRST;
+                          QUERY PLAN                           
+---------------------------------------------------------------
+ Sort
+   Sort Key: x COLLATE "en_US" DESC, y COLLATE "C" NULLS FIRST
+   ->  Seq Scan on collate_test10
+(3 rows)
+

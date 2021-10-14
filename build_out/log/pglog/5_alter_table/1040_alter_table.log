@@ -1,0 +1,2 @@
+LOG:  00000: statement: create text search parser alter1.prs(start = prsd_start, gettoken = prsd_nexttoken, end = prsd_end, lextypes = prsd_lextype);
+LOCATION:  exec_simple_query, postgres.c:938

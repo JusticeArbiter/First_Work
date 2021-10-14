@@ -1,0 +1,2 @@
+alter domain ddef1 set default '42';
+ALTER DOMAIN

@@ -1,0 +1,5 @@
+LOG:  00000: statement: create trigger ttdummy  before delete or update on alterlock  for each row  execute procedure  ttdummy (1, 1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: function ttdummy() does not exist
+LOCATION:  LookupFuncName, parse_func.c:1922
+STATEMENT:  create trigger ttdummy  before delete or update on alterlock  for each row  execute procedure  ttdummy (1, 1);

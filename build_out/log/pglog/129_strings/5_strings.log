@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT U&' \' UESCAPE '!' AS "tricky";
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS one, p1.f1  FROM POINT_TBL p1  WHERE p1.f1 ?| point '(5.1,34.5)';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "point_tbl" does not exist at character 31
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT '' AS one, p1.f1  FROM POINT_TBL p1  WHERE p1.f1 ?| point '(5.1,34.5)';

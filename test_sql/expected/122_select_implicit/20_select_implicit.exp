@@ -1,0 +1,11 @@
+SELECT c, count(*) FROM test_missing_target GROUP BY 1 ORDER BY 1;
+    c     | count 
+----------+-------
+ ABAB     |     2
+ bbbb     |     1
+ BBBB     |     2
+ cccc     |     2
+ CCCC     |     2
+ XXXX     |     1
+(6 rows)
+

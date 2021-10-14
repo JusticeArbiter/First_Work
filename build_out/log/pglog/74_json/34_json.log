@@ -1,0 +1,2 @@
+LOG:  00000: statement: SET max_stack_depth = '100kB';
+LOCATION:  exec_simple_query, postgres.c:938

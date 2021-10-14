@@ -1,0 +1,39 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT char 'c' = char 'c' AS true;
+ statement: CREATE TABLE CHAR_TBL(f1 char);
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('a');
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('A');
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('1');
+ statement: INSERT INTO CHAR_TBL (f1) VALUES (2);
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('3');
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('');
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('cd');
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('c     ');
+ statement: SELECT '' AS seven, * FROM CHAR_TBL;
+ statement: SELECT '' AS six, c.*                         +
+    FROM CHAR_TBL c                                       +
+    WHERE c.f1 <> 'a';
+ statement: SELECT '' AS one, c.*                         +
+    FROM CHAR_TBL c                                       +
+    WHERE c.f1 = 'a';
+ statement: SELECT '' AS five, c.*                        +
+    FROM CHAR_TBL c                                       +
+    WHERE c.f1 < 'a';
+ statement: SELECT '' AS six, c.*                         +
+    FROM CHAR_TBL c                                       +
+    WHERE c.f1 <= 'a';
+ statement: SELECT '' AS one, c.*                         +
+    FROM CHAR_TBL c                                       +
+    WHERE c.f1 > 'a';
+ statement: SELECT '' AS two, c.*                         +
+    FROM CHAR_TBL c                                       +
+    WHERE c.f1 >= 'a';
+ statement: DROP TABLE CHAR_TBL;
+ statement: CREATE TABLE CHAR_TBL(f1 char(4));
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('a');
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('ab');
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('abcd');
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('abcde');
+ statement: INSERT INTO CHAR_TBL (f1) VALUES ('abcd    ');
+ statement: SELECT '' AS four, * FROM CHAR_TBL;
+

@@ -1,0 +1,10 @@
+EXPLAIN (COSTS OFF) SELECT * FROM atest12 x, atest12 y  WHERE x.a = y.b and abs(y.a) <<< 5;
+                    QUERY PLAN                     
+---------------------------------------------------
+ Nested Loop
+   ->  Seq Scan on atest12 y
+         Filter: (abs(a) <<< 5)
+   ->  Index Scan using atest12_a_idx on atest12 x
+         Index Cond: (a = y.b)
+(5 rows)
+

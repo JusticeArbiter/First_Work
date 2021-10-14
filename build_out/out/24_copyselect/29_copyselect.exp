@@ -1,0 +1,3 @@
+copy (select 1) to stdout; select 1/0;
+1
+ERROR:  22012: division by zero

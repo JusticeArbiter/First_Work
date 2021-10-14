@@ -1,0 +1,8 @@
+DROP COLLATION test0 RESTRICT;
+ERROR:  2BP01: cannot drop collation test0 because other objects depend on it
+DETAIL:  table collate_dep_test1 column b depends on collation test0
+type collate_dep_dom1 depends on collation test0
+composite type collate_dep_test2 column y depends on collation test0
+view collate_dep_test3 depends on collation test0
+index collate_dep_test4i depends on collation test0
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.

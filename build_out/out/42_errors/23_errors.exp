@@ -1,0 +1,2 @@
+drop aggregate newcnt (nonesuch);
+ERROR:  42704: type "nonesuch" does not exist

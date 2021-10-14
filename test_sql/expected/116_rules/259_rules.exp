@@ -1,0 +1,13 @@
+select * from rtest_vview5;
+ a |   b    | refcount 
+---+--------+----------
+ 1 | item 1 |        0
+ 2 | item 2 |        2
+ 3 | item 3 |        0
+ 4 | item 4 |        1
+ 5 | item 5 |        1
+ 6 | item 6 |        0
+ 7 | item 7 |        4
+ 8 | item 8 |        0
+(8 rows)
+

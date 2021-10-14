@@ -1,0 +1,6 @@
+SELECT jsonb_typeof('1e2') AS number;
+ number 
+--------
+ number
+(1 row)
+

@@ -1,0 +1,4 @@
+INSERT INTO v2 VALUES (2, 'two', 20);
+ERROR:  42601: INSERT has more expressions than target columns
+LINE 1: INSERT INTO v2 VALUES (2, 'two', 20);
+                                         ^

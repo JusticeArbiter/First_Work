@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table emp rename column salary to oid;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42701: column name "oid" conflicts with a system column name
+LOCATION:  check_for_column_name_collision, tablecmds.c:5078
+STATEMENT:  alter table emp rename column salary to oid;

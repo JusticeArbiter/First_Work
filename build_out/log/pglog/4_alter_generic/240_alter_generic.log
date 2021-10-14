@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TEXT SEARCH DICTIONARY alt_ts_dict1 RENAME TO alt_ts_dict2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: text search dictionary "alt_ts_dict2" already exists in schema "public"
+LOCATION:  report_namespace_conflict, alter.c:137
+STATEMENT:  ALTER TEXT SEARCH DICTIONARY alt_ts_dict1 RENAME TO alt_ts_dict2;

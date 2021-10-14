@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT id FROM test_tablesample TABLESAMPLE FOOBAR (1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: tablesample method foobar does not exist at character 45
+LOCATION:  transformRangeTableSample, parse_clause.c:753
+STATEMENT:  SELECT id FROM test_tablesample TABLESAMPLE FOOBAR (1);

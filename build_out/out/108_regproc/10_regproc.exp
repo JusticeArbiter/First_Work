@@ -1,0 +1,6 @@
+SELECT to_regproc('now');
+ to_regproc 
+------------
+ now
+(1 row)
+

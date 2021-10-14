@@ -1,0 +1,6 @@
+SELECT '5'::jsonb @> '[5]';
+ ?column? 
+----------
+ f
+(1 row)
+

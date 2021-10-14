@@ -1,0 +1,6 @@
+select avg(f1) from interval_tbl;
+              avg               
+--------------------------------
+ 4 years 1 mon 10 days 04:18:23
+(1 row)
+

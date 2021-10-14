@@ -1,0 +1,9 @@
+EXPLAIN (COSTS OFF) SELECT * FROM my_property_secure v  WHERE f_leak('passwd') AND f_leak(passwd);
+                                   QUERY PLAN                                   
+--------------------------------------------------------------------------------
+ Subquery Scan on v
+   Filter: f_leak(v.passwd)
+   ->  Seq Scan on customer
+         Filter: (f_leak('passwd'::text) AND (name = ("current_user"())::text))
+(4 rows)
+

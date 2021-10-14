@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT CAST(interval '02:03' AS time with time zone) AS "02:03:00-08";
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42846: cannot cast type interval to time with time zone at character 8
+LOCATION:  transformTypeCast, parse_expr.c:2555
+STATEMENT:  SELECT CAST(interval '02:03' AS time with time zone) AS "02:03:00-08";

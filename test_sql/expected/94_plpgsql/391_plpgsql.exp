@@ -1,0 +1,2 @@
+fetch all from test2;
+ERROR:  34000: cursor "test2" does not exist

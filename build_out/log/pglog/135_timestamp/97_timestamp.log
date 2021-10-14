@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO TIMESTAMP_TBL VALUES ('Feb 16 17:32:01 -0097');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22009: time zone displacement out of range: "Feb 16 17:32:01 -0097" at character 35
+LOCATION:  DateTimeParseError, datetime.c:3830
+STATEMENT:  INSERT INTO TIMESTAMP_TBL VALUES ('Feb 16 17:32:01 -0097');

@@ -1,0 +1,2 @@
+ALTER TYPE planets ADD VALUE 'neptune' AFTER 'uranus';
+ALTER TYPE

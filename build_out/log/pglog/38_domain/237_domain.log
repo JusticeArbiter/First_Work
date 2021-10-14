@@ -1,0 +1,5 @@
+LOG:  00000: statement: select doubledecrement(0);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: value for domain pos_int violates check constraint "pos_int_check"
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4060
+STATEMENT:  select doubledecrement(0);

@@ -1,0 +1,6 @@
+SELECT * FROM document WHERE did = 8;
+ did | cid | dlevel |      dauthor      |   dtitle    
+-----+-----+--------+-------------------+-------------
+   8 |  44 |      1 | rls_regress_user2 | great manga
+(1 row)
+

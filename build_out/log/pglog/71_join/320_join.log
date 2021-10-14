@@ -1,0 +1,5 @@
+LOG:  00000: statement: explain (costs off)  select p.*, linked from parent p  left join (select c.*, true as linked from child c) as ss  on (p.k = ss.k);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "parent" does not exist at character 46
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  explain (costs off)  select p.*, linked from parent p  left join (select c.*, true as linked from child c) as ss  on (p.k = ss.k);

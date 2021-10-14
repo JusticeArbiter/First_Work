@@ -1,0 +1,2 @@
+create domain dcomptypea as comptype[];
+CREATE DOMAIN

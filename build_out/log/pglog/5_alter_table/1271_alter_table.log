@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT m.* FROM filenode_mapping m LEFT JOIN pg_class c ON c.oid = m.oid  WHERE c.oid IS NOT NULL OR m.mapped_oid IS NOT NULL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "filenode_mapping" does not exist at character 17
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT m.* FROM filenode_mapping m LEFT JOIN pg_class c ON c.oid = m.oid  WHERE c.oid IS NOT NULL OR m.mapped_oid IS NOT NULL;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: move backward all in c;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "c" does not exist
+LOCATION:  PerformPortalFetch, portalcmds.c:168
+STATEMENT:  move backward all in c;

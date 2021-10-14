@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT name, statement, parameter_types FROM pg_prepared_statements  ORDER BY name;
+LOCATION:  exec_simple_query, postgres.c:938

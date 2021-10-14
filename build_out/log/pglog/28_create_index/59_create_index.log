@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT count(*) FROM point_tbl WHERE box '(0,0,100,100)' @> f1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "point_tbl" does not exist at character 22
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT count(*) FROM point_tbl WHERE box '(0,0,100,100)' @> f1;

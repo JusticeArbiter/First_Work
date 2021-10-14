@@ -1,0 +1,2 @@
+LOG:  00000: statement: EXPLAIN (costs off) DELETE FROM rw_view1 WHERE id = 1 AND snoop(data);
+LOCATION:  exec_simple_query, postgres.c:938

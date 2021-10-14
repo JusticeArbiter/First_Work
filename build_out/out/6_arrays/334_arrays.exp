@@ -1,0 +1,2 @@
+drop table src;
+ERROR:  42P01: table "src" does not exist

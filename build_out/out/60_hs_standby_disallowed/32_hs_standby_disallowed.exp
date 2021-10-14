@@ -1,0 +1,2 @@
+COMMIT PREPARED 'foobar';
+ERROR:  42704: prepared transaction with identifier "foobar" does not exist

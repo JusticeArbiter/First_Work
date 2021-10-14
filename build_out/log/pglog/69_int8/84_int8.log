@@ -1,0 +1,5 @@
+LOG:  00000: statement: select '9223372036854775808'::int8;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: value "9223372036854775808" is out of range for type bigint at character 8
+LOCATION:  scanint8, int8.c:115
+STATEMENT:  select '9223372036854775808'::int8;

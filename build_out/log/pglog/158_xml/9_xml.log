@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT xmlcomment('--test');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2200S: invalid XML comment
+LOCATION:  xmlcomment, xml.c:439
+STATEMENT:  SELECT xmlcomment('--test');

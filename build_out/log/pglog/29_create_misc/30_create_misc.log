@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO d_star (class, a, c, d)  VALUES ('d', 10, 'hi kristin'::name, '10.01'::float8);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "d_star" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  INSERT INTO d_star (class, a, c, d)  VALUES ('d', 10, 'hi kristin'::name, '10.01'::float8);

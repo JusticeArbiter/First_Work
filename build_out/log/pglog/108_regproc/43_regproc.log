@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT regprocedure('ng_catalog.abs(numeric)');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  3F000: schema "ng_catalog" does not exist at character 21
+LOCATION:  get_namespace_oid, namespace.c:2873
+STATEMENT:  SELECT regprocedure('ng_catalog.abs(numeric)');

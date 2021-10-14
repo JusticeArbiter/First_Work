@@ -1,0 +1,5 @@
+LOG:  00000: statement: ABORT;
+LOCATION:  exec_simple_query, postgres.c:938
+WARNING:  25P01: there is no transaction in progress
+LOCATION:  UserAbortTransactionBlock, xact.c:3676
+STATEMENT:  ABORT;

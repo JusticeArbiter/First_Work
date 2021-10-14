@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW mysecview6 WITH (invalid_option)  AS SELECT * FROM tbl1 WHERE a < 100;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: unrecognized parameter "invalid_option"
+LOCATION:  parseRelOptions, reloptions.c:974
+STATEMENT:  CREATE VIEW mysecview6 WITH (invalid_option)  AS SELECT * FROM tbl1 WHERE a < 100;

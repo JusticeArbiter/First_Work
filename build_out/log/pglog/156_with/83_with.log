@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH RECURSIVE x(id) AS (values (1)  UNION ALL  SELECT (SELECT * FROM x) FROM x WHERE id < 5  ) SELECT * FROM x;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P19: recursive reference to query "x" must not appear within a subquery at character 71
+LOCATION:  checkWellFormedRecursionWalker, parse_cte.c:773
+STATEMENT:  WITH RECURSIVE x(id) AS (values (1)  UNION ALL  SELECT (SELECT * FROM x) FROM x WHERE id < 5  ) SELECT * FROM x;

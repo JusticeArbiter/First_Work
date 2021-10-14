@@ -1,0 +1,7 @@
+SELECT * FROM ruletest_tbl2;
+  a   |  b   
+------+------
+   10 |   10
+ 1000 | 1000
+(2 rows)
+

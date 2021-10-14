@@ -1,0 +1,5 @@
+LOG:  00000: statement: create aggregate newcnt1 (sfunc = int4inc,  stype = int4,  initcond = '0');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P13: aggregate input type must be specified
+LOCATION:  DefineAggregate, aggregatecmds.c:244
+STATEMENT:  create aggregate newcnt1 (sfunc = int4inc,  stype = int4,  initcond = '0');

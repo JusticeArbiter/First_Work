@@ -1,0 +1,4 @@
+select '9223372036854775808'::int8;
+ERROR:  22003: value "9223372036854775808" is out of range for type bigint
+LINE 1: select '9223372036854775808'::int8;
+               ^

@@ -1,0 +1,7 @@
+LOG:  00000: statement: select excpt_test1();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "sqlstate" does not exist at character 8
+QUERY:  SELECT sqlstate
+CONTEXT:  PL/pgSQL function excpt_test1() line 1 at RAISE
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select excpt_test1();

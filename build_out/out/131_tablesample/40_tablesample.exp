@@ -1,0 +1,7 @@
+EXPLAIN (COSTS OFF)  SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (50) REPEATABLE (2);
+                             QUERY PLAN                             
+--------------------------------------------------------------------
+ Sample Scan on test_tablesample
+   Sampling: system ('50'::real) REPEATABLE ('2'::double precision)
+(2 rows)
+

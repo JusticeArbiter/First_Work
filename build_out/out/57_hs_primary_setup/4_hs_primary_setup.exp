@@ -1,0 +1,4 @@
+drop table if exists hs2;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+NOTICE:  00000: table "hs2" does not exist, skipping
+DROP TABLE

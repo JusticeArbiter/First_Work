@@ -1,0 +1,4 @@
+WITH RECURSIVE t AS (  INSERT INTO y  SELECT * FROM t  )  VALUES(FALSE);
+ERROR:  42P19: recursive query "t" must not contain data-modifying statements
+LINE 1: WITH RECURSIVE t AS (  INSERT INTO y  SELECT * FROM t  )  VA...
+                       ^

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT COUNT(id) FROM xmltest WHERE xmlexists('/menu/beer' PASSING BY REF data BY REF);
+LOCATION:  exec_simple_query, postgres.c:938

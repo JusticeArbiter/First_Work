@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('5 months 12 hours');
+LOCATION:  exec_simple_query, postgres.c:938

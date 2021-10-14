@@ -1,0 +1,4 @@
+INSERT INTO fast_emp4000 SELECT * FROM slow_emp4000;
+ERROR:  42P01: relation "fast_emp4000" does not exist
+LINE 1: INSERT INTO fast_emp4000 SELECT * FROM slow_emp4000;
+                    ^

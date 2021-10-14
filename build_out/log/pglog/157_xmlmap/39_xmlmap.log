@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT xmlforest(c1, c2, c3, c4) FROM testxmlschema.test3;
+LOCATION:  exec_simple_query, postgres.c:938

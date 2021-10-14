@@ -1,0 +1,6 @@
+SELECT rpad('hello', 2);
+ rpad 
+------
+ he
+(1 row)
+

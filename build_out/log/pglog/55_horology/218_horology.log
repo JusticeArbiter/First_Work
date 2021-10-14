@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT to_timestamp('19971', 'YYYYMMDD');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: source string too short for "MM" formatting field
+DETAIL:  Field requires 2 characters, but only 1 remain.
+HINT:  If your source string is not fixed-width, try using the "FM" modifier.
+LOCATION:  from_char_parse_int_len, formatting.c:2201
+STATEMENT:  SELECT to_timestamp('19971', 'YYYYMMDD');

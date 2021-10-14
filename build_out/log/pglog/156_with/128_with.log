@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH t AS (  DELETE FROM y  WHERE a <= 10  RETURNING *  )  INSERT INTO y SELECT -a FROM t RETURNING *;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "y" does not exist at character 26
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  WITH t AS (  DELETE FROM y  WHERE a <= 10  RETURNING *  )  INSERT INTO y SELECT -a FROM t RETURNING *;

@@ -1,0 +1,2 @@
+insert into WSlot values ('WS.101.1b', '101', '', '');
+INSERT 0 1

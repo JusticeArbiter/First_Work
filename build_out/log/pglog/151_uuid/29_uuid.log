@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO guid2(guid_field) VALUES('3f3e3c3b3a3039383736353433a2313e');
+LOCATION:  exec_simple_query, postgres.c:938

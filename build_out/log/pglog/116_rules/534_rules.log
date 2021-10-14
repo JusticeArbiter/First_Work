@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT tablename, rulename, definition FROM pg_rules  WHERE tablename = 'hats';
+LOCATION:  exec_simple_query, postgres.c:938

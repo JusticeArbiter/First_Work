@@ -1,0 +1,6 @@
+SELECT max(c) AS max, min(c) AS min FROM INET_TBL;
+       max       |    min     
+-----------------+------------
+ 10:23::8000/113 | 10.0.0.0/8
+(1 row)
+

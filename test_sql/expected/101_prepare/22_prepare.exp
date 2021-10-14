@@ -1,0 +1,4 @@
+PREPARE q4(nonexistenttype) AS SELECT $1;
+ERROR:  42704: type "nonexistenttype" does not exist
+LINE 1: PREPARE q4(nonexistenttype) AS SELECT $1;
+                   ^

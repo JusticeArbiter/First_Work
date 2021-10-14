@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into cities values ('San Francisco', 7.24E+5, 63);
+LOCATION:  exec_simple_query, postgres.c:938

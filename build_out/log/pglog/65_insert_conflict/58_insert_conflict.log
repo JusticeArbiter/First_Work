@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into insertconflicttest values (15, 'Cranberry') on conflict (key) do update set fruit = excluded.fruit;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P10: there is no unique or exclusion constraint matching the ON CONFLICT specification
+LOCATION:  infer_arbiter_indexes, plancat.c:663
+STATEMENT:  insert into insertconflicttest values (15, 'Cranberry') on conflict (key) do update set fruit = excluded.fruit;

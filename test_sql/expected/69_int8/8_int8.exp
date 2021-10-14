@@ -1,0 +1,4 @@
+INSERT INTO INT8_TBL(q1) VALUES ('xxx');
+ERROR:  22P02: invalid input syntax for integer: "xxx"
+LINE 1: INSERT INTO INT8_TBL(q1) VALUES ('xxx');
+                                         ^

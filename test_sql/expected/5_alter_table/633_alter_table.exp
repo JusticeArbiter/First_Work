@@ -1,0 +1,2 @@
+alter table test drop a;
+ALTER TABLE

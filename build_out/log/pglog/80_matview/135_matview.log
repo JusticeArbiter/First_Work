@@ -1,0 +1,9 @@
+LOG:  00000: statement: REFRESH MATERIALIZED VIEW mv;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start REFRESH MATERIALIZED VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  REFRESH MATERIALIZED VIEW mv;
+ERROR:  23505: could not create unique index "mv_a_idx"
+DETAIL:  Key (a)=(1) is duplicated.
+LOCATION:  comparetup_index_btree, tuplesort.c:3616
+STATEMENT:  REFRESH MATERIALIZED VIEW mv;

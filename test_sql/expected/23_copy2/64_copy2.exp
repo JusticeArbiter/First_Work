@@ -1,0 +1,2 @@
+TRUNCATE vistest;
+ERROR:  42P01: relation "vistest" does not exist

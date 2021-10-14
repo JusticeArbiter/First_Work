@@ -1,0 +1,2 @@
+CREATE UNIQUE INDEX onek_nulltest ON onek_with_null (unique2 desc nulls last,unique1);
+ERROR:  42P01: relation "onek_with_null" does not exist

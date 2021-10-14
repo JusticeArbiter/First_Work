@@ -1,0 +1,2 @@
+select has_table_privilege('pg_authid','sel');
+ERROR:  22023: unrecognized privilege type: "sel"

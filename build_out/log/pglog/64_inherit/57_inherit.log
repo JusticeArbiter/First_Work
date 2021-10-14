@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT relname, c.* FROM ONLY c, pg_class where c.tableoid = pg_class.oid;
+LOCATION:  exec_simple_query, postgres.c:938

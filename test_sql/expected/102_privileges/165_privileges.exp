@@ -1,0 +1,11 @@
+SELECT atest1.*,atest5.one FROM atest1, atest5;
+ a |  b  | one 
+---+-----+-----
+ 1 | two |   1
+ 1 | two |   1
+ 1 | two |   1
+ 1 | two |   1
+ 1 | two |   1
+ 1 | two |   1
+(6 rows)
+

@@ -1,0 +1,8 @@
+LOG:  00000: statement: ALTER FOREIGN DATA WRAPPER foo VALIDATOR bar;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN DATA WRAPPER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER FOREIGN DATA WRAPPER foo VALIDATOR bar;
+ERROR:  42883: function bar(text[], oid) does not exist
+LOCATION:  LookupFuncName, parse_func.c:1922
+STATEMENT:  ALTER FOREIGN DATA WRAPPER foo VALIDATOR bar;

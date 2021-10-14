@@ -1,0 +1,8 @@
+select * from price;
+ id | active | price  
+----+--------+--------
+  1 | f      |     42
+ 10 | t      | 123.00
+ 11 | t      |  99.99
+(3 rows)
+

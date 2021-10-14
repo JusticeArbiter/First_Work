@@ -1,0 +1,5 @@
+LOG:  00000: statement: select '[z,a]'::textrange;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22000: range lower bound must be less than or equal to range upper bound at character 8
+LOCATION:  range_serialize, rangetypes.c:1543
+STATEMENT:  select '[z,a]'::textrange;

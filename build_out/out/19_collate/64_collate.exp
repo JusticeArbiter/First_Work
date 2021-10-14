@@ -1,0 +1,9 @@
+SELECT a, lower(x::testdomain), lower(y::testdomain) FROM collate_test10;
+ a | lower | lower 
+---+-------+-------
+ 1 | hij   | hij
+ 2 | hij   | hıj
+ 1 | hij   | hij
+ 2 | hij   | hıj
+(4 rows)
+

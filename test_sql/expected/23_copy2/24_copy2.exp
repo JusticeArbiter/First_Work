@@ -1,0 +1,2 @@
+COPY no_oids TO stdout WITH OIDS;
+ERROR:  42703: table "no_oids" does not have OIDs

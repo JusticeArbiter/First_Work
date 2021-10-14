@@ -1,0 +1,9 @@
+EXPLAIN (COSTS OFF) WITH cte1 AS (SELECT * FROM t1 WHERE f_leak(b)) SELECT * FROM cte1;
+         QUERY PLAN          
+-----------------------------
+ CTE Scan on cte1
+   CTE cte1
+     ->  Seq Scan on t1
+           Filter: f_leak(b)
+(4 rows)
+

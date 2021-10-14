@@ -1,0 +1,6 @@
+SELECT count(*) > 257 FROM pg_locks;
+ ?column? 
+----------
+ f
+(1 row)
+

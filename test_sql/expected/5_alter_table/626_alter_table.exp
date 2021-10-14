@@ -1,0 +1,2 @@
+alter table parent drop c;
+ALTER TABLE

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '2012-12-12 12:00'::timestamptz;
+LOCATION:  exec_simple_query, postgres.c:938

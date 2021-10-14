@@ -1,0 +1,6 @@
+SELECT has_function_privilege('regressuser2', 'testns.foo()', 'EXECUTE');
+ has_function_privilege 
+------------------------
+ t
+(1 row)
+

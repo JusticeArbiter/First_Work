@@ -1,0 +1,9 @@
+select pg_get_viewdef('v1', true);
+       pg_get_viewdef        
+-----------------------------
+  SELECT tt2.x,             +
+     y                      +
+    FROM tt2                +
+      JOIN tt3 USING (x, y);
+(1 row)
+

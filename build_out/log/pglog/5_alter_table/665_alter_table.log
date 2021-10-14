@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table only renameColumn add column x int;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: column must be added to child tables too
+LOCATION:  ATExecAddColumn, tablecmds.c:5012
+STATEMENT:  alter table only renameColumn add column x int;

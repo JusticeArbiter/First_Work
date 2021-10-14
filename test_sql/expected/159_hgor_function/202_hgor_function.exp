@@ -1,0 +1,6 @@
+select dump(9223372036854775807::bigint,16::int4);
+                 dump                  
+---------------------------------------
+ Typ=20 Len=8: ff,ff,ff,ff,ff,ff,ff,7f
+(1 row)
+

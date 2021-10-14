@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT xmlconcat(1, 2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: argument of XMLCONCAT must be type xml, not type integer at character 18
+LOCATION:  coerce_to_specific_type, parse_coerce.c:1131
+STATEMENT:  SELECT xmlconcat(1, 2);

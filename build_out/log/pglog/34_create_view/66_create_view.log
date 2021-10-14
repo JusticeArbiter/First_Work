@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE tbl2 (c int, d int);
+LOCATION:  exec_simple_query, postgres.c:938

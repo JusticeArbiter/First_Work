@@ -1,0 +1,6 @@
+SELECT rpad('hi', 5, 'xy');
+ rpad  
+-------
+ hixyx
+(1 row)
+

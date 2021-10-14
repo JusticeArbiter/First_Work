@@ -1,0 +1,7 @@
+DROP TABLE trunc_f CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+NOTICE:  00000: drop cascades to 3 other objects
+DETAIL:  drop cascades to table trunc_fa
+drop cascades to table trunc_faa
+drop cascades to table trunc_fb
+DROP TABLE

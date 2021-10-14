@@ -1,0 +1,1 @@
+show synchronous_commit;

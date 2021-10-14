@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT cast(NULL as dnotnull);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23502: domain dnotnull does not allow null values
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4021
+STATEMENT:  SELECT cast(NULL as dnotnull);

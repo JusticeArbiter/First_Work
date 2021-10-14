@@ -1,0 +1,3 @@
+create function child_ins_func()  returns trigger language plpgsql as  $$  begin  update parent set bcnt = bcnt + 1 where aid = new.aid;  return new;  end;  $$;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

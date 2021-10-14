@@ -1,0 +1,8 @@
+LOG:  00000: statement: create function test_variable_storage() returns text as $$  declare x text;  begin  x := '1234';  begin  x := x || '5678';  -- force error inside subtransaction SPI context  perform trap_zero_divide(-100);  exception  when others then  x := x || '9012';  end;  return x;  end$$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function test_variable_storage() returns text as $$  declare x text;  begin  x := '1234';  begin  x := x || '5678';  -- force error inside subtransaction SPI context  perform trap_zero_divide(-100);  exception  when others then  x := x || '9012';  end;  return x;  end$$ language plpgsql;
+ERROR:  42601: syntax error at end of input at character 276
+LOCATION:  plpgsql_yyerror, pl_scanner.c:623
+STATEMENT:  create function test_variable_storage() returns text as $$  declare x text;  begin  x := '1234';  begin  x := x || '5678';  -- force error inside subtransaction SPI context  perform trap_zero_divide(-100);  exception  when others then  x := x || '9012';  end;  return x;  end$$ language plpgsql;

@@ -1,0 +1,6 @@
+SELECT ascii('x');
+ ascii 
+-------
+   120
+(1 row)
+

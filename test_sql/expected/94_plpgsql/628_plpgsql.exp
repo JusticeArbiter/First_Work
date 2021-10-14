@@ -1,0 +1,4 @@
+select raise_test();
+NOTICE:  00000: SQLSTATE: 22012 SQLERRM: check me
+ERROR:  22012: check me
+DETAIL:  some detail info

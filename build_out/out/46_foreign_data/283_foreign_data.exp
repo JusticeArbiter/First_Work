@@ -1,0 +1,3 @@
+ALTER FOREIGN TABLE ft1 OPTIONS (DROP delimiter, SET quote '~', ADD escape '@');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN TABLE
+ALTER FOREIGN TABLE

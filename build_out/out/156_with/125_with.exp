@@ -1,0 +1,4 @@
+SELECT * FROM bug6051_2;
+ERROR:  42P01: relation "bug6051_2" does not exist
+LINE 1: SELECT * FROM bug6051_2;
+                      ^

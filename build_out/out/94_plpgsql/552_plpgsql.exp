@@ -1,0 +1,6 @@
+select * from sc_test();
+ sc_test 
+---------
+      10
+(1 row)
+

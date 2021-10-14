@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT xmlpi(name foo, 'in?>valid');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2200T: invalid XML processing instruction
+DETAIL:  XML processing instruction cannot contain "?>".
+LOCATION:  xmlpi, xml.c:756
+STATEMENT:  SELECT xmlpi(name foo, 'in?>valid');

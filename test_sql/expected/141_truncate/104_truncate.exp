@@ -1,0 +1,2 @@
+TRUNCATE trunc_trigger_test;
+TRUNCATE TABLE

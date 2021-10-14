@@ -1,0 +1,6 @@
+SELECT CONVERT('foo', 'UTF8', 'SJIS');
+ convert  
+----------
+ \x666f6f
+(1 row)
+

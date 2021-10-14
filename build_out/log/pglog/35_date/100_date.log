@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT date '01-08-99';
+LOCATION:  exec_simple_query, postgres.c:938

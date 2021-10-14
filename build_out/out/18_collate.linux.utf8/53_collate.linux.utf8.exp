@@ -1,0 +1,7 @@
+SELECT a, x, y FROM collate_test10 ORDER BY lower(y), a;
+ a |  x  |  y  
+---+-----+-----
+ 2 | HIJ | HIJ
+ 1 | hij | hij
+(2 rows)
+

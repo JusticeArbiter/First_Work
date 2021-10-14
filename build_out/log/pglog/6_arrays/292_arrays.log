@@ -1,0 +1,2 @@
+LOG:  00000: statement: select array_agg(ar)  from (select array_agg(array[i, i+1, i-1])  from generate_series(1,2) a(i)) b(ar);
+LOCATION:  exec_simple_query, postgres.c:938

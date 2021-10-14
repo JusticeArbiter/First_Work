@@ -1,0 +1,3 @@
+create schema s1  create table abc (f1 int);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SCHEMA
+CREATE SCHEMA

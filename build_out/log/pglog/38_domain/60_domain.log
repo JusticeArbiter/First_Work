@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into dcomptable values (array[row(3,4), row(5,6)]::comptype[]);
+LOCATION:  exec_simple_query, postgres.c:938

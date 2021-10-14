@@ -1,0 +1,6 @@
+select pleast(10.2,10, -20);
+ pleast 
+--------
+    -20
+(1 row)
+

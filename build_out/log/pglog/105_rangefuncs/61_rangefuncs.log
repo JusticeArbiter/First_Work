@@ -1,0 +1,2 @@
+LOG:  00000: statement: select foot.fooid, foot.f2 from foot(sin(pi()/2)::int) ORDER BY 1,2;
+LOCATION:  exec_simple_query, postgres.c:938

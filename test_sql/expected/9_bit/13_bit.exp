@@ -1,0 +1,2 @@
+INSERT INTO VARBIT_TABLE VALUES (B'101011111010');
+ERROR:  22001: bit string too long for type bit varying(11)

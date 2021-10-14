@@ -1,0 +1,5 @@
+LOG:  00000: statement: DECLARE c CURSOR FOR SELECT ctid,cmin,* FROM combocidtest;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "combocidtest" does not exist at character 46
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  DECLARE c CURSOR FOR SELECT ctid,cmin,* FROM combocidtest;

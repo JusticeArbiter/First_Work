@@ -1,0 +1,6 @@
+SELECT to_timestamp('2000January09Sunday', 'YYYYFMMonthDDFMDay');
+      to_timestamp      
+------------------------
+ 2000-01-09 00:00:00+08
+(1 row)
+

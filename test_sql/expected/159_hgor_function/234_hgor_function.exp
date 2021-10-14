@@ -1,0 +1,6 @@
+SELECT dec_num, TO_BINARY_DOUBLE(dec_num) FROM float_point_demo;
+ dec_num | to_binary_double 
+---------+------------------
+ 1234.56 |          1234.56
+(1 row)
+

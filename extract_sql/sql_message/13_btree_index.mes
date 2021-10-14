@@ -1,0 +1,55 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT b.*                                                                   +
+    FROM bt_i4_heap b                                                                    +
+    WHERE b.seqno < 1;
+ statement: SELECT b.*                                                                   +
+    FROM bt_i4_heap b                                                                    +
+    WHERE b.seqno >= 9999;
+ statement: SELECT b.*                                                                   +
+    FROM bt_i4_heap b                                                                    +
+    WHERE b.seqno = 4500;
+ statement: SELECT b.*                                                                   +
+    FROM bt_name_heap b                                                                  +
+    WHERE b.seqno < '1'::name;
+ statement: SELECT b.*                                                                   +
+    FROM bt_name_heap b                                                                  +
+    WHERE b.seqno >= '9999'::name;
+ statement: SELECT b.*                                                                   +
+    FROM bt_name_heap b                                                                  +
+    WHERE b.seqno = '4500'::name;
+ statement: SELECT b.*                                                                   +
+    FROM bt_txt_heap b                                                                   +
+    WHERE b.seqno < '1'::text;
+ statement: SELECT b.*                                                                   +
+    FROM bt_txt_heap b                                                                   +
+    WHERE b.seqno >= '9999'::text;
+ statement: SELECT b.*                                                                   +
+    FROM bt_txt_heap b                                                                   +
+    WHERE b.seqno = '4500'::text;
+ statement: SELECT b.*                                                                   +
+    FROM bt_f8_heap b                                                                    +
+    WHERE b.seqno < '1'::float8;
+ statement: SELECT b.*                                                                   +
+    FROM bt_f8_heap b                                                                    +
+    WHERE b.seqno >= '9999'::float8;
+ statement: SELECT b.*                                                                   +
+    FROM bt_f8_heap b                                                                    +
+    WHERE b.seqno = '4500'::float8;
+ statement: set enable_seqscan to false;
+ statement: set enable_indexscan to true;
+ statement: set enable_bitmapscan to false;
+ statement: select proname from pg_proc where proname like E'RI\\_FKey%del' order by 1;
+ statement: set enable_indexscan to false;
+ statement: set enable_bitmapscan to true;
+ statement: select proname from pg_proc where proname like E'RI\\_FKey%del' order by 1;
+ statement: create table btree_tall_tbl(id int4, t text);
+ statement: create index btree_tall_idx on btree_tall_tbl (id, t) with (fillfactor = 10);
+ statement: insert into btree_tall_tbl                                                   +
+   select g, g::text || '_' ||                                                           +
+           (select string_agg(md5(i::text), '_') from generate_series(1, 50) i)          +
+ from generate_series(1, 100) g;
+ statement: delete from btree_tall_tbl where id < 950;
+ statement: vacuum btree_tall_tbl;
+ statement: insert into btree_tall_tbl (id, t)                                           +
+   select g, repeat('x', 100) from generate_series(1, 500) g;
+

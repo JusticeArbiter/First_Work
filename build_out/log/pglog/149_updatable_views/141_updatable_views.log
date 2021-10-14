@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE FUNCTION rw_view1_trig_fn()  RETURNS trigger AS  $$  BEGIN  IF TG_OP = 'INSERT' THEN  INSERT INTO base_tbl VALUES (NEW.a, NEW.b);  RETURN NEW;  ELSIF TG_OP = 'UPDATE' THEN  UPDATE base_tbl SET b=NEW.b WHERE a=OLD.a;  RETURN NEW;  ELSIF TG_OP = 'DELETE' THEN  DELETE FROM base_tbl WHERE a=OLD.a;  RETURN OLD;  END IF;  END;  $$  LANGUAGE plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE FUNCTION rw_view1_trig_fn()  RETURNS trigger AS  $$  BEGIN  IF TG_OP = 'INSERT' THEN  INSERT INTO base_tbl VALUES (NEW.a, NEW.b);  RETURN NEW;  ELSIF TG_OP = 'UPDATE' THEN  UPDATE base_tbl SET b=NEW.b WHERE a=OLD.a;  RETURN NEW;  ELSIF TG_OP = 'DELETE' THEN  DELETE FROM base_tbl WHERE a=OLD.a;  RETURN OLD;  END IF;  END;  $$  LANGUAGE plpgsql;

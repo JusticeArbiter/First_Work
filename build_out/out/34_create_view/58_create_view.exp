@@ -1,0 +1,4 @@
+CREATE VIEW temporal2 AS SELECT * FROM t1 INNER JOIN tt ON t1.num = tt.num2;
+ERROR:  42P01: relation "tt" does not exist
+LINE 1: ...ATE VIEW temporal2 AS SELECT * FROM t1 INNER JOIN tt ON t1.n...
+                                                             ^

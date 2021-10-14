@@ -1,0 +1,4 @@
+SELECT count(*) FROM gcircle_tbl WHERE f1 && '<(500,500),500>'::circle;
+ERROR:  42P01: relation "gcircle_tbl" does not exist
+LINE 1: SELECT count(*) FROM gcircle_tbl WHERE f1 && '<(500,500),500...
+                             ^

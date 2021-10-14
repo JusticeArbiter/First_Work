@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX hash_i4_index ON hash_i4_heap USING hash (random int4_ops);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "hash_i4_heap" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX hash_i4_index ON hash_i4_heap USING hash (random int4_ops);

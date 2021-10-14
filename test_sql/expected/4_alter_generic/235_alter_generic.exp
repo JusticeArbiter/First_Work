@@ -1,0 +1,2 @@
+ALTER OPERATOR FAMILY alt_opf18 USING btree DROP FUNCTION 2 (int4, int4);
+ERROR:  42704: function 2(integer,integer) does not exist in operator family "alt_opf18"

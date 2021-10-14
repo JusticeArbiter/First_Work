@@ -1,0 +1,3 @@
+select raise_test();
+ERROR:  42601: RAISE option already specified: ERRCODE
+CONTEXT:  PL/pgSQL function raise_test() line 1 at RAISE

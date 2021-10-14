@@ -1,0 +1,6 @@
+select array_agg(distinct ar order by ar desc)  from (select array[i / 2] from generate_series(1,10) a(i)) b(ar);
+         array_agg         
+---------------------------
+ {{5},{4},{3},{2},{1},{0}}
+(1 row)
+

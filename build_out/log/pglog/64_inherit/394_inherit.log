@@ -1,0 +1,8 @@
+LOG:  00000: statement: alter table invalid_check_con add constraint inh_check_constraint check(f1 > 0);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  alter table invalid_check_con add constraint inh_check_constraint check(f1 > 0);
+ERROR:  42P17: constraint "inh_check_constraint" conflicts with NOT VALID constraint on relation "invalid_check_con_child"
+LOCATION:  MergeWithExistingConstraint, heap.c:2488
+STATEMENT:  alter table invalid_check_con add constraint inh_check_constraint check(f1 > 0);

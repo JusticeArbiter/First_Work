@@ -1,0 +1,2 @@
+alter event trigger regress_event_trigger rename to regress_event_trigger2;
+ERROR:  42710: event trigger "regress_event_trigger2" already exists

@@ -1,0 +1,5 @@
+CREATE TYPE base_type(INPUT = base_fn_in, OUTPUT = base_fn_out);
+WARNING:  01000: changing argument type of function base_fn_out from "opaque" to base_type
+WARNING:  01000: changing return type of function base_fn_in from "opaque" to base_type
+WARNING:  01000: changing return type of function base_fn_out from "opaque" to "cstring"
+CREATE TYPE

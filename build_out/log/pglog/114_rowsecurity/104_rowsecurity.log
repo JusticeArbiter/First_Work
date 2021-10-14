@@ -1,0 +1,2 @@
+LOG:  00000: statement: COPY t3(a,b,c) FROM stdin WITH (oids);
+LOCATION:  exec_simple_query, postgres.c:938

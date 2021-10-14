@@ -1,0 +1,4 @@
+DELETE FROM temptest;
+ERROR:  42P01: relation "temptest" does not exist
+LINE 1: DELETE FROM temptest;
+                    ^

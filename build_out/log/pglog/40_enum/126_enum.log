@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TYPE bogus RENAME TO bogon;
+LOCATION:  exec_simple_query, postgres.c:938

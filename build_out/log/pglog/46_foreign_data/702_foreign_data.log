@@ -1,0 +1,8 @@
+LOG:  00000: statement: IMPORT FOREIGN SCHEMA s1 FROM SERVER s9 INTO public;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start IMPORT FOREIGN SCHEMA
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  IMPORT FOREIGN SCHEMA s1 FROM SERVER s9 INTO public;
+ERROR:  42704: server "s9" does not exist
+LOCATION:  get_foreign_server_oid, foreign.c:691
+STATEMENT:  IMPORT FOREIGN SCHEMA s1 FROM SERVER s9 INTO public;

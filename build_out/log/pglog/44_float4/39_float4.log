@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS three, f.f1, f.f1 + '-10' AS x FROM FLOAT4_TBL f  WHERE f.f1 > '0.0';
+LOCATION:  exec_simple_query, postgres.c:938

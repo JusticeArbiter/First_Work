@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT count(distinct j) FROM testjsonb;
+LOCATION:  exec_simple_query, postgres.c:938

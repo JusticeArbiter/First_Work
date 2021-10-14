@@ -1,0 +1,5 @@
+LOG:  00000: statement: PREPARE q4(nonexistenttype) AS SELECT $1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: type "nonexistenttype" does not exist at character 12
+LOCATION:  typenameType, parse_type.c:257
+STATEMENT:  PREPARE q4(nonexistenttype) AS SELECT $1;

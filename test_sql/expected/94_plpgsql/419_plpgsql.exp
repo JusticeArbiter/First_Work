@@ -1,0 +1,5 @@
+create function void_return_expr() returns void as $$  begin  return 5;  end;$$ language plpgsql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42804: RETURN cannot have a parameter in function returning void
+LINE 1: ...d_return_expr() returns void as $$  begin  return 5;  end;$$...
+                                                             ^

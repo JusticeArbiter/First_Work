@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO CHAR_TBL (f1) VALUES ('abcd');
+LOCATION:  exec_simple_query, postgres.c:938

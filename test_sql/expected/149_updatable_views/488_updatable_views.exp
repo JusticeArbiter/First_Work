@@ -1,0 +1,7 @@
+SELECT * FROM base_tbl;
+ id |   data    | deleted 
+----+-----------+---------
+  1 | Row 1     | t
+  2 | New row 2 | f
+(2 rows)
+

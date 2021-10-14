@@ -1,0 +1,14 @@
+SELECT proname, proacl FROM pg_proc WHERE proname LIKE 'testagg_';
+ proname  |            proacl             
+----------+-------------------------------
+ testagg1 | {highgo=X/highgo}
+ testagg2 | {current_user=X/current_user}
+ testagg3 | {highgo=X/highgo}
+ testagg4 | {testrolx=X/testrolx}
+ testagg5 | {}
+ testagg6 | {highgo=X/highgo}
+ testagg7 | {highgo=X/highgo}
+ testagg8 | {}
+ testagg9 | 
+(9 rows)
+

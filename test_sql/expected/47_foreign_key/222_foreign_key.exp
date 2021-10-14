@@ -1,0 +1,2 @@
+UPDATE FKTABLE SET ftest1 = ftest1;
+UPDATE 1

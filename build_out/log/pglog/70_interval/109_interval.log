@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT interval '123 2:03 -2:04';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type interval: "123 2:03 -2:04" at character 17
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  SELECT interval '123 2:03 -2:04';

@@ -1,0 +1,2 @@
+DROP ROLE regress_rls_copy_user_colperms;
+DROP ROLE

@@ -1,0 +1,3 @@
+CREATE OR REPLACE FUNCTION foo(in f1 int, out f2 int) RETURNS float  AS 'select $1+1' LANGUAGE sql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42P13: function result type must be integer because of OUT parameters

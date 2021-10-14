@@ -1,0 +1,2 @@
+LOG:  00000: statement: create temp table arr_pk_tbl (pk int4 primary key, f1 int[]);
+LOCATION:  exec_simple_query, postgres.c:938

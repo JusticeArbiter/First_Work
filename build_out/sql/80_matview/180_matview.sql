@@ -1,0 +1,1 @@
+DROP TABLE mvtest_v CASCADE;

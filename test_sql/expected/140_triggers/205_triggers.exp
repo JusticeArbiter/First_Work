@@ -1,0 +1,7 @@
+SELECT * FROM min_updates_test;
+ f1 | f2 | f3 
+----+----+----
+ a  |  2 |  2
+ b  |  3 |  2
+(2 rows)
+

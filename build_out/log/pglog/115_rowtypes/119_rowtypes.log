@@ -1,0 +1,6 @@
+LOG:  00000: statement: select row_to_json(r) from (select q2,q1 from tt1 offset 0) r;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "q2" does not exist at character 36
+HINT:  Perhaps you meant to reference the column "tt1.x2".
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select row_to_json(r) from (select q2,q1 from tt1 offset 0) r;

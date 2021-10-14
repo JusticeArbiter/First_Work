@@ -1,0 +1,5 @@
+LOG:  00000: statement: select jsonb_set('"a"','{a}','"b"');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: cannot set path in scalar
+LOCATION:  jsonb_set, jsonfuncs.c:3547
+STATEMENT:  select jsonb_set('"a"','{a}','"b"');

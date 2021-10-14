@@ -1,0 +1,4 @@
+INSERT INTO macaddr_data VALUES (8, '0800:2b01:0203');
+ERROR:  22P02: invalid input syntax for type macaddr: "0800:2b01:0203"
+LINE 1: INSERT INTO macaddr_data VALUES (8, '0800:2b01:0203');
+                                            ^

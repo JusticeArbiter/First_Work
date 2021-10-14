@@ -1,0 +1,2 @@
+CREATE TABLE tmp (regtable int);
+CREATE TABLE

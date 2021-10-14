@@ -1,0 +1,4 @@
+SELECT max(f1), min(f1), max(f2), min(f2), max(f3), min(f3) FROM arraggtest;
+ERROR:  42P01: relation "arraggtest" does not exist
+LINE 1: ... min(f1), max(f2), min(f2), max(f3), min(f3) FROM arraggtest...
+                                                             ^

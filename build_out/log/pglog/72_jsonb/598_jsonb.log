@@ -1,0 +1,5 @@
+LOG:  00000: statement: select jsonb_set('{"a": {"b": [1, 2, 3]}}', '{a, b, NULL}', '"new_value"');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22004: path element at position 3 is null
+LOCATION:  setPath, jsonfuncs.c:3747
+STATEMENT:  select jsonb_set('{"a": {"b": [1, 2, 3]}}', '{a, b, NULL}', '"new_value"');

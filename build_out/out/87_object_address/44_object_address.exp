@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('role', '{one}', '{}');
+ERROR:  42704: role "one" does not exist

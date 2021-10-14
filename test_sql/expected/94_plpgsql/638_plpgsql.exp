@@ -1,0 +1,2 @@
+select raise_test();
+ERROR:  1234F: 1234F

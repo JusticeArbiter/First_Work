@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT width_bucket(0::float8, 'NaN', 4.0::float8, 888);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2201G: operand, lower bound, and upper bound cannot be NaN
+LOCATION:  width_bucket_float8, float.c:2749
+STATEMENT:  SELECT width_bucket(0::float8, 'NaN', 4.0::float8, 888);

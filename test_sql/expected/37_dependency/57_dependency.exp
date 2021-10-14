@@ -1,0 +1,2 @@
+REASSIGN OWNED BY regression_user1 TO regression_user2;
+REASSIGN OWNED

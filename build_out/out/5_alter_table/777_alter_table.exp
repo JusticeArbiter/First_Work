@@ -1,0 +1,3 @@
+alter table anothertab alter column atcol1 type boolean using atcol1::int;
+ERROR:  42804: result of USING clause for column "atcol1" cannot be cast automatically to type boolean
+HINT:  You might need to add an explicit cast.

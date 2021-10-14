@@ -1,0 +1,3 @@
+CREATE SERVER s10 FOREIGN DATA WRAPPER foo;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SERVER
+ERROR:  42710: server "s10" already exists

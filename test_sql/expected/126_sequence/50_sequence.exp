@@ -1,0 +1,9 @@
+SELECT * FROM serialTest;
+  f1   | f2  
+-------+-----
+ foo   |   1
+ bar   |   2
+ force | 100
+ more  |   3
+(4 rows)
+

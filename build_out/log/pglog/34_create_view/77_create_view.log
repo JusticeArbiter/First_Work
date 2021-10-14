@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE VIEW mysecview4 WITH (security_barrier)  AS SELECT * FROM tbl1 WHERE a <> 0;
+LOCATION:  exec_simple_query, postgres.c:938

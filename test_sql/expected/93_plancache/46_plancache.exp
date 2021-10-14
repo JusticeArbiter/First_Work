@@ -1,0 +1,4 @@
+drop schema s1 cascade;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SCHEMA
+NOTICE:  00000: drop cascades to table s1.abc
+DROP SCHEMA

@@ -1,0 +1,4 @@
+select * from compos;
+ERROR:  42P01: relation "compos" does not exist
+LINE 1: select * from compos;
+                      ^

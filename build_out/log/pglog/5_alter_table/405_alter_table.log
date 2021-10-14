@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into atacc1 (test2, test) values (2, 3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: duplicate key value violates unique constraint "atacc1_test_key"
+DETAIL:  Key (test)=(3) already exists.
+LOCATION:  _bt_check_unique, nbtinsert.c:432
+STATEMENT:  insert into atacc1 (test2, test) values (2, 3);

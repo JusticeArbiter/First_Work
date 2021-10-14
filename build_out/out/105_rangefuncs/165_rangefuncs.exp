@@ -1,0 +1,3 @@
+CREATE TEMPORARY SEQUENCE foo_rescan_seq1;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SEQUENCE
+CREATE SEQUENCE

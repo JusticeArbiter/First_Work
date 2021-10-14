@@ -1,0 +1,4 @@
+SELECT ' INFINITY x'::float8;
+ERROR:  22P02: invalid input syntax for type double precision: " INFINITY x"
+LINE 1: SELECT ' INFINITY x'::float8;
+               ^

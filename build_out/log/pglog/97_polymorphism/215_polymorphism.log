@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from dfunc(x := 20, b := 10, x := 30);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: argument name "x" used more than once at character 39
+LOCATION:  ParseFuncOrColumn, parse_func.c:176
+STATEMENT:  select * from dfunc(x := 20, b := 10, x := 30);

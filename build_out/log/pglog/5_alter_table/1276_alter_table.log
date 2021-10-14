@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE new_system_table SET SCHEMA public;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: cannot remove dependency on schema pg_catalog because it is a system object
+LOCATION:  changeDependencyFor, pg_depend.c:325
+STATEMENT:  ALTER TABLE new_system_table SET SCHEMA public;

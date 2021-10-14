@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX collate_test1_idx4 ON collate_test1 (((b||'foo') COLLATE "POSIX"));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P07: relation "collate_test1_idx4" already exists
+LOCATION:  index_create, index.c:794
+STATEMENT:  CREATE INDEX collate_test1_idx4 ON collate_test1 (((b||'foo') COLLATE "POSIX"));

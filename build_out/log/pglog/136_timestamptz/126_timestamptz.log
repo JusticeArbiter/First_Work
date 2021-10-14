@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS to_char_2, to_char(d1, 'FMDAY FMDay FMday FMMONTH FMMonth FMmonth FMRM')  FROM TIMESTAMPTZ_TBL;
+LOCATION:  exec_simple_query, postgres.c:938

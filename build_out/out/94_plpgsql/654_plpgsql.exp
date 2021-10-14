@@ -1,0 +1,7 @@
+select stacked_diagnostics_test();
+NOTICE:  00000: message: custom exception, detail: some detail of custom exception, hint: some hint related to custom exception
+ stacked_diagnostics_test 
+--------------------------
+ 
+(1 row)
+

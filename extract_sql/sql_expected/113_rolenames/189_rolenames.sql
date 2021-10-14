@@ -1,0 +1,1 @@
+DROP USER MAPPING FOR testrolx SERVER sv8;

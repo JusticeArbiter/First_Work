@@ -1,0 +1,2 @@
+LOG:  00000: statement: select range_merge(numrange(1.0, 2.0), numrange(1.5, 3.0));
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,8 @@
+SELECT * FROM tvm;
+ type | totamt 
+------+--------
+ x    |      5
+ y    |     12
+ z    |     11
+(3 rows)
+

@@ -1,0 +1,6 @@
+select ' ( " a " " a ", " z " " z " ) '::textrange;
+        textrange         
+--------------------------
+ ("  a   a ","  z   z  ")
+(1 row)
+

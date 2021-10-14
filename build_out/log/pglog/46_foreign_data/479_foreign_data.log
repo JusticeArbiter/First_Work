@@ -1,0 +1,14 @@
+LOG:  00000: statement: CREATE FOREIGN TABLE ft3 (  c1 integer NOT NULL,  c2 text,  c3 date  ) INHERITS(ft2)  SERVER s0;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FOREIGN TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE FOREIGN TABLE ft3 (  c1 integer NOT NULL,  c2 text,  c3 date  ) INHERITS(ft2)  SERVER s0;
+NOTICE:  00000: merging column "c1" with inherited definition
+LOCATION:  MergeAttributes, tablecmds.c:1820
+STATEMENT:  CREATE FOREIGN TABLE ft3 (  c1 integer NOT NULL,  c2 text,  c3 date  ) INHERITS(ft2)  SERVER s0;
+NOTICE:  00000: merging column "c2" with inherited definition
+LOCATION:  MergeAttributes, tablecmds.c:1820
+STATEMENT:  CREATE FOREIGN TABLE ft3 (  c1 integer NOT NULL,  c2 text,  c3 date  ) INHERITS(ft2)  SERVER s0;
+NOTICE:  00000: merging column "c3" with inherited definition
+LOCATION:  MergeAttributes, tablecmds.c:1820
+STATEMENT:  CREATE FOREIGN TABLE ft3 (  c1 integer NOT NULL,  c2 text,  c3 date  ) INHERITS(ft2)  SERVER s0;

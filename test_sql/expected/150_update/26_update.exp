@@ -1,0 +1,2 @@
+UPDATE update_test SET (b,a) = (select a+1,b from update_test);
+ERROR:  21000: more than one row returned by a subquery used as an expression

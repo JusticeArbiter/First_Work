@@ -1,0 +1,6 @@
+SELECT 'nan'::float8;
+ float8 
+--------
+    NaN
+(1 row)
+

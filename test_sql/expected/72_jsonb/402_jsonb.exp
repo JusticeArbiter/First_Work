@@ -1,0 +1,6 @@
+SELECT distinct * FROM (values (jsonb '{}' || ''::text),('{}')) v(j);
+ j  
+----
+ {}
+(1 row)
+

@@ -1,0 +1,4 @@
+SELECT *  INTO TABLE tmp1  FROM onek2  WHERE onek2.unique1 < 2;
+ERROR:  42P01: relation "onek2" does not exist
+LINE 1: SELECT *  INTO TABLE tmp1  FROM onek2  WHERE onek2.unique1 <...
+                                        ^

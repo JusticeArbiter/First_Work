@@ -1,0 +1,11 @@
+LOG:  00000: statement: alter table pp1 add column a2 int check (a2 > 0);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  alter table pp1 add column a2 int check (a2 > 0);
+NOTICE:  00000: merging definition of column "a2" for child "cc2"
+LOCATION:  ATExecAddColumn, tablecmds.c:4792
+STATEMENT:  alter table pp1 add column a2 int check (a2 > 0);
+NOTICE:  00000: merging constraint "pp1_a2_check" with inherited definition
+LOCATION:  MergeWithExistingConstraint, heap.c:2493
+STATEMENT:  alter table pp1 add column a2 int check (a2 > 0);

@@ -1,0 +1,3 @@
+drop table altwithoid cascade;
+NOTICE:  00000: drop cascades to table altinhoid
+DROP TABLE

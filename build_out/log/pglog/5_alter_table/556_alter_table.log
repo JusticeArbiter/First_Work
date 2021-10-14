@@ -1,0 +1,5 @@
+LOG:  00000: statement: delete from atacc1 where a = 3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" does not exist at character 26
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  delete from atacc1 where a = 3;

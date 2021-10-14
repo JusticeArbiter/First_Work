@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf2 SET SCHEMA alt_nsp2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: text search configuration "alt_ts_conf2" already exists in schema "alt_nsp2"
+LOCATION:  report_namespace_conflict, alter.c:137
+STATEMENT:  ALTER TEXT SEARCH CONFIGURATION alt_ts_conf2 SET SCHEMA alt_nsp2;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TYPE shell;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: type "shell" already exists
+LOCATION:  DefineType, typecmds.c:235
+STATEMENT:  CREATE TYPE shell;

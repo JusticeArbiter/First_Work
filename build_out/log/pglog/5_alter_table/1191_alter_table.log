@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE tt5 (x int, y numeric(8,2), z int);
+LOCATION:  exec_simple_query, postgres.c:938

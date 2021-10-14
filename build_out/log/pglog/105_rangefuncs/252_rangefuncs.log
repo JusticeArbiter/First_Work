@@ -1,0 +1,9 @@
+LOG:  00000: statement: CREATE OR REPLACE FUNCTION dup (inout f2 anyelement, out f3 anyarray)  AS 'select $1, array[$1,$1]' LANGUAGE sql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE OR REPLACE FUNCTION dup (inout f2 anyelement, out f3 anyarray)  AS 'select $1, array[$1,$1]' LANGUAGE sql;
+ERROR:  42P13: cannot change return type of existing function
+HINT:  Use DROP FUNCTION dup(anyelement) first.
+LOCATION:  ProcedureCreate, pg_proc.c:417
+STATEMENT:  CREATE OR REPLACE FUNCTION dup (inout f2 anyelement, out f3 anyarray)  AS 'select $1, array[$1,$1]' LANGUAGE sql;

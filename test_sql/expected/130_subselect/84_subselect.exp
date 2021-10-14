@@ -1,0 +1,4 @@
+select * from float_table  where float_col in (select num_col from numeric_table);
+ERROR:  42P01: relation "float_table" does not exist
+LINE 1: select * from float_table  where float_col in (select num_co...
+                      ^

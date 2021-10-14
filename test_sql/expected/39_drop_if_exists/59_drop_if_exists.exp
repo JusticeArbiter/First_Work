@@ -1,0 +1,2 @@
+DROP TEXT SEARCH CONFIGURATION test_tsconfig_exists;
+ERROR:  42704: text search configuration "test_tsconfig_exists" does not exist

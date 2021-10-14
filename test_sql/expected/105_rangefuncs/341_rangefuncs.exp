@@ -1,0 +1,6 @@
+select * from foobar();
+ column1 | column2 
+---------+---------
+       1 |     2.1
+(1 row)
+

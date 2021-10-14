@@ -1,0 +1,4 @@
+INSERT INTO TIMESTAMP_TBL VALUES ('19970710 173201 America/Does_not_exist');
+ERROR:  22023: time zone "america/does_not_exist" not recognized
+LINE 1: INSERT INTO TIMESTAMP_TBL VALUES ('19970710 173201 America/D...
+                                          ^

@@ -1,0 +1,13 @@
+SELECT s.srvname AS "Name",  pg_catalog.pg_get_userbyid(s.srvowner) AS "Owner",  f.fdwname AS "Foreign-data wrapper"  FROM pg_catalog.pg_foreign_server s  JOIN pg_catalog.pg_foreign_data_wrapper f ON f.oid=s.srvfdw  ORDER BY 1;
+      Name      | Owner  | Foreign-data wrapper 
+----------------+--------+----------------------
+ s4             | highgo | foo
+ s5             | highgo | foo
+ s6             | highgo | foo
+ s7             | highgo | foo
+ s8             | highgo | postgresql
+ t1             | highgo | foo
+ t2             | highgo | foo
+ useless_server | highgo | useless
+(8 rows)
+

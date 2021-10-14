@@ -1,0 +1,6 @@
+SELECT make_timestamptz(2014, 12, 10, 10, 10, 10, 'PST8PDT');
+    make_timestamptz    
+------------------------
+ 2014-12-11 02:10:10+08
+(1 row)
+

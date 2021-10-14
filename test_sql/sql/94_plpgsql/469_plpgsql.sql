@@ -1,0 +1,1 @@
+select for_vect();

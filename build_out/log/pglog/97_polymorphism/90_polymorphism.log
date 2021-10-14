@@ -1,0 +1,5 @@
+LOG:  00000: statement: select f3, myaggp20a(f1) from t group by f3 order by f3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "t" does not exist at character 31
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select f3, myaggp20a(f1) from t group by f3 order by f3;

@@ -1,0 +1,2 @@
+alter table alterlock set (fillfactor = 100);
+ALTER TABLE

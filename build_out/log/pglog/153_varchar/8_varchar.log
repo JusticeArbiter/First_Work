@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('cd');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22001: value too long for type character varying(1)
+LOCATION:  varchar, varchar.c:623
+STATEMENT:  INSERT INTO VARCHAR_TBL (f1) VALUES ('cd');

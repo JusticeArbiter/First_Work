@@ -1,0 +1,5 @@
+LOG:  00000: statement: select concat_ws(',', variadic 10);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: VARIADIC argument must be an array at character 32
+LOCATION:  ParseFuncOrColumn, parse_func.c:625
+STATEMENT:  select concat_ws(',', variadic 10);

@@ -1,0 +1,5 @@
+select * from tttest where price_on <= 35 and price_off > 35 and price_id = 5;
+ price_id | price_val | price_on | price_off 
+----------+-----------+----------+-----------
+(0 rows)
+

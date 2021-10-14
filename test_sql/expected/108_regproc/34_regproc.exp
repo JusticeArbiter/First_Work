@@ -1,0 +1,4 @@
+SELECT regoper('||//');
+ERROR:  42883: operator does not exist: ||//
+LINE 1: SELECT regoper('||//');
+                       ^

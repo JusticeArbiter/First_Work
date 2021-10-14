@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, srvfdw  FROM pg_catalog.pg_foreign_server fk  WHERE srvfdw != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_foreign_data_wrapper pk WHERE pk.oid = fk.srvfdw);
+LOCATION:  exec_simple_query, postgres.c:938

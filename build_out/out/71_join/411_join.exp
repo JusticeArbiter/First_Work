@@ -1,0 +1,4 @@
+select * from  int8_tbl x cross join (int4_tbl x cross join lateral (select x.f1) ss);
+ERROR:  42P09: table reference "x" is ambiguous
+LINE 1: ...cross join (int4_tbl x cross join lateral (select x.f1) ss);
+                                                             ^

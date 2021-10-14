@@ -1,0 +1,5 @@
+create index t3i on t3 (expensivefunc(x));
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+ERROR:  42703: column "x" does not exist
+LINE 1: create index t3i on t3 (expensivefunc(x));
+                                              ^

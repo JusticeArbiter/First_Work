@@ -1,0 +1,6 @@
+select void_return_expr();
+ void_return_expr 
+------------------
+ 
+(1 row)
+

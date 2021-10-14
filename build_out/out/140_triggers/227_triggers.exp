@@ -1,0 +1,3 @@
+CREATE TRIGGER instead_of_delete_trig INSTEAD OF DELETE ON main_view  FOR EACH ROW EXECUTE PROCEDURE view_trigger('instead_of_del');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+ERROR:  42P01: relation "main_view" does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: drop function nonesuch();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: function nonesuch() does not exist
+LOCATION:  LookupFuncName, parse_func.c:1922
+STATEMENT:  drop function nonesuch();

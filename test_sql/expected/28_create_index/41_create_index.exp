@@ -1,0 +1,4 @@
+CREATE TABLE kd_point_tbl AS SELECT * FROM quad_point_tbl;
+ERROR:  42P01: relation "quad_point_tbl" does not exist
+LINE 1: CREATE TABLE kd_point_tbl AS SELECT * FROM quad_point_tbl;
+                                                   ^

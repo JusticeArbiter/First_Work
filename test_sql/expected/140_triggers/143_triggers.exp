@@ -1,0 +1,3 @@
+alter table trigtest disable trigger trigtest_b_row_tg;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+ALTER TABLE

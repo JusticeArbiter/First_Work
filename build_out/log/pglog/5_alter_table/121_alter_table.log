@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TABLE constraint_rename_test2 (a int CONSTRAINT con1 CHECK (a > 0), d int) INHERITS (constraint_rename_test);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging column "a" with inherited definition
+LOCATION:  MergeAttributes, tablecmds.c:1820
+STATEMENT:  CREATE TABLE constraint_rename_test2 (a int CONSTRAINT con1 CHECK (a > 0), d int) INHERITS (constraint_rename_test);
+NOTICE:  00000: merging constraint "con1" with inherited definition
+LOCATION:  MergeWithExistingConstraint, heap.c:2493
+STATEMENT:  CREATE TABLE constraint_rename_test2 (a int CONSTRAINT con1 CHECK (a > 0), d int) INHERITS (constraint_rename_test);

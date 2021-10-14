@@ -1,0 +1,6 @@
+SELECT oid FROM pg_class WHERE relname = 'disappear';
+  oid  
+-------
+ 25764
+(1 row)
+

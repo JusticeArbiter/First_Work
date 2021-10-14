@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE RULE bug6051_ins AS ON INSERT TO bug6051 DO INSTEAD  INSERT INTO bug6051_2  SELECT NEW.i;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE RULE bug6051_ins AS ON INSERT TO bug6051 DO INSTEAD  INSERT INTO bug6051_2  SELECT NEW.i;
+ERROR:  42P01: relation "bug6051" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE RULE bug6051_ins AS ON INSERT TO bug6051 DO INSTEAD  INSERT INTO bug6051_2  SELECT NEW.i;

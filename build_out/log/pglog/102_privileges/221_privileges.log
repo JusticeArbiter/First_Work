@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO t1 VALUES (3, 1, 3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: INSERT has more expressions than target columns at character 30
+LOCATION:  transformInsertRow, analyze.c:814
+STATEMENT:  INSERT INTO t1 VALUES (3, 1, 3);

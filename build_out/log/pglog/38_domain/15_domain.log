@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO basictest values ('88', 'haha', 'short text', '123.12');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22001: value too long for type character varying(5)
+LOCATION:  varchar, varchar.c:623
+STATEMENT:  INSERT INTO basictest values ('88', 'haha', 'short text', '123.12');

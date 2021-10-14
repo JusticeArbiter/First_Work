@@ -1,0 +1,1 @@
+GRANT SELECT ON atest4 TO regressuser2 WITH GRANT OPTION;

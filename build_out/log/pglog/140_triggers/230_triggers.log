@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TRIGGER before_del_stmt_trig BEFORE DELETE ON main_view  FOR EACH STATEMENT EXECUTE PROCEDURE view_trigger('before_view_del_stmt');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TRIGGER before_del_stmt_trig BEFORE DELETE ON main_view  FOR EACH STATEMENT EXECUTE PROCEDURE view_trigger('before_view_del_stmt');
+ERROR:  42P01: relation "main_view" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE TRIGGER before_del_stmt_trig BEFORE DELETE ON main_view  FOR EACH STATEMENT EXECUTE PROCEDURE view_trigger('before_view_del_stmt');

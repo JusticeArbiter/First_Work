@@ -1,0 +1,2 @@
+DROP FUNCTION test_function_exists();
+ERROR:  42883: function test_function_exists() does not exist

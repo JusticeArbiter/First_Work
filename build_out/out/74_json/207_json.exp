@@ -1,0 +1,6 @@
+select * from json_populate_record(null::jpop,'{"a":[100,200,false],"x":43.2}') q;
+        a        | b | c 
+-----------------+---+---
+ [100,200,false] |   | 
+(1 row)
+

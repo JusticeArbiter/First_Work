@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT SUBSTRING('abcdefg' FROM 'a#"(b_d)#"%' FOR '#') AS "bcd";
+LOCATION:  exec_simple_query, postgres.c:938

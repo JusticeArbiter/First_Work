@@ -1,0 +1,6 @@
+LOG:  00000: statement: select 3 || 4.0;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: operator does not exist: integer || numeric at character 10
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+LOCATION:  op_error, parse_oper.c:726
+STATEMENT:  select 3 || 4.0;

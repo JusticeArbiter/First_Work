@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER FUNCTION functext_E_2(int) LEAKPROOF;
+LOCATION:  exec_simple_query, postgres.c:938

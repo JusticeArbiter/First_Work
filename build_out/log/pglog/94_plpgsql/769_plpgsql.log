@@ -1,0 +1,32 @@
+LOG:  00000: statement: DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: 001, Entrance
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+NOTICE:  00000: 002, Office
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+NOTICE:  00000: 003, Office
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+NOTICE:  00000: 004, Technical
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+NOTICE:  00000: 101, Office
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+NOTICE:  00000: 102, Conference
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+NOTICE:  00000: 103, Restroom
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+NOTICE:  00000: 104, Technical
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+NOTICE:  00000: 105, Office
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+NOTICE:  00000: 106, Office
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;

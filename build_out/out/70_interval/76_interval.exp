@@ -1,0 +1,6 @@
+SELECT interval '1' year;
+ interval 
+----------
+ 1 year
+(1 row)
+

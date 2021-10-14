@@ -1,0 +1,5 @@
+LOG:  00000: statement: select has_table_privilege('pg_authid','sel');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: unrecognized privilege type: "sel"
+LOCATION:  convert_any_priv_string, acl.c:1688
+STATEMENT:  select has_table_privilege('pg_authid','sel');

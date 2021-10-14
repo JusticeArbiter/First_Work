@@ -1,0 +1,6 @@
+SELECT count(*) FROM vactst;
+ count 
+-------
+  2049
+(1 row)
+

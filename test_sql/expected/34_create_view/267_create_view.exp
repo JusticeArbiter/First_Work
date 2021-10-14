@@ -1,0 +1,2 @@
+select pg_get_viewdef('v2a', true);
+ERROR:  42P01: relation "v2a" does not exist

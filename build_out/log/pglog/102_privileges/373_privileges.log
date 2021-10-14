@@ -1,0 +1,5 @@
+LOG:  00000: statement: select has_table_privilege('pg_shad','select');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "pg_shad" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  select has_table_privilege('pg_shad','select');

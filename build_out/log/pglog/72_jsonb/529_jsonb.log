@@ -1,0 +1,5 @@
+LOG:  00000: statement: select '"a"'::jsonb || '{"a":1}';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: invalid concatenation of jsonb objects
+LOCATION:  IteratorConcat, jsonfuncs.c:3717
+STATEMENT:  select '"a"'::jsonb || '{"a":1}';

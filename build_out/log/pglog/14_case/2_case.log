@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE CASE2_TBL (  i integer,  j integer  );
+LOCATION:  exec_simple_query, postgres.c:938

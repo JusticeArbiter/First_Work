@@ -1,0 +1,9 @@
+LOG:  00000: statement: create table fktable(ftest1 int, ftest2 inet, foreign key(ftest2, ftest1) references pktable);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create table fktable(ftest1 int, ftest2 inet, foreign key(ftest2, ftest1) references pktable);
+ERROR:  42804: foreign key constraint "fktable_ftest2_fkey" cannot be implemented
+DETAIL:  Key columns "ftest2" and "base1" are of incompatible types: inet and integer.
+LOCATION:  ATAddForeignKeyConstraint, tablecmds.c:6473
+STATEMENT:  create table fktable(ftest1 int, ftest2 inet, foreign key(ftest2, ftest1) references pktable);

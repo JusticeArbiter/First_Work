@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT to_timestamp('15 "text between quote marks" 98 54 45',  E'HH24 "\\text between quote marks\\"" YY MI SS');
+LOCATION:  exec_simple_query, postgres.c:938

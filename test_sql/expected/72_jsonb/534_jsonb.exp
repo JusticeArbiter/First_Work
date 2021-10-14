@@ -1,0 +1,6 @@
+select pg_column_size('{}'::jsonb || '{}'::jsonb) = pg_column_size('{}'::jsonb);
+ ?column? 
+----------
+ t
+(1 row)
+

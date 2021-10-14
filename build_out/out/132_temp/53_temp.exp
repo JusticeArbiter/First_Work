@@ -1,0 +1,4 @@
+INSERT INTO temptest2 VALUES (1);
+ERROR:  42P01: relation "temptest2" does not exist
+LINE 1: INSERT INTO temptest2 VALUES (1);
+                    ^

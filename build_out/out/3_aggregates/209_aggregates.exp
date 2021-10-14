@@ -1,0 +1,4 @@
+select rank(sum(x)) within group (order by x) from generate_series(1,5) x;
+ERROR:  42803: aggregate function calls cannot be nested
+LINE 1: select rank(sum(x)) within group (order by x) from generate_...
+                    ^

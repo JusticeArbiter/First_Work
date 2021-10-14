@@ -1,0 +1,2 @@
+select array_agg(null::int[]) from generate_series(1,2);
+ERROR:  22004: cannot accumulate null arrays

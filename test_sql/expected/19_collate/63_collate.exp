@@ -1,0 +1,17 @@
+SELECT a, b::testdomain_p FROM collate_test2 ORDER BY 2;
+ a |  b  
+---+-----
+ 4 | ABC
+ 4 | ABC
+ 4 | ABD
+ 2 | Abc
+ 1 | abc
+ 1 | abc
+ 1 | abc
+ 3 | bbc
+ 3 | bbc
+ 3 | bbc
+ 2 | äbc
+ 2 | äbc
+(12 rows)
+

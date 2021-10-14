@@ -1,0 +1,2 @@
+EXECUTE hsp;
+ERROR:  26000: prepared statement "hsp" does not exist

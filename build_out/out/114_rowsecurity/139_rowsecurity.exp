@@ -1,0 +1,6 @@
+EXPLAIN (COSTS OFF) SELECT * FROM dependent;
+      QUERY PLAN       
+-----------------------
+ Seq Scan on dependent
+(1 row)
+

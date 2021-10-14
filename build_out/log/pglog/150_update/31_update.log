@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT a, b, char_length(c) FROM update_test;
+LOCATION:  exec_simple_query, postgres.c:938

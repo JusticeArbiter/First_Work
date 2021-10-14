@@ -1,0 +1,9 @@
+SELECT * FROM update_test;
+  a  | b  |   c   
+-----+----+-------
+ 100 | 20 | 
+ 100 | 21 | 
+  10 | 31 | bugle
+  10 | 32 | bugle
+(4 rows)
+

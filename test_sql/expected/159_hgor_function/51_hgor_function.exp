@@ -1,0 +1,6 @@
+select sys_context('USERENV'::text,'CURRENT_SCHEMA'::text,100::int4);
+ sys_context 
+-------------
+ public
+(1 row)
+

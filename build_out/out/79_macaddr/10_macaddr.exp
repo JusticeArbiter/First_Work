@@ -1,0 +1,4 @@
+INSERT INTO macaddr_data VALUES (9, 'not even close');
+ERROR:  22P02: invalid input syntax for type macaddr: "not even close"
+LINE 1: INSERT INTO macaddr_data VALUES (9, 'not even close');
+                                            ^

@@ -1,0 +1,168 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple');
+ statement: SELECT COUNT(*) FROM pg_enum WHERE enumtypid = 'rainbow'::regtype;
+ statement: SELECT 'red'::rainbow;
+ statement: SELECT 'mauve'::rainbow;
+ statement: CREATE TYPE planets AS ENUM ( 'venus', 'earth', 'mars' );
+ statement: SELECT enumlabel, enumsortorder                                                    +
+ FROM pg_enum                                                                                  +
+ WHERE enumtypid = 'planets'::regtype                                                          +
+ ORDER BY 2;
+ statement: ALTER TYPE planets ADD VALUE 'uranus';
+ statement: SELECT enumlabel, enumsortorder                                                    +
+ FROM pg_enum                                                                                  +
+ WHERE enumtypid = 'planets'::regtype                                                          +
+ ORDER BY 2;
+ statement: ALTER TYPE planets ADD VALUE 'mercury' BEFORE 'venus';
+ statement: ALTER TYPE planets ADD VALUE 'saturn' BEFORE 'uranus';
+ statement: ALTER TYPE planets ADD VALUE 'jupiter' AFTER 'mars';
+ statement: ALTER TYPE planets ADD VALUE 'neptune' AFTER 'uranus';
+ statement: SELECT enumlabel, enumsortorder                                                    +
+ FROM pg_enum                                                                                  +
+ WHERE enumtypid = 'planets'::regtype                                                          +
+ ORDER BY 2;
+ statement: SELECT enumlabel, enumsortorder                                                    +
+ FROM pg_enum                                                                                  +
+ WHERE enumtypid = 'planets'::regtype                                                          +
+ ORDER BY enumlabel::planets;
+ statement: ALTER TYPE planets ADD VALUE                                                       +
+   'plutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutopluto';
+ statement: ALTER TYPE planets ADD VALUE 'pluto' AFTER 'zeus';
+ statement: ALTER TYPE planets ADD VALUE 'mercury';
+ statement: ALTER TYPE planets ADD VALUE IF NOT EXISTS 'mercury';
+ statement: SELECT enum_last(NULL::planets);
+ statement: ALTER TYPE planets ADD VALUE IF NOT EXISTS 'pluto';
+ statement: SELECT enum_last(NULL::planets);
+ statement: create type insenum as enum ('L1', 'L2');
+ statement: alter type insenum add value 'i1' before 'L2';
+ statement: alter type insenum add value 'i2' before 'L2';
+ statement: alter type insenum add value 'i3' before 'L2';
+ statement: alter type insenum add value 'i4' before 'L2';
+ statement: alter type insenum add value 'i5' before 'L2';
+ statement: alter type insenum add value 'i6' before 'L2';
+ statement: alter type insenum add value 'i7' before 'L2';
+ statement: alter type insenum add value 'i8' before 'L2';
+ statement: alter type insenum add value 'i9' before 'L2';
+ statement: alter type insenum add value 'i10' before 'L2';
+ statement: alter type insenum add value 'i11' before 'L2';
+ statement: alter type insenum add value 'i12' before 'L2';
+ statement: alter type insenum add value 'i13' before 'L2';
+ statement: alter type insenum add value 'i14' before 'L2';
+ statement: alter type insenum add value 'i15' before 'L2';
+ statement: alter type insenum add value 'i16' before 'L2';
+ statement: alter type insenum add value 'i17' before 'L2';
+ statement: alter type insenum add value 'i18' before 'L2';
+ statement: alter type insenum add value 'i19' before 'L2';
+ statement: alter type insenum add value 'i20' before 'L2';
+ statement: alter type insenum add value 'i21' before 'L2';
+ statement: alter type insenum add value 'i22' before 'L2';
+ statement: alter type insenum add value 'i23' before 'L2';
+ statement: alter type insenum add value 'i24' before 'L2';
+ statement: alter type insenum add value 'i25' before 'L2';
+ statement: alter type insenum add value 'i26' before 'L2';
+ statement: alter type insenum add value 'i27' before 'L2';
+ statement: alter type insenum add value 'i28' before 'L2';
+ statement: alter type insenum add value 'i29' before 'L2';
+ statement: alter type insenum add value 'i30' before 'L2';
+ statement: SELECT enumlabel,                                                                  +
+        case when enumsortorder > 20 then null else enumsortorder end as so                    +
+ FROM pg_enum                                                                                  +
+ WHERE enumtypid = 'insenum'::regtype                                                          +
+ ORDER BY enumsortorder;
+ statement: CREATE TABLE enumtest (col rainbow);
+ statement: INSERT INTO enumtest values ('red'), ('orange'), ('yellow'), ('green');
+ statement: COPY enumtest FROM stdin;
+ statement: SELECT * FROM enumtest;
+ statement: SELECT * FROM enumtest WHERE col = 'orange';
+ statement: SELECT * FROM enumtest WHERE col <> 'orange' ORDER BY col;
+ statement: SELECT * FROM enumtest WHERE col > 'yellow' ORDER BY col;
+ statement: SELECT * FROM enumtest WHERE col >= 'yellow' ORDER BY col;
+ statement: SELECT * FROM enumtest WHERE col < 'green' ORDER BY col;
+ statement: SELECT * FROM enumtest WHERE col <= 'green' ORDER BY col;
+ statement: SELECT 'red'::rainbow::text || 'hithere';
+ statement: SELECT 'red'::text::rainbow = 'red'::rainbow;
+ statement: SELECT min(col) FROM enumtest;
+ statement: SELECT max(col) FROM enumtest;
+ statement: SELECT max(col) FROM enumtest WHERE col < 'green';
+ statement: SET enable_seqscan = off;
+ statement: SET enable_bitmapscan = off;
+ statement: CREATE UNIQUE INDEX enumtest_btree ON enumtest USING btree (col);
+ statement: SELECT * FROM enumtest WHERE col = 'orange';
+ statement: SELECT * FROM enumtest WHERE col <> 'orange' ORDER BY col;
+ statement: SELECT * FROM enumtest WHERE col > 'yellow' ORDER BY col;
+ statement: SELECT * FROM enumtest WHERE col >= 'yellow' ORDER BY col;
+ statement: SELECT * FROM enumtest WHERE col < 'green' ORDER BY col;
+ statement: SELECT * FROM enumtest WHERE col <= 'green' ORDER BY col;
+ statement: SELECT min(col) FROM enumtest;
+ statement: SELECT max(col) FROM enumtest;
+ statement: SELECT max(col) FROM enumtest WHERE col < 'green';
+ statement: DROP INDEX enumtest_btree;
+ statement: CREATE INDEX enumtest_hash ON enumtest USING hash (col);
+ statement: SELECT * FROM enumtest WHERE col = 'orange';
+ statement: DROP INDEX enumtest_hash;
+ statement: RESET enable_seqscan;
+ statement: RESET enable_bitmapscan;
+ statement: CREATE DOMAIN rgb AS rainbow CHECK (VALUE IN ('red', 'green', 'blue'));
+ statement: SELECT 'red'::rgb;
+ statement: SELECT 'purple'::rgb;
+ statement: SELECT 'purple'::rainbow::rgb;
+ statement: DROP DOMAIN rgb;
+ statement: SELECT '{red,green,blue}'::rainbow[];
+ statement: SELECT ('{red,green,blue}'::rainbow[])[2];
+ statement: SELECT 'red' = ANY ('{red,green,blue}'::rainbow[]);
+ statement: SELECT 'yellow' = ANY ('{red,green,blue}'::rainbow[]);
+ statement: SELECT 'red' = ALL ('{red,green,blue}'::rainbow[]);
+ statement: SELECT 'red' = ALL ('{red,red}'::rainbow[]);
+ statement: SELECT enum_first(NULL::rainbow);
+ statement: SELECT enum_last('green'::rainbow);
+ statement: SELECT enum_range(NULL::rainbow);
+ statement: SELECT enum_range('orange'::rainbow, 'green'::rainbow);
+ statement: SELECT enum_range(NULL, 'green'::rainbow);
+ statement: SELECT enum_range('orange'::rainbow, NULL);
+ statement: SELECT enum_range(NULL::rainbow, NULL);
+ statement: CREATE FUNCTION echo_me(anyenum) RETURNS text AS $$                                +
+ BEGIN                                                                                         +
+ RETURN $1::text || 'omg';                                                                     +
+ END                                                                                           +
+ $$ LANGUAGE plpgsql;
+ statement: SELECT echo_me('red'::rainbow);
+ statement: CREATE FUNCTION echo_me(rainbow) RETURNS text AS $$                                +
+ BEGIN                                                                                         +
+ RETURN $1::text || 'wtf';                                                                     +
+ END                                                                                           +
+ $$ LANGUAGE plpgsql;
+ statement: SELECT echo_me('red'::rainbow);
+ statement: DROP FUNCTION echo_me(anyenum);
+ statement: SELECT echo_me('red');
+ statement: DROP FUNCTION echo_me(rainbow);
+ statement: CREATE TABLE enumtest_parent (id rainbow PRIMARY KEY);
+ statement: CREATE TABLE enumtest_child (parent rainbow REFERENCES enumtest_parent);
+ statement: INSERT INTO enumtest_parent VALUES ('red');
+ statement: INSERT INTO enumtest_child VALUES ('red');
+ statement: INSERT INTO enumtest_child VALUES ('blue');
+ statement: DELETE FROM enumtest_parent;
+ statement: CREATE TYPE bogus AS ENUM('good', 'bad', 'ugly');
+ statement: CREATE TABLE enumtest_bogus_child(parent bogus REFERENCES enumtest_parent);
+ statement: DROP TYPE bogus;
+ statement: CREATE TYPE bogus AS ENUM('good');
+ statement: BEGIN;
+ statement: ALTER TYPE bogus ADD VALUE 'bad';
+ statement: COMMIT;
+ statement: BEGIN;
+ statement: ALTER TYPE bogus RENAME TO bogon;
+ statement: ALTER TYPE bogon ADD VALUE 'bad';
+ statement: ROLLBACK;
+ statement: DROP TYPE bogus;
+ statement: BEGIN;
+ statement: CREATE TYPE bogus AS ENUM();
+ statement: ALTER TYPE bogus ADD VALUE 'good';
+ statement: ALTER TYPE bogus ADD VALUE 'ugly';
+ statement: ROLLBACK;
+ statement: DROP TABLE enumtest_child;
+ statement: DROP TABLE enumtest_parent;
+ statement: DROP TABLE enumtest;
+ statement: DROP TYPE rainbow;
+ statement: SELECT COUNT(*) FROM pg_type WHERE typname = 'rainbow';
+ statement: SELECT * FROM pg_enum WHERE NOT EXISTS                                             +
+   (SELECT 1 FROM pg_type WHERE pg_type.oid = enumtypid);
+

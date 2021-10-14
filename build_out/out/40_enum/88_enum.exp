@@ -1,0 +1,6 @@
+SELECT 'red'::rgb;
+ rgb 
+-----
+ red
+(1 row)
+

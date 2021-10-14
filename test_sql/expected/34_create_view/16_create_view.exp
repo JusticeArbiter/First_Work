@@ -1,0 +1,2 @@
+CREATE OR REPLACE VIEW viewtest AS  SELECT a, b::numeric FROM viewtest_tbl;
+ERROR:  42P16: cannot change data type of view column "b" from integer to numeric

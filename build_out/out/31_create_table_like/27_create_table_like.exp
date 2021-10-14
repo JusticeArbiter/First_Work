@@ -1,0 +1,2 @@
+/* copies indexes */  INSERT INTO inhg VALUES (5, 10);
+INSERT 0 1

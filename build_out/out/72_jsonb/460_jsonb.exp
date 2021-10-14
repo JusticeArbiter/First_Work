@@ -1,0 +1,4 @@
+select * from nestjsonb where j @> '{"c":3}';
+ERROR:  42P01: relation "nestjsonb" does not exist
+LINE 1: select * from nestjsonb where j @> '{"c":3}';
+                      ^

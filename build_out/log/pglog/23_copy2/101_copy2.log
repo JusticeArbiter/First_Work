@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT truncate_in_subxact();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "vistest" does not exist at character 13
+QUERY:  INSERT INTO vistest VALUES ('subxact failure')
+CONTEXT:  PL/pgSQL function truncate_in_subxact() line 1 at SQL statement
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT truncate_in_subxact();

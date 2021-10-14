@@ -1,0 +1,2 @@
+LOG:  00000: statement: update PSlot set slotlink = 'PS.base.ta2' where slotname = 'PS.base.a3';
+LOCATION:  exec_simple_query, postgres.c:938

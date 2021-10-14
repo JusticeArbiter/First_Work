@@ -1,0 +1,2 @@
+select jsonb_set('"a"','{a}','"b"');
+ERROR:  22023: cannot set path in scalar

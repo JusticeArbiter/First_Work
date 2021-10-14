@@ -1,0 +1,6 @@
+SELECT * FROM information_schema.foreign_data_wrapper_options ORDER BY 1, 2, 3;
+ foreign_data_wrapper_catalog | foreign_data_wrapper_name | option_name  | option_value 
+------------------------------+---------------------------+--------------+--------------
+ highgo                       | foo                       | test wrapper | true
+(1 row)
+

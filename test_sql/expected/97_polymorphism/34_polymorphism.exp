@@ -1,0 +1,4 @@
+CREATE AGGREGATE myaggp18a(BASETYPE = int, SFUNC = tfp, STYPE = anyarray,  FINALFUNC = ffp, INITCOND = '{}');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE AGGREGATE
+ERROR:  42P13: cannot determine transition data type
+DETAIL:  An aggregate using a polymorphic transition type must have at least one polymorphic argument.

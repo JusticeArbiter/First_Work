@@ -1,0 +1,2 @@
+drop domain domainint4 restrict;
+DROP DOMAIN

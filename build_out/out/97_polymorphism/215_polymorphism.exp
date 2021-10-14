@@ -1,0 +1,4 @@
+select * from dfunc(x := 20, b := 10, x := 30);
+ERROR:  42601: argument name "x" used more than once
+LINE 1: select * from dfunc(x := 20, b := 10, x := 30);
+                                              ^

@@ -1,0 +1,6 @@
+LOG:  00000: statement: select * from foobar();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: function return row and query-specified return row do not match
+DETAIL:  Returned type integer at ordinal position 2, but query expects numeric.
+LOCATION:  tupledesc_match, execQual.c:1636
+STATEMENT:  select * from foobar();

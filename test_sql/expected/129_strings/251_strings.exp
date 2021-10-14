@@ -1,0 +1,6 @@
+SELECT encode(overlay(E'Th\\000omas'::bytea placing E'\\002\\003'::bytea from 8),'escape');
+       encode       
+--------------------
+ Th\000omas\x02\x03
+(1 row)
+

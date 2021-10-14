@@ -1,0 +1,2 @@
+select textrange1('a','Z') @> 'b'::text;
+ERROR:  22000: range lower bound must be less than or equal to range upper bound

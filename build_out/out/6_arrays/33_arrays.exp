@@ -1,0 +1,4 @@
+update arrtest1 set i[8] = 8, t[8] = 'eight';
+ERROR:  42P01: relation "arrtest1" does not exist
+LINE 1: update arrtest1 set i[8] = 8, t[8] = 'eight';
+               ^

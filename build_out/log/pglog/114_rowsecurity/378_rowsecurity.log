@@ -1,0 +1,26 @@
+LOG:  00000: statement: DELETE FROM x1 WHERE f_leak(b) RETURNING *;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: f_leak => abc_updt_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DELETE FROM x1 WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => bcd_updt_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DELETE FROM x1 WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => cde_updt_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DELETE FROM x1 WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => def_updt_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DELETE FROM x1 WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => efg_updt_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DELETE FROM x1 WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => fgh_updt_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DELETE FROM x1 WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => fgh_updt_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DELETE FROM x1 WHERE f_leak(b) RETURNING *;
+NOTICE:  00000: f_leak => fgh_updt_updt
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DELETE FROM x1 WHERE f_leak(b) RETURNING *;

@@ -1,0 +1,6 @@
+DROP FOREIGN TABLE ft2 CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FOREIGN TABLE
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to table ct3
+drop cascades to foreign table ft3
+DROP FOREIGN TABLE

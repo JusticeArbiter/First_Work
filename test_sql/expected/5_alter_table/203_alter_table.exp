@@ -1,0 +1,3 @@
+ALTER TABLE tmp3 validate constraint tmpconstr;
+ERROR:  23503: insert or update on table "tmp3" violates foreign key constraint "tmpconstr"
+DETAIL:  Key (a)=(5) is not present in table "tmp2".

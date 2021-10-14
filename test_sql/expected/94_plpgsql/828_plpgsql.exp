@@ -1,0 +1,3 @@
+create function returns_rw_array(int) returns int[]  language plpgsql as $$  declare r int[];  begin r := array[$1, $1]; return r; end;  $$ stable;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

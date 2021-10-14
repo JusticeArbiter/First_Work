@@ -1,0 +1,5 @@
+LOG:  00000: statement: COMMENT ON INDEX six_wrong IS 'bad index';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "six_wrong" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  COMMENT ON INDEX six_wrong IS 'bad index';

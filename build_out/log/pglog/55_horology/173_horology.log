@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS "65", d1 AS european_iso FROM TIMESTAMP_TBL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "timestamp_tbl" does not exist at character 44
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT '' AS "65", d1 AS european_iso FROM TIMESTAMP_TBL;

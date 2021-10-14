@@ -1,0 +1,4 @@
+CREATE OR REPLACE FUNCTION dup (inout f2 anyelement, out f3 anyarray)  AS 'select $1, array[$1,$1]' LANGUAGE sql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42P13: cannot change return type of existing function
+HINT:  Use DROP FUNCTION dup(anyelement) first.

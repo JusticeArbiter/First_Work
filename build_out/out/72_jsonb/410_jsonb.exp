@@ -1,0 +1,6 @@
+SELECT count(*) FROM testjsonb WHERE j > '{"p":1}';
+ count 
+-------
+     0
+(1 row)
+

@@ -1,0 +1,3 @@
+CREATE TABLE ctas_nodata_3 (ii) AS SELECT i, j FROM ctas_base;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE AS
+SELECT 1

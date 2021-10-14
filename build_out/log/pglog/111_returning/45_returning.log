@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE OR REPLACE RULE voo_d AS ON DELETE TO voo DO INSTEAD  DELETE FROM foo WHERE f1 = old.f1  RETURNING f1, f2;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE OR REPLACE RULE voo_d AS ON DELETE TO voo DO INSTEAD  DELETE FROM foo WHERE f1 = old.f1  RETURNING f1, f2;
+ERROR:  42P01: relation "voo" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE OR REPLACE RULE voo_d AS ON DELETE TO voo DO INSTEAD  DELETE FROM foo WHERE f1 = old.f1  RETURNING f1, f2;

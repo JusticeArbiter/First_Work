@@ -1,0 +1,2 @@
+INSERT INTO collate_test22 VALUES ('foo'), ('bar'), ('baz');
+INSERT 0 3

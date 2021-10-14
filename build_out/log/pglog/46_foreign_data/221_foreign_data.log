@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE FOREIGN TABLE ft1 (  c1 integer OPTIONS ("param 1" 'val1') REFERENCES ref_table (id),  c2 text OPTIONS (param2 'val2', param3 'val3'),  c3 date  ) SERVER s0 OPTIONS (delimiter ',', quote '"', "be quoted" 'value');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FOREIGN TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE FOREIGN TABLE ft1 (  c1 integer OPTIONS ("param 1" 'val1') REFERENCES ref_table (id),  c2 text OPTIONS (param2 'val2', param3 'val3'),  c3 date  ) SERVER s0 OPTIONS (delimiter ',', quote '"', "be quoted" 'value');
+ERROR:  0A000: foreign key constraints are not supported on foreign tables at character 67
+LOCATION:  transformColumnDefinition, parse_utilcmd.c:569
+STATEMENT:  CREATE FOREIGN TABLE ft1 (  c1 integer OPTIONS ("param 1" 'val1') REFERENCES ref_table (id),  c2 text OPTIONS (param2 'val2', param3 'val3'),  c3 date  ) SERVER s0 OPTIONS (delimiter ',', quote '"', "be quoted" 'value');

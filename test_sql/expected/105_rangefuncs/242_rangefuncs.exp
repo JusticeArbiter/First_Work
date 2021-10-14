@@ -1,0 +1,6 @@
+SELECT * FROM foob(42, 99);
+ f2 | column2 
+----+---------
+ 98 | 42z
+(1 row)
+

@@ -1,0 +1,3 @@
+create table tttest (  price_id int4,  price_val int4,  price_on int4,  price_off int4 default 999999  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

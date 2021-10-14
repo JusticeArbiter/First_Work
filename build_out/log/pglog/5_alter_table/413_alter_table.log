@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc1 add constraint atacc_oid1 primary key(oid);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: multiple primary keys for table "atacc1" are not allowed
+LOCATION:  index_check_primary_key, index.c:206
+STATEMENT:  alter table atacc1 add constraint atacc_oid1 primary key(oid);

@@ -1,0 +1,2 @@
+INSERT INTO clstr_tst_s (b) VALUES (0);
+INSERT 0 1

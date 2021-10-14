@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT jsonb_build_object(r,2) FROM (SELECT 1 AS a, 2 AS b) r;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: key value must be scalar, not array, composite, or json
+LOCATION:  datum_to_jsonb, jsonb.c:725
+STATEMENT:  SELECT jsonb_build_object(r,2) FROM (SELECT 1 AS a, 2 AS b) r;

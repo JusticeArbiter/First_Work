@@ -1,0 +1,2 @@
+LOG:  00000: statement: select jsonb_concat('{"d": "test", "a": [1, 2]}', '{"g": "test2", "c": {"c1":1, "c2":2}}');
+LOCATION:  exec_simple_query, postgres.c:938

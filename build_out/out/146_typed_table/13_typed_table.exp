@@ -1,0 +1,5 @@
+SELECT * FROM get_all_persons();
+ id | name 
+----+------
+(0 rows)
+

@@ -1,0 +1,5 @@
+alter table pp1 add column a2 int check (a2 > 0);
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+NOTICE:  00000: merging definition of column "a2" for child "cc2"
+NOTICE:  00000: merging constraint "pp1_a2_check" with inherited definition
+ALTER TABLE

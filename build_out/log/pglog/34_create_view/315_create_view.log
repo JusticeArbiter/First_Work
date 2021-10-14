@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter table tt14t drop column f2;
+LOCATION:  exec_simple_query, postgres.c:938

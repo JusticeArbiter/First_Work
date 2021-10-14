@@ -1,0 +1,5 @@
+LOG:  00000: statement: create or replace temp view v1 as  select 2+2+4+(select max(unique1) from tenk1) as f1;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create or replace temp view v1 as  select 2+2+4+(select max(unique1) from tenk1) as f1;

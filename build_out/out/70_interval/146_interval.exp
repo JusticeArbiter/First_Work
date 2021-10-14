@@ -1,0 +1,6 @@
+select make_interval(years := 1, months := 6);
+ make_interval 
+---------------
+ 1 year 6 mons
+(1 row)
+

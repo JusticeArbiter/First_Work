@@ -1,0 +1,5 @@
+CREATE TRIGGER error_stmt_when BEFORE UPDATE OF a ON main_table  FOR EACH STATEMENT WHEN (OLD.* IS DISTINCT FROM NEW.*)  EXECUTE PROCEDURE trigger_func('error_stmt_when');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+ERROR:  42P17: statement trigger's WHEN condition cannot reference column values
+LINE 1: ...DATE OF a ON main_table  FOR EACH STATEMENT WHEN (OLD.* IS D...
+                                                             ^

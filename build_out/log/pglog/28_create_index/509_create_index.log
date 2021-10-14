@@ -1,0 +1,6 @@
+LOG:  00000: statement: REINDEX (VERBOSE) TABLE reindex_verbose;
+LOCATION:  exec_simple_query, postgres.c:938
+INFO:  00000: index "reindex_verbose_pkey" was reindexed
+DETAIL:  CPU 0.00s/0.00u sec elapsed 0.00 sec
+LOCATION:  reindex_index, index.c:3390
+STATEMENT:  REINDEX (VERBOSE) TABLE reindex_verbose;

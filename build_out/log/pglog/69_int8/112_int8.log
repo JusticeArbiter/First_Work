@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT CAST(q1 AS int2) FROM int8_tbl WHERE q2 <> 456;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: smallint out of range
+LOCATION:  int82, int8.c:1323
+STATEMENT:  SELECT CAST(q1 AS int2) FROM int8_tbl WHERE q2 <> 456;

@@ -1,0 +1,6 @@
+LOG:  00000: statement: select '{{},{}}'::text[];
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: malformed array literal: "{{},{}}" at character 8
+DETAIL:  Unexpected "}" character.
+LOCATION:  ArrayCount, arrayfuncs.c:586
+STATEMENT:  select '{{},{}}'::text[];

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT * FROM ft1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  55000: foreign-data wrapper "dummy" has no handler
+LOCATION:  GetFdwRoutineByServerId, foreign.c:361
+STATEMENT:  SELECT * FROM ft1;

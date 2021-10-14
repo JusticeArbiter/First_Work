@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION get_default_test() RETURNS SETOF default_test_row AS ' SELECT * FROM default_test;  ' LANGUAGE SQL;
+LOCATION:  exec_simple_query, postgres.c:938

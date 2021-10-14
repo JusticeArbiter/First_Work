@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS ctlt4, ctlt10, ctlt11, ctlt11a, ctlt12;
+NOTICE:  00000: table "ctlt10" does not exist, skipping
+DROP TABLE

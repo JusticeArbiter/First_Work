@@ -1,0 +1,5 @@
+select sum(ten) from onek group by rollup(four::text), two order by 1;
+ sum 
+-----
+(0 rows)
+

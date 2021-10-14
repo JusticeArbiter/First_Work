@@ -1,0 +1,2 @@
+select '{2,1}'::orderedarray;
+ERROR:  23514: value for domain orderedarray violates check constraint "sorted"

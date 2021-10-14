@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT line '[(1,2),(3,4)]' = line '[(3,4),(4,4)]';
+LOCATION:  exec_simple_query, postgres.c:938

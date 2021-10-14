@@ -1,0 +1,5 @@
+SELECT * FROM atest1;
+ a | b 
+---+---
+(0 rows)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: COPY copy_t FROM STDIN;
+LOCATION:  exec_simple_query, postgres.c:938

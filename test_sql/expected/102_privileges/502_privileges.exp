@@ -1,0 +1,6 @@
+SELECT lo_put(1002, 1, 'abcd');
+ lo_put 
+--------
+ 
+(1 row)
+

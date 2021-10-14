@@ -1,0 +1,6 @@
+SELECT jsonb_typeof('"1.0"') AS string;
+ string 
+--------
+ string
+(1 row)
+

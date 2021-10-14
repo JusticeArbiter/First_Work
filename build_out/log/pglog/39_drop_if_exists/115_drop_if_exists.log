@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP CAST IF EXISTS (no_such_type1 AS INTEGER);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: type "no_such_type1" does not exist, skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:446
+STATEMENT:  DROP CAST IF EXISTS (no_such_type1 AS INTEGER);

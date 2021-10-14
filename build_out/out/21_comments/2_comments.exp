@@ -1,0 +1,6 @@
+SELECT /* embedded single line */ 'embedded' AS second;
+  second  
+----------
+ embedded
+(1 row)
+

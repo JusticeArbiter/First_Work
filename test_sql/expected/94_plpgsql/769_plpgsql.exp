@@ -1,0 +1,12 @@
+DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, comment FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+NOTICE:  00000: 001, Entrance
+NOTICE:  00000: 002, Office
+NOTICE:  00000: 003, Office
+NOTICE:  00000: 004, Technical
+NOTICE:  00000: 101, Office
+NOTICE:  00000: 102, Conference
+NOTICE:  00000: 103, Restroom
+NOTICE:  00000: 104, Technical
+NOTICE:  00000: 105, Office
+NOTICE:  00000: 106, Office
+DO

@@ -1,0 +1,2 @@
+LOG:  00000: statement: select concat(1,2,3,'hello',true, false, to_date('20100309','YYYYMMDD'));
+LOCATION:  exec_simple_query, postgres.c:938

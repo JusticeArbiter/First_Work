@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT b < '08:00:2b:01:02:04' FROM macaddr_data WHERE a = 1;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+select * from myview;
+ b | c | d 
+---+---+---
+(0 rows)
+

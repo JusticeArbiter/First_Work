@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO INET_TBL (c, i) VALUES ('10.1.2.3', '10.1.2.3/32');
+LOCATION:  exec_simple_query, postgres.c:938

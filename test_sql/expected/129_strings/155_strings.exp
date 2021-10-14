@@ -1,0 +1,6 @@
+SELECT text 'text' || varchar ' and varchar' AS "Concat text to varchar";
+ Concat text to varchar 
+------------------------
+ text and varchar
+(1 row)
+

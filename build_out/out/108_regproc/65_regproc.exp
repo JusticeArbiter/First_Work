@@ -1,0 +1,6 @@
+SELECT to_regtype('ng_catalog.int4');
+ to_regtype 
+------------
+ 
+(1 row)
+

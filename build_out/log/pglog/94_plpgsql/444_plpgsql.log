@@ -1,0 +1,5 @@
+LOG:  00000: statement: create function raise_exprs() returns void as $$  declare  a integer[] = '{10,20,30}';  c varchar = 'xyz';  i integer;  begin  i := 2;  raise notice '%; %; %; %; %; %', a, a[i], c, (select c || 'abc'), row(10,'aaa',NULL,30), NULL;  end;$$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function raise_exprs() returns void as $$  declare  a integer[] = '{10,20,30}';  c varchar = 'xyz';  i integer;  begin  i := 2;  raise notice '%; %; %; %; %; %', a, a[i], c, (select c || 'abc'), row(10,'aaa',NULL,30), NULL;  end;$$ language plpgsql;

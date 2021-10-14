@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT has_sequence_privilege('regressuser1', 'x_seq', 'INSERT');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: unrecognized privilege type: "INSERT"
+LOCATION:  convert_any_priv_string, acl.c:1688
+STATEMENT:  SELECT has_sequence_privilege('regressuser1', 'x_seq', 'INSERT');

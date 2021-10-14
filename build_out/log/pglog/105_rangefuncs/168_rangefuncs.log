@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE FUNCTION foo_sql(int,int) RETURNS setof foo_rescan_t AS 'SELECT i, nextval(''foo_rescan_seq1'') FROM generate_series($1,$2) i;' LANGUAGE SQL;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE FUNCTION foo_sql(int,int) RETURNS setof foo_rescan_t AS 'SELECT i, nextval(''foo_rescan_seq1'') FROM generate_series($1,$2) i;' LANGUAGE SQL;
+ERROR:  42P01: relation "foo_rescan_seq1" does not exist at character 83
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE FUNCTION foo_sql(int,int) RETURNS setof foo_rescan_t AS 'SELECT i, nextval(''foo_rescan_seq1'') FROM generate_series($1,$2) i;' LANGUAGE SQL;

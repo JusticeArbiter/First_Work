@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER COLLATION test11 OWNER TO regress_test_role;
+LOCATION:  exec_simple_query, postgres.c:938

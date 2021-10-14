@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE collate_test22 ADD FOREIGN KEY (f2) REFERENCES collate_test20;
+LOCATION:  exec_simple_query, postgres.c:938

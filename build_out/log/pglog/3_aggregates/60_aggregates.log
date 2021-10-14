@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT  BIT_AND(i2) AS "?",  BIT_OR(i4) AS "?"  FROM bitwise_test;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "bitwise_test" does not exist at character 54
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT  BIT_AND(i2) AS "?",  BIT_OR(i4) AS "?"  FROM bitwise_test;

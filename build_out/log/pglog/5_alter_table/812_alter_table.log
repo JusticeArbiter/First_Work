@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table recur1 add column f2 int;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "recur1" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  alter table recur1 add column f2 int;

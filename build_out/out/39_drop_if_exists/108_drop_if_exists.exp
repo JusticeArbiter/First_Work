@@ -1,0 +1,2 @@
+DROP OPERATOR FAMILY IF EXISTS test_operator_family USING no_such_am;
+ERROR:  42704: access method "no_such_am" does not exist

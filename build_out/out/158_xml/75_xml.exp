@@ -1,0 +1,6 @@
+SELECT xmlroot (  xmlelement (  name gazonk,  xmlattributes (  'val' AS name,  1 + 1 AS num  ),  xmlelement (  NAME qux,  'foo'  )  ),  version '1.0',  standalone yes  );
+                                         xmlroot                                          
+------------------------------------------------------------------------------------------
+ <?xml version="1.0" standalone="yes"?><gazonk name="val" num="2"><qux>foo</qux></gazonk>
+(1 row)
+

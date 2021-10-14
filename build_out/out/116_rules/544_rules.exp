@@ -1,0 +1,7 @@
+INSERT INTO hats VALUES ('h8', 'white') RETURNING *;
+  hat_name  | hat_color  
+------------+------------
+ h8         | white     
+(1 row)
+
+INSERT 0 1

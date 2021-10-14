@@ -1,0 +1,2 @@
+LOG:  00000: statement: DROP DOMAIN IF EXISTS test_domain_exists;
+LOCATION:  exec_simple_query, postgres.c:938

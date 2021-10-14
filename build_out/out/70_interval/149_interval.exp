@@ -1,0 +1,6 @@
+select make_interval(hours := -2, mins := -10, secs := -25.3);
+ make_interval 
+---------------
+ -02:10:25.3
+(1 row)
+

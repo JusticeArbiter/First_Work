@@ -1,0 +1,8 @@
+SELECT f1 AS "Three" FROM TIME_TBL WHERE f1 < '05:06:07';
+  Three   
+----------
+ 00:00:00
+ 01:00:00
+ 02:03:00
+(3 rows)
+

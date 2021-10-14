@@ -1,0 +1,9 @@
+SELECT * from PKTABLE;
+ ptest1 | ptest2 | ptest3 | ptest4 
+--------+--------+--------+--------
+      2 |     -1 |      5 | test5
+      0 |     -1 |     -2 | test1
+      2 |     10 |      5 | test4
+      1 |      2 |      3 | test2
+(4 rows)
+

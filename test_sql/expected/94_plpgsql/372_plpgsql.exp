@@ -1,0 +1,4 @@
+insert into users values('user1');
+ERROR:  42P01: relation "users" does not exist
+LINE 1: insert into users values('user1');
+                    ^

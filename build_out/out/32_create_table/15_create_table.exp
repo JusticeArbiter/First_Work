@@ -1,0 +1,2 @@
+CREATE TABLE ihighway () INHERITS (road);
+CREATE TABLE

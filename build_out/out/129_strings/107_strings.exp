@@ -1,0 +1,6 @@
+SELECT 'indio' NOT LIKE 'in_o' AS "true";
+ true 
+------
+ t
+(1 row)
+

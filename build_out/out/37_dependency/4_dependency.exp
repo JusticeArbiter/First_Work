@@ -1,0 +1,2 @@
+CREATE GROUP regression_group;
+CREATE ROLE

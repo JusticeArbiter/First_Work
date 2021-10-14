@@ -1,0 +1,5 @@
+LOG:  00000: statement: explain (costs off)  SELECT unique1 FROM tenk1  WHERE unique1 IN (1,42,7)  ORDER BY unique1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tenk1" does not exist at character 42
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  explain (costs off)  SELECT unique1 FROM tenk1  WHERE unique1 IN (1,42,7)  ORDER BY unique1;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: COMMENT ON TABLE tmp_wrong IS 'table comment';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tmp_wrong" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  COMMENT ON TABLE tmp_wrong IS 'table comment';

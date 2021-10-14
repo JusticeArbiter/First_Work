@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE OPERATOR <% (  leftarg = point,  rightarg = widget,  procedure = pt_in_widget,  commutator = >% ,  negator = >=%  );
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: type "widget" does not exist
+LOCATION:  typenameType, parse_type.c:257
+STATEMENT:  CREATE OPERATOR <% (  leftarg = point,  rightarg = widget,  procedure = pt_in_widget,  commutator = >% ,  negator = >=%  );

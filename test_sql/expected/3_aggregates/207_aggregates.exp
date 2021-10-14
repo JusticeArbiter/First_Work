@@ -1,0 +1,5 @@
+select rank(x) within group (order by x) from generate_series(1,5) x;
+ERROR:  42803: column "x.x" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: select rank(x) within group (order by x) from generate_serie...
+                    ^
+DETAIL:  Direct arguments of an ordered-set aggregate must use only grouped columns.

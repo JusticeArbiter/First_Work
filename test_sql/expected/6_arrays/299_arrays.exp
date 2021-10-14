@@ -1,0 +1,8 @@
+select unnest(array[1,2,3]);
+ unnest 
+--------
+      1
+      2
+      3
+(3 rows)
+

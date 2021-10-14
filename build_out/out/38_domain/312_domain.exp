@@ -1,0 +1,2 @@
+create table dom_table (x inotnull);
+CREATE TABLE

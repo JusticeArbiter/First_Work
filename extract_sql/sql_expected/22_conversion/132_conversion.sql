@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'WIN1254', 'UTF8');

@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'JOHAB', 'UTF8');

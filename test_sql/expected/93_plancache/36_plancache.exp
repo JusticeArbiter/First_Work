@@ -1,0 +1,2 @@
+insert into s1.abc values(123);
+INSERT 0 1

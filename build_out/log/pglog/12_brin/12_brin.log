@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT brin_summarize_new_values('brintest');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: "brintest" is not an index
+LOCATION:  index_open, indexam.c:173
+STATEMENT:  SELECT brin_summarize_new_values('brintest');

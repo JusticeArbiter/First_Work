@@ -1,0 +1,4 @@
+SELECT 'N A N'::float8;
+ERROR:  22P02: invalid input syntax for type double precision: "N A N"
+LINE 1: SELECT 'N A N'::float8;
+               ^

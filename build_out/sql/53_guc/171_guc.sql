@@ -1,0 +1,1 @@
+select myfunc(0);

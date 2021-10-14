@@ -1,0 +1,4 @@
+explain (costs off)  select min(tenthous) from tenk1 where thousand = 33;
+ERROR:  42P01: relation "tenk1" does not exist
+LINE 1: explain (costs off)  select min(tenthous) from tenk1 where t...
+                                                       ^

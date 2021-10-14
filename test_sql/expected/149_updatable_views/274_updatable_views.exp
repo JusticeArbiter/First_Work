@@ -1,0 +1,7 @@
+UPDATE rw_view1 SET a = 1.05 WHERE a = 1.1 RETURNING s;
+         s         
+-------------------
+ 0.867423225594017
+(1 row)
+
+UPDATE 1

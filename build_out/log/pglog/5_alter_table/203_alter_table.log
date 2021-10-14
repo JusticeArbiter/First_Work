@@ -1,0 +1,6 @@
+LOG:  00000: statement: ALTER TABLE tmp3 validate constraint tmpconstr;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: insert or update on table "tmp3" violates foreign key constraint "tmpconstr"
+DETAIL:  Key (a)=(5) is not present in table "tmp2".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3324
+STATEMENT:  ALTER TABLE tmp3 validate constraint tmpconstr;

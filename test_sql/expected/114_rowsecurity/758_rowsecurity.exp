@@ -1,0 +1,8 @@
+INSERT INTO r1 VALUES (10), (20) RETURNING *;
+ a  
+----
+ 10
+ 20
+(2 rows)
+
+INSERT 0 2

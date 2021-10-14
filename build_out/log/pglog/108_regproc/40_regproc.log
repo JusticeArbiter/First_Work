@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT regoper('ng_catalog.||/');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  3F000: schema "ng_catalog" does not exist at character 16
+LOCATION:  get_namespace_oid, namespace.c:2873
+STATEMENT:  SELECT regoper('ng_catalog.||/');

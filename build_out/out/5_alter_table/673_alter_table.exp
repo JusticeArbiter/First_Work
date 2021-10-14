@@ -1,0 +1,3 @@
+drop table p1 cascade;
+NOTICE:  00000: drop cascades to table c1
+DROP TABLE

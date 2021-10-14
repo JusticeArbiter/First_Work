@@ -1,0 +1,7 @@
+REFRESH MATERIALIZED VIEW CONCURRENTLY mv_foo;
+NOTICE:  00000: test_event_trigger: ddl_command_start REFRESH MATERIALIZED VIEW
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE AS
+CONTEXT:  SQL statement "CREATE TEMP TABLE pg_temp_2.pg_temp_23098_2 AS SELECT mv.ctid AS tid, newdata FROM public.mv_foo mv FULL JOIN pg_temp_2.pg_temp_23098 newdata ON (newdata.i OPERATOR(pg_catalog.=) mv.i AND newdata OPERATOR(pg_catalog.*=) mv) WHERE newdata IS NULL OR mv IS NULL ORDER BY tid"
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+CONTEXT:  SQL statement "DROP TABLE pg_temp_2.pg_temp_23098_2, pg_temp_2.pg_temp_23098"
+REFRESH MATERIALIZED VIEW

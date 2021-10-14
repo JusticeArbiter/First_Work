@@ -1,0 +1,5 @@
+LOG:  00000: statement: select array(select percentile_disc(a) within group (order by x)  from (values (0.3),(0.7)) v(a) group by a)  from generate_series(1,5) g(x);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42803: outer-level aggregate cannot contain a lower-level variable in its direct arguments at character 37
+LOCATION:  check_agg_arguments, parse_agg.c:622
+STATEMENT:  select array(select percentile_disc(a) within group (order by x)  from (values (0.3),(0.7)) v(a) group by a)  from generate_series(1,5) g(x);

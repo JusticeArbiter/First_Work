@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT int4 '1000' < int4 '999' AS false;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+select 33.4 = any (array[1,2,3]);
+ ?column? 
+----------
+ f
+(1 row)
+

@@ -1,0 +1,6 @@
+select pleast(10,1,2,3,-16);
+ pleast 
+--------
+    -16
+(1 row)
+

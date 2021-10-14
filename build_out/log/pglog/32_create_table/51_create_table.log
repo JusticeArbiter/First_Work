@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TEMP TABLE public.temp_to_perm (a int primary key);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: cannot create temporary relation in non-temporary schema at character 19
+LOCATION:  RangeVarAdjustRelationPersistence, namespace.c:643
+STATEMENT:  CREATE TEMP TABLE public.temp_to_perm (a int primary key);

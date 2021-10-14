@@ -1,0 +1,6 @@
+SELECT 'supernova'::tsvector @@ 'super'::tsquery AS "false";
+ false 
+-------
+ f
+(1 row)
+

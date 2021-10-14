@@ -1,0 +1,6 @@
+SELECT jsonb_exists_any('{"a":null, "b":"qq"}', ARRAY['a','b']);
+ jsonb_exists_any 
+------------------
+ t
+(1 row)
+

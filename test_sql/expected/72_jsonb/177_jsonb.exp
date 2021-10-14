@@ -1,0 +1,6 @@
+SELECT jsonb_exists('{"a":null, "b":"qq"}', 'c');
+ jsonb_exists 
+--------------
+ f
+(1 row)
+

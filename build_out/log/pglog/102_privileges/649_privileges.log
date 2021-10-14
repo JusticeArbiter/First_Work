@@ -1,0 +1,5 @@
+LOG:  00000: statement: REVOKE SELECT ON lock_table FROM locktable_user;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start REVOKE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  REVOKE SELECT ON lock_table FROM locktable_user;

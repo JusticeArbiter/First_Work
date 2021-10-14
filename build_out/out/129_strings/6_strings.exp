@@ -1,0 +1,6 @@
+SELECT 'tricky' AS U&"\" UESCAPE '!';
+   \    
+--------
+ tricky
+(1 row)
+

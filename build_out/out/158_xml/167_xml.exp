@@ -1,0 +1,6 @@
+SELECT xpath('/*', '<nosuchprefix:tag/>');
+ERROR:  2200M: could not parse XML document
+DETAIL:  line 1: Namespace prefix nosuchprefix on tag is not defined
+<nosuchprefix:tag/>
+                 ^
+CONTEXT:  SQL function "xpath" statement 1

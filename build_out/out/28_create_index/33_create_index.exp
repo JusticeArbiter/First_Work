@@ -1,0 +1,4 @@
+INSERT INTO gpolygon_tbl VALUES ( '(0,1000,1000,1000)' );
+ERROR:  42P01: relation "gpolygon_tbl" does not exist
+LINE 1: INSERT INTO gpolygon_tbl VALUES ( '(0,1000,1000,1000)' );
+                    ^

@@ -1,0 +1,2 @@
+DROP VIEW test_view_exists;
+ERROR:  42P01: view "test_view_exists" does not exist

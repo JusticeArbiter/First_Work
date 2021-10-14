@@ -1,0 +1,4 @@
+create function bogus_func(anyelement)  returns anyrange as 'select int4range(1,10)' language sql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42P13: cannot determine result data type
+DETAIL:  A function returning "anyrange" must have at least one "anyrange" argument.

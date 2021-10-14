@@ -1,0 +1,4 @@
+select (row('Jim', 'Beam')).text;
+ERROR:  42703: could not identify column "text" in record data type
+LINE 1: select (row('Jim', 'Beam')).text;
+                ^

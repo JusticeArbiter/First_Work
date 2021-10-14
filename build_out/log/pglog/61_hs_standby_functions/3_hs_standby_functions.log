@@ -1,0 +1,6 @@
+LOG:  00000: statement: select pg_start_backup('should fail');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  55000: WAL level not sufficient for making an online backup
+HINT:  wal_level must be set to "archive", "hot_standby", or "logical" at server start.
+LOCATION:  do_pg_start_backup, xlog.c:9837
+STATEMENT:  select pg_start_backup('should fail');

@@ -1,0 +1,6 @@
+SELECT interval '999' month;
+    interval     
+-----------------
+ 83 years 3 mons
+(1 row)
+

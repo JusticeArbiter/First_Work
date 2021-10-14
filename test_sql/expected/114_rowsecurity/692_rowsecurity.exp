@@ -1,0 +1,2 @@
+UPDATE r1 SET a = 1;
+UPDATE 3

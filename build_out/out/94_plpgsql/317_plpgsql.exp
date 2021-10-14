@@ -1,0 +1,7 @@
+select * from f1(42);
+ j  |  k   
+----+------
+ 43 | foo
+ 44 | foot
+(2 rows)
+

@@ -1,0 +1,4 @@
+WITH RECURSIVE x(id) AS (values (1)  UNION ALL  SELECT (SELECT * FROM x) FROM x WHERE id < 5  ) SELECT * FROM x;
+ERROR:  42P19: recursive reference to query "x" must not appear within a subquery
+LINE 1: ... AS (values (1)  UNION ALL  SELECT (SELECT * FROM x) FROM x ...
+                                                             ^

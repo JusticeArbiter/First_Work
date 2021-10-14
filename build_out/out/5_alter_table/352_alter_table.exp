@@ -1,0 +1,2 @@
+alter table atacc3 inherit atacc2;
+ERROR:  42804: child table is missing constraint "foo"

@@ -1,0 +1,2 @@
+insert into s2.abc values(456);
+INSERT 0 1

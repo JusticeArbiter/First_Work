@@ -1,0 +1,8 @@
+select * from rtest_admin order by pname, sysname;
+ pname  | sysname 
+--------+---------
+ bm     | pluto
+ jwieck | notjw
+ jwieck | orion
+(3 rows)
+

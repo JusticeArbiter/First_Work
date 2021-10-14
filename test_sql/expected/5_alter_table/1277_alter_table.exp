@@ -1,0 +1,2 @@
+ALTER TABLE new_system_table SET SCHEMA pg_catalog;
+ERROR:  42P07: table new_system_table is already in schema "pg_catalog"

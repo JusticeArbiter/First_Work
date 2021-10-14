@@ -1,0 +1,2 @@
+select format('Hello %s');
+ERROR:  22023: too few arguments for format

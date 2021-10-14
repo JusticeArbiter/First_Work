@@ -1,0 +1,6 @@
+SELECT 'bbc' COLLATE "C" > 'Abc' COLLATE "C" AS "true";
+ true 
+------
+ t
+(1 row)
+

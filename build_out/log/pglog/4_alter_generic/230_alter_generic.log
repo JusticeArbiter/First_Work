@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf17 USING btree ADD  OPERATOR 1 < (int4, int2) ,  OPERATOR 2 <= (int4, int2) ,  OPERATOR 3 = (int4, int2) ,  OPERATOR 4 >= (int4, int2) ,  OPERATOR 5 > (int4, int2) ,  FUNCTION 1 btint42cmp(int4, int2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: operator 1(integer,smallint) already exists in operator family "alt_opf17"
+LOCATION:  storeOperators, opclasscmds.c:1318
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf17 USING btree ADD  OPERATOR 1 < (int4, int2) ,  OPERATOR 2 <= (int4, int2) ,  OPERATOR 3 = (int4, int2) ,  OPERATOR 4 >= (int4, int2) ,  OPERATOR 5 > (int4, int2) ,  FUNCTION 1 btint42cmp(int4, int2);

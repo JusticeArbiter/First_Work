@@ -1,0 +1,2 @@
+fetch 1 from hsc;
+ERROR:  34000: cursor "hsc" does not exist

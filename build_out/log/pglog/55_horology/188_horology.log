@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT to_timestamp('97/Feb/16', 'YYMonDD');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid value "/Fe" for "Mon"
+DETAIL:  The given value did not match any of the allowed values for this field.
+LOCATION:  from_char_seq_search, formatting.c:2356
+STATEMENT:  SELECT to_timestamp('97/Feb/16', 'YYMonDD');

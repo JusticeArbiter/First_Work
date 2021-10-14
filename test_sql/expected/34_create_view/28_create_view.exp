@@ -1,0 +1,2 @@
+CREATE SCHEMA test_schema  CREATE TEMP VIEW testview AS SELECT 1;
+ERROR:  42P16: cannot create temporary relation in non-temporary schema

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT description FROM pg_description, pg_constraint c WHERE classoid = 'pg_constraint'::regclass AND objoid = c.oid AND c.conrelid = 'ctlt1_inh'::regclass;
+LOCATION:  exec_simple_query, postgres.c:938

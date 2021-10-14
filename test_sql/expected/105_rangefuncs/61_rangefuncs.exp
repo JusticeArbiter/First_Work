@@ -1,0 +1,7 @@
+select foot.fooid, foot.f2 from foot(sin(pi()/2)::int) ORDER BY 1,2;
+ fooid | f2  
+-------+-----
+     1 |  11
+     1 | 111
+(2 rows)
+

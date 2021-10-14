@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into insertconflicttest values (1, 'Apple') on conflict (key) do update set fruit = excluded.fruit RETURNING excluded.fruit;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: invalid reference to FROM-clause entry for table "excluded" at character 117
+HINT:  There is an entry for table "excluded", but it cannot be referenced from this part of the query.
+LOCATION:  errorMissingRTE, parse_relation.c:3134
+STATEMENT:  insert into insertconflicttest values (1, 'Apple') on conflict (key) do update set fruit = excluded.fruit RETURNING excluded.fruit;

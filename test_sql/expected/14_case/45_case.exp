@@ -1,0 +1,6 @@
+SELECT CASE volfoo('bar') WHEN 'foo'::foodomain THEN 'is foo' ELSE 'is not foo' END;
+    case    
+------------
+ is not foo
+(1 row)
+

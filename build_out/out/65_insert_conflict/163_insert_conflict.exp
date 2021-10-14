@@ -1,0 +1,7 @@
+insert into testoids values(3, '2') on conflict (key) do update set data = excluded.data RETURNING *;
+ key | data 
+-----+------
+   3 | 2
+(1 row)
+
+INSERT 0 1

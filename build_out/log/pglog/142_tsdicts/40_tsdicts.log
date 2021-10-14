@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TEXT SEARCH CONFIGURATION ispell_tst ALTER MAPPING FOR  word, numword, asciiword, hword, numhword, asciihword, hword_part, hword_numpart, hword_asciipart  WITH ispell, english_stem;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TEXT SEARCH CONFIGURATION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER TEXT SEARCH CONFIGURATION ispell_tst ALTER MAPPING FOR  word, numword, asciiword, hword, numhword, asciihword, hword_part, hword_numpart, hword_asciipart  WITH ispell, english_stem;

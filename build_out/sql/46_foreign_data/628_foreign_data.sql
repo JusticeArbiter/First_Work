@@ -1,0 +1,1 @@
+SELECT s.srvname,  pg_catalog.array_to_string(ARRAY(  SELECT pg_catalog.quote_ident(option_name) || ' ' || pg_catalog.quote_literal(option_value)  FROM pg_catalog.pg_options_to_table(ftoptions)), ', ')  FROM pg_catalog.pg_foreign_table f,  pg_catalog.pg_foreign_server s  WHERE f.ftrelid = '21598' AND s.oid = f.ftserver;

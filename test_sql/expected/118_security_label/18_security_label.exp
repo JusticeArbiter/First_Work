@@ -1,0 +1,3 @@
+SECURITY LABEL FOR 'dummy' ON TABLE seclabel_tbl1 IS 'classified';
+NOTICE:  00000: test_event_trigger: ddl_command_start SECURITY LABEL
+ERROR:  22023: security label provider "dummy" is not loaded

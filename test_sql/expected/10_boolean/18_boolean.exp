@@ -1,0 +1,6 @@
+SELECT bool 'of' AS false;
+ false 
+-------
+ f
+(1 row)
+

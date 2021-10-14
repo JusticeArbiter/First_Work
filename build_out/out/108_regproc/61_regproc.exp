@@ -1,0 +1,6 @@
+SELECT to_regoperator('ng_catalog.+(int4,int4)');
+ to_regoperator 
+----------------
+ 
+(1 row)
+

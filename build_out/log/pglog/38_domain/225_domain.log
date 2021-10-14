@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table domain_test add column d str_domain2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: value for domain str_domain2 violates check constraint "str_domain2_check"
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4060
+STATEMENT:  alter table domain_test add column d str_domain2;

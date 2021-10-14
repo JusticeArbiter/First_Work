@@ -1,0 +1,2 @@
+insert into rtest_interface values ('neptun', 'eth0');
+INSERT 0 1

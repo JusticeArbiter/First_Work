@@ -1,0 +1,8 @@
+explain (verbose, costs off)  select consumes_rw_array(a), a from returns_rw_array(1) a;
+                 QUERY PLAN                 
+--------------------------------------------
+ Function Scan on public.returns_rw_array a
+   Output: consumes_rw_array(a), a
+   Function Call: returns_rw_array(1)
+(3 rows)
+

@@ -1,0 +1,2 @@
+ALTER TABLE onek RENAME CONSTRAINT onek_unique1_constraint TO onek_unique1_constraint_foo;
+ERROR:  42P01: relation "onek" does not exist

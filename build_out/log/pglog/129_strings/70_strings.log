@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT regexp_matches('foobarbequebaz', $re$(bar)(beque){2,1}$re$);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2201B: invalid regular expression: invalid repetition count(s)
+LOCATION:  RE_compile_and_cache, regexp.c:204
+STATEMENT:  SELECT regexp_matches('foobarbequebaz', $re$(bar)(beque){2,1}$re$);

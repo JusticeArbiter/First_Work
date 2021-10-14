@@ -1,0 +1,2 @@
+INSERT INTO BIT_TABLE VALUES (B'101011111010');
+ERROR:  22026: bit string length 12 does not match type bit(11)

@@ -1,0 +1,6 @@
+LOG:  00000: statement: select ''::textrange;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: malformed range literal: "" at character 8
+DETAIL:  Missing left parenthesis or bracket.
+LOCATION:  range_parse, rangetypes.c:2038
+STATEMENT:  select ''::textrange;

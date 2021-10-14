@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT xmlelement(name duplicate, xmlattributes(1 as a, 2 as b, 3 as a));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: XML attribute name "a" appears more than once at character 65
+LOCATION:  transformXmlExpr, parse_expr.c:2224
+STATEMENT:  SELECT xmlelement(name duplicate, xmlattributes(1 as a, 2 as b, 3 as a));

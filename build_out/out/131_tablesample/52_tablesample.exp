@@ -1,0 +1,2 @@
+SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (NULL);
+ERROR:  2202H: TABLESAMPLE parameter cannot be null

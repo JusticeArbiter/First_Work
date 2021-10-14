@@ -1,0 +1,6 @@
+select has_table_privilege(current_user,'atest1','select');
+ has_table_privilege 
+---------------------
+ t
+(1 row)
+

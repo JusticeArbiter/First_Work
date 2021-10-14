@@ -1,0 +1,1 @@
+INSERT INTO foo VALUES(3, 4, 5);

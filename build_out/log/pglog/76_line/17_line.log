@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM LINE_TBL WHERE (point '(0.1,0.1)' <-> s) < 1;
+LOCATION:  exec_simple_query, postgres.c:938

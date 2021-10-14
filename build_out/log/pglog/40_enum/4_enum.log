@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT 'mauve'::rainbow;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input value for enum rainbow: "mauve" at character 8
+LOCATION:  enum_in, enum.c:60
+STATEMENT:  SELECT 'mauve'::rainbow;

@@ -1,0 +1,2 @@
+ALTER TABLE unlogged2 SET LOGGED;
+ERROR:  42P16: could not change table "unlogged2" to logged because it references unlogged table "unlogged1"

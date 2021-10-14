@@ -1,0 +1,2 @@
+LOG:  00000: statement: create aggregate my_percentile_disc(float8 ORDER BY anyelement) (  stype = internal,  sfunc = ordered_set_transition,  finalfunc = percentile_disc_final,  finalfunc_extra = true  );
+LOCATION:  exec_simple_query, postgres.c:938

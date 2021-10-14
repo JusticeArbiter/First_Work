@@ -1,0 +1,6 @@
+SELECT conname as constraint, obj_description(oid, 'pg_constraint') as comment FROM pg_constraint where conrelid = 'comment_test_child'::regclass ORDER BY 1, 2;
+      constraint       |                   comment                    
+-----------------------+----------------------------------------------
+ comment_test_child_fk | FOREIGN KEY constraint of comment_test_child
+(1 row)
+

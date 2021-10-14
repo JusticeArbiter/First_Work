@@ -1,0 +1,4 @@
+SELECT count(DISTINCT four) AS cnt_4 FROM onek;
+ERROR:  42P01: relation "onek" does not exist
+LINE 1: SELECT count(DISTINCT four) AS cnt_4 FROM onek;
+                                                  ^

@@ -1,0 +1,20 @@
+DROP TABLE base_tbl CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+NOTICE:  00000: drop cascades to 16 other objects
+DETAIL:  drop cascades to view ro_view1
+drop cascades to view ro_view17
+drop cascades to view ro_view2
+drop cascades to view ro_view3
+drop cascades to view ro_view5
+drop cascades to view ro_view6
+drop cascades to view ro_view7
+drop cascades to view ro_view8
+drop cascades to view ro_view9
+drop cascades to view ro_view11
+drop cascades to view ro_view13
+drop cascades to view rw_view15
+drop cascades to view rw_view16
+drop cascades to view ro_view20
+drop cascades to view ro_view4
+drop cascades to view rw_view14
+DROP TABLE

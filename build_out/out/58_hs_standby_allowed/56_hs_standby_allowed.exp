@@ -1,0 +1,2 @@
+CLOSE hsc;
+ERROR:  34000: cursor "hsc" does not exist

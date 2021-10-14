@@ -1,0 +1,5 @@
+LOG:  00000: statement: do $$  begin  assert NULL; -- should fail  end;  $$;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: syntax error at end of input at character 50
+LOCATION:  plpgsql_yyerror, pl_scanner.c:623
+STATEMENT:  do $$  begin  assert NULL; -- should fail  end;  $$;

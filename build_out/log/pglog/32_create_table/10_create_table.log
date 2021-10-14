@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE city (  name name,  location box,  budget city_budget  );
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: type "city_budget" does not exist at character 56
+LOCATION:  typenameType, parse_type.c:257
+STATEMENT:  CREATE TABLE city (  name name,  location box,  budget city_budget  );

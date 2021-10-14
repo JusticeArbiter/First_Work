@@ -1,0 +1,11 @@
+LOG:  00000: statement: UPDATE rw_view1 SET person=person WHERE snoop(person);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: snooped value: Tom
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE rw_view1 SET person=person WHERE snoop(person);
+NOTICE:  00000: snooped value: Dick
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE rw_view1 SET person=person WHERE snoop(person);
+NOTICE:  00000: snooped value: Harry
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE rw_view1 SET person=person WHERE snoop(person);

@@ -1,0 +1,3 @@
+COMMENT ON FUNCTION tg_hub_adjustslots_wrong(bpchar, integer, integer) IS 'function with args';
+NOTICE:  00000: test_event_trigger: ddl_command_start COMMENT
+ERROR:  42883: function tg_hub_adjustslots_wrong(character, integer, integer) does not exist

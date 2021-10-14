@@ -1,0 +1,6 @@
+SELECT array_agg(b ORDER BY b) FROM collate_test1;
+     array_agg     
+-------------------
+ {abc,ABC,äbc,bbc}
+(1 row)
+

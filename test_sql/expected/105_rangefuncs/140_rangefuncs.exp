@@ -1,0 +1,6 @@
+SELECT * FROM getfoo9(1) WITH ORDINALITY AS t1(a,b,c,o);
+ a | b |  c  | o 
+---+---+-----+---
+ 1 | 1 | Joe | 1
+(1 row)
+

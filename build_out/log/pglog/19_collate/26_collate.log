@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE DOMAIN testdomain_i AS int COLLATE "POSIX";
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: collations are not supported by type integer
+LOCATION:  DefineDomain, typecmds.c:826
+STATEMENT:  CREATE DOMAIN testdomain_i AS int COLLATE "POSIX";

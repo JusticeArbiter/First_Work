@@ -1,0 +1,5 @@
+SELECT * FROM toyemp WHERE name = 'sharon';
+ name | age | location | annualsal 
+------+-----+----------+-----------
+(0 rows)
+

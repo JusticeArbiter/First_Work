@@ -1,0 +1,6 @@
+select json '{ "a": "dollar \u0024 character" }' as correct_everywhere;
+         correct_everywhere         
+------------------------------------
+ { "a": "dollar \u0024 character" }
+(1 row)
+

@@ -1,0 +1,2 @@
+SELECT chr(0);
+ERROR:  54000: null character not permitted

@@ -1,0 +1,4 @@
+SELECT regoper('ng_catalog.||/');
+ERROR:  3F000: schema "ng_catalog" does not exist
+LINE 1: SELECT regoper('ng_catalog.||/');
+                       ^

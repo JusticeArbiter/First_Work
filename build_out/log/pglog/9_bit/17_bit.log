@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT v, length(v) AS lv  FROM VARBIT_TABLE;
+LOCATION:  exec_simple_query, postgres.c:938

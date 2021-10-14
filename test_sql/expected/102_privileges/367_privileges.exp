@@ -1,0 +1,6 @@
+DROP TYPE testtype1;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TYPE
+ERROR:  2BP01: cannot drop type testtype1 because other objects depend on it
+DETAIL:  table test10a column b depends on type testtype1[]
+table test6a depends on type testtype1
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.

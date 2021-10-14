@@ -1,0 +1,2 @@
+select 'a' ~ '\x7fffffff';
+ERROR:  2201B: invalid regular expression: invalid escape \ sequence

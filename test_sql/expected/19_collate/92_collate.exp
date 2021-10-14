@@ -1,0 +1,17 @@
+SELECT * FROM unnest((SELECT array_agg(b ORDER BY b) FROM collate_test2)) ORDER BY 1;
+ unnest 
+--------
+ abc
+ abc
+ abc
+ Abc
+ ABC
+ ABC
+ ABD
+ bbc
+ bbc
+ bbc
+ äbc
+ äbc
+(12 rows)
+

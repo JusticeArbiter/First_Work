@@ -1,0 +1,3 @@
+DROP TRIGGER IF EXISTS test_trigger_exists ON no_such_table;
+NOTICE:  00000: relation "no_such_table" does not exist, skipping
+DROP TRIGGER

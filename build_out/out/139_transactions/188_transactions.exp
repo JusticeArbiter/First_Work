@@ -1,0 +1,2 @@
+SAVEPOINT one;
+ERROR:  25P01: SAVEPOINT can only be used in transaction blocks

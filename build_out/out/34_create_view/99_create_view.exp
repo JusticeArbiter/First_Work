@@ -1,0 +1,5 @@
+CREATE VIEW aliased_view_2 AS  select * from tt1 a1  where exists (select 1 from tx1 where a1.f1 = tx1.x1);
+ERROR:  42703: column a1.f1 does not exist
+LINE 1: ...rom tt1 a1  where exists (select 1 from tx1 where a1.f1 = tx...
+                                                             ^
+HINT:  Perhaps you meant to reference the column "tx1.x1".

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT xmlconcat(xmlcomment('hello'),  xmlelement(NAME qux, 'foo'),  xmlcomment('world'));
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+select format('>>%2$*1$L<<', 10, NULL);
+     format     
+----------------
+ >>      NULL<<
+(1 row)
+

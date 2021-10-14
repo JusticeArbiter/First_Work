@@ -1,0 +1,7 @@
+LOG:  00000: statement: select error2('nonexistent.stuffs');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  3F000: schema "nonexistent" does not exist
+CONTEXT:  SQL function "error1" statement 1
+	PL/pgSQL function error2(text) line 1 at RETURN
+LOCATION:  get_namespace_oid, namespace.c:2873
+STATEMENT:  select error2('nonexistent.stuffs');

@@ -1,0 +1,4 @@
+create or replace function dfunc(a variadic int[]) returns int as  $$ select array_upper($1, 1) $$ language sql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42P13: cannot remove parameter defaults from existing function
+HINT:  Use DROP FUNCTION dfunc(integer[]) first.

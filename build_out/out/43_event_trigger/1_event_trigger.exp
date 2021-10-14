@@ -1,0 +1,2 @@
+create event trigger regress_event_trigger  on ddl_command_start  execute procedure pg_backend_pid();
+ERROR:  42P17: function "pg_backend_pid" must return type "event_trigger"

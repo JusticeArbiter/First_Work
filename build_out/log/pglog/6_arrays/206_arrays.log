@@ -1,0 +1,2 @@
+LOG:  00000: statement: select '{  0 second,  @ 1 hour @ 42 minutes @ 20 seconds  }'::interval[];
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,7 @@
+select raise_test3(1);
+NOTICE:  00000: This message has no parameters (despite having % signs in it)!
+ raise_test3 
+-------------
+           1
+(1 row)
+

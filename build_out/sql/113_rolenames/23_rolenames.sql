@@ -1,0 +1,1 @@
+ALTER ROLE "session_user" WITH REPLICATION;

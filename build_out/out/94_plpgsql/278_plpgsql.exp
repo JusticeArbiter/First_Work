@@ -1,0 +1,3 @@
+insert into HSlot values ('HS', 'base.hub1', 1, '');
+ERROR:  23505: duplicate key value violates unique constraint "hslot_name"
+DETAIL:  Key (slotname)=(HS.base.hub1.1      ) already exists.

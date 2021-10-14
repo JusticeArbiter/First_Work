@@ -1,0 +1,2 @@
+LOG:  00000: statement: select attinhcount, attislocal from pg_attribute  where attrelid = 'oid_child'::regclass and attname = 'oid';
+LOCATION:  exec_simple_query, postgres.c:938

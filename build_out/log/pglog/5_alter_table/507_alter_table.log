@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table def_test alter column c3 set default 30;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "c3" of relation "def_test" does not exist
+LOCATION:  ATExecColumnDefault, tablecmds.c:5348
+STATEMENT:  alter table def_test alter column c3 set default 30;

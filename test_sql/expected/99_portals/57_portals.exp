@@ -1,0 +1,2 @@
+FETCH backward 10 in foo14;
+ERROR:  34000: cursor "foo14" does not exist

@@ -1,0 +1,6 @@
+select decode('数据库'::text,'数据库'::text,'一'::text);
+ decode 
+--------
+ 一
+(1 row)
+

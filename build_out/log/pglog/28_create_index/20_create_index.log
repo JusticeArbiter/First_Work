@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX bt_name_index ON bt_name_heap USING btree (seqno name_ops);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "bt_name_heap" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX bt_name_index ON bt_name_heap USING btree (seqno name_ops);

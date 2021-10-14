@@ -1,0 +1,2 @@
+COMMENT ON VIEW noview IS 'no view';
+ERROR:  42P01: relation "noview" does not exist

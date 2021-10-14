@@ -1,0 +1,4 @@
+SELECT txid_snapshot '1:9223372036854775808:3';
+ERROR:  22P02: invalid input syntax for type txid_snapshot: "1:9223372036854775808:3"
+LINE 1: SELECT txid_snapshot '1:9223372036854775808:3';
+                             ^

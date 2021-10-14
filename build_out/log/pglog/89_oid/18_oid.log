@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO OID_TBL(f1) VALUES ('32958209582039852935');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: value "32958209582039852935" is out of range for type oid at character 33
+LOCATION:  oidin_subr, oid.c:69
+STATEMENT:  INSERT INTO OID_TBL(f1) VALUES ('32958209582039852935');

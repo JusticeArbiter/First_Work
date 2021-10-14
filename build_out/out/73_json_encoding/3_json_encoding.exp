@@ -1,0 +1,6 @@
+SELECT '"\u000g"'::json;
+ERROR:  22P02: invalid input syntax for type json
+LINE 1: SELECT '"\u000g"'::json;
+               ^
+DETAIL:  "\u" must be followed by four hexadecimal digits.
+CONTEXT:  JSON data, line 1: "\u000g...

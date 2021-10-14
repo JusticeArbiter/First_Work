@@ -1,0 +1,2 @@
+ALTER TABLE tt2 OF tt_t0;
+ERROR:  42804: table "tt2" has different type for column "y"

@@ -1,0 +1,6 @@
+select 'foo' ilike all (array['F%', '%O']);
+ ?column? 
+----------
+ t
+(1 row)
+

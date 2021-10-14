@@ -1,0 +1,2 @@
+LOG:  00000: statement: EXPLAIN (COSTS OFF)  SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (50) REPEATABLE (2);
+LOCATION:  exec_simple_query, postgres.c:938

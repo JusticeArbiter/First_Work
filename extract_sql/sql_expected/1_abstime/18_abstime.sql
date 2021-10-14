@@ -1,0 +1,1 @@
+SELECT '' AS eight, * FROM ABSTIME_TBL;

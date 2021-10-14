@@ -1,0 +1,6 @@
+SELECT echo_me('red'::rainbow);
+ echo_me 
+---------
+ redomg
+(1 row)
+

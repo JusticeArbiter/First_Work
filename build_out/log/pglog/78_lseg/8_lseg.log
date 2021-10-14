@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO LSEG_TBL VALUES ('[1,2,3, 4');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type lseg: "[1,2,3, 4" at character 30
+LOCATION:  lseg_in, geo_ops.c:2021
+STATEMENT:  INSERT INTO LSEG_TBL VALUES ('[1,2,3, 4');

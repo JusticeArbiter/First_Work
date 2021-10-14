@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TYPE test_type ADD ATTRIBUTE b text;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42701: column "b" of relation "test_type" already exists
+LOCATION:  check_for_column_name_collision, tablecmds.c:5083
+STATEMENT:  ALTER TYPE test_type ADD ATTRIBUTE b text;

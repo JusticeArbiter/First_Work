@@ -1,0 +1,7 @@
+select catch();
+NOTICE:  00000: caught case_not_found 20000 case not found
+ catch 
+-------
+ 
+(1 row)
+

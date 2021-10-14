@@ -1,0 +1,2 @@
+COPY y TO stdout WITH CSV QUOTE '''' DELIMITER '|';
+ERROR:  42P01: relation "y" does not exist

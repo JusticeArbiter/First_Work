@@ -1,0 +1,13 @@
+select 0; copy test3 from stdin; copy test3 from stdin; select 1;
+ ?column? 
+----------
+        0
+(1 row)
+
+COPY 0
+COPY 0
+ ?column? 
+----------
+        1
+(1 row)
+

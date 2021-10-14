@@ -1,0 +1,6 @@
+SELECT * FROM inhf;
+  xx  
+------
+ text
+(1 row)
+

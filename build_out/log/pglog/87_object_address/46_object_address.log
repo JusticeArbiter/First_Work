@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT pg_get_object_address('database', '{one}', '{}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  3D000: database "one" does not exist
+LOCATION:  get_database_oid, dbcommands.c:2012
+STATEMENT:  SELECT pg_get_object_address('database', '{one}', '{}');

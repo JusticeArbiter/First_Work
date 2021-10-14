@@ -1,0 +1,5 @@
+CREATE TRIGGER error_del_when BEFORE DELETE OR UPDATE ON main_table  FOR EACH ROW WHEN (OLD.a <> NEW.a)  EXECUTE PROCEDURE trigger_func('error_del_new');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+ERROR:  42P17: DELETE trigger's WHEN condition cannot reference NEW values
+LINE 1: ...UPDATE ON main_table  FOR EACH ROW WHEN (OLD.a <> NEW.a)  EX...
+                                                             ^

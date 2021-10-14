@@ -1,0 +1,1 @@
+DELETE FROM tmp3 WHERE NOT b > 10;

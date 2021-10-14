@@ -1,0 +1,2 @@
+SET vacuum_cost_delay TO 100;
+SET

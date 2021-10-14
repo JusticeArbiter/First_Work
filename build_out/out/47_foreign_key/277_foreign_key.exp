@@ -1,0 +1,2 @@
+delete from pktable where base1>3;
+DELETE 2

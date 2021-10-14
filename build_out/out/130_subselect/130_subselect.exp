@@ -1,0 +1,4 @@
+select exists(select * from nocolumns);
+ERROR:  42P01: relation "nocolumns" does not exist
+LINE 1: select exists(select * from nocolumns);
+                                    ^

@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION functext_F_4(int) RETURNS bool LANGUAGE 'sql'  STRICT AS 'SELECT $1 = 50';
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+insert into domcontest values (42);
+INSERT 0 1

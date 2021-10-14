@@ -1,0 +1,2 @@
+DROP DOMAIN test_domain_exists;
+ERROR:  42704: type "test_domain_exists" does not exist

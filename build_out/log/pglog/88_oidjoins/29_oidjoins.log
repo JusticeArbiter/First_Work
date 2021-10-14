@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, amopopr  FROM pg_catalog.pg_amop fk  WHERE amopopr != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.amopopr);
+LOCATION:  exec_simple_query, postgres.c:938

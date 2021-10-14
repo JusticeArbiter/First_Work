@@ -1,0 +1,6 @@
+select concat_ws('#',1,2,3,'hello',true, false, to_date('20100309','YYYYMMDD'));
+         concat_ws          
+----------------------------
+ 1#2#3#hello#t#f#2010-03-09
+(1 row)
+

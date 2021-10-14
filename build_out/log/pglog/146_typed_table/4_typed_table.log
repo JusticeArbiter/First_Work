@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TABLE IF NOT EXISTS persons OF person_type;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TABLE IF NOT EXISTS persons OF person_type;
+NOTICE:  42P07: relation "persons" already exists, skipping
+LOCATION:  transformCreateStmt, parse_utilcmd.c:186
+STATEMENT:  CREATE TABLE IF NOT EXISTS persons OF person_type;

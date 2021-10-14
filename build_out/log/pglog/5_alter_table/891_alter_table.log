@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE test_type_diff ALTER COLUMN f2 TYPE bigint USING f2::bigint;
+LOCATION:  exec_simple_query, postgres.c:938

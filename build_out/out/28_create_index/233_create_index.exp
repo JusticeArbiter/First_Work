@@ -1,0 +1,4 @@
+SELECT count(*) FROM kd_point_tbl WHERE p << '(5000, 4000)';
+ERROR:  42P01: relation "kd_point_tbl" does not exist
+LINE 1: SELECT count(*) FROM kd_point_tbl WHERE p << '(5000, 4000)';
+                             ^

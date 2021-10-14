@@ -1,0 +1,6 @@
+select concat(variadic '{}'::int[]) = '';
+ ?column? 
+----------
+ t
+(1 row)
+

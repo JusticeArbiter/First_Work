@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT um.srvname AS "Server",  um.usename AS "User name",  CASE WHEN umoptions IS NULL THEN '' ELSE '(' || pg_catalog.array_to_string(ARRAY(SELECT pg_catalog.quote_ident(option_name) || ' ' || pg_catalog.quote_literal(option_value) FROM pg_catalog.pg_options_to_table(umoptions)), ', ') || ')' END AS "FDW Options"  FROM pg_catalog.pg_user_mappings um  ORDER BY 1, 2;
+LOCATION:  exec_simple_query, postgres.c:938

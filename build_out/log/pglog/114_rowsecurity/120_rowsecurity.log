@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT * FROM t1 WHERE f_leak(b) FOR SHARE;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "b" does not exist at character 31
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  SELECT * FROM t1 WHERE f_leak(b) FOR SHARE;

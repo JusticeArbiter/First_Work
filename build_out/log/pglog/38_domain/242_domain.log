@@ -1,0 +1,2 @@
+LOG:  00000: statement: create type ddtest1 as (f1 posint);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,4 @@
+SELECT regrole('foo.bar');
+ERROR:  42602: invalid name syntax
+LINE 1: SELECT regrole('foo.bar');
+                       ^

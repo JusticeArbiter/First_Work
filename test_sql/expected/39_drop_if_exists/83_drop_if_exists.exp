@@ -1,0 +1,2 @@
+DROP TRIGGER test_trigger_exists ON no_such_table;
+ERROR:  42P01: relation "no_such_table" does not exist

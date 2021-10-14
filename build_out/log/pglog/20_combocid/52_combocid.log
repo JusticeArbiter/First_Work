@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE IF NOT EXISTS testcase(  id int PRIMARY KEY,  balance numeric  );
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT b, c FROM test_having  GROUP BY b, c HAVING count(*) = 1 ORDER BY b, c;
+LOCATION:  exec_simple_query, postgres.c:938

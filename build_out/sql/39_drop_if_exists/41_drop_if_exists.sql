@@ -1,0 +1,1 @@
+DROP ROLE IF EXISTS tr1, tr2;

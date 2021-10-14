@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE unlogged3 SET LOGGED;
+LOCATION:  exec_simple_query, postgres.c:938

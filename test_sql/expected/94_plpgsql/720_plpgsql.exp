@@ -1,0 +1,3 @@
+create function sql_recurse(float8) returns float8 as  $$ select recurse($1) limit 1; $$ language sql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

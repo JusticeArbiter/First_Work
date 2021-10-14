@@ -1,0 +1,4 @@
+SELECT * FROM empsalary INNER JOIN tenk1 ON row_number() OVER (ORDER BY salary) < 10;
+ERROR:  42P01: relation "empsalary" does not exist
+LINE 1: SELECT * FROM empsalary INNER JOIN tenk1 ON row_number() OVE...
+                      ^

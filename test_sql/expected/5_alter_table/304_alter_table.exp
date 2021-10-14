@@ -1,0 +1,2 @@
+ALTER TABLE FKTABLE ALTER CONSTRAINT fknd2 NOT DEFERRABLE;
+ERROR:  42P01: relation "fktable" does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP TEXT SEARCH PARSER IF EXISTS no_such_schema.foo;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: schema "no_such_schema" does not exist, skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:446
+STATEMENT:  DROP TEXT SEARCH PARSER IF EXISTS no_such_schema.foo;

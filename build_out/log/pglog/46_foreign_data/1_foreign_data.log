@@ -1,0 +1,2 @@
+LOG:  00000: statement: SET client_min_messages TO 'error';
+LOCATION:  exec_simple_query, postgres.c:938

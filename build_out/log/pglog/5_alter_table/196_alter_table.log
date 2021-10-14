@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE tmp3 add constraint tmpconstr foreign key(a) references tmp2(b) match full;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "b" referenced in foreign key constraint does not exist
+LOCATION:  transformColumnNameList, tablecmds.c:6989
+STATEMENT:  ALTER TABLE tmp3 add constraint tmpconstr foreign key(a) references tmp2(b) match full;

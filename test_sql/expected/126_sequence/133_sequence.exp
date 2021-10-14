@@ -1,0 +1,2 @@
+SELECT currval('seq3');
+ERROR:  55000: currval of sequence "seq3" is not yet defined in this session

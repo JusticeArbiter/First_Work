@@ -1,0 +1,4 @@
+INSERT INTO main_view VALUES (20, 30);
+ERROR:  42P01: relation "main_view" does not exist
+LINE 1: INSERT INTO main_view VALUES (20, 30);
+                    ^

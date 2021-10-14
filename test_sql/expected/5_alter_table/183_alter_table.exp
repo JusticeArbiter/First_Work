@@ -1,0 +1,3 @@
+ALTER TABLE IF EXISTS constraint_rename_test ADD CONSTRAINT con4 UNIQUE (a);
+NOTICE:  00000: relation "constraint_rename_test" does not exist, skipping
+ALTER TABLE

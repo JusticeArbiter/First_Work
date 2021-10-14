@@ -1,0 +1,6 @@
+SELECT interval '999' minute;
+ interval 
+----------
+ 16:39:00
+(1 row)
+

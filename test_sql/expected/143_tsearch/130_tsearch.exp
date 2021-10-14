@@ -1,0 +1,7 @@
+SELECT ts_rewrite(to_tsquery('!5'), to_tsquery('5'), to_tsquery(''));
+NOTICE:  00000: text-search query doesn't contain lexemes: ""
+ ts_rewrite 
+------------
+ 
+(1 row)
+

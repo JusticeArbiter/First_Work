@@ -1,0 +1,6 @@
+SELECT * FROM chkumapping();
+     umname     |    umserver    | umoptions 
+----------------+----------------+-----------
+ regression_bob | useless_server | 
+(1 row)
+

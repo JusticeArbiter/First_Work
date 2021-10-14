@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT f1, f1 IS DISTINCT FROM 2 as "not 2" FROM disttable;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "disttable" does not exist at character 50
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT f1, f1 IS DISTINCT FROM 2 as "not 2" FROM disttable;

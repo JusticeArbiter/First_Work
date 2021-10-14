@@ -1,0 +1,4 @@
+INSERT INTO TINTERVAL_TBL (f1)  VALUES ('["bad time specifications" ""]');
+ERROR:  22007: invalid input syntax for type abstime: "bad time specifications"
+LINE 1: INSERT INTO TINTERVAL_TBL (f1)  VALUES ('["bad time specific...
+                                                ^

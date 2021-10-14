@@ -1,0 +1,9 @@
+SELECT foo, length(foo) FROM regexp_split_to_table('thE QUick bROWn FOx jUMPs ovEr The lazy dOG', 'e', 'i') AS foo;
+            foo            | length 
+---------------------------+--------
+ th                        |      2
+  QUick bROWn FOx jUMPs ov |     25
+ r Th                      |      4
+  lazy dOG                 |      9
+(4 rows)
+

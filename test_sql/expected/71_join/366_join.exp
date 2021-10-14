@@ -1,0 +1,11 @@
+explain (costs off)  select count(*) from tenk1 a,  tenk1 b join lateral (values(a.unique1)) ss(x) on b.unique2 = ss.x;
+                 QUERY PLAN                 
+--------------------------------------------
+ Aggregate
+   ->  Hash Join
+         Hash Cond: (a.unique1 = b.unique2)
+         ->  Seq Scan on tenk1 a
+         ->  Hash
+               ->  Seq Scan on tenk1 b
+(6 rows)
+

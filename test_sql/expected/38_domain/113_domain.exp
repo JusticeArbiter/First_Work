@@ -1,0 +1,2 @@
+SELECT cast(col4 as dnotnull) from nulltest;
+ERROR:  23502: domain dnotnull does not allow null values

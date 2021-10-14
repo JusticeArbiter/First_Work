@@ -1,0 +1,6 @@
+SELECT xpath('//@value', '<root value="&lt;"/>');
+ xpath  
+--------
+ {&lt;}
+(1 row)
+

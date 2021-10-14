@@ -1,0 +1,5 @@
+LOG:  00000: statement: create rule rrule as  on update to vview do instead  (  insert into cchild (pid, descrip)  select old.pid, new.descrip where old.descrip isnull;  update cchild set descrip = new.descrip where cchild.pid = old.pid;  );
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create rule rrule as  on update to vview do instead  (  insert into cchild (pid, descrip)  select old.pid, new.descrip where old.descrip isnull;  update cchild set descrip = new.descrip where cchild.pid = old.pid;  );

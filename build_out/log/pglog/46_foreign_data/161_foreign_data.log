@@ -1,0 +1,8 @@
+LOG:  00000: statement: ALTER SERVER s2 OWNER TO regress_test_role;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER SERVER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER SERVER s2 OWNER TO regress_test_role;
+ERROR:  42704: server "s2" does not exist
+LOCATION:  AlterForeignServerOwner, foreigncmds.c:430
+STATEMENT:  ALTER SERVER s2 OWNER TO regress_test_role;

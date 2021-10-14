@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x ORDER BY 1)  SELECT * FROM x;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: ORDER BY in a recursive query is not implemented at character 71
+LOCATION:  checkWellFormedRecursion, parse_cte.c:705
+STATEMENT:  WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x ORDER BY 1)  SELECT * FROM x;

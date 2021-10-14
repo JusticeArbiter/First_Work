@@ -1,0 +1,11 @@
+select pg_get_viewdef('tt21v', true);
+       pg_get_viewdef        
+-----------------------------
+  SELECT tt5.x,             +
+     tt5.y,                 +
+     tt5.z,                 +
+     tt5.cc                 +
+    FROM tt5                +
+      JOIN tt6 USING (x, y);
+(1 row)
+

@@ -1,0 +1,3 @@
+CREATE INDEX jidx_array ON testjsonb USING gin((j->'array'));
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+CREATE INDEX

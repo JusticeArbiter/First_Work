@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER ROLE schemauser2 RENAME TO schemauser_renamed;
+LOCATION:  exec_simple_query, postgres.c:938

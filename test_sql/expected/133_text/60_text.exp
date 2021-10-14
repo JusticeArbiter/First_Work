@@ -1,0 +1,6 @@
+select format('>>%10s<<', 'Hello');
+     format     
+----------------
+ >>     Hello<<
+(1 row)
+

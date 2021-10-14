@@ -1,0 +1,6 @@
+select array_fill('juhu'::text, array[3,3]);
+                      array_fill                      
+------------------------------------------------------
+ {{juhu,juhu,juhu},{juhu,juhu,juhu},{juhu,juhu,juhu}}
+(1 row)
+

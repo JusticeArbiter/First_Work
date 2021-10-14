@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT  op,  width_bucket(op, ARRAY[1, 3, 5, 10]) AS wb_1  FROM generate_series(0,11) as op;
+LOCATION:  exec_simple_query, postgres.c:938

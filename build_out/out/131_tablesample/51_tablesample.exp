@@ -1,0 +1,4 @@
+SELECT id FROM test_tablesample TABLESAMPLE FOOBAR (1);
+ERROR:  42704: tablesample method foobar does not exist
+LINE 1: SELECT id FROM test_tablesample TABLESAMPLE FOOBAR (1);
+                                                    ^

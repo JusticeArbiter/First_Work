@@ -1,0 +1,6 @@
+SELECT E'''1 \\''2''3'::tsvector;
+  tsvector   
+-------------
+ '1 ''2' '3'
+(1 row)
+

@@ -1,0 +1,6 @@
+SHOW TIME ZONE;
+ TimeZone 
+----------
+ PRC
+(1 row)
+

@@ -1,0 +1,2 @@
+INSERT INTO BOOLTBL1 (f1) VALUES (bool 'True');
+INSERT 0 1

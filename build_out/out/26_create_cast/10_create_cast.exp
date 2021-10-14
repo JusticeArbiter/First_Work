@@ -1,0 +1,2 @@
+DROP CAST (text AS casttesttype);
+DROP CAST

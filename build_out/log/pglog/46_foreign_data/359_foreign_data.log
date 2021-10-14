@@ -1,0 +1,8 @@
+LOG:  00000: statement: ALTER FOREIGN DATA WRAPPER foo VALIDATOR postgresql_fdw_validator;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN DATA WRAPPER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER FOREIGN DATA WRAPPER foo VALIDATOR postgresql_fdw_validator;
+WARNING:  01000: changing the foreign-data wrapper validator can cause the options for dependent objects to become invalid
+LOCATION:  AlterForeignDataWrapper, foreigncmds.c:748
+STATEMENT:  ALTER FOREIGN DATA WRAPPER foo VALIDATOR postgresql_fdw_validator;

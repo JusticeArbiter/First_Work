@@ -1,0 +1,8 @@
+SELECT * FROM savepoints;
+ a 
+---
+ 3
+ 4
+ 5
+(3 rows)
+

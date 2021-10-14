@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE OR REPLACE TEMP VIEW pcacheview AS  SELECT q1, q2/2 AS q2 FROM pcachetest;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE OR REPLACE TEMP VIEW pcacheview AS  SELECT q1, q2/2 AS q2 FROM pcachetest;
+ERROR:  42P01: relation "pcachetest" does not exist at character 71
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE OR REPLACE TEMP VIEW pcacheview AS  SELECT q1, q2/2 AS q2 FROM pcachetest;

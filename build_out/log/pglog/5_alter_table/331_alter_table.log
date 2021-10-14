@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into atacc1 (test2, test) values (3, 4);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: new row for relation "atacc1" violates check constraint "atacc1_check"
+DETAIL:  Failing row contains (4, 3).
+LOCATION:  ExecConstraints, execMain.c:1725
+STATEMENT:  insert into atacc1 (test2, test) values (3, 4);

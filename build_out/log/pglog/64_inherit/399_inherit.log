@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into invalid_check_con values(0);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: new row for relation "invalid_check_con" violates check constraint "inh_check_constraint"
+DETAIL:  Failing row contains (0).
+LOCATION:  ExecConstraints, execMain.c:1725
+STATEMENT:  insert into invalid_check_con values(0);

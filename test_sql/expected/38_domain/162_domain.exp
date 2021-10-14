@@ -1,0 +1,2 @@
+alter domain con add constraint t check (VALUE < 1);
+ERROR:  23514: column "col1" of table "domcontest" contains values that violate the new constraint

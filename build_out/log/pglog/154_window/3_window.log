@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT depname, empno, salary, sum(salary) OVER (PARTITION BY depname) FROM empsalary ORDER BY depname, salary;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "empsalary" does not exist at character 77
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT depname, empno, salary, sum(salary) OVER (PARTITION BY depname) FROM empsalary ORDER BY depname, salary;

@@ -1,0 +1,4 @@
+SELECT regoperator('ng_catalog.+(int4,int4)');
+ERROR:  42883: operator does not exist: ng_catalog.+(int4,int4)
+LINE 1: SELECT regoperator('ng_catalog.+(int4,int4)');
+                           ^

@@ -1,0 +1,2 @@
+COPY defaulttest(col5) FROM stdin;
+COPY 0

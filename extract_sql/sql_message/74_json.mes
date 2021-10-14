@@ -1,0 +1,391 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT '""'::json;
+ statement: SELECT $$''$$::json;
+ statement: SELECT '"abc"'::json;
+ statement: SELECT '"abc'::json;
+ statement: SELECT '"abc                                                                                                                                                                                                            +
+ def"'::json;
+ statement: SELECT '"\n\"\\"'::json;
+ statement: SELECT '"\v"'::json;
+ statement: SELECT '1'::json;
+ statement: SELECT '0'::json;
+ statement: SELECT '01'::json;
+ statement: SELECT '0.1'::json;
+ statement: SELECT '9223372036854775808'::json;
+ statement: SELECT '1e100'::json;
+ statement: SELECT '1.3e100'::json;
+ statement: SELECT '1f2'::json;
+ statement: SELECT '0.x1'::json;
+ statement: SELECT '1.3ex100'::json;
+ statement: SELECT '[]'::json;
+ statement: SELECT '[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]'::json;
+ statement: SELECT '[1,2]'::json;
+ statement: SELECT '[1,2,]'::json;
+ statement: SELECT '[1,2'::json;
+ statement: SELECT '[1,[2]'::json;
+ statement: SELECT '{}'::json;
+ statement: SELECT '{"abc"}'::json;
+ statement: SELECT '{"abc":1}'::json;
+ statement: SELECT '{1:"abc"}'::json;
+ statement: SELECT '{"abc",1}'::json;
+ statement: SELECT '{"abc"=1}'::json;
+ statement: SELECT '{"abc"::1}'::json;
+ statement: SELECT '{"abc":1,"def":2,"ghi":[3,4],"hij":{"klm":5,"nop":[6]}}'::json;
+ statement: SELECT '{"abc":1:2}'::json;
+ statement: SELECT '{"abc":1,3}'::json;
+ statement: SET max_stack_depth = '100kB';
+ statement: SELECT repeat('[', 10000)::json;
+ statement: SELECT repeat('{"a":', 10000)::json;
+ statement: RESET max_stack_depth;
+ statement: SELECT 'true'::json;
+ statement: SELECT 'false'::json;
+ statement: SELECT 'null'::json;
+ statement: SELECT ' true '::json;
+ statement: SELECT 'true false'::json;
+ statement: SELECT 'true, false'::json;
+ statement: SELECT 'truf'::json;
+ statement: SELECT 'trues'::json;
+ statement: SELECT ''::json;
+ statement: SELECT '    '::json;
+ statement: SELECT array_to_json(array(select 1 as a));
+ statement: SELECT array_to_json(array_agg(q),false) from (select x as b, x * 2 as c from generate_series(1,3) x) q;
+ statement: SELECT array_to_json(array_agg(q),true) from (select x as b, x * 2 as c from generate_series(1,3) x) q;
+ statement: SELECT array_to_json(array_agg(q),false)                                                                                                                                                                                +
+   FROM ( SELECT $$a$$ || x AS b, y AS c,                                                                                                                                                                                           +
+                ARRAY[ROW(x.*,ARRAY[1,2,3]),                                                                                                                                                                                        +
+                ROW(y.*,ARRAY[4,5,6])] AS z                                                                                                                                                                                         +
+          FROM generate_series(1,2) x,                                                                                                                                                                                              +
+               generate_series(4,5) y) q;
+ statement: SELECT array_to_json(array_agg(x),false) from generate_series(5,10) x;
+ statement: SELECT array_to_json('{{1,5},{99,100}}'::int[]);
+ statement: SELECT row_to_json(row(1,'foo'));
+ statement: SELECT row_to_json(q)                                                                                                                                                                                                   +
+ FROM (SELECT $$a$$ || x AS b,                                                                                                                                                                                                      +
+          y AS c,                                                                                                                                                                                                                   +
+          ARRAY[ROW(x.*,ARRAY[1,2,3]),                                                                                                                                                                                              +
+                ROW(y.*,ARRAY[4,5,6])] AS z                                                                                                                                                                                         +
+       FROM generate_series(1,2) x,                                                                                                                                                                                                 +
+            generate_series(4,5) y) q;
+ statement: SELECT row_to_json(q,true)                                                                                                                                                                                              +
+ FROM (SELECT $$a$$ || x AS b,                                                                                                                                                                                                      +
+          y AS c,                                                                                                                                                                                                                   +
+          ARRAY[ROW(x.*,ARRAY[1,2,3]),                                                                                                                                                                                              +
+                ROW(y.*,ARRAY[4,5,6])] AS z                                                                                                                                                                                         +
+       FROM generate_series(1,2) x,                                                                                                                                                                                                 +
+            generate_series(4,5) y) q;
+ statement: CREATE TEMP TABLE rows AS                                                                                                                                                                                               +
+ SELECT x, 'txt' || x as y                                                                                                                                                                                                          +
+ FROM generate_series(1,3) AS x;
+ statement: SELECT row_to_json(q,true)                                                                                                                                                                                              +
+ FROM rows q;
+ statement: SELECT row_to_json(row((select array_agg(x) as d from generate_series(5,10) x)),false);
+ statement: select to_json(timestamp '2014-05-28 12:22:35.614298');
+ statement: BEGIN;
+ statement: SET LOCAL TIME ZONE 10.5;
+ statement: select to_json(timestamptz '2014-05-28 12:22:35.614298-04');
+ statement: SET LOCAL TIME ZONE -8;
+ statement: select to_json(timestamptz '2014-05-28 12:22:35.614298-04');
+ statement: COMMIT;
+ statement: select to_json(date '2014-05-28');
+ statement: select to_json(date 'Infinity');
+ statement: select to_json(date '-Infinity');
+ statement: select to_json(timestamp 'Infinity');
+ statement: select to_json(timestamp '-Infinity');
+ statement: select to_json(timestamptz 'Infinity');
+ statement: select to_json(timestamptz '-Infinity');
+ statement: SELECT json_agg(q)                                                                                                                                                                                                      +
+   FROM ( SELECT $$a$$ || x AS b, y AS c,                                                                                                                                                                                           +
+                ARRAY[ROW(x.*,ARRAY[1,2,3]),                                                                                                                                                                                        +
+                ROW(y.*,ARRAY[4,5,6])] AS z                                                                                                                                                                                         +
+          FROM generate_series(1,2) x,                                                                                                                                                                                              +
+               generate_series(4,5) y) q;
+ statement: SELECT json_agg(q ORDER BY x, y)                                                                                                                                                                                        +
+   FROM rows q;
+ statement: UPDATE rows SET x = NULL WHERE x = 1;
+ statement: SELECT json_agg(q ORDER BY x NULLS FIRST, y)                                                                                                                                                                            +
+   FROM rows q;
+ statement: SELECT row_to_json(q)                                                                                                                                                                                                   +
+ FROM (SELECT 'NaN'::float8 AS "float8field") q;
+ statement: SELECT row_to_json(q)                                                                                                                                                                                                   +
+ FROM (SELECT 'Infinity'::float8 AS "float8field") q;
+ statement: SELECT row_to_json(q)                                                                                                                                                                                                   +
+ FROM (SELECT '-Infinity'::float8 AS "float8field") q;
+ statement: SELECT row_to_json(q)                                                                                                                                                                                                   +
+ FROM (SELECT '{"a":1,"b": [2,3,4,"d","e","f"],"c":{"p":1,"q":2}}'::json AS "jsonfield") q;
+ statement: CREATE TEMP TABLE test_json (                                                                                                                                                                                           +
+        json_type text,                                                                                                                                                                                                             +
+        test_json json                                                                                                                                                                                                              +
+ );
+ statement: INSERT INTO test_json VALUES                                                                                                                                                                                            +
+ ('scalar','"a scalar"'),                                                                                                                                                                                                           +
+ ('array','["zero", "one","two",null,"four","five", [1,2,3],{"f1":9}]'),                                                                                                                                                            +
+ ('object','{"field1":"val1","field2":"val2","field3":null, "field4": 4, "field5": [1,2,3], "field6": {"f1":9}}');
+ statement: SELECT test_json -> 'x'                                                                                                                                                                                                 +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'scalar';
+ statement: SELECT test_json -> 'x'                                                                                                                                                                                                 +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'array';
+ statement: SELECT test_json -> 'x'                                                                                                                                                                                                 +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'object';
+ statement: SELECT test_json->'field2'                                                                                                                                                                                              +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'object';
+ statement: SELECT test_json->>'field2'                                                                                                                                                                                             +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'object';
+ statement: SELECT test_json -> 2                                                                                                                                                                                                   +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'scalar';
+ statement: SELECT test_json -> 2                                                                                                                                                                                                   +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'array';
+ statement: SELECT test_json -> -1                                                                                                                                                                                                  +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'array';
+ statement: SELECT test_json -> 2                                                                                                                                                                                                   +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'object';
+ statement: SELECT test_json->>2                                                                                                                                                                                                    +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'array';
+ statement: SELECT test_json ->> 6 FROM test_json WHERE json_type = 'array';
+ statement: SELECT test_json ->> 7 FROM test_json WHERE json_type = 'array';
+ statement: SELECT test_json ->> 'field4' FROM test_json WHERE json_type = 'object';
+ statement: SELECT test_json ->> 'field5' FROM test_json WHERE json_type = 'object';
+ statement: SELECT test_json ->> 'field6' FROM test_json WHERE json_type = 'object';
+ statement: SELECT json_object_keys(test_json)                                                                                                                                                                                      +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'scalar';
+ statement: SELECT json_object_keys(test_json)                                                                                                                                                                                      +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'array';
+ statement: SELECT json_object_keys(test_json)                                                                                                                                                                                      +
+ FROM test_json                                                                                                                                                                                                                     +
+ WHERE json_type = 'object';
+ statement: select count(*) from                                                                                                                                                                                                    +
+     (select json_object_keys(json_object(array_agg(g)))                                                                                                                                                                            +
+      from (select unnest(array['f'||n,n::text])as g                                                                                                                                                                                +
+            from generate_series(1,300) as n) x ) y;
+ statement: select (test_json->'field3') is null as expect_false                                                                                                                                                                    +
+ from test_json                                                                                                                                                                                                                     +
+ where json_type = 'object';
+ statement: select (test_json->>'field3') is null as expect_true                                                                                                                                                                    +
+ from test_json                                                                                                                                                                                                                     +
+ where json_type = 'object';
+ statement: select (test_json->3) is null as expect_false                                                                                                                                                                           +
+ from test_json                                                                                                                                                                                                                     +
+ where json_type = 'array';
+ statement: select (test_json->>3) is null as expect_true                                                                                                                                                                           +
+ from test_json                                                                                                                                                                                                                     +
+ where json_type = 'array';
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json -> null::text;
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json -> null::int;
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json -> 1;
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json -> -1;
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json -> 'z';
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json -> '';
+ statement: select '[{"b": "c"}, {"b": "cc"}]'::json -> 1;
+ statement: select '[{"b": "c"}, {"b": "cc"}]'::json -> 3;
+ statement: select '[{"b": "c"}, {"b": "cc"}]'::json -> 'z';
+ statement: select '{"a": "c", "b": null}'::json -> 'b';
+ statement: select '"foo"'::json -> 1;
+ statement: select '"foo"'::json -> 'z';
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json ->> null::text;
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json ->> null::int;
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json ->> 1;
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json ->> 'z';
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json ->> '';
+ statement: select '[{"b": "c"}, {"b": "cc"}]'::json ->> 1;
+ statement: select '[{"b": "c"}, {"b": "cc"}]'::json ->> 3;
+ statement: select '[{"b": "c"}, {"b": "cc"}]'::json ->> 'z';
+ statement: select '{"a": "c", "b": null}'::json ->> 'b';
+ statement: select '"foo"'::json ->> 1;
+ statement: select '"foo"'::json ->> 'z';
+ statement: SELECT json_array_length('[1,2,3,{"f1":1,"f2":[5,6]},4]');
+ statement: SELECT json_array_length('[]');
+ statement: SELECT json_array_length('{"f1":1,"f2":[5,6]}');
+ statement: SELECT json_array_length('4');
+ statement: select json_each('{"f1":[1,2,3],"f2":{"f3":1},"f4":null}');
+ statement: select * from json_each('{"f1":[1,2,3],"f2":{"f3":1},"f4":null,"f5":99,"f6":"stringy"}') q;
+ statement: select json_each_text('{"f1":[1,2,3],"f2":{"f3":1},"f4":null,"f5":"null"}');
+ statement: select * from json_each_text('{"f1":[1,2,3],"f2":{"f3":1},"f4":null,"f5":99,"f6":"stringy"}') q;
+ statement: select json_extract_path('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}','f4','f6');
+ statement: select json_extract_path('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}','f2');
+ statement: select json_extract_path('{"f2":["f3",1],"f4":{"f5":99,"f6":"stringy"}}','f2',0::text);
+ statement: select json_extract_path('{"f2":["f3",1],"f4":{"f5":99,"f6":"stringy"}}','f2',1::text);
+ statement: select json_extract_path_text('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}','f4','f6');
+ statement: select json_extract_path_text('{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}','f2');
+ statement: select json_extract_path_text('{"f2":["f3",1],"f4":{"f5":99,"f6":"stringy"}}','f2',0::text);
+ statement: select json_extract_path_text('{"f2":["f3",1],"f4":{"f5":99,"f6":"stringy"}}','f2',1::text);
+ statement: select json_extract_path('{"f2":{"f3":1},"f4":{"f5":null,"f6":"stringy"}}','f4','f5') is null as expect_false;
+ statement: select json_extract_path_text('{"f2":{"f3":1},"f4":{"f5":null,"f6":"stringy"}}','f4','f5') is null as expect_true;
+ statement: select json_extract_path('{"f2":{"f3":1},"f4":[0,1,2,null]}','f4','3') is null as expect_false;
+ statement: select json_extract_path_text('{"f2":{"f3":1},"f4":[0,1,2,null]}','f4','3') is null as expect_true;
+ statement: select '{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}'::json#>array['f4','f6'];
+ statement: select '{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}'::json#>array['f2'];
+ statement: select '{"f2":["f3",1],"f4":{"f5":99,"f6":"stringy"}}'::json#>array['f2','0'];
+ statement: select '{"f2":["f3",1],"f4":{"f5":99,"f6":"stringy"}}'::json#>array['f2','1'];
+ statement: select '{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}'::json#>>array['f4','f6'];
+ statement: select '{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}'::json#>>array['f2'];
+ statement: select '{"f2":["f3",1],"f4":{"f5":99,"f6":"stringy"}}'::json#>>array['f2','0'];
+ statement: select '{"f2":["f3",1],"f4":{"f5":99,"f6":"stringy"}}'::json#>>array['f2','1'];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #> '{}';
+ statement: select '[1,2,3]'::json #> '{}';
+ statement: select '"foo"'::json #> '{}';
+ statement: select '42'::json #> '{}';
+ statement: select 'null'::json #> '{}';
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #> array['a'];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #> array['a', null];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #> array['a', ''];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #> array['a','b'];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #> array['a','b','c'];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #> array['a','b','c','d'];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #> array['a','z','c'];
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json #> array['a','1','b'];
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json #> array['a','z','b'];
+ statement: select '[{"b": "c"}, {"b": "cc"}]'::json #> array['1','b'];
+ statement: select '[{"b": "c"}, {"b": "cc"}]'::json #> array['z','b'];
+ statement: select '[{"b": "c"}, {"b": null}]'::json #> array['1','b'];
+ statement: select '"foo"'::json #> array['z'];
+ statement: select '42'::json #> array['f2'];
+ statement: select '42'::json #> array['0'];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #>> '{}';
+ statement: select '[1,2,3]'::json #>> '{}';
+ statement: select '"foo"'::json #>> '{}';
+ statement: select '42'::json #>> '{}';
+ statement: select 'null'::json #>> '{}';
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #>> array['a'];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #>> array['a', null];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #>> array['a', ''];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #>> array['a','b'];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #>> array['a','b','c'];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #>> array['a','b','c','d'];
+ statement: select '{"a": {"b":{"c": "foo"}}}'::json #>> array['a','z','c'];
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json #>> array['a','1','b'];
+ statement: select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json #>> array['a','z','b'];
+ statement: select '[{"b": "c"}, {"b": "cc"}]'::json #>> array['1','b'];
+ statement: select '[{"b": "c"}, {"b": "cc"}]'::json #>> array['z','b'];
+ statement: select '[{"b": "c"}, {"b": null}]'::json #>> array['1','b'];
+ statement: select '"foo"'::json #>> array['z'];
+ statement: select '42'::json #>> array['f2'];
+ statement: select '42'::json #>> array['0'];
+ statement: select json_array_elements('[1,true,[1,[2,3]],null,{"f1":1,"f2":[7,8,9]},false,"stringy"]');
+ statement: select * from json_array_elements('[1,true,[1,[2,3]],null,{"f1":1,"f2":[7,8,9]},false,"stringy"]') q;
+ statement: select json_array_elements_text('[1,true,[1,[2,3]],null,{"f1":1,"f2":[7,8,9]},false,"stringy"]');
+ statement: select * from json_array_elements_text('[1,true,[1,[2,3]],null,{"f1":1,"f2":[7,8,9]},false,"stringy"]') q;
+ statement: create type jpop as (a text, b int, c timestamp);
+ statement: select * from json_populate_record(null::jpop,'{"a":"blurfl","x":43.2}') q;
+ statement: select * from json_populate_record(row('x',3,'2012-12-31 15:30:56')::jpop,'{"a":"blurfl","x":43.2}') q;
+ statement: select * from json_populate_record(null::jpop,'{"a":"blurfl","x":43.2}') q;
+ statement: select * from json_populate_record(row('x',3,'2012-12-31 15:30:56')::jpop,'{"a":"blurfl","x":43.2}') q;
+ statement: select * from json_populate_record(null::jpop,'{"a":[100,200,false],"x":43.2}') q;
+ statement: select * from json_populate_record(row('x',3,'2012-12-31 15:30:56')::jpop,'{"a":[100,200,false],"x":43.2}') q;
+ statement: select * from json_populate_record(row('x',3,'2012-12-31 15:30:56')::jpop,'{"c":[100,200,false],"x":43.2}') q;
+ statement: select * from json_populate_recordset(null::jpop,'[{"a":"blurfl","x":43.2},{"b":3,"c":"2012-01-20 10:42:53"}]') q;
+ statement: select * from json_populate_recordset(row('def',99,null)::jpop,'[{"a":"blurfl","x":43.2},{"b":3,"c":"2012-01-20 10:42:53"}]') q;
+ statement: select * from json_populate_recordset(null::jpop,'[{"a":"blurfl","x":43.2},{"b":3,"c":"2012-01-20 10:42:53"}]') q;
+ statement: select * from json_populate_recordset(row('def',99,null)::jpop,'[{"a":"blurfl","x":43.2},{"b":3,"c":"2012-01-20 10:42:53"}]') q;
+ statement: select * from json_populate_recordset(row('def',99,null)::jpop,'[{"a":[100,200,300],"x":43.2},{"a":{"z":true},"b":3,"c":"2012-01-20 10:42:53"}]') q;
+ statement: select * from json_populate_recordset(row('def',99,null)::jpop,'[{"c":[100,200,300],"x":43.2},{"a":{"z":true},"b":3,"c":"2012-01-20 10:42:53"}]') q;
+ statement: create type jpop2 as (a int, b json, c int, d int);
+ statement: select * from json_populate_recordset(null::jpop2, '[{"a":2,"c":3,"b":{"z":4},"d":6}]') q;
+ statement: select * from json_populate_recordset(null::jpop,'[{"a":"blurfl","x":43.2},{"b":3,"c":"2012-01-20 10:42:53"}]') q;
+ statement: select * from json_populate_recordset(row('def',99,null)::jpop,'[{"a":"blurfl","x":43.2},{"b":3,"c":"2012-01-20 10:42:53"}]') q;
+ statement: select * from json_populate_recordset(row('def',99,null)::jpop,'[{"a":[100,200,300],"x":43.2},{"a":{"z":true},"b":3,"c":"2012-01-20 10:42:53"}]') q;
+ statement: select * from json_populate_recordset(row(0::int),'[{"a":"1","b":"2"},{"a":"3"}]') q (a text, b text);
+ statement: select * from json_populate_recordset(row(0::int,0::int),'[{"a":"1","b":"2"},{"a":"3"}]') q (a text, b text);
+ statement: select * from json_populate_recordset(row(0::int,0::int,0::int),'[{"a":"1","b":"2"},{"a":"3"}]') q (a text, b text);
+ statement: select * from json_populate_recordset(row(1000000000::int,50::int),'[{"b":"2"},{"a":"3"}]') q (a text, b text);
+ statement: select value, json_typeof(value)                                                                                                                                                                                        +
+   from (values (json '123.4'),                                                                                                                                                                                                     +
+                (json '-1'),                                                                                                                                                                                                        +
+                (json '"foo"'),                                                                                                                                                                                                     +
+                (json 'true'),                                                                                                                                                                                                      +
+                (json 'false'),                                                                                                                                                                                                     +
+                (json 'null'),                                                                                                                                                                                                      +
+                (json '[1, 2, 3]'),                                                                                                                                                                                                 +
+                (json '[]'),                                                                                                                                                                                                        +
+                (json '{"x":"foo", "y":123}'),                                                                                                                                                                                      +
+                (json '{}'),                                                                                                                                                                                                        +
+                (NULL::json))                                                                                                                                                                                                       +
+       as data(value);
+ statement: SELECT json_build_array('a',1,'b',1.2,'c',true,'d',null,'e',json '{"x": 3, "y": [1,2,3]}');
+ statement: SELECT json_build_array('a', NULL);
+ statement: SELECT json_build_array(VARIADIC NULL::text[]);
+ statement: SELECT json_build_array(VARIADIC '{}'::text[]);
+ statement: SELECT json_build_array(VARIADIC '{a,b,c}'::text[]);
+ statement: SELECT json_build_array(VARIADIC ARRAY['a', NULL]::text[]);
+ statement: SELECT json_build_array(VARIADIC '{1,2,3,4}'::text[]);
+ statement: SELECT json_build_array(VARIADIC '{1,2,3,4}'::int[]);
+ statement: SELECT json_build_array(VARIADIC '{{1,4},{2,5},{3,6}}'::int[][]);
+ statement: SELECT json_build_object('a',1,'b',1.2,'c',true,'d',null,'e',json '{"x": 3, "y": [1,2,3]}');
+ statement: SELECT json_build_object(                                                                                                                                                                                               +
+        'a', json_build_object('b',false,'c',99),                                                                                                                                                                                   +
+        'd', json_build_object('e',array[9,8,7]::int[],                                                                                                                                                                             +
+            'f', (select row_to_json(r) from ( select relkind, oid::regclass as name from pg_class where relname = 'pg_class') r)));
+ statement: SELECT json_build_object('{a,b,c}'::text[]);
+ statement: SELECT json_build_object('{a,b,c}'::text[], '{d,e,f}'::text[]);
+ statement: SELECT json_build_object('a', 'b', 'c');
+ statement: SELECT json_build_object(NULL, 'a');
+ statement: SELECT json_build_object('a', NULL);
+ statement: SELECT json_build_object(VARIADIC NULL::text[]);
+ statement: SELECT json_build_object(VARIADIC '{}'::text[]);
+ statement: SELECT json_build_object(VARIADIC '{a,b,c}'::text[]);
+ statement: SELECT json_build_object(VARIADIC ARRAY['a', NULL]::text[]);
+ statement: SELECT json_build_object(VARIADIC ARRAY[NULL, 'a']::text[]);
+ statement: SELECT json_build_object(VARIADIC '{1,2,3,4}'::text[]);
+ statement: SELECT json_build_object(VARIADIC '{1,2,3,4}'::int[]);
+ statement: SELECT json_build_object(VARIADIC '{{1,4},{2,5},{3,6}}'::int[][]);
+ statement: SELECT json_build_array();
+ statement: SELECT json_build_object();
+ statement: SELECT json_build_object(1,2);
+ statement: SELECT json_build_object(null,2);
+ statement: SELECT json_build_object(r,2) FROM (SELECT 1 AS a, 2 AS b) r;
+ statement: SELECT json_build_object(json '{"a":1,"b":2}', 3);
+ statement: SELECT json_build_object('{1,2,3}'::int[], 3);
+ statement: CREATE TEMP TABLE foo (serial_num int, name text, type text);
+ statement: INSERT INTO foo VALUES (847001,'t15','GE1043');
+ statement: INSERT INTO foo VALUES (847002,'t16','GE1043');
+ statement: INSERT INTO foo VALUES (847003,'sub-alpha','GESS90');
+ statement: SELECT json_build_object('turbines',json_object_agg(serial_num,json_build_object('name',name,'type',type)))                                                                                                             +
+ FROM foo;
+ statement: SELECT json_object_agg(name, type) FROM foo;
+ statement: INSERT INTO foo VALUES (999999, NULL, 'bar');
+ statement: SELECT json_object_agg(name, type) FROM foo;
+ statement: SELECT json_object('{}');
+ statement: SELECT json_object('{}', '{}');
+ statement: SELECT json_object('{a,1,b,2,3,NULL,"d e f","a b c"}');
+ statement: SELECT json_object('{{a,1},{b,2},{3,NULL},{"d e f","a b c"}}');
+ statement: SELECT json_object('{a,b,c}');
+ statement: SELECT json_object('{{a},{b}}');
+ statement: SELECT json_object('{{a,b,c},{b,c,d}}');
+ statement: SELECT json_object('{{{a,b},{c,d}},{{b,c},{d,e}}}');
+ statement: select json_object('{a,b,c,"d e f"}','{1,2,3,"a b c"}');
+ statement: SELECT json_object('{{a,1},{b,2},{3,NULL},{"d e f","a b c"}}', '{{a,1},{b,2},{3,NULL},{"d e f","a b c"}}');
+ statement: select json_object('{a,b,c,"d e f",g}','{1,2,3,"a b c"}');
+ statement: select json_object('{a,b,c,"d e f"}','{1,2,3,"a b c",g}');
+ statement: select json_object('{a,b,NULL,"d e f"}','{1,2,3,"a b c"}');
+ statement: select json_object('{a,b,"","d e f"}','{1,2,3,"a b c"}');
+ statement: select * from json_to_record('{"a":1,"b":"foo","c":"bar"}')                                                                                                                                                             +
+     as x(a int, b text, d text);
+ statement: select * from json_to_recordset('[{"a":1,"b":"foo","d":false},{"a":2,"b":"bar","c":true}]')                                                                                                                             +
+     as x(a int, b text, c boolean);
+ statement: select * from json_to_recordset('[{"a":1,"b":{"d":"foo"},"c":true},{"a":2,"c":false,"b":{"d":"bar"}}]')                                                                                                                 +
+     as x(a int, b json, c boolean);
+ statement: select *, c is null as c_is_null                                                                                                                                                                                        +
+ from json_to_record('{"a":1, "b":{"c":16, "d":2}, "x":8}'::json)                                                                                                                                                                   +
+     as t(a int, b json, c text, x int);
+ statement: select *, c is null as c_is_null                                                                                                                                                                                        +
+ from json_to_recordset('[{"a":1, "b":{"c":16, "d":2}, "x":8}]'::json)                                                                                                                                                              +
+     as t(a int, b json, c text, x int);
+ statement: select json_strip_nulls(null);
+ statement: select json_strip_nulls('1');
+ statement: select json_strip_nulls('"a string"');
+ statement: select json_strip_nulls('null');
+ statement: select json_strip_nulls('[1,2,null,3,4]');
+ statement: select json_strip_nulls('{"a":1,"b":null,"c":[2,null,3],"d":{"e":4,"f":null}}');
+ statement: select json_strip_nulls('[1,{"a":1,"b":null,"c":2},3]');
+ statement: select json_strip_nulls('{"a": {"b": null, "c": null}, "d": {} }');
+

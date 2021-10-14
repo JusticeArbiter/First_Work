@@ -1,0 +1,4 @@
+INSERT INTO ucchild values(100, 'hundred');
+ERROR:  42P01: relation "ucchild" does not exist
+LINE 1: INSERT INTO ucchild values(100, 'hundred');
+                    ^

@@ -1,0 +1,6 @@
+SELECT tsvectorin(tsvectorout($$'\\as' ab\c ab\\c AB\\\c ab\\\\c$$::tsvector));
+               tsvectorin               
+----------------------------------------
+ 'AB\\c' '\\as' 'ab\\\\c' 'ab\\c' 'abc'
+(1 row)
+

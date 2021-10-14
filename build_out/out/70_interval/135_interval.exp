@@ -1,0 +1,6 @@
+select interval 'P0Y' AS "zero",  interval 'P1Y2M' AS "a year 2 months",  interval 'P1W' AS "a week",  interval 'P1DT2H3M4S' AS "a bit over a day",  interval 'P1Y2M3DT4H5M6.7S' AS "all fields",  interval 'P-1Y-2M-3DT-4H-5M-6.7S' AS "negative",  interval 'PT-0.1S' AS "fractional second";
+   zero   | a year 2 months | a week | a bit over a day |           all fields            |               negative               | fractional second 
+----------+-----------------+--------+------------------+---------------------------------+--------------------------------------+-------------------
+ 00:00:00 | 1 year 2 mons   | 7 days | 1 day 02:03:04   | 1 year 2 mons 3 days 04:05:06.7 | -1 years -2 mons -3 days -04:05:06.7 | -00:00:00.1
+(1 row)
+

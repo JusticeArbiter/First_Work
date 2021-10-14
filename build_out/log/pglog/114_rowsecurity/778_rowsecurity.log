@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO r1 VALUES (10)  ON CONFLICT ON CONSTRAINT r1_pkey DO UPDATE SET a = 30;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: duplicate key value violates unique constraint "r1_pkey"
+DETAIL:  Key (a)=(30) already exists.
+LOCATION:  _bt_check_unique, nbtinsert.c:432
+STATEMENT:  INSERT INTO r1 VALUES (10)  ON CONFLICT ON CONSTRAINT r1_pkey DO UPDATE SET a = 30;

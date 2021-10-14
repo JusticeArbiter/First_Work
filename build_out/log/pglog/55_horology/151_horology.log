@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS ten, f1 AS interval, reltime(f1) AS reltime  FROM INTERVAL_TBL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "interval_tbl" does not exist at character 64
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT '' AS ten, f1 AS interval, reltime(f1) AS reltime  FROM INTERVAL_TBL;

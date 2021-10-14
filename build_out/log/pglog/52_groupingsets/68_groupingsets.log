@@ -1,0 +1,6 @@
+LOG:  00000: statement: select usort, grouping(usort), count(*) from (values ('1'::xid),('2'::xid),('1'::xid)) v(usort) group by rollup(usort);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: could not implement GROUP BY
+DETAIL:  Some of the datatypes do not support sorting, which is required for grouping sets.
+LOCATION:  grouping_planner, planner.c:1763
+STATEMENT:  select usort, grouping(usort), count(*) from (values ('1'::xid),('2'::xid),('1'::xid)) v(usort) group by rollup(usort);

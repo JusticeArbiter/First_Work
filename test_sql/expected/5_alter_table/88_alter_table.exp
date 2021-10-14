@@ -1,0 +1,3 @@
+ALTER INDEX IF EXISTS __onek_unique1 RENAME TO tmp_onek_unique1;
+NOTICE:  00000: relation "__onek_unique1" does not exist, skipping
+ALTER INDEX

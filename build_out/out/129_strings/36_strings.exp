@@ -1,0 +1,9 @@
+SELECT CAST(f1 AS varchar) AS "varchar(char)" FROM CHAR_TBL;
+ varchar(char) 
+---------------
+ a
+ ab
+ abcd
+ abcd
+(4 rows)
+

@@ -1,0 +1,6 @@
+LOG:  00000: statement: ALTER TYPE test_type2 ALTER ATTRIBUTE b TYPE varchar;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: cannot alter type "test_type2" because it is the type of a typed table
+HINT:  Use ALTER ... CASCADE to alter the typed tables too.
+LOCATION:  find_typed_table_dependencies, tablecmds.c:4626
+STATEMENT:  ALTER TYPE test_type2 ALTER ATTRIBUTE b TYPE varchar;

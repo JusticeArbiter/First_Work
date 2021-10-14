@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE update_test SET (c,b,a) = ('bugle', b+11, DEFAULT) WHERE c = 'foo';
+LOCATION:  exec_simple_query, postgres.c:938

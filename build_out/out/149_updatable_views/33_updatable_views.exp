@@ -1,0 +1,4 @@
+UPDATE ro_view7 SET a=a+1;
+ERROR:  55000: cannot update view "ro_view7"
+DETAIL:  Views containing WITH are not automatically updatable.
+HINT:  To enable updating the view, provide an INSTEAD OF UPDATE trigger or an unconditional ON UPDATE DO INSTEAD rule.

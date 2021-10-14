@@ -1,0 +1,7 @@
+LOG:  00000: statement: DROP USER regression_user1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: role "regression_user1" cannot be dropped because some objects depend on it
+DETAIL:  owner of default privileges on new relations belonging to role regression_user1 in schema deptest
+	privileges for table deptest1
+LOCATION:  DropRole, user.c:1027
+STATEMENT:  DROP USER regression_user1;

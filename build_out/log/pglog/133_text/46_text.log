@@ -1,0 +1,5 @@
+LOG:  00000: statement: select format('%0$s', 'Hello');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: format specifies argument 0, but arguments are numbered from 1
+LOCATION:  text_format_parse_format, varlena.c:4935
+STATEMENT:  select format('%0$s', 'Hello');

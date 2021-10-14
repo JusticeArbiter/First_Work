@@ -1,0 +1,6 @@
+select soundex('highgo db'::text),soundex('HighGo DB'::text);
+ soundex | soundex 
+---------+---------
+ H223    | H223
+(1 row)
+

@@ -1,0 +1,2 @@
+select doubledecrement(0);
+ERROR:  23514: value for domain pos_int violates check constraint "pos_int_check"

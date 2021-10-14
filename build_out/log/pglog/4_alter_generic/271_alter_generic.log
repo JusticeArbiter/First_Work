@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TEXT SEARCH CONFIGURATION alt_ts_conf3 SET SCHEMA alt_nsp2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: text search configuration "alt_ts_conf3" does not exist
+LOCATION:  get_ts_config_oid, namespace.c:2534
+STATEMENT:  ALTER TEXT SEARCH CONFIGURATION alt_ts_conf3 SET SCHEMA alt_nsp2;

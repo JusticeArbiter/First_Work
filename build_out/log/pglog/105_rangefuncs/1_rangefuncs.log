@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT name, setting FROM pg_settings WHERE name LIKE 'enable%';
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER USER CURRENT_USER SET application_name to 'BAZ';
+LOCATION:  exec_simple_query, postgres.c:938

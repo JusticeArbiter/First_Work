@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT regrole('foo.bar');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42602: invalid name syntax at character 16
+LOCATION:  regrolein, regproc.c:1595
+STATEMENT:  SELECT regrole('foo.bar');

@@ -1,0 +1,2 @@
+SELECT currval('sequence_test'::regclass);
+ERROR:  55000: currval of sequence "sequence_test" is not yet defined in this session

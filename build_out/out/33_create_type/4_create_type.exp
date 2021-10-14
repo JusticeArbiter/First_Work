@@ -1,0 +1,2 @@
+CREATE TYPE shell;
+ERROR:  42710: type "shell" already exists

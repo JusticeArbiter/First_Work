@@ -1,0 +1,2 @@
+LOG:  00000: statement: select rank('adam'::varchar) within group (order by x) from (values ('fred'),('jim')) v(x);
+LOCATION:  exec_simple_query, postgres.c:938

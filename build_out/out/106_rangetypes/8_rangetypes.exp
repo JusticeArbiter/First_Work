@@ -1,0 +1,5 @@
+select '(a,))'::textrange;
+ERROR:  22P02: malformed range literal: "(a,))"
+LINE 1: select '(a,))'::textrange;
+               ^
+DETAIL:  Junk after right parenthesis or bracket.

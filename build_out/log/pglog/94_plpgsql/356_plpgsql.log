@@ -1,0 +1,8 @@
+LOG:  00000: statement: create function trap_foreign_key(int) returns int as $$  begin  begin -- start a subtransaction  insert into slave values($1);  exception  when foreign_key_violation then  raise notice 'caught foreign_key_violation';  return 0;  end;  return 1;  end$$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function trap_foreign_key(int) returns int as $$  begin  begin -- start a subtransaction  insert into slave values($1);  exception  when foreign_key_violation then  raise notice 'caught foreign_key_violation';  return 0;  end;  return 1;  end$$ language plpgsql;
+ERROR:  42601: syntax error at end of input at character 250
+LOCATION:  plpgsql_yyerror, pl_scanner.c:623
+STATEMENT:  create function trap_foreign_key(int) returns int as $$  begin  begin -- start a subtransaction  insert into slave values($1);  exception  when foreign_key_violation then  raise notice 'caught foreign_key_violation';  return 0;  end;  return 1;  end$$ language plpgsql;

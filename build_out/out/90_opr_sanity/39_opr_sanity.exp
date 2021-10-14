@@ -1,0 +1,13 @@
+SELECT castsource::regtype, casttarget::regtype, castfunc, castcontext  FROM pg_cast c  WHERE c.castmethod = 'b' AND  NOT EXISTS (SELECT 1 FROM pg_cast k  WHERE k.castmethod = 'b' AND  k.castsource = c.casttarget AND  k.casttarget = c.castsource);
+    castsource     |    casttarget     | castfunc | castcontext 
+-------------------+-------------------+----------+-------------
+ text              | character         |        0 | i
+ character varying | character         |        0 | i
+ pg_node_tree      | text              |        0 | i
+ cidr              | inet              |        0 | i
+ xml               | text              |        0 | a
+ xml               | character varying |        0 | a
+ xml               | character         |        0 | a
+ text              | casttesttype      |        0 | i
+(8 rows)
+

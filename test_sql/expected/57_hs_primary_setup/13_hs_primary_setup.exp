@@ -1,0 +1,4 @@
+DROP sequence if exists hsseq;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SEQUENCE
+NOTICE:  00000: sequence "hsseq" does not exist, skipping
+DROP SEQUENCE

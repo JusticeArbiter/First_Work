@@ -1,0 +1,6 @@
+SELECT has_function_privilege('regressuser1', 'testns.testfunc(int)', 'EXECUTE');
+ has_function_privilege 
+------------------------
+ t
+(1 row)
+

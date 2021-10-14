@@ -1,0 +1,6 @@
+SELECT nextval('sequence_test2');
+ nextval 
+---------
+       5
+(1 row)
+

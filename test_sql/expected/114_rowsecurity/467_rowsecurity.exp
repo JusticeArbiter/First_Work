@@ -1,0 +1,11 @@
+SELECT id, author, message FROM blog JOIN comment ON id = blog_id;
+ id | author |   message   
+----+--------+-------------
+  1 | alice  | cool blog
+  1 | alice  | fun blog
+  2 | bob    | who did it?
+  3 | alice  | crazy blog
+  4 | alice  | insane!
+  5 | john   | what?
+(6 rows)
+

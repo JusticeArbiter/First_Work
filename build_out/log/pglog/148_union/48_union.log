@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT a.f1 FROM (SELECT 'test' AS f1 FROM varchar_tbl) a  UNION  SELECT b.f1 FROM (SELECT f1 FROM varchar_tbl) b  ORDER BY 1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "varchar_tbl" does not exist at character 44
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT a.f1 FROM (SELECT 'test' AS f1 FROM varchar_tbl) a  UNION  SELECT b.f1 FROM (SELECT f1 FROM varchar_tbl) b  ORDER BY 1;

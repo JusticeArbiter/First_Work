@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TYPE rainbow AS ENUM ('red', 'orange', 'yellow', 'green', 'blue', 'purple');
+LOCATION:  exec_simple_query, postgres.c:938

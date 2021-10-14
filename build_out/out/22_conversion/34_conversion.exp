@@ -1,0 +1,6 @@
+SELECT CONVERT('foo', 'WIN866', 'ISO-8859-5');
+ convert  
+----------
+ \x666f6f
+(1 row)
+

@@ -1,0 +1,7 @@
+select pleast(10);
+NOTICE:  00000: non-variadic function called
+ pleast 
+--------
+     10
+(1 row)
+

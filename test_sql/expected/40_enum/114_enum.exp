@@ -1,0 +1,2 @@
+INSERT INTO enumtest_parent VALUES ('red');
+INSERT 0 1

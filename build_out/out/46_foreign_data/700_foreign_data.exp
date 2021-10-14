@@ -1,0 +1,2 @@
+TRUNCATE pt1;
+ERROR:  42809: "ft2" is not a table

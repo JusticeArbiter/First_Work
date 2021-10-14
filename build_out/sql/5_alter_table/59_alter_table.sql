@@ -1,0 +1,1 @@
+ALTER TABLE tmp ADD COLUMN z int2[];

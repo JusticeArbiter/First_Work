@@ -1,0 +1,2 @@
+drop view aggordview1;
+ERROR:  42P01: view "aggordview1" does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: prepare p2 as select nextval('seq');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "seq" does not exist at character 30
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  prepare p2 as select nextval('seq');

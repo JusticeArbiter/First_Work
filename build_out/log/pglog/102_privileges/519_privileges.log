@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT has_table_privilege('regressuser1', 'testns.acltest1', 'INSERT');
+LOCATION:  exec_simple_query, postgres.c:938

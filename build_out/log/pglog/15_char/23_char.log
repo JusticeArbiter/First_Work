@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO CHAR_TBL (f1) VALUES ('abcde');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22001: value too long for type character(4)
+LOCATION:  bpchar, varchar.c:307
+STATEMENT:  INSERT INTO CHAR_TBL (f1) VALUES ('abcde');

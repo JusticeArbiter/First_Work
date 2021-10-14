@@ -1,0 +1,8 @@
+explain (costs off)  select min(unique1) from tenk1 GROUP BY ();
+       QUERY PLAN        
+-------------------------
+ Aggregate
+   Group Key: ()
+   ->  Seq Scan on tenk1
+(3 rows)
+

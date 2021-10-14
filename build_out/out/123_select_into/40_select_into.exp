@@ -1,0 +1,8 @@
+SELECT make_table();
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE AS
+CONTEXT:  SQL function "make_table" statement 1
+ make_table 
+------------
+ 
+(1 row)
+

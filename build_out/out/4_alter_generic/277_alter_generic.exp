@@ -1,0 +1,2 @@
+ALTER TEXT SEARCH TEMPLATE alt_ts_temp1 RENAME TO alt_ts_temp2;
+ERROR:  42710: text search template "alt_ts_temp2" already exists in schema "public"

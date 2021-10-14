@@ -1,0 +1,5 @@
+LOG:  00000: statement: COPY t2 FROM stdin WITH (oids);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: table "t2" does not have OIDs
+LOCATION:  BeginCopy, copy.c:1408
+STATEMENT:  COPY t2 FROM stdin WITH (oids);

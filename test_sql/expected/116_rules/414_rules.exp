@@ -1,0 +1,4 @@
+select xmin, * from fooview;
+ERROR:  42703: column "xmin" does not exist
+LINE 1: select xmin, * from fooview;
+               ^

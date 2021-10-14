@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE VIEW foo AS SELECT 1 INTO b;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE VIEW foo AS SELECT 1 INTO b;
+ERROR:  0A000: views must not contain SELECT INTO
+LOCATION:  DefineView, view.c:444
+STATEMENT:  CREATE VIEW foo AS SELECT 1 INTO b;

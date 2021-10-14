@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT date 'J1520447' AS "Confucius' Birthday";
+LOCATION:  exec_simple_query, postgres.c:938

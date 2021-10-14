@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE OR REPLACE VIEW viewtest AS  SELECT a, b::numeric FROM viewtest_tbl;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: cannot change data type of view column "b" from integer to numeric
+LOCATION:  checkViewTupleDesc, view.c:310
+STATEMENT:  CREATE OR REPLACE VIEW viewtest AS  SELECT a, b::numeric FROM viewtest_tbl;

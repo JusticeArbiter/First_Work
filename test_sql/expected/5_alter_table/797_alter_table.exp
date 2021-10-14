@@ -1,0 +1,2 @@
+insert into another values(3, 'three');
+INSERT 0 1

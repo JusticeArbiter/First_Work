@@ -1,0 +1,2 @@
+select 'xyz' ~ 'x(\w)(?=\1)';
+ERROR:  2201B: invalid regular expression: invalid backreference number

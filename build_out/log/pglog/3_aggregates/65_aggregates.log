@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TEMPORARY TABLE bool_test(  b1 BOOL,  b2 BOOL,  b3 BOOL,  b4 BOOL);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+select footest();
+ERROR:  42883: function footest() does not exist
+LINE 1: select footest();
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

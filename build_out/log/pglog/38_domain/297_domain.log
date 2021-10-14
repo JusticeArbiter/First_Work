@@ -1,0 +1,6 @@
+LOG:  00000: statement: select array_elem_check(-1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: value for domain orderedpair violates check constraint "orderedpair_check"
+CONTEXT:  PL/pgSQL function array_elem_check(integer) line 1 at assignment
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4060
+STATEMENT:  select array_elem_check(-1);

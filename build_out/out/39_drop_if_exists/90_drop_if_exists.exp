@@ -1,0 +1,3 @@
+DROP RULE IF EXISTS test_rule_exists ON test_exists;
+NOTICE:  00000: rule "test_rule_exists" for relation "test_exists" does not exist, skipping
+DROP RULE

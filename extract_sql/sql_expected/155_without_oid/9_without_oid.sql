@@ -1,0 +1,1 @@
+INSERT INTO wo SELECT i+8 FROM wo;

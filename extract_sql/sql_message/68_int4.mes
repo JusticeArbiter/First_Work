@@ -1,0 +1,80 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE INT4_TBL(f1 int4);
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('   0  ');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('123456     ');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('    -123456');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('34.5');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('2147483647');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('-2147483647');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('1000000000000');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('asdf');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('     ');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('   asdf   ');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('- 1234');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('123       5');
+ statement: INSERT INTO INT4_TBL(f1) VALUES ('');
+ statement: SELECT '' AS five, * FROM INT4_TBL;
+ statement: SELECT '' AS four, i.* FROM INT4_TBL i WHERE i.f1 <> int2 '0';
+ statement: SELECT '' AS four, i.* FROM INT4_TBL i WHERE i.f1 <> int4 '0';
+ statement: SELECT '' AS one, i.* FROM INT4_TBL i WHERE i.f1 = int2 '0';
+ statement: SELECT '' AS one, i.* FROM INT4_TBL i WHERE i.f1 = int4 '0';
+ statement: SELECT '' AS two, i.* FROM INT4_TBL i WHERE i.f1 < int2 '0';
+ statement: SELECT '' AS two, i.* FROM INT4_TBL i WHERE i.f1 < int4 '0';
+ statement: SELECT '' AS three, i.* FROM INT4_TBL i WHERE i.f1 <= int2 '0';
+ statement: SELECT '' AS three, i.* FROM INT4_TBL i WHERE i.f1 <= int4 '0';
+ statement: SELECT '' AS two, i.* FROM INT4_TBL i WHERE i.f1 > int2 '0';
+ statement: SELECT '' AS two, i.* FROM INT4_TBL i WHERE i.f1 > int4 '0';
+ statement: SELECT '' AS three, i.* FROM INT4_TBL i WHERE i.f1 >= int2 '0';
+ statement: SELECT '' AS three, i.* FROM INT4_TBL i WHERE i.f1 >= int4 '0';
+ statement: SELECT '' AS one, i.* FROM INT4_TBL i WHERE (i.f1 % int2 '2') = int2 '1';
+ statement: SELECT '' AS three, i.* FROM INT4_TBL i WHERE (i.f1 % int4 '2') = int2 '0';
+ statement: SELECT '' AS five, i.f1, i.f1 * int2 '2' AS x FROM INT4_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 * int2 '2' AS x FROM INT4_TBL i              +
+ WHERE abs(f1) < 1073741824;
+ statement: SELECT '' AS five, i.f1, i.f1 * int4 '2' AS x FROM INT4_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 * int4 '2' AS x FROM INT4_TBL i              +
+ WHERE abs(f1) < 1073741824;
+ statement: SELECT '' AS five, i.f1, i.f1 + int2 '2' AS x FROM INT4_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 + int2 '2' AS x FROM INT4_TBL i              +
+ WHERE f1 < 2147483646;
+ statement: SELECT '' AS five, i.f1, i.f1 + int4 '2' AS x FROM INT4_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 + int4 '2' AS x FROM INT4_TBL i              +
+ WHERE f1 < 2147483646;
+ statement: SELECT '' AS five, i.f1, i.f1 - int2 '2' AS x FROM INT4_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 - int2 '2' AS x FROM INT4_TBL i              +
+ WHERE f1 > -2147483647;
+ statement: SELECT '' AS five, i.f1, i.f1 - int4 '2' AS x FROM INT4_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 - int4 '2' AS x FROM INT4_TBL i              +
+ WHERE f1 > -2147483647;
+ statement: SELECT '' AS five, i.f1, i.f1 / int2 '2' AS x FROM INT4_TBL i;
+ statement: SELECT '' AS five, i.f1, i.f1 / int4 '2' AS x FROM INT4_TBL i;
+ statement: SELECT -2+3 AS one;
+ statement: SELECT 4-2 AS two;
+ statement: SELECT 2- -1 AS three;
+ statement: SELECT 2 - -2 AS four;
+ statement: SELECT int2 '2' * int2 '2' = int2 '16' / int2 '4' AS true;
+ statement: SELECT int4 '2' * int2 '2' = int2 '16' / int4 '4' AS true;
+ statement: SELECT int2 '2' * int4 '2' = int4 '16' / int2 '4' AS true;
+ statement: SELECT int4 '1000' < int4 '999' AS false;
+ statement: SELECT 4! AS twenty_four;
+ statement: SELECT !!3 AS six;
+ statement: SELECT 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 AS ten;
+ statement: SELECT 2 + 2 / 2 AS three;
+ statement: SELECT (2 + 2) / 2 AS two;
+ statement: SELECT (-1::int4<<31)::text;
+ statement: SELECT ((-1::int4<<31)+1)::text;
+ statement: SELECT (-2147483648)::int4 * (-1)::int4;
+ statement: SELECT (-2147483648)::int4 / (-1)::int4;
+ statement: SELECT (-2147483648)::int4 % (-1)::int4;
+ statement: SELECT (-2147483648)::int4 * (-1)::int2;
+ statement: SELECT (-2147483648)::int4 / (-1)::int2;
+ statement: SELECT (-2147483648)::int4 % (-1)::int2;
+ statement: SELECT x, x::int4 AS int4_value                                            +
+ FROM (VALUES (-2.5::float8),                                                          +
+              (-1.5::float8),                                                          +
+              (-0.5::float8),                                                          +
+              (0.0::float8),                                                           +
+              (0.5::float8),                                                           +
+              (1.5::float8),                                                           +
+              (2.5::float8)) t(x);
+

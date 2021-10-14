@@ -1,0 +1,5 @@
+LOG:  00000: statement: COPY bool_test FROM STDIN NULL 'null';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "bool_test" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  COPY bool_test FROM STDIN NULL 'null';

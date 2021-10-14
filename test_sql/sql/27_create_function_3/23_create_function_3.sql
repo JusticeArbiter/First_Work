@@ -1,0 +1,1 @@
+ALTER FUNCTION functext_C_3(int) SECURITY DEFINER;

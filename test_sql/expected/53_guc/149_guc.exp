@@ -1,0 +1,6 @@
+select current_schemas(false);
+ current_schemas 
+-----------------
+ {public}
+(1 row)
+

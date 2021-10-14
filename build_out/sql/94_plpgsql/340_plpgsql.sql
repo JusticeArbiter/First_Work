@@ -1,0 +1,1 @@
+create function subxact_rollback_semantics() returns int as $$  declare x int;  begin  x := 1;  insert into foo values(x);  begin  x := x + 1;  insert into foo values(x);  raise exception 'inner';  exception  when others then  x := x * 10;  end;  insert into foo values(x);  return x;  end$$ language plpgsql;

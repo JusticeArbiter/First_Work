@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into domcontest values (-5);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: value for domain con violates check constraint "con_check"
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4060
+STATEMENT:  insert into domcontest values (-5);

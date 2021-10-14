@@ -1,0 +1,2 @@
+CREATE INDEX rix ON road USING btree (name text_ops);
+ERROR:  42P01: relation "road" does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: FETCH FIRST FROM tablesample_cur;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "tablesample_cur" does not exist
+LOCATION:  PerformPortalFetch, portalcmds.c:168
+STATEMENT:  FETCH FIRST FROM tablesample_cur;

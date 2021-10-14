@@ -1,0 +1,1 @@
+ALTER ROLE SESSION_USER RESET application_name;

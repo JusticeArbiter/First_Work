@@ -1,0 +1,1 @@
+SET SESSION AUTHORIZATION selinto_user;

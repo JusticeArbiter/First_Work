@@ -1,0 +1,2 @@
+LOG:  00000: statement: DROP ROLE temp_reset_user;
+LOCATION:  exec_simple_query, postgres.c:938

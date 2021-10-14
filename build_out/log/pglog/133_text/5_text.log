@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO TEXT_TBL VALUES ('hi de ho neighbor');
+LOCATION:  exec_simple_query, postgres.c:938

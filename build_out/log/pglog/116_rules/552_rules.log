@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM hat_data WHERE hat_name IN ('h8', 'h9', 'h7') ORDER BY hat_name;
+LOCATION:  exec_simple_query, postgres.c:938

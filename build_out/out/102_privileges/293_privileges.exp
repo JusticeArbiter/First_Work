@@ -1,0 +1,6 @@
+SELECT testfunc4(true);
+ testfunc4 
+-----------
+ 
+(1 row)
+

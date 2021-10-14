@@ -1,0 +1,7 @@
+SELECT * FROM getfoo2(1) WITH ORDINALITY AS t1(v,o);
+ v | o 
+---+---
+ 1 | 1
+ 1 | 2
+(2 rows)
+

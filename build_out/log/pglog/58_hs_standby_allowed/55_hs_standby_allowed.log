@@ -1,0 +1,5 @@
+LOG:  00000: statement: fetch 1 from hsc;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "hsc" does not exist
+LOCATION:  PerformPortalFetch, portalcmds.c:168
+STATEMENT:  fetch 1 from hsc;

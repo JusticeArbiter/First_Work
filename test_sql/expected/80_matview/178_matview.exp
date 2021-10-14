@@ -1,0 +1,6 @@
+SELECT * FROM mvtest_mv_v_3;
+ ii | jj 
+----+----
+  1 |  3
+(1 row)
+

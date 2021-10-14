@@ -1,0 +1,4 @@
+WITH wcte AS ( INSERT INTO child2 VALUES ( 42, 'new2' ) RETURNING id AS newid )  DELETE FROM parent USING wcte WHERE id = newid;
+ERROR:  42P01: relation "child2" does not exist
+LINE 1: WITH wcte AS ( INSERT INTO child2 VALUES ( 42, 'new2' ) RETU...
+                                   ^

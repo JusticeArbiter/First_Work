@@ -1,0 +1,6 @@
+SELECT interval '1.234' second;
+   interval   
+--------------
+ 00:00:01.234
+(1 row)
+

@@ -1,0 +1,6 @@
+DROP POLICY p2 ON event_trigger_test;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP POLICY
+NOTICE:  00000: DROP POLICY - ddl_command_start
+NOTICE:  00000: DROP POLICY - sql_drop
+NOTICE:  00000: DROP POLICY - ddl_command_end
+DROP POLICY

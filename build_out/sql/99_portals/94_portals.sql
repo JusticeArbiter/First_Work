@@ -1,0 +1,1 @@
+FETCH FROM foo25;

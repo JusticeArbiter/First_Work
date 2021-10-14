@@ -1,0 +1,6 @@
+SELECT /* both embedded and trailing single line */ 'both' AS third;
+ third 
+-------
+ both
+(1 row)
+

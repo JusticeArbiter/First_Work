@@ -1,0 +1,5 @@
+select trap_matching_test(50);
+ERROR:  42883: function trap_matching_test(integer) does not exist
+LINE 1: select trap_matching_test(50);
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

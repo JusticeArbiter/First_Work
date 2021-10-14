@@ -1,0 +1,1 @@
+CREATE MATERIALIZED VIEW mv_foo AS SELECT * FROM foo_data;

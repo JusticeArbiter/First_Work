@@ -1,0 +1,7 @@
+UPDATE european_city_view SET population = 122800  WHERE city_name = 'Cambridge' RETURNING *;
+ city_id | city_name | population | country_name | continent 
+---------+-----------+------------+--------------+-----------
+       4 | Cambridge |     122800 | UK           | Europe
+(1 row)
+
+UPDATE 1

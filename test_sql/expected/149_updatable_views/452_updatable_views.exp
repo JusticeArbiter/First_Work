@@ -1,0 +1,3 @@
+CREATE FUNCTION snoop(anyelement)  RETURNS boolean AS  $$  BEGIN  RAISE NOTICE 'snooped value: %', $1;  RETURN true;  END;  $$  LANGUAGE plpgsql COST 0.000001;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

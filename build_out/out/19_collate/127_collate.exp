@@ -1,0 +1,2 @@
+DROP SCHEMA collate_tests CASCADE;
+DROP SCHEMA

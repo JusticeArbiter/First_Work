@@ -1,0 +1,3 @@
+COPY v_test1 TO STDOUT 
+ERROR:  42809: cannot copy from view "v_test1"
+HINT:  Try the COPY (SELECT ...) TO variant.

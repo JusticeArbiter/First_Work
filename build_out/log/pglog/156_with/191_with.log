@@ -1,0 +1,2 @@
+LOG:  00000: statement: with ordinality as (select 1 as x) select * from ordinality;
+LOCATION:  exec_simple_query, postgres.c:938

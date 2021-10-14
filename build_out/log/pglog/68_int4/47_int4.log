@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 2 - -2 AS four;
+LOCATION:  exec_simple_query, postgres.c:938

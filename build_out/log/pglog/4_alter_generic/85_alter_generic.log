@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER LANGUAGE alt_lang2 RENAME TO alt_lang3;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,3 @@
+create rule update_id_ordered as on update to id_ordered  do instead update id set name = new.name where id = old.id;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+CREATE RULE

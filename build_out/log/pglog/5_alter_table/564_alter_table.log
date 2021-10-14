@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table myview drop d;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: "myview" is not a table, composite type, or foreign table
+LOCATION:  ATWrongRelkindError, tablecmds.c:4382
+STATEMENT:  alter table myview drop d;

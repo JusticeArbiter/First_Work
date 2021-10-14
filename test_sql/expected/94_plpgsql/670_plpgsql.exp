@@ -1,0 +1,4 @@
+select case_test(5);
+ERROR:  20000: case not found
+HINT:  CASE statement is missing ELSE part.
+CONTEXT:  PL/pgSQL function case_test(bigint) line 1 at CASE

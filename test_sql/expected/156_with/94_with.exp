@@ -1,0 +1,6 @@
+with cte(foo) as ( select 42 ) select * from ((select foo from cte)) q;
+ foo 
+-----
+  42
+(1 row)
+

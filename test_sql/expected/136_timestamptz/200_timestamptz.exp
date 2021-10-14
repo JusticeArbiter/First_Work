@@ -1,0 +1,6 @@
+SELECT '2014-10-26 01:00:01 Europe/Moscow'::timestamptz;
+      timestamptz       
+------------------------
+ 2014-10-26 06:00:01+08
+(1 row)
+

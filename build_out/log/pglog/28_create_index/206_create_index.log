@@ -1,0 +1,5 @@
+LOG:  00000: statement: EXPLAIN (COSTS OFF)  SELECT * FROM point_tbl WHERE f1 <@ '(-10,-10),(10,10)':: box ORDER BY f1 <-> '0,1';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "point_tbl" does not exist at character 36
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  EXPLAIN (COSTS OFF)  SELECT * FROM point_tbl WHERE f1 <@ '(-10,-10),(10,10)':: box ORDER BY f1 <-> '0,1';

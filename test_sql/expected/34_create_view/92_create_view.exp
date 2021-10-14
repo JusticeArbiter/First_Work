@@ -1,0 +1,5 @@
+SELECT * FROM tt1;
+ x | y 
+---+---
+(0 rows)
+

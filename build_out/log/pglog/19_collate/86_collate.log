@@ -1,0 +1,6 @@
+LOG:  00000: statement: select x, y from collate_test10 order by x || y;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P21: collation mismatch between implicit collations "en_US" and "tr_TR" at character 47
+HINT:  You can choose the collation by applying the COLLATE clause to one or both expressions.
+LOCATION:  assign_collations_walker, parse_collate.c:480
+STATEMENT:  select x, y from collate_test10 order by x || y;

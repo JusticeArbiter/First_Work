@@ -1,0 +1,2 @@
+SELECT set_bit(B'0101011000100100', 16, 1);
+ERROR:  2202E: bit index 16 out of valid range (0..15)

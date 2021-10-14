@@ -1,0 +1,4 @@
+DROP USER MAPPING IF EXISTS FOR public SERVER s7;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP USER MAPPING
+NOTICE:  00000: user mapping "public" does not exist for the server, skipping
+DROP USER MAPPING

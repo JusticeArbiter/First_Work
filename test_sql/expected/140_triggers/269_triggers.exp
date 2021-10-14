@@ -1,0 +1,7 @@
+INSERT INTO city_view(city_name, country_name) VALUES('Washington DC', 'USA') RETURNING *;
+ city_id |   city_name   | population | country_name |   continent   
+---------+---------------+------------+--------------+---------------
+       3 | Washington DC |            | USA          | North America
+(1 row)
+
+INSERT 0 1

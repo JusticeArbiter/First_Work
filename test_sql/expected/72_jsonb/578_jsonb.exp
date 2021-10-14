@@ -1,0 +1,2 @@
+select '{}'::jsonb - 1;
+ERROR:  22023: cannot delete from object using integer index

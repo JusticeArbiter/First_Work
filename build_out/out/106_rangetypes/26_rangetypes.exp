@@ -1,0 +1,6 @@
+select '([,z)'::textrange;
+ textrange 
+-----------
+ ("[",z)
+(1 row)
+

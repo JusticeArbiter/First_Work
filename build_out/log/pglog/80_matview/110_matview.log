@@ -1,0 +1,17 @@
+LOG:  00000: statement: DROP TABLE t CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP TABLE t CASCADE;
+NOTICE:  00000: drop cascades to 9 other objects
+DETAIL:  drop cascades to view tv
+	drop cascades to view tvv
+	drop cascades to materialized view tvvm
+	drop cascades to view tvvmv
+	drop cascades to materialized view bb
+	drop cascades to materialized view mvschema.tvm
+	drop cascades to materialized view tvmm
+	drop cascades to materialized view tm
+	drop cascades to materialized view tmm
+LOCATION:  reportDependentObjects, dependency.c:1003
+STATEMENT:  DROP TABLE t CASCADE;

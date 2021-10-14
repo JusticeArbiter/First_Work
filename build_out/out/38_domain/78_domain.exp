@@ -1,0 +1,2 @@
+insert into dcomptable (d1[1].r, d1[1].i) values(100, 99);
+ERROR:  23514: value for domain dcomptypea violates check constraint "c1"

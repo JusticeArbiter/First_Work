@@ -1,0 +1,1 @@
+ALTER TYPE test_typex DROP ATTRIBUTE a;

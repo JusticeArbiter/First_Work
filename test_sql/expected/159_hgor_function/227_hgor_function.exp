@@ -1,0 +1,6 @@
+select tz_offset('Asia/Shanghai');
+ tz_offset 
+-----------
+ 08:00:00
+(1 row)
+

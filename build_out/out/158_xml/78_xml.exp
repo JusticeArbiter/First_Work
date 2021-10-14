@@ -1,0 +1,2 @@
+SELECT xmlserialize(document 'bad' as text);
+ERROR:  2200L: not an XML document

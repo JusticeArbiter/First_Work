@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT width_bucket(5, ARRAY[ARRAY[1, 2], ARRAY[3, 4]]);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2202E: thresholds must be one-dimensional array
+LOCATION:  width_bucket_array, arrayfuncs.c:6279
+STATEMENT:  SELECT width_bucket(5, ARRAY[ARRAY[1, 2], ARRAY[3, 4]]);

@@ -1,0 +1,5 @@
+LOG:  00000: statement: select stacked_diagnostics_test();
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: sqlstate: 22012, message: division by zero, context: [PL/pgSQL function zero_divide() line 1 at RETURN <- SQL statement "SELECT zero_divide()" <- PL/pgSQL function stacked_diagnostics_test() line 1 at PERFORM]
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select stacked_diagnostics_test();

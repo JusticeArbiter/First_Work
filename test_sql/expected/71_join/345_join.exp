@@ -1,0 +1,5 @@
+select * from  int8_tbl x join (int4_tbl x cross join int4_tbl y) j on q1 = y.f1;
+ERROR:  42P01: invalid reference to FROM-clause entry for table "y"
+LINE 1: ...bl x join (int4_tbl x cross join int4_tbl y) j on q1 = y.f1;
+                                                                  ^
+HINT:  There is an entry for table "y", but it cannot be referenced from this part of the query.

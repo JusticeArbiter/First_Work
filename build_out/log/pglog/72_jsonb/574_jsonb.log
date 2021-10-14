@@ -1,0 +1,5 @@
+LOG:  00000: statement: select '"a"'::jsonb - 'a';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: cannot delete from scalar
+LOCATION:  jsonb_delete, jsonfuncs.c:3423
+STATEMENT:  select '"a"'::jsonb - 'a';

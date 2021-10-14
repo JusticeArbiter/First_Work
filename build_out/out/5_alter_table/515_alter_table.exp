@@ -1,0 +1,12 @@
+select * from def_view_test;
+ c1 |       c2        
+----+-----------------
+  5 | initial_default
+    | initial_default
+    | 
+ 10 | new_default
+    | 
+ 45 | 
+ 45 | view_default
+(7 rows)
+

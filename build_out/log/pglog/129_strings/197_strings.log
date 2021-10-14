@@ -1,0 +1,2 @@
+LOG:  00000: statement: select md5('a') = '0cc175b9c0f1b6a831c399e269772661' AS "TRUE";
+LOCATION:  exec_simple_query, postgres.c:938

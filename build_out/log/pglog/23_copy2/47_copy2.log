@@ -1,0 +1,5 @@
+LOG:  00000: statement: COPY testeoc FROM stdin CSV;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "testeoc" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  COPY testeoc FROM stdin CSV;

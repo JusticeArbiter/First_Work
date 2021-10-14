@@ -1,0 +1,5 @@
+LOG:  00000: statement: do $$  begin  assert 1=0, 'unhandled assertion';  exception when others then  null; -- do nothing  end;  $$;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: syntax error at end of input at character 106
+LOCATION:  plpgsql_yyerror, pl_scanner.c:623
+STATEMENT:  do $$  begin  assert 1=0, 'unhandled assertion';  exception when others then  null; -- do nothing  end;  $$;

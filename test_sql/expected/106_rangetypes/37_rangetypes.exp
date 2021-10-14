@@ -1,0 +1,2 @@
+INSERT INTO numrange_test VALUES('[, 5)');
+INSERT 0 1

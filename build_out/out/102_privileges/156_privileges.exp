@@ -1,0 +1,2 @@
+COPY atest5 (one,two) TO stdout;
+1	2

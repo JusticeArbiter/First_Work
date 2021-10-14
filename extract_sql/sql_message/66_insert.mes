@@ -1,0 +1,20 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: create table inserttest (col1 int4, col2 int4 NOT NULL, col3 text default 'testing');
+ statement: insert into inserttest (col1, col2, col3) values (DEFAULT, DEFAULT, DEFAULT);
+ statement: insert into inserttest (col2, col3) values (3, DEFAULT);
+ statement: insert into inserttest (col1, col2, col3) values (DEFAULT, 5, DEFAULT);
+ statement: insert into inserttest values (DEFAULT, 5, 'test');
+ statement: insert into inserttest values (DEFAULT, 7);
+ statement: select * from inserttest;
+ statement: insert into inserttest (col1, col2, col3) values (DEFAULT, DEFAULT);
+ statement: insert into inserttest (col1, col2, col3) values (1, 2);
+ statement: insert into inserttest (col1) values (1, 2);
+ statement: insert into inserttest (col1) values (DEFAULT, DEFAULT);
+ statement: select * from inserttest;
+ statement: insert into inserttest values(10, 20, '40'), (-1, 2, DEFAULT),                       +
+     ((select 2), (select i from (values(3)) as foo (i)), 'values are fun!');
+ statement: select * from inserttest;
+ statement: insert into inserttest values(30, 50, repeat('x', 10000));
+ statement: select col1, col2, char_length(col3) from inserttest;
+ statement: drop table inserttest;
+

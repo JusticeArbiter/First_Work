@@ -1,0 +1,959 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SET client_min_messages TO 'warning';
+ statement: DROP USER IF EXISTS rls_regress_user0;
+ statement: DROP USER IF EXISTS rls_regress_user1;
+ statement: DROP USER IF EXISTS rls_regress_user2;
+ statement: DROP USER IF EXISTS rls_regress_exempt_user;
+ statement: DROP ROLE IF EXISTS rls_regress_group1;
+ statement: DROP ROLE IF EXISTS rls_regress_group2;
+ statement: DROP SCHEMA IF EXISTS rls_regress_schema CASCADE;
+ statement: RESET client_min_messages;
+ statement: CREATE USER rls_regress_user0;
+ statement: CREATE USER rls_regress_user1;
+ statement: CREATE USER rls_regress_user2;
+ statement: CREATE USER rls_regress_exempt_user BYPASSRLS;
+ statement: CREATE ROLE rls_regress_group1 NOLOGIN;
+ statement: CREATE ROLE rls_regress_group2 NOLOGIN;
+ statement: GRANT rls_regress_group1 TO rls_regress_user1;
+ statement: GRANT rls_regress_group2 TO rls_regress_user2;
+ statement: CREATE SCHEMA rls_regress_schema;
+ statement: GRANT ALL ON SCHEMA rls_regress_schema to public;
+ statement: SET search_path = rls_regress_schema;
+ statement: CREATE OR REPLACE FUNCTION f_leak(text) RETURNS bool                                                                                               +
+     COST 0.0000001 LANGUAGE plpgsql                                                                                                                           +
+     AS 'BEGIN RAISE NOTICE ''f_leak => %'', $1; RETURN true; END';
+ statement: GRANT EXECUTE ON FUNCTION f_leak(text) TO public;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE TABLE uaccount (                                                                                                                            +
+     pguser      name primary key,                                                                                                                             +
+     seclv       int                                                                                                                                           +
+ );
+ statement: GRANT SELECT ON uaccount TO public;
+ statement: INSERT INTO uaccount VALUES                                                                                                                        +
+     ('rls_regress_user0', 99),                                                                                                                                +
+     ('rls_regress_user1', 1),                                                                                                                                 +
+     ('rls_regress_user2', 2),                                                                                                                                 +
+     ('rls_regress_user3', 3);
+ statement: CREATE TABLE category (                                                                                                                            +
+     cid        int primary key,                                                                                                                               +
+     cname      text                                                                                                                                           +
+ );
+ statement: GRANT ALL ON category TO public;
+ statement: INSERT INTO category VALUES                                                                                                                        +
+     (11, 'novel'),                                                                                                                                            +
+     (22, 'science fiction'),                                                                                                                                  +
+     (33, 'technology'),                                                                                                                                       +
+     (44, 'manga');
+ statement: CREATE TABLE document (                                                                                                                            +
+     did         int primary key,                                                                                                                              +
+     cid         int references category(cid),                                                                                                                 +
+     dlevel      int not null,                                                                                                                                 +
+     dauthor     name,                                                                                                                                         +
+     dtitle      text                                                                                                                                          +
+ );
+ statement: GRANT ALL ON document TO public;
+ statement: INSERT INTO document VALUES                                                                                                                        +
+     ( 1, 11, 1, 'rls_regress_user1', 'my first novel'),                                                                                                       +
+     ( 2, 11, 2, 'rls_regress_user1', 'my second novel'),                                                                                                      +
+     ( 3, 22, 2, 'rls_regress_user1', 'my science fiction'),                                                                                                   +
+     ( 4, 44, 1, 'rls_regress_user1', 'my first manga'),                                                                                                       +
+     ( 5, 44, 2, 'rls_regress_user1', 'my second manga'),                                                                                                      +
+     ( 6, 22, 1, 'rls_regress_user2', 'great science fiction'),                                                                                                +
+     ( 7, 33, 2, 'rls_regress_user2', 'great technology book'),                                                                                                +
+     ( 8, 44, 1, 'rls_regress_user2', 'great manga');
+ statement: ALTER TABLE document ENABLE ROW LEVEL SECURITY;
+ statement: CREATE POLICY p1 ON document                                                                                                                       +
+     USING (dlevel <= (SELECT seclv FROM uaccount WHERE pguser = current_user));
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SET row_security TO ON;
+ statement: SELECT * FROM document WHERE f_leak(dtitle) ORDER BY did;
+ statement: SELECT * FROM document NATURAL JOIN category WHERE f_leak(dtitle) ORDER BY did;
+ statement: SELECT * FROM document TABLESAMPLE BERNOULLI(50) REPEATABLE(0)                                                                                     +
+   WHERE f_leak(dtitle) ORDER BY did;
+ statement: SET SESSION AUTHORIZATION rls_regress_user2;
+ statement: SELECT * FROM document WHERE f_leak(dtitle) ORDER BY did;
+ statement: SELECT * FROM document NATURAL JOIN category WHERE f_leak(dtitle) ORDER BY did;
+ statement: SELECT * FROM document TABLESAMPLE BERNOULLI(50) REPEATABLE(0)                                                                                     +
+   WHERE f_leak(dtitle) ORDER BY did;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM document WHERE f_leak(dtitle);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM document NATURAL JOIN category WHERE f_leak(dtitle);
+ statement: ALTER POLICY p1 ON document USING (true);
+ statement: DROP POLICY p1 ON document;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: ALTER POLICY p1 ON document USING (dauthor = current_user);
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM document WHERE f_leak(dtitle) ORDER BY did;
+ statement: SELECT * FROM document NATURAL JOIN category WHERE f_leak(dtitle) ORDER by did;
+ statement: SET SESSION AUTHORIZATION rls_regress_user2;
+ statement: SELECT * FROM document WHERE f_leak(dtitle) ORDER BY did;
+ statement: SELECT * FROM document NATURAL JOIN category WHERE f_leak(dtitle) ORDER by did;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM document WHERE f_leak(dtitle);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM document NATURAL JOIN category WHERE f_leak(dtitle);
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE POLICY p2 ON category                                                                                                                       +
+     USING (CASE WHEN current_user = 'rls_regress_user1' THEN cid IN (11, 33)                                                                                  +
+            WHEN current_user = 'rls_regress_user2' THEN cid IN (22, 44)                                                                                       +
+            ELSE false END);
+ statement: ALTER TABLE category ENABLE ROW LEVEL SECURITY;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM document d FULL OUTER JOIN category c on d.cid = c.cid;
+ statement: DELETE FROM category WHERE cid = 33;
+ statement: SET SESSION AUTHORIZATION rls_regress_user2;
+ statement: SELECT * FROM document d FULL OUTER JOIN category c on d.cid = c.cid;
+ statement: INSERT INTO document VALUES (10, 33, 1, current_user, 'hoge');
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: INSERT INTO document VALUES (8, 44, 1, 'rls_regress_user1', 'my third manga');
+ statement: SELECT * FROM document WHERE did = 8;
+ statement: INSERT INTO document VALUES (8, 44, 1, 'rls_regress_user2', 'my third manga');
+ statement: UPDATE document SET did = 8, dauthor = 'rls_regress_user2' WHERE did = 5;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SET row_security TO ON;
+ statement: SELECT * FROM document;
+ statement: SELECT * FROM category;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SET row_security TO OFF;
+ statement: SELECT * FROM document;
+ statement: SELECT * FROM category;
+ statement: SET SESSION AUTHORIZATION rls_regress_exempt_user;
+ statement: SET row_security TO OFF;
+ statement: SELECT * FROM document;
+ statement: SELECT * FROM category;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SET row_security TO ON;
+ statement: SELECT * FROM document;
+ statement: SELECT * FROM category;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SET row_security TO OFF;
+ statement: SELECT * FROM document;
+ statement: SELECT * FROM category;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SET row_security TO ON;
+ statement: CREATE TABLE t1 (a int, junk1 text, b text) WITH OIDS;
+ statement: ALTER TABLE t1 DROP COLUMN junk1;
+ statement: GRANT ALL ON t1 TO public;
+ statement: COPY t1 FROM stdin WITH (oids);
+ statement: CREATE TABLE t2 (c float) INHERITS (t1);
+ statement: GRANT ALL ON t2 TO public;
+ statement: COPY t2 FROM stdin WITH (oids);
+ statement: CREATE TABLE t3 (c text, b text, a int) WITH OIDS;
+ statement: ALTER TABLE t3 INHERIT t1;
+ statement: GRANT ALL ON t3 TO public;
+ statement: COPY t3(a,b,c) FROM stdin WITH (oids);
+ statement: CREATE POLICY p1 ON t1 FOR ALL TO PUBLIC USING (a % 2 = 0);
+ statement: CREATE POLICY p2 ON t2 FOR ALL TO PUBLIC USING (a % 2 = 1);
+ statement: ALTER TABLE t1 ENABLE ROW LEVEL SECURITY;
+ statement: ALTER TABLE t2 ENABLE ROW LEVEL SECURITY;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM t1;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t1;
+ statement: SELECT * FROM t1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t1 WHERE f_leak(b);
+ statement: SELECT oid, * FROM t1;
+ statement: EXPLAIN (COSTS OFF) SELECT *, t1 FROM t1;
+ statement: SELECT *, t1 FROM t1;
+ statement: EXPLAIN (COSTS OFF) SELECT *, t1 FROM t1;
+ statement: SELECT * FROM t1 FOR SHARE;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t1 FOR SHARE;
+ statement: SELECT * FROM t1 WHERE f_leak(b) FOR SHARE;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t1 WHERE f_leak(b) FOR SHARE;
+ statement: SELECT a, b, oid FROM t2 UNION ALL SELECT a, b, oid FROM t3;
+ statement: EXPLAIN (COSTS OFF) SELECT a, b, oid FROM t2 UNION ALL SELECT a, b, oid FROM t3;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SET row_security TO OFF;
+ statement: SELECT * FROM t1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t1 WHERE f_leak(b);
+ statement: SET SESSION AUTHORIZATION rls_regress_exempt_user;
+ statement: SET row_security TO OFF;
+ statement: SELECT * FROM t1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t1 WHERE f_leak(b);
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SET row_security TO ON;
+ statement: CREATE TABLE dependee (x integer, y integer);
+ statement: CREATE TABLE dependent (x integer, y integer);
+ statement: CREATE POLICY d1 ON dependent FOR ALL                                                                                                              +
+     TO PUBLIC                                                                                                                                                 +
+     USING (x = (SELECT d.x FROM dependee d WHERE d.y = y));
+ statement: DROP TABLE dependee;
+ statement: DROP TABLE dependee CASCADE;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM dependent;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE TABLE rec1 (x integer, y integer);
+ statement: CREATE POLICY r1 ON rec1 USING (x = (SELECT r.x FROM rec1 r WHERE y = r.y));
+ statement: ALTER TABLE rec1 ENABLE ROW LEVEL SECURITY;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM rec1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE TABLE rec2 (a integer, b integer);
+ statement: ALTER POLICY r1 ON rec1 USING (x = (SELECT a FROM rec2 WHERE b = y));
+ statement: CREATE POLICY r2 ON rec2 USING (a = (SELECT x FROM rec1 WHERE y = b));
+ statement: ALTER TABLE rec2 ENABLE ROW LEVEL SECURITY;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM rec1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: CREATE VIEW rec1v AS SELECT * FROM rec1;
+ statement: CREATE VIEW rec2v AS SELECT * FROM rec2;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: ALTER POLICY r1 ON rec1 USING (x = (SELECT a FROM rec2v WHERE b = y));
+ statement: ALTER POLICY r2 ON rec2 USING (a = (SELECT x FROM rec1v WHERE y = b));
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM rec1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SET client_min_messages TO 'warning';
+ statement: DROP VIEW rec1v, rec2v CASCADE;
+ statement: RESET client_min_messages;
+ statement: CREATE VIEW rec1v WITH (security_barrier) AS SELECT * FROM rec1;
+ statement: CREATE VIEW rec2v WITH (security_barrier) AS SELECT * FROM rec2;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE POLICY r1 ON rec1 USING (x = (SELECT a FROM rec2v WHERE b = y));
+ statement: CREATE POLICY r2 ON rec2 USING (a = (SELECT x FROM rec1v WHERE y = b));
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM rec1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE TABLE s1 (a int, b text);
+ statement: INSERT INTO s1 (SELECT x, md5(x::text) FROM generate_series(-10,10) x);
+ statement: CREATE TABLE s2 (x int, y text);
+ statement: INSERT INTO s2 (SELECT x, md5(x::text) FROM generate_series(-6,6) x);
+ statement: GRANT SELECT ON s1, s2 TO rls_regress_user1;
+ statement: CREATE POLICY p1 ON s1 USING (a in (select x from s2 where y like '%2f%'));
+ statement: CREATE POLICY p2 ON s2 USING (x in (select a from s1 where b like '%22%'));
+ statement: CREATE POLICY p3 ON s1 FOR INSERT WITH CHECK (a = (SELECT a FROM s1));
+ statement: ALTER TABLE s1 ENABLE ROW LEVEL SECURITY;
+ statement: ALTER TABLE s2 ENABLE ROW LEVEL SECURITY;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: CREATE VIEW v2 AS SELECT * FROM s2 WHERE y like '%af%';
+ statement: SELECT * FROM s1 WHERE f_leak(b);
+ statement: INSERT INTO s1 VALUES (1, 'foo');
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: DROP POLICY p3 on s1;
+ statement: ALTER POLICY p2 ON s2 USING (x % 2 = 0);
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM s1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM only s1 WHERE f_leak(b);
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: ALTER POLICY p1 ON s1 USING (a in (select x from v2));
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM s1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM s1 WHERE f_leak(b);
+ statement: SELECT (SELECT x FROM s1 LIMIT 1) xx, * FROM s2 WHERE y like '%28%';
+ statement: EXPLAIN (COSTS OFF) SELECT (SELECT x FROM s1 LIMIT 1) xx, * FROM s2 WHERE y like '%28%';
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: ALTER POLICY p2 ON s2 USING (x in (select a from s1 where b like '%d2%'));
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM s1 WHERE f_leak(b);
+ statement: PREPARE p1(int) AS SELECT * FROM t1 WHERE a <= $1;
+ statement: EXECUTE p1(2);
+ statement: EXPLAIN (COSTS OFF) EXECUTE p1(2);
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SET row_security TO OFF;
+ statement: SELECT * FROM t1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t1 WHERE f_leak(b);
+ statement: EXECUTE p1(2);
+ statement: EXPLAIN (COSTS OFF) EXECUTE p1(2);
+ statement: PREPARE p2(int) AS SELECT * FROM t1 WHERE a = $1;
+ statement: EXECUTE p2(2);
+ statement: EXPLAIN (COSTS OFF) EXECUTE p2(2);
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SET row_security TO ON;
+ statement: EXECUTE p2(2);
+ statement: EXPLAIN (COSTS OFF) EXECUTE p2(2);
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: EXPLAIN (COSTS OFF) UPDATE t1 SET b = b || b WHERE f_leak(b);
+ statement: UPDATE t1 SET b = b || b WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) UPDATE only t1 SET b = b || '_updt' WHERE f_leak(b);
+ statement: UPDATE only t1 SET b = b || '_updt' WHERE f_leak(b);
+ statement: UPDATE only t1 SET b = b WHERE f_leak(b) RETURNING oid, *, t1;
+ statement: UPDATE t1 SET b = b WHERE f_leak(b) RETURNING *;
+ statement: UPDATE t1 SET b = b WHERE f_leak(b) RETURNING oid, *, t1;
+ statement: EXPLAIN (COSTS OFF) UPDATE t2 SET b=t2.b FROM t3                                                                                                   +
+ WHERE t2.a = 3 and t3.a = 2 AND f_leak(t2.b) AND f_leak(t3.b);
+ statement: UPDATE t2 SET b=t2.b FROM t3                                                                                                                       +
+ WHERE t2.a = 3 and t3.a = 2 AND f_leak(t2.b) AND f_leak(t3.b);
+ statement: EXPLAIN (COSTS OFF) UPDATE t1 SET b=t1.b FROM t2                                                                                                   +
+ WHERE t1.a = 3 and t2.a = 3 AND f_leak(t1.b) AND f_leak(t2.b);
+ statement: UPDATE t1 SET b=t1.b FROM t2                                                                                                                       +
+ WHERE t1.a = 3 and t2.a = 3 AND f_leak(t1.b) AND f_leak(t2.b);
+ statement: EXPLAIN (COSTS OFF) UPDATE t2 SET b=t2.b FROM t1                                                                                                   +
+ WHERE t1.a = 3 and t2.a = 3 AND f_leak(t1.b) AND f_leak(t2.b);
+ statement: UPDATE t2 SET b=t2.b FROM t1                                                                                                                       +
+ WHERE t1.a = 3 and t2.a = 3 AND f_leak(t1.b) AND f_leak(t2.b);
+ statement: EXPLAIN (COSTS OFF) UPDATE t2 t2_1 SET b = t2_2.b FROM t2 t2_2                                                                                     +
+ WHERE t2_1.a = 3 AND t2_2.a = t2_1.a AND t2_2.b = t2_1.b                                                                                                      +
+ AND f_leak(t2_1.b) AND f_leak(t2_2.b) RETURNING *, t2_1, t2_2;
+ statement: UPDATE t2 t2_1 SET b = t2_2.b FROM t2 t2_2                                                                                                         +
+ WHERE t2_1.a = 3 AND t2_2.a = t2_1.a AND t2_2.b = t2_1.b                                                                                                      +
+ AND f_leak(t2_1.b) AND f_leak(t2_2.b) RETURNING *, t2_1, t2_2;
+ statement: EXPLAIN (COSTS OFF) UPDATE t1 t1_1 SET b = t1_2.b FROM t1 t1_2                                                                                     +
+ WHERE t1_1.a = 4 AND t1_2.a = t1_1.a AND t1_2.b = t1_1.b                                                                                                      +
+ AND f_leak(t1_1.b) AND f_leak(t1_2.b) RETURNING *, t1_1, t1_2;
+ statement: UPDATE t1 t1_1 SET b = t1_2.b FROM t1 t1_2                                                                                                         +
+ WHERE t1_1.a = 4 AND t1_2.a = t1_1.a AND t1_2.b = t1_1.b                                                                                                      +
+ AND f_leak(t1_1.b) AND f_leak(t1_2.b) RETURNING *, t1_1, t1_2;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SET row_security TO OFF;
+ statement: SELECT * FROM t1 ORDER BY a,b;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SET row_security TO ON;
+ statement: EXPLAIN (COSTS OFF) DELETE FROM only t1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) DELETE FROM t1 WHERE f_leak(b);
+ statement: DELETE FROM only t1 WHERE f_leak(b) RETURNING oid, *, t1;
+ statement: DELETE FROM t1 WHERE f_leak(b) RETURNING oid, *, t1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE TABLE b1 (a int, b text);
+ statement: INSERT INTO b1 (SELECT x, md5(x::text) FROM generate_series(-10,10) x);
+ statement: CREATE POLICY p1 ON b1 USING (a % 2 = 0);
+ statement: ALTER TABLE b1 ENABLE ROW LEVEL SECURITY;
+ statement: GRANT ALL ON b1 TO rls_regress_user1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: CREATE VIEW bv1 WITH (security_barrier) AS SELECT * FROM b1 WHERE a > 0 WITH CHECK OPTION;
+ statement: GRANT ALL ON bv1 TO rls_regress_user2;
+ statement: SET SESSION AUTHORIZATION rls_regress_user2;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM bv1 WHERE f_leak(b);
+ statement: SELECT * FROM bv1 WHERE f_leak(b);
+ statement: INSERT INTO bv1 VALUES (-1, 'xxx');
+ statement: INSERT INTO bv1 VALUES (11, 'xxx');
+ statement: INSERT INTO bv1 VALUES (12, 'xxx');
+ statement: EXPLAIN (COSTS OFF) UPDATE bv1 SET b = 'yyy' WHERE a = 4 AND f_leak(b);
+ statement: UPDATE bv1 SET b = 'yyy' WHERE a = 4 AND f_leak(b);
+ statement: EXPLAIN (COSTS OFF) DELETE FROM bv1 WHERE a = 6 AND f_leak(b);
+ statement: DELETE FROM bv1 WHERE a = 6 AND f_leak(b);
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SELECT * FROM b1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: DROP POLICY p1 ON document;
+ statement: CREATE POLICY p1 ON document FOR SELECT USING (true);
+ statement: CREATE POLICY p2 ON document FOR INSERT WITH CHECK (dauthor = current_user);
+ statement: CREATE POLICY p3 ON document FOR UPDATE                                                                                                            +
+   USING (cid = (SELECT cid from category WHERE cname = 'novel'))                                                                                              +
+   WITH CHECK (dauthor = current_user);
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM document WHERE did = 2;
+ statement: INSERT INTO document VALUES (2, (SELECT cid from category WHERE cname = 'novel'), 1, 'rls_regress_user2', 'my first novel')                        +
+     ON CONFLICT (did) DO UPDATE SET dtitle = EXCLUDED.dtitle, dauthor = EXCLUDED.dauthor;
+ statement: INSERT INTO document VALUES (33, 22, 1, 'rls_regress_user1', 'okay science fiction');
+ statement: INSERT INTO document VALUES (33, (SELECT cid from category WHERE cname = 'novel'), 1, 'rls_regress_user1', 'Some novel, replaces sci-fi')          +
+     ON CONFLICT (did) DO UPDATE SET dtitle = EXCLUDED.dtitle;
+ statement: INSERT INTO document VALUES (2, (SELECT cid from category WHERE cname = 'novel'), 1, 'rls_regress_user1', 'my first novel')                        +
+     ON CONFLICT (did) DO UPDATE SET dtitle = EXCLUDED.dtitle RETURNING *;
+ statement: INSERT INTO document VALUES (78, (SELECT cid from category WHERE cname = 'novel'), 1, 'rls_regress_user1', 'some technology novel')                +
+     ON CONFLICT (did) DO UPDATE SET dtitle = EXCLUDED.dtitle, cid = 33 RETURNING *;
+ statement: INSERT INTO document VALUES (78, (SELECT cid from category WHERE cname = 'novel'), 1, 'rls_regress_user1', 'some technology novel')                +
+     ON CONFLICT (did) DO UPDATE SET dtitle = EXCLUDED.dtitle, cid = 33 RETURNING *;
+ statement: INSERT INTO document VALUES (78, (SELECT cid from category WHERE cname = 'novel'), 1, 'rls_regress_user1', 'some technology novel')                +
+     ON CONFLICT (did) DO UPDATE SET dtitle = EXCLUDED.dtitle, cid = 33 RETURNING *;
+ statement: INSERT INTO document VALUES (79, (SELECT cid from category WHERE cname = 'technology'), 1, 'rls_regress_user1', 'technology book, can only insert')+
+     ON CONFLICT (did) DO UPDATE SET dtitle = EXCLUDED.dtitle RETURNING *;
+ statement: INSERT INTO document VALUES (79, (SELECT cid from category WHERE cname = 'technology'), 1, 'rls_regress_user1', 'technology book, can only insert')+
+     ON CONFLICT (did) DO UPDATE SET dtitle = EXCLUDED.dtitle RETURNING *;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: DROP POLICY p1 ON document;
+ statement: DROP POLICY p2 ON document;
+ statement: DROP POLICY p3 ON document;
+ statement: CREATE POLICY p3_with_default ON document FOR UPDATE                                                                                               +
+   USING (cid = (SELECT cid from category WHERE cname = 'novel'));
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: INSERT INTO document VALUES (79, (SELECT cid from category WHERE cname = 'technology'), 1, 'rls_regress_user1', 'technology book, can only insert')+
+     ON CONFLICT (did) DO UPDATE SET dtitle = EXCLUDED.dtitle RETURNING *;
+ statement: INSERT INTO document VALUES (2, (SELECT cid from category WHERE cname = 'technology'), 1, 'rls_regress_user1', 'my first novel')                   +
+     ON CONFLICT (did) DO UPDATE SET cid = EXCLUDED.cid, dtitle = EXCLUDED.dtitle RETURNING *;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: DROP POLICY p3_with_default ON document;
+ statement: CREATE POLICY p3_with_all ON document FOR ALL                                                                                                      +
+   USING (cid = (SELECT cid from category WHERE cname = 'novel'))                                                                                              +
+   WITH CHECK (dauthor = current_user);
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: INSERT INTO document VALUES (80, (SELECT cid from category WHERE cname = 'novel'), 1, 'rls_regress_user2', 'my first novel')                       +
+     ON CONFLICT (did) DO UPDATE SET dtitle = EXCLUDED.dtitle, cid = 33;
+ statement: INSERT INTO document VALUES (4, (SELECT cid from category WHERE cname = 'novel'), 1, 'rls_regress_user1', 'my first novel')                        +
+     ON CONFLICT (did) DO UPDATE SET dtitle = EXCLUDED.dtitle;
+ statement: INSERT INTO document VALUES (1, (SELECT cid from category WHERE cname = 'novel'), 1, 'rls_regress_user1', 'my first novel')                        +
+     ON CONFLICT (did) DO UPDATE SET dauthor = 'rls_regress_user2';
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE TABLE z1 (a int, b text);
+ statement: CREATE TABLE z2 (a int, b text);
+ statement: GRANT SELECT ON z1,z2 TO rls_regress_group1, rls_regress_group2,                                                                                   +
+     rls_regress_user1, rls_regress_user2;
+ statement: INSERT INTO z1 VALUES                                                                                                                              +
+     (1, 'aba'),                                                                                                                                               +
+     (2, 'bbb'),                                                                                                                                               +
+     (3, 'ccc'),                                                                                                                                               +
+     (4, 'dad');
+ statement: CREATE POLICY p1 ON z1 TO rls_regress_group1 USING (a % 2 = 0);
+ statement: CREATE POLICY p2 ON z1 TO rls_regress_group2 USING (a % 2 = 1);
+ statement: ALTER TABLE z1 ENABLE ROW LEVEL SECURITY;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM z1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM z1 WHERE f_leak(b);
+ statement: PREPARE plancache_test AS SELECT * FROM z1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test;
+ statement: PREPARE plancache_test2 AS WITH q AS (SELECT * FROM z1 WHERE f_leak(b)) SELECT * FROM q,z2;
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test2;
+ statement: PREPARE plancache_test3 AS WITH q AS (SELECT * FROM z2) SELECT * FROM q,z1 WHERE f_leak(z1.b);
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test3;
+ statement: SET ROLE rls_regress_group1;
+ statement: SELECT * FROM z1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM z1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test;
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test2;
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test3;
+ statement: SET SESSION AUTHORIZATION rls_regress_user2;
+ statement: SELECT * FROM z1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM z1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test;
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test2;
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test3;
+ statement: SET ROLE rls_regress_group2;
+ statement: SELECT * FROM z1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM z1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test;
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test2;
+ statement: EXPLAIN (COSTS OFF) EXECUTE plancache_test3;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE VIEW rls_view AS SELECT * FROM z1 WHERE f_leak(b);
+ statement: GRANT SELECT ON rls_view TO rls_regress_user1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM rls_view;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM rls_view;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SELECT * FROM rls_view;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM rls_view;
+ statement: DROP VIEW rls_view;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: CREATE VIEW rls_view AS SELECT * FROM z1 WHERE f_leak(b);
+ statement: GRANT SELECT ON rls_view TO rls_regress_user0;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SELECT * FROM rls_view;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM rls_view;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM rls_view;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM rls_view;
+ statement: SET SESSION AUTHORIZATION rls_regress_user2;
+ statement: SELECT * FROM rls_view;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM rls_view;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: GRANT SELECT ON rls_view TO rls_regress_user2;
+ statement: SELECT * FROM rls_view;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM rls_view;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: DROP VIEW rls_view;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE TABLE x1 (a int, b text, c text);
+ statement: GRANT ALL ON x1 TO PUBLIC;
+ statement: INSERT INTO x1 VALUES                                                                                                                              +
+     (1, 'abc', 'rls_regress_user1'),                                                                                                                          +
+     (2, 'bcd', 'rls_regress_user1'),                                                                                                                          +
+     (3, 'cde', 'rls_regress_user2'),                                                                                                                          +
+     (4, 'def', 'rls_regress_user2'),                                                                                                                          +
+     (5, 'efg', 'rls_regress_user1'),                                                                                                                          +
+     (6, 'fgh', 'rls_regress_user1'),                                                                                                                          +
+     (7, 'fgh', 'rls_regress_user2'),                                                                                                                          +
+     (8, 'fgh', 'rls_regress_user2');
+ statement: CREATE POLICY p0 ON x1 FOR ALL USING (c = current_user);
+ statement: CREATE POLICY p1 ON x1 FOR SELECT USING (a % 2 = 0);
+ statement: CREATE POLICY p2 ON x1 FOR INSERT WITH CHECK (a % 2 = 1);
+ statement: CREATE POLICY p3 ON x1 FOR UPDATE USING (a % 2 = 0);
+ statement: CREATE POLICY p4 ON x1 FOR DELETE USING (a < 8);
+ statement: ALTER TABLE x1 ENABLE ROW LEVEL SECURITY;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;
+ statement: UPDATE x1 SET b = b || '_updt' WHERE f_leak(b) RETURNING *;
+ statement: SET SESSION AUTHORIZATION rls_regress_user2;
+ statement: SELECT * FROM x1 WHERE f_leak(b) ORDER BY a ASC;
+ statement: UPDATE x1 SET b = b || '_updt' WHERE f_leak(b) RETURNING *;
+ statement: DELETE FROM x1 WHERE f_leak(b) RETURNING *;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE TABLE y1 (a int, b text);
+ statement: CREATE TABLE y2 (a int, b text);
+ statement: GRANT ALL ON y1, y2 TO rls_regress_user1;
+ statement: CREATE POLICY p1 ON y1 FOR ALL USING (a % 2 = 0);
+ statement: CREATE POLICY p2 ON y1 FOR SELECT USING (a > 2);
+ statement: CREATE POLICY p1 ON y1 FOR SELECT USING (a % 2 = 1);
+ statement: CREATE POLICY p1 ON y2 FOR ALL USING (a % 2 = 0);
+ statement: ALTER TABLE y1 ENABLE ROW LEVEL SECURITY;
+ statement: ALTER TABLE y2 ENABLE ROW LEVEL SECURITY;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE VIEW rls_sbv WITH (security_barrier) AS                                                                                                     +
+     SELECT * FROM y1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM rls_sbv WHERE (a = 1);
+ statement: DROP VIEW rls_sbv;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: CREATE VIEW rls_sbv WITH (security_barrier) AS                                                                                                     +
+     SELECT * FROM y1 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM rls_sbv WHERE (a = 1);
+ statement: DROP VIEW rls_sbv;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: INSERT INTO y2 (SELECT x, md5(x::text) FROM generate_series(0,20) x);
+ statement: CREATE POLICY p2 ON y2 USING (a % 3 = 0);
+ statement: CREATE POLICY p3 ON y2 USING (a % 4 = 0);
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM y2 WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM y2 WHERE f_leak(b);
+ statement: SELECT * FROM y2 WHERE f_leak('abc');
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM y2 WHERE f_leak('abc');
+ statement: CREATE TABLE test_qual_pushdown (                                                                                                                  +
+     abc text                                                                                                                                                  +
+ );
+ statement: INSERT INTO test_qual_pushdown VALUES ('abc'),('def');
+ statement: SELECT * FROM y2 JOIN test_qual_pushdown ON (b = abc) WHERE f_leak(abc);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM y2 JOIN test_qual_pushdown ON (b = abc) WHERE f_leak(abc);
+ statement: SELECT * FROM y2 JOIN test_qual_pushdown ON (b = abc) WHERE f_leak(b);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM y2 JOIN test_qual_pushdown ON (b = abc) WHERE f_leak(b);
+ statement: DROP TABLE test_qual_pushdown;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SET client_min_messages TO 'warning';
+ statement: DROP TABLE t1 CASCADE;
+ statement: RESET client_min_messages;
+ statement: CREATE TABLE t1 (a integer);
+ statement: GRANT SELECT ON t1 TO rls_regress_user1, rls_regress_user2;
+ statement: CREATE POLICY p1 ON t1 TO rls_regress_user1 USING ((a % 2) = 0);
+ statement: CREATE POLICY p2 ON t1 TO rls_regress_user2 USING ((a % 4) = 0);
+ statement: ALTER TABLE t1 ENABLE ROW LEVEL SECURITY;
+ statement: SET ROLE rls_regress_user1;
+ statement: PREPARE role_inval AS SELECT * FROM t1;
+ statement: EXPLAIN (COSTS OFF) EXECUTE role_inval;
+ statement: SET ROLE rls_regress_user2;
+ statement: EXPLAIN (COSTS OFF) EXECUTE role_inval;
+ statement: SET ROLE rls_regress_user1;
+ statement: EXPLAIN (COSTS OFF) EXECUTE role_inval;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: DROP TABLE t1 CASCADE;
+ statement: CREATE TABLE t1 (a integer, b text);
+ statement: CREATE POLICY p1 ON t1 USING (a % 2 = 0);
+ statement: ALTER TABLE t1 ENABLE ROW LEVEL SECURITY;
+ statement: GRANT ALL ON t1 TO rls_regress_user1;
+ statement: INSERT INTO t1 (SELECT x, md5(x::text) FROM generate_series(0,20) x);
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: WITH cte1 AS (SELECT * FROM t1 WHERE f_leak(b)) SELECT * FROM cte1;
+ statement: EXPLAIN (COSTS OFF) WITH cte1 AS (SELECT * FROM t1 WHERE f_leak(b)) SELECT * FROM cte1;
+ statement: WITH cte1 AS (UPDATE t1 SET a = a + 1 RETURNING *) SELECT * FROM cte1;
+ statement: WITH cte1 AS (UPDATE t1 SET a = a RETURNING *) SELECT * FROM cte1;
+ statement: WITH cte1 AS (INSERT INTO t1 VALUES (21, 'Fail') RETURNING *) SELECT * FROM cte1;
+ statement: WITH cte1 AS (INSERT INTO t1 VALUES (20, 'Success') RETURNING *) SELECT * FROM cte1;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: ALTER POLICY p1 ON t1 RENAME TO p1;
+ statement: SELECT polname, relname                                                                                                                            +
+     FROM pg_policy pol                                                                                                                                        +
+     JOIN pg_class pc ON (pc.oid = pol.polrelid)                                                                                                               +
+     WHERE relname = 't1';
+ statement: ALTER POLICY p1 ON t1 RENAME TO p2;
+ statement: SELECT polname, relname                                                                                                                            +
+     FROM pg_policy pol                                                                                                                                        +
+     JOIN pg_class pc ON (pc.oid = pol.polrelid)                                                                                                               +
+     WHERE relname = 't1';
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: CREATE TABLE t2 (a integer, b text);
+ statement: INSERT INTO t2 (SELECT * FROM t1);
+ statement: EXPLAIN (COSTS OFF) INSERT INTO t2 (SELECT * FROM t1);
+ statement: SELECT * FROM t2;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t2;
+ statement: CREATE TABLE t3 AS SELECT * FROM t1;
+ statement: SELECT * FROM t3;
+ statement: SELECT * INTO t4 FROM t1;
+ statement: SELECT * FROM t4;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE TABLE blog (id integer, author text, post text);
+ statement: CREATE TABLE comment (blog_id integer, message text);
+ statement: GRANT ALL ON blog, comment TO rls_regress_user1;
+ statement: CREATE POLICY blog_1 ON blog USING (id % 2 = 0);
+ statement: ALTER TABLE blog ENABLE ROW LEVEL SECURITY;
+ statement: INSERT INTO blog VALUES                                                                                                                            +
+     (1, 'alice', 'blog #1'),                                                                                                                                  +
+     (2, 'bob', 'blog #1'),                                                                                                                                    +
+     (3, 'alice', 'blog #2'),                                                                                                                                  +
+     (4, 'alice', 'blog #3'),                                                                                                                                  +
+     (5, 'john', 'blog #1');
+ statement: INSERT INTO comment VALUES                                                                                                                         +
+     (1, 'cool blog'),                                                                                                                                         +
+     (1, 'fun blog'),                                                                                                                                          +
+     (3, 'crazy blog'),                                                                                                                                        +
+     (5, 'what?'),                                                                                                                                             +
+     (4, 'insane!'),                                                                                                                                           +
+     (2, 'who did it?');
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT id, author, message FROM blog JOIN comment ON id = blog_id;
+ statement: SELECT id, author, message FROM comment JOIN blog ON id = blog_id;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE POLICY comment_1 ON comment USING (blog_id < 4);
+ statement: ALTER TABLE comment ENABLE ROW LEVEL SECURITY;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT id, author, message FROM blog JOIN comment ON id = blog_id;
+ statement: SELECT id, author, message FROM comment JOIN blog ON id = blog_id;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: DROP TABLE blog, comment;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: DROP POLICY p2 ON t1;
+ statement: ALTER TABLE t1 OWNER TO rls_regress_user0;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SELECT * FROM t1;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SELECT * FROM t1;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SET row_security TO ON;
+ statement: SELECT * FROM t1;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM t1;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM t1;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: DROP TABLE copy_t CASCADE;
+ statement: CREATE TABLE copy_t (a integer, b text);
+ statement: CREATE POLICY p1 ON copy_t USING (a % 2 = 0);
+ statement: ALTER TABLE copy_t ENABLE ROW LEVEL SECURITY;
+ statement: GRANT ALL ON copy_t TO rls_regress_user1, rls_regress_exempt_user;
+ statement: INSERT INTO copy_t (SELECT x, md5(x::text) FROM generate_series(0,10) x);
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SET row_security TO OFF;
+ statement: COPY (SELECT * FROM copy_t ORDER BY a ASC) TO STDOUT WITH DELIMITER ',';
+ statement: SET row_security TO ON;
+ statement: COPY (SELECT * FROM copy_t ORDER BY a ASC) TO STDOUT WITH DELIMITER ',';
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SET row_security TO OFF;
+ statement: COPY (SELECT * FROM copy_t ORDER BY a ASC) TO STDOUT WITH DELIMITER ',';
+ statement: SET row_security TO ON;
+ statement: COPY (SELECT * FROM copy_t ORDER BY a ASC) TO STDOUT WITH DELIMITER ',';
+ statement: SET SESSION AUTHORIZATION rls_regress_exempt_user;
+ statement: SET row_security TO OFF;
+ statement: COPY (SELECT * FROM copy_t ORDER BY a ASC) TO STDOUT WITH DELIMITER ',';
+ statement: SET row_security TO ON;
+ statement: COPY (SELECT * FROM copy_t ORDER BY a ASC) TO STDOUT WITH DELIMITER ',';
+ statement: SET SESSION AUTHORIZATION rls_regress_user2;
+ statement: SET row_security TO OFF;
+ statement: COPY (SELECT * FROM copy_t ORDER BY a ASC) TO STDOUT WITH DELIMITER ',';
+ statement: SET row_security TO ON;
+ statement: COPY (SELECT * FROM copy_t ORDER BY a ASC) TO STDOUT WITH DELIMITER ',';
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SET row_security TO ON;
+ statement: CREATE TABLE copy_rel_to (a integer, b text);
+ statement: CREATE POLICY p1 ON copy_rel_to USING (a % 2 = 0);
+ statement: ALTER TABLE copy_rel_to ENABLE ROW LEVEL SECURITY;
+ statement: GRANT ALL ON copy_rel_to TO rls_regress_user1, rls_regress_exempt_user;
+ statement: INSERT INTO copy_rel_to VALUES (1, md5('1'));
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SET row_security TO OFF;
+ statement: COPY copy_rel_to TO STDOUT WITH DELIMITER ',';
+ statement: SET row_security TO ON;
+ statement: COPY copy_rel_to TO STDOUT WITH DELIMITER ',';
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SET row_security TO OFF;
+ statement: COPY copy_rel_to TO STDOUT WITH DELIMITER ',';
+ statement: SET row_security TO ON;
+ statement: COPY copy_rel_to TO STDOUT WITH DELIMITER ',';
+ statement: SET SESSION AUTHORIZATION rls_regress_exempt_user;
+ statement: SET row_security TO OFF;
+ statement: COPY copy_rel_to TO STDOUT WITH DELIMITER ',';
+ statement: SET row_security TO ON;
+ statement: COPY copy_rel_to TO STDOUT WITH DELIMITER ',';
+ statement: SET SESSION AUTHORIZATION rls_regress_user2;
+ statement: SET row_security TO OFF;
+ statement: COPY copy_rel_to TO STDOUT WITH DELIMITER ',';
+ statement: SET row_security TO ON;
+ statement: COPY copy_rel_to TO STDOUT WITH DELIMITER ',';
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SET row_security TO OFF;
+ statement: COPY copy_t FROM STDIN;
+ statement: SET row_security TO ON;
+ statement: COPY copy_t FROM STDIN;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SET row_security TO OFF;
+ statement: COPY copy_t FROM STDIN;
+ statement: SET row_security TO ON;
+ statement: COPY copy_t FROM STDIN;
+ statement: SET SESSION AUTHORIZATION rls_regress_exempt_user;
+ statement: SET row_security TO ON;
+ statement: COPY copy_t FROM STDIN;
+ statement: SET SESSION AUTHORIZATION rls_regress_user2;
+ statement: SET row_security TO OFF;
+ statement: COPY copy_t FROM STDIN;
+ statement: SET row_security TO ON;
+ statement: COPY copy_t FROM STDIN;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: DROP TABLE copy_t;
+ statement: DROP TABLE copy_rel_to CASCADE;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE TABLE current_check (currentid int, payload text, rlsuser text);
+ statement: GRANT ALL ON current_check TO PUBLIC;
+ statement: INSERT INTO current_check VALUES                                                                                                                   +
+     (1, 'abc', 'rls_regress_user1'),                                                                                                                          +
+     (2, 'bcd', 'rls_regress_user1'),                                                                                                                          +
+     (3, 'cde', 'rls_regress_user1'),                                                                                                                          +
+     (4, 'def', 'rls_regress_user1');
+ statement: CREATE POLICY p1 ON current_check FOR SELECT USING (currentid % 2 = 0);
+ statement: CREATE POLICY p2 ON current_check FOR DELETE USING (currentid = 4 AND rlsuser = current_user);
+ statement: CREATE POLICY p3 ON current_check FOR UPDATE USING (currentid = 4) WITH CHECK (rlsuser = current_user);
+ statement: ALTER TABLE current_check ENABLE ROW LEVEL SECURITY;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM current_check;
+ statement: UPDATE current_check SET payload = payload || '_new' WHERE currentid = 2 RETURNING *;
+ statement: BEGIN;
+ statement: DECLARE current_check_cursor SCROLL CURSOR FOR SELECT * FROM current_check;
+ statement: FETCH ABSOLUTE 1 FROM current_check_cursor;
+ statement: UPDATE current_check SET payload = payload || '_new' WHERE CURRENT OF current_check_cursor RETURNING *;
+ statement: FETCH RELATIVE 1 FROM current_check_cursor;
+ statement: UPDATE current_check SET payload = payload || '_new' WHERE CURRENT OF current_check_cursor RETURNING *;
+ statement: SELECT * FROM current_check;
+ statement: EXPLAIN (COSTS OFF) UPDATE current_check SET payload = payload WHERE CURRENT OF current_check_cursor;
+ statement: FETCH ABSOLUTE 1 FROM current_check_cursor;
+ statement: DELETE FROM current_check WHERE CURRENT OF current_check_cursor RETURNING *;
+ statement: FETCH RELATIVE 1 FROM current_check_cursor;
+ statement: DELETE FROM current_check WHERE CURRENT OF current_check_cursor RETURNING *;
+ statement: SELECT * FROM current_check;
+ statement: COMMIT;
+ statement: SET row_security TO ON;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: ANALYZE current_check;
+ statement: SELECT row_security_active('current_check');
+ statement: SELECT attname, most_common_vals FROM pg_stats                                                                                                     +
+   WHERE tablename = 'current_check'                                                                                                                           +
+   ORDER BY 1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT row_security_active('current_check');
+ statement: SELECT attname, most_common_vals FROM pg_stats                                                                                                     +
+   WHERE tablename = 'current_check'                                                                                                                           +
+   ORDER BY 1;
+ statement: BEGIN;
+ statement: CREATE TABLE coll_t (c) AS VALUES ('bar'::text);
+ statement: CREATE POLICY coll_p ON coll_t USING (c < ('foo'::text COLLATE "C"));
+ statement: ALTER TABLE coll_t ENABLE ROW LEVEL SECURITY;
+ statement: GRANT SELECT ON coll_t TO rls_regress_user0;
+ statement: SELECT (string_to_array(polqual, ':'))[7] AS inputcollid FROM pg_policy WHERE polrelid = 'coll_t'::regclass;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SELECT * FROM coll_t;
+ statement: ROLLBACK;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: BEGIN;
+ statement: CREATE ROLE alice;
+ statement: CREATE ROLE bob;
+ statement: CREATE TABLE tbl1 (c) AS VALUES ('bar'::text);
+ statement: GRANT SELECT ON TABLE tbl1 TO alice;
+ statement: CREATE POLICY P ON tbl1 TO alice, bob USING (true);
+ statement: SELECT refclassid::regclass, deptype                                                                                                               +
+   FROM pg_depend                                                                                                                                              +
+   WHERE classid = 'pg_policy'::regclass                                                                                                                       +
+   AND refobjid = 'tbl1'::regclass;
+ statement: SELECT refclassid::regclass, deptype                                                                                                               +
+   FROM pg_shdepend                                                                                                                                            +
+   WHERE classid = 'pg_policy'::regclass                                                                                                                       +
+   AND refobjid IN ('alice'::regrole, 'bob'::regrole);
+ statement: SAVEPOINT q;
+ statement: DROP ROLE alice;
+ statement: ROLLBACK TO q;
+ statement: ALTER POLICY p ON tbl1 TO bob USING (true);
+ statement: SAVEPOINT q;
+ statement: DROP ROLE alice;
+ statement: ROLLBACK TO q;
+ statement: REVOKE ALL ON TABLE tbl1 FROM alice;
+ statement: SAVEPOINT q;
+ statement: DROP ROLE alice;
+ statement: ROLLBACK TO q;
+ statement: SAVEPOINT q;
+ statement: DROP ROLE bob;
+ statement: ROLLBACK TO q;
+ statement: DROP POLICY p ON tbl1;
+ statement: SAVEPOINT q;
+ statement: DROP ROLE bob;
+ statement: ROLLBACK TO q;
+ statement: ROLLBACK;
+ statement: BEGIN;
+ statement: CREATE TABLE t (c int);
+ statement: CREATE POLICY p ON t USING (c % 2 = 1);
+ statement: ALTER TABLE t ENABLE ROW LEVEL SECURITY;
+ statement: SAVEPOINT q;
+ statement: CREATE RULE "_RETURN" AS ON SELECT TO t DO INSTEAD                                                                                                 +
+   SELECT * FROM generate_series(1,5) t0(c);
+ statement: ROLLBACK TO q;
+ statement: ALTER TABLE t DISABLE ROW LEVEL SECURITY;
+ statement: SAVEPOINT q;
+ statement: CREATE RULE "_RETURN" AS ON SELECT TO t DO INSTEAD                                                                                                 +
+   SELECT * FROM generate_series(1,5) t0(c);
+ statement: ROLLBACK TO q;
+ statement: DROP POLICY p ON t;
+ statement: CREATE RULE "_RETURN" AS ON SELECT TO t DO INSTEAD                                                                                                 +
+   SELECT * FROM generate_series(1,5) t0(c);
+ statement: ROLLBACK;
+ statement: BEGIN;
+ statement: CREATE TABLE t (c) AS VALUES ('bar'::text);
+ statement: CREATE POLICY p ON t USING (max(c));
+ statement: ROLLBACK;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: CREATE TABLE r1 (a int);
+ statement: CREATE TABLE r2 (a int);
+ statement: INSERT INTO r1 VALUES (10), (20);
+ statement: INSERT INTO r2 VALUES (10), (20);
+ statement: GRANT ALL ON r1, r2 TO rls_regress_user1;
+ statement: CREATE POLICY p1 ON r1 USING (true);
+ statement: ALTER TABLE r1 ENABLE ROW LEVEL SECURITY;
+ statement: CREATE POLICY p1 ON r2 FOR SELECT USING (true);
+ statement: CREATE POLICY p2 ON r2 FOR INSERT WITH CHECK (false);
+ statement: CREATE POLICY p3 ON r2 FOR UPDATE USING (false);
+ statement: CREATE POLICY p4 ON r2 FOR DELETE USING (false);
+ statement: ALTER TABLE r2 ENABLE ROW LEVEL SECURITY;
+ statement: SET SESSION AUTHORIZATION rls_regress_user1;
+ statement: SELECT * FROM r1;
+ statement: SELECT * FROM r2;
+ statement: INSERT INTO r2 VALUES (2);
+ statement: UPDATE r2 SET a = 2 RETURNING *;
+ statement: DELETE FROM r2 RETURNING *;
+ statement: INSERT INTO r1 SELECT a + 1 FROM r2 RETURNING *;
+ statement: UPDATE r1 SET a = r2.a + 2 FROM r2 WHERE r1.a = r2.a RETURNING *;
+ statement: DELETE FROM r1 USING r2 WHERE r1.a = r2.a + 2 RETURNING *;
+ statement: SELECT * FROM r1;
+ statement: SELECT * FROM r2;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: DROP TABLE r1;
+ statement: DROP TABLE r2;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SET row_security = on;
+ statement: CREATE TABLE r1 (a int);
+ statement: INSERT INTO r1 VALUES (10), (20);
+ statement: CREATE POLICY p1 ON r1 USING (false);
+ statement: ALTER TABLE r1 ENABLE ROW LEVEL SECURITY;
+ statement: ALTER TABLE r1 FORCE ROW LEVEL SECURITY;
+ statement: TABLE r1;
+ statement: INSERT INTO r1 VALUES (1);
+ statement: UPDATE r1 SET a = 1;
+ statement: TABLE r1;
+ statement: DELETE FROM r1;
+ statement: TABLE r1;
+ statement: SET row_security = off;
+ statement: TABLE r1;
+ statement: UPDATE r1 SET a = 1;
+ statement: DELETE FROM r1;
+ statement: DROP TABLE r1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SET row_security = on;
+ statement: CREATE TABLE r1 (a int PRIMARY KEY);
+ statement: CREATE TABLE r2 (a int REFERENCES r1);
+ statement: INSERT INTO r1 VALUES (10), (20);
+ statement: INSERT INTO r2 VALUES (10), (20);
+ statement: CREATE POLICY p1 ON r2 USING (false);
+ statement: ALTER TABLE r2 ENABLE ROW LEVEL SECURITY;
+ statement: ALTER TABLE r2 FORCE ROW LEVEL SECURITY;
+ statement: DELETE FROM r1;
+ statement: DROP POLICY p1 ON r2;
+ statement: ALTER TABLE r2 NO FORCE ROW LEVEL SECURITY;
+ statement: ALTER TABLE r2 DISABLE ROW LEVEL SECURITY;
+ statement: DELETE FROM r2;
+ statement: CREATE POLICY p1 ON r1 USING (false);
+ statement: ALTER TABLE r1 ENABLE ROW LEVEL SECURITY;
+ statement: ALTER TABLE r1 FORCE ROW LEVEL SECURITY;
+ statement: TABLE r1;
+ statement: INSERT INTO r2 VALUES (10);
+ statement: DROP TABLE r2;
+ statement: DROP TABLE r1;
+ statement: CREATE TABLE r1 (a int PRIMARY KEY);
+ statement: CREATE TABLE r2 (a int REFERENCES r1 ON DELETE CASCADE);
+ statement: INSERT INTO r1 VALUES (10), (20);
+ statement: INSERT INTO r2 VALUES (10), (20);
+ statement: CREATE POLICY p1 ON r2 USING (false);
+ statement: ALTER TABLE r2 ENABLE ROW LEVEL SECURITY;
+ statement: ALTER TABLE r2 FORCE ROW LEVEL SECURITY;
+ statement: DELETE FROM r1;
+ statement: ALTER TABLE r2 NO FORCE ROW LEVEL SECURITY;
+ statement: TABLE r2;
+ statement: DROP TABLE r2;
+ statement: DROP TABLE r1;
+ statement: CREATE TABLE r1 (a int PRIMARY KEY);
+ statement: CREATE TABLE r2 (a int REFERENCES r1 ON UPDATE CASCADE);
+ statement: INSERT INTO r1 VALUES (10), (20);
+ statement: INSERT INTO r2 VALUES (10), (20);
+ statement: CREATE POLICY p1 ON r2 USING (false);
+ statement: ALTER TABLE r2 ENABLE ROW LEVEL SECURITY;
+ statement: ALTER TABLE r2 FORCE ROW LEVEL SECURITY;
+ statement: UPDATE r1 SET a = a+5;
+ statement: ALTER TABLE r2 NO FORCE ROW LEVEL SECURITY;
+ statement: TABLE r2;
+ statement: DROP TABLE r2;
+ statement: DROP TABLE r1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SET row_security = on;
+ statement: CREATE TABLE r1 (a int);
+ statement: CREATE POLICY p1 ON r1 FOR SELECT USING (false);
+ statement: CREATE POLICY p2 ON r1 FOR INSERT WITH CHECK (true);
+ statement: ALTER TABLE r1 ENABLE ROW LEVEL SECURITY;
+ statement: ALTER TABLE r1 FORCE ROW LEVEL SECURITY;
+ statement: INSERT INTO r1 VALUES (10), (20);
+ statement: TABLE r1;
+ statement: SET row_security = off;
+ statement: TABLE r1;
+ statement: SET row_security = on;
+ statement: INSERT INTO r1 VALUES (10), (20) RETURNING *;
+ statement: DROP TABLE r1;
+ statement: SET SESSION AUTHORIZATION rls_regress_user0;
+ statement: SET row_security = on;
+ statement: CREATE TABLE r1 (a int PRIMARY KEY);
+ statement: CREATE POLICY p1 ON r1 FOR SELECT USING (a < 20);
+ statement: CREATE POLICY p2 ON r1 FOR UPDATE USING (a < 20) WITH CHECK (true);
+ statement: CREATE POLICY p3 ON r1 FOR INSERT WITH CHECK (true);
+ statement: INSERT INTO r1 VALUES (10);
+ statement: ALTER TABLE r1 ENABLE ROW LEVEL SECURITY;
+ statement: ALTER TABLE r1 FORCE ROW LEVEL SECURITY;
+ statement: UPDATE r1 SET a = 30;
+ statement: ALTER TABLE r1 NO FORCE ROW LEVEL SECURITY;
+ statement: TABLE r1;
+ statement: UPDATE r1 SET a = 10;
+ statement: TABLE r1;
+ statement: ALTER TABLE r1 FORCE ROW LEVEL SECURITY;
+ statement: UPDATE r1 SET a = 30 RETURNING *;
+ statement: INSERT INTO r1 VALUES (10)                                                                                                                         +
+     ON CONFLICT (a) DO UPDATE SET a = 30 RETURNING *;
+ statement: INSERT INTO r1 VALUES (10)                                                                                                                         +
+     ON CONFLICT (a) DO UPDATE SET a = 30;
+ statement: INSERT INTO r1 VALUES (10)                                                                                                                         +
+     ON CONFLICT ON CONSTRAINT r1_pkey DO UPDATE SET a = 30;
+ statement: DROP TABLE r1;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: CREATE TABLE dep1 (c1 int);
+ statement: CREATE TABLE dep2 (c1 int);
+ statement: CREATE POLICY dep_p1 ON dep1 TO rls_regress_user1 USING (c1 > (select max(dep2.c1) from dep2));
+ statement: ALTER POLICY dep_p1 ON dep1 TO rls_regress_user1,rls_regress_user2;
+ statement: SELECT count(*) = 1 FROM pg_depend                                                                                                                 +
+                                    WHERE objid = (SELECT oid FROM pg_policy WHERE polname = 'dep_p1')                                                         +
+                                          AND refobjid = (SELECT oid FROM pg_class WHERE relname = 'dep2');
+ statement: ALTER POLICY dep_p1 ON dep1 USING (true);
+ statement: SELECT count(*) = 1 FROM pg_shdepend                                                                                                               +
+                                    WHERE objid = (SELECT oid FROM pg_policy WHERE polname = 'dep_p1')                                                         +
+                                          AND refobjid = (SELECT oid FROM pg_authid WHERE rolname = 'rls_regress_user1');
+ statement: SELECT count(*) = 1 FROM pg_shdepend                                                                                                               +
+                                    WHERE objid = (SELECT oid FROM pg_policy WHERE polname = 'dep_p1')                                                         +
+                                          AND refobjid = (SELECT oid FROM pg_authid WHERE rolname = 'rls_regress_user2');
+ statement: SELECT count(*) = 0 FROM pg_depend                                                                                                                 +
+                                    WHERE objid = (SELECT oid FROM pg_policy WHERE polname = 'dep_p1')                                                         +
+                                          AND refobjid = (SELECT oid FROM pg_class WHERE relname = 'dep2');
+ statement: RESET SESSION AUTHORIZATION;
+ statement: CREATE ROLE dob_role1;
+ statement: CREATE ROLE dob_role2;
+ statement: CREATE TABLE dob_t1 (c1 int);
+ statement: CREATE POLICY p1 ON dob_t1 TO dob_role1 USING (true);
+ statement: DROP OWNED BY dob_role1;
+ statement: DROP POLICY p1 ON dob_t1;
+ statement: CREATE POLICY p1 ON dob_t1 TO dob_role1,dob_role2 USING (true);
+ statement: DROP OWNED BY dob_role1;
+ statement: DROP POLICY p1 ON dob_t1;
+ statement: DROP USER dob_role1;
+ statement: DROP USER dob_role2;
+ statement: RESET SESSION AUTHORIZATION;
+ statement: SET client_min_messages TO 'warning';
+ statement: DROP SCHEMA rls_regress_schema CASCADE;
+ statement: RESET client_min_messages;
+ statement: DROP USER rls_regress_user0;
+ statement: DROP USER rls_regress_user1;
+ statement: DROP USER rls_regress_user2;
+ statement: DROP USER rls_regress_exempt_user;
+ statement: DROP ROLE rls_regress_group1;
+ statement: DROP ROLE rls_regress_group2;
+ statement: CREATE SCHEMA rls_regress_schema;
+ statement: CREATE TABLE rls_tbl (c1 int);
+ statement: ALTER TABLE rls_tbl ENABLE ROW LEVEL SECURITY;
+ statement: CREATE POLICY p1 ON rls_tbl USING (c1 > 5);
+ statement: CREATE POLICY p2 ON rls_tbl FOR SELECT USING (c1 <= 3);
+ statement: CREATE POLICY p3 ON rls_tbl FOR UPDATE USING (c1 <= 3) WITH CHECK (c1 > 5);
+ statement: CREATE POLICY p4 ON rls_tbl FOR DELETE USING (c1 <= 3);
+ statement: CREATE TABLE rls_tbl_force (c1 int);
+ statement: ALTER TABLE rls_tbl_force ENABLE ROW LEVEL SECURITY;
+ statement: ALTER TABLE rls_tbl_force FORCE ROW LEVEL SECURITY;
+ statement: CREATE POLICY p1 ON rls_tbl_force USING (c1 = 5) WITH CHECK (c1 < 5);
+ statement: CREATE POLICY p2 ON rls_tbl_force FOR SELECT USING (c1 = 8);
+ statement: CREATE POLICY p3 ON rls_tbl_force FOR UPDATE USING (c1 = 8) WITH CHECK (c1 >= 5);
+ statement: CREATE POLICY p4 ON rls_tbl_force FOR DELETE USING (c1 = 8);
+

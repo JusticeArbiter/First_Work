@@ -1,0 +1,2 @@
+SELECT 'purple'::rainbow::rgb;
+ERROR:  23514: value for domain rgb violates check constraint "rgb_check"

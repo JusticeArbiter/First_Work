@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE test_inh_check_child() INHERITS(test_inh_check);
+LOCATION:  exec_simple_query, postgres.c:938

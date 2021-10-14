@@ -1,0 +1,4 @@
+SELECT f1 AS eight FROM VARCHAR_TBL  UNION ALL  SELECT f1 FROM CHAR_TBL;
+ERROR:  42P01: relation "varchar_tbl" does not exist
+LINE 1: SELECT f1 AS eight FROM VARCHAR_TBL  UNION ALL  SELECT f1 FR...
+                                ^

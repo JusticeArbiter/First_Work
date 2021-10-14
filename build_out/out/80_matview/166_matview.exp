@@ -1,0 +1,3 @@
+ALTER TABLE mvtest_v RENAME COLUMN i TO x;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+ALTER TABLE

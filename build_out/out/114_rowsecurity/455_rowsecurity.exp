@@ -1,0 +1,5 @@
+SELECT * FROM t3;
+ c | b | a 
+---+---+---
+(0 rows)
+

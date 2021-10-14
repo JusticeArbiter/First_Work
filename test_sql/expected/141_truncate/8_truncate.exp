@@ -1,0 +1,5 @@
+SELECT * FROM truncate_a;
+ col1 
+------
+(0 rows)
+

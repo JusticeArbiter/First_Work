@@ -1,0 +1,6 @@
+SELECT to_regproc('know');
+ to_regproc 
+------------
+ 
+(1 row)
+

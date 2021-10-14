@@ -1,0 +1,6 @@
+insert into trigtest default values;
+NOTICE:  00000: trigtest INSERT BEFORE STATEMENT
+NOTICE:  00000: trigtest INSERT BEFORE ROW
+NOTICE:  00000: trigtest INSERT AFTER ROW
+NOTICE:  00000: trigtest INSERT AFTER STATEMENT
+INSERT 0 1

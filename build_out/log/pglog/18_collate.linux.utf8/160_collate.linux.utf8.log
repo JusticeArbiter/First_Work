@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE COLLATION test4 FROM nonsense;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: collation "nonsense" for encoding "UTF8" does not exist
+LOCATION:  get_collation_oid, namespace.c:3370
+STATEMENT:  CREATE COLLATION test4 FROM nonsense;

@@ -1,0 +1,2 @@
+DELETE FROM delete_test WHERE a > 25;
+DELETE 1

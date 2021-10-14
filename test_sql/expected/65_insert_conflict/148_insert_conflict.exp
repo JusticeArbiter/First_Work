@@ -1,0 +1,4 @@
+insert into excluded values(1, '2') on conflict (key) do update set data = excluded.data RETURNING *;
+ERROR:  42P09: table reference "excluded" is ambiguous
+LINE 1: ...es(1, '2') on conflict (key) do update set data = excluded.d...
+                                                             ^

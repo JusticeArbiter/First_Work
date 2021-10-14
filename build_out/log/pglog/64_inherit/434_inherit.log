@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from matest0 order by 1-id;
+LOCATION:  exec_simple_query, postgres.c:938

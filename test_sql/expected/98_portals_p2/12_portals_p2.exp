@@ -1,0 +1,2 @@
+DECLARE foo23 CURSOR FOR  SELECT * FROM onek WHERE unique1 = 60;
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

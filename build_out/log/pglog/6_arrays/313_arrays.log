@@ -1,0 +1,2 @@
+LOG:  00000: statement: select array_replace(array[1,2,5,4],5,NULL);
+LOCATION:  exec_simple_query, postgres.c:938

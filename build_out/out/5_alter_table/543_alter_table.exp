@@ -1,0 +1,4 @@
+update atacc1 set b = 2 where "........pg.dropped.1........" = 3;
+ERROR:  42703: column "........pg.dropped.1........" does not exist
+LINE 1: update atacc1 set b = 2 where "........pg.dropped.1........"...
+                                      ^

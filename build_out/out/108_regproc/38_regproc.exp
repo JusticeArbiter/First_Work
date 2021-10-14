@@ -1,0 +1,4 @@
+SELECT regclass('pg_classes');
+ERROR:  42P01: relation "pg_classes" does not exist
+LINE 1: SELECT regclass('pg_classes');
+                        ^

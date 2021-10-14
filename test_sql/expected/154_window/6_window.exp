@@ -1,0 +1,4 @@
+SELECT depname, empno, salary, sum(salary) OVER w FROM empsalary WINDOW w AS (PARTITION BY depname);
+ERROR:  42P01: relation "empsalary" does not exist
+LINE 1: ...T depname, empno, salary, sum(salary) OVER w FROM empsalary ...
+                                                             ^

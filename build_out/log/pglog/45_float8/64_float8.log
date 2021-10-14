@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS bad, exp(f.f1) from FLOAT8_TBL f;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: value out of range: underflow
+LOCATION:  dexp, float.c:1451
+STATEMENT:  SELECT '' AS bad, exp(f.f1) from FLOAT8_TBL f;

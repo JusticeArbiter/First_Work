@@ -1,0 +1,2 @@
+INSERT INTO c(aa) VALUES('ccc');
+INSERT 0 1

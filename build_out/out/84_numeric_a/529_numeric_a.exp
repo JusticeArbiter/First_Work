@@ -1,0 +1,2 @@
+INSERT INTO fract_only VALUES (1, '0.0');
+INSERT 0 1

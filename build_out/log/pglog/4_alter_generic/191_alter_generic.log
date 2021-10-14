@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf10 USING btree ADD OPERATOR 1 < (int4, int4) FOR ORDER BY float_ops;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P17: access method "btree" does not support ordering operators
+LOCATION:  assignOperTypes, opclasscmds.c:1114
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf10 USING btree ADD OPERATOR 1 < (int4, int4) FOR ORDER BY float_ops;

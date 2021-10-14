@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO atest5(two) VALUES (6) ON CONFLICT (two) DO UPDATE set three = 10 RETURNING atest5.one;
+LOCATION:  exec_simple_query, postgres.c:938

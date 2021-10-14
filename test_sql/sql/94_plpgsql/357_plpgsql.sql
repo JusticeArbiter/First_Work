@@ -1,0 +1,1 @@
+create function trap_foreign_key_2() returns int as $$  begin  begin -- start a subtransaction  set constraints all immediate;  exception  when foreign_key_violation then  raise notice 'caught foreign_key_violation';  return 0;  end;  return 1;  end$$ language plpgsql;

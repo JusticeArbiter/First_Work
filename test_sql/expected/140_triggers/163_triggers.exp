@@ -1,0 +1,2 @@
+insert into trigger_test values(1,'insert');
+INSERT 0 1

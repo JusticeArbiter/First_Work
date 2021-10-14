@@ -1,0 +1,1 @@
+GRANT SELECT ON TABLE tbl1 TO alice;

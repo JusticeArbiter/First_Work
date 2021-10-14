@@ -1,0 +1,5 @@
+LOG:  00000: statement: create rule rtest_t4_ins1 as on insert to rtest_t4  where new.a >= 10 and new.a < 20 do instead  insert into rtest_t5 values (new.a, new.b);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create rule rtest_t4_ins1 as on insert to rtest_t4  where new.a >= 10 and new.a < 20 do instead  insert into rtest_t5 values (new.a, new.b);

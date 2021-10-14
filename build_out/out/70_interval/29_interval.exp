@@ -1,0 +1,10 @@
+SELECT '' AS five, * FROM INTERVAL_TBL  WHERE INTERVAL_TBL.f1 >= interval '@ 1 month';
+ five |       f1        
+------+-----------------
+      | 34 years
+      | 3 mons
+      | 6 years
+      | 5 mons
+      | 5 mons 12:00:00
+(5 rows)
+

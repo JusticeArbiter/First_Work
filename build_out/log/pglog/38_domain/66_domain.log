@@ -1,0 +1,2 @@
+LOG:  00000: statement: select d1[2], d1[1].r, d1[1].i from dcomptable;
+LOCATION:  exec_simple_query, postgres.c:938

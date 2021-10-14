@@ -1,0 +1,4 @@
+DROP FOREIGN DATA WRAPPER dummy CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FOREIGN DATA WRAPPER
+NOTICE:  00000: drop cascades to server s0
+DROP FOREIGN DATA WRAPPER

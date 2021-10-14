@@ -1,0 +1,6 @@
+select refcursor_test1('test1');
+ refcursor_test1 
+-----------------
+ test1
+(1 row)
+

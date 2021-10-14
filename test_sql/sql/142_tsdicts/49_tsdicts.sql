@@ -1,0 +1,1 @@
+CREATE TEXT SEARCH CONFIGURATION synonym_tst (  COPY=english  );

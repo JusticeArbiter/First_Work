@@ -1,0 +1,5 @@
+LOG:  00000: statement: COMMENT ON AGGREGATE newavg_wrong (int4) IS 'an agg comment';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: aggregate newavg_wrong(integer) does not exist
+LOCATION:  LookupAggNameTypeNames, parse_func.c:2014
+STATEMENT:  COMMENT ON AGGREGATE newavg_wrong (int4) IS 'an agg comment';

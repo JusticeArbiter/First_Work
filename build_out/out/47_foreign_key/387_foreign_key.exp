@@ -1,0 +1,4 @@
+UPDATE pktable SET id = 10 WHERE id = 5;
+ERROR:  42P01: relation "pktable" does not exist
+LINE 1: UPDATE pktable SET id = 10 WHERE id = 5;
+               ^

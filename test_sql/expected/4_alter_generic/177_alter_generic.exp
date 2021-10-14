@@ -1,0 +1,2 @@
+SET ROLE regtest_alter_user6;
+SET

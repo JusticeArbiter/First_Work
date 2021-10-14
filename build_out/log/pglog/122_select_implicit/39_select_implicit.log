@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT count(b) FROM test_missing_target x, test_missing_target y  WHERE x.a = y.a  GROUP BY x.b/2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42702: column reference "b" is ambiguous at character 14
+LOCATION:  colNameToVar, parse_relation.c:770
+STATEMENT:  SELECT count(b) FROM test_missing_target x, test_missing_target y  WHERE x.a = y.a  GROUP BY x.b/2;

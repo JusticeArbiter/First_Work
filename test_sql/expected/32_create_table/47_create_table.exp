@@ -1,0 +1,4 @@
+CREATE UNLOGGED TABLE pg_temp.unlogged3 (a int primary key);
+ERROR:  42P16: only temporary relations may be created in temporary schemas
+LINE 1: CREATE UNLOGGED TABLE pg_temp.unlogged3 (a int primary key);
+                              ^

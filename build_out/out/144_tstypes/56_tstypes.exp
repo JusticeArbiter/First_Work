@@ -1,0 +1,6 @@
+SELECT $$'\\as'$$::tsquery;
+ tsquery 
+---------
+ '\\as'
+(1 row)
+

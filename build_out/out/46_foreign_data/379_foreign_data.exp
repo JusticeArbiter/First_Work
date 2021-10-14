@@ -1,0 +1,4 @@
+ALTER FOREIGN DATA WRAPPER foo OPTIONS (gotcha 'true');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN DATA WRAPPER
+ERROR:  42601: invalid option "test wrapper"
+HINT:  Valid options in this context are: 

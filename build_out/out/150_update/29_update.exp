@@ -1,0 +1,5 @@
+UPDATE update_test AS t SET b = update_test.b + 10 WHERE t.a = 10;
+ERROR:  42P01: invalid reference to FROM-clause entry for table "update_test"
+LINE 1: UPDATE update_test AS t SET b = update_test.b + 10 WHERE t.a...
+                                        ^
+HINT:  Perhaps you meant to reference the table alias "t".

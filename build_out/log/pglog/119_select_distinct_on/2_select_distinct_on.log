@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT DISTINCT ON (string4, ten) string4, two, ten  FROM tmp  ORDER BY string4 using <, two using <, ten using <;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tmp" does not exist at character 59
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT DISTINCT ON (string4, ten) string4, two, ten  FROM tmp  ORDER BY string4 using <, two using <, ten using <;

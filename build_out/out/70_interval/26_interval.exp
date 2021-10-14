@@ -1,0 +1,8 @@
+SELECT '' AS three, * FROM INTERVAL_TBL  WHERE INTERVAL_TBL.f1 <= interval '@ 5 hours';
+ three |    f1     
+-------+-----------
+       | 00:01:00
+       | 05:00:00
+       | -00:00:14
+(3 rows)
+

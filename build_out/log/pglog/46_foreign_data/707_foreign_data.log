@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP FOREIGN TABLE IF EXISTS no_table;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FOREIGN TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP FOREIGN TABLE IF EXISTS no_table;
+NOTICE:  00000: foreign table "no_table" does not exist, skipping
+LOCATION:  DropErrorMsgNonExistent, tablecmds.c:760
+STATEMENT:  DROP FOREIGN TABLE IF EXISTS no_table;

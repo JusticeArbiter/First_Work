@@ -1,0 +1,3 @@
+SET LOCAL vacuum_cost_delay TO 30;
+WARNING:  25P01: SET LOCAL can only be used in transaction blocks
+SET

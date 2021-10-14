@@ -1,0 +1,2 @@
+LOG:  00000: statement: create table atacc1 ( test int, test2 int, test3 int);
+LOCATION:  exec_simple_query, postgres.c:938

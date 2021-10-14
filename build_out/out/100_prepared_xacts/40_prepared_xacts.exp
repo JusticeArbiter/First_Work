@@ -1,0 +1,2 @@
+ROLLBACK PREPARED 'foo4';
+ERROR:  42704: prepared transaction with identifier "foo4" does not exist

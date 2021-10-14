@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT srvname FROM pg_foreign_server WHERE srvname like 'alt_fserv%';
+LOCATION:  exec_simple_query, postgres.c:938

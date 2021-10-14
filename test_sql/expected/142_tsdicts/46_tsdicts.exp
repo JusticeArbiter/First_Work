@@ -1,0 +1,6 @@
+SELECT to_tsvector('hunspell_tst', 'Booking the skies after rebookings for footballklubber from a foot');
+                                            to_tsvector                                             
+----------------------------------------------------------------------------------------------------
+ 'ball':7 'book':1,5 'booking':1,5 'foot':7,10 'football':7 'footballklubber':7 'klubber':7 'sky':3
+(1 row)
+

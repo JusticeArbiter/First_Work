@@ -1,0 +1,6 @@
+select shadowtest(1);
+ shadowtest 
+------------
+ t
+(1 row)
+

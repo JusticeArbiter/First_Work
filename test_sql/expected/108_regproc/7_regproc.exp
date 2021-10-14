@@ -1,0 +1,6 @@
+SELECT regtype('int4');
+ regtype 
+---------
+ integer
+(1 row)
+

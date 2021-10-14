@@ -1,0 +1,6 @@
+SELECT xmlparse(document '<invalidns xmlns=''&lt;''/>');
+         xmlparse          
+---------------------------
+ <invalidns xmlns='&lt;'/>
+(1 row)
+

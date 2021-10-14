@@ -1,0 +1,6 @@
+select raise_test();
+NOTICE:  55001: 1 2 3
+DETAIL:  some detail info
+HINT:  some hint
+ERROR:  22012: 1 2 3
+DETAIL:  some detail info

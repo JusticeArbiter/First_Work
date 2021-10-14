@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE concur_heap (f1 text, f2 text);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: /* Multiple primary keys creation should fail */  CREATE TABLE inhg (x text, LIKE inhx INCLUDING INDEXES, PRIMARY KEY(x));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: multiple primary keys for table "inhg" are not allowed
+LOCATION:  transformIndexConstraints, parse_utilcmd.c:1439
+STATEMENT:  /* Multiple primary keys creation should fail */  CREATE TABLE inhg (x text, LIKE inhx INCLUDING INDEXES, PRIMARY KEY(x));

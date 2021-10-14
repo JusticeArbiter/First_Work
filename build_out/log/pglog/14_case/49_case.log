@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION make_ad(int,int) returns arrdomain as  'declare x arrdomain;  begin  x := array[$1,$2];  return x;  end' language plpgsql volatile;
+LOCATION:  exec_simple_query, postgres.c:938

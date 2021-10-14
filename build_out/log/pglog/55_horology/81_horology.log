@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS "64", d1 - interval '1 year' AS one_year FROM TIMESTAMP_TBL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "timestamp_tbl" does not exist at character 60
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT '' AS "64", d1 - interval '1 year' AS one_year FROM TIMESTAMP_TBL;

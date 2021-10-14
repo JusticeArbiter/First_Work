@@ -1,0 +1,6 @@
+LOG:  00000: statement: /* Succeeds -- Unique constraints not copied */  INSERT INTO inhg VALUES ('x', 'foo', 'y');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: new row for relation "inhg" violates check constraint "foo"
+DETAIL:  Failing row contains (x, foo, y).
+LOCATION:  ExecConstraints, execMain.c:1725
+STATEMENT:  /* Succeeds -- Unique constraints not copied */  INSERT INTO inhg VALUES ('x', 'foo', 'y');

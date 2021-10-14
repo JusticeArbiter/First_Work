@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT cast('123456' as domainvarchar);
+LOCATION:  exec_simple_query, postgres.c:938

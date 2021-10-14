@@ -1,0 +1,1 @@
+DROP POLICY p1 ON dob_t1;

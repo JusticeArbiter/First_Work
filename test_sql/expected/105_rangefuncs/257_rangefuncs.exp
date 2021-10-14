@@ -1,0 +1,4 @@
+CREATE FUNCTION bad (f1 int, out f2 anyelement, out f3 anyarray)  AS 'select $1, array[$1,$1]' LANGUAGE sql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42P13: cannot determine result data type
+DETAIL:  A function returning a polymorphic type must have at least one polymorphic argument.

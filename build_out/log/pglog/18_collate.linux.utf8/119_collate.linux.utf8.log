@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT a, b FROM collate_test1 EXCEPT SELECT a, b FROM collate_test3 ORDER BY 2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P21: collation mismatch between implicit collations "en_US" and "C" at character 49
+HINT:  You can choose the collation by applying the COLLATE clause to one or both expressions.
+LOCATION:  select_common_collation, parse_collate.c:232
+STATEMENT:  SELECT a, b FROM collate_test1 EXCEPT SELECT a, b FROM collate_test3 ORDER BY 2;

@@ -1,0 +1,2 @@
+SECURITY LABEL ON ROLE seclabel_user1 IS 'classified';
+ERROR:  22023: no security label providers have been loaded

@@ -1,0 +1,5 @@
+LOG:  00000: statement: select 'yz23'::dtop;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: value for domain dtop violates check constraint "dinter_check"
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4060
+STATEMENT:  select 'yz23'::dtop;

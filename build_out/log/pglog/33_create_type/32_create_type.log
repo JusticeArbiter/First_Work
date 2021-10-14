@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION base_fn_in(cstring) RETURNS opaque AS 'boolin'  LANGUAGE internal IMMUTABLE STRICT;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO VARBIT_TABLE VALUES (B'101011111010');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22001: bit string too long for type bit varying(11)
+LOCATION:  varbit, varbit.c:732
+STATEMENT:  INSERT INTO VARBIT_TABLE VALUES (B'101011111010');

@@ -1,0 +1,3 @@
+create temp table parent (  aid int not null primary key,  val1 text,  val2 text,  val3 text,  val4 text,  bcnt int not null default 0);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

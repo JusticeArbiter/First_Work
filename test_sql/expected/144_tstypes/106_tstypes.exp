@@ -1,0 +1,6 @@
+select to_tsvector('simple', '') @@ '!foo' AS "true";
+ true 
+------
+ t
+(1 row)
+

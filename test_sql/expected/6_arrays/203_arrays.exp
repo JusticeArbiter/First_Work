@@ -1,0 +1,6 @@
+select '{0 second ,0 second}'::interval[];
+      interval       
+---------------------
+ {00:00:00,00:00:00}
+(1 row)
+

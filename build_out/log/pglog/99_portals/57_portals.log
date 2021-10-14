@@ -1,0 +1,5 @@
+LOG:  00000: statement: FETCH backward 10 in foo14;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "foo14" does not exist
+LOCATION:  PerformPortalFetch, portalcmds.c:168
+STATEMENT:  FETCH backward 10 in foo14;

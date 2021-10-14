@@ -1,0 +1,4 @@
+SELECT regproc('know');
+ERROR:  42883: function "know" does not exist
+LINE 1: SELECT regproc('know');
+                       ^

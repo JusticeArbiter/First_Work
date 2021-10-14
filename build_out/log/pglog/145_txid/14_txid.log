@@ -1,0 +1,5 @@
+LOG:  00000: statement: select txid_snapshot_xmin(snap),  txid_snapshot_xmax(snap),  txid_snapshot_xip(snap)  from snapshot_test order by nr;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "snapshot_test" does not exist at character 92
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select txid_snapshot_xmin(snap),  txid_snapshot_xmax(snap),  txid_snapshot_xip(snap)  from snapshot_test order by nr;

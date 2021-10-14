@@ -1,0 +1,2 @@
+insert into whereami values ('temp');
+INSERT 0 1

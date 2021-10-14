@@ -1,0 +1,2 @@
+EXECUTE cprep;
+ERROR:  26000: prepared statement "cprep" does not exist

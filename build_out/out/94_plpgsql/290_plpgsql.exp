@@ -1,0 +1,5 @@
+select * from test_table_func_rec();
+ a 
+---
+(0 rows)
+

@@ -1,0 +1,2 @@
+create table gc1() inherits (c1);
+CREATE TABLE

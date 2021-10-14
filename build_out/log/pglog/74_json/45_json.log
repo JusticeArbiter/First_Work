@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT 'trues'::json;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type json at character 8
+DETAIL:  Token "trues" is invalid.
+CONTEXT:  JSON data, line 1: trues
+LOCATION:  report_invalid_token, json.c:1244
+STATEMENT:  SELECT 'trues'::json;

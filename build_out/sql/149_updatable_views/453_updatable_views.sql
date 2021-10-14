@@ -1,0 +1,1 @@
+CREATE OR REPLACE FUNCTION leakproof(anyelement)  RETURNS boolean AS  $$  BEGIN  RETURN true;  END;  $$  LANGUAGE plpgsql STRICT IMMUTABLE LEAKPROOF;

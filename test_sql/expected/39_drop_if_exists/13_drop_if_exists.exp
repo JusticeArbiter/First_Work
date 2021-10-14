@@ -1,0 +1,2 @@
+DROP INDEX test_index_exists;
+ERROR:  42704: index "test_index_exists" does not exist

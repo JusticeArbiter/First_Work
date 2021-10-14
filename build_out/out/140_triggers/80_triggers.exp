@@ -1,0 +1,3 @@
+UPDATE main_table SET a = a + 2 WHERE b > 100;
+NOTICE:  00000: trigger_func(after_upd_stmt) called: action = UPDATE, when = AFTER, level = STATEMENT
+UPDATE 0

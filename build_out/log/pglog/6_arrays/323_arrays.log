@@ -1,0 +1,5 @@
+LOG:  00000: statement: update t1 set f1[5].q2 = 43;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "t1" does not exist at character 8
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  update t1 set f1[5].q2 = 43;

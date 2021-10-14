@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP INDEX CONCURRENTLY IF EXISTS "concur_index2";
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: index "concur_index2" does not exist, skipping
+LOCATION:  DropErrorMsgNonExistent, tablecmds.c:760
+STATEMENT:  DROP INDEX CONCURRENTLY IF EXISTS "concur_index2";

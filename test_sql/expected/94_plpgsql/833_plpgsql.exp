@@ -1,0 +1,6 @@
+select consumes_rw_array(a), a from returns_rw_array(1) a;
+ consumes_rw_array |   a   
+-------------------+-------
+                 1 | {1,1}
+(1 row)
+

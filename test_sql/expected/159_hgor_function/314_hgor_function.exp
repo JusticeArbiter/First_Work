@@ -1,0 +1,6 @@
+select int32_pl_timestamp(-1::int4,'2016-11-18 14:00:59'::timestamp);
+ int32_pl_timestamp  
+---------------------
+ 2016-11-17 14:00:59
+(1 row)
+

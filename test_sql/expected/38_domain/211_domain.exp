@@ -1,0 +1,4 @@
+insert into dtest values('x123');
+ERROR:  42P01: relation "dtest" does not exist
+LINE 1: insert into dtest values('x123');
+                    ^

@@ -1,0 +1,5 @@
+DROP USER regressuser2;
+ERROR:  2BP01: role "regressuser2" cannot be dropped because some objects depend on it
+DETAIL:  privileges for type testdomain1
+privileges for type testtype1
+privileges for language sql

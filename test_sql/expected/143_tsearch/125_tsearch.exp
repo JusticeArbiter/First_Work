@@ -1,0 +1,6 @@
+SELECT ts_rewrite('bar & new & qq & foo & york', 'SELECT keyword, sample FROM test_tsquery'::text );
+              ts_rewrite               
+---------------------------------------
+ 'foo' & 'new' & 'bar' & 'qq' & 'york'
+(1 row)
+

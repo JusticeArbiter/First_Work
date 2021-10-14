@@ -1,0 +1,4 @@
+update arrtest1 set i[-3] = -3, t[-3] = 'minus-three';
+ERROR:  42P01: relation "arrtest1" does not exist
+LINE 1: update arrtest1 set i[-3] = -3, t[-3] = 'minus-three';
+               ^

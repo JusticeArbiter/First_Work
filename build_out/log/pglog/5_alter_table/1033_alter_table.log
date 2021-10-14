@@ -1,0 +1,2 @@
+LOG:  00000: statement: create function alter1.plus1(int) returns int as 'select $1+1' language sql;
+LOCATION:  exec_simple_query, postgres.c:938

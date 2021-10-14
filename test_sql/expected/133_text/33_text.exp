@@ -1,0 +1,6 @@
+select format('Hello %%%%');
+  format  
+----------
+ Hello %%
+(1 row)
+

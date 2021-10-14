@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS five, i.f1, i.f1 / int4 '2' AS x FROM INT4_TBL i;
+LOCATION:  exec_simple_query, postgres.c:938

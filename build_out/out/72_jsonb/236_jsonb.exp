@@ -1,0 +1,2 @@
+SELECT jsonb_build_object(NULL, 'a');
+ERROR:  22023: argument 1: key must not be null

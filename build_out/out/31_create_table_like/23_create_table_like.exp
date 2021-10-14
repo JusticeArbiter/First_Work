@@ -1,0 +1,3 @@
+/* Succeeds -- Unique constraints not copied */  INSERT INTO inhg VALUES ('x', 'foo', 'y');
+ERROR:  23514: new row for relation "inhg" violates check constraint "foo"
+DETAIL:  Failing row contains (x, foo, y).

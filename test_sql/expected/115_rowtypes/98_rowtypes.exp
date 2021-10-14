@@ -1,0 +1,6 @@
+select (row('Jim', 'Beam'))::text;
+    row     
+------------
+ (Jim,Beam)
+(1 row)
+

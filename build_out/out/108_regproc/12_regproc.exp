@@ -1,0 +1,6 @@
+SELECT to_regclass('pg_class');
+ to_regclass 
+-------------
+ pg_class
+(1 row)
+

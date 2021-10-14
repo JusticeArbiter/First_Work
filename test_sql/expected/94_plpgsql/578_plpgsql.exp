@@ -1,0 +1,5 @@
+create or replace function forc_bad() returns void as $$  declare  c refcursor;  begin  for r in c loop  raise notice '%', r.i;  end loop;  end;  $$ language plpgsql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42601: cursor FOR loop must use a bound cursor variable
+LINE 1: ...oid as $$  declare  c refcursor;  begin  for r in c loop  ra...
+                                                             ^

@@ -1,0 +1,17 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: drop table if exists hs1;
+ statement: create table hs1 (col1 integer primary key);
+ statement: insert into hs1 values (1);
+ statement: drop table if exists hs2;
+ statement: create table hs2 (col1 integer primary key);
+ statement: insert into hs2 values (12);
+ statement: insert into hs2 values (13);
+ statement: drop table if exists hs3;
+ statement: create table hs3 (col1 integer primary key);
+ statement: insert into hs3 values (113);
+ statement: insert into hs3 values (114);
+ statement: insert into hs3 values (115);
+ statement: DROP sequence if exists hsseq;
+ statement: create sequence hsseq;
+ statement: SELECT pg_switch_xlog();
+

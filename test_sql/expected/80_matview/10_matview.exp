@@ -1,0 +1,6 @@
+SELECT relispopulated FROM pg_class WHERE oid = 'tm'::regclass;
+ relispopulated 
+----------------
+ t
+(1 row)
+

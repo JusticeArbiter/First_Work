@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE FUNCTION reraise_test() RETURNS void AS $$  BEGIN  BEGIN  RAISE syntax_error;  EXCEPTION  WHEN syntax_error THEN  BEGIN  raise notice 'exception % thrown in inner block, reraising', sqlerrm;  RAISE;  EXCEPTION  WHEN OTHERS THEN  raise notice 'RIGHT - exception % caught in inner block', sqlerrm;  END;  END;  EXCEPTION  WHEN OTHERS THEN  raise notice 'WRONG - exception % caught in outer block', sqlerrm;  END;  $$ LANGUAGE plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE FUNCTION reraise_test() RETURNS void AS $$  BEGIN  BEGIN  RAISE syntax_error;  EXCEPTION  WHEN syntax_error THEN  BEGIN  raise notice 'exception % thrown in inner block, reraising', sqlerrm;  RAISE;  EXCEPTION  WHEN OTHERS THEN  raise notice 'RIGHT - exception % caught in inner block', sqlerrm;  END;  END;  EXCEPTION  WHEN OTHERS THEN  raise notice 'WRONG - exception % caught in outer block', sqlerrm;  END;  $$ LANGUAGE plpgsql;

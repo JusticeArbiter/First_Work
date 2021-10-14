@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW v4 AS SELECT * FROM base_table WHERE id IN (SELECT id FROM base_table2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "base_table" does not exist at character 33
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE VIEW v4 AS SELECT * FROM base_table WHERE id IN (SELECT id FROM base_table2);

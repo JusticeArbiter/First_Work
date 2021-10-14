@@ -1,0 +1,5 @@
+LOG:  00000: statement: ANALYZE vaccluster(i,i);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42701: column "i" of relation "vaccluster" appears more than once
+LOCATION:  do_analyze_rel, analyze.c:388
+STATEMENT:  ANALYZE vaccluster(i,i);

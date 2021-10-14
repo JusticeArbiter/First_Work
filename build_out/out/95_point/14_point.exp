@@ -1,0 +1,6 @@
+SELECT '' AS one, p.* FROM POINT_TBL p WHERE '(0.0,0.0)' >^ p.f1;
+ one |    f1    
+-----+----------
+     | (-5,-12)
+(1 row)
+

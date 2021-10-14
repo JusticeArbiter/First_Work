@@ -1,0 +1,5 @@
+LOG:  00000: statement: select max(unique1) from tenk1 where unique1 > 42000;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tenk1" does not exist at character 26
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select max(unique1) from tenk1 where unique1 > 42000;

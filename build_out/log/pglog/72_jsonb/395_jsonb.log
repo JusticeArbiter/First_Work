@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT key, count(*) FROM (SELECT (jsonb_each(j)).key FROM testjsonb) AS wow GROUP BY key ORDER BY count DESC, key;
+LOCATION:  exec_simple_query, postgres.c:938

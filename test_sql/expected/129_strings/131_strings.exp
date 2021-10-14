@@ -1,0 +1,6 @@
+SELECT 'ma%a' NOT LIKE 'm%a%%a' ESCAPE '%' AS "false";
+ false 
+-------
+ f
+(1 row)
+

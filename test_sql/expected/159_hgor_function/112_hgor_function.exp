@@ -1,0 +1,6 @@
+select decode('a'::char,'a'::char,'abcA'::cstring);
+ decode 
+--------
+ abcA
+(1 row)
+

@@ -1,0 +1,3 @@
+GRANT TRUNCATE ON atest2 TO regressuser5;
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+GRANT

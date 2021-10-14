@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT to_tsvector('synonym_tst', 'Most common mistake is to write Gogle instead of Google');
+LOCATION:  exec_simple_query, postgres.c:938

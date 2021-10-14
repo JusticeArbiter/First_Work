@@ -1,0 +1,5 @@
+LOG:  00000: statement: explain (costs off)  select * from  (select * from t3 a union all select * from t3 b) ss  join int4_tbl on f1 = expensivefunc(x);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "x" does not exist at character 127
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  explain (costs off)  select * from  (select * from t3 a union all select * from t3 b) ss  join int4_tbl on f1 = expensivefunc(x);

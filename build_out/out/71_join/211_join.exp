@@ -1,0 +1,4 @@
+insert into a (code) values ('p');
+ERROR:  42703: column "code" of relation "a" does not exist
+LINE 1: insert into a (code) values ('p');
+                       ^

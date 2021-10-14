@@ -1,0 +1,25 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE SCHEMA test_schema_1                                   +
+        CREATE UNIQUE INDEX abc_a_idx ON abc (a)                          +
+        CREATE VIEW abc_view AS                                           +
+               SELECT a+1 AS a, b+1 AS b FROM abc                         +
+        CREATE TABLE abc (                                                +
+               a serial,                                                  +
+               b int UNIQUE                                               +
+        );
+ statement: SELECT COUNT(*) FROM pg_class WHERE relnamespace =            +
+     (SELECT oid FROM pg_namespace WHERE nspname = 'test_schema_1');
+ statement: INSERT INTO test_schema_1.abc DEFAULT VALUES;
+ statement: INSERT INTO test_schema_1.abc DEFAULT VALUES;
+ statement: INSERT INTO test_schema_1.abc DEFAULT VALUES;
+ statement: SELECT * FROM test_schema_1.abc;
+ statement: SELECT * FROM test_schema_1.abc_view;
+ statement: ALTER SCHEMA test_schema_1 RENAME TO test_schema_renamed;
+ statement: SELECT COUNT(*) FROM pg_class WHERE relnamespace =            +
+     (SELECT oid FROM pg_namespace WHERE nspname = 'test_schema_1');
+ statement: CREATE SCHEMA test_schema_renamed;
+ statement: CREATE SCHEMA IF NOT EXISTS test_schema_renamed;
+ statement: DROP SCHEMA test_schema_renamed CASCADE;
+ statement: SELECT COUNT(*) FROM pg_class WHERE relnamespace =            +
+     (SELECT oid FROM pg_namespace WHERE nspname = 'test_schema_renamed');
+

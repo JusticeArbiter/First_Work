@@ -1,0 +1,6 @@
+select * from json_populate_recordset(null::jpop2, '[{"a":2,"c":3,"b":{"z":4},"d":6}]') q;
+ a |    b    | c | d 
+---+---------+---+---
+ 2 | {"z":4} | 3 | 6
+(1 row)
+

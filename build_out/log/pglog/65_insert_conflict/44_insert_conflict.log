@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into insertconflicttest AS ict values (6, 'Passionfruit') on conflict (key) do update set fruit = insertconflicttest.fruit;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: invalid reference to FROM-clause entry for table "insertconflicttest" at character 106
+HINT:  Perhaps you meant to reference the table alias "ict".
+LOCATION:  errorMissingRTE, parse_relation.c:3134
+STATEMENT:  insert into insertconflicttest AS ict values (6, 'Passionfruit') on conflict (key) do update set fruit = insertconflicttest.fruit;

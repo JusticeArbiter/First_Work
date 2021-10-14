@@ -1,0 +1,3 @@
+drop domain restrictedrange;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP DOMAIN
+DROP DOMAIN

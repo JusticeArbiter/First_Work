@@ -1,0 +1,11 @@
+SELECT '' AS six, * FROM RELTIME_TBL;
+ six |    f1     
+-----+-----------
+     | 00:01:00
+     | 05:00:00
+     | 10 days
+     | 34 years
+     | 3 mons
+     | -00:00:14
+(6 rows)
+

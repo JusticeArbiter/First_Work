@@ -1,0 +1,12 @@
+explain (costs off)  select * from tenk1 a join tenk1 b on  (a.unique1 = 1 and b.unique1 = 2) or (a.unique2 = 3 and b.hundred = 4);
+                                           QUERY PLAN                                            
+-------------------------------------------------------------------------------------------------
+ Nested Loop
+   Join Filter: (((a.unique1 = 1) AND (b.unique1 = 2)) OR ((a.unique2 = 3) AND (b.hundred = 4)))
+   ->  Seq Scan on tenk1 a
+         Filter: ((unique1 = 1) OR (unique2 = 3))
+   ->  Materialize
+         ->  Seq Scan on tenk1 b
+               Filter: ((unique1 = 2) OR (hundred = 4))
+(7 rows)
+

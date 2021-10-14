@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT rank() OVER (ORDER BY rank() OVER (ORDER BY random()));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P20: window functions are not allowed in window definitions at character 30
+LOCATION:  transformWindowFuncCall, parse_agg.c:858
+STATEMENT:  SELECT rank() OVER (ORDER BY rank() OVER (ORDER BY random()));

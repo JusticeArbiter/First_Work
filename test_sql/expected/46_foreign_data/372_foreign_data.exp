@@ -1,0 +1,3 @@
+ALTER USER MAPPING FOR regress_test_role SERVER s6 OPTIONS (gotcha 'true');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER USER MAPPING
+ERROR:  42704: user mapping "regress_test_role" does not exist for the server

@@ -1,0 +1,6 @@
+select unreserved_test();
+ unreserved_test 
+-----------------
+              42
+(1 row)
+

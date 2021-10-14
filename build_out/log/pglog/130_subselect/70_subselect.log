@@ -1,0 +1,8 @@
+LOG:  00000: statement: create rule shipped_view_insert as on insert to shipped_view do instead  insert into shipped values('wt', new.ordnum, new.partnum, new.value);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create rule shipped_view_insert as on insert to shipped_view do instead  insert into shipped values('wt', new.ordnum, new.partnum, new.value);
+ERROR:  42P01: relation "shipped_view" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  create rule shipped_view_insert as on insert to shipped_view do instead  insert into shipped values('wt', new.ordnum, new.partnum, new.value);

@@ -1,0 +1,5 @@
+SELECT name FROM pg_cursors;
+ name 
+------
+(0 rows)
+

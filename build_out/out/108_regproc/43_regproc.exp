@@ -1,0 +1,4 @@
+SELECT regprocedure('ng_catalog.abs(numeric)');
+ERROR:  3F000: schema "ng_catalog" does not exist
+LINE 1: SELECT regprocedure('ng_catalog.abs(numeric)');
+                            ^

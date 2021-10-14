@@ -1,0 +1,11 @@
+LOG:  00000: statement: DO $$  DECLARE  o int;  a int[] := ARRAY[1,2,3,2,3,1,2];  BEGIN  o := array_position(a, 2);  WHILE o IS NOT NULL  LOOP  RAISE NOTICE '%', o;  o := array_position(a, 2, o + 1);  END LOOP;  END  $$ LANGUAGE plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: 2
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE  o int;  a int[] := ARRAY[1,2,3,2,3,1,2];  BEGIN  o := array_position(a, 2);  WHILE o IS NOT NULL  LOOP  RAISE NOTICE '%', o;  o := array_position(a, 2, o + 1);  END LOOP;  END  $$ LANGUAGE plpgsql;
+NOTICE:  00000: 4
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE  o int;  a int[] := ARRAY[1,2,3,2,3,1,2];  BEGIN  o := array_position(a, 2);  WHILE o IS NOT NULL  LOOP  RAISE NOTICE '%', o;  o := array_position(a, 2, o + 1);  END LOOP;  END  $$ LANGUAGE plpgsql;
+NOTICE:  00000: 7
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE  o int;  a int[] := ARRAY[1,2,3,2,3,1,2];  BEGIN  o := array_position(a, 2);  WHILE o IS NOT NULL  LOOP  RAISE NOTICE '%', o;  o := array_position(a, 2, o + 1);  END LOOP;  END  $$ LANGUAGE plpgsql;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO num_exp_sqrt VALUES (5,'128.05092147657509145473');
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT pg_get_object_address('stone', '{}', '{}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: unrecognized object type "stone"
+LOCATION:  read_objtype_from_string, objectaddress.c:2253
+STATEMENT:  SELECT pg_get_object_address('stone', '{}', '{}');

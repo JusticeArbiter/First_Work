@@ -1,0 +1,6 @@
+select pg_typeof('x');
+ pg_typeof 
+-----------
+ unknown
+(1 row)
+

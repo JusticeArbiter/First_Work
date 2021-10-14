@@ -1,0 +1,6 @@
+select substr('HighGo DB',5);
+ substr 
+--------
+ Go DB
+(1 row)
+

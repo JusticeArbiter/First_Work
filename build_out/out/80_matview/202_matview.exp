@@ -1,0 +1,2 @@
+DROP ROLE user_dw;
+DROP ROLE

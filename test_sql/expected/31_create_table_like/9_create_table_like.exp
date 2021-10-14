@@ -1,0 +1,6 @@
+/* Empty set since LIKE inherits structure only */  SELECT * FROM ctlb;
+   aa    |   bb    
+---------+---------
+ ee-col1 | ee-col2
+(1 row)
+

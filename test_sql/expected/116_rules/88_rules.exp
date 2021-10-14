@@ -1,0 +1,8 @@
+select * from rtest_v1;
+ a | b  
+---+----
+ 2 | 99
+ 1 | 88
+ 3 | 88
+(3 rows)
+

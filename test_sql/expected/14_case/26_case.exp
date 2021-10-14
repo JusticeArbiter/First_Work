@@ -1,0 +1,6 @@
+SELECT * FROM CASE_TBL WHERE COALESCE(f,i) = 4;
+ i | f 
+---+---
+ 4 |  
+(1 row)
+

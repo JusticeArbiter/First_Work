@@ -1,0 +1,25 @@
+LOG:  00000: statement: DROP SCHEMA evttrig CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SCHEMA
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP SCHEMA evttrig CASCADE;
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to table evttrig.one
+	drop cascades to table evttrig.two
+LOCATION:  reportDependentObjects, dependency.c:1003
+STATEMENT:  DROP SCHEMA evttrig CASCADE;
+NOTICE:  00000: NORMAL: orig=t normal=f istemp=f type=schema identity=evttrig name={evttrig} args={}
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP SCHEMA evttrig CASCADE;
+NOTICE:  00000: NORMAL: orig=f normal=t istemp=f type=table identity=evttrig.one name={evttrig,one} args={}
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP SCHEMA evttrig CASCADE;
+NOTICE:  00000: NORMAL: orig=f normal=t istemp=f type=sequence identity=evttrig.one_col_a_seq name={evttrig,one_col_a_seq} args={}
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP SCHEMA evttrig CASCADE;
+NOTICE:  00000: NORMAL: orig=f normal=t istemp=f type=default value identity=for evttrig.one.col_a name={evttrig,one,col_a} args={}
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP SCHEMA evttrig CASCADE;
+NOTICE:  00000: NORMAL: orig=f normal=t istemp=f type=table identity=evttrig.two name={evttrig,two} args={}
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP SCHEMA evttrig CASCADE;

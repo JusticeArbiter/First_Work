@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from pg_get_object_address('operator of access method', '{btree,integer_ops,1}', '{int4,bool}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: operator 1 (int4, bool) of operator family integer_ops for access method btree does not exist
+LOCATION:  get_object_address_opf_member, objectaddress.c:1581
+STATEMENT:  select * from pg_get_object_address('operator of access method', '{btree,integer_ops,1}', '{int4,bool}');

@@ -1,0 +1,7 @@
+SELECT fdwname, fdwhandler, fdwvalidator, fdwoptions FROM pg_foreign_data_wrapper;
+ fdwname | fdwhandler | fdwvalidator | fdwoptions 
+---------+------------+--------------+------------
+ useless |          0 |            0 | 
+ foobar  |          0 |            0 | 
+(2 rows)
+

@@ -1,0 +1,6 @@
+LOG:  00000: statement: select dfunc();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42725: function dfunc() is not unique at character 8
+HINT:  Could not choose a best candidate function. You might need to add explicit type casts.
+LOCATION:  ParseFuncOrColumn, parse_func.c:501
+STATEMENT:  select dfunc();

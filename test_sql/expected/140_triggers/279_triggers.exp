@@ -1,0 +1,7 @@
+UPDATE city_view v1 SET country_name = v2.country_name FROM city_view v2  WHERE v2.city_name = 'Birmingham' AND v1.city_name = 'London' RETURNING *;
+ city_id | city_name | population | country_name | continent | city_id | city_name  | population | country_name | continent 
+---------+-----------+------------+--------------+-----------+---------+------------+------------+--------------+-----------
+       2 | London    |    7556900 | UK           | Europe    |  234567 | Birmingham |    1016800 | UK           | Europe
+(1 row)
+
+UPDATE 1

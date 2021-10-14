@@ -1,0 +1,14 @@
+LOG:  00000: statement: DROP POLICY p2 ON event_trigger_test;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP POLICY
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP POLICY p2 ON event_trigger_test;
+NOTICE:  00000: DROP POLICY - ddl_command_start
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP POLICY p2 ON event_trigger_test;
+NOTICE:  00000: DROP POLICY - sql_drop
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP POLICY p2 ON event_trigger_test;
+NOTICE:  00000: DROP POLICY - ddl_command_end
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP POLICY p2 ON event_trigger_test;

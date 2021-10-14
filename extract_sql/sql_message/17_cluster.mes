@@ -1,0 +1,147 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE clstr_tst_s (rf_a SERIAL PRIMARY KEY,                          +
+         b INT);
+ statement: CREATE TABLE clstr_tst (a SERIAL PRIMARY KEY,                               +
+         b INT,                                                                         +
+         c TEXT,                                                                        +
+         d TEXT,                                                                        +
+         CONSTRAINT clstr_tst_con FOREIGN KEY (b) REFERENCES clstr_tst_s);
+ statement: CREATE INDEX clstr_tst_b ON clstr_tst (b);
+ statement: CREATE INDEX clstr_tst_c ON clstr_tst (c);
+ statement: CREATE INDEX clstr_tst_c_b ON clstr_tst (c,b);
+ statement: CREATE INDEX clstr_tst_b_c ON clstr_tst (b,c);
+ statement: INSERT INTO clstr_tst_s (b) VALUES (0);
+ statement: INSERT INTO clstr_tst_s (b) SELECT b FROM clstr_tst_s;
+ statement: INSERT INTO clstr_tst_s (b) SELECT b FROM clstr_tst_s;
+ statement: INSERT INTO clstr_tst_s (b) SELECT b FROM clstr_tst_s;
+ statement: INSERT INTO clstr_tst_s (b) SELECT b FROM clstr_tst_s;
+ statement: INSERT INTO clstr_tst_s (b) SELECT b FROM clstr_tst_s;
+ statement: CREATE TABLE clstr_tst_inh () INHERITS (clstr_tst);
+ statement: INSERT INTO clstr_tst (b, c) VALUES (11, 'once');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (10, 'diez');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (31, 'treinta y uno');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (22, 'veintidos');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (3, 'tres');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (20, 'veinte');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (23, 'veintitres');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (21, 'veintiuno');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (4, 'cuatro');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (14, 'catorce');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (2, 'dos');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (18, 'dieciocho');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (27, 'veintisiete');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (25, 'veinticinco');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (13, 'trece');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (28, 'veintiocho');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (32, 'treinta y dos');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (5, 'cinco');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (29, 'veintinueve');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (1, 'uno');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (24, 'veinticuatro');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (30, 'treinta');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (12, 'doce');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (17, 'diecisiete');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (9, 'nueve');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (19, 'diecinueve');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (26, 'veintiseis');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (15, 'quince');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (7, 'siete');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (16, 'dieciseis');
+ statement: INSERT INTO clstr_tst (b, c) VALUES (8, 'ocho');
+ statement: INSERT INTO clstr_tst (b, c, d) VALUES (6, 'seis', repeat('xyzzy', 100000));
+ statement: CLUSTER clstr_tst_c ON clstr_tst;
+ statement: SELECT a,b,c,substring(d for 30), length(d) from clstr_tst;
+ statement: SELECT a,b,c,substring(d for 30), length(d) from clstr_tst ORDER BY a;
+ statement: SELECT a,b,c,substring(d for 30), length(d) from clstr_tst ORDER BY b;
+ statement: SELECT a,b,c,substring(d for 30), length(d) from clstr_tst ORDER BY c;
+ statement: INSERT INTO clstr_tst_inh VALUES (0, 100, 'in child table');
+ statement: SELECT a,b,c,substring(d for 30), length(d) from clstr_tst;
+ statement: INSERT INTO clstr_tst (b, c) VALUES (1111, 'this should fail');
+ statement: SELECT conname FROM pg_constraint WHERE conrelid = 'clstr_tst'::regclass    +
+ ORDER BY 1;
+ statement: SELECT relname, relkind,                                                    +
+     EXISTS(SELECT 1 FROM pg_class WHERE oid = c.reltoastrelid) AS hastoast             +
+ FROM pg_class c WHERE relname LIKE 'clstr_tst%' ORDER BY relname;
+ statement: SELECT pg_class.relname FROM pg_index, pg_class, pg_class AS pg_class_2     +
+ WHERE pg_class.oid=indexrelid                                                          +
+         AND indrelid=pg_class_2.oid                                                    +
+         AND pg_class_2.relname = 'clstr_tst'                                           +
+         AND indisclustered;
+ statement: ALTER TABLE clstr_tst CLUSTER ON clstr_tst_b_c;
+ statement: SELECT pg_class.relname FROM pg_index, pg_class, pg_class AS pg_class_2     +
+ WHERE pg_class.oid=indexrelid                                                          +
+         AND indrelid=pg_class_2.oid                                                    +
+         AND pg_class_2.relname = 'clstr_tst'                                           +
+         AND indisclustered;
+ statement: ALTER TABLE clstr_tst SET WITHOUT CLUSTER;
+ statement: SELECT pg_class.relname FROM pg_index, pg_class, pg_class AS pg_class_2     +
+ WHERE pg_class.oid=indexrelid                                                          +
+         AND indrelid=pg_class_2.oid                                                    +
+         AND pg_class_2.relname = 'clstr_tst'                                           +
+         AND indisclustered;
+ statement: CREATE USER clstr_user;
+ statement: CREATE TABLE clstr_1 (a INT PRIMARY KEY);
+ statement: CREATE TABLE clstr_2 (a INT PRIMARY KEY);
+ statement: CREATE TABLE clstr_3 (a INT PRIMARY KEY);
+ statement: ALTER TABLE clstr_1 OWNER TO clstr_user;
+ statement: ALTER TABLE clstr_3 OWNER TO clstr_user;
+ statement: GRANT SELECT ON clstr_2 TO clstr_user;
+ statement: INSERT INTO clstr_1 VALUES (2);
+ statement: INSERT INTO clstr_1 VALUES (1);
+ statement: INSERT INTO clstr_2 VALUES (2);
+ statement: INSERT INTO clstr_2 VALUES (1);
+ statement: INSERT INTO clstr_3 VALUES (2);
+ statement: INSERT INTO clstr_3 VALUES (1);
+ statement: CLUSTER clstr_2;
+ statement: CLUSTER clstr_1_pkey ON clstr_1;
+ statement: CLUSTER clstr_2 USING clstr_2_pkey;
+ statement: SELECT * FROM clstr_1 UNION ALL                                             +
+   SELECT * FROM clstr_2 UNION ALL                                                      +
+   SELECT * FROM clstr_3;
+ statement: DELETE FROM clstr_1;
+ statement: DELETE FROM clstr_2;
+ statement: DELETE FROM clstr_3;
+ statement: INSERT INTO clstr_1 VALUES (2);
+ statement: INSERT INTO clstr_1 VALUES (1);
+ statement: INSERT INTO clstr_2 VALUES (2);
+ statement: INSERT INTO clstr_2 VALUES (1);
+ statement: INSERT INTO clstr_3 VALUES (2);
+ statement: INSERT INTO clstr_3 VALUES (1);
+ statement: SET SESSION AUTHORIZATION clstr_user;
+ statement: CLUSTER;
+ statement: SELECT * FROM clstr_1 UNION ALL                                             +
+   SELECT * FROM clstr_2 UNION ALL                                                      +
+   SELECT * FROM clstr_3;
+ statement: DELETE FROM clstr_1;
+ statement: INSERT INTO clstr_1 VALUES (2);
+ statement: INSERT INTO clstr_1 VALUES (1);
+ statement: CLUSTER clstr_1;
+ statement: SELECT * FROM clstr_1;
+ statement: CREATE TABLE clustertest (key int PRIMARY KEY);
+ statement: INSERT INTO clustertest VALUES (10);
+ statement: INSERT INTO clustertest VALUES (20);
+ statement: INSERT INTO clustertest VALUES (30);
+ statement: INSERT INTO clustertest VALUES (40);
+ statement: INSERT INTO clustertest VALUES (50);
+ statement: BEGIN;
+ statement: UPDATE clustertest SET key = 100 WHERE key = 10;
+ statement: UPDATE clustertest SET key = 35 WHERE key = 40;
+ statement: UPDATE clustertest SET key = 60 WHERE key = 50;
+ statement: UPDATE clustertest SET key = 70 WHERE key = 60;
+ statement: UPDATE clustertest SET key = 80 WHERE key = 70;
+ statement: SELECT * FROM clustertest;
+ statement: CLUSTER clustertest_pkey ON clustertest;
+ statement: SELECT * FROM clustertest;
+ statement: COMMIT;
+ statement: SELECT * FROM clustertest;
+ statement: create temp table clstr_temp (col1 int primary key, col2 text);
+ statement: insert into clstr_temp values (2, 'two'), (1, 'one');
+ statement: cluster clstr_temp using clstr_temp_pkey;
+ statement: select * from clstr_temp;
+ statement: drop table clstr_temp;
+ statement: DROP TABLE clustertest;
+ statement: DROP TABLE clstr_1;
+ statement: DROP TABLE clstr_2;
+ statement: DROP TABLE clstr_3;
+ statement: DROP USER clstr_user;
+

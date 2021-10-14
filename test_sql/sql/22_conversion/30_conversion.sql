@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'KOI8R', 'ISO-8859-5');

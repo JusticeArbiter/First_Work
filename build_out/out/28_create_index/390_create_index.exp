@@ -1,0 +1,3 @@
+DROP INDEX CONCURRENTLY IF EXISTS "concur_index2";
+NOTICE:  00000: index "concur_index2" does not exist, skipping
+DROP INDEX

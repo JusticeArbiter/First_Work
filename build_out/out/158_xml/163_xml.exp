@@ -1,0 +1,6 @@
+SELECT xml_is_well_formed('<twoerrors>&idontexist;</unbalanced>');
+ xml_is_well_formed 
+--------------------
+ f
+(1 row)
+

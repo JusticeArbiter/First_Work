@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT '"\u"'::json;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type json at character 8
+DETAIL:  "\u" must be followed by four hexadecimal digits.
+CONTEXT:  JSON data, line 1: "\u"
+LOCATION:  json_lex_string, json.c:828
+STATEMENT:  SELECT '"\u"'::json;

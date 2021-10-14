@@ -1,0 +1,8 @@
+SELECT '' AS t_3, BOOLTBL1.* FROM BOOLTBL1;
+ t_3 | f1 
+-----+----
+     | t
+     | t
+     | t
+(3 rows)
+

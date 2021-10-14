@@ -1,0 +1,4 @@
+SELECT b, c FROM forcetest WHERE a = 1;
+ERROR:  42P01: relation "forcetest" does not exist
+LINE 1: SELECT b, c FROM forcetest WHERE a = 1;
+                         ^

@@ -1,0 +1,2 @@
+COPY bitwise_test FROM STDIN NULL 'null';
+ERROR:  42P01: relation "bitwise_test" does not exist

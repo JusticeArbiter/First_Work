@@ -1,0 +1,3 @@
+CREATE RULE shoelace_ok_ins AS ON INSERT TO shoelace_ok  DO INSTEAD  UPDATE shoelace SET  sl_avail = sl_avail + NEW.ok_quant  WHERE sl_name = NEW.ok_name;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+CREATE RULE

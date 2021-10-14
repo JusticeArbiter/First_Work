@@ -1,0 +1,11 @@
+select outer_outer_func(20);
+NOTICE:  00000: calling down into outer_func()
+NOTICE:  00000: calling down into inner_func()
+CONTEXT:  PL/pgSQL function outer_outer_func(integer) line 1 at assignment
+ERROR:  42883: function inner_func(integer) does not exist
+LINE 1: SELECT inner_func($1)
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+QUERY:  SELECT inner_func($1)
+CONTEXT:  PL/pgSQL function outer_func(integer) line 1 at assignment
+PL/pgSQL function outer_outer_func(integer) line 1 at assignment

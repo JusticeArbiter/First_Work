@@ -1,0 +1,6 @@
+SELECT ' -INFINiTY '::float8;
+  float8   
+-----------
+ -Infinity
+(1 row)
+

@@ -1,0 +1,4 @@
+CREATE INDEX collate_test1_idx6 ON collate_test1 ((a COLLATE "POSIX"));
+ERROR:  42804: collations are not supported by type integer
+LINE 1: ...ATE INDEX collate_test1_idx6 ON collate_test1 ((a COLLATE "P...
+                                                             ^

@@ -1,0 +1,3 @@
+CREATE TABLE persons4 OF person_type (  name WITH OPTIONS NOT NULL,  name WITH OPTIONS DEFAULT ''  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+ERROR:  42701: column "name" specified more than once

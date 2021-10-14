@@ -1,0 +1,5 @@
+CREATE TABLE ctlt1_inh (LIKE ctlt1 INCLUDING CONSTRAINTS INCLUDING COMMENTS) INHERITS (ctlt1);
+NOTICE:  00000: merging column "a" with inherited definition
+NOTICE:  00000: merging column "b" with inherited definition
+NOTICE:  00000: merging constraint "ctlt1_a_check" with inherited definition
+CREATE TABLE

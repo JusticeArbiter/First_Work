@@ -1,0 +1,4 @@
+SELECT '' AS six, f1 as reltime, CAST(f1 AS interval) AS interval  FROM RELTIME_TBL;
+ERROR:  42P01: relation "reltime_tbl" does not exist
+LINE 1: ...s reltime, CAST(f1 AS interval) AS interval  FROM RELTIME_TB...
+                                                             ^

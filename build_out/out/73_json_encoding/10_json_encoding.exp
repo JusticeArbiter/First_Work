@@ -1,0 +1,4 @@
+select json '{ "a": "\ude04X" }' -> 'a';
+ERROR:  22P02: invalid input syntax for type json
+DETAIL:  Unicode low surrogate must follow a high surrogate.
+CONTEXT:  JSON data, line 1: { "a":...

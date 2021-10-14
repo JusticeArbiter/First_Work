@@ -1,0 +1,4 @@
+WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x LIMIT 10 OFFSET 1)  SELECT * FROM x;
+ERROR:  0A000: OFFSET in a recursive query is not implemented
+LINE 1: ...ECT 1 UNION ALL SELECT n+1 FROM x LIMIT 10 OFFSET 1)  SELECT...
+                                                             ^

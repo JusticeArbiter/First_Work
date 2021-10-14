@@ -1,0 +1,3 @@
+DROP COLLATION IF EXISTS test_collation_exists;
+NOTICE:  00000: collation "test_collation_exists" does not exist, skipping
+DROP COLLATION

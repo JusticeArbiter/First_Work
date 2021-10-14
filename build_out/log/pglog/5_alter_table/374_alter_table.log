@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc2 add constraint foo check (test>0) no inherit;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: check constraint "foo" is violated by some row
+LOCATION:  ATRewriteTable, tablecmds.c:4196
+STATEMENT:  alter table atacc2 add constraint foo check (test>0) no inherit;

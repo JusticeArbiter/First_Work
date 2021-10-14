@@ -1,0 +1,4 @@
+CREATE INDEX test_replica_identity_hash ON test_replica_identity USING hash (nonkey);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+WARNING:  01000: hash indexes are not WAL-logged and their use is discouraged
+CREATE INDEX

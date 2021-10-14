@@ -1,0 +1,2 @@
+INSERT INTO VARCHAR_TBL (f1) VALUES ('abcde');
+ERROR:  22001: value too long for type character varying(4)

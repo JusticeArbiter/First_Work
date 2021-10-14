@@ -1,0 +1,2 @@
+execute s1(NULL);
+ERROR:  26000: prepared statement "s1" does not exist

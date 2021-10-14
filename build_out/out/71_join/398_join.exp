@@ -1,0 +1,18 @@
+explain (verbose, costs off)  select * from  int8_tbl a left join lateral  (select b.q1 as bq1, c.q1 as cq1, least(a.q1,b.q1,c.q1) from  int8_tbl b cross join int8_tbl c) ss  on a.q2 = ss.bq1;
+                         QUERY PLAN                          
+-------------------------------------------------------------
+ Nested Loop Left Join
+   Output: a.q1, a.q2, b.q1, c.q1, (LEAST(a.q1, b.q1, c.q1))
+   ->  Seq Scan on public.int8_tbl a
+         Output: a.q1, a.q2
+   ->  Nested Loop
+         Output: b.q1, c.q1, LEAST(a.q1, b.q1, c.q1)
+         ->  Seq Scan on public.int8_tbl c
+               Output: c.q1, c.q2
+         ->  Materialize
+               Output: b.q1
+               ->  Seq Scan on public.int8_tbl b
+                     Output: b.q1
+                     Filter: (a.q2 = b.q1)
+(13 rows)
+

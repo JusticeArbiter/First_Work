@@ -1,0 +1,6 @@
+SELECT setval('seq', 99);
+ setval 
+--------
+     99
+(1 row)
+

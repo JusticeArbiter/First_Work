@@ -1,0 +1,6 @@
+SELECT DUMP(dec_num) "Decimal", DUMP(bin_double) "Double" FROM float_point_demo;
+                Decimal                |                   Double                   
+---------------------------------------+--------------------------------------------
+ Typ=1700 Len=7: 15,0,129,210,4,224,21 | Typ=701 Len=8: 10,215,163,112,61,74,147,64
+(1 row)
+

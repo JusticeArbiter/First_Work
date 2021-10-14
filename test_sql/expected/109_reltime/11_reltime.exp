@@ -1,0 +1,10 @@
+SELECT '' AS five, * FROM RELTIME_TBL  WHERE RELTIME_TBL.f1 <> reltime '@ 10 days';
+ five |    f1     
+------+-----------
+      | 00:01:00
+      | 05:00:00
+      | 34 years
+      | 3 mons
+      | -00:00:14
+(5 rows)
+

@@ -1,0 +1,5 @@
+select ''::textrange;
+ERROR:  22P02: malformed range literal: ""
+LINE 1: select ''::textrange;
+               ^
+DETAIL:  Missing left parenthesis or bracket.

@@ -1,0 +1,1 @@
+SELECT '' AS two, * FROM TEXT_TBL;

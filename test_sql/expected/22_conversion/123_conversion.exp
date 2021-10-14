@@ -1,0 +1,6 @@
+SELECT CONVERT('foo', 'UTF8', 'WIN1250');
+ convert  
+----------
+ \x666f6f
+(1 row)
+

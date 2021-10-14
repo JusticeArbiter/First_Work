@@ -1,0 +1,6 @@
+select range_add_bounds(int4range(1, 17));
+ range_add_bounds 
+------------------
+               18
+(1 row)
+

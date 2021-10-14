@@ -1,0 +1,6 @@
+SELECT xmlagg(data) FROM xmltest;
+                xmlagg                
+--------------------------------------
+ <value>one</value><value>two</value>
+(1 row)
+

@@ -1,0 +1,6 @@
+LOG:  00000: statement: DELETE FROM category WHERE cid = 33;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: update or delete on table "category" violates foreign key constraint "document_cid_fkey" on table "document"
+DETAIL:  Key (cid)=(33) is still referenced from table "document".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3338
+STATEMENT:  DELETE FROM category WHERE cid = 33;

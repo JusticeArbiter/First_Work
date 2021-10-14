@@ -1,0 +1,2 @@
+insert into dcomptable (d1[1].r) values(11);
+INSERT 0 1

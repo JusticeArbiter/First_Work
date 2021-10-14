@@ -1,0 +1,3 @@
+create or replace function myfunc(int) returns text as $$  begin  set work_mem = '2MB';  return current_setting('work_mem');  end $$  language plpgsql  set work_mem = '1MB';
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

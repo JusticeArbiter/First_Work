@@ -1,0 +1,8 @@
+LOG:  00000: statement: alter table fktable2 drop constraint fktable2_f1_fkey;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  alter table fktable2 drop constraint fktable2_f1_fkey;
+ERROR:  42704: constraint "fktable2_f1_fkey" of relation "fktable2" does not exist
+LOCATION:  ATExecDropConstraint, tablecmds.c:7748
+STATEMENT:  alter table fktable2 drop constraint fktable2_f1_fkey;

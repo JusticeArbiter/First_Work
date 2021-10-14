@@ -1,0 +1,6 @@
+LOG:  00000: statement: CREATE TABLE enumtest_bogus_child(parent bogus REFERENCES enumtest_parent);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: foreign key constraint "enumtest_bogus_child_parent_fkey" cannot be implemented
+DETAIL:  Key columns "parent" and "id" are of incompatible types: bogus and rainbow.
+LOCATION:  ATAddForeignKeyConstraint, tablecmds.c:6473
+STATEMENT:  CREATE TABLE enumtest_bogus_child(parent bogus REFERENCES enumtest_parent);

@@ -1,0 +1,2 @@
+drop domain domainvarchar restrict;
+DROP DOMAIN

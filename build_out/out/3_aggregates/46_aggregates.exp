@@ -1,0 +1,4 @@
+SELECT newavg(four) AS avg_1 FROM onek;
+ERROR:  42P01: relation "onek" does not exist
+LINE 1: SELECT newavg(four) AS avg_1 FROM onek;
+                                          ^

@@ -1,0 +1,5 @@
+SELECT ctid, amendscan  FROM pg_catalog.pg_am fk  WHERE amendscan != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_proc pk WHERE pk.oid = fk.amendscan);
+ ctid | amendscan 
+------+-----------
+(0 rows)
+

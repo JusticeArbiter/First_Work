@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER LANGUAGE alt_lang1 RENAME TO alt_lang3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: language "alt_lang3" already exists
+LOCATION:  report_name_conflict, alter.c:98
+STATEMENT:  ALTER LANGUAGE alt_lang1 RENAME TO alt_lang3;

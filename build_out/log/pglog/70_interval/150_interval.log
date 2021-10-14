@@ -1,0 +1,5 @@
+LOG:  00000: statement: select make_interval(years := 'inf'::float::int);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: integer out of range
+LOCATION:  dtoi4, float.c:1158
+STATEMENT:  select make_interval(years := 'inf'::float::int);

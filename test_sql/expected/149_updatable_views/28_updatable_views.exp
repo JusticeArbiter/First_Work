@@ -1,0 +1,4 @@
+DELETE FROM ro_view2;
+ERROR:  55000: cannot delete from view "ro_view2"
+DETAIL:  Views containing GROUP BY are not automatically updatable.
+HINT:  To enable deleting from the view, provide an INSTEAD OF DELETE trigger or an unconditional ON DELETE DO INSTEAD rule.

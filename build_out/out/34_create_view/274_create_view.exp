@@ -1,0 +1,12 @@
+select pg_get_viewdef('vv1', true);
+                pg_get_viewdef                 
+-----------------------------------------------
+  SELECT j.aa,                                +
+     j.bb,                                    +
+     j.cc,                                    +
+     j.dd,                                    +
+     j.y                                      +
+    FROM (tt5                                 +
+      CROSS JOIN tt6) j(aa, bb, cc, c, dd, y);
+(1 row)
+

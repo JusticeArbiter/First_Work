@@ -1,0 +1,7 @@
+LOG:  00000: statement: select array_elem_check(121.00);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: numeric field overflow
+DETAIL:  A field with precision 4, scale 2 must round to an absolute value less than 10^2.
+CONTEXT:  PL/pgSQL function array_elem_check(numeric) line 1 at assignment
+LOCATION:  apply_typmod, numeric.c:5193
+STATEMENT:  select array_elem_check(121.00);

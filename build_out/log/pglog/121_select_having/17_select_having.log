@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT min(a), max(a) FROM test_having HAVING min(a) < max(a);
+LOCATION:  exec_simple_query, postgres.c:938

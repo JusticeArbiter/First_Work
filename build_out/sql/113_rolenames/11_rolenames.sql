@@ -1,0 +1,1 @@
+CREATE ROLE testrol2 SUPERUSER;

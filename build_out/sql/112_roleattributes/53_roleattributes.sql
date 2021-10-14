@@ -1,0 +1,1 @@
+ALTER ROLE test_replication WITH NOREPLICATION;

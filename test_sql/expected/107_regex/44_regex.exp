@@ -1,0 +1,7 @@
+select regexp_matches('Programmer', '(\w)(.*?\1)', 'g');
+ regexp_matches 
+----------------
+ {r,ogr}
+ {m,m}
+(2 rows)
+

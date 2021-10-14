@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT to_timestamp('19971)24', 'YYYYMMDD');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid value "1)" for "MM"
+DETAIL:  Field requires 2 characters, but only 1 could be parsed.
+HINT:  If your source string is not fixed-width, try using the "FM" modifier.
+LOCATION:  from_char_parse_int_len, formatting.c:2215
+STATEMENT:  SELECT to_timestamp('19971)24', 'YYYYMMDD');

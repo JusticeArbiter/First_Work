@@ -1,0 +1,6 @@
+select has_table_privilege('pg_authid','delete');
+ has_table_privilege 
+---------------------
+ t
+(1 row)
+

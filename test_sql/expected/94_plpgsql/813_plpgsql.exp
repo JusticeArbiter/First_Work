@@ -1,0 +1,3 @@
+drop type xy_tuple;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TYPE
+DROP TYPE

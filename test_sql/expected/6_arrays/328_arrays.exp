@@ -1,0 +1,2 @@
+create temp table dest (f1 textandtext[]);
+CREATE TABLE

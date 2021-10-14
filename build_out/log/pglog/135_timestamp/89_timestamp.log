@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO TIMESTAMP_TBL VALUES ('Feb 29 17:32:01 1997');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22008: date/time field value out of range: "Feb 29 17:32:01 1997" at character 35
+LOCATION:  DateTimeParseError, datetime.c:3810
+STATEMENT:  INSERT INTO TIMESTAMP_TBL VALUES ('Feb 29 17:32:01 1997');

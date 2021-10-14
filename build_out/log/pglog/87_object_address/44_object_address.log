@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT pg_get_object_address('role', '{one}', '{}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: role "one" does not exist
+LOCATION:  get_role_oid, acl.c:5122
+STATEMENT:  SELECT pg_get_object_address('role', '{one}', '{}');

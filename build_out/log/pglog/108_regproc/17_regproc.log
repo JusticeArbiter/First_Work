@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT regprocedure('pg_catalog.abs(numeric)');
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,4 @@
+CREATE VIEW temp_view_test.v3_temp AS SELECT * FROM temp_table;
+ERROR:  42P01: relation "temp_table" does not exist
+LINE 1: ...EATE VIEW temp_view_test.v3_temp AS SELECT * FROM temp_table...
+                                                             ^

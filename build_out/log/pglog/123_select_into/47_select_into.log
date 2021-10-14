@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO b SELECT 1 INTO f;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: SELECT ... INTO is not allowed here at character 29
+LOCATION:  transformSelectStmt, analyze.c:1073
+STATEMENT:  INSERT INTO b SELECT 1 INTO f;

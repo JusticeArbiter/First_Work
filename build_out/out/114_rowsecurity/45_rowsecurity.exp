@@ -1,0 +1,11 @@
+EXPLAIN (COSTS OFF) SELECT * FROM document NATURAL JOIN category WHERE f_leak(dtitle);
+                 QUERY PLAN                 
+--------------------------------------------
+ Hash Join
+   Hash Cond: (document.cid = category.cid)
+   ->  Seq Scan on document
+         Filter: f_leak(dtitle)
+   ->  Hash
+         ->  Seq Scan on category
+(6 rows)
+

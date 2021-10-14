@@ -1,0 +1,4 @@
+select * from x left join y on (x1 = y1 and y2 is not null);
+ERROR:  42P01: relation "x" does not exist
+LINE 1: select * from x left join y on (x1 = y1 and y2 is not null);
+                      ^

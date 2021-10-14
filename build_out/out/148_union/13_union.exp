@@ -1,0 +1,7 @@
+SELECT 1.0::float8 AS two UNION ALL SELECT 1;
+ two 
+-----
+   1
+   1
+(2 rows)
+

@@ -1,0 +1,4 @@
+WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT n+1 FROM x  WHERE n IN (SELECT * FROM x))  SELECT * FROM x;
+ERROR:  42P19: recursive reference to query "x" must not appear within a subquery
+LINE 1: ... ALL SELECT n+1 FROM x  WHERE n IN (SELECT * FROM x))  SELEC...
+                                                             ^

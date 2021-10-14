@@ -1,0 +1,2 @@
+drop event trigger if exists regress_event_trigger2;
+DROP EVENT TRIGGER

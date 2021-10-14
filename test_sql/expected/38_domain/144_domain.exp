@@ -1,0 +1,2 @@
+update domnotnull set col1 = null;
+ERROR:  23502: domain dnotnulltest does not allow null values

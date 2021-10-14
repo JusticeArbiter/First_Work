@@ -1,0 +1,2 @@
+INSERT INTO clstr_tst (b, c) VALUES (3, 'tres');
+INSERT 0 1

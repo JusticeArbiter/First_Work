@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into pktable (base1, ptest1, base2, ptest2) values (2, 3, 3, 2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: insert or update on table "pktable" violates foreign key constraint "pktable_base2_fkey"
+DETAIL:  Key (base2, ptest2)=(3, 2) is not present in table "pktable".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3324
+STATEMENT:  insert into pktable (base1, ptest1, base2, ptest2) values (2, 3, 3, 2);

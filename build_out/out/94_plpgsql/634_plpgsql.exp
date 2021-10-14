@@ -1,0 +1,4 @@
+select raise_test();
+NOTICE:  00000: SQLSTATE: 22012 SQLERRM: division_by_zero
+ERROR:  22012: division_by_zero
+DETAIL:  some detail info

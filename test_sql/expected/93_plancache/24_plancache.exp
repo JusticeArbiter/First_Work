@@ -1,0 +1,12 @@
+select cache_test(1);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CONTEXT:  SQL statement "create temp table t1(f1 int)"
+PL/pgSQL function cache_test(integer) line 1 at SQL statement
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+CONTEXT:  SQL statement "drop table t1"
+PL/pgSQL function cache_test(integer) line 1 at SQL statement
+ cache_test 
+------------
+         37
+(1 row)
+

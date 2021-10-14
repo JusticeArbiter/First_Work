@@ -1,0 +1,5 @@
+LOG:  00000: statement: select 1::float4/0;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22012: division by zero
+LOCATION:  float48div, float.c:2527
+STATEMENT:  select 1::float4/0;

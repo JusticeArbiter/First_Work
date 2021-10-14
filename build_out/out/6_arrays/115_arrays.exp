@@ -1,0 +1,6 @@
+SELECT ARRAY[[['hello','world']]] || ARRAY[[['happy','birthday']]] AS "ARRAY";
+                ARRAY                 
+--------------------------------------
+ {{{hello,world}},{{happy,birthday}}}
+(1 row)
+

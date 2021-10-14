@@ -1,0 +1,5 @@
+select f1,g from int4_tbl a cross join (select a.f1 as g) ss;
+ERROR:  42P01: invalid reference to FROM-clause entry for table "a"
+LINE 1: select f1,g from int4_tbl a cross join (select a.f1 as g) ss...
+                                                       ^
+HINT:  There is an entry for table "a", but it cannot be referenced from this part of the query.

@@ -1,0 +1,3 @@
+CREATE UNIQUE INDEX CONCURRENTLY IF NOT EXISTS concur_index2 ON concur_heap(f1);
+NOTICE:  42P07: relation "concur_index2" already exists, skipping
+CREATE INDEX

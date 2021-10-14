@@ -1,0 +1,2 @@
+FETCH backward 23 in foo1;
+ERROR:  34000: cursor "foo1" does not exist

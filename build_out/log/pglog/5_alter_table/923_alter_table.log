@@ -1,0 +1,2 @@
+LOG:  00000: statement: create view at_view_2 as select *, to_json(v1) as j from at_view_1 v1;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,4 @@
+DELETE FROM rw_view1 WHERE NOT snoop(person);
+NOTICE:  00000: snooped value: Tom
+NOTICE:  00000: snooped value: Harry
+DELETE 0

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT  BOOL_AND(b1) AS "n",  BOOL_OR(b3) AS "n"  FROM bool_test;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "bool_test" does not exist at character 56
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT  BOOL_AND(b1) AS "n",  BOOL_OR(b3) AS "n"  FROM bool_test;

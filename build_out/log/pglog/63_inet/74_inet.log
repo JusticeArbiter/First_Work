@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '126::1'::inet - '127::2'::inet;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: result is out of range
+LOCATION:  inetmi, network.c:1512
+STATEMENT:  SELECT '126::1'::inet - '127::2'::inet;

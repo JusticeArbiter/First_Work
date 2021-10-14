@@ -1,0 +1,2 @@
+insert into rtest_view1 values (5, 'item 5', 't');
+INSERT 0 1

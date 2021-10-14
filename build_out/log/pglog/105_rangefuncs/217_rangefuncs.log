@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), generate_series(10+r,20-r) WITH ORDINALITY AS f(i,o);
+LOCATION:  exec_simple_query, postgres.c:938

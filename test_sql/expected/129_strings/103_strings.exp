@@ -1,0 +1,6 @@
+SELECT 'indio' NOT LIKE '_ndio' AS "false";
+ false 
+-------
+ f
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '{ "name": "Bob", "tags": [ "enim", "qui"]}'::jsonb @> '{"tags":["qu"]}';
+LOCATION:  exec_simple_query, postgres.c:938

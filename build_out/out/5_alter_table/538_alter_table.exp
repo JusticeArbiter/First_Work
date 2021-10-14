@@ -1,0 +1,4 @@
+select "........pg.dropped.1........",b,c,d from atacc1;
+ERROR:  42703: column "........pg.dropped.1........" does not exist
+LINE 1: select "........pg.dropped.1........",b,c,d from atacc1;
+               ^

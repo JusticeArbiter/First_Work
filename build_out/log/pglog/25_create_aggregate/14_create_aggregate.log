@@ -1,0 +1,2 @@
+LOG:  00000: statement: create type aggtype as (a integer, b integer, c text);
+LOCATION:  exec_simple_query, postgres.c:938

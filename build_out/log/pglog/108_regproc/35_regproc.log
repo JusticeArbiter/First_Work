@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT regoperator('++(int4,int4)');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: operator does not exist: ++(int4,int4) at character 20
+LOCATION:  regoperatorin, regproc.c:788
+STATEMENT:  SELECT regoperator('++(int4,int4)');

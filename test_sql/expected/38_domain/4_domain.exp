@@ -1,0 +1,4 @@
+drop domain domaindroptest;
+ERROR:  2BP01: cannot drop type domaindroptest because other objects depend on it
+DETAIL:  type dependenttypetest depends on type domaindroptest
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.

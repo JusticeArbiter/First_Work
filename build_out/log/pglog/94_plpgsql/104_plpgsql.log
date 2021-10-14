@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into WSlot values ('WS.001.1a', '001', '', '');
+LOCATION:  exec_simple_query, postgres.c:938

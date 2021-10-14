@@ -1,0 +1,2 @@
+DROP FOREIGN DATA WRAPPER test_fdw_exists;
+ERROR:  42704: foreign-data wrapper "test_fdw_exists" does not exist

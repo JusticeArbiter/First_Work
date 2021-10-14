@@ -1,0 +1,1 @@
+ALTER TABLE tmp RENAME TO tmp_new;

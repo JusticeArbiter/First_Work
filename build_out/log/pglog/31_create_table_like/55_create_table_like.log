@@ -1,0 +1,2 @@
+LOG:  00000: statement: COMMENT ON COLUMN ctlt3.c IS 'C';
+LOCATION:  exec_simple_query, postgres.c:938

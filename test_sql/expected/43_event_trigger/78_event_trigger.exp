@@ -1,0 +1,5 @@
+DROP ROLE regression_bob;
+ERROR:  2BP01: role "regression_bob" cannot be dropped because some objects depend on it
+DETAIL:  owner of schema audit_tbls
+owner of default privileges on new relations belonging to role regression_bob
+owner of user mapping for regression_bob on server useless_server

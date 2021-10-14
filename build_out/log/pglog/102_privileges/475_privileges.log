@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT lowrite(lo_open(1001, x'40000'::int), 'abcd');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  55000: large object descriptor 0 was not opened for writing
+LOCATION:  lo_write, be-fsstubs.c:206
+STATEMENT:  SELECT lowrite(lo_open(1001, x'40000'::int), 'abcd');

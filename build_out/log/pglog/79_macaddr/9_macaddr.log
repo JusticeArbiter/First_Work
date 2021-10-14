@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO macaddr_data VALUES (8, '0800:2b01:0203');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type macaddr: "0800:2b01:0203" at character 37
+LOCATION:  macaddr_in, mac.c:68
+STATEMENT:  INSERT INTO macaddr_data VALUES (8, '0800:2b01:0203');

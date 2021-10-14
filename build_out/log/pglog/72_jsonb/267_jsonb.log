@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT jsonb_object('{a,b,c}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2202E: array must have even number of elements
+LOCATION:  jsonb_object, jsonb.c:1313
+STATEMENT:  SELECT jsonb_object('{a,b,c}');

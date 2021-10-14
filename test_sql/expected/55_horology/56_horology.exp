@@ -1,0 +1,6 @@
+SELECT date '1991-02-03' - time '04:05:06' AS "Subtract Time";
+    Subtract Time    
+---------------------
+ 1991-02-02 19:54:54
+(1 row)
+

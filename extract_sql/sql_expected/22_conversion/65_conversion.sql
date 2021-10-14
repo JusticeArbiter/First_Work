@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'BIG5', 'UTF8');

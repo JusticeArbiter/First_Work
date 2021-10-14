@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT regprocedure('absinthe(numeric)');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: function "absinthe(numeric)" does not exist at character 21
+LOCATION:  regprocedurein, regproc.c:320
+STATEMENT:  SELECT regprocedure('absinthe(numeric)');

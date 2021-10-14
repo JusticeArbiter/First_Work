@@ -1,0 +1,2 @@
+CREATE USER selinto_user;
+CREATE ROLE

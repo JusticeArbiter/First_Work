@@ -1,0 +1,9 @@
+SELECT '' AS four, o.* FROM OID_TBL o WHERE o.f1 >= '1234';
+ four |     f1     
+------+------------
+      |       1234
+      |       1235
+      | 4294966256
+      |   99999999
+(4 rows)
+

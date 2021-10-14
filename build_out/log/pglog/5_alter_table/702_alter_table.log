@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter table p2 drop column height;
+LOCATION:  exec_simple_query, postgres.c:938

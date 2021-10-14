@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO arrtest (f)  VALUES ('{"too long"}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22001: value too long for type character(5)
+LOCATION:  bpchar, varchar.c:307
+STATEMENT:  INSERT INTO arrtest (f)  VALUES ('{"too long"}');

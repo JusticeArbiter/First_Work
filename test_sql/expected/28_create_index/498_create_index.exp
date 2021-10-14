@@ -1,0 +1,2 @@
+vacuum tenk1;
+ERROR:  42P01: relation "tenk1" does not exist

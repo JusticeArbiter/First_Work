@@ -1,0 +1,5 @@
+select * from onek  where (unique1,ten) in (values (1,1), (20,0), (99,9), (17,99))  order by unique1;
+ unique1 | unique2 | two | four | ten | twenty | hundred | thousand | twothousand | fivethous | tenthous | odd | even | stringu1 | stringu2 | string4 
+---------+---------+-----+------+-----+--------+---------+----------+-------------+-----------+----------+-----+------+----------+----------+---------
+(0 rows)
+

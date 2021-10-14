@@ -1,0 +1,2 @@
+insert into rtest_unitfact values ('m', 100.0);
+INSERT 0 1

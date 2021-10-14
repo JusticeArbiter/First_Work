@@ -1,0 +1,4 @@
+INSERT INTO t2 VALUES ( 'ee', 42 );
+ERROR:  22P02: invalid input syntax for integer: "ee"
+LINE 1: INSERT INTO t2 VALUES ( 'ee', 42 );
+                                ^

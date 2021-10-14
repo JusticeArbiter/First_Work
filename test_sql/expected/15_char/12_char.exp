@@ -1,0 +1,11 @@
+SELECT '' AS six, c.*  FROM CHAR_TBL c  WHERE c.f1 <> 'a';
+ six | f1 
+-----+----
+     | A
+     | 1
+     | 2
+     | 3
+     |  
+     | c
+(6 rows)
+

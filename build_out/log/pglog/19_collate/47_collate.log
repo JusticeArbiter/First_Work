@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW collview3 AS SELECT a, lower((x || x) COLLATE "POSIX") FROM collate_test10;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P07: relation "collview3" already exists
+LOCATION:  heap_create_with_catalog, heap.c:1066
+STATEMENT:  CREATE VIEW collview3 AS SELECT a, lower((x || x) COLLATE "POSIX") FROM collate_test10;

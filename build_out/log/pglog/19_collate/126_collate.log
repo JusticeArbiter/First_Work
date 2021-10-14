@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT collation for ((SELECT b FROM collate_test1 LIMIT 1));
+LOCATION:  exec_simple_query, postgres.c:938

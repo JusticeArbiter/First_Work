@@ -1,0 +1,6 @@
+select forc01();
+ERROR:  42P01: relation "forc_test" does not exist
+LINE 1: select * from forc_test
+                      ^
+QUERY:  select * from forc_test
+CONTEXT:  PL/pgSQL function forc01() line 1 at OPEN

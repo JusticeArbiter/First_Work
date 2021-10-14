@@ -1,0 +1,11 @@
+LOG:  00000: statement: CREATE TABLE ctlt1_inh (LIKE ctlt1 INCLUDING CONSTRAINTS INCLUDING COMMENTS) INHERITS (ctlt1);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging column "a" with inherited definition
+LOCATION:  MergeAttributes, tablecmds.c:1820
+STATEMENT:  CREATE TABLE ctlt1_inh (LIKE ctlt1 INCLUDING CONSTRAINTS INCLUDING COMMENTS) INHERITS (ctlt1);
+NOTICE:  00000: merging column "b" with inherited definition
+LOCATION:  MergeAttributes, tablecmds.c:1820
+STATEMENT:  CREATE TABLE ctlt1_inh (LIKE ctlt1 INCLUDING CONSTRAINTS INCLUDING COMMENTS) INHERITS (ctlt1);
+NOTICE:  00000: merging constraint "ctlt1_a_check" with inherited definition
+LOCATION:  MergeWithExistingConstraint, heap.c:2493
+STATEMENT:  CREATE TABLE ctlt1_inh (LIKE ctlt1 INCLUDING CONSTRAINTS INCLUDING COMMENTS) INHERITS (ctlt1);

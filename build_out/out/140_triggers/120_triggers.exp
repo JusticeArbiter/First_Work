@@ -1,0 +1,4 @@
+UPDATE some_t SET some_col = FALSE;
+NOTICE:  00000: dummy_update_func(before) called: action = UPDATE, old = (t), new = (f)
+NOTICE:  00000: dummy_update_func(afterb) called: action = UPDATE, old = (t), new = (f)
+UPDATE 1

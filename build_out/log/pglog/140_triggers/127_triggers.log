@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TRIGGER error_stmt_when BEFORE UPDATE OF a ON main_table  FOR EACH STATEMENT WHEN (OLD.* IS DISTINCT FROM NEW.*)  EXECUTE PROCEDURE trigger_func('error_stmt_when');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TRIGGER error_stmt_when BEFORE UPDATE OF a ON main_table  FOR EACH STATEMENT WHEN (OLD.* IS DISTINCT FROM NEW.*)  EXECUTE PROCEDURE trigger_func('error_stmt_when');
+ERROR:  42P17: statement trigger's WHEN condition cannot reference column values at character 91
+LOCATION:  CreateTrigger, trigger.c:368
+STATEMENT:  CREATE TRIGGER error_stmt_when BEFORE UPDATE OF a ON main_table  FOR EACH STATEMENT WHEN (OLD.* IS DISTINCT FROM NEW.*)  EXECUTE PROCEDURE trigger_func('error_stmt_when');

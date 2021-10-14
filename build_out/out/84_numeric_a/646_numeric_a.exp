@@ -1,0 +1,2 @@
+select 10.0 ^ 2147483647 as overflows;
+ERROR:  22003: value overflows numeric format

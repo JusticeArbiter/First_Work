@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE tt5 OF tt_t0;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: table has extra column "z"
+LOCATION:  ATExecAddOf, tablecmds.c:10910
+STATEMENT:  ALTER TABLE tt5 OF tt_t0;

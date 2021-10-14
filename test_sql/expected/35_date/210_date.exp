@@ -1,0 +1,6 @@
+select make_date(2013, 7, 15);
+ make_date  
+------------
+ 2013-07-15
+(1 row)
+

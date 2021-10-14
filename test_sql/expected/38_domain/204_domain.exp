@@ -1,0 +1,6 @@
+select 'x123'::dtop;
+ dtop 
+------
+ x123
+(1 row)
+

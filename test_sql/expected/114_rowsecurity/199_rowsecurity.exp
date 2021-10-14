@@ -1,0 +1,10 @@
+EXPLAIN (COSTS OFF) SELECT (SELECT x FROM s1 LIMIT 1) xx, * FROM s2 WHERE y like '%28%';
+          QUERY PLAN           
+-------------------------------
+ Seq Scan on s2
+   Filter: (y ~~ '%28%'::text)
+   SubPlan 1
+     ->  Limit
+           ->  Seq Scan on s1
+(5 rows)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT jsonb_build_object(null,2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: argument 1: key must not be null
+LOCATION:  jsonb_build_object, jsonb.c:1203
+STATEMENT:  SELECT jsonb_build_object(null,2);

@@ -1,0 +1,6 @@
+SELECT '205000-01-10 17:32:01 Europe/Helsinki'::timestamptz;
+       timestamptz        
+--------------------------
+ 205000-01-10 23:32:01+08
+(1 row)
+

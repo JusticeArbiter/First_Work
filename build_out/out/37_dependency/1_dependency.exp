@@ -1,0 +1,2 @@
+CREATE USER regression_user;
+CREATE ROLE

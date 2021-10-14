@@ -1,0 +1,1 @@
+ROLLBACK PREPARED 'foo4';

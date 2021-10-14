@@ -1,0 +1,2 @@
+LOG:  00000: statement: drop function unnest2(anyarray);
+LOCATION:  exec_simple_query, postgres.c:938

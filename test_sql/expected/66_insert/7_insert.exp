@@ -1,0 +1,9 @@
+select * from inserttest;
+ col1 | col2 |  col3   
+------+------+---------
+      |    3 | testing
+      |    5 | testing
+      |    5 | test
+      |    7 | testing
+(4 rows)
+

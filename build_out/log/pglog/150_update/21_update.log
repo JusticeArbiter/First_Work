@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE update_test SET (c,b) = ('car', a+b), b = a + 1 WHERE a = 10;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: multiple assignments to same column "b"
+LOCATION:  process_matched_tle, rewriteHandler.c:943
+STATEMENT:  UPDATE update_test SET (c,b) = ('car', a+b), b = a + 1 WHERE a = 10;

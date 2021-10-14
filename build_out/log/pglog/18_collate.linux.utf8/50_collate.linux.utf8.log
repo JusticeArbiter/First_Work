@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO collate_test10 VALUES (1, 'hij', 'hij'), (2, 'HIJ', 'HIJ');
+LOCATION:  exec_simple_query, postgres.c:938

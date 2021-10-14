@@ -1,0 +1,7 @@
+EXPLAIN (COSTS OFF) SELECT * FROM my_property_normal v  WHERE f_leak('passwd') AND f_leak(passwd);
+                                         QUERY PLAN                                          
+---------------------------------------------------------------------------------------------
+ Seq Scan on customer
+   Filter: (f_leak('passwd'::text) AND f_leak(passwd) AND (name = ("current_user"())::text))
+(2 rows)
+

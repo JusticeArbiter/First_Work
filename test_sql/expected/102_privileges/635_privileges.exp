@@ -1,0 +1,2 @@
+DROP USER regressuser6;
+ERROR:  42704: role "regressuser6" does not exist

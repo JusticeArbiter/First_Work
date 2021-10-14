@@ -1,0 +1,6 @@
+select decode(202,203,'t'::bool);
+ decode 
+--------
+ 
+(1 row)
+

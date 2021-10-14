@@ -1,0 +1,9 @@
+SELECT '' AS four, * FROM CHAR_TBL;
+ four |  f1  
+------+------
+      | a   
+      | ab  
+      | abcd
+      | abcd
+(4 rows)
+

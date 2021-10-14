@@ -1,0 +1,2 @@
+delete from fktable2;
+DELETE 1

@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into nt3 values (1,1,true);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "nt3" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  insert into nt3 values (1,1,true);

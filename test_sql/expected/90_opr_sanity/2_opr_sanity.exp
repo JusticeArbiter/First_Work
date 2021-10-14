@@ -1,0 +1,3 @@
+create function physically_coercible(oid, oid) returns bool as $$  SELECT ($1 = $2) OR  EXISTS(select 1 from pg_catalog.pg_cast where  castsource = $1 and casttarget = $2 and  castmethod = 'b') OR  ($2 = 'pg_catalog.any'::pg_catalog.regtype) OR  ($2 = 'pg_catalog.anyarray'::pg_catalog.regtype AND  EXISTS(select 1 from pg_catalog.pg_type where  oid = $1 and typelem != 0 and typlen = -1)) OR  ($2 = 'pg_catalog.anyrange'::pg_catalog.regtype AND  (select typtype from pg_catalog.pg_type where oid = $1) = 'r')  $$ language sql strict stable;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

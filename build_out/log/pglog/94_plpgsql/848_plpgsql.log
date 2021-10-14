@@ -1,0 +1,16 @@
+LOG:  00000: statement: select outer_outer_func(20);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: calling down into outer_func()
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select outer_outer_func(20);
+NOTICE:  00000: calling down into inner_func()
+CONTEXT:  PL/pgSQL function outer_outer_func(integer) line 1 at assignment
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select outer_outer_func(20);
+ERROR:  42883: function inner_func(integer) does not exist at character 8
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+QUERY:  SELECT inner_func($1)
+CONTEXT:  PL/pgSQL function outer_func(integer) line 1 at assignment
+	PL/pgSQL function outer_outer_func(integer) line 1 at assignment
+LOCATION:  ParseFuncOrColumn, parse_func.c:523
+STATEMENT:  select outer_outer_func(20);

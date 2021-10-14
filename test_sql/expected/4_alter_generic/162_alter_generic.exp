@@ -1,0 +1,2 @@
+ALTER OPERATOR FAMILY alt_opf4 USING btree ADD STORAGE invalid_storage;
+ERROR:  42601: STORAGE cannot be specified in ALTER OPERATOR FAMILY

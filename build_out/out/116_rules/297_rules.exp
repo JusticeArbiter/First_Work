@@ -1,0 +1,2 @@
+INSERT INTO unit VALUES ('inch', 2.54);
+INSERT 0 1

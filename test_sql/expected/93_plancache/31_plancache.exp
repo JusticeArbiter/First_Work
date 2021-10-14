@@ -1,0 +1,6 @@
+select cache_test_2();
+ERROR:  42703: column "f1" does not exist
+LINE 1: SELECT f1 from v1
+               ^
+QUERY:  SELECT f1 from v1
+CONTEXT:  PL/pgSQL function cache_test_2() line 1 at RETURN

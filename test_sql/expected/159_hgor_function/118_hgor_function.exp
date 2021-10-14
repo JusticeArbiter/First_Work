@@ -1,0 +1,6 @@
+select decode('2016-11-17'::date,'2016-11-17'::date,'db202'::unknown);
+ decode 
+--------
+ db202
+(1 row)
+

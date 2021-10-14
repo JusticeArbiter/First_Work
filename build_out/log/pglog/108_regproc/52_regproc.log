@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT regnamespace('"Nonexistent"');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  3F000: schema "Nonexistent" does not exist at character 21
+LOCATION:  get_namespace_oid, namespace.c:2873
+STATEMENT:  SELECT regnamespace('"Nonexistent"');

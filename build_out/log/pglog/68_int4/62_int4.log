@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT (-2147483648)::int4 * (-1)::int2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: integer out of range
+LOCATION:  int42mul, int.c:1043
+STATEMENT:  SELECT (-2147483648)::int4 * (-1)::int2;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW temporal1 AS SELECT * FROM t1 CROSS JOIN tt;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tt" does not exist at character 54
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE VIEW temporal1 AS SELECT * FROM t1 CROSS JOIN tt;

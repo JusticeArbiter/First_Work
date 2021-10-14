@@ -1,0 +1,6 @@
+select lnnvl(1 > 2);
+ lnnvl 
+-------
+ t
+(1 row)
+

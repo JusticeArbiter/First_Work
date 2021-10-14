@@ -1,0 +1,4 @@
+insert into pendtest values (to_tsvector('Lore ipsam'));
+ERROR:  42P01: relation "pendtest" does not exist
+LINE 1: insert into pendtest values (to_tsvector('Lore ipsam'));
+                    ^

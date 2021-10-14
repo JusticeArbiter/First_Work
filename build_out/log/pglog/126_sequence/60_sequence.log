@@ -1,0 +1,8 @@
+LOG:  00000: statement: ALTER SEQUENCE IF EXISTS sequence_test2 RESTART WITH 24  INCREMENT BY 4 MAXVALUE 36 MINVALUE 5 CYCLE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER SEQUENCE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER SEQUENCE IF EXISTS sequence_test2 RESTART WITH 24  INCREMENT BY 4 MAXVALUE 36 MINVALUE 5 CYCLE;
+NOTICE:  00000: relation "sequence_test2" does not exist, skipping
+LOCATION:  AlterSequence, sequence.c:425
+STATEMENT:  ALTER SEQUENCE IF EXISTS sequence_test2 RESTART WITH 24  INCREMENT BY 4 MAXVALUE 36 MINVALUE 5 CYCLE;

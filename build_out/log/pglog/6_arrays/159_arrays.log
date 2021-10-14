@@ -1,0 +1,5 @@
+LOG:  00000: statement: select 33 * any ('{1,2,3}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: op ANY/ALL (array) requires operator to yield boolean at character 11
+LOCATION:  make_scalar_array_op, parse_oper.c:928
+STATEMENT:  select 33 * any ('{1,2,3}');

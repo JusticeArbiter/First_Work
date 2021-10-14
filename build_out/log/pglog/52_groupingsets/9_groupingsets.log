@@ -1,0 +1,5 @@
+LOG:  00000: statement: select a, b, grouping(a,b), sum(v), count(*), max(v)  from gstest1 group by rollup (a,b);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "gstest1" does not exist at character 60
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select a, b, grouping(a,b), sum(v), count(*), max(v)  from gstest1 group by rollup (a,b);

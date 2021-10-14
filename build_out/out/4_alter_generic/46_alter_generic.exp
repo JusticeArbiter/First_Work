@@ -1,0 +1,2 @@
+ALTER AGGREGATE alt_agg3(int) SET SCHEMA alt_nsp2;
+ERROR:  42883: aggregate alt_agg3(integer) does not exist

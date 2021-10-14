@@ -1,0 +1,3 @@
+create table i8r_array (f1 int, f2 int8range[]);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

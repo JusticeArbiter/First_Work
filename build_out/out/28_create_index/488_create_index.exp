@@ -1,0 +1,2 @@
+DROP TABLE onek_with_null;
+ERROR:  42P01: table "onek_with_null" does not exist

@@ -1,0 +1,6 @@
+select error2('public.stuffs');
+ error2 
+--------
+ stuffs
+(1 row)
+

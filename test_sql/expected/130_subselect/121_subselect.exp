@@ -1,0 +1,4 @@
+insert into inner_7597 values(0, null);
+ERROR:  42P01: relation "inner_7597" does not exist
+LINE 1: insert into inner_7597 values(0, null);
+                    ^

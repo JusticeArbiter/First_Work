@@ -1,0 +1,6 @@
+SELECT to_regprocedure('absinthe(numeric)');
+ to_regprocedure 
+-----------------
+ 
+(1 row)
+

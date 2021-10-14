@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TYPE planets ADD VALUE 'saturn' BEFORE 'uranus';
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE arrtest SET e[0] = '1.1';
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,7 @@
+SELECT *  FROM CASE_TBL a, CASE2_TBL b  WHERE COALESCE(a.f, b.i, b.j) = 2;
+ i | f | i | j  
+---+---+---+----
+ 4 |   | 2 | -2
+ 4 |   | 2 | -4
+(2 rows)
+

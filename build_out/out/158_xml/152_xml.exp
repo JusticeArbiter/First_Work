@@ -1,0 +1,6 @@
+SELECT xml_is_well_formed('<abc/>');
+ xml_is_well_formed 
+--------------------
+ t
+(1 row)
+

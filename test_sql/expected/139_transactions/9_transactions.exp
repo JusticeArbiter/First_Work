@@ -1,0 +1,5 @@
+SELECT * FROM aggtest;
+ a | b 
+---+---
+(0 rows)
+

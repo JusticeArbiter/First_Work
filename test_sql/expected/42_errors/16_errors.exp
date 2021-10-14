@@ -1,0 +1,2 @@
+alter table emp rename column salary to manager;
+ERROR:  42701: column "manager" of relation "stud_emp" already exists

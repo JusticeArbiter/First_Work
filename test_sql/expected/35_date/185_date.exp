@@ -1,0 +1,6 @@
+SELECT EXTRACT(DECADE FROM DATE '0009-12-31');
+ date_part 
+-----------
+         0
+(1 row)
+

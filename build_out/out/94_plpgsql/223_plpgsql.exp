@@ -1,0 +1,2 @@
+insert into PField values ('PF1_2', 'Phonelines first floor');
+INSERT 0 1

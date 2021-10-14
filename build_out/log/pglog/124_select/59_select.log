@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from (values (2),(null),(1)) v(k) where k = k order by k;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT plainto_tsquery('english', 'foo bar') || !!plainto_tsquery('english', 'asd fg');
+LOCATION:  exec_simple_query, postgres.c:938

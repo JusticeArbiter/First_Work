@@ -1,0 +1,4 @@
+INSERT INTO LINE_TBL VALUES ('{0,0,1}');
+ERROR:  22P02: invalid line specification: A and B cannot both be zero
+LINE 1: INSERT INTO LINE_TBL VALUES ('{0,0,1}');
+                                     ^

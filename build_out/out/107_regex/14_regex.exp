@@ -1,0 +1,6 @@
+select substring('a' from '((a))+');
+ substring 
+-----------
+ a
+(1 row)
+

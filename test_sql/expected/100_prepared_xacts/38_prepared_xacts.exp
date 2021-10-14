@@ -1,0 +1,3 @@
+PREPARE TRANSACTION 'foo5';
+WARNING:  25P01: there is no transaction in progress
+ROLLBACK

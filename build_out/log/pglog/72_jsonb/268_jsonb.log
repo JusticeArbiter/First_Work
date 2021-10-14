@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT jsonb_object('{{a},{b}}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2202E: array must have two columns
+LOCATION:  jsonb_object, jsonb.c:1320
+STATEMENT:  SELECT jsonb_object('{{a},{b}}');

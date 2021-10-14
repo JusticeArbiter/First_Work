@@ -1,0 +1,2 @@
+alter domain posint add constraint c1 check(value >= 0);
+ERROR:  0A000: cannot alter type "posint" because column "ddtest2.f1" uses it

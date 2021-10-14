@@ -1,0 +1,2 @@
+COMMENT ON CONVERSION myconv_bad IS 'foo';
+ERROR:  42704: conversion "myconv_bad" does not exist

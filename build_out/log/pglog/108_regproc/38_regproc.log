@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT regclass('pg_classes');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "pg_classes" does not exist at character 17
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  SELECT regclass('pg_classes');

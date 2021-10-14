@@ -1,0 +1,2 @@
+select '{"a":1}' || '"a"'::jsonb;
+ERROR:  22023: invalid concatenation of jsonb objects

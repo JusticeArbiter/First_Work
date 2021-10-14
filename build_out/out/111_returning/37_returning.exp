@@ -1,0 +1,4 @@
+INSERT INTO voo VALUES(14,'zoo2') RETURNING *;
+ERROR:  42P01: relation "voo" does not exist
+LINE 1: INSERT INTO voo VALUES(14,'zoo2') RETURNING *;
+                    ^

@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO test_having VALUES (9, 4, 'CCCC', 'j');
+LOCATION:  exec_simple_query, postgres.c:938

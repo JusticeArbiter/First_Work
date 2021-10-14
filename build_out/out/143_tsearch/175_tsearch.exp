@@ -1,0 +1,4 @@
+select * from pendtest where 'ipsa:*'::tsquery @@ ts;
+ERROR:  42P01: relation "pendtest" does not exist
+LINE 1: select * from pendtest where 'ipsa:*'::tsquery @@ ts;
+                      ^

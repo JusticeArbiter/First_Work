@@ -1,0 +1,6 @@
+SELECT lo_unlink(1001);
+ lo_unlink 
+-----------
+         1
+(1 row)
+

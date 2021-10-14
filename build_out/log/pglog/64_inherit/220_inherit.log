@@ -1,0 +1,14 @@
+LOG:  00000: statement: create table c3 (f4 int) inherits(c1,c2);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create table c3 (f4 int) inherits(c1,c2);
+NOTICE:  00000: merging multiple inherited definitions of column "f1"
+LOCATION:  MergeAttributes, tablecmds.c:1605
+STATEMENT:  create table c3 (f4 int) inherits(c1,c2);
+NOTICE:  00000: merging multiple inherited definitions of column "f2"
+LOCATION:  MergeAttributes, tablecmds.c:1605
+STATEMENT:  create table c3 (f4 int) inherits(c1,c2);
+NOTICE:  00000: merging multiple inherited definitions of column "f3"
+LOCATION:  MergeAttributes, tablecmds.c:1605
+STATEMENT:  create table c3 (f4 int) inherits(c1,c2);

@@ -1,0 +1,6 @@
+select 'foo'::text = any(array['abc','def','foo']::text[]);
+ ?column? 
+----------
+ t
+(1 row)
+

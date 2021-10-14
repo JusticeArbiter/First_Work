@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TEMP TABLE forcetest (  a INT NOT NULL,  b TEXT NOT NULL,  c TEXT,  d TEXT,  e TEXT  );
+LOCATION:  exec_simple_query, postgres.c:938

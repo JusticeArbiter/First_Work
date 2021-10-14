@@ -1,0 +1,3 @@
+create temp table defc (f1 int default 0  references defp on delete set default);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+ERROR:  42P01: relation "defp" does not exist

@@ -1,0 +1,6 @@
+SELECT cashlarger(m, '$124.00') FROM money_data;
+ cashlarger 
+------------
+    $124.00
+(1 row)
+

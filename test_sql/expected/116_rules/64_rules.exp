@@ -1,0 +1,2 @@
+delete from rtest_v1 where b = 12;
+DELETE 1

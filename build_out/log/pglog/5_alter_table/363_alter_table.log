@@ -1,0 +1,6 @@
+LOG:  00000: statement: alter table atacc2 inherit atacc3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P07: circular inheritance not allowed
+DETAIL:  "atacc3" is already a child of "atacc2".
+LOCATION:  ATExecAddInherit, tablecmds.c:10206
+STATEMENT:  alter table atacc2 inherit atacc3;

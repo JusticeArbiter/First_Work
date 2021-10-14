@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT interval(0) '1 day 01:23:45.6789';
+LOCATION:  exec_simple_query, postgres.c:938

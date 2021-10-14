@@ -1,0 +1,6 @@
+SELECT * FROM vactst;
+ i 
+---
+ 0
+(1 row)
+

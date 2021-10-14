@@ -1,0 +1,4 @@
+INSERT INTO combocidtest VALUES (444);
+ERROR:  42P01: relation "combocidtest" does not exist
+LINE 1: INSERT INTO combocidtest VALUES (444);
+                    ^

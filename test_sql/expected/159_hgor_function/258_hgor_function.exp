@@ -1,0 +1,6 @@
+select vsize('DBa,2016,瀚高'::text);
+ vsize 
+-------
+    15
+(1 row)
+

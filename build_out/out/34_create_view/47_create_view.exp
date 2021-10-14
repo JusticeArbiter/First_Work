@@ -1,0 +1,4 @@
+CREATE VIEW v13_temp AS SELECT seq1_temp.is_called FROM seq1_temp;
+ERROR:  42P01: relation "seq1_temp" does not exist
+LINE 1: ... VIEW v13_temp AS SELECT seq1_temp.is_called FROM seq1_temp;
+                                                             ^

@@ -1,0 +1,2 @@
+SELECT regexp_matches('foobarbequebaz', $re$(bar)(beque){2,1}$re$);
+ERROR:  2201B: invalid regular expression: invalid repetition count(s)

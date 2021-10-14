@@ -1,0 +1,9 @@
+SELECT * FROM current_check;
+ currentid | payload |      rlsuser      
+-----------+---------+-------------------
+         1 | abc     | rls_regress_user1
+         3 | cde     | rls_regress_user1
+         4 | def     | rls_regress_user1
+         2 | bcd_new | rls_regress_user1
+(4 rows)
+

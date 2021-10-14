@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into nulltest values ('a', 'b', 'c', 'd', 'a');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: new row for relation "nulltest" violates check constraint "nulltest_col5_check"
+DETAIL:  Failing row contains (a, b, c, d, a).
+LOCATION:  ExecConstraints, execMain.c:1725
+STATEMENT:  insert into nulltest values ('a', 'b', 'c', 'd', 'a');

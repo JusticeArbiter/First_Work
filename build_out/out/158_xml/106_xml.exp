@@ -1,0 +1,7 @@
+SELECT xpath('/value', data) FROM xmltest;
+        xpath         
+----------------------
+ {<value>one</value>}
+ {<value>two</value>}
+(2 rows)
+

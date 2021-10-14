@@ -1,0 +1,6 @@
+LOG:  00000: statement: select missing_return_expr();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2F005: control reached end of function without RETURN
+CONTEXT:  PL/pgSQL function missing_return_expr()
+LOCATION:  plpgsql_exec_function, pl_exec.c:443
+STATEMENT:  select missing_return_expr();

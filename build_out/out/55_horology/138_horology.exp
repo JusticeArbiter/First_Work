@@ -1,0 +1,4 @@
+SELECT '' AS "160", d.f1 AS "timestamp", t.f1 AS "interval", d.f1 - t.f1 AS minus  FROM TEMP_TIMESTAMP d, INTERVAL_TBL t  WHERE isfinite(d.f1)  ORDER BY minus, "timestamp", "interval";
+ERROR:  42P01: relation "interval_tbl" does not exist
+LINE 1: ...al", d.f1 - t.f1 AS minus  FROM TEMP_TIMESTAMP d, INTERVAL_T...
+                                                             ^

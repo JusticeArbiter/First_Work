@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc1 add column test2 int primary key;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23502: column "test2" contains null values
+LOCATION:  ATRewriteTable, tablecmds.c:4181
+STATEMENT:  alter table atacc1 add column test2 int primary key;

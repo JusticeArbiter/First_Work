@@ -1,0 +1,2 @@
+fetch absolute 1 from foo;
+ERROR:  34000: cursor "foo" does not exist

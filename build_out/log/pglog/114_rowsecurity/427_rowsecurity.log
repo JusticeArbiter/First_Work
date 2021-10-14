@@ -1,0 +1,2 @@
+LOG:  00000: statement: SET ROLE rls_regress_user1;
+LOCATION:  exec_simple_query, postgres.c:938

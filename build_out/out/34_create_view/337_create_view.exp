@@ -1,0 +1,2 @@
+select pg_get_viewdef('tt18v', true);
+ERROR:  42P01: relation "tt18v" does not exist

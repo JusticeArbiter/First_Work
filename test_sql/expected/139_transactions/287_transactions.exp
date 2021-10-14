@@ -1,0 +1,2 @@
+FETCH ctt;
+ERROR:  34000: cursor "ctt" does not exist

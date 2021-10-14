@@ -1,0 +1,5 @@
+LOG:  00000: statement: create function conflict_test() returns setof int8_tbl as $$  declare r record;  q1 bigint := 42;  begin  for r in select q1,q2 from int8_tbl loop  return next r;  end loop;  end;  $$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function conflict_test() returns setof int8_tbl as $$  declare r record;  q1 bigint := 42;  begin  for r in select q1,q2 from int8_tbl loop  return next r;  end loop;  end;  $$ language plpgsql;

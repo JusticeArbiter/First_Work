@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TEXT SEARCH DICTIONARY ispell (  Template=ispell,  DictFile=ispell_sample,  AffFile=ispell_sample  );
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TEXT SEARCH DICTIONARY
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TEXT SEARCH DICTIONARY ispell (  Template=ispell,  DictFile=ispell_sample,  AffFile=ispell_sample  );

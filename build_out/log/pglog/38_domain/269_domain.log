@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter domain posint add constraint c2 check(value >= 10);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: column "f1" of table "ddtest2" contains values that violate the new constraint
+LOCATION:  validateDomainConstraint, typecmds.c:2757
+STATEMENT:  alter domain posint add constraint c2 check(value >= 10);

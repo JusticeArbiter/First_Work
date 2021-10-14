@@ -1,0 +1,8 @@
+explain (costs off)  select row_to_json(q) from  (select thousand, tenthous from tenk1  where thousand = 42 and tenthous < 2000 offset 0) q;
+                       QUERY PLAN                        
+---------------------------------------------------------
+ Subquery Scan on q
+   ->  Seq Scan on tenk1
+         Filter: ((tenthous < 2000) AND (thousand = 42))
+(3 rows)
+

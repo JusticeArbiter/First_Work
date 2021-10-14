@@ -1,0 +1,6 @@
+SELECT xmlparse(content '');
+ xmlparse 
+----------
+ 
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO J1_TBL VALUES (1, 4, 'one');
+LOCATION:  exec_simple_query, postgres.c:938

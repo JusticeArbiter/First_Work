@@ -1,0 +1,1 @@
+SELECT '' AS six, * FROM POINT_TBL;

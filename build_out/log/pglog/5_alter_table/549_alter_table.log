@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into atacc1 (a,b,c,d) values (10,11,12,13);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" of relation "atacc1" does not exist at character 21
+LOCATION:  checkInsertTargets, parse_target.c:954
+STATEMENT:  insert into atacc1 (a,b,c,d) values (10,11,12,13);

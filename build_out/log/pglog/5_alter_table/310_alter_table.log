@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT conname, tgfoid::regproc, tgtype, tgdeferrable, tginitdeferred  FROM pg_trigger JOIN pg_constraint con ON con.oid = tgconstraint  WHERE tgrelid = 'fktable'::regclass  ORDER BY 1,2,3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "fktable" does not exist at character 154
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  SELECT conname, tgfoid::regproc, tgtype, tgdeferrable, tginitdeferred  FROM pg_trigger JOIN pg_constraint con ON con.oid = tgconstraint  WHERE tgrelid = 'fktable'::regclass  ORDER BY 1,2,3;

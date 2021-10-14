@@ -1,0 +1,2 @@
+DROP LANGUAGE test_language_exists;
+ERROR:  42704: language "test_language_exists" does not exist

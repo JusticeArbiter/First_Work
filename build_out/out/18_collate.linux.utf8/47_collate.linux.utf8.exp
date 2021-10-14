@@ -1,0 +1,6 @@
+SELECT 'bbc' COLLATE "en_US" > 'äbc' COLLATE "en_US" AS "true";
+ true 
+------
+ t
+(1 row)
+

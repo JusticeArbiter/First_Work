@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO test_schema_1.abc DEFAULT VALUES;
+LOCATION:  exec_simple_query, postgres.c:938

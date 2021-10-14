@@ -1,0 +1,6 @@
+SELECT count(*) FROM test_tsvector WHERE a @@ 'wr&qh';
+ count 
+-------
+     0
+(1 row)
+

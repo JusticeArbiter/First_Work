@@ -1,0 +1,4 @@
+SELECT '' AS ten, f1 AS interval, reltime(f1) AS reltime  FROM INTERVAL_TBL;
+ERROR:  42P01: relation "interval_tbl" does not exist
+LINE 1: ...ten, f1 AS interval, reltime(f1) AS reltime  FROM INTERVAL_T...
+                                                             ^

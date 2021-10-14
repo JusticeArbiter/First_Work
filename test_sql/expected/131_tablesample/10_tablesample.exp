@@ -1,0 +1,6 @@
+SELECT count(*) FROM test_tablesample TABLESAMPLE SYSTEM (100) REPEATABLE (0.4);
+ count 
+-------
+    10
+(1 row)
+

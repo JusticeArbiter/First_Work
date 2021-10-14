@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT json_build_object(NULL, 'a');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: argument 1 cannot be null
+HINT:  Object keys should be text.
+LOCATION:  json_build_object, json.c:2142
+STATEMENT:  SELECT json_build_object(NULL, 'a');

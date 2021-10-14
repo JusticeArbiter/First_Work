@@ -1,0 +1,9 @@
+SELECT '' AS four, c AS cidr, masklen(c) AS "masklen(cidr)",  i AS inet, masklen(i) AS "masklen(inet)" FROM INET_TBL  WHERE masklen(c) <= 8;
+ four |    cidr    | masklen(cidr) |    inet    | masklen(inet) 
+------+------------+---------------+------------+---------------
+      | 10.0.0.0/8 |             8 | 10.1.2.3/8 |             8
+      | 10.0.0.0/8 |             8 | 10.1.2.3/8 |             8
+      | 10.0.0.0/8 |             8 | 11.1.2.3/8 |             8
+      | 10.0.0.0/8 |             8 | 9.1.2.3/8  |             8
+(4 rows)
+

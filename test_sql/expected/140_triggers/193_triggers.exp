@@ -1,0 +1,3 @@
+CREATE TABLE min_updates_test (  f1 text,  f2 int,  f3 int);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

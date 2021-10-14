@@ -1,0 +1,4 @@
+INSERT INTO t1c VALUES ('v', 'w'), ('c', 'd'), ('m', 'n'), ('e', 'f');
+ERROR:  42P01: relation "t1c" does not exist
+LINE 1: INSERT INTO t1c VALUES ('v', 'w'), ('c', 'd'), ('m', 'n'), (...
+                    ^

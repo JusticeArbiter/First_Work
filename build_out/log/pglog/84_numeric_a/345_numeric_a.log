@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO num_exp_sub VALUES (8,3,'74876.69');
+LOCATION:  exec_simple_query, postgres.c:938

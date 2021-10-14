@@ -1,0 +1,4 @@
+REFRESH MATERIALIZED VIEW mv;
+NOTICE:  00000: test_event_trigger: ddl_command_start REFRESH MATERIALIZED VIEW
+ERROR:  23505: could not create unique index "mv_a_idx"
+DETAIL:  Key (a)=(1) is duplicated.

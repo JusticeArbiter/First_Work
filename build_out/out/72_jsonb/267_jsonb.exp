@@ -1,0 +1,2 @@
+SELECT jsonb_object('{a,b,c}');
+ERROR:  2202E: array must have even number of elements

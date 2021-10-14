@@ -1,0 +1,7 @@
+SELECT n.nspname, oprname, a.rolname,  oprleft::regtype, oprright::regtype, oprcode::regproc  FROM pg_operator o, pg_namespace n, pg_authid a  WHERE o.oprnamespace = n.oid AND o.oprowner = a.oid  AND n.nspname IN ('alt_nsp1', 'alt_nsp2')  ORDER BY nspname, oprname;
+ nspname  | oprname |       rolname       | oprleft | oprright | oprcode 
+----------+---------+---------------------+---------+----------+---------
+ alt_nsp2 | @+@     | regtest_alter_user2 | integer | integer  | int4pl
+ alt_nsp2 | @-@     | highgo              | integer | integer  | int4mi
+(2 rows)
+

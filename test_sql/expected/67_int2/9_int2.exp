@@ -1,0 +1,4 @@
+INSERT INTO INT2_TBL(f1) VALUES ('asdf');
+ERROR:  22P02: invalid input syntax for integer: "asdf"
+LINE 1: INSERT INTO INT2_TBL(f1) VALUES ('asdf');
+                                         ^

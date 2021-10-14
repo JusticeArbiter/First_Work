@@ -1,0 +1,4 @@
+SELECT xmlelement(name duplicate, xmlattributes(1 as a, 2 as b, 3 as a));
+ERROR:  42601: XML attribute name "a" appears more than once
+LINE 1: ...ment(name duplicate, xmlattributes(1 as a, 2 as b, 3 as a));
+                                                              ^

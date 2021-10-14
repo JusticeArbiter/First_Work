@@ -1,0 +1,2 @@
+LOG:  00000: statement: explain (costs off)  select min(unique1) from tenk1 GROUP BY ();
+LOCATION:  exec_simple_query, postgres.c:938

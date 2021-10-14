@@ -1,0 +1,6 @@
+SELECT to_timestamp('1985 January 12', 'YYYY FMMonth DD');
+      to_timestamp      
+------------------------
+ 1985-01-12 00:00:00+08
+(1 row)
+

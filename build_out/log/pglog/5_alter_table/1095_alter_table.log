@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TYPE test_type RENAME ATTRIBUTE a TO aa;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" does not exist
+LOCATION:  renameatt_internal, tablecmds.c:2284
+STATEMENT:  ALTER TYPE test_type RENAME ATTRIBUTE a TO aa;

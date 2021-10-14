@@ -1,0 +1,4 @@
+INSERT INTO b SELECT 1 INTO f;
+ERROR:  42601: SELECT ... INTO is not allowed here
+LINE 1: INSERT INTO b SELECT 1 INTO f;
+                                    ^

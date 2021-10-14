@@ -1,0 +1,15 @@
+explain (costs off)  select count(*) from person tablesample bernoulli (100);
+                   QUERY PLAN                    
+-------------------------------------------------
+ Aggregate
+   ->  Append
+         ->  Sample Scan on person
+               Sampling: bernoulli ('100'::real)
+         ->  Sample Scan on emp
+               Sampling: bernoulli ('100'::real)
+         ->  Sample Scan on student
+               Sampling: bernoulli ('100'::real)
+         ->  Sample Scan on stud_emp
+               Sampling: bernoulli ('100'::real)
+(10 rows)
+

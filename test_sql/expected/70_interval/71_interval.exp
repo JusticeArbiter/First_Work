@@ -1,0 +1,6 @@
+SELECT interval '999' second;
+ interval 
+----------
+ 00:16:39
+(1 row)
+

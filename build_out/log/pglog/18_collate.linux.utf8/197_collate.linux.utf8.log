@@ -1,0 +1,2 @@
+LOG:  00000: statement: create type textrange_c as range(subtype=text, collation="C");
+LOCATION:  exec_simple_query, postgres.c:938

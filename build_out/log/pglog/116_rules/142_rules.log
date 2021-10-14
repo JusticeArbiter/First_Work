@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into rtest_t4 values (20, 'Record should go to rtest_t4 and t6');
+LOCATION:  exec_simple_query, postgres.c:938

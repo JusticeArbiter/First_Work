@@ -1,0 +1,4 @@
+SELECT '' AS count, p.f1, l.s, l.s # p.f1 AS intersection  FROM LSEG_TBL l, POINT_TBL p;
+ERROR:  42P01: relation "lseg_tbl" does not exist
+LINE 1: ...ount, p.f1, l.s, l.s # p.f1 AS intersection  FROM LSEG_TBL l...
+                                                             ^

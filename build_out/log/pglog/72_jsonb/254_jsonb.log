@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT jsonb_object_agg(NULL, '{"a":1}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: field name must not be null
+LOCATION:  jsonb_object_agg_transfn, jsonb.c:1738
+STATEMENT:  SELECT jsonb_object_agg(NULL, '{"a":1}');

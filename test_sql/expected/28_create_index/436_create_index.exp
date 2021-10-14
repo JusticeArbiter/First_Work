@@ -1,0 +1,3 @@
+DROP INDEX cwi_replaced_pkey;
+ERROR:  2BP01: cannot drop index cwi_replaced_pkey because constraint cwi_replaced_pkey on table cwi_test requires it
+HINT:  You can drop constraint cwi_replaced_pkey on table cwi_test instead.

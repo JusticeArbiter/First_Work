@@ -1,0 +1,8 @@
+SELECT * FROM FKTABLE;
+ ftest1 | ftest2 
+--------+--------
+      2 |      3
+      3 |      4
+        |      1
+(3 rows)
+

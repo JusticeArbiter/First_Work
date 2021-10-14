@@ -1,0 +1,4 @@
+SELECT '' AS "64", d1 - interval '1 year' AS one_year FROM TIMESTAMPTZ_TBL;
+ERROR:  42P01: relation "timestamptz_tbl" does not exist
+LINE 1: ... AS "64", d1 - interval '1 year' AS one_year FROM TIMESTAMPT...
+                                                             ^

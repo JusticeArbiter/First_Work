@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO INTERVAL_TBL_OF (f1) VALUES ('2147483648 days');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "interval_tbl_of" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  INSERT INTO INTERVAL_TBL_OF (f1) VALUES ('2147483648 days');

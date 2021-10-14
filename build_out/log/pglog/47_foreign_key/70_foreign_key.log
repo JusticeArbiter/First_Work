@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO FKTABLE VALUES (1, NULL, 4);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: insert or update on table "fktable" violates foreign key constraint "constrname2"
+DETAIL:  MATCH FULL does not allow mixing of null and nonnull key values.
+LOCATION:  RI_FKey_check, ri_triggers.c:348
+STATEMENT:  INSERT INTO FKTABLE VALUES (1, NULL, 4);

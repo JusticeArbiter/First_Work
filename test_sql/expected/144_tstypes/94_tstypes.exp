@@ -1,0 +1,6 @@
+SELECT ts_rank(' a:1 s:2 d g'::tsvector, 'a & s');
+  ts_rank  
+-----------
+ 0.0991032
+(1 row)
+

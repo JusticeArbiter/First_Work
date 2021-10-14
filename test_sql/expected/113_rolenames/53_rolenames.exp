@@ -1,0 +1,2 @@
+ALTER USER SESSION_ROLE WITH NOREPLICATION;
+ERROR:  42704: role "session_role" does not exist

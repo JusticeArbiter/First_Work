@@ -1,0 +1,4 @@
+WITH RECURSIVE x(n) AS (SELECT 1 INTERSECT ALL SELECT n+1 FROM x)  SELECT * FROM x;
+ERROR:  42P19: recursive query "x" does not have the form non-recursive-term UNION [ALL] recursive-term
+LINE 1: WITH RECURSIVE x(n) AS (SELECT 1 INTERSECT ALL SELECT n+1 FR...
+                       ^

@@ -1,0 +1,11 @@
+SELECT * FROM atest1 FOR UPDATE;
+ a |  b  
+---+-----
+ 1 | two
+ 1 | two
+ 1 | two
+ 1 | two
+ 1 | two
+ 1 | two
+(6 rows)
+

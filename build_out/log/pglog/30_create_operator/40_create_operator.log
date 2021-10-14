@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION fn_op4(int8, type_op4)  RETURNS int8 AS $$  SELECT NULL::int8;  $$ LANGUAGE sql IMMUTABLE;
+LOCATION:  exec_simple_query, postgres.c:938

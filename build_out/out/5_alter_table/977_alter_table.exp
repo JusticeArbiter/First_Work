@@ -1,0 +1,2 @@
+alter table alterlock reset (fillfactor);
+ALTER TABLE

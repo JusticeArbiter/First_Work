@@ -1,0 +1,5 @@
+LOG:  00000: statement: drop type lockmodes;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: type "lockmodes" does not exist
+LOCATION:  get_object_address_type, objectaddress.c:1461
+STATEMENT:  drop type lockmodes;

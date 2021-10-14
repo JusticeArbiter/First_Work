@@ -1,0 +1,2 @@
+LOG:  00000: statement: PREPARE q2(text) AS  SELECT datname, datistemplate, datallowconn  FROM pg_database WHERE datname = $1;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,3 @@
+create view vview as  select pparent.pid, txt, descrip from  pparent left join cchild using (pid);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+CREATE VIEW

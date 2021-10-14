@@ -1,0 +1,4 @@
+select mysum2(f1, f1 + 1) from t;
+ERROR:  42P01: relation "t" does not exist
+LINE 1: select mysum2(f1, f1 + 1) from t;
+                                       ^

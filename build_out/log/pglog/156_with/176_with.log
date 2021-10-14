@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH rcte AS ( SELECT sum(id) AS totalid FROM parent )  UPDATE parent SET id = id + totalid FROM rcte;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "parent" does not exist at character 47
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  WITH rcte AS ( SELECT sum(id) AS totalid FROM parent )  UPDATE parent SET id = id + totalid FROM rcte;

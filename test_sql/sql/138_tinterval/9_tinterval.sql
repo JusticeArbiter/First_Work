@@ -1,0 +1,1 @@
+SELECT '' AS five, * FROM TINTERVAL_TBL;

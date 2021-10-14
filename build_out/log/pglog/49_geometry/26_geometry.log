@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS four, npoints(f1) AS npoints, f1 AS polygon  FROM POLYGON_TBL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "polygon_tbl" does not exist at character 64
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT '' AS four, npoints(f1) AS npoints, f1 AS polygon  FROM POLYGON_TBL;

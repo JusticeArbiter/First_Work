@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table pg_class drop column relname;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42501: permission denied: "pg_class" is a system catalog
+LOCATION:  RangeVarCallbackForAlterRelation, tablecmds.c:12093
+STATEMENT:  alter table pg_class drop column relname;

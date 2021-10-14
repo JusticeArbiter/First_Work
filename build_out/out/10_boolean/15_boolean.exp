@@ -1,0 +1,4 @@
+SELECT bool 'nay' AS error;
+ERROR:  22P02: invalid input syntax for type boolean: "nay"
+LINE 1: SELECT bool 'nay' AS error;
+                    ^

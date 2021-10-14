@@ -1,0 +1,1 @@
+CLOSE _psql_cursor

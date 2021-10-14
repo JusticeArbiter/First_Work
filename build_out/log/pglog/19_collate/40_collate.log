@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE collate_test10 (  a int,  x text COLLATE "C",  y text COLLATE "POSIX"  );
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P07: relation "collate_test10" already exists
+LOCATION:  heap_create_with_catalog, heap.c:1066
+STATEMENT:  CREATE TABLE collate_test10 (  a int,  x text COLLATE "C",  y text COLLATE "POSIX"  );

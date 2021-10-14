@@ -1,0 +1,2 @@
+alter table emp rename column salary to oid;
+ERROR:  42701: column name "oid" conflicts with a system column name

@@ -1,0 +1,3 @@
+SET LOCAL SESSION AUTHORIZATION seq_user;
+WARNING:  25P01: SET LOCAL can only be used in transaction blocks
+SET

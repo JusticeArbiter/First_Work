@@ -1,0 +1,56 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: BEGIN;
+ statement: DECLARE foo13 CURSOR FOR       +
+    SELECT * FROM onek WHERE unique1 = 50;
+ statement: DECLARE foo14 CURSOR FOR       +
+    SELECT * FROM onek WHERE unique1 = 51;
+ statement: DECLARE foo15 CURSOR FOR       +
+    SELECT * FROM onek WHERE unique1 = 52;
+ statement: DECLARE foo16 CURSOR FOR       +
+    SELECT * FROM onek WHERE unique1 = 53;
+ statement: DECLARE foo17 CURSOR FOR       +
+    SELECT * FROM onek WHERE unique1 = 54;
+ statement: DECLARE foo18 CURSOR FOR       +
+    SELECT * FROM onek WHERE unique1 = 55;
+ statement: DECLARE foo19 CURSOR FOR       +
+    SELECT * FROM onek WHERE unique1 = 56;
+ statement: DECLARE foo20 CURSOR FOR       +
+    SELECT * FROM onek WHERE unique1 = 57;
+ statement: DECLARE foo21 CURSOR FOR       +
+    SELECT * FROM onek WHERE unique1 = 58;
+ statement: DECLARE foo22 CURSOR FOR       +
+    SELECT * FROM onek WHERE unique1 = 59;
+ statement: DECLARE foo23 CURSOR FOR       +
+    SELECT * FROM onek WHERE unique1 = 60;
+ statement: DECLARE foo24 CURSOR FOR       +
+    SELECT * FROM onek2 WHERE unique1 = 50;
+ statement: DECLARE foo25 CURSOR FOR       +
+    SELECT * FROM onek2 WHERE unique1 = 60;
+ statement: FETCH all in foo13;
+ statement: FETCH all in foo14;
+ statement: FETCH all in foo15;
+ statement: FETCH all in foo16;
+ statement: FETCH all in foo17;
+ statement: FETCH all in foo18;
+ statement: FETCH all in foo19;
+ statement: FETCH all in foo20;
+ statement: FETCH all in foo21;
+ statement: FETCH all in foo22;
+ statement: FETCH all in foo23;
+ statement: FETCH all in foo24;
+ statement: FETCH all in foo25;
+ statement: CLOSE foo13;
+ statement: CLOSE foo14;
+ statement: CLOSE foo15;
+ statement: CLOSE foo16;
+ statement: CLOSE foo17;
+ statement: CLOSE foo18;
+ statement: CLOSE foo19;
+ statement: CLOSE foo20;
+ statement: CLOSE foo21;
+ statement: CLOSE foo22;
+ statement: CLOSE foo23;
+ statement: CLOSE foo24;
+ statement: CLOSE foo25;
+ statement: END;
+

@@ -1,0 +1,4 @@
+INSERT INTO hobbies_r (name) VALUES ('skywalking');
+ERROR:  42P01: relation "hobbies_r" does not exist
+LINE 1: INSERT INTO hobbies_r (name) VALUES ('skywalking');
+                    ^

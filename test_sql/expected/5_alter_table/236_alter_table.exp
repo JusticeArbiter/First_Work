@@ -1,0 +1,2 @@
+ALTER TABLE tmp5 add constraint tmpconstr foreign key(a) references tmp4(a) match full;
+ERROR:  42830: there is no unique constraint matching given keys for referenced table "tmp4"

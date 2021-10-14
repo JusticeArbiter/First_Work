@@ -1,0 +1,2 @@
+insert into alter2.t1(f2) values(13);
+INSERT 0 1

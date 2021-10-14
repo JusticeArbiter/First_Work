@@ -1,0 +1,2 @@
+alter table stud_emp rename to pg_toast_stud_emp;
+ERROR:  42P01: relation "stud_emp" does not exist

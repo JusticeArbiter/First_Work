@@ -1,0 +1,2 @@
+create domain dnull varchar(15);
+CREATE DOMAIN

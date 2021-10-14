@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE POLICY d1 ON dependent FOR ALL  TO PUBLIC  USING (x = (SELECT d.x FROM dependee d WHERE d.y = y));
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE POLICY
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE POLICY d1 ON dependent FOR ALL  TO PUBLIC  USING (x = (SELECT d.x FROM dependee d WHERE d.y = y));

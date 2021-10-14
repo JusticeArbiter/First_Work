@@ -1,0 +1,1 @@
+COPY v_test1 TO STDOUT 

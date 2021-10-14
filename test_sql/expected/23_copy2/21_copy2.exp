@@ -1,0 +1,2 @@
+INSERT INTO no_oids (a, b) VALUES (5, 10);
+INSERT 0 1

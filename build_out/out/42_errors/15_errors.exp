@@ -1,0 +1,2 @@
+alter table emp rename column nonesuchatt to newnonesuchatt;
+ERROR:  42703: column "nonesuchatt" does not exist

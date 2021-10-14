@@ -1,0 +1,4 @@
+select 33 * any ('{1,2,3}');
+ERROR:  42809: op ANY/ALL (array) requires operator to yield boolean
+LINE 1: select 33 * any ('{1,2,3}');
+                  ^

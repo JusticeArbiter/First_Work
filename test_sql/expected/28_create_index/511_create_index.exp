@@ -1,0 +1,2 @@
+REINDEX SCHEMA schema_to_reindex;
+ERROR:  3F000: schema "schema_to_reindex" does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO t1 (c3) VALUES (null);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "c3" of relation "t1" does not exist at character 17
+LOCATION:  checkInsertTargets, parse_target.c:954
+STATEMENT:  INSERT INTO t1 (c3) VALUES (null);

@@ -1,0 +1,6 @@
+/* Has ee entry */  SELECT * FROM ctla;
+   aa    
+---------
+ ee-col1
+(1 row)
+

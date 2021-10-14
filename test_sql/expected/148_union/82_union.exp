@@ -1,0 +1,14 @@
+explain (costs off)  SELECT * FROM  (SELECT 1 AS t, generate_series(1,10) AS x  UNION  SELECT 2 AS t, 4 AS x) ss  WHERE x < 4  ORDER BY x;
+                       QUERY PLAN                       
+--------------------------------------------------------
+ Sort
+   Sort Key: ss.x
+   ->  Subquery Scan on ss
+         Filter: (ss.x < 4)
+         ->  HashAggregate
+               Group Key: (1), (generate_series(1, 10))
+               ->  Append
+                     ->  Result
+                     ->  Result
+(9 rows)
+

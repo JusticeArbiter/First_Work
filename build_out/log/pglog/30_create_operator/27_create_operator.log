@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE OPERATOR #@%# (  leftarg = int8  );
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P13: operator procedure must be specified
+LOCATION:  DefineOperator, operatorcmds.c:156
+STATEMENT:  CREATE OPERATOR #@%# (  leftarg = int8  );

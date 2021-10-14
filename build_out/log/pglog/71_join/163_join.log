@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT a.f1  FROM tt4 a  LEFT JOIN (  SELECT b.f1  FROM tt3 b LEFT JOIN tt3 c ON (b.f1 = c.f1)  WHERE c.f1 IS NULL  ) AS d ON (a.f1 = d.f1)  WHERE d.f1 IS NULL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column b.f1 does not exist at character 83
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  SELECT a.f1  FROM tt4 a  LEFT JOIN (  SELECT b.f1  FROM tt3 b LEFT JOIN tt3 c ON (b.f1 = c.f1)  WHERE c.f1 IS NULL  ) AS d ON (a.f1 = d.f1)  WHERE d.f1 IS NULL;

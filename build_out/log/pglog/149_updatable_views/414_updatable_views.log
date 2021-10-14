@@ -1,0 +1,6 @@
+LOG:  00000: statement: UPDATE rw_view1 SET a = 20, b = 30;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  44000: new row violates check option for view "rw_view1"
+DETAIL:  Failing row contains (20, 10).
+LOCATION:  ExecWithCheckOptions, execMain.c:1814
+STATEMENT:  UPDATE rw_view1 SET a = 20, b = 30;

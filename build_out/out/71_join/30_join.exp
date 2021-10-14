@@ -1,0 +1,4 @@
+SELECT '' AS "xxx", i, k, t  FROM J1_TBL CROSS JOIN J2_TBL;
+ERROR:  42702: column reference "i" is ambiguous
+LINE 1: SELECT '' AS "xxx", i, k, t  FROM J1_TBL CROSS JOIN J2_TBL;
+                            ^

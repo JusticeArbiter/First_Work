@@ -1,0 +1,5 @@
+DROP SERVER s4;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SERVER
+ERROR:  2BP01: cannot drop server s4 because other objects depend on it
+DETAIL:  user mapping for highgo on server s4 depends on server s4
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.

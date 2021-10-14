@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT count(*) FROM bmscantest WHERE a = 1 AND b = 1;
+LOCATION:  exec_simple_query, postgres.c:938

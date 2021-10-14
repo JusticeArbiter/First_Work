@@ -1,0 +1,2 @@
+CREATE TEMP TABLE testeoc (a text);
+CREATE TABLE

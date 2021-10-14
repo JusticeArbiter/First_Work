@@ -1,0 +1,6 @@
+select current_setting('work_mem');
+ current_setting 
+-----------------
+ 4MB
+(1 row)
+

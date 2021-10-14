@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT sum(salary) OVER w1, count(*) OVER w2  FROM empsalary WINDOW w1 AS (ORDER BY salary), w2 AS (ORDER BY salary);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "empsalary" does not exist at character 52
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT sum(salary) OVER w1, count(*) OVER w2  FROM empsalary WINDOW w1 AS (ORDER BY salary), w2 AS (ORDER BY salary);

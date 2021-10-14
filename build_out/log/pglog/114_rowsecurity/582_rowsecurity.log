@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE current_check SET payload = payload || '_new' WHERE CURRENT OF current_check_cursor RETURNING *;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "current_check_cursor" does not exist
+LOCATION:  execCurrentOf, execCurrent.c:67
+STATEMENT:  UPDATE current_check SET payload = payload || '_new' WHERE CURRENT OF current_check_cursor RETURNING *;

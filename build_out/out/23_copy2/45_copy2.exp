@@ -1,0 +1,2 @@
+COPY testnl FROM stdin CSV;
+ERROR:  42P01: relation "testnl" does not exist

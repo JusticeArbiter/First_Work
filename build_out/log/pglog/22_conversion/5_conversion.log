@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE CONVERSION myconv FOR 'LATIN1' TO 'UTF8' FROM iso8859_1_to_utf8;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: conversion "myconv" already exists
+LOCATION:  ConversionCreate, pg_conversion.c:66
+STATEMENT:  CREATE CONVERSION myconv FOR 'LATIN1' TO 'UTF8' FROM iso8859_1_to_utf8;

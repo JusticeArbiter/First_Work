@@ -1,0 +1,35 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT ''::text AS two, unique1, unique2, stringu1   +
+                 FROM onek WHERE unique1 > 50                    +
+                 ORDER BY unique1 LIMIT 2;
+ statement: SELECT ''::text AS five, unique1, unique2, stringu1  +
+                 FROM onek WHERE unique1 > 60                    +
+                 ORDER BY unique1 LIMIT 5;
+ statement: SELECT ''::text AS two, unique1, unique2, stringu1   +
+                 FROM onek WHERE unique1 > 60 AND unique1 < 63   +
+                 ORDER BY unique1 LIMIT 5;
+ statement: SELECT ''::text AS three, unique1, unique2, stringu1 +
+                 FROM onek WHERE unique1 > 100                   +
+                 ORDER BY unique1 LIMIT 3 OFFSET 20;
+ statement: SELECT ''::text AS zero, unique1, unique2, stringu1  +
+                 FROM onek WHERE unique1 < 50                    +
+                 ORDER BY unique1 DESC LIMIT 8 OFFSET 99;
+ statement: SELECT ''::text AS eleven, unique1, unique2, stringu1+
+                 FROM onek WHERE unique1 < 50                    +
+                 ORDER BY unique1 DESC LIMIT 20 OFFSET 39;
+ statement: SELECT ''::text AS ten, unique1, unique2, stringu1   +
+                 FROM onek                                       +
+                 ORDER BY unique1 OFFSET 990;
+ statement: SELECT ''::text AS five, unique1, unique2, stringu1  +
+                 FROM onek                                       +
+                 ORDER BY unique1 OFFSET 990 LIMIT 5;
+ statement: SELECT ''::text AS five, unique1, unique2, stringu1  +
+                 FROM onek                                       +
+                 ORDER BY unique1 LIMIT 5 OFFSET 900;
+ statement: SELECT                                               +
+   (SELECT n                                                     +
+      FROM (VALUES (1)) AS x,                                    +
+           (SELECT n FROM generate_series(1,10) AS n             +
+              ORDER BY n LIMIT 1 OFFSET s-1) AS y) AS z          +
+   FROM generate_series(1,10) AS s;
+

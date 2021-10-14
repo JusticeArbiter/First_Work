@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT POSITION(B'1101' IN b),  POSITION(B'11011' IN b),  b  FROM BIT_SHIFT_TABLE ;
+LOCATION:  exec_simple_query, postgres.c:938

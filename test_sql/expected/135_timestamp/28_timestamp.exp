@@ -1,0 +1,4 @@
+INSERT INTO TIMESTAMP_TBL VALUES ('invalid');
+ERROR:  0A000: date/time value "invalid" is no longer supported
+LINE 1: INSERT INTO TIMESTAMP_TBL VALUES ('invalid');
+                                          ^

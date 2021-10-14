@@ -1,0 +1,2 @@
+LOG:  00000: statement: copy (select * from test1 join test2 using (id)) to stdout;
+LOCATION:  exec_simple_query, postgres.c:938

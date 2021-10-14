@@ -1,0 +1,6 @@
+SELECT truncate_in_subxact();
+ERROR:  42P01: relation "vistest" does not exist
+LINE 1: INSERT INTO vistest VALUES ('subxact failure')
+                    ^
+QUERY:  INSERT INTO vistest VALUES ('subxact failure')
+CONTEXT:  PL/pgSQL function truncate_in_subxact() line 1 at SQL statement

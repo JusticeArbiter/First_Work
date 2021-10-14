@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT pr.snap_ts < pg_stat_get_snapshot_timestamp() as snapshot_newer  FROM prevstats AS pr;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "prevstats" does not exist at character 78
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT pr.snap_ts < pg_stat_get_snapshot_timestamp() as snapshot_newer  FROM prevstats AS pr;

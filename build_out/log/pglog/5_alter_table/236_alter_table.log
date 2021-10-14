@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE tmp5 add constraint tmpconstr foreign key(a) references tmp4(a) match full;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42830: there is no unique constraint matching given keys for referenced table "tmp4"
+LOCATION:  transformFkeyCheckAttrs, tablecmds.c:7240
+STATEMENT:  ALTER TABLE tmp5 add constraint tmpconstr foreign key(a) references tmp4(a) match full;

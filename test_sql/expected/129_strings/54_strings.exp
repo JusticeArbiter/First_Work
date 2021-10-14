@@ -1,0 +1,6 @@
+SELECT regexp_replace('AAA aaa', 'A+', 'Z', 'gi');
+ regexp_replace 
+----------------
+ Z Z
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT count() OVER () FROM tenk1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: count(*) must be used to call a parameterless aggregate function at character 8
+LOCATION:  ParseFuncOrColumn, parse_func.c:734
+STATEMENT:  SELECT count() OVER () FROM tenk1;

@@ -1,0 +1,7 @@
+select * from rtest_interface;
+ sysname | ifname 
+---------+--------
+ notjw   | eth0
+ pluto   | eth0
+(2 rows)
+

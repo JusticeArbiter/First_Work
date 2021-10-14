@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TEXT SEARCH TEMPLATE alt_ts_temp2 (lexize=dsimple_lexize);
+LOCATION:  exec_simple_query, postgres.c:938

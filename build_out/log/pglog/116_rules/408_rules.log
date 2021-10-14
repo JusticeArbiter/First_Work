@@ -1,0 +1,9 @@
+LOG:  00000: statement: drop rule "_RETURN" on fooview;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  drop rule "_RETURN" on fooview;
+ERROR:  2BP01: cannot drop rule _RETURN on view fooview because view fooview requires it
+HINT:  You can drop view fooview instead.
+LOCATION:  findDependentObjects, dependency.c:643
+STATEMENT:  drop rule "_RETURN" on fooview;

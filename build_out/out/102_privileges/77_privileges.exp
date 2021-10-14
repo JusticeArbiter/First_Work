@@ -1,0 +1,6 @@
+SELECT * FROM atest2 FOR UPDATE;
+ col1 | col2 
+------+------
+ foo  | 
+(1 row)
+

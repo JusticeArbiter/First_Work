@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE collate_test5 (  a int,  b testdomain_sv COLLATE "en_US"  );
+LOCATION:  exec_simple_query, postgres.c:938

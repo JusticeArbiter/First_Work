@@ -1,0 +1,5 @@
+LOG:  00000: statement: DELETE FROM foo WHERE f1 > 2 RETURNING f3, f2, f1, least(f1,f3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "foo" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  DELETE FROM foo WHERE f1 > 2 RETURNING f3, f2, f1, least(f1,f3);

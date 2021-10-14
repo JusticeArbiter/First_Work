@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE check_fk_presence_1 (id int PRIMARY KEY, t text);
+LOCATION:  exec_simple_query, postgres.c:938

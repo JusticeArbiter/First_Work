@@ -1,0 +1,2 @@
+LOG:  00000: statement: DROP RULE test_rule_exists ON test_exists;
+LOCATION:  exec_simple_query, postgres.c:938

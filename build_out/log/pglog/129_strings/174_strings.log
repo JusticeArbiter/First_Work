@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT substr(f1, 5, -1) from toasttest;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22011: negative substring length not allowed
+LOCATION:  bytea_substring, varlena.c:2523
+STATEMENT:  SELECT substr(f1, 5, -1) from toasttest;

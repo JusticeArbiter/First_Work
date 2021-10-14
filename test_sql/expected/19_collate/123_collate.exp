@@ -1,0 +1,6 @@
+SELECT collation for ('foo');
+ pg_collation_for 
+------------------
+ 
+(1 row)
+

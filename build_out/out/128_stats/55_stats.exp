@@ -1,0 +1,5 @@
+SELECT wait_for_stats();
+ERROR:  42883: function wait_for_stats() does not exist
+LINE 1: SELECT wait_for_stats();
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

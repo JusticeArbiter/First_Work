@@ -1,0 +1,3 @@
+alter table dropColumnExists drop column if exists non_existing;
+NOTICE:  00000: column "non_existing" of relation "dropcolumnexists" does not exist, skipping
+ALTER TABLE

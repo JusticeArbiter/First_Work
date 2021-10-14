@@ -1,0 +1,5 @@
+LOG:  00000: statement: select format('%1$s %4$s', 1, 2, 3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: too few arguments for format
+LOCATION:  text_format, varlena.c:4777
+STATEMENT:  select format('%1$s %4$s', 1, 2, 3);

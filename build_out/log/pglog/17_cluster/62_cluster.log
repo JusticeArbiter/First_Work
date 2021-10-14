@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE clstr_1 (a INT PRIMARY KEY);
+LOCATION:  exec_simple_query, postgres.c:938

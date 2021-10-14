@@ -1,0 +1,5 @@
+SELECT fy FROM atestc;
+ fy 
+----
+(0 rows)
+

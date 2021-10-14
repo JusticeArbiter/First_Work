@@ -1,0 +1,2 @@
+drop view my_locks;
+ERROR:  42P01: view "my_locks" does not exist

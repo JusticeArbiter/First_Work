@@ -1,0 +1,4 @@
+select a, b, sum(v), count(*) from gstest_empty group by grouping sets ((a,b),(),(),());
+ERROR:  42P01: relation "gstest_empty" does not exist
+LINE 1: select a, b, sum(v), count(*) from gstest_empty group by gro...
+                                           ^

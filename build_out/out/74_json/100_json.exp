@@ -1,0 +1,4 @@
+SELECT json_object_keys(test_json)  FROM test_json  WHERE json_type = 'array';
+ERROR:  42P01: relation "test_json" does not exist
+LINE 1: SELECT json_object_keys(test_json)  FROM test_json  WHERE js...
+                                                 ^

@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP TEXT SEARCH TEMPLATE test_tstemplate_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: text search template "test_tstemplate_exists" does not exist
+LOCATION:  get_ts_template_oid, namespace.c:2408
+STATEMENT:  DROP TEXT SEARCH TEMPLATE test_tstemplate_exists;

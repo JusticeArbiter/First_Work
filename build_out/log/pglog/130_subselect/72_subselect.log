@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into shipped_view (ordnum, partnum, value)  values (0, 1, (select cost from parts where partnum = '1'));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "shipped_view" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  insert into shipped_view (ordnum, partnum, value)  values (0, 1, (select cost from parts where partnum = '1'));

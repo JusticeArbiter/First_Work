@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('language', '{one}', '{}');
+ERROR:  42704: language "one" does not exist

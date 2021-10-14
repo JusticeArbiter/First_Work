@@ -1,0 +1,6 @@
+SELECT chr(65);
+ chr 
+-----
+ A
+(1 row)
+

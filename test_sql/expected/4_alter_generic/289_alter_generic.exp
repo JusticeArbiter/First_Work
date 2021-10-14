@@ -1,0 +1,2 @@
+ALTER TEXT SEARCH PARSER alt_ts_prs2 SET SCHEMA alt_nsp2;
+ERROR:  42710: text search parser "alt_ts_prs2" already exists in schema "alt_nsp2"

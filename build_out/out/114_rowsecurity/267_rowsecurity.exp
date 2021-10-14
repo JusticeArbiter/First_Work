@@ -1,0 +1,27 @@
+SELECT * FROM b1;
+  a  |                b                 
+-----+----------------------------------
+ -10 | 1b0fd9efa5279c4203b7c70233f86dbf
+  -9 | 252e691406782824eec43d7eadc3d256
+  -8 | a8d2ec85eaf98407310b72eb73dda247
+  -7 | 74687a12d3915d3c4d83f1af7b3683d5
+  -6 | 596a3d04481816330f07e4f97510c28f
+  -5 | 47c1b025fa18ea96c33fbb6718688c0f
+  -4 | 0267aaf632e87a63288a08331f22c7c3
+  -3 | b3149ecea4628efd23d2f86e5a723472
+  -2 | 5d7b9adcbe1c629ec722529dd12e5129
+  -1 | 6bb61e3b7bce0931da574d19d1d82c88
+   0 | cfcd208495d565ef66e7dff9f98764da
+   1 | c4ca4238a0b923820dcc509a6f75849b
+   2 | c81e728d9d4c2f636f067f89cc14862c
+   3 | eccbc87e4b5ce2fe28308fd9f2a7baf3
+   5 | e4da3b7fbbce2345d7772b0674a318d5
+   7 | 8f14e45fceea167a5a36dedd4bea2543
+   8 | c9f0f895fb98ab9159f51fd0297e236d
+   9 | 45c48cce2e2d7fbdea1afc51c7c6ad26
+  10 | d3d9446802a44259755d38e6d163e820
+  11 | xxx
+  12 | xxx
+   4 | yyy
+(22 rows)
+

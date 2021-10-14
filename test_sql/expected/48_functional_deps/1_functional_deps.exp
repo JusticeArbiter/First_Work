@@ -1,0 +1,3 @@
+CREATE TEMP TABLE articles (  id int CONSTRAINT articles_pkey PRIMARY KEY,  keywords text,  title text UNIQUE NOT NULL,  body text UNIQUE,  created date  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

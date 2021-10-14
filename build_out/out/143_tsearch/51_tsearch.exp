@@ -1,0 +1,8 @@
+explain (costs off) SELECT count(*) FROM test_tsvector WHERE a @@ 'wr|qh';
+                    QUERY PLAN                     
+---------------------------------------------------
+ Aggregate
+   ->  Seq Scan on test_tsvector
+         Filter: (a @@ '''wr'' | ''qh'''::tsquery)
+(3 rows)
+

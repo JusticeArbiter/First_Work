@@ -1,0 +1,6 @@
+select 'x' ~ 'xyz(\Y\Y)+';
+ ?column? 
+----------
+ f
+(1 row)
+

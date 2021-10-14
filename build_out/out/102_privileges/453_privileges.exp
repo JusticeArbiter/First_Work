@@ -1,0 +1,2 @@
+SELECT has_sequence_privilege('regressuser1', 'x_seq', 'INSERT');
+ERROR:  22023: unrecognized privilege type: "INSERT"

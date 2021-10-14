@@ -1,0 +1,3 @@
+insert into anothertab (atcol1, atcol2) values (45, null);
+ERROR:  23514: new row for relation "anothertab" violates check constraint "anothertab_chk"
+DETAIL:  Failing row contains (45, null).

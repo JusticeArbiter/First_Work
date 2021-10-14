@@ -1,0 +1,3 @@
+ALTER TABLE tmp7 ADD CONSTRAINT identity CHECK (b = boo(b));
+NOTICE:  00000: boo: 18
+ALTER TABLE

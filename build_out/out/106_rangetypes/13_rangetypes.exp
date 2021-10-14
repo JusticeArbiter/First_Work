@@ -1,0 +1,6 @@
+select ' ( empty, empty ) '::textrange;
+      textrange       
+----------------------
+ (" empty"," empty ")
+(1 row)
+

@@ -1,0 +1,6 @@
+select * from altinhoid;
+ col 
+-----
+   1
+(1 row)
+

@@ -1,0 +1,6 @@
+SELECT count(*) FROM test_missing_target ORDER BY 1 desc;
+ count 
+-------
+    10
+(1 row)
+

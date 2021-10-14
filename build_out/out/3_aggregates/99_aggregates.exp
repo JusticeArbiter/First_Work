@@ -1,0 +1,2 @@
+create table minmaxtest2() inherits (minmaxtest);
+CREATE TABLE

@@ -1,0 +1,6 @@
+LOG:  00000: statement: select stacked_diagnostics_test();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0Z002: GET STACKED DIAGNOSTICS cannot be used outside an exception handler
+CONTEXT:  PL/pgSQL function stacked_diagnostics_test() line 1 at GET STACKED DIAGNOSTICS
+LOCATION:  exec_stmt_getdiag, pl_exec.c:1634
+STATEMENT:  select stacked_diagnostics_test();

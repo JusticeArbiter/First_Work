@@ -1,0 +1,6 @@
+LOG:  00000: statement: select rank(x) within group (order by x) from generate_series(1,5) x;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42803: column "x.x" must appear in the GROUP BY clause or be used in an aggregate function at character 13
+DETAIL:  Direct arguments of an ordered-set aggregate must use only grouped columns.
+LOCATION:  check_ungrouped_columns_walker, parse_agg.c:1328
+STATEMENT:  select rank(x) within group (order by x) from generate_series(1,5) x;

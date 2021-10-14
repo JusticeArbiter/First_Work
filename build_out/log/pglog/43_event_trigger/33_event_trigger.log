@@ -1,0 +1,8 @@
+LOG:  00000: statement: create server useless_server foreign data wrapper useless;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SERVER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create server useless_server foreign data wrapper useless;
+NOTICE:  00000: test_event_trigger: ddl_command_end CREATE SERVER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create server useless_server foreign data wrapper useless;

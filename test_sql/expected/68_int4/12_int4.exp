@@ -1,0 +1,4 @@
+INSERT INTO INT4_TBL(f1) VALUES ('- 1234');
+ERROR:  22P02: invalid input syntax for integer: "- 1234"
+LINE 1: INSERT INTO INT4_TBL(f1) VALUES ('- 1234');
+                                         ^

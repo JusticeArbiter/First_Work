@@ -1,0 +1,2 @@
+create domain domainvarchar varchar(5);
+CREATE DOMAIN

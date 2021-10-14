@@ -1,0 +1,2 @@
+INSERT INTO basictest values ('88', 'haha', 'short', '123.12');
+INSERT 0 1

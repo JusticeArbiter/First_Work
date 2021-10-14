@@ -1,0 +1,6 @@
+SELECT enum_last(NULL::planets);
+ enum_last 
+-----------
+ neptune
+(1 row)
+

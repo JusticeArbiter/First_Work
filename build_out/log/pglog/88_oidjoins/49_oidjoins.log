@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, reltoastrelid  FROM pg_catalog.pg_class fk  WHERE reltoastrelid != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.reltoastrelid);
+LOCATION:  exec_simple_query, postgres.c:938

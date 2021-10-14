@@ -1,0 +1,8 @@
+LOG:  00000: statement: create trigger child_ins_trig after insert on child  for each row execute procedure child_ins_func();
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create trigger child_ins_trig after insert on child  for each row execute procedure child_ins_func();
+ERROR:  42P01: relation "child" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  create trigger child_ins_trig after insert on child  for each row execute procedure child_ins_func();

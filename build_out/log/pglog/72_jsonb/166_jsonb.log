@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT jsonb_array_length('4');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: cannot get array length of a scalar
+LOCATION:  jsonb_array_length, jsonfuncs.c:1364
+STATEMENT:  SELECT jsonb_array_length('4');

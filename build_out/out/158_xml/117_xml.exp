@@ -1,0 +1,6 @@
+SELECT xpath('count(//*)', '<root><sub/><sub/></root>');
+ xpath 
+-------
+ {3}
+(1 row)
+

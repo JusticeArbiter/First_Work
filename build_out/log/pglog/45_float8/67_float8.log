@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO FLOAT8_TBL(f1) VALUES ('10e400');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: "10e400" is out of range for type double precision at character 36
+LOCATION:  float8in, float.c:483
+STATEMENT:  INSERT INTO FLOAT8_TBL(f1) VALUES ('10e400');

@@ -1,0 +1,2 @@
+alter table atacc3 inherit atacc2;
+ERROR:  42804: child table "atacc3" has different type for column "test2"

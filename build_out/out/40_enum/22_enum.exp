@@ -1,0 +1,2 @@
+create type insenum as enum ('L1', 'L2');
+CREATE TYPE

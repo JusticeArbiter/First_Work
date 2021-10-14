@@ -1,0 +1,2 @@
+SELECT regexp_replace('AAA aaa', 'A+', 'Z', 'z');
+ERROR:  22023: invalid regexp option: "z"

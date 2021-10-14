@@ -1,0 +1,6 @@
+SELECT cast('12345' as domainvarchar);
+ domainvarchar 
+---------------
+ 12345
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: reset check_function_bodies;
+LOCATION:  exec_simple_query, postgres.c:938

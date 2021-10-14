@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE EVENT TRIGGER regress_event_trigger_report_dropped ON sql_drop  EXECUTE PROCEDURE event_trigger_report_dropped();
+LOCATION:  exec_simple_query, postgres.c:938

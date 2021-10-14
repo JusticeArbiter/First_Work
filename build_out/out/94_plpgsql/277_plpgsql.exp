@@ -1,0 +1,3 @@
+update PSlot set slotlink = 'XX.illegal' where slotname = 'PS.base.a1';
+ERROR:  P0001: illegal slotlink beginning with XX
+CONTEXT:  PL/pgSQL function tg_slotlink_a() line 1 at assignment

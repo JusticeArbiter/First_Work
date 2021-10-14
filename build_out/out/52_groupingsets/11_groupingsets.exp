@@ -1,0 +1,4 @@
+select a, b, grouping(a,b), sum(v), count(*), max(v)  from gstest1 group by rollup (a,b) order by b desc, a;
+ERROR:  42P01: relation "gstest1" does not exist
+LINE 1: ... b, grouping(a,b), sum(v), count(*), max(v)  from gstest1 gr...
+                                                             ^

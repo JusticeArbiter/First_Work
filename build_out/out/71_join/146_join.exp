@@ -1,0 +1,4 @@
+select tt1.*, tt2.* from tt1 left join tt2 on tt1.joincol = tt2.joincol;
+ERROR:  42703: column tt1.joincol does not exist
+LINE 1: select tt1.*, tt2.* from tt1 left join tt2 on tt1.joincol = ...
+                                                      ^

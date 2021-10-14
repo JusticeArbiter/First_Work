@@ -1,0 +1,2 @@
+select has_table_privilege('nosuchuser','pg_authid','select');
+ERROR:  42704: role "nosuchuser" does not exist

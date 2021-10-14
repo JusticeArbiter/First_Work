@@ -1,0 +1,6 @@
+SELECT to_regoperator('++(int4,int4)');
+ to_regoperator 
+----------------
+ 
+(1 row)
+

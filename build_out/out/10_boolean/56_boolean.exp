@@ -1,0 +1,4 @@
+INSERT INTO BOOLTBL2 (f1)  VALUES (bool 'XXX');
+ERROR:  22P02: invalid input syntax for type boolean: "XXX"
+LINE 1: INSERT INTO BOOLTBL2 (f1)  VALUES (bool 'XXX');
+                                                ^

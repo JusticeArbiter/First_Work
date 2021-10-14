@@ -1,0 +1,6 @@
+SELECT CONVERT('foo', 'WIN1251', 'WIN866');
+ convert  
+----------
+ \x666f6f
+(1 row)
+

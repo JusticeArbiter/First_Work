@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT * FROM tvvm FOR SHARE;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: cannot lock rows in materialized view "tvvm"
+LOCATION:  CheckValidRowMarkRel, execMain.c:1182
+STATEMENT:  SELECT * FROM tvvm FOR SHARE;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO CIRCLE_TBL VALUES ('(3,(1,2),3)');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type circle: "(3,(1,2),3)" at character 32
+LOCATION:  circle_in, geo_ops.c:4629
+STATEMENT:  INSERT INTO CIRCLE_TBL VALUES ('(3,(1,2),3)');

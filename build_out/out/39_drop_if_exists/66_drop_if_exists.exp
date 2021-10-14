@@ -1,0 +1,3 @@
+DROP FUNCTION IF EXISTS test_function_exists();
+NOTICE:  00000: function test_function_exists() does not exist, skipping
+DROP FUNCTION

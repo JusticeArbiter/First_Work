@@ -1,0 +1,8 @@
+SELECT * from ts_debug('english', '5aew.werc.ewr:8100/?xx');
+  alias   | description |         token          | dictionaries | dictionary |         lexemes          
+----------+-------------+------------------------+--------------+------------+--------------------------
+ url      | URL         | 5aew.werc.ewr:8100/?xx | {simple}     | simple     | {5aew.werc.ewr:8100/?xx}
+ host     | Host        | 5aew.werc.ewr:8100     | {simple}     | simple     | {5aew.werc.ewr:8100}
+ url_path | URL path    | /?xx                   | {simple}     | simple     | {/?xx}
+(3 rows)
+

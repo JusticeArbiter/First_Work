@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, classoid  FROM pg_catalog.pg_shdescription fk  WHERE classoid != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.classoid);
+LOCATION:  exec_simple_query, postgres.c:938

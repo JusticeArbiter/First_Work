@@ -1,0 +1,4 @@
+ALTER FOREIGN DATA WRAPPER foo VALIDATOR postgresql_fdw_validator;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN DATA WRAPPER
+WARNING:  01000: changing the foreign-data wrapper validator can cause the options for dependent objects to become invalid
+ALTER FOREIGN DATA WRAPPER

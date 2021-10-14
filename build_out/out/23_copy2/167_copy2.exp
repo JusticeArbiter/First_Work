@@ -1,0 +1,2 @@
+DROP FUNCTION truncate_in_subxact();
+DROP FUNCTION

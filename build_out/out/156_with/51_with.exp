@@ -1,0 +1,10 @@
+WITH RECURSIVE  y (id) AS (VALUES (1)),  x (id) AS (SELECT * FROM y UNION ALL SELECT id+1 FROM x WHERE id < 5)  SELECT * FROM x;
+ id 
+----
+  1
+  2
+  3
+  4
+  5
+(5 rows)
+

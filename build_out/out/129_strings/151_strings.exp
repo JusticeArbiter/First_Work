@@ -1,0 +1,6 @@
+SELECT 'unknown' || ' and unknown' AS "Concat unknown types";
+ Concat unknown types 
+----------------------
+ unknown and unknown
+(1 row)
+

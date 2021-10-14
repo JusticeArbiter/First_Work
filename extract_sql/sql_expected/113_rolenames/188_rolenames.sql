@@ -1,0 +1,1 @@
+DROP USER MAPPING FOR "Public" SERVER sv7;

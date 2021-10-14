@@ -1,0 +1,1 @@
+INSERT INTO foo2 VALUES(2, 22);

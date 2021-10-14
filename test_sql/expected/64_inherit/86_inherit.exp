@@ -1,0 +1,4 @@
+insert into foo2 values(2,2,2);
+ERROR:  42P01: relation "foo2" does not exist
+LINE 1: insert into foo2 values(2,2,2);
+                    ^

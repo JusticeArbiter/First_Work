@@ -1,0 +1,1 @@
+COPY x from stdin;

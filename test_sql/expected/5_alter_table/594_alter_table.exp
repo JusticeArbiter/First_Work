@@ -1,0 +1,2 @@
+alter table atacc1 add foreign key ("........pg.dropped.1........") references atacc2(id);
+ERROR:  42703: column "........pg.dropped.1........" referenced in foreign key constraint does not exist

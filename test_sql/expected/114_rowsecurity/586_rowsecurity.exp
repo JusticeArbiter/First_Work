@@ -1,0 +1,8 @@
+EXPLAIN (COSTS OFF) UPDATE current_check SET payload = payload WHERE CURRENT OF current_check_cursor;
+                    QUERY PLAN                     
+---------------------------------------------------
+ Update on current_check
+   ->  Tid Scan on current_check
+         TID Cond: CURRENT OF current_check_cursor
+(3 rows)
+

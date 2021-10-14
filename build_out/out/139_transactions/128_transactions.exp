@@ -1,0 +1,2 @@
+DELETE FROM savepoints WHERE a=2;
+DELETE 1

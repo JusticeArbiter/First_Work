@@ -1,0 +1,5 @@
+create function end_label2() returns void as $$  begin  for _i in 1 .. 10 loop  exit;  end loop flbl1;  end;  $$ language plpgsql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42601: label does not exist at or near "flbl1"
+LINE 1: ...$  begin  for _i in 1 .. 10 loop  exit;  end loop flbl1;  en...
+                                                             ^

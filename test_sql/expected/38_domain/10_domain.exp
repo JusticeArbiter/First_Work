@@ -1,0 +1,2 @@
+create domain domaintext text;
+CREATE DOMAIN

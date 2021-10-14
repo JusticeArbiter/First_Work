@@ -1,0 +1,2 @@
+delete from rtest_t5;
+DELETE 3

@@ -1,0 +1,51 @@
+ERROR:  column "abc" does not exist
+LINE 1: select abc
+               ^
+psql:st.sql:1: ERROR:  column "aaa" does not exist
+LINE 1: select aaa;
+               ^
+******
+st.sql
+./3.sh: line 6: st.sql: command not found
+******
+st.sql
+./3.sh: line 6: st.sql: command not found
+******
+/home/highgo/backup_recovery_sh/scripts/ceshi/st.sql
+ERROR:  column "aaa" does not exist
+LINE 1: select aaa;
+               ^
+******
+/home/highgo/backup_recovery_sh/scripts/ceshi/st.sql
+ERROR:  column "aaa" does not exist
+LINE 1: select aaa;
+               ^
+******
+/home/highgo/backup_recovery_sh/scripts/ceshi/st.sql
+ERROR:  column "aaa" does not exist
+LINE 1: select aaa;
+               ^
+
+******
+/home/highgo/backup_recovery_sh/scripts/ceshi/st.sql
+ERROR:  column "aaa" does not exist
+LINE 1: select aaa;
+               ^
+******
+/home/highgo/backup_recovery_sh/scripts/ceshi/st.sql
+ERROR:  column "aaa" does not exist
+LINE 1: select aaa;
+               ^
+
+******
+/home/highgo/backup_recovery_sh/scripts/ceshi/st.sql
+ERROR:  column "aaa" does not exist
+LINE 1: select aaa;
+               ^
+
+******
+/home/highgo/backup_recovery_sh/scripts/ceshi/st.sql
+ERROR:  column "aaa" does not exist
+LINE 1: select aaa;
+               ^
+

@@ -1,0 +1,5 @@
+ALTER TABLE evttrig.two DROP COLUMN col_c;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+NOTICE:  00000: NORMAL: orig=t normal=f istemp=f type=table column identity=evttrig.two.col_c name={evttrig,two,col_c} args={}
+NOTICE:  00000: NORMAL: orig=f normal=t istemp=f type=table constraint identity=two_col_c_check on evttrig.two name={evttrig,two,two_col_c_check} args={}
+ALTER TABLE

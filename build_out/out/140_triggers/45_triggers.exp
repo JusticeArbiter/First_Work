@@ -1,0 +1,2 @@
+insert into tttest values (2, 2, null);
+INSERT 0 1

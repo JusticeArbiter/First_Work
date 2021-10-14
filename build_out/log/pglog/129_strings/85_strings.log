@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT regexp_split_to_array('thE QUick bROWn FOx jUMPs ovEr The lazy dOG', 'e', 'iz');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: invalid regexp option: "z"
+LOCATION:  parse_re_flags, regexp.c:423
+STATEMENT:  SELECT regexp_split_to_array('thE QUick bROWn FOx jUMPs ovEr The lazy dOG', 'e', 'iz');

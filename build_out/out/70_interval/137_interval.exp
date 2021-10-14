@@ -1,0 +1,6 @@
+select interval 'P00021015T103020' AS "ISO8601 Basic Format",  interval 'P0002-10-15T10:30:20' AS "ISO8601 Extended Format";
+       ISO8601 Basic Format       |     ISO8601 Extended Format      
+----------------------------------+----------------------------------
+ 2 years 10 mons 15 days 10:30:20 | 2 years 10 mons 15 days 10:30:20
+(1 row)
+

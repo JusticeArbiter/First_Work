@@ -1,0 +1,2 @@
+LOG:  00000: statement: DELETE FROM old_system_table WHERE othercol = 'somedata';
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+select reltoastrelid, relkind, relfrozenxid  from pg_class where oid = 'fooview'::regclass;
+ reltoastrelid | relkind | relfrozenxid 
+---------------+---------+--------------
+             0 | v       |            0
+(1 row)
+

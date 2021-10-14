@@ -1,0 +1,2 @@
+LOG:  00000: statement: CLUSTER clstr_2 USING clstr_2_pkey;
+LOCATION:  exec_simple_query, postgres.c:938

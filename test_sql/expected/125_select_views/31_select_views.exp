@@ -1,0 +1,8 @@
+SELECT * FROM my_property_secure v  WHERE f_leak('passwd') AND f_leak(passwd);
+NOTICE:  00000: f_leak => passwd
+NOTICE:  00000: f_leak => passwd
+NOTICE:  00000: f_leak => passwd
+ cid | name | tel | passwd 
+-----+------+-----+--------
+(0 rows)
+

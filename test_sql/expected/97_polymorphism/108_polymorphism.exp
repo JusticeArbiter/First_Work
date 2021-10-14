@@ -1,0 +1,3 @@
+CREATE AGGREGATE array_cat_accum (anyarray)  (  sfunc = array_cat,  stype = anyarray,  initcond = '{}'  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE AGGREGATE
+CREATE AGGREGATE

@@ -1,0 +1,12 @@
+explain (costs off) select * from nv_parent where d between '2009-08-01'::date and '2009-08-31'::date;
+                                QUERY PLAN                                 
+---------------------------------------------------------------------------
+ Append
+   ->  Seq Scan on nv_parent
+         Filter: ((d >= '2009-08-01'::date) AND (d <= '2009-08-31'::date))
+   ->  Seq Scan on nv_child_2010
+         Filter: ((d >= '2009-08-01'::date) AND (d <= '2009-08-31'::date))
+   ->  Seq Scan on nv_child_2009
+         Filter: ((d >= '2009-08-01'::date) AND (d <= '2009-08-31'::date))
+(7 rows)
+

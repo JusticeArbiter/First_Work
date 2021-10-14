@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM jsonb_each_text('{"a":{"b":"c","c":"b","1":"first"},"b":[1,2],"c":"cc","1":"first","n":null}'::jsonb) AS q;
+LOCATION:  exec_simple_query, postgres.c:938

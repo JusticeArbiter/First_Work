@@ -1,0 +1,70 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT *                                                                         +
+    INTO TABLE tmp1                                                                          +
+    FROM onek                                                                                +
+    WHERE onek.unique1 < 2;
+ statement: DROP TABLE tmp1;
+ statement: SELECT *                                                                         +
+    INTO TABLE tmp1                                                                          +
+    FROM onek2                                                                               +
+    WHERE onek2.unique1 < 2;
+ statement: DROP TABLE tmp1;
+ statement: CREATE SCHEMA selinto_schema;
+ statement: CREATE USER selinto_user;
+ statement: ALTER DEFAULT PRIVILEGES FOR ROLE selinto_user                                   +
+           REVOKE INSERT ON TABLES FROM selinto_user;
+ statement: GRANT ALL ON SCHEMA selinto_schema TO public;
+ statement: SET SESSION AUTHORIZATION selinto_user;
+ statement: SELECT * INTO TABLE selinto_schema.tmp1                                          +
+           FROM pg_class WHERE relname like '%a%';
+ statement: SELECT oid AS clsoid, relname, relnatts + 10 AS x                                +
+           INTO selinto_schema.tmp2                                                          +
+           FROM pg_class WHERE relname like '%b%';
+ statement: CREATE TABLE selinto_schema.tmp3 (a,b,c)                                         +
+            AS SELECT oid,relname,relacl FROM pg_class                                       +
+            WHERE relname like '%c%';
+ statement: RESET SESSION AUTHORIZATION;
+ statement: ALTER DEFAULT PRIVILEGES FOR ROLE selinto_user                                   +
+           GRANT INSERT ON TABLES TO selinto_user;
+ statement: SET SESSION AUTHORIZATION selinto_user;
+ statement: SELECT * INTO TABLE selinto_schema.tmp1                                          +
+           FROM pg_class WHERE relname like '%a%';
+ statement: SELECT oid AS clsoid, relname, relnatts + 10 AS x                                +
+           INTO selinto_schema.tmp2                                                          +
+           FROM pg_class WHERE relname like '%b%';
+ statement: CREATE TABLE selinto_schema.tmp3 (a,b,c)                                         +
+            AS SELECT oid,relname,relacl FROM pg_class                                       +
+            WHERE relname like '%c%';
+ statement: RESET SESSION AUTHORIZATION;
+ statement: DROP SCHEMA selinto_schema CASCADE;
+ statement: DROP USER selinto_user;
+ statement: CREATE TABLE ctas_base (i int, j int);
+ statement: INSERT INTO ctas_base VALUES (1, 2);
+ statement: CREATE TABLE ctas_nodata (ii, jj, kk) AS SELECT i, j FROM ctas_base;
+ statement: CREATE TABLE ctas_nodata (ii, jj, kk) AS SELECT i, j FROM ctas_base WITH NO DATA;
+ statement: CREATE TABLE ctas_nodata (ii, jj) AS SELECT i, j FROM ctas_base;
+ statement: CREATE TABLE ctas_nodata_2 (ii, jj) AS SELECT i, j FROM ctas_base WITH NO DATA;
+ statement: CREATE TABLE ctas_nodata_3 (ii) AS SELECT i, j FROM ctas_base;
+ statement: CREATE TABLE ctas_nodata_4 (ii) AS SELECT i, j FROM ctas_base WITH NO DATA;
+ statement: SELECT * FROM ctas_nodata;
+ statement: SELECT * FROM ctas_nodata_2;
+ statement: SELECT * FROM ctas_nodata_3;
+ statement: SELECT * FROM ctas_nodata_4;
+ statement: DROP TABLE ctas_base;
+ statement: DROP TABLE ctas_nodata;
+ statement: DROP TABLE ctas_nodata_2;
+ statement: DROP TABLE ctas_nodata_3;
+ statement: DROP TABLE ctas_nodata_4;
+ statement: CREATE FUNCTION make_table() RETURNS VOID                                        +
+ AS $$                                                                                       +
+   CREATE TABLE created_table AS SELECT * FROM int8_tbl;                                     +
+ $$ LANGUAGE SQL;
+ statement: SELECT make_table();
+ statement: SELECT * FROM created_table;
+ statement: DROP TABLE created_table;
+ statement: DECLARE foo CURSOR FOR SELECT 1 INTO b;
+ statement: COPY (SELECT 1 INTO frak UNION SELECT 2) TO 'blob';
+ statement: SELECT * FROM (SELECT 1 INTO f) bar;
+ statement: CREATE VIEW foo AS SELECT 1 INTO b;
+ statement: INSERT INTO b SELECT 1 INTO f;
+

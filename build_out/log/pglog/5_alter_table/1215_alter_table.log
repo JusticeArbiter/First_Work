@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO test_drop_constr_child (c) VALUES (NULL);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: new row for relation "test_drop_constr_child" violates check constraint "test_drop_constr_parent_c_check"
+DETAIL:  Failing row contains (null).
+LOCATION:  ExecConstraints, execMain.c:1725
+STATEMENT:  INSERT INTO test_drop_constr_child (c) VALUES (NULL);

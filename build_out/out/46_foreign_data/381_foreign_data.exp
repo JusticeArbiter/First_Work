@@ -1,0 +1,3 @@
+GRANT USAGE ON FOREIGN DATA WRAPPER postgresql TO regress_test_role;
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+GRANT

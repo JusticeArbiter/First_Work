@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT TRIM(TRAILING FROM ' bunch o blanks ') = ' bunch o blanks' AS " bunch o blanks";
+LOCATION:  exec_simple_query, postgres.c:938

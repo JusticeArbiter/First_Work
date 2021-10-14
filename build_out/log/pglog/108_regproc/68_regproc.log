@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT to_regrole('foo.bar');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42602: invalid name syntax
+LOCATION:  to_regrole, regproc.c:1619
+STATEMENT:  SELECT to_regrole('foo.bar');

@@ -1,0 +1,6 @@
+select report_guc('work_mem'), current_setting('work_mem');
+ report_guc | current_setting 
+------------+-----------------
+ 4MB        | 4MB
+(1 row)
+

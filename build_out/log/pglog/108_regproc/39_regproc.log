@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT regtype('int3');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: type "int3" does not exist at character 16
+LOCATION:  parseTypeString, parse_type.c:797
+STATEMENT:  SELECT regtype('int3');

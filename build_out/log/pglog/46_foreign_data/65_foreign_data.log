@@ -1,0 +1,6 @@
+LOG:  00000: statement: DROP ROLE regress_test_role_super;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: role "regress_test_role_super" cannot be dropped because some objects depend on it
+DETAIL:  owner of foreign-data wrapper foo
+LOCATION:  DropRole, user.c:1027
+STATEMENT:  DROP ROLE regress_test_role_super;

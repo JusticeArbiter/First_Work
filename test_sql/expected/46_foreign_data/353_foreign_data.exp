@@ -1,0 +1,6 @@
+SELECT has_server_privilege('regress_test_role', 's8', 'USAGE');
+ has_server_privilege 
+----------------------
+ t
+(1 row)
+

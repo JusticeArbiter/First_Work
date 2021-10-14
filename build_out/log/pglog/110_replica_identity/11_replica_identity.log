@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT relreplident FROM pg_class WHERE oid = 'pg_class'::regclass;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 'foo' LIKE '_%' as t, 'f' LIKE '_%' as t, '' LIKE '_%' as f;
+LOCATION:  exec_simple_query, postgres.c:938

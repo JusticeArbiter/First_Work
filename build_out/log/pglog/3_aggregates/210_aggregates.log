@@ -1,0 +1,5 @@
+LOG:  00000: statement: select rank(3) within group (order by x) from (values ('fred'),('jim')) v(x);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: WITHIN GROUP types text and integer cannot be matched at character 13
+LOCATION:  select_common_type, parse_coerce.c:1264
+STATEMENT:  select rank(3) within group (order by x) from (values ('fred'),('jim')) v(x);

@@ -1,0 +1,2 @@
+LOCK hs1 IN ROW EXCLUSIVE MODE;
+ERROR:  25P01: LOCK TABLE can only be used in transaction blocks

@@ -1,0 +1,2 @@
+FETCH backward 18 in foo6;
+ERROR:  34000: cursor "foo6" does not exist

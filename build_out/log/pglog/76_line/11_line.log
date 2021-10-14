@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO LINE_TBL VALUES ('(3asdf,2 ,3,4r2)');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type line: "(3asdf,2 ,3,4r2)" at character 30
+LOCATION:  line_in, geo_ops.c:1008
+STATEMENT:  INSERT INTO LINE_TBL VALUES ('(3asdf,2 ,3,4r2)');

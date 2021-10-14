@@ -1,0 +1,10 @@
+explain (costs off) SELECT count(*) FROM test_tsvector WHERE a @@ 'wr|qh';
+                         QUERY PLAN                          
+-------------------------------------------------------------
+ Aggregate
+   ->  Bitmap Heap Scan on test_tsvector
+         Recheck Cond: (a @@ '''wr'' | ''qh'''::tsquery)
+         ->  Bitmap Index Scan on wowidx
+               Index Cond: (a @@ '''wr'' | ''qh'''::tsquery)
+(5 rows)
+

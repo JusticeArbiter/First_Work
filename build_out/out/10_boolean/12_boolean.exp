@@ -1,0 +1,4 @@
+SELECT bool 'yeah' AS error;
+ERROR:  22P02: invalid input syntax for type boolean: "yeah"
+LINE 1: SELECT bool 'yeah' AS error;
+                    ^

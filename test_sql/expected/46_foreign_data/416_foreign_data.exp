@@ -1,0 +1,16 @@
+SELECT um.srvname AS "Server",  um.usename AS "User name",  CASE WHEN umoptions IS NULL THEN '' ELSE '(' || pg_catalog.array_to_string(ARRAY(SELECT pg_catalog.quote_ident(option_name) || ' ' || pg_catalog.quote_literal(option_value) FROM pg_catalog.pg_options_to_table(umoptions)), ', ') || ')' END AS "FDW Options"  FROM pg_catalog.pg_user_mappings um  ORDER BY 1, 2;
+     Server     |     User name     |     FDW Options     
+----------------+-------------------+---------------------
+ s10            | public            | ("user" 'secret')
+ s10            | unprivileged_role | ("user" 'secret')
+ s4             | highgo            | 
+ s4             | public            | 
+ s5             | highgo            | (modified '1')
+ s6             | highgo            | (username 'test')
+ s6             | public            | 
+ s7             | highgo            | 
+ s8             | highgo            | (password 'public')
+ t1             | public            | (modified '1')
+ useless_server | regression_bob    | 
+(11 rows)
+

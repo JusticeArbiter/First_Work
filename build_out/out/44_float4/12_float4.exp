@@ -1,0 +1,4 @@
+INSERT INTO FLOAT4_TBL(f1) VALUES (' ');
+ERROR:  22P02: invalid input syntax for type real: " "
+LINE 1: INSERT INTO FLOAT4_TBL(f1) VALUES (' ');
+                                           ^

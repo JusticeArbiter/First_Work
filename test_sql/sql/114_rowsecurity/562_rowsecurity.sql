@@ -1,0 +1,1 @@
+COPY copy_t FROM STDIN;

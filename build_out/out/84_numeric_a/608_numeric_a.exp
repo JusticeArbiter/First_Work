@@ -1,0 +1,6 @@
+SELECT '' AS to_number_12, to_number('.01-', '99.99S');
+ to_number_12 | to_number 
+--------------+-----------
+              |     -0.01
+(1 row)
+

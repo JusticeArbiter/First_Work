@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE city_view SET country_name = 'UK'  WHERE city_name = 'Cambridge' RETURNING *;
+LOCATION:  exec_simple_query, postgres.c:938

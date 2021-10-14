@@ -1,0 +1,6 @@
+SELECT 'Wed Jul 11 10:51:14 America/New_York 2001'::timestamptz;
+      timestamptz       
+------------------------
+ 2001-07-11 22:51:14+08
+(1 row)
+

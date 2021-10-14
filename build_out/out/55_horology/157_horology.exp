@@ -1,0 +1,12 @@
+SELECT '' AS seven, f1 AS us_postgres FROM ABSTIME_TBL;
+ seven |      us_postgres       
+-------+------------------------
+       | 1973-01-14 03:14:21+08
+       | 1995-05-01 00:30:30+08
+       | 1970-01-01 08:00:00+08
+       | infinity
+       | -infinity
+       | 1947-05-10 23:59:12+08
+       | invalid
+(7 rows)
+

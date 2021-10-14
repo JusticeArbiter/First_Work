@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO inhe VALUES ('ee-col1', 'ee-col2', DEFAULT, 'ee-col4');
+LOCATION:  exec_simple_query, postgres.c:938

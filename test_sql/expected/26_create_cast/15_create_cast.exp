@@ -1,0 +1,6 @@
+SELECT 1234::int4::casttesttype;
+ casttesttype 
+--------------
+ 1234
+(1 row)
+

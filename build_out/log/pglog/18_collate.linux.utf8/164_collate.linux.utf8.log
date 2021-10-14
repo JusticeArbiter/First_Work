@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER COLLATION test0 RENAME TO test11;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: collation "test11" for encoding "UTF8" already exists in schema "public"
+LOCATION:  IsThereCollationInNamespace, collationcmds.c:168
+STATEMENT:  ALTER COLLATION test0 RENAME TO test11;

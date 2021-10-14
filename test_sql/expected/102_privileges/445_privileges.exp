@@ -1,0 +1,8 @@
+SELECT dogrant_fails();
+NOTICE:  00000: role "regressuser5" is already a member of role "regressgroup2"
+CONTEXT:  SQL function "dogrant_fails" statement 1
+ dogrant_fails 
+---------------
+ 
+(1 row)
+

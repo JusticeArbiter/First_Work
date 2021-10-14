@@ -1,0 +1,2 @@
+alter text search parser alter1.prs set schema alter2;
+ALTER TEXT SEARCH PARSER

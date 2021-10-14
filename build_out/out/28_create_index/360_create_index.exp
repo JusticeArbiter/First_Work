@@ -1,0 +1,3 @@
+CREATE UNIQUE INDEX CONCURRENTLY concur_index3 ON concur_heap(f2);
+ERROR:  23505: could not create unique index "concur_index3"
+DETAIL:  Key (f2)=(b) is duplicated.

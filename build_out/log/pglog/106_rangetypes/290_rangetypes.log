@@ -1,0 +1,2 @@
+LOG:  00000: statement: select arrayrange(ARRAY[1,2], ARRAY[2,1]);
+LOCATION:  exec_simple_query, postgres.c:938

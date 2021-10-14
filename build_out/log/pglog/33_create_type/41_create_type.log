@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT format_type(atttypid,atttypmod) FROM pg_attribute  WHERE attrelid = 'mytab'::regclass AND attnum > 0;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "mytab" does not exist at character 76
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  SELECT format_type(atttypid,atttypmod) FROM pg_attribute  WHERE attrelid = 'mytab'::regclass AND attnum > 0;

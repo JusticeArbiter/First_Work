@@ -1,0 +1,4 @@
+UPDATE trigger_test SET f3 = 'bar';
+NOTICE:  00000: row 1 not changed
+NOTICE:  00000: row 2 changed
+UPDATE 2

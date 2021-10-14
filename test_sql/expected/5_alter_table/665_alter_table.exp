@@ -1,0 +1,2 @@
+alter table only renameColumn add column x int;
+ERROR:  42P16: column must be added to child tables too

@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO query VALUES ('/menu/beers/cost[text() = ''lots'']');
+LOCATION:  exec_simple_query, postgres.c:938

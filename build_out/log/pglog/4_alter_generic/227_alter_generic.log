@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf17 USING btree ADD OPERATOR 1 < (int4, int4);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: operator 1(integer,integer) already exists in operator family "alt_opf17"
+LOCATION:  storeOperators, opclasscmds.c:1318
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf17 USING btree ADD OPERATOR 1 < (int4, int4);

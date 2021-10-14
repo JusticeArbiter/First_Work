@@ -1,0 +1,6 @@
+select namedparmcursor_test2(20, 20);
+ namedparmcursor_test2 
+-----------------------
+ f
+(1 row)
+

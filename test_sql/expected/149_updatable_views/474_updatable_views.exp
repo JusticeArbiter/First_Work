@@ -1,0 +1,11 @@
+EXPLAIN (costs off) SELECT * FROM rw_view2 WHERE snoop(person);
+                     QUERY PLAN                      
+-----------------------------------------------------
+ Subquery Scan on rw_view2
+   Filter: snoop(rw_view2.person)
+   ->  Subquery Scan on rw_view1
+         Filter: snoop(rw_view1.person)
+         ->  Seq Scan on base_tbl
+               Filter: (visibility = 'public'::text)
+(6 rows)
+

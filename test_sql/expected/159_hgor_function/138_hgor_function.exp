@@ -1,0 +1,6 @@
+select least(1,3,5,10);
+ least 
+-------
+     1
+(1 row)
+

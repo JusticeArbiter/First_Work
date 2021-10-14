@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TEMP TABLE PKTABLE (ptest1 int primary key);
+LOCATION:  exec_simple_query, postgres.c:938

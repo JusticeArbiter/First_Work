@@ -1,0 +1,6 @@
+INSERT INTO hats VALUES ('h8', 'forbidden') RETURNING *;
+ hat_name | hat_color 
+----------+-----------
+(0 rows)
+
+INSERT 0 0

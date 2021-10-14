@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX hash_txt_index ON hash_txt_heap USING hash (random text_ops);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "hash_txt_heap" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX hash_txt_index ON hash_txt_heap USING hash (random text_ops);

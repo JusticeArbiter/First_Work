@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT unique1, unique2 INTO onek_with_null FROM onek;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "onek" does not exist at character 50
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT unique1, unique2 INTO onek_with_null FROM onek;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT interval '123 11' day;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type interval: "123 11" at character 17
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  SELECT interval '123 11' day;

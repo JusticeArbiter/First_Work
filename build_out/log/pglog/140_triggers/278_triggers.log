@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE city_view SET continent = 'EU' WHERE continent = 'Europe' RETURNING *;
+LOCATION:  exec_simple_query, postgres.c:938

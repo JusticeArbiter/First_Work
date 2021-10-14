@@ -1,0 +1,8 @@
+LOG:  00000: statement: alter table bc drop constraint ac_aa_check;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  alter table bc drop constraint ac_aa_check;
+ERROR:  42P16: cannot drop inherited constraint "ac_aa_check" of relation "bc"
+LOCATION:  ATExecDropConstraint, tablecmds.c:7702
+STATEMENT:  alter table bc drop constraint ac_aa_check;

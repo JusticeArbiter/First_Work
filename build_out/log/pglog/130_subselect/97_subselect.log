@@ -1,0 +1,5 @@
+LOG:  00000: statement: select  ( select min(tb.id) from tb  where tb.aval = (select ta.val from ta where ta.id = tc.aid) ) as min_tb_id  from tc;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tc" does not exist at character 120
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select  ( select min(tb.id) from tb  where tb.aval = (select ta.val from ta where ta.id = tc.aid) ) as min_tb_id  from tc;

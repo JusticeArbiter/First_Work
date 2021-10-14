@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT txid_snapshot '1:9223372036854775807:3';
+LOCATION:  exec_simple_query, postgres.c:938

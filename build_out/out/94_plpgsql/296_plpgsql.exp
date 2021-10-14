@@ -1,0 +1,7 @@
+SELECT * FROM test_ret_set_rec_dyn(1500) AS (a int, b int, c int);
+ a | b  | c  
+---+----+----
+ 5 | 10 | 15
+ 5 | 10 | 15
+(2 rows)
+

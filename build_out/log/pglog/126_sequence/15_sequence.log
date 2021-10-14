@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO serialTest2 (f1, f6)  VALUES ('bogus', -9223372036854775809);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: bigint out of range
+LOCATION:  numeric_int8, numeric.c:2951
+STATEMENT:  INSERT INTO serialTest2 (f1, f6)  VALUES ('bogus', -9223372036854775809);

@@ -1,0 +1,4 @@
+insert into arrtest_i values(9,'cat2',30);
+ERROR:  42P01: relation "arrtest_i" does not exist
+LINE 1: insert into arrtest_i values(9,'cat2',30);
+                    ^

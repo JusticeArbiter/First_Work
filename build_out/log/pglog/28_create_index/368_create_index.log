@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE INDEX std_index on concur_heap(f2);
+LOCATION:  exec_simple_query, postgres.c:938

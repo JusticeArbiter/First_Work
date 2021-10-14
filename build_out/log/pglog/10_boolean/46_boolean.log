@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS t_3, BOOLTBL1.*  FROM BOOLTBL1  WHERE f1 = bool 'true';
+LOCATION:  exec_simple_query, postgres.c:938

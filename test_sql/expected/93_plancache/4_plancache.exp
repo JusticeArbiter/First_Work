@@ -1,0 +1,4 @@
+PREPARE prepstmt2(bigint) AS SELECT * FROM pcachetest WHERE q1 = $1;
+ERROR:  42P01: relation "pcachetest" does not exist
+LINE 1: PREPARE prepstmt2(bigint) AS SELECT * FROM pcachetest WHERE ...
+                                                   ^

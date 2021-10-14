@@ -1,0 +1,2 @@
+DROP TEXT SEARCH PARSER test_tsparser_exists;
+ERROR:  42704: text search parser "test_tsparser_exists" does not exist

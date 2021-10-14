@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO rw_view15 (a) VALUES (4);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: cannot insert into column "upper" of view "rw_view15"
+DETAIL:  View columns that are not columns of their base relation are not updatable.
+LOCATION:  rewriteTargetView, rewriteHandler.c:2751
+STATEMENT:  INSERT INTO rw_view15 (a) VALUES (4);

@@ -1,0 +1,4 @@
+INSERT INTO department VALUES (5, 0, 'E');
+ERROR:  42P01: relation "department" does not exist
+LINE 1: INSERT INTO department VALUES (5, 0, 'E');
+                    ^

@@ -1,0 +1,7 @@
+select conrelid::regclass::text as relname, conname,  convalidated, conislocal, coninhcount, connoinherit  from pg_constraint where conname like 'inh\_check\_constraint%'  order by 1, 2;
+         relname         |       conname        | convalidated | conislocal | coninhcount | connoinherit 
+-------------------------+----------------------+--------------+------------+-------------+--------------
+ invalid_check_con       | inh_check_constraint | f            | t          |           0 | f
+ invalid_check_con_child | inh_check_constraint | t            | t          |           1 | f
+(2 rows)
+

@@ -1,0 +1,6 @@
+SELECT has_foreign_data_wrapper_privilege('foo', 'USAGE');
+ has_foreign_data_wrapper_privilege 
+------------------------------------
+ t
+(1 row)
+

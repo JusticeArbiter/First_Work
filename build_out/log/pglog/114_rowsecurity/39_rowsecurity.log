@@ -1,0 +1,14 @@
+LOG:  00000: statement: SELECT * FROM document TABLESAMPLE BERNOULLI(50) REPEATABLE(0)  WHERE f_leak(dtitle) ORDER BY did;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: f_leak => my first manga
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM document TABLESAMPLE BERNOULLI(50) REPEATABLE(0)  WHERE f_leak(dtitle) ORDER BY did;
+NOTICE:  00000: f_leak => my second manga
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM document TABLESAMPLE BERNOULLI(50) REPEATABLE(0)  WHERE f_leak(dtitle) ORDER BY did;
+NOTICE:  00000: f_leak => great science fiction
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM document TABLESAMPLE BERNOULLI(50) REPEATABLE(0)  WHERE f_leak(dtitle) ORDER BY did;
+NOTICE:  00000: f_leak => great manga
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM document TABLESAMPLE BERNOULLI(50) REPEATABLE(0)  WHERE f_leak(dtitle) ORDER BY did;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: EXPLAIN (COSTS OFF)  SELECT * FROM polygon_tbl WHERE f1 ~ '((1,1),(2,2),(2,1))'::polygon  ORDER BY (poly_center(f1))[0];
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "polygon_tbl" does not exist at character 36
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  EXPLAIN (COSTS OFF)  SELECT * FROM polygon_tbl WHERE f1 ~ '((1,1),(2,2),(2,1))'::polygon  ORDER BY (poly_center(f1))[0];

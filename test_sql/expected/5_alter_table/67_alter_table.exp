@@ -1,0 +1,5 @@
+SELECT * FROM tmp_new;
+ regtable 
+----------
+(0 rows)
+

@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT * FROM mvtest2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  55000: materialized view "mvtest2" has not been populated
+HINT:  Use the REFRESH MATERIALIZED VIEW command.
+LOCATION:  ExecOpenScanRelation, execUtils.c:833
+STATEMENT:  SELECT * FROM mvtest2;

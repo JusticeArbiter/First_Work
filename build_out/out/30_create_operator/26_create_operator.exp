@@ -1,0 +1,2 @@
+CREATE OPERATOR #@%# (  procedure = numeric_fac  );
+ERROR:  42P13: at least one of leftarg or rightarg must be specified

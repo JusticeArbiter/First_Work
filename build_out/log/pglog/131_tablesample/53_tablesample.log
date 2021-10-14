@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (50) REPEATABLE (NULL);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2202G: TABLESAMPLE REPEATABLE parameter cannot be null
+LOCATION:  tablesample_init, nodeSamplescan.c:320
+STATEMENT:  SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (50) REPEATABLE (NULL);

@@ -1,0 +1,2 @@
+LOG:  00000: statement: REINDEX SCHEMA schema_to_reindex;
+LOCATION:  exec_simple_query, postgres.c:938

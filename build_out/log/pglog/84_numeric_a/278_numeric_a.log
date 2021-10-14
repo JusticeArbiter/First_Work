@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO num_exp_mul VALUES (6,6,'8817506281.4517452372676676');
+LOCATION:  exec_simple_query, postgres.c:938

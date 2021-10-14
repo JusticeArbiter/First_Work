@@ -1,0 +1,2 @@
+create type nestedcomposite as (x int8_tbl);
+ERROR:  42704: type "int8_tbl" does not exist

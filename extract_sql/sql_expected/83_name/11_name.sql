@@ -1,0 +1,1 @@
+SELECT '' AS seven, * FROM NAME_TBL;

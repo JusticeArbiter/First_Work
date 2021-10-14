@@ -1,0 +1,7 @@
+EXPLAIN (COSTS OFF) SELECT * FROM t1 FOR SHARE;
+      QUERY PLAN      
+----------------------
+ LockRows
+   ->  Seq Scan on t1
+(2 rows)
+

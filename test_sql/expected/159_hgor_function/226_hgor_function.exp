@@ -1,0 +1,6 @@
+select tz_offset('US/Eastern');
+ tz_offset 
+-----------
+ -04:00:00
+(1 row)
+

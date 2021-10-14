@@ -1,0 +1,8 @@
+SELECT '' AS three, f.* FROM FLOAT8_TBL f WHERE f.f1 < '1004.3';
+ three |          f1          
+-------+----------------------
+       |                    0
+       |               -34.84
+       | 1.2345678901234e-200
+(3 rows)
+

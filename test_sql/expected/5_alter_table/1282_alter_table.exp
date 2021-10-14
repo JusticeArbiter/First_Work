@@ -1,0 +1,2 @@
+DELETE FROM old_system_table WHERE othercol = 'somedata';
+DELETE 1

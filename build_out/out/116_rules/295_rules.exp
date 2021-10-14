@@ -1,0 +1,2 @@
+INSERT INTO unit VALUES ('cm', 1.0);
+INSERT 0 1

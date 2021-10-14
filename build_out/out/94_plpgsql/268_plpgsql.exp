@@ -1,0 +1,2 @@
+insert into System values ('orion', 'PC');
+INSERT 0 1

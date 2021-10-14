@@ -1,0 +1,3 @@
+DROP COLLATION IF EXISTS no_such_schema.foo;
+NOTICE:  00000: schema "no_such_schema" does not exist, skipping
+DROP COLLATION

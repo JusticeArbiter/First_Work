@@ -1,0 +1,1 @@
+ALTER ROLE "current_user" WITH REPLICATION;

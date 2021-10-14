@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT XMLPARSE(DOCUMENT '<!DOCTYPE foo [<!ENTITY c SYSTEM "/etc/no.such.file">]><foo>&c;</foo>');
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+SELECT CAST(name 'namefield' AS char(10)) AS "char(name)";
+ char(name) 
+------------
+ namefield 
+(1 row)
+

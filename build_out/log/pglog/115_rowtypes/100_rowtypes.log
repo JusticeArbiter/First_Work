@@ -1,0 +1,5 @@
+LOG:  00000: statement: select (row('Jim', 'Beam')).text;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: could not identify column "text" in record data type at character 9
+LOCATION:  unknown_attribute, parse_expr.c:407
+STATEMENT:  select (row('Jim', 'Beam')).text;

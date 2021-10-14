@@ -1,0 +1,2 @@
+select format('%*0$s', 'Hello');
+ERROR:  22023: format specifies argument 0, but arguments are numbered from 1

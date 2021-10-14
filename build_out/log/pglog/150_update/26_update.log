@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE update_test SET (b,a) = (select a+1,b from update_test);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  21000: more than one row returned by a subquery used as an expression
+LOCATION:  ExecSetParamPlan, nodeSubplan.c:1040
+STATEMENT:  UPDATE update_test SET (b,a) = (select a+1,b from update_test);

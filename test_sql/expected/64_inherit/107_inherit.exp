@@ -1,0 +1,2 @@
+insert into d values('test','one','two','three');
+INSERT 0 1

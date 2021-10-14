@@ -1,0 +1,3 @@
+ALTER TABLE comment_test ALTER COLUMN id SET DATA TYPE int USING id::integer;
+ERROR:  42804: foreign key constraint "comment_test_child_fk" cannot be implemented
+DETAIL:  Key columns "id" and "id" are of incompatible types: text and integer.

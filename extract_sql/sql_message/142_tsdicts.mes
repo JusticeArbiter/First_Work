@@ -1,0 +1,91 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TEXT SEARCH DICTIONARY ispell (                                                                                  +
+                         Template=ispell,                                                                                           +
+                         DictFile=ispell_sample,                                                                                    +
+                         AffFile=ispell_sample                                                                                      +
+ );
+ statement: SELECT ts_lexize('ispell', 'skies');
+ statement: SELECT ts_lexize('ispell', 'bookings');
+ statement: SELECT ts_lexize('ispell', 'booking');
+ statement: SELECT ts_lexize('ispell', 'foot');
+ statement: SELECT ts_lexize('ispell', 'foots');
+ statement: SELECT ts_lexize('ispell', 'rebookings');
+ statement: SELECT ts_lexize('ispell', 'rebooking');
+ statement: SELECT ts_lexize('ispell', 'rebook');
+ statement: SELECT ts_lexize('ispell', 'unbookings');
+ statement: SELECT ts_lexize('ispell', 'unbooking');
+ statement: SELECT ts_lexize('ispell', 'unbook');
+ statement: SELECT ts_lexize('ispell', 'footklubber');
+ statement: SELECT ts_lexize('ispell', 'footballklubber');
+ statement: SELECT ts_lexize('ispell', 'ballyklubber');
+ statement: SELECT ts_lexize('ispell', 'footballyklubber');
+ statement: CREATE TEXT SEARCH DICTIONARY hunspell (                                                                                +
+                         Template=ispell,                                                                                           +
+                         DictFile=ispell_sample,                                                                                    +
+                         AffFile=hunspell_sample                                                                                    +
+ );
+ statement: SELECT ts_lexize('hunspell', 'skies');
+ statement: SELECT ts_lexize('hunspell', 'bookings');
+ statement: SELECT ts_lexize('hunspell', 'booking');
+ statement: SELECT ts_lexize('hunspell', 'foot');
+ statement: SELECT ts_lexize('hunspell', 'foots');
+ statement: SELECT ts_lexize('hunspell', 'rebookings');
+ statement: SELECT ts_lexize('hunspell', 'rebooking');
+ statement: SELECT ts_lexize('hunspell', 'rebook');
+ statement: SELECT ts_lexize('hunspell', 'unbookings');
+ statement: SELECT ts_lexize('hunspell', 'unbooking');
+ statement: SELECT ts_lexize('hunspell', 'unbook');
+ statement: SELECT ts_lexize('hunspell', 'footklubber');
+ statement: SELECT ts_lexize('hunspell', 'footballklubber');
+ statement: SELECT ts_lexize('hunspell', 'ballyklubber');
+ statement: SELECT ts_lexize('hunspell', 'footballyklubber');
+ statement: CREATE TEXT SEARCH DICTIONARY synonym (                                                                                 +
+                                                 Template=synonym,                                                                  +
+                                                 Synonyms=synonym_sample                                                            +
+ );
+ statement: SELECT ts_lexize('synonym', 'PoStGrEs');
+ statement: SELECT ts_lexize('synonym', 'Gogle');
+ statement: SELECT ts_lexize('synonym', 'indices');
+ statement: CREATE TEXT SEARCH DICTIONARY thesaurus (                                                                               +
+                         Template=thesaurus,                                                                                        +
+                                                 DictFile=thesaurus_sample,                                                         +
+                                                 Dictionary=english_stem                                                            +
+ );
+ statement: SELECT ts_lexize('thesaurus', 'one');
+ statement: CREATE TEXT SEARCH CONFIGURATION ispell_tst (                                                                           +
+                                                 COPY=english                                                                       +
+ );
+ statement: ALTER TEXT SEARCH CONFIGURATION ispell_tst ALTER MAPPING FOR                                                            +
+         word, numword, asciiword, hword, numhword, asciihword, hword_part, hword_numpart, hword_asciipart                          +
+         WITH ispell, english_stem;
+ statement: SELECT to_tsvector('ispell_tst', 'Booking the skies after rebookings for footballklubber from a foot');
+ statement: SELECT to_tsquery('ispell_tst', 'footballklubber');
+ statement: SELECT to_tsquery('ispell_tst', 'footballyklubber:b & rebookings:A & sky');
+ statement: CREATE TEXT SEARCH CONFIGURATION hunspell_tst (                                                                         +
+                                                 COPY=ispell_tst                                                                    +
+ );
+ statement: ALTER TEXT SEARCH CONFIGURATION hunspell_tst ALTER MAPPING                                                              +
+         REPLACE ispell WITH hunspell;
+ statement: SELECT to_tsvector('hunspell_tst', 'Booking the skies after rebookings for footballklubber from a foot');
+ statement: SELECT to_tsquery('hunspell_tst', 'footballklubber');
+ statement: SELECT to_tsquery('hunspell_tst', 'footballyklubber:b & rebookings:A & sky');
+ statement: CREATE TEXT SEARCH CONFIGURATION synonym_tst (                                                                          +
+                                                 COPY=english                                                                       +
+ );
+ statement: ALTER TEXT SEARCH CONFIGURATION synonym_tst ALTER MAPPING FOR                                                           +
+         asciiword, hword_asciipart, asciihword                                                                                     +
+         WITH synonym, english_stem;
+ statement: SELECT to_tsvector('synonym_tst', 'Postgresql is often called as postgres or pgsql and pronounced as postgre');
+ statement: SELECT to_tsvector('synonym_tst', 'Most common mistake is to write Gogle instead of Google');
+ statement: SELECT to_tsvector('synonym_tst', 'Indexes or indices - Which is right plural form of index?');
+ statement: SELECT to_tsquery('synonym_tst', 'Index & indices');
+ statement: CREATE TEXT SEARCH CONFIGURATION thesaurus_tst (                                                                        +
+                                                 COPY=synonym_tst                                                                   +
+ );
+ statement: ALTER TEXT SEARCH CONFIGURATION thesaurus_tst ALTER MAPPING FOR                                                         +
+         asciiword, hword_asciipart, asciihword                                                                                     +
+         WITH synonym, thesaurus, english_stem;
+ statement: SELECT to_tsvector('thesaurus_tst', 'one postgres one two one two three one');
+ statement: SELECT to_tsvector('thesaurus_tst', 'Supernovae star is very new star and usually called supernovae (abbreviation SN)');
+ statement: SELECT to_tsvector('thesaurus_tst', 'Booking tickets is looking like a booking a tickets');
+

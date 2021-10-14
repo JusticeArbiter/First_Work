@@ -1,0 +1,2 @@
+INSERT INTO unit VALUES ('m', 100.0);
+INSERT 0 1

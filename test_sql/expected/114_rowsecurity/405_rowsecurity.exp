@@ -1,0 +1,7 @@
+EXPLAIN (COSTS OFF) SELECT * FROM y2 WHERE f_leak('abc');
+          QUERY PLAN           
+-------------------------------
+ Seq Scan on y2
+   Filter: f_leak('abc'::text)
+(2 rows)
+

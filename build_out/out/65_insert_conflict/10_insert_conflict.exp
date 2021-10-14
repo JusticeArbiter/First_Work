@@ -1,0 +1,9 @@
+explain (costs off) insert into insertconflicttest values(0, 'Crowberry') on conflict (lower(fruit), key, lower(fruit), key) do nothing;
+                   QUERY PLAN                    
+-------------------------------------------------
+ Insert on insertconflicttest
+   Conflict Resolution: NOTHING
+   Conflict Arbiter Indexes: both_index_expr_key
+   ->  Result
+(4 rows)
+

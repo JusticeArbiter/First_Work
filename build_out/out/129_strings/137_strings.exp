@@ -1,0 +1,6 @@
+SELECT 'be_r' NOT LIKE '__e__r' ESCAPE '_' AS "true";
+ true 
+------
+ t
+(1 row)
+

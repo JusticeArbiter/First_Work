@@ -1,0 +1,6 @@
+SELECT '0.x1'::jsonb;
+ERROR:  22P02: invalid input syntax for type json
+LINE 1: SELECT '0.x1'::jsonb;
+               ^
+DETAIL:  Token "0.x1" is invalid.
+CONTEXT:  JSON data, line 1: 0.x1

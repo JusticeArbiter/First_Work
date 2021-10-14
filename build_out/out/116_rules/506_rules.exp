@@ -1,0 +1,3 @@
+create view rule_v1(x) as values(1,2);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+CREATE VIEW

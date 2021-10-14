@@ -1,0 +1,6 @@
+select pg_typeof(array[1.2,55.5]);
+ pg_typeof 
+-----------
+ numeric[]
+(1 row)
+

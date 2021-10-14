@@ -1,0 +1,11 @@
+SELECT * FROM chkumapping();
+     umname     |    umserver    |      umoptions      
+----------------+----------------+---------------------
+ user           | sv4            | {"user=\"USER\""}
+ highgo         | sv5            | {user=SESSION_USER}
+                | sv6            | {user=PUBLIC}
+ Public         | sv7            | {"user=\"Public\""}
+ testrolx       | sv8            | {user=testrolx}
+ regression_bob | useless_server | 
+(6 rows)
+

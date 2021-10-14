@@ -1,0 +1,6 @@
+SELECT jsonb '{ "a": "null \u0000 escape" }' as fails;
+ERROR:  22P05: unsupported Unicode escape sequence
+LINE 1: SELECT jsonb '{ "a": "null \u0000 escape" }' as fails;
+                     ^
+DETAIL:  \u0000 cannot be converted to text.
+CONTEXT:  JSON data, line 1: { "a":...

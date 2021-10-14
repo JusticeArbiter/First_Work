@@ -1,0 +1,5 @@
+LOG:  00000: statement: FETCH 20 in foo20;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "foo20" does not exist
+LOCATION:  PerformPortalFetch, portalcmds.c:168
+STATEMENT:  FETCH 20 in foo20;

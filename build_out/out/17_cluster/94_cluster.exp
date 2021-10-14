@@ -1,0 +1,7 @@
+SELECT * FROM clstr_1;
+ a 
+---
+ 1
+ 2
+(2 rows)
+

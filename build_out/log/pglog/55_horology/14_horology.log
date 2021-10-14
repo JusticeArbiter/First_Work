@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT timestamp with time zone '27/12/2001 04:05:06.789-08';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22008: date/time field value out of range: "27/12/2001 04:05:06.789-08" at character 33
+HINT:  Perhaps you need a different "datestyle" setting.
+LOCATION:  DateTimeParseError, datetime.c:3818
+STATEMENT:  SELECT timestamp with time zone '27/12/2001 04:05:06.789-08';

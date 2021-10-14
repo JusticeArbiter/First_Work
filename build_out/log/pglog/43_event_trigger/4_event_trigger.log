@@ -1,0 +1,5 @@
+LOG:  00000: statement: create function test_event_trigger_sql() returns event_trigger as $$  SELECT 1 $$ language sql;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P13: SQL functions cannot return type event_trigger
+LOCATION:  fmgr_sql_validator, pg_proc.c:871
+STATEMENT:  create function test_event_trigger_sql() returns event_trigger as $$  SELECT 1 $$ language sql;

@@ -1,0 +1,4 @@
+SELECT xmlconcat(1, 2);
+ERROR:  42804: argument of XMLCONCAT must be type xml, not type integer
+LINE 1: SELECT xmlconcat(1, 2);
+                         ^

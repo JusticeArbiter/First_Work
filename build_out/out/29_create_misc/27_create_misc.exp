@@ -1,0 +1,4 @@
+INSERT INTO d_star (class, a, b, c, d)  VALUES ('d', 7, 'grumble'::text, 'hi sunita'::name, '0.0'::float8);
+ERROR:  42P01: relation "d_star" does not exist
+LINE 1: INSERT INTO d_star (class, a, b, c, d)  VALUES ('d', 7, 'gru...
+                    ^

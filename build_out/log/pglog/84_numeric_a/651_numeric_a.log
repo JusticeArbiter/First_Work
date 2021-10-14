@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from generate_series(-100::numeric, 100::numeric, 0::numeric);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: step size cannot equal zero
+LOCATION:  generate_series_step_numeric, numeric.c:1358
+STATEMENT:  select * from generate_series(-100::numeric, 100::numeric, 0::numeric);

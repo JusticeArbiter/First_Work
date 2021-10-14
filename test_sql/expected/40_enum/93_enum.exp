@@ -1,0 +1,6 @@
+SELECT ('{red,green,blue}'::rainbow[])[2];
+ rainbow 
+---------
+ green
+(1 row)
+

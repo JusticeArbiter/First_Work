@@ -1,0 +1,6 @@
+select interval_to_seconds('1 day');
+ interval_to_seconds 
+---------------------
+               86400
+(1 row)
+

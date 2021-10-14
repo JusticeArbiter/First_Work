@@ -1,0 +1,5 @@
+CREATE TABLE d (dd TEXT) INHERITS (b,c,a);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  00000: merging multiple inherited definitions of column "aa"
+NOTICE:  00000: merging multiple inherited definitions of column "aa"
+CREATE TABLE

@@ -1,0 +1,6 @@
+SELECT count(*) FROM tenk2 WHERE unique1 = 1;
+ count 
+-------
+     0
+(1 row)
+

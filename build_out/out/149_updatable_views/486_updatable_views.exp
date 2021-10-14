@@ -1,0 +1,20 @@
+EXPLAIN (costs off) INSERT INTO rw_view1 VALUES (2, 'New row 2');
+                        QUERY PLAN                         
+-----------------------------------------------------------
+ Insert on base_tbl
+   InitPlan 1 (returns $0)
+     ->  Index Only Scan using base_tbl_pkey on base_tbl t
+           Index Cond: (id = 2)
+   ->  Result
+         One-Time Filter: ($0 IS NOT TRUE)
+ 
+ Update on base_tbl
+   InitPlan 1 (returns $0)
+     ->  Index Only Scan using base_tbl_pkey on base_tbl t
+           Index Cond: (id = 2)
+   ->  Result
+         One-Time Filter: $0
+         ->  Index Scan using base_tbl_pkey on base_tbl
+               Index Cond: (id = 2)
+(15 rows)
+

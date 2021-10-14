@@ -1,0 +1,5 @@
+LOG:  00000: statement: explain (costs off)  select * from tmptz where f1 at time zone 'utc' = '2017-01-18 00:00';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tmptz" does not exist at character 36
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  explain (costs off)  select * from tmptz where f1 at time zone 'utc' = '2017-01-18 00:00';

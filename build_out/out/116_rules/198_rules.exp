@@ -1,0 +1,12 @@
+select * from rtest_nothn1;
+ a  |     b     
+----+-----------
+  1 | want this
+  2 | want this
+ 20 | want this
+ 29 | want this
+ 40 | want this
+ 50 | want this
+ 60 | want this
+(7 rows)
+

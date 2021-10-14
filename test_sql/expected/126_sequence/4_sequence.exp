@@ -1,0 +1,2 @@
+INSERT INTO serialTest VALUES ('force', 100);
+INSERT 0 1

@@ -1,0 +1,6 @@
+select make_time(8, 20, 0.0);
+ make_time 
+-----------
+ 08:20:00
+(1 row)
+

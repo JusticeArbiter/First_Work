@@ -1,0 +1,6 @@
+select soundex('problem'::text),soundex('question'::text);
+ soundex | soundex 
+---------+---------
+ P614    | Q235
+(1 row)
+

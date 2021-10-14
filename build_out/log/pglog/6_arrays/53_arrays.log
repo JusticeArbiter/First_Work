@@ -1,0 +1,5 @@
+LOG:  00000: statement: delete from arrtest1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "arrtest1" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  delete from arrtest1;

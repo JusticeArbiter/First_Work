@@ -1,0 +1,4 @@
+SELECT count(*) FROM radix_text_tbl WHERE t = 'P0123456789abcdefF';
+ERROR:  42P01: relation "radix_text_tbl" does not exist
+LINE 1: SELECT count(*) FROM radix_text_tbl WHERE t = 'P0123456789ab...
+                             ^

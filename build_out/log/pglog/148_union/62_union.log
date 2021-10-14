@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TEMP TABLE t2c (primary key (ab)) INHERITS (t2);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TEMP TABLE t2c (primary key (ab)) INHERITS (t2);
+ERROR:  42703: column "ab" named in key does not exist at character 24
+LOCATION:  transformIndexConstraint, parse_utilcmd.c:1847
+STATEMENT:  CREATE TEMP TABLE t2c (primary key (ab)) INHERITS (t2);

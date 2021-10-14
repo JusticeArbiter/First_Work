@@ -1,0 +1,6 @@
+SELECT count(*) FROM testjsonb WHERE j @> '{"array":["foo"]}';
+ count 
+-------
+     0
+(1 row)
+

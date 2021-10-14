@@ -1,0 +1,3 @@
+SECURITY LABEL ON TABLE seclabel_tbl1 IS '...invalid label...';
+NOTICE:  00000: test_event_trigger: ddl_command_start SECURITY LABEL
+ERROR:  22023: no security label providers have been loaded

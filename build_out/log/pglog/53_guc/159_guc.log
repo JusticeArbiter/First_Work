@@ -1,0 +1,2 @@
+LOG:  00000: statement: select report_guc('work_mem'), current_setting('work_mem');
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: explain (costs off)  select max(unique2) from tenk1 order by max(unique2)+1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tenk1" does not exist at character 47
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  explain (costs off)  select max(unique2) from tenk1 order by max(unique2)+1;

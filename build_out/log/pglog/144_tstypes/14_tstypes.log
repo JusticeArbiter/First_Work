@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 'a:3A b:2a'::tsvector || 'ba:1234 a:1B';
+LOCATION:  exec_simple_query, postgres.c:938

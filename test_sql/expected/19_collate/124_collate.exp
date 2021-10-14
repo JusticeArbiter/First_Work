@@ -1,0 +1,6 @@
+SELECT collation for ('foo'::text);
+ pg_collation_for 
+------------------
+ "default"
+(1 row)
+

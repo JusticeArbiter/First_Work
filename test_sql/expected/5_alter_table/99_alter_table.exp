@@ -1,0 +1,2 @@
+DROP VIEW tmp_view_new;
+ERROR:  42P01: view "tmp_view_new" does not exist

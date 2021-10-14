@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO BOOLTBL1 (f1) VALUES (bool 'true');
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP AGGREGATE test_aggregate_exists(*);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: aggregate test_aggregate_exists(*) does not exist
+LOCATION:  LookupAggNameTypeNames, parse_func.c:2008
+STATEMENT:  DROP AGGREGATE test_aggregate_exists(*);

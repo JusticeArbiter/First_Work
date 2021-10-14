@@ -1,0 +1,5 @@
+SELECT * FROM my_credit_card_secure WHERE f_leak(cnum);
+ cid | name | tel | passwd | cnum | climit 
+-----+------+-----+--------+------+--------
+(0 rows)
+

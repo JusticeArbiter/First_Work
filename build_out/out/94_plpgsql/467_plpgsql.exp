@@ -1,0 +1,5 @@
+create function end_label4() returns void as $$  <<outer_label>>  begin  for _i in 1 .. 10 loop  exit;  end loop outer_label;  end;  $$ language plpgsql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42601: end label "outer_label" specified for unlabelled block
+LINE 1: ...>  begin  for _i in 1 .. 10 loop  exit;  end loop outer_labe...
+                                                             ^

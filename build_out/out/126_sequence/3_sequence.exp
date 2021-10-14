@@ -1,0 +1,2 @@
+INSERT INTO serialTest VALUES ('bar');
+INSERT 0 1

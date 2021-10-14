@@ -1,0 +1,4 @@
+SELECT CAST(f1 AS char(10)) AS "char(varchar)" FROM VARCHAR_TBL;
+ERROR:  42P01: relation "varchar_tbl" does not exist
+LINE 1: ...LECT CAST(f1 AS char(10)) AS "char(varchar)" FROM VARCHAR_TB...
+                                                             ^

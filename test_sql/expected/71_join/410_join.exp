@@ -1,0 +1,5 @@
+select f1,g from int4_tbl a full join lateral generate_series(0, a.f1) g on true;
+ERROR:  42P10: invalid reference to FROM-clause entry for table "a"
+LINE 1: ...m int4_tbl a full join lateral generate_series(0, a.f1) g on...
+                                                             ^
+DETAIL:  The combining JOIN type must be INNER or LEFT for a LATERAL reference.

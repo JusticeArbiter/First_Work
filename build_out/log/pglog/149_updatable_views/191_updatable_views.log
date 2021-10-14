@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE base_tbl SET a=a, c=c;
+LOCATION:  exec_simple_query, postgres.c:938

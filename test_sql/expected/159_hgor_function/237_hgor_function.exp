@@ -1,0 +1,7 @@
+SELECT * FROM float_point_demo;
+ dec_num | bin_double | bin_float 
+---------+------------+-----------
+ 1234.56 |    1234.56 |   1234.56
+    0.00 |        NaN |       NaN
+(2 rows)
+

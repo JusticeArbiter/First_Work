@@ -1,0 +1,4 @@
+SELECT test_json ->> 'field4' FROM test_jsonb WHERE json_type = 'object';
+ERROR:  42P01: relation "test_jsonb" does not exist
+LINE 1: SELECT test_json ->> 'field4' FROM test_jsonb WHERE json_typ...
+                                           ^

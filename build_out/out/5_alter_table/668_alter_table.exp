@@ -1,0 +1,2 @@
+alter table c1 drop column f1;
+ERROR:  42P16: cannot drop inherited column "f1"

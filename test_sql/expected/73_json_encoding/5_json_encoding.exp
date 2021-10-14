@@ -1,0 +1,6 @@
+SELECT '"\uaBcD"'::json;
+   json   
+----------
+ "\uaBcD"
+(1 row)
+

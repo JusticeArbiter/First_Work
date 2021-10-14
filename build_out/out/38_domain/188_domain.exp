@@ -1,0 +1,2 @@
+select * from domview;
+ERROR:  23502: domain dom does not allow null values

@@ -1,0 +1,3 @@
+INSERT INTO FKTABLE VALUES (100, 2, 4);
+ERROR:  23503: insert or update on table "fktable" violates foreign key constraint "constrname2"
+DETAIL:  Key (ftest1, ftest2)=(100, 2) is not present in table "pktable".

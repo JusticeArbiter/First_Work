@@ -1,0 +1,4 @@
+SELECT CAST(time with time zone '01:02-08' AS interval) AS "+00:01";
+ERROR:  42846: cannot cast type time with time zone to interval
+LINE 1: SELECT CAST(time with time zone '01:02-08' AS interval) AS "...
+               ^

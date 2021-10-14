@@ -1,0 +1,6 @@
+SELECT width_bucket(5, '{}');
+ width_bucket 
+--------------
+            0
+(1 row)
+

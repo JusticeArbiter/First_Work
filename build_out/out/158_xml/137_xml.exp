@@ -1,0 +1,6 @@
+SELECT COUNT(id) FROM xmltest WHERE xpath_exists('/menu/beers',data);
+ count 
+-------
+     2
+(1 row)
+

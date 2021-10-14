@@ -1,0 +1,17 @@
+select * from rules_log;
+ f1 | f2  | tag 
+----+-----+-----
+  1 |   2 | old
+  1 |   3 | new
+ 11 |  12 | old
+ 11 |  13 | new
+  1 |   3 | old
+  1 |  30 | new
+ 11 |  13 | old
+ 11 | 130 | new
+  1 |  30 | old
+  1 |   3 | new
+ 11 | 130 | old
+ 11 |  13 | new
+(12 rows)
+

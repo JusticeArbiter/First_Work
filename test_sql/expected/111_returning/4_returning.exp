@@ -1,0 +1,4 @@
+UPDATE foo SET f2 = lower(f2), f3 = DEFAULT RETURNING foo.*, f1+f3 AS sum13;
+ERROR:  42P01: relation "foo" does not exist
+LINE 1: UPDATE foo SET f2 = lower(f2), f3 = DEFAULT RETURNING foo.*,...
+               ^

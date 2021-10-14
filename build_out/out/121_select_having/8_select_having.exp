@@ -1,0 +1,2 @@
+INSERT INTO test_having VALUES (6, 4, 'cccc', 'g');
+INSERT 0 1

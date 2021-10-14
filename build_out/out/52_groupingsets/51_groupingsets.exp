@@ -1,0 +1,4 @@
+select a, b, sum(c), count(*) from gstest2 group by grouping sets (rollup(a,b),a);
+ERROR:  42P01: relation "gstest2" does not exist
+LINE 1: select a, b, sum(c), count(*) from gstest2 group by grouping...
+                                           ^

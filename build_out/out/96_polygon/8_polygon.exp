@@ -1,0 +1,4 @@
+INSERT INTO POLYGON_TBL(f1) VALUES ('(0,1,2)');
+ERROR:  22P02: invalid input syntax for type polygon: "(0,1,2)"
+LINE 1: INSERT INTO POLYGON_TBL(f1) VALUES ('(0,1,2)');
+                                            ^

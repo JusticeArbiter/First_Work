@@ -1,0 +1,6 @@
+SELECT timestamptz(date '1994-01-01', time with time zone '10:00-8') AS "Jan_01_1994_10am";
+    Jan_01_1994_10am    
+------------------------
+ 1994-01-02 02:00:00+08
+(1 row)
+

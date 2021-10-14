@@ -1,0 +1,2 @@
+alter table nonesuchrel rename column nonesuchatt to newnonesuchatt;
+ERROR:  42P01: relation "nonesuchrel" does not exist

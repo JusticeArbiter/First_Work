@@ -1,0 +1,5 @@
+LOG:  00000: statement: create table c1 (f1 int not null) inherits(p1);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging column "f1" with inherited definition
+LOCATION:  MergeAttributes, tablecmds.c:1820
+STATEMENT:  create table c1 (f1 int not null) inherits(p1);

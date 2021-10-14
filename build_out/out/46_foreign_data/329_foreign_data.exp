@@ -1,0 +1,8 @@
+SELECT * FROM information_schema.foreign_table_options ORDER BY 1, 2, 3, 4;
+ foreign_table_catalog | foreign_table_schema | foreign_table_name | option_name | option_value 
+-----------------------+----------------------+--------------------+-------------+--------------
+ highgo                | foreign_schema       | foreign_table_1    | be quoted   | value
+ highgo                | foreign_schema       | foreign_table_1    | escape      | @
+ highgo                | foreign_schema       | foreign_table_1    | quote       | ~
+(3 rows)
+

@@ -1,0 +1,4 @@
+SELECT interval '1 2' day to second;
+ERROR:  22007: invalid input syntax for type interval: "1 2"
+LINE 1: SELECT interval '1 2' day to second;
+                        ^

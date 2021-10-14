@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('server', '{one,two}', '{}');
+ERROR:  42601: server name cannot be qualified

@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP INDEX evttrig.one_idx;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP INDEX
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP INDEX evttrig.one_idx;
+NOTICE:  00000: NORMAL: orig=t normal=f istemp=f type=index identity=evttrig.one_idx name={evttrig,one_idx} args={}
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP INDEX evttrig.one_idx;

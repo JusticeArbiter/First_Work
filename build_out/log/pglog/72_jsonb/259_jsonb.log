@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT jsonb_build_object('turbines',jsonb_object_agg(serial_num,jsonb_build_object('name',name,'type',type)))  FROM foo;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "foo" does not exist at character 118
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT jsonb_build_object('turbines',jsonb_object_agg(serial_num,jsonb_build_object('name',name,'type',type)))  FROM foo;

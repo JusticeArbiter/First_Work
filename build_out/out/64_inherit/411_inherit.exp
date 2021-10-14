@@ -1,0 +1,2 @@
+analyze patest1;
+ERROR:  42P01: relation "patest1" does not exist

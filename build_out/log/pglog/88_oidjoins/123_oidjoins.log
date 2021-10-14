@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, spcowner  FROM pg_catalog.pg_tablespace fk  WHERE spcowner != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_authid pk WHERE pk.oid = fk.spcowner);
+LOCATION:  exec_simple_query, postgres.c:938

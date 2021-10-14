@@ -1,0 +1,5 @@
+LOG:  00000: statement: select catch();
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: caught case_not_found 20000 case not found
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select catch();

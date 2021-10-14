@@ -1,0 +1,3 @@
+ALTER VIEW my_property_secure SET (security_barrier=false);
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER VIEW
+ALTER VIEW

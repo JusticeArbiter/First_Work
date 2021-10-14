@@ -1,0 +1,6 @@
+LOG:  00000: statement: select array_fill(1, array[3,3], array[1,1,1]);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2202E: wrong number of array subscripts
+DETAIL:  Low bound array has different size than dimensions array.
+LOCATION:  array_fill_internal, arrayfuncs.c:5756
+STATEMENT:  select array_fill(1, array[3,3], array[1,1,1]);

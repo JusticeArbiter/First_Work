@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO tmp2 values (4);
+LOCATION:  exec_simple_query, postgres.c:938

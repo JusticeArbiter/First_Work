@@ -1,0 +1,4 @@
+INSERT INTO vistest VALUES ('z');
+ERROR:  42P01: relation "vistest" does not exist
+LINE 1: INSERT INTO vistest VALUES ('z');
+                    ^

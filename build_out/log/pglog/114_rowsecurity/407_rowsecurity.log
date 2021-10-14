@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO test_qual_pushdown VALUES ('abc'),('def');
+LOCATION:  exec_simple_query, postgres.c:938

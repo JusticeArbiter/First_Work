@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT loread(lo_open(1003, x'40000'::int), 32);
+LOCATION:  exec_simple_query, postgres.c:938

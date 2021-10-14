@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from shipped_view;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "shipped_view" does not exist at character 15
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select * from shipped_view;

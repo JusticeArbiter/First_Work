@@ -1,0 +1,2 @@
+insert into rtest_interface values ('notjw', 'eth0');
+INSERT 0 1

@@ -1,0 +1,6 @@
+SELECT a FROM xacttest WHERE a > 100;
+  a  
+-----
+ 777
+(1 row)
+

@@ -1,0 +1,6 @@
+LOG:  00000: statement: select * from jsonb_populate_recordset(row(0::int,0::int,0::int),'[{"a":"1","b":"2"},{"a":"3"}]') q (a text, b text);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: function return row and query-specified return row do not match
+DETAIL:  Returned row contains 3 attributes, but query expects 2.
+LOCATION:  tupledesc_match, execQual.c:1620
+STATEMENT:  select * from jsonb_populate_recordset(row(0::int,0::int,0::int),'[{"a":"1","b":"2"},{"a":"3"}]') q (a text, b text);

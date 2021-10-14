@@ -1,0 +1,4 @@
+select * from a left join b on i = x and i = y and x = i;
+ERROR:  42703: column "i" does not exist
+LINE 1: select * from a left join b on i = x and i = y and x = i;
+                                       ^

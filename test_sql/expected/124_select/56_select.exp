@@ -1,0 +1,9 @@
+select sillysrf(42);
+ sillysrf 
+----------
+        1
+       10
+        2
+       42
+(4 rows)
+

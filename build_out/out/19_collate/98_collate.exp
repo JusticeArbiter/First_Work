@@ -1,0 +1,2 @@
+CREATE INDEX collate_test1_idx3 ON collate_test1 ((b COLLATE "POSIX"));
+ERROR:  42P07: relation "collate_test1_idx3" already exists

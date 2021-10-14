@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT CAST(q1 AS oid) FROM INT8_TBL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: OID out of range
+LOCATION:  i8tooid, int8.c:1417
+STATEMENT:  SELECT CAST(q1 AS oid) FROM INT8_TBL;

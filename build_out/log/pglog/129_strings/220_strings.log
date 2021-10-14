@@ -1,0 +1,3 @@
+ERROR:  42601: syntax error at or near "' as f2, '" at character 33
+LOCATION:  scanner_yyerror, scan.l:1082
+STATEMENT:  select 'a\\bcd' as f1, 'a\\b\'cd' as f2, 'a

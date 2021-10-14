@@ -1,0 +1,5 @@
+LOG:  00000: statement: select make_date(2013, 13, 1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22008: date field value out of range: 2013-13-01
+LOCATION:  make_date, date.c:259
+STATEMENT:  select make_date(2013, 13, 1);

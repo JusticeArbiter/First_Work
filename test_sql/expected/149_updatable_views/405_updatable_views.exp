@@ -1,0 +1,12 @@
+EXPLAIN (costs off) INSERT INTO rw_view1 VALUES (5);
+                          QUERY PLAN                           
+---------------------------------------------------------------
+ Insert on base_tbl b
+   ->  Result
+         SubPlan 1
+           ->  Index Only Scan using ref_tbl_pkey on ref_tbl r
+                 Index Cond: (a = b.a)
+         SubPlan 2
+           ->  Seq Scan on ref_tbl r_1
+(7 rows)
+

@@ -1,0 +1,6 @@
+SELECT xmlserialize(content 'good' as char(10));
+ xmlserialize 
+--------------
+ good      
+(1 row)
+

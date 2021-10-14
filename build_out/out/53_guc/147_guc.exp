@@ -1,0 +1,2 @@
+DROP ROLE temp_reset_user;
+DROP ROLE

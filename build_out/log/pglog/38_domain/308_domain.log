@@ -1,0 +1,2 @@
+LOG:  00000: statement: create function sql_is_distinct_from(anyelement, anyelement)  returns boolean language sql  as 'select $1 is distinct from $2 limit 1';
+LOCATION:  exec_simple_query, postgres.c:938

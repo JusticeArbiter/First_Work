@@ -1,0 +1,3 @@
+ALTER TABLE serialtest_f2_seq RENAME TO serialtest_f2_foo;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+ALTER TABLE

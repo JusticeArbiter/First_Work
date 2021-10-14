@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE kd_point_tbl AS SELECT * FROM quad_point_tbl;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "quad_point_tbl" does not exist at character 44
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE TABLE kd_point_tbl AS SELECT * FROM quad_point_tbl;

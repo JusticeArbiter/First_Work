@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 1 AS one UNION SELECT 1.0::float8;
+LOCATION:  exec_simple_query, postgres.c:938

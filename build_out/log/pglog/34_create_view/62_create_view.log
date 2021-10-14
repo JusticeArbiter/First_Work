@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW temporal4 AS SELECT * FROM t1 LEFT JOIN tt ON t1.num = tt.num2 AND tt.value = 'xxx';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tt" does not exist at character 53
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE VIEW temporal4 AS SELECT * FROM t1 LEFT JOIN tt ON t1.num = tt.num2 AND tt.value = 'xxx';

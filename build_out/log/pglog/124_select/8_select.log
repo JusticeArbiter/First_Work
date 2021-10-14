@@ -1,0 +1,5 @@
+LOG:  00000: statement: ANALYZE onek2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "onek2" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  ANALYZE onek2;

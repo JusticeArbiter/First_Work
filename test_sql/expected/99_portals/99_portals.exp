@@ -1,0 +1,2 @@
+FETCH ABSOLUTE -1 FROM foo25;
+ERROR:  34000: cursor "foo25" does not exist

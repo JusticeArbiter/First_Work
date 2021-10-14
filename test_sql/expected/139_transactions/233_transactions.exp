@@ -1,0 +1,6 @@
+select * from xacttest;
+  a  |    b    
+-----+---------
+ 817 | 777.777
+(1 row)
+

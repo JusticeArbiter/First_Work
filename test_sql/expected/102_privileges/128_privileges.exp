@@ -1,0 +1,5 @@
+SELECT * FROM atestv2;
+ col1 | col2 
+------+------
+(0 rows)
+

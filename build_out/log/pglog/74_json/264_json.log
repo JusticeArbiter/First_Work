@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT json_object_agg(name, type) FROM foo;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "foo" does not exist at character 41
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT json_object_agg(name, type) FROM foo;

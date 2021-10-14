@@ -1,0 +1,6 @@
+select * from rtest_t7;
+ a  |                  b                  
+----+-------------------------------------
+ 19 | Record should go to rtest_t5 and t7
+(1 row)
+

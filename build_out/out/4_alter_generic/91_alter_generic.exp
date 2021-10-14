@@ -1,0 +1,7 @@
+SELECT lanname, a.rolname  FROM pg_language l, pg_authid a  WHERE l.lanowner = a.oid AND l.lanname like 'alt_lang%'  ORDER BY lanname;
+  lanname  |       rolname       
+-----------+---------------------
+ alt_lang1 | regtest_alter_user1
+ alt_lang3 | regtest_alter_user3
+(2 rows)
+

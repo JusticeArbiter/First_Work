@@ -1,0 +1,6 @@
+select ' { { " 0 second " , 0 second } }'::text[];
+            text             
+-----------------------------
+ {{" 0 second ","0 second"}}
+(1 row)
+

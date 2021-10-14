@@ -1,0 +1,5 @@
+LOG:  00000: statement: select tableoid::regclass::text as relname, bar.* from bar order by 1,2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "bar" does not exist at character 56
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select tableoid::regclass::text as relname, bar.* from bar order by 1,2;

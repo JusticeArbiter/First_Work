@@ -1,0 +1,17 @@
+SELECT ~b FROM macaddr_data;
+     ?column?      
+-------------------
+ f7:ff:d4:fe:fd:fc
+ f7:ff:d4:fe:fd:fc
+ f7:ff:d4:fe:fd:fc
+ f7:ff:d4:fe:fd:fc
+ f7:ff:d4:fe:fd:fc
+ f7:ff:d4:fe:fd:fc
+ f7:ff:d4:fe:fd:fc
+ f7:ff:d4:fe:fd:fb
+ f7:ff:d4:fe:fd:fd
+ f7:ff:d5:fe:fd:fc
+ f7:ff:d3:fe:fd:fc
+ f7:ff:d5:fe:fd:fb
+(12 rows)
+

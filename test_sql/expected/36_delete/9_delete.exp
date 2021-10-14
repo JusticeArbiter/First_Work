@@ -1,0 +1,6 @@
+SELECT id, a, char_length(b) FROM delete_test;
+ id | a  | char_length 
+----+----+-------------
+  1 | 10 |            
+(1 row)
+

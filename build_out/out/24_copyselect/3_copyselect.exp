@@ -1,0 +1,2 @@
+insert into test1 (t) values ('b');
+INSERT 0 1

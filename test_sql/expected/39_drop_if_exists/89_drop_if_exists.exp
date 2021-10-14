@@ -1,0 +1,2 @@
+DROP RULE test_rule_exists ON test_exists;
+ERROR:  42704: rule "test_rule_exists" for relation "test_exists" does not exist

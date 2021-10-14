@@ -1,0 +1,12 @@
+explain (verbose, costs off)  select x from int8_tbl, extractq2(int8_tbl) f(x);
+                QUERY PLAN                
+------------------------------------------
+ Nested Loop
+   Output: f.x
+   ->  Seq Scan on public.int8_tbl
+         Output: int8_tbl.q1, int8_tbl.q2
+   ->  Function Scan on f
+         Output: f.x
+         Function Call: int8_tbl.q2
+(7 rows)
+

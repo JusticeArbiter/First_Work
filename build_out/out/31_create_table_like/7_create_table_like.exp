@@ -1,0 +1,6 @@
+SELECT * FROM inhe;
+   aa    |   bb    | ee |   xx    
+---------+---------+----+---------
+ ee-col1 | ee-col2 |    | ee-col4
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM min_updates_test_oids;
+LOCATION:  exec_simple_query, postgres.c:938

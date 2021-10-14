@@ -1,0 +1,6 @@
+SELECT interval '1' year to month;
+ interval 
+----------
+ 1 mon
+(1 row)
+

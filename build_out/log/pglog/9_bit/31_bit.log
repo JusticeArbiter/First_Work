@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT a,b,a<b AS "a<b",a<=b AS "a<=b",a=b AS "a=b",  a>=b AS "a>=b",a>b AS "a>b",a<>b AS "a<>b" FROM bit_table;
+LOCATION:  exec_simple_query, postgres.c:938

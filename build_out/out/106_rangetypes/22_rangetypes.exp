@@ -1,0 +1,6 @@
+select '[",",","]'::textrange;
+ textrange 
+-----------
+ [",",","]
+(1 row)
+

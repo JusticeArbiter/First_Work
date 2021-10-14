@@ -1,0 +1,6 @@
+select array(select array['Hello', i::text] from generate_series(9,11) i);
+               array               
+-----------------------------------
+ {{Hello,9},{Hello,10},{Hello,11}}
+(1 row)
+

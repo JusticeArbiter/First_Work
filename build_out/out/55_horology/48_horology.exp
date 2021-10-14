@@ -1,0 +1,2 @@
+SET DateStyle = 'Postgres, MDY';
+SET

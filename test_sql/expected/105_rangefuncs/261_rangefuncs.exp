@@ -1,0 +1,3 @@
+CREATE OR REPLACE FUNCTION foo(int)  RETURNS TABLE(a int, b int)  AS $$ SELECT a, b  FROM generate_series(1,$1) a(a),  generate_series(1,$1) b(b) $$ LANGUAGE sql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+CREATE FUNCTION

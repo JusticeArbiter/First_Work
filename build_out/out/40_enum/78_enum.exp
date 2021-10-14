@@ -1,0 +1,6 @@
+SELECT min(col) FROM enumtest;
+ min 
+-----
+ red
+(1 row)
+

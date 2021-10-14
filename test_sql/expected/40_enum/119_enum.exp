@@ -1,0 +1,3 @@
+CREATE TABLE enumtest_bogus_child(parent bogus REFERENCES enumtest_parent);
+ERROR:  42804: foreign key constraint "enumtest_bogus_child_parent_fkey" cannot be implemented
+DETAIL:  Key columns "parent" and "id" are of incompatible types: bogus and rainbow.

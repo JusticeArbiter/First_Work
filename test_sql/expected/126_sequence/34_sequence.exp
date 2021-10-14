@@ -1,0 +1,6 @@
+SELECT setval('sequence_test'::regclass, 32);
+ setval 
+--------
+     32
+(1 row)
+

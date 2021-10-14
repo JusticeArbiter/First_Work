@@ -1,0 +1,6 @@
+SELECT length('abcdef') AS "length_6";
+ length_6 
+----------
+        6
+(1 row)
+

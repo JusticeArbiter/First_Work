@@ -1,0 +1,5 @@
+select aggfns(distinct a,b,c order by i)  from (values (1,1,'foo')) v(a,b,c), generate_series(1,2) i;
+ERROR:  42883: function aggfns(integer, integer, text) does not exist
+LINE 1: select aggfns(distinct a,b,c order by i)  from (values (1,1,...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

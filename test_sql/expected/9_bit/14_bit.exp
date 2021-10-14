@@ -1,0 +1,9 @@
+SELECT * FROM VARBIT_TABLE;
+      v      
+-------------
+ 
+ 0
+ 010101
+ 01010101010
+(4 rows)
+

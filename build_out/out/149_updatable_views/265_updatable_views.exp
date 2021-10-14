@@ -1,0 +1,7 @@
+SELECT * FROM rw_view1;
+ a |   arr   
+---+---------
+ 1 | {2}
+ 3 | {42,77}
+(2 rows)
+

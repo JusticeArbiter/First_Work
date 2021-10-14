@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into trigger_test values(1,'insert');
+LOCATION:  exec_simple_query, postgres.c:938

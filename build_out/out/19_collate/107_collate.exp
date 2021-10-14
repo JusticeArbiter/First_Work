@@ -1,0 +1,2 @@
+INSERT INTO collate_test20 VALUES ('foo'), ('bar');
+INSERT 0 2

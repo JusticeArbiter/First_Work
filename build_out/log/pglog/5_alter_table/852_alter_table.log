@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE test_inh_check ADD CONSTRAINT bnoinherit CHECK (b > 100) NO INHERIT;
+LOCATION:  exec_simple_query, postgres.c:938

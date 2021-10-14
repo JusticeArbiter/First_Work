@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter domain dom add constraint domchkgt6 check(value > 6);
+LOCATION:  exec_simple_query, postgres.c:938

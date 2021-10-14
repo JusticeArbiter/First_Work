@@ -1,0 +1,5 @@
+SELECT * FROM pg_largeobject LIMIT 0;
+ loid | pageno | data 
+------+--------+------
+(0 rows)
+

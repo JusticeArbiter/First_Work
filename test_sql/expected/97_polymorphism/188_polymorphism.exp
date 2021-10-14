@@ -1,0 +1,5 @@
+select dfunc();
+ERROR:  42883: function dfunc() does not exist
+LINE 1: select dfunc();
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

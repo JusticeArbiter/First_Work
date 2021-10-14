@@ -1,0 +1,2 @@
+CREATE USER seq_user;
+CREATE ROLE

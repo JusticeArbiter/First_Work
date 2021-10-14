@@ -1,0 +1,3 @@
+ALTER USER MAPPING FOR public SERVER s5 OPTIONS (gotcha 'true');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER USER MAPPING
+ERROR:  42704: user mapping "public" does not exist for the server

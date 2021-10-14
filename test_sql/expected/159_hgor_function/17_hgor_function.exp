@@ -1,0 +1,6 @@
+select round('2016-11-16'::date,'month'::text);
+   round    
+------------
+ 2016-12-01
+(1 row)
+

@@ -1,0 +1,5 @@
+select * from dfunc(x := 10, b := 20, c := 30);
+ERROR:  42883: function dfunc(x => integer, b => integer, c => integer) does not exist
+LINE 1: select * from dfunc(x := 10, b := 20, c := 30);
+                      ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

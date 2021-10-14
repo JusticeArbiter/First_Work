@@ -1,0 +1,2 @@
+LOG:  00000: statement: select div(12345678901234567890, 123) * 123 + 12345678901234567890 % 123;
+LOCATION:  exec_simple_query, postgres.c:938

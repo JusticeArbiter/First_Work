@@ -1,0 +1,5 @@
+select * from onek, (values(147, 'RFAAAA'), (931, 'VJAAAA')) as v (i, j) WHERE onek.unique1 = v.i and onek.stringu1 = v.j;
+ unique1 | unique2 | two | four | ten | twenty | hundred | thousand | twothousand | fivethous | tenthous | odd | even | stringu1 | stringu2 | string4 | i | j 
+---------+---------+-----+------+-----+--------+---------+----------+-------------+-----------+----------+-----+------+----------+----------+---------+---+---
+(0 rows)
+

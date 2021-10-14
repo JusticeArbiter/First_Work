@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE hash_i4_heap  SET random = 1  WHERE hash_i4_heap.seqno = 1492;
+LOCATION:  exec_simple_query, postgres.c:938

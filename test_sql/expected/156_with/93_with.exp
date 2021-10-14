@@ -1,0 +1,6 @@
+with cte(foo) as ( values(42) ) values((select foo from cte));
+ column1 
+---------
+      42
+(1 row)
+

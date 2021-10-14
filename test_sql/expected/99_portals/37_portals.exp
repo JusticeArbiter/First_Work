@@ -1,0 +1,2 @@
+FETCH 13 in foo13;
+ERROR:  34000: cursor "foo13" does not exist

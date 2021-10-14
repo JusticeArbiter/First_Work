@@ -1,0 +1,5 @@
+CREATE TEMP VIEW fdv1 AS  SELECT id, keywords, title, body, created  FROM articles  GROUP BY body;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+ERROR:  42P01: relation "articles" does not exist
+LINE 1: ...  SELECT id, keywords, title, body, created  FROM articles  ...
+                                                             ^

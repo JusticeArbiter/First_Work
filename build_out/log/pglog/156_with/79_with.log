@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT sum(n) FROM x)  SELECT * FROM x;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P19: aggregate functions are not allowed in a recursive query's recursive term at character 51
+LOCATION:  parseCheckAggregates, parse_agg.c:1133
+STATEMENT:  WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT sum(n) FROM x)  SELECT * FROM x;

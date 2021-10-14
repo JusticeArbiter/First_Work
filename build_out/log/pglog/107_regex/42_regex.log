@@ -1,0 +1,5 @@
+LOG:  00000: statement: select 'x' ~ repeat('x*y*z*', 1000);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2201B: invalid regular expression: regular expression is too complex
+LOCATION:  RE_compile_and_cache, regexp.c:204
+STATEMENT:  select 'x' ~ repeat('x*y*z*', 1000);

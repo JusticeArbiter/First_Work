@@ -1,0 +1,3 @@
+DROP AGGREGATE IF EXISTS test_aggregate_exists(*);
+NOTICE:  00000: aggregate test_aggregate_exists() does not exist, skipping
+DROP AGGREGATE

@@ -1,0 +1,2 @@
+LOG:  00000: statement: create table nv_child_2011 () inherits (nv_parent);
+LOCATION:  exec_simple_query, postgres.c:938

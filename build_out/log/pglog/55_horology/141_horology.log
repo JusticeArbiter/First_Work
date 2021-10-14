@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS ten, ABSTIME_TBL.f1 AS abstime, RELTIME_TBL.f1 AS reltime  FROM ABSTIME_TBL, RELTIME_TBL  WHERE (ABSTIME_TBL.f1 + RELTIME_TBL.f1) < abstime 'Jan 14 14:00:00 1971'  ORDER BY abstime, reltime;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "reltime_tbl" does not exist at character 91
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT '' AS ten, ABSTIME_TBL.f1 AS abstime, RELTIME_TBL.f1 AS reltime  FROM ABSTIME_TBL, RELTIME_TBL  WHERE (ABSTIME_TBL.f1 + RELTIME_TBL.f1) < abstime 'Jan 14 14:00:00 1971'  ORDER BY abstime, reltime;

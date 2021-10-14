@@ -1,0 +1,7 @@
+SELECT conname FROM pg_constraint WHERE conrelid = 'clstr_tst'::regclass  ORDER BY 1;
+    conname     
+----------------
+ clstr_tst_con
+ clstr_tst_pkey
+(2 rows)
+

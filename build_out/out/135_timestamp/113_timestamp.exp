@@ -1,0 +1,68 @@
+SELECT '' AS to_char_2, to_char(d1, 'FMDAY FMDay FMday FMMONTH FMMonth FMmonth FMRM')  FROM TIMESTAMP_TBL;
+ to_char_2 |                           to_char                            
+-----------+--------------------------------------------------------------
+           | 
+           | 
+           | THURSDAY Thursday thursday JANUARY January january I
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | THURSDAY Thursday thursday JANUARY January january I
+           | THURSDAY Thursday thursday JANUARY January january I
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | TUESDAY Tuesday tuesday JUNE June june VI
+           | SATURDAY Saturday saturday SEPTEMBER September september IX
+           | WEDNESDAY Wednesday wednesday MARCH March march III
+           | WEDNESDAY Wednesday wednesday MARCH March march III
+           | WEDNESDAY Wednesday wednesday MARCH March march III
+           | WEDNESDAY Wednesday wednesday MARCH March march III
+           | WEDNESDAY Wednesday wednesday MARCH March march III
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | MONDAY Monday monday FEBRUARY February february II
+           | TUESDAY Tuesday tuesday JUNE June june VI
+           | MONDAY Monday monday FEBRUARY February february II
+           | TUESDAY Tuesday tuesday FEBRUARY February february II
+           | WEDNESDAY Wednesday wednesday FEBRUARY February february II
+           | THURSDAY Thursday thursday FEBRUARY February february II
+           | FRIDAY Friday friday FEBRUARY February february II
+           | SATURDAY Saturday saturday FEBRUARY February february II
+           | SUNDAY Sunday sunday FEBRUARY February february II
+           | TUESDAY Tuesday tuesday FEBRUARY February february II
+           | SATURDAY Saturday saturday FEBRUARY February february II
+           | THURSDAY Thursday thursday FEBRUARY February february II
+           | TUESDAY Tuesday tuesday FEBRUARY February february II
+           | SATURDAY Saturday saturday FEBRUARY February february II
+           | THURSDAY Thursday thursday FEBRUARY February february II
+           | TUESDAY Tuesday tuesday FEBRUARY February february II
+           | SUNDAY Sunday sunday FEBRUARY February february II
+           | SATURDAY Saturday saturday FEBRUARY February february II
+           | WEDNESDAY Wednesday wednesday FEBRUARY February february II
+           | THURSDAY Thursday thursday FEBRUARY February february II
+           | FRIDAY Friday friday MARCH March march III
+           | MONDAY Monday monday DECEMBER December december XII
+           | TUESDAY Tuesday tuesday DECEMBER December december XII
+           | WEDNESDAY Wednesday wednesday JANUARY January january I
+           | FRIDAY Friday friday FEBRUARY February february II
+           | SATURDAY Saturday saturday MARCH March march III
+           | TUESDAY Tuesday tuesday DECEMBER December december XII
+           | WEDNESDAY Wednesday wednesday DECEMBER December december XII
+           | FRIDAY Friday friday DECEMBER December december XII
+           | SATURDAY Saturday saturday JANUARY January january I
+           | SUNDAY Sunday sunday DECEMBER December december XII
+           | MONDAY Monday monday JANUARY January january I
+(63 rows)
+

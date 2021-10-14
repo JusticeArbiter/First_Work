@@ -1,0 +1,2 @@
+LOG:  00000: statement: select min_value as sequence_min_value from hsseq;
+LOCATION:  exec_simple_query, postgres.c:938

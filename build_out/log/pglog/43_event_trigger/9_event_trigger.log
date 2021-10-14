@@ -1,0 +1,5 @@
+LOG:  00000: statement: create event trigger regress_event_trigger2 on ddl_command_start  when tag in ('sandwhich')  execute procedure test_event_trigger();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: filter value "sandwhich" not recognized for filter variable "tag"
+LOCATION:  validate_ddl_tags, event_trigger.c:265
+STATEMENT:  create event trigger regress_event_trigger2 on ddl_command_start  when tag in ('sandwhich')  execute procedure test_event_trigger();

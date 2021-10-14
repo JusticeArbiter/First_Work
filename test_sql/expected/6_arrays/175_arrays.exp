@@ -1,0 +1,4 @@
+insert into arr_tbl values ('{1,2,10}');
+ERROR:  42P01: relation "arr_tbl" does not exist
+LINE 1: insert into arr_tbl values ('{1,2,10}');
+                    ^

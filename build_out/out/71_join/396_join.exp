@@ -1,0 +1,19 @@
+explain (verbose, costs off)  select * from int4_tbl a,  lateral (  select * from int4_tbl b left join int8_tbl c on (b.f1 = q1 and a.f1 = q2)  ) ss;
+                   QUERY PLAN                    
+-------------------------------------------------
+ Nested Loop
+   Output: a.f1, b.f1, c.q1, c.q2
+   ->  Seq Scan on public.int4_tbl a
+         Output: a.f1
+   ->  Hash Left Join
+         Output: b.f1, c.q1, c.q2
+         Hash Cond: (b.f1 = c.q1)
+         ->  Seq Scan on public.int4_tbl b
+               Output: b.f1
+         ->  Hash
+               Output: c.q1, c.q2
+               ->  Seq Scan on public.int8_tbl c
+                     Output: c.q1, c.q2
+                     Filter: (a.f1 = c.q2)
+(14 rows)
+

@@ -1,0 +1,6 @@
+SELECT plainto_tsquery('english', 'the and z 1))& fghj');
+  plainto_tsquery   
+--------------------
+ 'z' & '1' & 'fghj'
+(1 row)
+

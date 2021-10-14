@@ -1,0 +1,6 @@
+SELECT timestamp without time zone 'Jan 1, 4713 BC' + interval '107000000 days' AS "Jan 20, 288244";
+    Jan 20, 288244     
+-----------------------
+ 288244-01-20 00:00:00
+(1 row)
+

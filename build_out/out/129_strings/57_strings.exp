@@ -1,0 +1,6 @@
+SELECT regexp_matches('foObARbEqUEbAz', $re$(bar)(beque)$re$, 'i');
+ regexp_matches 
+----------------
+ {bAR,bEqUE}
+(1 row)
+

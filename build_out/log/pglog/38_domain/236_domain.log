@@ -1,0 +1,5 @@
+LOG:  00000: statement: select doubledecrement(null);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23502: domain pos_int does not allow null values
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4021
+STATEMENT:  select doubledecrement(null);

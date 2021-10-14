@@ -1,0 +1,2 @@
+INSERT INTO b(aa) VALUES('bbbbb');
+INSERT 0 1

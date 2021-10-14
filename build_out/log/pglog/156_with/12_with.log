@@ -1,0 +1,2 @@
+LOG:  00000: statement: WITH q AS (SELECT 'foo' AS x)  SELECT x, x IS OF (unknown) as is_unknown FROM q;
+LOCATION:  exec_simple_query, postgres.c:938

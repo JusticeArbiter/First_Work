@@ -1,0 +1,53 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: select 1;
+ statement: select;
+ statement: select * from nonesuch;
+ statement: select nonesuch from pg_database;
+ statement: select * from pg_database where nonesuch = pg_database.datname;
+ statement: select * from pg_database where pg_database.datname = nonesuch;
+ statement: select distinct on (foobar) * from pg_database;
+ statement: delete from nonesuch;
+ statement: drop table nonesuch;
+ statement: alter table nonesuch rename to newnonesuch;
+ statement: alter table nonesuch rename to stud_emp;
+ statement: alter table stud_emp rename to aggtest;
+ statement: alter table stud_emp rename to stud_emp;
+ statement: alter table nonesuchrel rename column nonesuchatt to newnonesuchatt;
+ statement: alter table emp rename column nonesuchatt to newnonesuchatt;
+ statement: alter table emp rename column salary to manager;
+ statement: alter table emp rename column salary to oid;
+ statement: abort;
+ statement: end;
+ statement: create aggregate newavg2 (sfunc = int4pl,                           +
+                           basetype = int4,                                     +
+                           stype = int4,                                        +
+                           finalfunc = int2um,                                  +
+                           initcond = '0');
+ statement: create aggregate newcnt1 (sfunc = int4inc,                          +
+                           stype = int4,                                        +
+                           initcond = '0');
+ statement: drop index nonesuch;
+ statement: drop aggregate newcnt (nonesuch);
+ statement: drop aggregate nonesuch (int4);
+ statement: drop aggregate newcnt (float4);
+ statement: drop function nonesuch();
+ statement: drop type nonesuch;
+ statement: drop operator === (int4, int4);
+ statement: drop operator = (nonesuch, int4);
+ statement: drop operator = (int4, nonesuch);
+ statement: drop rule nonesuch on noplace;
+ statement: select 1/0;
+ statement: select 1::int8/0;
+ statement: select 1/0::int8;
+ statement: select 1::int2/0;
+ statement: select 1/0::int2;
+ statement: select 1::numeric/0;
+ statement: select 1/0::numeric;
+ statement: select 1::float8/0;
+ statement: select 1/0::float8;
+ statement: select 1::float4/0;
+ statement: select 1/0::float4;
+ statement: create function infinite_recurse() returns int as                   +
+ 'select infinite_recurse()' language sql;
+ statement: select infinite_recurse();
+

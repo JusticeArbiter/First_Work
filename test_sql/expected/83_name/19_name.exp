@@ -1,0 +1,5 @@
+SELECT '' AS zero, c.f1 FROM NAME_TBL c WHERE c.f1 !~ '.*';
+ zero | f1 
+------+----
+(0 rows)
+

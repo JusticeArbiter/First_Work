@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into atacc1 values (default, 11, 12, 13);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: INSERT has more expressions than target columns at character 45
+LOCATION:  transformInsertRow, analyze.c:814
+STATEMENT:  insert into atacc1 values (default, 11, 12, 13);

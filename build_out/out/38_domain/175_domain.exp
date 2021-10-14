@@ -1,0 +1,2 @@
+INSERT INTO thethings (stuff) VALUES (55);
+INSERT 0 1

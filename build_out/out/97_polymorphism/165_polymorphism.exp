@@ -1,0 +1,6 @@
+select dfunc('Hi');
+   dfunc   
+-----------
+ Hi, World
+(1 row)
+

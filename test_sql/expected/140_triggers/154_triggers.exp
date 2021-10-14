@@ -1,0 +1,2 @@
+delete from trigtest where i=1;
+DELETE 1

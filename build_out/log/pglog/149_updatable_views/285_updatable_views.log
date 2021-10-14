@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO rw_view3 VALUES (null, null, null, null);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: cannot insert into column "t" of view "rw_view3"
+DETAIL:  View columns that are not columns of their base relation are not updatable.
+LOCATION:  rewriteTargetView, rewriteHandler.c:2751
+STATEMENT:  INSERT INTO rw_view3 VALUES (null, null, null, null);

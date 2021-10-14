@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc3 no inherit atacc2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "atacc2" is not a parent of relation "atacc3"
+LOCATION:  ATExecDropInherit, tablecmds.c:10614
+STATEMENT:  alter table atacc3 no inherit atacc2;

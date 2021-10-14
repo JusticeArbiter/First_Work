@@ -1,0 +1,6 @@
+SELECT 'hawkeye' NOT ILIKE 'H%Eye' AS "false";
+ false 
+-------
+ f
+(1 row)
+

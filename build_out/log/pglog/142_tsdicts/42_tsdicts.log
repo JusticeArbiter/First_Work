@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT to_tsquery('ispell_tst', 'footballklubber');
+LOCATION:  exec_simple_query, postgres.c:938

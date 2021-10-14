@@ -1,0 +1,6 @@
+select foo from (select null) as foo;
+ foo 
+-----
+ ()
+(1 row)
+

@@ -1,0 +1,6 @@
+select to_jsonb(date 'Infinity');
+  to_jsonb  
+------------
+ "infinity"
+(1 row)
+

@@ -1,0 +1,4 @@
+INSERT INTO OID_TBL(f1) VALUES ('32958209582039852935');
+ERROR:  22003: value "32958209582039852935" is out of range for type oid
+LINE 1: INSERT INTO OID_TBL(f1) VALUES ('32958209582039852935');
+                                        ^

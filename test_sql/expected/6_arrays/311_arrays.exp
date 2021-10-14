@@ -1,0 +1,6 @@
+select array_remove(array['X','X','X'], 'X') = '{}';
+ ?column? 
+----------
+ t
+(1 row)
+

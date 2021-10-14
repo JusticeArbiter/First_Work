@@ -1,0 +1,6 @@
+select concat_ws(',', variadic NULL::int[]);
+ concat_ws 
+-----------
+ 
+(1 row)
+

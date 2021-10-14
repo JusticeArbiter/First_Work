@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE collate_test20 (f1 text COLLATE "C" PRIMARY KEY);
+LOCATION:  exec_simple_query, postgres.c:938

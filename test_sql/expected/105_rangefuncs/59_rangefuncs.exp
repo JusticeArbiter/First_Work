@@ -1,0 +1,7 @@
+select * from foo2 where f2 in (select f2 from foot(1) z where z.fooid = foo2.fooid) ORDER BY 1,2;
+ fooid | f2  
+-------+-----
+     1 |  11
+     1 | 111
+(2 rows)
+

@@ -1,0 +1,4 @@
+DROP TABLE dependee CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+NOTICE:  00000: drop cascades to policy d1 on table dependent
+DROP TABLE

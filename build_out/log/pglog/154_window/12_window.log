@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT row_number() OVER (ORDER BY unique2) FROM tenk1 WHERE unique2 < 10;
+LOCATION:  exec_simple_query, postgres.c:938

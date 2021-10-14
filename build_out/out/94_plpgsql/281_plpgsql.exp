@@ -1,0 +1,2 @@
+insert into IFace values ('IF', 'notthere', 'eth0', '');
+ERROR:  P0001: system "notthere" does not exist

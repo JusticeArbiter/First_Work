@@ -1,0 +1,3 @@
+DROP USER seq_user;
+ERROR:  2BP01: role "seq_user" cannot be dropped because some objects depend on it
+DETAIL:  privileges for sequence seq3

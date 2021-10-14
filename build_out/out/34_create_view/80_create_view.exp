@@ -1,0 +1,9 @@
+SELECT relname, relkind, reloptions FROM pg_class  WHERE oid in ('mysecview1'::regclass, 'mysecview2'::regclass,  'mysecview3'::regclass, 'mysecview4'::regclass)  ORDER BY relname;
+  relname   | relkind |        reloptions        
+------------+---------+--------------------------
+ mysecview1 | v       | 
+ mysecview2 | v       | {security_barrier=true}
+ mysecview3 | v       | {security_barrier=false}
+ mysecview4 | v       | {security_barrier=true}
+(4 rows)
+

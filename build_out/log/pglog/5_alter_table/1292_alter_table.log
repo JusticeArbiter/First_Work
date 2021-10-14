@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE unlogged2 SET LOGGED;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: could not change table "unlogged2" to logged because it references unlogged table "unlogged1"
+LOCATION:  ATPrepChangePersistence, tablecmds.c:11461
+STATEMENT:  ALTER TABLE unlogged2 SET LOGGED;

@@ -1,0 +1,4 @@
+select json '{ "a": "null \u0000 escape" }' ->> 'a' as fails;
+ERROR:  22P05: unsupported Unicode escape sequence
+DETAIL:  \u0000 cannot be converted to text.
+CONTEXT:  JSON data, line 1: { "a":...

@@ -1,0 +1,2 @@
+CLOSE _psql_cursor
+ERROR:  34000: cursor "_psql_cursor" does not exist

@@ -1,0 +1,6 @@
+SELECT typname FROM pg_type WHERE oid = '_tmp_array[]'::regtype;
+   typname   
+-------------
+ __tmp_array
+(1 row)
+

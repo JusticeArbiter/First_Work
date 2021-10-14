@@ -1,0 +1,5 @@
+LOG:  00000: statement: select has_table_privilege('nosuchuser','pg_authid','select');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: role "nosuchuser" does not exist
+LOCATION:  get_role_oid, acl.c:5122
+STATEMENT:  select has_table_privilege('nosuchuser','pg_authid','select');

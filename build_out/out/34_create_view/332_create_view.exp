@@ -1,0 +1,4 @@
+create view tt17v as select * from int8_tbl i where i in (values(i));
+ERROR:  42P01: relation "int8_tbl" does not exist
+LINE 1: create view tt17v as select * from int8_tbl i where i in (va...
+                                           ^

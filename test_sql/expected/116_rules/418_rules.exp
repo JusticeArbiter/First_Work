@@ -1,0 +1,4 @@
+create table test_1 (id integer primary key) inherits (id);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  00000: merging column "id" with inherited definition
+CREATE TABLE

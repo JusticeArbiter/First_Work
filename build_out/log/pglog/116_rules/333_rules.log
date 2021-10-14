@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into shoelace values ('sl10', 1000, 'magenta', 40.0, 'inch', 0.0)  on conflict do nothing;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: INSERT with ON CONFLICT clause cannot be used with table that has INSERT or UPDATE rules
+LOCATION:  RewriteQuery, rewriteHandler.c:3426
+STATEMENT:  insert into shoelace values ('sl10', 1000, 'magenta', 40.0, 'inch', 0.0)  on conflict do nothing;

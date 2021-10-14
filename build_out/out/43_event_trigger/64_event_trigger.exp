@@ -1,0 +1,3 @@
+CREATE TABLE dropped_objects (  type text,  schema text,  object text  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

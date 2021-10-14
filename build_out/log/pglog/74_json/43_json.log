@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT 'true, false'::json;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type json at character 8
+DETAIL:  Expected end of input, but found ",".
+CONTEXT:  JSON data, line 1: true,...
+LOCATION:  report_parse_error, json.c:1148
+STATEMENT:  SELECT 'true, false'::json;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: RESET enable_hashagg;
+LOCATION:  exec_simple_query, postgres.c:938

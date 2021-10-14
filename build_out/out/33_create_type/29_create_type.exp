@@ -1,0 +1,3 @@
+DROP TYPE default_test_row CASCADE;
+NOTICE:  00000: drop cascades to function get_default_test()
+DROP TYPE

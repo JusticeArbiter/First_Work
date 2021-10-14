@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT array_to_json(array_agg(x),false) from generate_series(5,10) x;
+LOCATION:  exec_simple_query, postgres.c:938

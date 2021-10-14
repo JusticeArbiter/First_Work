@@ -1,0 +1,2 @@
+LOG:  00000: statement: SET SESSION AUTHORIZATION rls_regress_user0;
+LOCATION:  exec_simple_query, postgres.c:938

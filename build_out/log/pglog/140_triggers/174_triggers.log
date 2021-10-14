@@ -1,0 +1,8 @@
+LOG:  00000: statement: UPDATE trigger_test SET f3 = 'bar';
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: row 1 not changed
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE trigger_test SET f3 = 'bar';
+NOTICE:  00000: row 2 changed
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE trigger_test SET f3 = 'bar';

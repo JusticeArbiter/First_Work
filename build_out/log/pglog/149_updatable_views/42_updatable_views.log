@@ -1,0 +1,6 @@
+LOG:  00000: statement: UPDATE rw_view14 SET ctid=null WHERE a=3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: cannot update column "ctid" of view "rw_view14"
+DETAIL:  View columns that refer to system columns are not updatable.
+LOCATION:  rewriteTargetView, rewriteHandler.c:2759
+STATEMENT:  UPDATE rw_view14 SET ctid=null WHERE a=3;

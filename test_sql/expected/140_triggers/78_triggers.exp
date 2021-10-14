@@ -1,0 +1,4 @@
+INSERT INTO main_table DEFAULT VALUES;
+NOTICE:  00000: trigger_func(before_ins_stmt) called: action = INSERT, when = BEFORE, level = STATEMENT
+NOTICE:  00000: trigger_func(after_ins_stmt) called: action = INSERT, when = AFTER, level = STATEMENT
+INSERT 0 1

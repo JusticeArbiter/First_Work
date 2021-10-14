@@ -1,0 +1,1 @@
+SELECT * INTO t4 FROM t1;

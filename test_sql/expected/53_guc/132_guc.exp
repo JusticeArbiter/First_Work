@@ -1,0 +1,2 @@
+CREATE ROLE temp_reset_user;
+CREATE ROLE

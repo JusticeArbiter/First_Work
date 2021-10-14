@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE OPERATOR #*# (  leftarg = int8,  rightarg = type_op4,  procedure = fn_op4  );
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+select null::int = any ('{1,2,3}');
+ ?column? 
+----------
+ 
+(1 row)
+

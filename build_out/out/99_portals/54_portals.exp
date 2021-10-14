@@ -1,0 +1,2 @@
+FETCH backward 7 in foo17;
+ERROR:  34000: cursor "foo17" does not exist

@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT date '99 01 08';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22008: date/time field value out of range: "99 01 08" at character 13
+HINT:  Perhaps you need a different "datestyle" setting.
+LOCATION:  DateTimeParseError, datetime.c:3818
+STATEMENT:  SELECT date '99 01 08';

@@ -1,0 +1,7 @@
+UPDATE city_view SET country_name = 'USA', population = 8391881 WHERE city_name = 'New York' RETURNING *;
+ city_id | city_name | population | country_name |   continent   
+---------+-----------+------------+--------------+---------------
+  123456 | New York  |    8391881 | USA          | North America
+(1 row)
+
+UPDATE 1

@@ -1,0 +1,2 @@
+insert into nulltest values ('a', 'b', 'c', 'd', NULL);
+ERROR:  23502: domain dcheck does not allow null values

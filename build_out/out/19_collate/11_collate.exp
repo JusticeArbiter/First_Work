@@ -1,0 +1,2 @@
+CREATE TABLE collate_test_like (  LIKE collate_test1  );
+ERROR:  42P07: relation "collate_test_like" already exists

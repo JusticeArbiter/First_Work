@@ -1,0 +1,9 @@
+select vari(3,4,5);
+NOTICE:  00000: 3
+NOTICE:  00000: 4
+NOTICE:  00000: 5
+ vari 
+------
+ 
+(1 row)
+

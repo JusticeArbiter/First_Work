@@ -1,0 +1,6 @@
+SELECT '1.3ex100'::jsonb;
+ERROR:  22P02: invalid input syntax for type json
+LINE 1: SELECT '1.3ex100'::jsonb;
+               ^
+DETAIL:  Token "1.3ex100" is invalid.
+CONTEXT:  JSON data, line 1: 1.3ex100

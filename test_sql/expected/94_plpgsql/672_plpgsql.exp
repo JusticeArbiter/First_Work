@@ -1,0 +1,6 @@
+select case_test(10);
+ case_test 
+-----------
+ ten
+(1 row)
+

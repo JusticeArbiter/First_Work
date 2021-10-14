@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE RULE shoelace_ins AS ON INSERT TO shoelace  DO INSTEAD  INSERT INTO shoelace_data VALUES (  NEW.sl_name,  NEW.sl_avail,  NEW.sl_color,  NEW.sl_len,  NEW.sl_unit);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE RULE shoelace_ins AS ON INSERT TO shoelace  DO INSTEAD  INSERT INTO shoelace_data VALUES (  NEW.sl_name,  NEW.sl_avail,  NEW.sl_color,  NEW.sl_len,  NEW.sl_unit);

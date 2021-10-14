@@ -1,0 +1,2 @@
+move backward all in c;
+ERROR:  34000: cursor "c" does not exist

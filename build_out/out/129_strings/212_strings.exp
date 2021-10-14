@@ -1,0 +1,6 @@
+show escape_string_warning;
+ escape_string_warning 
+-----------------------
+ on
+(1 row)
+

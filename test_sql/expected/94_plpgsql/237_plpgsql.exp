@@ -1,0 +1,71 @@
+select * from PSlot order by slotname;
+       slotname       | pfname |       slotlink       |       backlink       
+----------------------+--------+----------------------+----------------------
+ PS.base.a1           | PF0_1  |                      | WS.001.1a           
+ PS.base.a2           | PF0_1  |                      | WS.001.1b           
+ PS.base.a3           | PF0_1  |                      | WS.001.2a           
+ PS.base.a4           | PF0_1  |                      | WS.001.2b           
+ PS.base.a5           | PF0_1  |                      | WS.001.3a           
+ PS.base.a6           | PF0_1  |                      | WS.001.3b           
+ PS.base.b1           | PF0_1  |                      | WS.002.1a           
+ PS.base.b2           | PF0_1  |                      | WS.002.1b           
+ PS.base.b3           | PF0_1  |                      | WS.002.2a           
+ PS.base.b4           | PF0_1  |                      | WS.002.2b           
+ PS.base.b5           | PF0_1  |                      | WS.002.3a           
+ PS.base.b6           | PF0_1  |                      | WS.002.3b           
+ PS.base.c1           | PF0_1  |                      | WS.003.1a           
+ PS.base.c2           | PF0_1  |                      | WS.003.1b           
+ PS.base.c3           | PF0_1  |                      | WS.003.2a           
+ PS.base.c4           | PF0_1  |                      | WS.003.2b           
+ PS.base.c5           | PF0_1  |                      | WS.003.3a           
+ PS.base.c6           | PF0_1  |                      | WS.003.3b           
+ PS.base.ta1          | PF0_2  |                      |                     
+ PS.base.ta2          | PF0_2  |                      |                     
+ PS.base.ta3          | PF0_2  |                      |                     
+ PS.base.ta4          | PF0_2  |                      |                     
+ PS.base.ta5          | PF0_2  |                      |                     
+ PS.base.ta6          | PF0_2  |                      |                     
+ PS.base.tb1          | PF0_2  |                      |                     
+ PS.base.tb2          | PF0_2  |                      |                     
+ PS.base.tb3          | PF0_2  |                      |                     
+ PS.base.tb4          | PF0_2  |                      |                     
+ PS.base.tb5          | PF0_2  |                      |                     
+ PS.base.tb6          | PF0_2  |                      |                     
+ PS.first.a1          | PF1_1  |                      | WS.101.1a           
+ PS.first.a2          | PF1_1  |                      | WS.101.1b           
+ PS.first.a3          | PF1_1  |                      | WS.101.2a           
+ PS.first.a4          | PF1_1  |                      | WS.101.2b           
+ PS.first.a5          | PF1_1  |                      | WS.101.3a           
+ PS.first.a6          | PF1_1  |                      | WS.101.3b           
+ PS.first.b1          | PF1_1  |                      | WS.102.1a           
+ PS.first.b2          | PF1_1  |                      | WS.102.1b           
+ PS.first.b3          | PF1_1  |                      | WS.102.2a           
+ PS.first.b4          | PF1_1  |                      | WS.102.2b           
+ PS.first.b5          | PF1_1  |                      | WS.102.3a           
+ PS.first.b6          | PF1_1  |                      | WS.102.3b           
+ PS.first.c1          | PF1_1  |                      | WS.105.1a           
+ PS.first.c2          | PF1_1  |                      | WS.105.1b           
+ PS.first.c3          | PF1_1  |                      | WS.105.2a           
+ PS.first.c4          | PF1_1  |                      | WS.105.2b           
+ PS.first.c5          | PF1_1  |                      | WS.105.3a           
+ PS.first.c6          | PF1_1  |                      | WS.105.3b           
+ PS.first.d1          | PF1_1  |                      | WS.106.1a           
+ PS.first.d2          | PF1_1  |                      | WS.106.1b           
+ PS.first.d3          | PF1_1  |                      | WS.106.2a           
+ PS.first.d4          | PF1_1  |                      | WS.106.2b           
+ PS.first.d5          | PF1_1  |                      | WS.106.3a           
+ PS.first.d6          | PF1_1  |                      | WS.106.3b           
+ PS.first.ta1         | PF1_2  |                      |                     
+ PS.first.ta2         | PF1_2  |                      |                     
+ PS.first.ta3         | PF1_2  |                      |                     
+ PS.first.ta4         | PF1_2  |                      |                     
+ PS.first.ta5         | PF1_2  |                      |                     
+ PS.first.ta6         | PF1_2  |                      |                     
+ PS.first.tb1         | PF1_2  |                      |                     
+ PS.first.tb2         | PF1_2  |                      |                     
+ PS.first.tb3         | PF1_2  |                      |                     
+ PS.first.tb4         | PF1_2  |                      |                     
+ PS.first.tb5         | PF1_2  |                      |                     
+ PS.first.tb6         | PF1_2  |                      |                     
+(66 rows)
+

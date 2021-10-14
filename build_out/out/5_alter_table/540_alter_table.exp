@@ -1,0 +1,4 @@
+update atacc1 set a = 3;
+ERROR:  42703: column "a" of relation "atacc1" does not exist
+LINE 1: update atacc1 set a = 3;
+                          ^

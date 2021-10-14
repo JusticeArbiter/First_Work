@@ -1,0 +1,6 @@
+select 'a\bcd' as f1, 'a\b''cd' as f2, 'a\b''''cd' as f3, 'abcd\' as f4, 'ab\''cd' as f5, '\\' as f6;
+  f1   |   f2   |   f3    |  f4   |   f5   | f6 
+-------+--------+---------+-------+--------+----
+ a\bcd | a\b'cd | a\b''cd | abcd\ | ab\'cd | \\
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT int4 '2' * int2 '2' = int2 '16' / int4 '4' AS true;
+LOCATION:  exec_simple_query, postgres.c:938

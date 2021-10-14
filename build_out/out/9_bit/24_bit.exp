@@ -1,0 +1,5 @@
+SELECT a,b,a<b AS "a<b",a<=b AS "a<=b",a=b AS "a=b",  a>=b AS "a>=b",a>b AS "a>b",a<>b AS "a<>b" FROM varbit_table;
+ a | b | a<b | a<=b | a=b | a>=b | a>b | a<>b 
+---+---+-----+------+-----+------+-----+------
+(0 rows)
+

@@ -1,0 +1,2 @@
+ALTER TABLE onek ADD CONSTRAINT onek_unique1_constraint UNIQUE (unique1);
+ERROR:  42P01: relation "onek" does not exist

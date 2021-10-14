@@ -1,0 +1,1 @@
+COPY test1 TO STDOUT 

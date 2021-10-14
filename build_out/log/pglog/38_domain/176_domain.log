@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER DOMAIN things ADD CONSTRAINT meow CHECK (VALUE < 11);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: column "stuff" of table "thethings" contains values that violate the new constraint
+LOCATION:  validateDomainConstraint, typecmds.c:2757
+STATEMENT:  ALTER DOMAIN things ADD CONSTRAINT meow CHECK (VALUE < 11);

@@ -1,0 +1,11 @@
+explain (costs off)  select * from  (  select unique1, q1, coalesce(unique1, -1) + q1 as fault  from int8_tbl left join tenk1 on (q2 = unique2)  ) ss  where fault = 122  order by fault;
+                                QUERY PLAN                                
+--------------------------------------------------------------------------
+ Hash Left Join
+   Hash Cond: (int8_tbl.q2 = tenk1.unique2)
+   Filter: ((COALESCE(tenk1.unique1, '-1'::integer) + int8_tbl.q1) = 122)
+   ->  Seq Scan on int8_tbl
+   ->  Hash
+         ->  Seq Scan on tenk1
+(6 rows)
+

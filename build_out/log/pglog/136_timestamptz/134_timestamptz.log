@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS to_char_10, to_char(d1, 'IYYY IYY IY I IW IDDD ID')  FROM TIMESTAMPTZ_TBL;
+LOCATION:  exec_simple_query, postgres.c:938

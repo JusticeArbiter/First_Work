@@ -1,0 +1,11 @@
+SELECT relname, d.* FROM d, pg_class where d.tableoid = pg_class.oid;
+ relname | aa  | bb | cc | dd 
+---------+-----+----+----+----
+ d       | new |    |    | 
+ d       | new |    |    | 
+ d       | new |    |    | 
+ d       | new |    |    | 
+ d       | new |    |    | 
+ d       | new |    |    | 
+(6 rows)
+

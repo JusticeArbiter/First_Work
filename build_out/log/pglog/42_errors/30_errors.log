@@ -1,0 +1,5 @@
+LOG:  00000: statement: drop operator = (int4, nonesuch);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: type "nonesuch" does not exist
+LOCATION:  LookupTypeNameOid, parse_type.c:228
+STATEMENT:  drop operator = (int4, nonesuch);

@@ -1,0 +1,6 @@
+SELECT regexp_replace('AAA BBB CCC ', E'\\s+', ' ', 'g');
+ regexp_replace 
+----------------
+ AAA BBB CCC 
+(1 row)
+

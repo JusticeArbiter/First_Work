@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT POSITION(B'' IN B'00001010');
+LOCATION:  exec_simple_query, postgres.c:938

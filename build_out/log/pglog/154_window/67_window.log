@@ -1,0 +1,5 @@
+LOG:  00000: statement: DELETE FROM empsalary WHERE (rank() OVER (ORDER BY random())) > 10;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "empsalary" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  DELETE FROM empsalary WHERE (rank() OVER (ORDER BY random())) > 10;

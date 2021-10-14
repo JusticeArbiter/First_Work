@@ -1,0 +1,3 @@
+CREATE SCHEMA schema_two authorization regression_bob;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SCHEMA
+CREATE SCHEMA

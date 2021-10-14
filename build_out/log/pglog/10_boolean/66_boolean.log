@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS "True", f1  FROM BOOLTBL2  WHERE f1 IS TRUE;
+LOCATION:  exec_simple_query, postgres.c:938

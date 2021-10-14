@@ -1,0 +1,2 @@
+drop rule nonesuch on noplace;
+ERROR:  42P01: relation "noplace" does not exist

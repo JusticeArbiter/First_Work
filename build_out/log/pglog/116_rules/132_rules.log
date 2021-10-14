@@ -1,0 +1,2 @@
+LOG:  00000: statement: update rtest_empmass set salary = salary + '1000.00';
+LOCATION:  exec_simple_query, postgres.c:938

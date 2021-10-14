@@ -1,0 +1,2 @@
+TRUNCATE trunc_stats_test3;
+TRUNCATE TABLE

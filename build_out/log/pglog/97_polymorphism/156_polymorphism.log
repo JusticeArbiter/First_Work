@@ -1,0 +1,8 @@
+LOG:  00000: statement: create function dfunc(a int = 1, b int) returns int as $$  select $1 + $2;  $$ language sql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function dfunc(a int = 1, b int) returns int as $$  select $1 + $2;  $$ language sql;
+ERROR:  42P13: input parameters after one with a default value must also have defaults
+LOCATION:  interpret_function_parameter_list, functioncmds.c:410
+STATEMENT:  create function dfunc(a int = 1, b int) returns int as $$  select $1 + $2;  $$ language sql;

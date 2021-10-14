@@ -1,0 +1,6 @@
+select min(1-id) from matest0;
+ min 
+-----
+  -5
+(1 row)
+

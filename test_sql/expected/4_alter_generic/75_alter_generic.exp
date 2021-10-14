@@ -1,0 +1,2 @@
+ALTER SERVER alt_fserv1 RENAME TO alt_fserv2;
+ERROR:  42710: server "alt_fserv2" already exists

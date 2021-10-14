@@ -1,0 +1,2 @@
+DROP TABLE unlogged2;
+ERROR:  42P01: table "unlogged2" does not exist

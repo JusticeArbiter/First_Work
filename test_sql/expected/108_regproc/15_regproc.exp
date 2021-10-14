@@ -1,0 +1,6 @@
+SELECT regoperator('pg_catalog.+(int4,int4)');
+    regoperator     
+--------------------
+ +(integer,integer)
+(1 row)
+

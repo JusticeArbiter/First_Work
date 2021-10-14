@@ -1,0 +1,12 @@
+LOG:  00000: statement: select cache_test(1);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CONTEXT:  SQL statement "create temp table t1(f1 int)"
+	PL/pgSQL function cache_test(integer) line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select cache_test(1);
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+CONTEXT:  SQL statement "drop table t1"
+	PL/pgSQL function cache_test(integer) line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select cache_test(1);

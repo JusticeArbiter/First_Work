@@ -1,0 +1,5 @@
+LOG:  00000: statement: DELETE FROM v1 WHERE snoop(a) AND leakproof(a);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" does not exist at character 28
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  DELETE FROM v1 WHERE snoop(a) AND leakproof(a);

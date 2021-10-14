@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT array_position(ARRAY[[1,2],[3,4]], 3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: searching for elements in multidimensional arrays is not supported
+LOCATION:  array_position_common, array_userfuncs.c:737
+STATEMENT:  SELECT array_position(ARRAY[[1,2],[3,4]], 3);

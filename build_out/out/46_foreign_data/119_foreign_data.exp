@@ -1,0 +1,3 @@
+ALTER SERVER s1 VERSION '1.0' OPTIONS (servername 's1');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER SERVER
+ALTER SERVER

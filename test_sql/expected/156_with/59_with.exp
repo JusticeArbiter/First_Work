@@ -1,0 +1,4 @@
+WITH t AS (  SELECT a FROM y  )  INSERT INTO y  SELECT a+20 FROM t RETURNING *;
+ERROR:  42P01: relation "y" does not exist
+LINE 1: WITH t AS (  SELECT a FROM y  )  INSERT INTO y  SELECT a+20 ...
+                                   ^

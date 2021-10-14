@@ -1,0 +1,6 @@
+SELECT * FROM chksetconfig();
+ db  |   role   | rolkeyword |        setconfig        
+-----+----------+------------+-------------------------
+ ALL | testrol1 | -          | {application_name=SLAM}
+(1 row)
+

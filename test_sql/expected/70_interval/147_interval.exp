@@ -1,0 +1,6 @@
+select make_interval(years := 1, months := -1, weeks := 5, days := -7, hours := 25, mins := -180);
+      make_interval       
+--------------------------
+ 11 mons 28 days 22:00:00
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT interval '1 2.345' hour to second(2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type interval: "1 2.345" at character 17
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  SELECT interval '1 2.345' hour to second(2);

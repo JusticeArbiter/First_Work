@@ -1,0 +1,6 @@
+SELECT 'a' < 'b & c'::tsquery as "true";
+ true 
+------
+ t
+(1 row)
+

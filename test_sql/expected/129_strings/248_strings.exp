@@ -1,0 +1,6 @@
+SELECT btrim(''::bytea, E'\\000'::bytea);
+ btrim 
+-------
+ \x
+(1 row)
+

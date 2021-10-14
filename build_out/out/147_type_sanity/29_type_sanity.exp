@@ -1,0 +1,8 @@
+SELECT DISTINCT typtype, typsend  FROM pg_type AS p1  WHERE p1.typtype not in ('b', 'd', 'p')  ORDER BY 1;
+ typtype |   typsend   
+---------+-------------
+ c       | record_send
+ e       | enum_send
+ r       | range_send
+(3 rows)
+

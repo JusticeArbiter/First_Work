@@ -1,0 +1,2 @@
+LOG:  00000: statement: do $$  BEGIN  EXECUTE 'CREATE COLLATION test1 (lc_collate = ' ||  quote_literal(current_setting('lc_collate')) ||  ', lc_ctype = ' ||  quote_literal(current_setting('lc_ctype')) || ');';  END  $$;
+LOCATION:  exec_simple_query, postgres.c:938

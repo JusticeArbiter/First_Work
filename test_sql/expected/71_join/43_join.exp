@@ -1,0 +1,12 @@
+SELECT '' AS "xxx", *  FROM J1_TBL JOIN J2_TBL ON (J1_TBL.i = J2_TBL.i);
+ xxx | i | j |   t   | i | k  
+-----+---+---+-------+---+----
+     | 0 |   | zero  | 0 |   
+     | 1 | 4 | one   | 1 | -1
+     | 2 | 3 | two   | 2 |  2
+     | 2 | 3 | two   | 2 |  4
+     | 3 | 2 | three | 3 | -3
+     | 5 | 0 | five  | 5 | -5
+     | 5 | 0 | five  | 5 | -5
+(7 rows)
+

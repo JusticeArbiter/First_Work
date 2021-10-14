@@ -1,0 +1,4 @@
+drop rule "_RETURN" on fooview;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP RULE
+ERROR:  2BP01: cannot drop rule _RETURN on view fooview because view fooview requires it
+HINT:  You can drop view fooview instead.

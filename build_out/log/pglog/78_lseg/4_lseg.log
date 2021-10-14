@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO LSEG_TBL VALUES ('10,-10 ,-3,-4');
+LOCATION:  exec_simple_query, postgres.c:938

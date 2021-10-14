@@ -1,0 +1,2 @@
+alter table tt3 rename c to d;
+ERROR:  42703: column "c" does not exist

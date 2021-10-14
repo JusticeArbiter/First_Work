@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT COUNT(*) FROM guid1 WHERE guid_field >= '22222222-2222-2222-2222-222222222222';
+LOCATION:  exec_simple_query, postgres.c:938

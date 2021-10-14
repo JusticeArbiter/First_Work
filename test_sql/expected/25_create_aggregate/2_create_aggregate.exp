@@ -1,0 +1,2 @@
+COMMENT ON AGGREGATE newavg_wrong (int4) IS 'an agg comment';
+ERROR:  42883: aggregate newavg_wrong(integer) does not exist

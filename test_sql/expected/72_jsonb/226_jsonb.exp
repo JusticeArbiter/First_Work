@@ -1,0 +1,6 @@
+SELECT jsonb_build_array(VARIADIC '{a,b,c}'::text[]);
+ jsonb_build_array 
+-------------------
+ ["a", "b", "c"]
+(1 row)
+

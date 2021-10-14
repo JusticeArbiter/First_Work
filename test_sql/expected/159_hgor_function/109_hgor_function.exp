@@ -1,0 +1,6 @@
+select decode('HG'::varchar,'Hg'::varchar,'YND'::name);
+ decode 
+--------
+ 
+(1 row)
+

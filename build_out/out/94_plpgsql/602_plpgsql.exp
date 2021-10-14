@@ -1,0 +1,4 @@
+select compos();
+ERROR:  42804: returned record type does not match expected record type
+DETAIL:  Returned type unknown does not match expected type character varying in column 2.
+CONTEXT:  PL/pgSQL function compos() while casting return value to function's return type

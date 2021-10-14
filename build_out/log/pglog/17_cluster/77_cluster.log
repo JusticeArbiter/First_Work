@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM clstr_1 UNION ALL  SELECT * FROM clstr_2 UNION ALL  SELECT * FROM clstr_3;
+LOCATION:  exec_simple_query, postgres.c:938

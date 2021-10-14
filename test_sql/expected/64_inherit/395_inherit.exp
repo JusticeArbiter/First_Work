@@ -1,0 +1,3 @@
+alter table invalid_check_con_child drop constraint inh_check_constraint;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+ALTER TABLE

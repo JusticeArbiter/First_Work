@@ -1,0 +1,2 @@
+LOG:  00000: statement: select format('>>%*1$s<<', 10, 'Hello');
+LOCATION:  exec_simple_query, postgres.c:938

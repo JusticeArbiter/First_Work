@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE ONLY test_drop_constr_parent DROP CONSTRAINT "test_drop_constr_parent_c_check";
+LOCATION:  exec_simple_query, postgres.c:938

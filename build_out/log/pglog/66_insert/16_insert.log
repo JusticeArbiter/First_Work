@@ -1,0 +1,2 @@
+LOG:  00000: statement: select col1, col2, char_length(col3) from inserttest;
+LOCATION:  exec_simple_query, postgres.c:938

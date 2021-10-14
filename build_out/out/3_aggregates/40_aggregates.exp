@@ -1,0 +1,4 @@
+SELECT covar_pop(b, a), covar_samp(b, a) FROM aggtest;
+ERROR:  42P01: relation "aggtest" does not exist
+LINE 1: SELECT covar_pop(b, a), covar_samp(b, a) FROM aggtest;
+                                                      ^

@@ -1,0 +1,9 @@
+select row_to_json(s.*) from generate_series(11,14) with ordinality s;
+       row_to_json       
+-------------------------
+ {"s":11,"ordinality":1}
+ {"s":12,"ordinality":2}
+ {"s":13,"ordinality":3}
+ {"s":14,"ordinality":4}
+(4 rows)
+

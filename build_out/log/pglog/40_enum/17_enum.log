@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TYPE planets ADD VALUE 'mercury';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: enum label "mercury" already exists
+LOCATION:  AddEnumLabel, pg_enum.c:239
+STATEMENT:  ALTER TYPE planets ADD VALUE 'mercury';

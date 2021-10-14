@@ -1,0 +1,6 @@
+select dfunc('City'::text);
+    dfunc    
+-------------
+ Hello, City
+(1 row)
+

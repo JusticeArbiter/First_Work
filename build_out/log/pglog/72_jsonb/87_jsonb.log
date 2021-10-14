@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT test_json ->> 2 FROM test_jsonb WHERE json_type = 'array';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "test_jsonb" does not exist at character 29
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT test_json ->> 2 FROM test_jsonb WHERE json_type = 'array';

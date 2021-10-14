@@ -1,0 +1,6 @@
+select jsonb_set('{}','{a}','"b"', false);
+ jsonb_set 
+-----------
+ {}
+(1 row)
+

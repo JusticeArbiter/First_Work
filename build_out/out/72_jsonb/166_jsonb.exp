@@ -1,0 +1,2 @@
+SELECT jsonb_array_length('4');
+ERROR:  22023: cannot get array length of a scalar

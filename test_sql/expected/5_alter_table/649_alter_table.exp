@@ -1,0 +1,2 @@
+alter table dropColumnchild drop column a;
+ERROR:  42P16: cannot drop inherited column "a"

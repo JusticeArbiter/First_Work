@@ -1,0 +1,6 @@
+SELECT m <= '$123.00' FROM money_data;
+ ?column? 
+----------
+ t
+(1 row)
+

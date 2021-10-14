@@ -1,0 +1,6 @@
+SELECT jsonb_build_object(VARIADIC '{1,2,3,4}'::int[]);
+ jsonb_build_object 
+--------------------
+ {"1": 2, "3": 4}
+(1 row)
+

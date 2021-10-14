@@ -1,0 +1,9 @@
+SELECT DISTINCT typtype, typreceive  FROM pg_type AS p1  WHERE p1.typtype not in ('b', 'p')  ORDER BY 1;
+ typtype | typreceive  
+---------+-------------
+ c       | record_recv
+ d       | domain_recv
+ e       | enum_recv
+ r       | range_recv
+(4 rows)
+

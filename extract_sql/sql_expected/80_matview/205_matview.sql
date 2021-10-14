@@ -1,0 +1,1 @@
+SELECT mvtest_func();

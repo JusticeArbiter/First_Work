@@ -1,0 +1,2 @@
+ALTER TABLE tt4 OF tt_t0;
+ERROR:  42804: table is missing column "y"

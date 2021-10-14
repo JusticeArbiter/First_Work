@@ -1,0 +1,2 @@
+SELECT regexp_matches('foobarbequebaz', $re$(barbeque$re$);
+ERROR:  2201B: invalid regular expression: parentheses () not balanced

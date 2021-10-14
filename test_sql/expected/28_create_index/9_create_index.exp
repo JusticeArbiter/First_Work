@@ -1,0 +1,2 @@
+CREATE INDEX tenk1_thous_tenthous ON tenk1 (thousand, tenthous);
+ERROR:  42P01: relation "tenk1" does not exist

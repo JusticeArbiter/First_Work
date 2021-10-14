@@ -1,0 +1,7 @@
+LOG:  00000: statement: select 1/0;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22012: division by zero
+LOCATION:  int4div, int.c:719
+STATEMENT:  select 1/0;
+LOG:  00000: statement: copy (select 1) to stdout;
+LOCATION:  exec_simple_query, postgres.c:938

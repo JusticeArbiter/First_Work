@@ -1,0 +1,2 @@
+DROP TABLE tmp_new2;
+ERROR:  42P01: table "tmp_new2" does not exist

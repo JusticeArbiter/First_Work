@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION echo_me(anyenum) RETURNS text AS $$  BEGIN  RETURN $1::text || 'omg';  END  $$ LANGUAGE plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938

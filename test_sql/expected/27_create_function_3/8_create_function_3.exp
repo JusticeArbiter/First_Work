@@ -1,0 +1,8 @@
+SELECT proname, prorettype::regtype, proargtypes::regtype[] FROM pg_proc  WHERE oid in ('functest_A_1'::regproc,  'functest_A_2'::regproc,  'functest_A_3'::regproc) ORDER BY proname;
+   proname    | prorettype |    proargtypes    
+--------------+------------+-------------------
+ functest_a_1 | boolean    | [0:1]={text,date}
+ functest_a_2 | integer    | [0:0]={text[]}
+ functest_a_3 | boolean    | {}
+(3 rows)
+

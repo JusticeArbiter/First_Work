@@ -1,0 +1,7 @@
+SELECT * FROM truncate_a;
+ id | id1 
+----+-----
+  3 |  35
+  4 |  36
+(2 rows)
+

@@ -1,0 +1,6 @@
+LOG:  00000: statement: DROP INDEX cwi_replaced_pkey;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: cannot drop index cwi_replaced_pkey because constraint cwi_replaced_pkey on table cwi_test requires it
+HINT:  You can drop constraint cwi_replaced_pkey on table cwi_test instead.
+LOCATION:  findDependentObjects, dependency.c:643
+STATEMENT:  DROP INDEX cwi_replaced_pkey;

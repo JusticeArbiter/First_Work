@@ -1,0 +1,7 @@
+UPDATE city_view SET population = 13010279 WHERE city_name = 'Tokyo' RETURNING *;
+ city_id | city_name | population | country_name | continent 
+---------+-----------+------------+--------------+-----------
+       1 | Tokyo     |   13010279 | Japan        | Asia
+(1 row)
+
+UPDATE 1

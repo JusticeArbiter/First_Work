@@ -1,0 +1,2 @@
+SELECT '126::1'::inet - '127::2'::inet;
+ERROR:  22003: result is out of range

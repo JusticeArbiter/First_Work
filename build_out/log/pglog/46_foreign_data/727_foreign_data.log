@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT fdwname, fdwhandler, fdwvalidator, fdwoptions FROM pg_foreign_data_wrapper;
+LOCATION:  exec_simple_query, postgres.c:938

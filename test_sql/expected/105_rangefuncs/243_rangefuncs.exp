@@ -1,0 +1,6 @@
+SELECT * FROM foob(42, 99) AS p(a,b);
+ a  |  b  
+----+-----
+ 98 | 42z
+(1 row)
+

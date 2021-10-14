@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO inhg (xx, yy, x) VALUES ('test', 10, 15);
+LOCATION:  exec_simple_query, postgres.c:938

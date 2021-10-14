@@ -1,0 +1,2 @@
+DROP TYPE bogus;
+ERROR:  42704: type "bogus" does not exist

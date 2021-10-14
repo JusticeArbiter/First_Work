@@ -1,0 +1,2 @@
+EXECUTE test;
+ERROR:  26000: prepared statement "test" does not exist

@@ -1,0 +1,6 @@
+select array_agg(array[i, nullif(i, 3), i+1]) from generate_series(1,4) g(i);
+              array_agg               
+--------------------------------------
+ {{1,1,2},{2,2,3},{3,NULL,4},{4,4,5}}
+(1 row)
+

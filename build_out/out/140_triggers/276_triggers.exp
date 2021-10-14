@@ -1,0 +1,7 @@
+UPDATE city_view SET country_name = 'UK' WHERE city_name = 'New York' RETURNING *;
+ city_id | city_name | population | country_name | continent 
+---------+-----------+------------+--------------+-----------
+  123456 | New York  |            | UK           | Europe
+(1 row)
+
+UPDATE 1

@@ -1,0 +1,2 @@
+INSERT INTO serialTest VALUES ('more');
+INSERT 0 1

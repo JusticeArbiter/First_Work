@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter domain dnotnulltest set not null;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23502: column "col2" of table "domnotnull" contains null values
+LOCATION:  AlterDomainNotNull, typecmds.c:2347
+STATEMENT:  alter domain dnotnulltest set not null;

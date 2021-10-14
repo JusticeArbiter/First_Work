@@ -1,0 +1,16 @@
+explain (costs off)  select a.unique1, b.unique1, c.unique1, coalesce(b.twothousand, a.twothousand)  from tenk1 a left join tenk1 b on b.thousand = a.unique1 left join tenk1 c on c.unique2 = coalesce(b.twothousand, a.twothousand) where a.unique2 < 10 and coalesce(b.twothousand, a.twothousand) = 44;
+                             QUERY PLAN                              
+---------------------------------------------------------------------
+ Nested Loop Left Join
+   Join Filter: (c.unique2 = COALESCE(b.twothousand, a.twothousand))
+   ->  Hash Right Join
+         Hash Cond: (b.thousand = a.unique1)
+         Filter: (COALESCE(b.twothousand, a.twothousand) = 44)
+         ->  Seq Scan on tenk1 b
+         ->  Hash
+               ->  Seq Scan on tenk1 a
+                     Filter: (unique2 < 10)
+   ->  Seq Scan on tenk1 c
+         Filter: (unique2 = 44)
+(11 rows)
+

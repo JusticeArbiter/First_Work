@@ -1,0 +1,2 @@
+select 'yz23'::dtop;
+ERROR:  23514: value for domain dtop violates check constraint "dinter_check"

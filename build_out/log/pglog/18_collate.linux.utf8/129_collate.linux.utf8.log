@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION mylt_noninline (text, text) RETURNS boolean LANGUAGE sql  AS $$ select $1 < $2 limit 1 $$;
+LOCATION:  exec_simple_query, postgres.c:938

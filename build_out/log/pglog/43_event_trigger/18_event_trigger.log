@@ -1,0 +1,5 @@
+LOG:  00000: statement: comment on event trigger wrong.regress_event_trigger is 'test comment';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: event trigger name cannot be qualified
+LOCATION:  get_object_address_unqualified, objectaddress.c:1053
+STATEMENT:  comment on event trigger wrong.regress_event_trigger is 'test comment';

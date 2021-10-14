@@ -1,0 +1,6 @@
+LOG:  00000: statement: delete from pktable where base1=2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: update or delete on table "pktable" violates foreign key constraint "pktable_base2_fkey" on table "pktable"
+DETAIL:  Key (base1, ptest1)=(2, 2) is still referenced from table "pktable".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3338
+STATEMENT:  delete from pktable where base1=2;

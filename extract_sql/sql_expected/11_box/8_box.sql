@@ -1,0 +1,1 @@
+SELECT '' AS four, * FROM BOX_TBL;

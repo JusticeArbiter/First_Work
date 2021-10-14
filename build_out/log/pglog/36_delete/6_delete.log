@@ -1,0 +1,6 @@
+LOG:  00000: statement: DELETE FROM delete_test dt WHERE delete_test.a > 25;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: invalid reference to FROM-clause entry for table "delete_test" at character 34
+HINT:  Perhaps you meant to reference the table alias "dt".
+LOCATION:  errorMissingRTE, parse_relation.c:3134
+STATEMENT:  DELETE FROM delete_test dt WHERE delete_test.a > 25;

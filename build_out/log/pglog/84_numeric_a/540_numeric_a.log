@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT 'Infinity'::float8::numeric;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: cannot convert infinity to numeric
+LOCATION:  float8_numeric, numeric.c:3025
+STATEMENT:  SELECT 'Infinity'::float8::numeric;

@@ -1,0 +1,9 @@
+LOG:  00000: statement: DROP ROLE regress_test_role;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: role "regress_test_role" cannot be dropped because some objects depend on it
+DETAIL:  privileges for server s6
+	privileges for foreign-data wrapper postgresql
+	privileges for server s4
+	privileges for foreign-data wrapper foo
+LOCATION:  DropRole, user.c:1027
+STATEMENT:  DROP ROLE regress_test_role;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER CONVERSION alt_conv3 SET SCHEMA alt_nsp2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: conversion "alt_conv3" does not exist
+LOCATION:  get_conversion_oid, namespace.c:3425
+STATEMENT:  ALTER CONVERSION alt_conv3 SET SCHEMA alt_nsp2;

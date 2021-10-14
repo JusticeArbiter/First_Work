@@ -1,0 +1,2 @@
+LOG:  00000: statement: select txid_visible_in_snapshot(txid_current(), txid_current_snapshot());
+LOCATION:  exec_simple_query, postgres.c:938

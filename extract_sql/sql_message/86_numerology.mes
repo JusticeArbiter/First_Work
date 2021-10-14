@@ -1,0 +1,56 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE TEMP_FLOAT (f1 FLOAT8);
+ statement: INSERT INTO TEMP_FLOAT (f1)                                                +
+   SELECT float8(f1) FROM INT4_TBL;
+ statement: INSERT INTO TEMP_FLOAT (f1)                                                +
+   SELECT float8(f1) FROM INT2_TBL;
+ statement: SELECT '' AS ten, f1 FROM TEMP_FLOAT                                       +
+   ORDER BY f1;
+ statement: CREATE TABLE TEMP_INT4 (f1 INT4);
+ statement: INSERT INTO TEMP_INT4 (f1)                                                 +
+   SELECT int4(f1) FROM FLOAT8_TBL                                                     +
+   WHERE (f1 > -2147483647) AND (f1 < 2147483647);
+ statement: INSERT INTO TEMP_INT4 (f1)                                                 +
+   SELECT int4(f1) FROM INT2_TBL;
+ statement: SELECT '' AS nine, f1 FROM TEMP_INT4                                       +
+   ORDER BY f1;
+ statement: CREATE TABLE TEMP_INT2 (f1 INT2);
+ statement: INSERT INTO TEMP_INT2 (f1)                                                 +
+   SELECT int2(f1) FROM FLOAT8_TBL                                                     +
+   WHERE (f1 >= -32767) AND (f1 <= 32767);
+ statement: INSERT INTO TEMP_INT2 (f1)                                                 +
+   SELECT int2(f1) FROM INT4_TBL                                                       +
+   WHERE (f1 >= -32767) AND (f1 <= 32767);
+ statement: SELECT '' AS five, f1 FROM TEMP_INT2                                       +
+   ORDER BY f1;
+ statement: CREATE TABLE TEMP_GROUP (f1 INT4, f2 INT4, f3 FLOAT8);
+ statement: INSERT INTO TEMP_GROUP                                                     +
+   SELECT 1, (- i.f1), (- f.f1)                                                        +
+   FROM INT4_TBL i, FLOAT8_TBL f;
+ statement: INSERT INTO TEMP_GROUP                                                     +
+   SELECT 2, i.f1, f.f1                                                                +
+   FROM INT4_TBL i, FLOAT8_TBL f;
+ statement: SELECT DISTINCT f1 AS two FROM TEMP_GROUP ORDER BY 1;
+ statement: SELECT f1 AS two, max(f3) AS max_float, min(f3) as min_float               +
+   FROM TEMP_GROUP                                                                     +
+   GROUP BY f1                                                                         +
+   ORDER BY two, max_float, min_float;
+ statement: SELECT f1 AS two, max(f3) AS max_float, min(f3) AS min_float               +
+   FROM TEMP_GROUP                                                                     +
+   GROUP BY two                                                                        +
+   ORDER BY two, max_float, min_float;
+ statement: SELECT f1 AS two, (max(f3) + 1) AS max_plus_1, (min(f3) - 1) AS min_minus_1+
+   FROM TEMP_GROUP                                                                     +
+   GROUP BY f1                                                                         +
+   ORDER BY two, min_minus_1;
+ statement: SELECT f1 AS two,                                                          +
+        max(f2) + min(f2) AS max_plus_min,                                             +
+        min(f3) - 1 AS min_minus_1                                                     +
+   FROM TEMP_GROUP                                                                     +
+   GROUP BY f1                                                                         +
+   ORDER BY two, min_minus_1;
+ statement: DROP TABLE TEMP_INT2;
+ statement: DROP TABLE TEMP_INT4;
+ statement: DROP TABLE TEMP_FLOAT;
+ statement: DROP TABLE TEMP_GROUP;
+

@@ -1,0 +1,5 @@
+DROP OWNED BY regress_test_role2;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP OWNED
+ERROR:  2BP01: cannot drop server s5 because other objects depend on it
+DETAIL:  user mapping for highgo on server s5 depends on server s5
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.

@@ -1,0 +1,6 @@
+select 'infinity'::date, '-infinity'::date;
+   date   |   date    
+----------+-----------
+ infinity | -infinity
+(1 row)
+

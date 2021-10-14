@@ -1,0 +1,2 @@
+ALTER CONVERSION alt_conv3 OWNER TO regtest_alter_user2;
+ERROR:  42704: conversion "alt_conv3" does not exist

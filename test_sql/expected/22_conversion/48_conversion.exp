@@ -1,0 +1,6 @@
+SELECT CONVERT('foo', 'BIG5', 'MULE_INTERNAL');
+ convert  
+----------
+ \x666f6f
+(1 row)
+

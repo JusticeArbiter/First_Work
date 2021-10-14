@@ -1,0 +1,6 @@
+SELECT xpath('//b', '<a>one <b>two</b> three <b>etc</b></a>');
+          xpath          
+-------------------------
+ {<b>two</b>,<b>etc</b>}
+(1 row)
+

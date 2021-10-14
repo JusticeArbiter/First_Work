@@ -1,0 +1,2 @@
+LOG:  00000: statement: do $$ declare x text[]; begin x := '{1.23, 4.56}'::numeric[]; end $$;
+LOCATION:  exec_simple_query, postgres.c:938

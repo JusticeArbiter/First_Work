@@ -1,0 +1,5 @@
+create function test_variable_storage() returns text as $$  declare x text;  begin  x := '1234';  begin  x := x || '5678';  -- force error inside subtransaction SPI context  perform trap_zero_divide(-100);  exception  when others then  x := x || '9012';  end;  return x;  end$$ language plpgsql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42601: syntax error at end of input
+LINE 1: ...hers then  x := x || '9012';  end;  return x;  end$$ languag...
+                                                             ^

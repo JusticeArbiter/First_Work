@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT corr(b, a) FROM aggtest;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "aggtest" does not exist at character 24
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT corr(b, a) FROM aggtest;

@@ -1,0 +1,2 @@
+SELECT cast(cast(NULL as dnull) as dnotnull);
+ERROR:  23502: domain dnotnull does not allow null values

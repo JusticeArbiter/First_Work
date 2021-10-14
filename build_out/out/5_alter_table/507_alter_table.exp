@@ -1,0 +1,2 @@
+alter table def_test alter column c3 set default 30;
+ERROR:  42703: column "c3" of relation "def_test" does not exist

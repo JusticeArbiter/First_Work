@@ -1,0 +1,2 @@
+INSERT INTO num_data VALUES (1, '0');
+INSERT 0 1

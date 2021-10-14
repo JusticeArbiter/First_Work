@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, indexrelid  FROM pg_catalog.pg_index fk  WHERE indexrelid != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_class pk WHERE pk.oid = fk.indexrelid);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT set_bit(B'0101011000100100', 16, 1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2202E: bit index 16 out of valid range (0..15)
+LOCATION:  bitsetbit, varbit.c:1804
+STATEMENT:  SELECT set_bit(B'0101011000100100', 16, 1);

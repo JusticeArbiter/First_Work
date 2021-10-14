@@ -1,0 +1,1 @@
+CREATE TABLE RELTIME_TBL (f1 reltime);

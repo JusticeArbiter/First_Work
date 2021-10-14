@@ -1,0 +1,6 @@
+select * from altstartwith;
+ col 
+-----
+   1
+(1 row)
+

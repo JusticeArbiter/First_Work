@@ -1,0 +1,8 @@
+SELECT * FROM tm;
+ type | totamt 
+------+--------
+ y    |     12
+ z    |     11
+ x    |      5
+(3 rows)
+

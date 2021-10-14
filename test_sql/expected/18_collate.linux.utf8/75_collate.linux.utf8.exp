@@ -1,0 +1,5 @@
+SELECT relname FROM pg_class WHERE relname ~* '^abc';
+ relname 
+---------
+(0 rows)
+

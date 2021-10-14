@@ -1,0 +1,2 @@
+drop domain dnotnull restrict;
+DROP DOMAIN

@@ -1,0 +1,6 @@
+SELECT to_tsquery('ispell_tst', 'footballyklubber:b & rebookings:A & sky');
+                               to_tsquery                               
+------------------------------------------------------------------------
+ 'foot':B & 'ball':B & 'klubber':B & ( 'booking':A | 'book':A ) & 'sky'
+(1 row)
+

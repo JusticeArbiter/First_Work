@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table parent_noinh_convalid validate constraint check_a_is_2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: check constraint "check_a_is_2" is violated by some row
+LOCATION:  validateCheckConstraint, tablecmds.c:7371
+STATEMENT:  alter table parent_noinh_convalid validate constraint check_a_is_2;

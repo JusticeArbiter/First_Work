@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table anothertab drop constraint anothertab_chk;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: constraint "anothertab_chk" of relation "anothertab" does not exist
+LOCATION:  ATExecDropConstraint, tablecmds.c:7748
+STATEMENT:  alter table anothertab drop constraint anothertab_chk;

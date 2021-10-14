@@ -1,0 +1,3 @@
+refresh materialized view mvtest_error;
+NOTICE:  00000: test_event_trigger: ddl_command_start REFRESH MATERIALIZED VIEW
+ERROR:  22012: division by zero

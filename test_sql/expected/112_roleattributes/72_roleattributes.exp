@@ -1,0 +1,2 @@
+DROP ROLE test_createdb;
+DROP ROLE

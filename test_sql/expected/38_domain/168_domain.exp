@@ -1,0 +1,2 @@
+alter domain con drop constraint t;
+ALTER DOMAIN

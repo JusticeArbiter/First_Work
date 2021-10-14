@@ -1,0 +1,2 @@
+DELETE FROM rw_view14 WHERE a=3;
+DELETE 1

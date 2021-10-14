@@ -1,0 +1,2 @@
+INSERT INTO tmp2 values (1);
+INSERT 0 1

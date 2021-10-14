@@ -1,0 +1,5 @@
+LOG:  00000: statement: select raise_test3(1);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: This message has no parameters (despite having % signs in it)!
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select raise_test3(1);

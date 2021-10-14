@@ -1,0 +1,4 @@
+INSERT INTO CIRCLE_TBL VALUES ('<(-100,0),-100>');
+ERROR:  22P02: invalid input syntax for type circle: "<(-100,0),-100>"
+LINE 1: INSERT INTO CIRCLE_TBL VALUES ('<(-100,0),-100>');
+                                       ^

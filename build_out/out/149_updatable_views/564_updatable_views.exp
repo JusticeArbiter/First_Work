@@ -1,0 +1,5 @@
+CREATE VIEW v2 WITH (security_barrier = true) AS  SELECT * FROM v1 WHERE EXISTS (SELECT 1 FROM t2 WHERE t2.cc = v1.c)  WITH CHECK OPTION;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+ERROR:  42703: column t2.cc does not exist
+LINE 1: ...CT * FROM v1 WHERE EXISTS (SELECT 1 FROM t2 WHERE t2.cc = v1...
+                                                             ^

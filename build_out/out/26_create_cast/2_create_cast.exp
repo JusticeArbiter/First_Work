@@ -1,0 +1,3 @@
+CREATE FUNCTION casttesttype_in(cstring)  RETURNS casttesttype  AS 'textin'  LANGUAGE internal STRICT IMMUTABLE;
+NOTICE:  42809: return type casttesttype is only a shell
+CREATE FUNCTION

@@ -1,0 +1,3 @@
+SELECT xmlelement(name foo, xmlattributes('infinity'::timestamp as bar));
+ERROR:  22008: timestamp out of range
+DETAIL:  XML does not support infinite timestamp values.

@@ -1,0 +1,2 @@
+drop view agg_view1;
+ERROR:  42P01: view "agg_view1" does not exist

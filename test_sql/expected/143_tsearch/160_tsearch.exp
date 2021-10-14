@@ -1,0 +1,6 @@
+SELECT plainto_tsquery('SKIES My booKs');
+ plainto_tsquery 
+-----------------
+ 'sky' & 'book'
+(1 row)
+

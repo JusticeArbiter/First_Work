@@ -1,0 +1,7 @@
+select * from foo;
+  f1  
+------
+ 1001
+  100
+(2 rows)
+

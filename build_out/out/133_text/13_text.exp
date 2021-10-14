@@ -1,0 +1,6 @@
+select concat_ws('#','one');
+ concat_ws 
+-----------
+ one
+(1 row)
+

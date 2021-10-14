@@ -1,0 +1,2 @@
+ALTER DOMAIN things ADD CONSTRAINT meow CHECK (VALUE < 11);
+ERROR:  23514: column "stuff" of table "thethings" contains values that violate the new constraint

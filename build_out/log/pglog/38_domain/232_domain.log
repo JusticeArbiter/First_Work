@@ -1,0 +1,6 @@
+LOG:  00000: statement: select doubledecrement(3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23502: domain pos_int does not allow null values
+CONTEXT:  PL/pgSQL function doubledecrement(pos_int) line 1 during statement block local variable initialization
+LOCATION:  domain_check_input, domains.c:139
+STATEMENT:  select doubledecrement(3);

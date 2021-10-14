@@ -1,0 +1,11 @@
+LOG:  00000: statement: DROP TYPE testtype1;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TYPE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP TYPE testtype1;
+ERROR:  2BP01: cannot drop type testtype1 because other objects depend on it
+DETAIL:  table test10a column b depends on type testtype1[]
+	table test6a depends on type testtype1
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+LOCATION:  reportDependentObjects, dependency.c:985
+STATEMENT:  DROP TYPE testtype1;

@@ -1,0 +1,7 @@
+EXPLAIN (COSTS OFF) SELECT * FROM document WHERE f_leak(dtitle);
+        QUERY PLAN        
+--------------------------
+ Seq Scan on document
+   Filter: f_leak(dtitle)
+(2 rows)
+

@@ -1,0 +1,7 @@
+LOG:  00000: statement: select json '{ "a": "null \u0000 escape" }' ->> 'a' as fails;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P05: unsupported Unicode escape sequence
+DETAIL:  \u0000 cannot be converted to text.
+CONTEXT:  JSON data, line 1: { "a":...
+LOCATION:  json_lex_string, json.c:880
+STATEMENT:  select json '{ "a": "null \u0000 escape" }' ->> 'a' as fails;

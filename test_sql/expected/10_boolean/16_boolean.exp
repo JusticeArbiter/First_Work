@@ -1,0 +1,6 @@
+SELECT bool 'on' AS true;
+ true 
+------
+ t
+(1 row)
+

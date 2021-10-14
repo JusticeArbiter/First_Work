@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE clstr_tst_inh () INHERITS (clstr_tst);
+LOCATION:  exec_simple_query, postgres.c:938

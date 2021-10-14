@@ -1,0 +1,6 @@
+SELECT replace('yabadoo', 'bad', '') AS "yaoo";
+ yaoo 
+------
+ yaoo
+(1 row)
+

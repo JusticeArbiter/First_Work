@@ -1,0 +1,8 @@
+SELECT * FROM base_tbl;
+ a |   b   | c 
+---+-------+---
+ 3 | Row 3 | 3
+ 4 | Row 4 | 4
+ 4 | Row 4 | 4
+(3 rows)
+

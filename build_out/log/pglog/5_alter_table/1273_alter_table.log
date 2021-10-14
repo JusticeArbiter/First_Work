@@ -1,0 +1,6 @@
+LOG:  00000: statement: CREATE TABLE pg_catalog.new_system_table();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42501: permission denied to create "pg_catalog.new_system_table"
+DETAIL:  System catalog modifications are currently disallowed.
+LOCATION:  heap_create, heap.c:279
+STATEMENT:  CREATE TABLE pg_catalog.new_system_table();

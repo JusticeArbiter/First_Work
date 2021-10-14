@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP VIEW test_view_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: view "test_view_exists" does not exist
+LOCATION:  DropErrorMsgNonExistent, tablecmds.c:756
+STATEMENT:  DROP VIEW test_view_exists;

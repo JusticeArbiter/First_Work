@@ -1,0 +1,8 @@
+SELECT '' AS three, p.* FROM POINT_TBL p  WHERE not p.f1 <@ box '(0,0,100,100)';
+ three |    f1    
+-------+----------
+       | (-10,0)
+       | (-3,4)
+       | (-5,-12)
+(3 rows)
+

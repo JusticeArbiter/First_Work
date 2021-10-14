@@ -1,0 +1,6 @@
+select * from jsonb_to_record('{"a":1,"b":"foo","c":"bar"}')  as x(a int, b text, d text);
+ a |  b  | d 
+---+-----+---
+ 1 | foo | 
+(1 row)
+

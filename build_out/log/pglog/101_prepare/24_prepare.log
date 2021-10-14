@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TEMPORARY TABLE q5_prep_results AS EXECUTE q5(200, 'DTAAAA');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE AS
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TEMPORARY TABLE q5_prep_results AS EXECUTE q5(200, 'DTAAAA');
+ERROR:  26000: prepared statement "q5" does not exist
+LOCATION:  FetchPreparedStatement, prepare.c:504
+STATEMENT:  CREATE TEMPORARY TABLE q5_prep_results AS EXECUTE q5(200, 'DTAAAA');

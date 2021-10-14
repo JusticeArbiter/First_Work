@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT xmlserialize(document 'bad' as text);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2200L: not an XML document
+LOCATION:  xmltotext_with_xmloption, xml.c:573
+STATEMENT:  SELECT xmlserialize(document 'bad' as text);

@@ -1,0 +1,6 @@
+SELECT EXTRACT(CENTURY FROM CURRENT_DATE)>=21 AS True;
+ true 
+------
+ t
+(1 row)
+

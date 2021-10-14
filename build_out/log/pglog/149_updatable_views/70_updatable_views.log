@@ -1,0 +1,7 @@
+LOG:  00000: statement: INSERT INTO ro_view17 VALUES (3, 'ROW 3');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  55000: cannot insert into view "ro_view1"
+DETAIL:  Views containing DISTINCT are not automatically updatable.
+HINT:  To enable inserting into the view, provide an INSTEAD OF INSERT trigger or an unconditional ON INSERT DO INSTEAD rule.
+LOCATION:  rewriteTargetView, rewriteHandler.c:2675
+STATEMENT:  INSERT INTO ro_view17 VALUES (3, 'ROW 3');

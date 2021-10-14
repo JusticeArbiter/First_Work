@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT txid_snapshot '1:9223372036854775808:3';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type txid_snapshot: "1:9223372036854775808:3" at character 22
+LOCATION:  parse_snapshot, txid.c:340
+STATEMENT:  SELECT txid_snapshot '1:9223372036854775808:3';

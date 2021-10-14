@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO RELTIME_TBL (f1) VALUES ('@ 30 eons ago');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type reltime: "@ 30 eons ago" at character 38
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  INSERT INTO RELTIME_TBL (f1) VALUES ('@ 30 eons ago');

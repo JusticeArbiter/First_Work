@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table def_test alter column c1 set default 'wrong_datatype';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for integer: "wrong_datatype"
+LOCATION:  pg_atoi, numutils.c:62
+STATEMENT:  alter table def_test alter column c1 set default 'wrong_datatype';

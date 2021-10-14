@@ -1,0 +1,2 @@
+insert into insertconflicttest values (16, 'Melon') on conflict (key, key, key) do update set fruit = excluded.fruit;
+ERROR:  42P10: there is no unique or exclusion constraint matching the ON CONFLICT specification

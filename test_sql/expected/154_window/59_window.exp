@@ -1,0 +1,4 @@
+SELECT * FROM v_window;
+ERROR:  42P01: relation "v_window" does not exist
+LINE 1: SELECT * FROM v_window;
+                      ^

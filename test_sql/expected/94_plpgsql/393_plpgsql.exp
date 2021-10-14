@@ -1,0 +1,2 @@
+fetch next from test1;
+ERROR:  34000: cursor "test1" does not exist

@@ -1,0 +1,13 @@
+DROP TABLE t CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+NOTICE:  00000: drop cascades to 9 other objects
+DETAIL:  drop cascades to view tv
+drop cascades to view tvv
+drop cascades to materialized view tvvm
+drop cascades to view tvvmv
+drop cascades to materialized view bb
+drop cascades to materialized view mvschema.tvm
+drop cascades to materialized view tvmm
+drop cascades to materialized view tm
+drop cascades to materialized view tmm
+DROP TABLE

@@ -1,0 +1,7 @@
+LOG:  00000: statement: select sp_id_user('userx');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "users" does not exist at character 23
+QUERY:  select        id from users where login = a_login
+CONTEXT:  PL/pgSQL function sp_id_user(text) line 1 at SQL statement
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select sp_id_user('userx');

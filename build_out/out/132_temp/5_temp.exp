@@ -1,0 +1,5 @@
+SELECT * FROM temptest;
+ col 
+-----
+(0 rows)
+

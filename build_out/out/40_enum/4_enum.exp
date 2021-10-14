@@ -1,0 +1,4 @@
+SELECT 'mauve'::rainbow;
+ERROR:  22P02: invalid input value for enum rainbow: "mauve"
+LINE 1: SELECT 'mauve'::rainbow;
+               ^

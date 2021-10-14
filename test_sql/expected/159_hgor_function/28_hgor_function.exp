@@ -1,0 +1,6 @@
+select lnnvl('a' > 'b');
+ lnnvl 
+-------
+ t
+(1 row)
+

@@ -1,0 +1,2 @@
+drop index nonesuch;
+ERROR:  42704: index "nonesuch" does not exist

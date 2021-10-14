@@ -1,0 +1,3 @@
+CREATE INDEX t1_ab_idx on t1 ((a || b));
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+ERROR:  42P01: relation "t1" does not exist

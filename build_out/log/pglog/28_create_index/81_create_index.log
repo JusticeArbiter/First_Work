@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT count(*) FROM radix_text_tbl WHERE t = 'P0123456789abcdef';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "radix_text_tbl" does not exist at character 22
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT count(*) FROM radix_text_tbl WHERE t = 'P0123456789abcdef';

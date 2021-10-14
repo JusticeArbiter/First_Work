@@ -1,0 +1,6 @@
+select lnnvl('0');
+ lnnvl 
+-------
+ t
+(1 row)
+

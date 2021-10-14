@@ -1,0 +1,2 @@
+alter table only parent alter a set not null;
+ERROR:  23502: column "a" contains null values

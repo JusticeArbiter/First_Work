@@ -1,0 +1,5 @@
+LOG:  00000: statement: create table rule_and_refint_t1 (  id1a integer,  id1b integer,  primary key (id1a, id1b)  );
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create table rule_and_refint_t1 (  id1a integer,  id1b integer,  primary key (id1a, id1b)  );

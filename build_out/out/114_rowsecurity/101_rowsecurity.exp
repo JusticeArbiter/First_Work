@@ -1,0 +1,3 @@
+CREATE TABLE t3 (c text, b text, a int) WITH OIDS;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

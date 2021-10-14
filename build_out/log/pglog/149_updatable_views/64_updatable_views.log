@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO rw_view16 VALUES (3, 'Row 3', 3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: multiple assignments to same column "a"
+LOCATION:  process_matched_tle, rewriteHandler.c:943
+STATEMENT:  INSERT INTO rw_view16 VALUES (3, 'Row 3', 3);

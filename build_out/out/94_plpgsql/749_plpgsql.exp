@@ -1,0 +1,4 @@
+drop function sql_to_date(integer) cascade;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FUNCTION
+NOTICE:  00000: drop cascades to cast from integer to date
+DROP FUNCTION

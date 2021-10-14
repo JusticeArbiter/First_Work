@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT make_timestamptz(2014, 12, 10, 10, 10, 10, '-16');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: numeric time zone "-16" out of range
+LOCATION:  parse_sane_timezone, timestamp.c:528
+STATEMENT:  SELECT make_timestamptz(2014, 12, 10, 10, 10, 10, '-16');

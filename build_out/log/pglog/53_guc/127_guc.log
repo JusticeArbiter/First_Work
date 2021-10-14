@@ -1,0 +1,2 @@
+LOG:  00000: statement: DECLARE foo CURSOR WITH HOLD FOR SELECT 1;
+LOCATION:  exec_simple_query, postgres.c:938

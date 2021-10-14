@@ -1,0 +1,5 @@
+LOG:  00000: statement: EXECUTE foo;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  26000: prepared statement "foo" does not exist
+LOCATION:  FetchPreparedStatement, prepare.c:504
+STATEMENT:  EXECUTE foo;

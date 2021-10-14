@@ -1,0 +1,5 @@
+LOG:  00000: statement: update atacc1 set b = 2 where a = 3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" does not exist at character 31
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  update atacc1 set b = 2 where a = 3;

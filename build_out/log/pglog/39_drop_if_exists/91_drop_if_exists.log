@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP RULE test_rule_exists ON no_such_table;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "no_such_table" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  DROP RULE test_rule_exists ON no_such_table;

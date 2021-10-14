@@ -1,0 +1,6 @@
+select testfoo(37);
+ testfoo 
+---------
+      37
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from array_to_set(array['one', 'two']) as t(f1 int,f2 text);
+LOCATION:  exec_simple_query, postgres.c:938

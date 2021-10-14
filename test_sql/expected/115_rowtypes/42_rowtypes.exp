@@ -1,0 +1,6 @@
+select ROW('ABC','DEF') ~<=~ ROW('DEF','ABC') as true;
+ true 
+------
+ t
+(1 row)
+

@@ -1,0 +1,3 @@
+create function int8alias2out(int8alias2) returns cstring  strict immutable language internal as 'int8out';
+NOTICE:  42809: argument type int8alias2 is only a shell
+CREATE FUNCTION

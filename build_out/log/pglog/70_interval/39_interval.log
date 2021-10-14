@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE INDEX ON INTERVAL_TBL_OF USING btree (f1);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE INDEX ON INTERVAL_TBL_OF USING btree (f1);
+ERROR:  42P01: relation "interval_tbl_of" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX ON INTERVAL_TBL_OF USING btree (f1);

@@ -1,0 +1,2 @@
+select split_part('joeuser@mydatabase','@',0) AS "an error";
+ERROR:  22023: field position must be greater than zero

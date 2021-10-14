@@ -1,0 +1,1 @@
+SELECT '' AS ten, * FROM INTERVAL_TBL;

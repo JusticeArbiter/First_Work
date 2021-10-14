@@ -1,0 +1,6 @@
+SELECT json_build_object(VARIADIC ARRAY['a', NULL]::text[]);
+ json_build_object 
+-------------------
+ {"a" : null}
+(1 row)
+

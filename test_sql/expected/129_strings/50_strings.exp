@@ -1,0 +1,6 @@
+SELECT SUBSTRING('abcdefg' FROM 'b(.*)f') AS "cde";
+ cde 
+-----
+ cde
+(1 row)
+

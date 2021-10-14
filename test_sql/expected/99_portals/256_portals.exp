@@ -1,0 +1,3 @@
+CREATE RULE ucrule AS ON DELETE TO ucview DO INSTEAD  DELETE FROM uctest WHERE f1 = OLD.f1;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+ERROR:  42P01: relation "ucview" does not exist

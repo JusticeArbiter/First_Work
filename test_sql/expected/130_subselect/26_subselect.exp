@@ -1,0 +1,8 @@
+SELECT '' AS three, f1, f2  FROM SUBSELECT_TBL  WHERE (f1, f2) NOT IN (SELECT f2, CAST(f3 AS int4) FROM SUBSELECT_TBL  WHERE f3 IS NOT NULL);
+ three | f1 | f2 
+-------+----+----
+       |  1 |  2
+       |  6 |  7
+       |  8 |  9
+(3 rows)
+

@@ -1,0 +1,2 @@
+SELECT lo_unlink(1002);
+ERROR:  42704: large object 1002 does not exist

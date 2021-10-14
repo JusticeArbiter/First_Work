@@ -1,0 +1,5 @@
+LOG:  00000: statement: drop aggregate nonesuch (int4);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: aggregate nonesuch(integer) does not exist
+LOCATION:  LookupAggNameTypeNames, parse_func.c:2014
+STATEMENT:  drop aggregate nonesuch (int4);

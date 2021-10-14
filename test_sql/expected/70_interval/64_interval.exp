@@ -1,0 +1,6 @@
+SELECT '3 days 5 milliseconds'::interval;
+      interval       
+---------------------
+ 3 days 00:00:00.005
+(1 row)
+

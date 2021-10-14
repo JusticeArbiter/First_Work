@@ -1,0 +1,3 @@
+drop function trap_foreign_key_2();
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FUNCTION
+ERROR:  42883: function trap_foreign_key_2() does not exist

@@ -1,0 +1,6 @@
+select pg_trigger_depth();
+ pg_trigger_depth 
+------------------
+                0
+(1 row)
+

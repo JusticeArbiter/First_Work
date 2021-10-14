@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT foo, length(foo) FROM regexp_split_to_table('thE QUick bROWn FOx jUMPs ovEr The lazy dOG', 'e', 'g') AS foo;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: regexp_split does not support the global option
+LOCATION:  setup_regexp_matches, regexp.c:948
+STATEMENT:  SELECT foo, length(foo) FROM regexp_split_to_table('thE QUick bROWn FOx jUMPs ovEr The lazy dOG', 'e', 'g') AS foo;

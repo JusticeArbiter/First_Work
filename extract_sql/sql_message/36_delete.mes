@@ -1,0 +1,16 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE delete_test (                                     +
+     id SERIAL PRIMARY KEY,                                                +
+     a INT,                                                                +
+     b text                                                                +
+ );
+ statement: INSERT INTO delete_test (a) VALUES (10);
+ statement: INSERT INTO delete_test (a, b) VALUES (50, repeat('x', 10000));
+ statement: INSERT INTO delete_test (a) VALUES (100);
+ statement: DELETE FROM delete_test AS dt WHERE dt.a > 75;
+ statement: DELETE FROM delete_test dt WHERE delete_test.a > 25;
+ statement: SELECT id, a, char_length(b) FROM delete_test;
+ statement: DELETE FROM delete_test WHERE a > 25;
+ statement: SELECT id, a, char_length(b) FROM delete_test;
+ statement: DROP TABLE delete_test;
+

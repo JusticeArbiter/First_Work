@@ -1,0 +1,6 @@
+select formarray(1.1, variadic array[1.2,55.5]);
+   formarray    
+----------------
+ {1.1,1.2,55.5}
+(1 row)
+

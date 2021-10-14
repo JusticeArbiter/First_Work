@@ -1,0 +1,2 @@
+INSERT INTO clustertest VALUES (30);
+INSERT 0 1

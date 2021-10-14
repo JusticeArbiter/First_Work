@@ -1,0 +1,2 @@
+LOG:  00000: statement: DROP OPERATOR FAMILY alt_opf9 USING gist;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: select 33 * any (44);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: op ANY/ALL (array) requires array on right side at character 11
+LOCATION:  make_scalar_array_op, parse_oper.c:886
+STATEMENT:  select 33 * any (44);

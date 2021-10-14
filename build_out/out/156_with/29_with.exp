@@ -1,0 +1,5 @@
+CREATE TEMPORARY VIEW vsubdepartment AS  WITH RECURSIVE subdepartment AS  (   SELECT * FROM department WHERE name = 'A'  UNION ALL   SELECT d.* FROM department AS d, subdepartment AS sd  WHERE d.parent_department = sd.id  )  SELECT * FROM subdepartment;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+ERROR:  42P01: relation "department" does not exist
+LINE 1: ...ITH RECURSIVE subdepartment AS  (   SELECT * FROM department...
+                                                             ^

@@ -1,0 +1,1 @@
+CREATE POLICY p4 ON rls_tbl_force FOR DELETE USING (c1 = 8);

@@ -1,0 +1,4 @@
+alter default privileges for role regression_bob  revoke delete on tables from regression_bob;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER DEFAULT PRIVILEGES
+NOTICE:  00000: test_event_trigger: ddl_command_end ALTER DEFAULT PRIVILEGES
+ALTER DEFAULT PRIVILEGES

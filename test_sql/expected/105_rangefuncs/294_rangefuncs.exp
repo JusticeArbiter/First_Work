@@ -1,0 +1,6 @@
+select t.a, t, t.a from foo1(10000) t limit 1;
+   a   |         t         |   a   
+-------+-------------------+-------
+ foo 1 | ("foo 1","bar 1") | foo 1
+(1 row)
+

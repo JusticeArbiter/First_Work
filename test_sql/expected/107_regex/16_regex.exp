@@ -1,0 +1,7 @@
+explain (costs off) select * from pg_proc where proname ~ 'abc';
+            QUERY PLAN             
+-----------------------------------
+ Seq Scan on pg_proc
+   Filter: (proname ~ 'abc'::text)
+(2 rows)
+

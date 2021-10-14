@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE FUNCTION dup (anyelement) RETURNS anyelement  AS 'select $1' LANGUAGE sql;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42723: function "dup" already exists with same argument types
+LOCATION:  ProcedureCreate, pg_proc.c:402
+STATEMENT:  CREATE FUNCTION dup (anyelement) RETURNS anyelement  AS 'select $1' LANGUAGE sql;

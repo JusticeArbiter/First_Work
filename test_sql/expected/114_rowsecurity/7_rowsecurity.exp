@@ -1,0 +1,3 @@
+DROP ROLE IF EXISTS rls_regress_group2;
+NOTICE:  00000: role "rls_regress_group2" does not exist, skipping
+DROP ROLE

@@ -1,0 +1,1 @@
+SELECT p1.amprocfamily, p1.amprocnum, p2.oid, p2.amname  FROM pg_amproc AS p1, pg_am AS p2, pg_opfamily AS p3  WHERE p1.amprocfamily = p3.oid AND p3.opfmethod = p2.oid AND  p1.amprocnum > p2.amsupport;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: EXPLAIN (COSTS OFF) SELECT * FROM document NATURAL JOIN category WHERE f_leak(dtitle);
+LOCATION:  exec_simple_query, postgres.c:938

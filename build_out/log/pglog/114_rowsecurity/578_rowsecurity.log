@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE current_check SET payload = payload || '_new' WHERE currentid = 2 RETURNING *;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+select length(txid_current_snapshot()::text) >= 4;
+ ?column? 
+----------
+ t
+(1 row)
+

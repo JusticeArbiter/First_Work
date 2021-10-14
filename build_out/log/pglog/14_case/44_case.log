@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE OPERATOR = (procedure = inline_eq,  leftarg = foodomain, rightarg = foodomain);
+LOCATION:  exec_simple_query, postgres.c:938

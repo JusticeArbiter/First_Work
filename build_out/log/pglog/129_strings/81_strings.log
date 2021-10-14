@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT regexp_split_to_array('123456','1');
+LOCATION:  exec_simple_query, postgres.c:938

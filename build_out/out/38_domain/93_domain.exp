@@ -1,0 +1,3 @@
+drop type comptype cascade;
+NOTICE:  00000: drop cascades to type dcomptypea
+DROP TYPE

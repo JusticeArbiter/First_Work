@@ -1,0 +1,2 @@
+LOG:  00000: statement: comment on event trigger regress_event_trigger is 'test comment';
+LOCATION:  exec_simple_query, postgres.c:938

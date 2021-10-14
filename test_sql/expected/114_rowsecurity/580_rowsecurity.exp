@@ -1,0 +1,2 @@
+DECLARE current_check_cursor SCROLL CURSOR FOR SELECT * FROM current_check;
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

@@ -1,0 +1,3 @@
+insert into bc (aa) values (NULL);
+ERROR:  23514: new row for relation "bc" violates check constraint "ac_check"
+DETAIL:  Failing row contains (null, null).

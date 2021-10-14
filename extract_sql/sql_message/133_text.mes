@@ -1,0 +1,85 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT text 'this is a text string' = text 'this is a text string' AS true;
+ statement: SELECT text 'this is a text string' = text 'this is a text strin' AS false;
+ statement: CREATE TABLE TEXT_TBL (f1 text);
+ statement: INSERT INTO TEXT_TBL VALUES ('doh!');
+ statement: INSERT INTO TEXT_TBL VALUES ('hi de ho neighbor');
+ statement: SELECT '' AS two, * FROM TEXT_TBL;
+ statement: select length(42);
+ statement: select 'four: '::text || 2+2;
+ statement: select 'four: ' || 2+2;
+ statement: select 3 || 4.0;
+ statement: /*                                                                                      +
+  * various string functions                                                                        +
+  */                                                                                                +
+ select concat('one');
+ statement: select concat(1,2,3,'hello',true, false, to_date('20100309','YYYYMMDD'));
+ statement: select concat_ws('#','one');
+ statement: select concat_ws('#',1,2,3,'hello',true, false, to_date('20100309','YYYYMMDD'));
+ statement: select concat_ws(',',10,20,null,30);
+ statement: select concat_ws('',10,20,null,30);
+ statement: select concat_ws(NULL,10,20,null,30) is null;
+ statement: select reverse('abcde');
+ statement: select i, left('ahoj', i), right('ahoj', i) from generate_series(-5, 5) t(i) order by i;
+ statement: select quote_literal('');
+ statement: select quote_literal('abc''');
+ statement: select quote_literal(e'\\');
+ statement: select concat(variadic array[1,2,3]);
+ statement: select concat_ws(',', variadic array[1,2,3]);
+ statement: select concat_ws(',', variadic NULL::int[]);
+ statement: select concat(variadic NULL::int[]) is NULL;
+ statement: select concat(variadic '{}'::int[]) = '';
+ statement: select concat_ws(',', variadic 10);
+ statement: /*                                                                                      +
+  * format                                                                                          +
+  */                                                                                                +
+ select format(NULL);
+ statement: select format('Hello');
+ statement: select format('Hello %s', 'World');
+ statement: select format('Hello %%');
+ statement: select format('Hello %%%%');
+ statement: select format('Hello %s %s', 'World');
+ statement: select format('Hello %s');
+ statement: select format('Hello %x', 20);
+ statement: select format('INSERT INTO %I VALUES(%L,%L)', 'mytab', 10, 'Hello');
+ statement: select format('%s%s%s','Hello', NULL,'World');
+ statement: select format('INSERT INTO %I VALUES(%L,%L)', 'mytab', 10, NULL);
+ statement: select format('INSERT INTO %I VALUES(%L,%L)', 'mytab', NULL, 'Hello');
+ statement: select format('INSERT INTO %I VALUES(%L,%L)', NULL, 10, 'Hello');
+ statement: select format('%1$s %3$s', 1, 2, 3);
+ statement: select format('%1$s %12$s', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+ statement: select format('%1$s %4$s', 1, 2, 3);
+ statement: select format('%1$s %13$s', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+ statement: select format('%0$s', 'Hello');
+ statement: select format('%*0$s', 'Hello');
+ statement: select format('%1$', 1);
+ statement: select format('%1$1', 1);
+ statement: select format('Hello %s %1$s %s', 'World', 'Hello again');
+ statement: select format('Hello %s %s, %2$s %2$s', 'World', 'Hello again');
+ statement: select format('%s, %s', variadic array['Hello','World']);
+ statement: select format('%s, %s', variadic array[1, 2]);
+ statement: select format('%s, %s', variadic array[true, false]);
+ statement: select format('%s, %s', variadic array[true, false]::text[]);
+ statement: select format('%2$s, %1$s', variadic array['first', 'second']);
+ statement: select format('%2$s, %1$s', variadic array[1, 2]);
+ statement: select format('Hello', variadic NULL::int[]);
+ statement: select format(string_agg('%s',','), variadic array_agg(i))                              +
+ from generate_series(1,200) g(i);
+ statement: select format('>>%10s<<', 'Hello');
+ statement: select format('>>%10s<<', NULL);
+ statement: select format('>>%10s<<', '');
+ statement: select format('>>%-10s<<', '');
+ statement: select format('>>%-10s<<', 'Hello');
+ statement: select format('>>%-10s<<', NULL);
+ statement: select format('>>%1$10s<<', 'Hello');
+ statement: select format('>>%1$-10I<<', 'Hello');
+ statement: select format('>>%2$*1$L<<', 10, 'Hello');
+ statement: select format('>>%2$*1$L<<', 10, NULL);
+ statement: select format('>>%2$*1$L<<', -10, NULL);
+ statement: select format('>>%*s<<', 10, 'Hello');
+ statement: select format('>>%*1$s<<', 10, 'Hello');
+ statement: select format('>>%-s<<', 'Hello');
+ statement: select format('>>%10L<<', NULL);
+ statement: select format('>>%2$*1$L<<', NULL, 'Hello');
+ statement: select format('>>%2$*1$L<<', 0, 'Hello');
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW v12_temp AS SELECT true FROM v11_temp;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "v11_temp" does not exist at character 42
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE VIEW v12_temp AS SELECT true FROM v11_temp;

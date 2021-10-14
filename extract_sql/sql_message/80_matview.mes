@@ -1,0 +1,552 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE t (id int NOT NULL PRIMARY KEY, type text NOT NULL, amt numeric NOT NULL);
+ statement: INSERT INTO t VALUES                                                                                                                                                                                                                                       +
+   (1, 'x', 2),                                                                                                                                                                                                                                                        +
+   (2, 'x', 3),                                                                                                                                                                                                                                                        +
+   (3, 'y', 5),                                                                                                                                                                                                                                                        +
+   (4, 'y', 7),                                                                                                                                                                                                                                                        +
+   (5, 'z', 11);
+ statement: CREATE VIEW tv AS SELECT type, sum(amt) AS totamt FROM t GROUP BY type;
+ statement: SELECT * FROM tv ORDER BY type;
+ statement: EXPLAIN (costs off)                                                                                                                                                                                                                                        +
+   CREATE MATERIALIZED VIEW tm AS SELECT type, sum(amt) AS totamt FROM t GROUP BY type WITH NO DATA;
+ statement: CREATE MATERIALIZED VIEW tm AS SELECT type, sum(amt) AS totamt FROM t GROUP BY type WITH NO DATA;
+ statement: SELECT relispopulated FROM pg_class WHERE oid = 'tm'::regclass;
+ statement: SELECT * FROM tm;
+ statement: REFRESH MATERIALIZED VIEW tm;
+ statement: SELECT relispopulated FROM pg_class WHERE oid = 'tm'::regclass;
+ statement: CREATE UNIQUE INDEX tm_type ON tm (type);
+ statement: SELECT * FROM tm;
+ statement: EXPLAIN (costs off)                                                                                                                                                                                                                                        +
+   CREATE MATERIALIZED VIEW tvm AS SELECT * FROM tv ORDER BY type;
+ statement: CREATE MATERIALIZED VIEW tvm AS SELECT * FROM tv ORDER BY type;
+ statement: SELECT * FROM tvm;
+ statement: CREATE MATERIALIZED VIEW tmm AS SELECT sum(totamt) AS grandtot FROM tm;
+ statement: CREATE MATERIALIZED VIEW tvmm AS SELECT sum(totamt) AS grandtot FROM tvm;
+ statement: CREATE UNIQUE INDEX tvmm_expr ON tvmm ((grandtot > 0));
+ statement: CREATE UNIQUE INDEX tvmm_pred ON tvmm (grandtot) WHERE grandtot < 0;
+ statement: CREATE VIEW tvv AS SELECT sum(totamt) AS grandtot FROM tv;
+ statement: EXPLAIN (costs off)                                                                                                                                                                                                                                        +
+   CREATE MATERIALIZED VIEW tvvm AS SELECT * FROM tvv;
+ statement: CREATE MATERIALIZED VIEW tvvm AS SELECT * FROM tvv;
+ statement: CREATE VIEW tvvmv AS SELECT * FROM tvvm;
+ statement: CREATE MATERIALIZED VIEW bb AS SELECT * FROM tvvmv;
+ statement: CREATE INDEX aa ON bb (grandtot);
+ statement: SELECT c.oid,                                                                                                                                                                                                                                              +
+   n.nspname,                                                                                                                                                                                                                                                          +
+   c.relname                                                                                                                                                                                                                                                           +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                                                                                                                    +
+ WHERE c.relname ~ '^(tvm)$'                                                                                                                                                                                                                                           +
+   AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                                                                                                                                           +
+ ORDER BY 2, 3;
+ statement: SELECT c.relchecks, c.relkind, c.relhasindex, c.relhasrules, c.relhastriggers, c.relrowsecurity, c.relforcerowsecurity, c.relhasoids, pg_catalog.array_to_string(c.reloptions || array(select 'toast.' || x from pg_catalog.unnest(tc.reloptions) x), ', ')+
+ , c.reltablespace, CASE WHEN c.reloftype = 0 THEN '' ELSE c.reloftype::pg_catalog.regtype::pg_catalog.text END, c.relpersistence, c.relreplident                                                                                                                      +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+  LEFT JOIN pg_catalog.pg_class tc ON (c.reltoastrelid = tc.oid)                                                                                                                                                                                                       +
+ WHERE c.oid = '24834';
+ statement: SELECT a.attname,                                                                                                                                                                                                                                          +
+   pg_catalog.format_type(a.atttypid, a.atttypmod),                                                                                                                                                                                                                    +
+   (SELECT substring(pg_catalog.pg_get_expr(d.adbin, d.adrelid) for 128)                                                                                                                                                                                               +
+    FROM pg_catalog.pg_attrdef d                                                                                                                                                                                                                                       +
+    WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum AND a.atthasdef),                                                                                                                                                                                              +
+   a.attnotnull, a.attnum,                                                                                                                                                                                                                                             +
+   (SELECT c.collname FROM pg_catalog.pg_collation c, pg_catalog.pg_type t                                                                                                                                                                                             +
+    WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation) AS attcollation,                                                                                                                                                         +
+   NULL AS indexdef,                                                                                                                                                                                                                                                   +
+   NULL AS attfdwoptions,                                                                                                                                                                                                                                              +
+   a.attstorage,                                                                                                                                                                                                                                                       +
+   CASE WHEN a.attstattarget=-1 THEN NULL ELSE a.attstattarget END AS attstattarget, pg_catalog.col_description(a.attrelid, a.attnum)                                                                                                                                  +
+ FROM pg_catalog.pg_attribute a                                                                                                                                                                                                                                        +
+ WHERE a.attrelid = '24834' AND a.attnum > 0 AND NOT a.attisdropped                                                                                                                                                                                                    +
+ ORDER BY a.attnum;
+ statement: SELECT pg_catalog.pg_get_viewdef('24834'::pg_catalog.oid, true);
+ statement: SELECT pol.polname,                                                                                                                                                                                                                                        +
+ CASE WHEN pol.polroles = '{0}' THEN NULL ELSE pg_catalog.array_to_string(array(select rolname from pg_catalog.pg_roles where oid = any (pol.polroles) order by 1),',') END,                                                                                           +
+ pg_catalog.pg_get_expr(pol.polqual, pol.polrelid),                                                                                                                                                                                                                    +
+ pg_catalog.pg_get_expr(pol.polwithcheck, pol.polrelid),                                                                                                                                                                                                               +
+ CASE pol.polcmd                                                                                                                                                                                                                                                       +
+ WHEN 'r' THEN 'SELECT'                                                                                                                                                                                                                                                +
+ WHEN 'a' THEN 'INSERT'                                                                                                                                                                                                                                                +
+ WHEN 'w' THEN 'UPDATE'                                                                                                                                                                                                                                                +
+ WHEN 'd' THEN 'DELETE'                                                                                                                                                                                                                                                +
+ WHEN '*' THEN 'ALL'                                                                                                                                                                                                                                                   +
+ END AS cmd                                                                                                                                                                                                                                                            +
+ FROM pg_catalog.pg_policy pol                                                                                                                                                                                                                                         +
+ WHERE pol.polrelid = '24834' ORDER BY 1;
+ statement: SELECT r.rulename, trim(trailing ';' from pg_catalog.pg_get_ruledef(r.oid, true))                                                                                                                                                                          +
+ FROM pg_catalog.pg_rewrite r                                                                                                                                                                                                                                          +
+ WHERE r.ev_class = '24834' AND r.rulename != '_RETURN' ORDER BY 1;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhparent AND i.inhrelid = '24834' ORDER BY inhseqno;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhrelid AND i.inhparent = '24834' ORDER BY c.oid::pg_catalog.regclass::pg_catalog.text;
+ statement: SELECT c.oid,                                                                                                                                                                                                                                              +
+   n.nspname,                                                                                                                                                                                                                                                          +
+   c.relname                                                                                                                                                                                                                                                           +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                                                                                                                    +
+ WHERE c.relname ~ '^(tvm)$'                                                                                                                                                                                                                                           +
+   AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                                                                                                                                           +
+ ORDER BY 2, 3;
+ statement: SELECT c.relchecks, c.relkind, c.relhasindex, c.relhasrules, c.relhastriggers, c.relrowsecurity, c.relforcerowsecurity, c.relhasoids, pg_catalog.array_to_string(c.reloptions || array(select 'toast.' || x from pg_catalog.unnest(tc.reloptions) x), ', ')+
+ , c.reltablespace, CASE WHEN c.reloftype = 0 THEN '' ELSE c.reloftype::pg_catalog.regtype::pg_catalog.text END, c.relpersistence, c.relreplident                                                                                                                      +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+  LEFT JOIN pg_catalog.pg_class tc ON (c.reltoastrelid = tc.oid)                                                                                                                                                                                                       +
+ WHERE c.oid = '24834';
+ statement: SELECT a.attname,                                                                                                                                                                                                                                          +
+   pg_catalog.format_type(a.atttypid, a.atttypmod),                                                                                                                                                                                                                    +
+   (SELECT substring(pg_catalog.pg_get_expr(d.adbin, d.adrelid) for 128)                                                                                                                                                                                               +
+    FROM pg_catalog.pg_attrdef d                                                                                                                                                                                                                                       +
+    WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum AND a.atthasdef),                                                                                                                                                                                              +
+   a.attnotnull, a.attnum,                                                                                                                                                                                                                                             +
+   (SELECT c.collname FROM pg_catalog.pg_collation c, pg_catalog.pg_type t                                                                                                                                                                                             +
+    WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation) AS attcollation,                                                                                                                                                         +
+   NULL AS indexdef,                                                                                                                                                                                                                                                   +
+   NULL AS attfdwoptions,                                                                                                                                                                                                                                              +
+   a.attstorage,                                                                                                                                                                                                                                                       +
+   CASE WHEN a.attstattarget=-1 THEN NULL ELSE a.attstattarget END AS attstattarget, pg_catalog.col_description(a.attrelid, a.attnum)                                                                                                                                  +
+ FROM pg_catalog.pg_attribute a                                                                                                                                                                                                                                        +
+ WHERE a.attrelid = '24834' AND a.attnum > 0 AND NOT a.attisdropped                                                                                                                                                                                                    +
+ ORDER BY a.attnum;
+ statement: SELECT pg_catalog.pg_get_viewdef('24834'::pg_catalog.oid, true);
+ statement: SELECT pol.polname,                                                                                                                                                                                                                                        +
+ CASE WHEN pol.polroles = '{0}' THEN NULL ELSE pg_catalog.array_to_string(array(select rolname from pg_catalog.pg_roles where oid = any (pol.polroles) order by 1),',') END,                                                                                           +
+ pg_catalog.pg_get_expr(pol.polqual, pol.polrelid),                                                                                                                                                                                                                    +
+ pg_catalog.pg_get_expr(pol.polwithcheck, pol.polrelid),                                                                                                                                                                                                               +
+ CASE pol.polcmd                                                                                                                                                                                                                                                       +
+ WHEN 'r' THEN 'SELECT'                                                                                                                                                                                                                                                +
+ WHEN 'a' THEN 'INSERT'                                                                                                                                                                                                                                                +
+ WHEN 'w' THEN 'UPDATE'                                                                                                                                                                                                                                                +
+ WHEN 'd' THEN 'DELETE'                                                                                                                                                                                                                                                +
+ WHEN '*' THEN 'ALL'                                                                                                                                                                                                                                                   +
+ END AS cmd                                                                                                                                                                                                                                                            +
+ FROM pg_catalog.pg_policy pol                                                                                                                                                                                                                                         +
+ WHERE pol.polrelid = '24834' ORDER BY 1;
+ statement: SELECT r.rulename, trim(trailing ';' from pg_catalog.pg_get_ruledef(r.oid, true))                                                                                                                                                                          +
+ FROM pg_catalog.pg_rewrite r                                                                                                                                                                                                                                          +
+ WHERE r.ev_class = '24834' AND r.rulename != '_RETURN' ORDER BY 1;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhparent AND i.inhrelid = '24834' ORDER BY inhseqno;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhrelid AND i.inhparent = '24834' ORDER BY c.oid::pg_catalog.regclass::pg_catalog.text;
+ statement: SELECT c.oid,                                                                                                                                                                                                                                              +
+   n.nspname,                                                                                                                                                                                                                                                          +
+   c.relname                                                                                                                                                                                                                                                           +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                                                                                                                    +
+ WHERE c.relname ~ '^(tvvm)$'                                                                                                                                                                                                                                          +
+   AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                                                                                                                                           +
+ ORDER BY 2, 3;
+ statement: SELECT c.relchecks, c.relkind, c.relhasindex, c.relhasrules, c.relhastriggers, c.relrowsecurity, c.relforcerowsecurity, c.relhasoids, pg_catalog.array_to_string(c.reloptions || array(select 'toast.' || x from pg_catalog.unnest(tc.reloptions) x), ', ')+
+ , c.reltablespace, CASE WHEN c.reloftype = 0 THEN '' ELSE c.reloftype::pg_catalog.regtype::pg_catalog.text END, c.relpersistence, c.relreplident                                                                                                                      +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+  LEFT JOIN pg_catalog.pg_class tc ON (c.reltoastrelid = tc.oid)                                                                                                                                                                                                       +
+ WHERE c.oid = '24861';
+ statement: SELECT a.attname,                                                                                                                                                                                                                                          +
+   pg_catalog.format_type(a.atttypid, a.atttypmod),                                                                                                                                                                                                                    +
+   (SELECT substring(pg_catalog.pg_get_expr(d.adbin, d.adrelid) for 128)                                                                                                                                                                                               +
+    FROM pg_catalog.pg_attrdef d                                                                                                                                                                                                                                       +
+    WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum AND a.atthasdef),                                                                                                                                                                                              +
+   a.attnotnull, a.attnum,                                                                                                                                                                                                                                             +
+   (SELECT c.collname FROM pg_catalog.pg_collation c, pg_catalog.pg_type t                                                                                                                                                                                             +
+    WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation) AS attcollation,                                                                                                                                                         +
+   NULL AS indexdef,                                                                                                                                                                                                                                                   +
+   NULL AS attfdwoptions,                                                                                                                                                                                                                                              +
+   a.attstorage,                                                                                                                                                                                                                                                       +
+   CASE WHEN a.attstattarget=-1 THEN NULL ELSE a.attstattarget END AS attstattarget, pg_catalog.col_description(a.attrelid, a.attnum)                                                                                                                                  +
+ FROM pg_catalog.pg_attribute a                                                                                                                                                                                                                                        +
+ WHERE a.attrelid = '24861' AND a.attnum > 0 AND NOT a.attisdropped                                                                                                                                                                                                    +
+ ORDER BY a.attnum;
+ statement: SELECT pg_catalog.pg_get_viewdef('24861'::pg_catalog.oid, true);
+ statement: SELECT pol.polname,                                                                                                                                                                                                                                        +
+ CASE WHEN pol.polroles = '{0}' THEN NULL ELSE pg_catalog.array_to_string(array(select rolname from pg_catalog.pg_roles where oid = any (pol.polroles) order by 1),',') END,                                                                                           +
+ pg_catalog.pg_get_expr(pol.polqual, pol.polrelid),                                                                                                                                                                                                                    +
+ pg_catalog.pg_get_expr(pol.polwithcheck, pol.polrelid),                                                                                                                                                                                                               +
+ CASE pol.polcmd                                                                                                                                                                                                                                                       +
+ WHEN 'r' THEN 'SELECT'                                                                                                                                                                                                                                                +
+ WHEN 'a' THEN 'INSERT'                                                                                                                                                                                                                                                +
+ WHEN 'w' THEN 'UPDATE'                                                                                                                                                                                                                                                +
+ WHEN 'd' THEN 'DELETE'                                                                                                                                                                                                                                                +
+ WHEN '*' THEN 'ALL'                                                                                                                                                                                                                                                   +
+ END AS cmd                                                                                                                                                                                                                                                            +
+ FROM pg_catalog.pg_policy pol                                                                                                                                                                                                                                         +
+ WHERE pol.polrelid = '24861' ORDER BY 1;
+ statement: SELECT r.rulename, trim(trailing ';' from pg_catalog.pg_get_ruledef(r.oid, true))                                                                                                                                                                          +
+ FROM pg_catalog.pg_rewrite r                                                                                                                                                                                                                                          +
+ WHERE r.ev_class = '24861' AND r.rulename != '_RETURN' ORDER BY 1;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhparent AND i.inhrelid = '24861' ORDER BY inhseqno;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhrelid AND i.inhparent = '24861' ORDER BY c.oid::pg_catalog.regclass::pg_catalog.text;
+ statement: SELECT c.oid,                                                                                                                                                                                                                                              +
+   n.nspname,                                                                                                                                                                                                                                                          +
+   c.relname                                                                                                                                                                                                                                                           +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                                                                                                                    +
+ WHERE c.relname ~ '^(bb)$'                                                                                                                                                                                                                                            +
+   AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                                                                                                                                           +
+ ORDER BY 2, 3;
+ statement: SELECT c.relchecks, c.relkind, c.relhasindex, c.relhasrules, c.relhastriggers, c.relrowsecurity, c.relforcerowsecurity, c.relhasoids, pg_catalog.array_to_string(c.reloptions || array(select 'toast.' || x from pg_catalog.unnest(tc.reloptions) x), ', ')+
+ , c.reltablespace, CASE WHEN c.reloftype = 0 THEN '' ELSE c.reloftype::pg_catalog.regtype::pg_catalog.text END, c.relpersistence, c.relreplident                                                                                                                      +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+  LEFT JOIN pg_catalog.pg_class tc ON (c.reltoastrelid = tc.oid)                                                                                                                                                                                                       +
+ WHERE c.oid = '24872';
+ statement: SELECT a.attname,                                                                                                                                                                                                                                          +
+   pg_catalog.format_type(a.atttypid, a.atttypmod),                                                                                                                                                                                                                    +
+   (SELECT substring(pg_catalog.pg_get_expr(d.adbin, d.adrelid) for 128)                                                                                                                                                                                               +
+    FROM pg_catalog.pg_attrdef d                                                                                                                                                                                                                                       +
+    WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum AND a.atthasdef),                                                                                                                                                                                              +
+   a.attnotnull, a.attnum,                                                                                                                                                                                                                                             +
+   (SELECT c.collname FROM pg_catalog.pg_collation c, pg_catalog.pg_type t                                                                                                                                                                                             +
+    WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation) AS attcollation,                                                                                                                                                         +
+   NULL AS indexdef,                                                                                                                                                                                                                                                   +
+   NULL AS attfdwoptions,                                                                                                                                                                                                                                              +
+   a.attstorage,                                                                                                                                                                                                                                                       +
+   CASE WHEN a.attstattarget=-1 THEN NULL ELSE a.attstattarget END AS attstattarget, pg_catalog.col_description(a.attrelid, a.attnum)                                                                                                                                  +
+ FROM pg_catalog.pg_attribute a                                                                                                                                                                                                                                        +
+ WHERE a.attrelid = '24872' AND a.attnum > 0 AND NOT a.attisdropped                                                                                                                                                                                                    +
+ ORDER BY a.attnum;
+ statement: SELECT pg_catalog.pg_get_viewdef('24872'::pg_catalog.oid, true);
+ statement: SELECT c2.relname, i.indisprimary, i.indisunique, i.indisclustered, i.indisvalid, pg_catalog.pg_get_indexdef(i.indexrelid, 0, true),                                                                                                                       +
+   pg_catalog.pg_get_constraintdef(con.oid, true), contype, condeferrable, condeferred, i.indisreplident, c2.reltablespace                                                                                                                                             +
+ FROM pg_catalog.pg_class c, pg_catalog.pg_class c2, pg_catalog.pg_index i                                                                                                                                                                                             +
+   LEFT JOIN pg_catalog.pg_constraint con ON (conrelid = i.indrelid AND conindid = i.indexrelid AND contype IN ('p','u','x'))                                                                                                                                          +
+ WHERE c.oid = '24872' AND c.oid = i.indrelid AND i.indexrelid = c2.oid                                                                                                                                                                                                +
+ ORDER BY i.indisprimary DESC, i.indisunique DESC, c2.relname;
+ statement: SELECT pol.polname,                                                                                                                                                                                                                                        +
+ CASE WHEN pol.polroles = '{0}' THEN NULL ELSE pg_catalog.array_to_string(array(select rolname from pg_catalog.pg_roles where oid = any (pol.polroles) order by 1),',') END,                                                                                           +
+ pg_catalog.pg_get_expr(pol.polqual, pol.polrelid),                                                                                                                                                                                                                    +
+ pg_catalog.pg_get_expr(pol.polwithcheck, pol.polrelid),                                                                                                                                                                                                               +
+ CASE pol.polcmd                                                                                                                                                                                                                                                       +
+ WHEN 'r' THEN 'SELECT'                                                                                                                                                                                                                                                +
+ WHEN 'a' THEN 'INSERT'                                                                                                                                                                                                                                                +
+ WHEN 'w' THEN 'UPDATE'                                                                                                                                                                                                                                                +
+ WHEN 'd' THEN 'DELETE'                                                                                                                                                                                                                                                +
+ WHEN '*' THEN 'ALL'                                                                                                                                                                                                                                                   +
+ END AS cmd                                                                                                                                                                                                                                                            +
+ FROM pg_catalog.pg_policy pol                                                                                                                                                                                                                                         +
+ WHERE pol.polrelid = '24872' ORDER BY 1;
+ statement: SELECT r.rulename, trim(trailing ';' from pg_catalog.pg_get_ruledef(r.oid, true))                                                                                                                                                                          +
+ FROM pg_catalog.pg_rewrite r                                                                                                                                                                                                                                          +
+ WHERE r.ev_class = '24872' AND r.rulename != '_RETURN' ORDER BY 1;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhparent AND i.inhrelid = '24872' ORDER BY inhseqno;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhrelid AND i.inhparent = '24872' ORDER BY c.oid::pg_catalog.regclass::pg_catalog.text;
+ statement: CREATE SCHEMA mvschema;
+ statement: ALTER MATERIALIZED VIEW tvm SET SCHEMA mvschema;
+ statement: SELECT c.oid,                                                                                                                                                                                                                                              +
+   n.nspname,                                                                                                                                                                                                                                                          +
+   c.relname                                                                                                                                                                                                                                                           +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                                                                                                                    +
+ WHERE c.relname ~ '^(tvm)$'                                                                                                                                                                                                                                           +
+   AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                                                                                                                                           +
+ ORDER BY 2, 3;
+ statement: SELECT c.oid,                                                                                                                                                                                                                                              +
+   n.nspname,                                                                                                                                                                                                                                                          +
+   c.relname                                                                                                                                                                                                                                                           +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                                                                                                                    +
+ WHERE c.relname ~ '^(tvmm)$'                                                                                                                                                                                                                                          +
+   AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                                                                                                                                           +
+ ORDER BY 2, 3;
+ statement: SELECT c.relchecks, c.relkind, c.relhasindex, c.relhasrules, c.relhastriggers, c.relrowsecurity, c.relforcerowsecurity, c.relhasoids, pg_catalog.array_to_string(c.reloptions || array(select 'toast.' || x from pg_catalog.unnest(tc.reloptions) x), ', ')+
+ , c.reltablespace, CASE WHEN c.reloftype = 0 THEN '' ELSE c.reloftype::pg_catalog.regtype::pg_catalog.text END, c.relpersistence, c.relreplident                                                                                                                      +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+  LEFT JOIN pg_catalog.pg_class tc ON (c.reltoastrelid = tc.oid)                                                                                                                                                                                                       +
+ WHERE c.oid = '24848';
+ statement: SELECT a.attname,                                                                                                                                                                                                                                          +
+   pg_catalog.format_type(a.atttypid, a.atttypmod),                                                                                                                                                                                                                    +
+   (SELECT substring(pg_catalog.pg_get_expr(d.adbin, d.adrelid) for 128)                                                                                                                                                                                               +
+    FROM pg_catalog.pg_attrdef d                                                                                                                                                                                                                                       +
+    WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum AND a.atthasdef),                                                                                                                                                                                              +
+   a.attnotnull, a.attnum,                                                                                                                                                                                                                                             +
+   (SELECT c.collname FROM pg_catalog.pg_collation c, pg_catalog.pg_type t                                                                                                                                                                                             +
+    WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation) AS attcollation,                                                                                                                                                         +
+   NULL AS indexdef,                                                                                                                                                                                                                                                   +
+   NULL AS attfdwoptions,                                                                                                                                                                                                                                              +
+   a.attstorage,                                                                                                                                                                                                                                                       +
+   CASE WHEN a.attstattarget=-1 THEN NULL ELSE a.attstattarget END AS attstattarget, pg_catalog.col_description(a.attrelid, a.attnum)                                                                                                                                  +
+ FROM pg_catalog.pg_attribute a                                                                                                                                                                                                                                        +
+ WHERE a.attrelid = '24848' AND a.attnum > 0 AND NOT a.attisdropped                                                                                                                                                                                                    +
+ ORDER BY a.attnum;
+ statement: SELECT pg_catalog.pg_get_viewdef('24848'::pg_catalog.oid, true);
+ statement: SELECT c2.relname, i.indisprimary, i.indisunique, i.indisclustered, i.indisvalid, pg_catalog.pg_get_indexdef(i.indexrelid, 0, true),                                                                                                                       +
+   pg_catalog.pg_get_constraintdef(con.oid, true), contype, condeferrable, condeferred, i.indisreplident, c2.reltablespace                                                                                                                                             +
+ FROM pg_catalog.pg_class c, pg_catalog.pg_class c2, pg_catalog.pg_index i                                                                                                                                                                                             +
+   LEFT JOIN pg_catalog.pg_constraint con ON (conrelid = i.indrelid AND conindid = i.indexrelid AND contype IN ('p','u','x'))                                                                                                                                          +
+ WHERE c.oid = '24848' AND c.oid = i.indrelid AND i.indexrelid = c2.oid                                                                                                                                                                                                +
+ ORDER BY i.indisprimary DESC, i.indisunique DESC, c2.relname;
+ statement: SELECT pol.polname,                                                                                                                                                                                                                                        +
+ CASE WHEN pol.polroles = '{0}' THEN NULL ELSE pg_catalog.array_to_string(array(select rolname from pg_catalog.pg_roles where oid = any (pol.polroles) order by 1),',') END,                                                                                           +
+ pg_catalog.pg_get_expr(pol.polqual, pol.polrelid),                                                                                                                                                                                                                    +
+ pg_catalog.pg_get_expr(pol.polwithcheck, pol.polrelid),                                                                                                                                                                                                               +
+ CASE pol.polcmd                                                                                                                                                                                                                                                       +
+ WHEN 'r' THEN 'SELECT'                                                                                                                                                                                                                                                +
+ WHEN 'a' THEN 'INSERT'                                                                                                                                                                                                                                                +
+ WHEN 'w' THEN 'UPDATE'                                                                                                                                                                                                                                                +
+ WHEN 'd' THEN 'DELETE'                                                                                                                                                                                                                                                +
+ WHEN '*' THEN 'ALL'                                                                                                                                                                                                                                                   +
+ END AS cmd                                                                                                                                                                                                                                                            +
+ FROM pg_catalog.pg_policy pol                                                                                                                                                                                                                                         +
+ WHERE pol.polrelid = '24848' ORDER BY 1;
+ statement: SELECT r.rulename, trim(trailing ';' from pg_catalog.pg_get_ruledef(r.oid, true))                                                                                                                                                                          +
+ FROM pg_catalog.pg_rewrite r                                                                                                                                                                                                                                          +
+ WHERE r.ev_class = '24848' AND r.rulename != '_RETURN' ORDER BY 1;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhparent AND i.inhrelid = '24848' ORDER BY inhseqno;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhrelid AND i.inhparent = '24848' ORDER BY c.oid::pg_catalog.regclass::pg_catalog.text;
+ statement: SET search_path = mvschema, public;
+ statement: SELECT c.oid,                                                                                                                                                                                                                                              +
+   n.nspname,                                                                                                                                                                                                                                                          +
+   c.relname                                                                                                                                                                                                                                                           +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                                                                                                                    +
+ WHERE c.relname ~ '^(tvm)$'                                                                                                                                                                                                                                           +
+   AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                                                                                                                                           +
+ ORDER BY 2, 3;
+ statement: SELECT c.relchecks, c.relkind, c.relhasindex, c.relhasrules, c.relhastriggers, c.relrowsecurity, c.relforcerowsecurity, c.relhasoids, pg_catalog.array_to_string(c.reloptions || array(select 'toast.' || x from pg_catalog.unnest(tc.reloptions) x), ', ')+
+ , c.reltablespace, CASE WHEN c.reloftype = 0 THEN '' ELSE c.reloftype::pg_catalog.regtype::pg_catalog.text END, c.relpersistence, c.relreplident                                                                                                                      +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+  LEFT JOIN pg_catalog.pg_class tc ON (c.reltoastrelid = tc.oid)                                                                                                                                                                                                       +
+ WHERE c.oid = '24834';
+ statement: SELECT a.attname,                                                                                                                                                                                                                                          +
+   pg_catalog.format_type(a.atttypid, a.atttypmod),                                                                                                                                                                                                                    +
+   (SELECT substring(pg_catalog.pg_get_expr(d.adbin, d.adrelid) for 128)                                                                                                                                                                                               +
+    FROM pg_catalog.pg_attrdef d                                                                                                                                                                                                                                       +
+    WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum AND a.atthasdef),                                                                                                                                                                                              +
+   a.attnotnull, a.attnum,                                                                                                                                                                                                                                             +
+   (SELECT c.collname FROM pg_catalog.pg_collation c, pg_catalog.pg_type t                                                                                                                                                                                             +
+    WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation) AS attcollation,                                                                                                                                                         +
+   NULL AS indexdef,                                                                                                                                                                                                                                                   +
+   NULL AS attfdwoptions,                                                                                                                                                                                                                                              +
+   a.attstorage,                                                                                                                                                                                                                                                       +
+   CASE WHEN a.attstattarget=-1 THEN NULL ELSE a.attstattarget END AS attstattarget, pg_catalog.col_description(a.attrelid, a.attnum)                                                                                                                                  +
+ FROM pg_catalog.pg_attribute a                                                                                                                                                                                                                                        +
+ WHERE a.attrelid = '24834' AND a.attnum > 0 AND NOT a.attisdropped                                                                                                                                                                                                    +
+ ORDER BY a.attnum;
+ statement: SELECT pg_catalog.pg_get_viewdef('24834'::pg_catalog.oid, true);
+ statement: SELECT pol.polname,                                                                                                                                                                                                                                        +
+ CASE WHEN pol.polroles = '{0}' THEN NULL ELSE pg_catalog.array_to_string(array(select rolname from pg_catalog.pg_roles where oid = any (pol.polroles) order by 1),',') END,                                                                                           +
+ pg_catalog.pg_get_expr(pol.polqual, pol.polrelid),                                                                                                                                                                                                                    +
+ pg_catalog.pg_get_expr(pol.polwithcheck, pol.polrelid),                                                                                                                                                                                                               +
+ CASE pol.polcmd                                                                                                                                                                                                                                                       +
+ WHEN 'r' THEN 'SELECT'                                                                                                                                                                                                                                                +
+ WHEN 'a' THEN 'INSERT'                                                                                                                                                                                                                                                +
+ WHEN 'w' THEN 'UPDATE'                                                                                                                                                                                                                                                +
+ WHEN 'd' THEN 'DELETE'                                                                                                                                                                                                                                                +
+ WHEN '*' THEN 'ALL'                                                                                                                                                                                                                                                   +
+ END AS cmd                                                                                                                                                                                                                                                            +
+ FROM pg_catalog.pg_policy pol                                                                                                                                                                                                                                         +
+ WHERE pol.polrelid = '24834' ORDER BY 1;
+ statement: SELECT r.rulename, trim(trailing ';' from pg_catalog.pg_get_ruledef(r.oid, true))                                                                                                                                                                          +
+ FROM pg_catalog.pg_rewrite r                                                                                                                                                                                                                                          +
+ WHERE r.ev_class = '24834' AND r.rulename != '_RETURN' ORDER BY 1;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhparent AND i.inhrelid = '24834' ORDER BY inhseqno;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhrelid AND i.inhparent = '24834' ORDER BY c.oid::pg_catalog.regclass::pg_catalog.text;
+ statement: INSERT INTO t VALUES (6, 'z', 13);
+ statement: SELECT * FROM tm ORDER BY type;
+ statement: SELECT * FROM tvm ORDER BY type;
+ statement: REFRESH MATERIALIZED VIEW CONCURRENTLY tm;
+ statement: REFRESH MATERIALIZED VIEW tvm;
+ statement: SELECT * FROM tm ORDER BY type;
+ statement: SELECT * FROM tvm ORDER BY type;
+ statement: RESET search_path;
+ statement: EXPLAIN (costs off)                                                                                                                                                                                                                                        +
+   SELECT * FROM tmm;
+ statement: EXPLAIN (costs off)                                                                                                                                                                                                                                        +
+   SELECT * FROM tvmm;
+ statement: EXPLAIN (costs off)                                                                                                                                                                                                                                        +
+   SELECT * FROM tvvm;
+ statement: SELECT * FROM tmm;
+ statement: SELECT * FROM tvmm;
+ statement: SELECT * FROM tvvm;
+ statement: REFRESH MATERIALIZED VIEW tmm;
+ statement: REFRESH MATERIALIZED VIEW CONCURRENTLY tvmm;
+ statement: REFRESH MATERIALIZED VIEW tvmm;
+ statement: REFRESH MATERIALIZED VIEW tvvm;
+ statement: EXPLAIN (costs off)                                                                                                                                                                                                                                        +
+   SELECT * FROM tmm;
+ statement: EXPLAIN (costs off)                                                                                                                                                                                                                                        +
+   SELECT * FROM tvmm;
+ statement: EXPLAIN (costs off)                                                                                                                                                                                                                                        +
+   SELECT * FROM tvvm;
+ statement: SELECT * FROM tmm;
+ statement: SELECT * FROM tvmm;
+ statement: SELECT * FROM tvvm;
+ statement: DROP MATERIALIZED VIEW IF EXISTS no_such_mv;
+ statement: REFRESH MATERIALIZED VIEW CONCURRENTLY tvmm WITH NO DATA;
+ statement: SELECT * FROM tvvm FOR SHARE;
+ statement: SELECT type, m.totamt AS mtot, v.totamt AS vtot FROM tm m LEFT JOIN tv v USING (type) ORDER BY type;
+ statement: DROP TABLE t;
+ statement: BEGIN;
+ statement: DROP TABLE t CASCADE;
+ statement: ROLLBACK;
+ statement: CREATE VIEW v_test1 AS SELECT 1 moo;
+ statement: CREATE VIEW v_test2 AS SELECT moo, 2*moo FROM v_test1 UNION ALL SELECT moo, 3*moo FROM v_test1;
+ statement: SELECT c.oid,                                                                                                                                                                                                                                              +
+   n.nspname,                                                                                                                                                                                                                                                          +
+   c.relname                                                                                                                                                                                                                                                           +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                                                                                                                    +
+ WHERE c.relname ~ '^(v_test2)$'                                                                                                                                                                                                                                       +
+   AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                                                                                                                                           +
+ ORDER BY 2, 3;
+ statement: SELECT c.relchecks, c.relkind, c.relhasindex, c.relhasrules, c.relhastriggers, c.relrowsecurity, c.relforcerowsecurity, c.relhasoids, pg_catalog.array_to_string(c.reloptions || array(select 'toast.' || x from pg_catalog.unnest(tc.reloptions) x), ', ')+
+ , c.reltablespace, CASE WHEN c.reloftype = 0 THEN '' ELSE c.reloftype::pg_catalog.regtype::pg_catalog.text END, c.relpersistence, c.relreplident                                                                                                                      +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+  LEFT JOIN pg_catalog.pg_class tc ON (c.reltoastrelid = tc.oid)                                                                                                                                                                                                       +
+ WHERE c.oid = '24929';
+ statement: SELECT a.attname,                                                                                                                                                                                                                                          +
+   pg_catalog.format_type(a.atttypid, a.atttypmod),                                                                                                                                                                                                                    +
+   (SELECT substring(pg_catalog.pg_get_expr(d.adbin, d.adrelid) for 128)                                                                                                                                                                                               +
+    FROM pg_catalog.pg_attrdef d                                                                                                                                                                                                                                       +
+    WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum AND a.atthasdef),                                                                                                                                                                                              +
+   a.attnotnull, a.attnum,                                                                                                                                                                                                                                             +
+   (SELECT c.collname FROM pg_catalog.pg_collation c, pg_catalog.pg_type t                                                                                                                                                                                             +
+    WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation) AS attcollation,                                                                                                                                                         +
+   NULL AS indexdef,                                                                                                                                                                                                                                                   +
+   NULL AS attfdwoptions,                                                                                                                                                                                                                                              +
+   a.attstorage,                                                                                                                                                                                                                                                       +
+   CASE WHEN a.attstattarget=-1 THEN NULL ELSE a.attstattarget END AS attstattarget, pg_catalog.col_description(a.attrelid, a.attnum)                                                                                                                                  +
+ FROM pg_catalog.pg_attribute a                                                                                                                                                                                                                                        +
+ WHERE a.attrelid = '24929' AND a.attnum > 0 AND NOT a.attisdropped                                                                                                                                                                                                    +
+ ORDER BY a.attnum;
+ statement: SELECT pg_catalog.pg_get_viewdef('24929'::pg_catalog.oid, true);
+ statement: SELECT r.rulename, trim(trailing ';' from pg_catalog.pg_get_ruledef(r.oid, true))                                                                                                                                                                          +
+ FROM pg_catalog.pg_rewrite r                                                                                                                                                                                                                                          +
+ WHERE r.ev_class = '24929' AND r.rulename != '_RETURN' ORDER BY 1;
+ statement: CREATE MATERIALIZED VIEW mv_test2 AS SELECT moo, 2*moo FROM v_test2 UNION ALL SELECT moo, 3*moo FROM v_test2;
+ statement: SELECT c.oid,                                                                                                                                                                                                                                              +
+   n.nspname,                                                                                                                                                                                                                                                          +
+   c.relname                                                                                                                                                                                                                                                           +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                                                                                                                    +
+ WHERE c.relname ~ '^(mv_test2)$'                                                                                                                                                                                                                                      +
+   AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                                                                                                                                           +
+ ORDER BY 2, 3;
+ statement: SELECT c.relchecks, c.relkind, c.relhasindex, c.relhasrules, c.relhastriggers, c.relrowsecurity, c.relforcerowsecurity, c.relhasoids, pg_catalog.array_to_string(c.reloptions || array(select 'toast.' || x from pg_catalog.unnest(tc.reloptions) x), ', ')+
+ , c.reltablespace, CASE WHEN c.reloftype = 0 THEN '' ELSE c.reloftype::pg_catalog.regtype::pg_catalog.text END, c.relpersistence, c.relreplident                                                                                                                      +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+  LEFT JOIN pg_catalog.pg_class tc ON (c.reltoastrelid = tc.oid)                                                                                                                                                                                                       +
+ WHERE c.oid = '24933';
+ statement: SELECT a.attname,                                                                                                                                                                                                                                          +
+   pg_catalog.format_type(a.atttypid, a.atttypmod),                                                                                                                                                                                                                    +
+   (SELECT substring(pg_catalog.pg_get_expr(d.adbin, d.adrelid) for 128)                                                                                                                                                                                               +
+    FROM pg_catalog.pg_attrdef d                                                                                                                                                                                                                                       +
+    WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum AND a.atthasdef),                                                                                                                                                                                              +
+   a.attnotnull, a.attnum,                                                                                                                                                                                                                                             +
+   (SELECT c.collname FROM pg_catalog.pg_collation c, pg_catalog.pg_type t                                                                                                                                                                                             +
+    WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation) AS attcollation,                                                                                                                                                         +
+   NULL AS indexdef,                                                                                                                                                                                                                                                   +
+   NULL AS attfdwoptions,                                                                                                                                                                                                                                              +
+   a.attstorage,                                                                                                                                                                                                                                                       +
+   CASE WHEN a.attstattarget=-1 THEN NULL ELSE a.attstattarget END AS attstattarget, pg_catalog.col_description(a.attrelid, a.attnum)                                                                                                                                  +
+ FROM pg_catalog.pg_attribute a                                                                                                                                                                                                                                        +
+ WHERE a.attrelid = '24933' AND a.attnum > 0 AND NOT a.attisdropped                                                                                                                                                                                                    +
+ ORDER BY a.attnum;
+ statement: SELECT pg_catalog.pg_get_viewdef('24933'::pg_catalog.oid, true);
+ statement: SELECT pol.polname,                                                                                                                                                                                                                                        +
+ CASE WHEN pol.polroles = '{0}' THEN NULL ELSE pg_catalog.array_to_string(array(select rolname from pg_catalog.pg_roles where oid = any (pol.polroles) order by 1),',') END,                                                                                           +
+ pg_catalog.pg_get_expr(pol.polqual, pol.polrelid),                                                                                                                                                                                                                    +
+ pg_catalog.pg_get_expr(pol.polwithcheck, pol.polrelid),                                                                                                                                                                                                               +
+ CASE pol.polcmd                                                                                                                                                                                                                                                       +
+ WHEN 'r' THEN 'SELECT'                                                                                                                                                                                                                                                +
+ WHEN 'a' THEN 'INSERT'                                                                                                                                                                                                                                                +
+ WHEN 'w' THEN 'UPDATE'                                                                                                                                                                                                                                                +
+ WHEN 'd' THEN 'DELETE'                                                                                                                                                                                                                                                +
+ WHEN '*' THEN 'ALL'                                                                                                                                                                                                                                                   +
+ END AS cmd                                                                                                                                                                                                                                                            +
+ FROM pg_catalog.pg_policy pol                                                                                                                                                                                                                                         +
+ WHERE pol.polrelid = '24933' ORDER BY 1;
+ statement: SELECT r.rulename, trim(trailing ';' from pg_catalog.pg_get_ruledef(r.oid, true))                                                                                                                                                                          +
+ FROM pg_catalog.pg_rewrite r                                                                                                                                                                                                                                          +
+ WHERE r.ev_class = '24933' AND r.rulename != '_RETURN' ORDER BY 1;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhparent AND i.inhrelid = '24933' ORDER BY inhseqno;
+ statement: SELECT c.oid::pg_catalog.regclass FROM pg_catalog.pg_class c, pg_catalog.pg_inherits i WHERE c.oid=i.inhrelid AND i.inhparent = '24933' ORDER BY c.oid::pg_catalog.regclass::pg_catalog.text;
+ statement: CREATE MATERIALIZED VIEW mv_test3 AS SELECT * FROM mv_test2 WHERE moo = 12345;
+ statement: SELECT relispopulated FROM pg_class WHERE oid = 'mv_test3'::regclass;
+ statement: DROP VIEW v_test1 CASCADE;
+ statement: CREATE TABLE foo(a, b) AS VALUES(1, 10);
+ statement: CREATE MATERIALIZED VIEW mv AS SELECT * FROM foo;
+ statement: CREATE UNIQUE INDEX ON mv(a);
+ statement: INSERT INTO foo SELECT * FROM foo;
+ statement: REFRESH MATERIALIZED VIEW mv;
+ statement: REFRESH MATERIALIZED VIEW CONCURRENTLY mv;
+ statement: DROP TABLE foo CASCADE;
+ statement: CREATE TABLE foo(a, b, c) AS VALUES(1, 2, 3);
+ statement: CREATE MATERIALIZED VIEW mv AS SELECT * FROM foo;
+ statement: CREATE UNIQUE INDEX ON mv (a);
+ statement: CREATE UNIQUE INDEX ON mv (b);
+ statement: CREATE UNIQUE INDEX on mv (c);
+ statement: INSERT INTO foo VALUES(2, 3, 4);
+ statement: INSERT INTO foo VALUES(3, 4, 5);
+ statement: REFRESH MATERIALIZED VIEW mv;
+ statement: REFRESH MATERIALIZED VIEW CONCURRENTLY mv;
+ statement: DROP TABLE foo CASCADE;
+ statement: CREATE MATERIALIZED VIEW mv1 AS SELECT 1 AS col1 WITH NO DATA;
+ statement: CREATE MATERIALIZED VIEW mv2 AS SELECT * FROM mv1                                                                                                                                                                                                          +
+   WHERE col1 = (SELECT LEAST(col1) FROM mv1) WITH NO DATA;
+ statement: DROP MATERIALIZED VIEW mv1 CASCADE;
+ statement: CREATE TABLE boxes (id serial primary key, b box);
+ statement: INSERT INTO boxes (b) VALUES                                                                                                                                                                                                                               +
+   ('(32,32),(31,31)'),                                                                                                                                                                                                                                                +
+   ('(2.0000004,2.0000004),(1,1)'),                                                                                                                                                                                                                                    +
+   ('(1.9999996,1.9999996),(1,1)');
+ statement: CREATE MATERIALIZED VIEW boxmv AS SELECT * FROM boxes;
+ statement: CREATE UNIQUE INDEX boxmv_id ON boxmv (id);
+ statement: UPDATE boxes SET b = '(2,2),(1,1)' WHERE id = 2;
+ statement: REFRESH MATERIALIZED VIEW CONCURRENTLY boxmv;
+ statement: SELECT * FROM boxmv ORDER BY id;
+ statement: DROP TABLE boxes CASCADE;
+ statement: CREATE TABLE mvtest_v (i int, j int);
+ statement: CREATE MATERIALIZED VIEW mvtest_mv_v (ii, jj, kk) AS SELECT i, j FROM mvtest_v;
+ statement: CREATE MATERIALIZED VIEW mvtest_mv_v (ii, jj) AS SELECT i, j FROM mvtest_v;
+ statement: CREATE MATERIALIZED VIEW mvtest_mv_v_2 (ii) AS SELECT i, j FROM mvtest_v;
+ statement: CREATE MATERIALIZED VIEW mvtest_mv_v_3 (ii, jj, kk) AS SELECT i, j FROM mvtest_v WITH NO DATA;
+ statement: CREATE MATERIALIZED VIEW mvtest_mv_v_3 (ii, jj) AS SELECT i, j FROM mvtest_v WITH NO DATA;
+ statement: CREATE MATERIALIZED VIEW mvtest_mv_v_4 (ii) AS SELECT i, j FROM mvtest_v WITH NO DATA;
+ statement: ALTER TABLE mvtest_v RENAME COLUMN i TO x;
+ statement: INSERT INTO mvtest_v values (1, 2);
+ statement: CREATE UNIQUE INDEX mvtest_mv_v_ii ON mvtest_mv_v (ii);
+ statement: REFRESH MATERIALIZED VIEW mvtest_mv_v;
+ statement: UPDATE mvtest_v SET j = 3 WHERE x = 1;
+ statement: REFRESH MATERIALIZED VIEW CONCURRENTLY mvtest_mv_v;
+ statement: REFRESH MATERIALIZED VIEW mvtest_mv_v_2;
+ statement: REFRESH MATERIALIZED VIEW mvtest_mv_v_3;
+ statement: REFRESH MATERIALIZED VIEW mvtest_mv_v_4;
+ statement: SELECT * FROM mvtest_v;
+ statement: SELECT * FROM mvtest_mv_v;
+ statement: SELECT * FROM mvtest_mv_v_2;
+ statement: SELECT * FROM mvtest_mv_v_3;
+ statement: SELECT * FROM mvtest_mv_v_4;
+ statement: DROP TABLE mvtest_v CASCADE;
+ statement: create materialized view mvtest_error as select 1/0 as x;
+ statement: create materialized view mvtest_error as select 1/0 as x with no data;
+ statement: refresh materialized view mvtest_error;
+ statement: drop materialized view mvtest_error;
+ statement: CREATE TABLE v AS SELECT generate_series(1,10) AS a;
+ statement: CREATE MATERIALIZED VIEW mv_v AS SELECT a FROM v WHERE a <= 5;
+ statement: DELETE FROM v WHERE EXISTS ( SELECT * FROM mv_v WHERE mv_v.a = v.a );
+ statement: SELECT * FROM v;
+ statement: SELECT * FROM mv_v;
+ statement: DROP TABLE v CASCADE;
+ statement: CREATE ROLE user_dw;
+ statement: SET ROLE user_dw;
+ statement: CREATE TABLE foo_data AS SELECT i, md5(random()::text)                                                                                                                                                                                                     +
+   FROM generate_series(1, 10) i;
+ statement: CREATE MATERIALIZED VIEW mv_foo AS SELECT * FROM foo_data;
+ statement: CREATE MATERIALIZED VIEW mv_foo AS SELECT * FROM foo_data;
+ statement: CREATE MATERIALIZED VIEW IF NOT EXISTS mv_foo AS SELECT * FROM foo_data;
+ statement: CREATE UNIQUE INDEX ON mv_foo (i);
+ statement: RESET ROLE;
+ statement: REFRESH MATERIALIZED VIEW mv_foo;
+ statement: REFRESH MATERIALIZED VIEW CONCURRENTLY mv_foo;
+ statement: DROP OWNED BY user_dw CASCADE;
+ statement: DROP ROLE user_dw;
+ statement: BEGIN;
+ statement: CREATE FUNCTION mvtest_func()                                                                                                                                                                                                                              +
+   RETURNS void AS $$                                                                                                                                                                                                                                                  +
+ BEGIN                                                                                                                                                                                                                                                                 +
+   CREATE MATERIALIZED VIEW mvtest1 AS SELECT 1 AS x;                                                                                                                                                                                                                  +
+   CREATE MATERIALIZED VIEW mvtest2 AS SELECT 1 AS x WITH NO DATA;                                                                                                                                                                                                     +
+ END;                                                                                                                                                                                                                                                                  +
+ $$ LANGUAGE plpgsql;
+ statement: SELECT mvtest_func();
+ statement: SELECT * FROM mvtest1;
+ statement: SELECT * FROM mvtest2;
+ statement: ROLLBACK;
+

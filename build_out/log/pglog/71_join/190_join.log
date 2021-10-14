@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from  zt2 left join zt3 on (f2 = f3)  left join zv1 on (f3 = f1)  where f2 = 53;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "zt2" does not exist at character 16
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select * from  zt2 left join zt3 on (f2 = f3)  left join zv1 on (f3 = f1)  where f2 = 53;

@@ -1,0 +1,7 @@
+LOG:  00000: statement: DROP USER regtest_unpriv_user;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: role "regtest_unpriv_user" cannot be dropped because some objects depend on it
+DETAIL:  owner of function functext_e_2(integer)
+	owner of function functext_e_1(integer)
+LOCATION:  DropRole, user.c:1027
+STATEMENT:  DROP USER regtest_unpriv_user;

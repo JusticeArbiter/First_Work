@@ -1,0 +1,3 @@
+ALTER AGGREGATE testagg5(int2) OWNER TO "public";
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER AGGREGATE
+ERROR:  42704: role "public" does not exist

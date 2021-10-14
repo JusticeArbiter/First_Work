@@ -1,0 +1,10 @@
+SELECT '' AS five, * FROM RELTIME_TBL  WHERE RELTIME_TBL.f1 > reltime '@ 3 seconds ago';
+ five |    f1    
+------+----------
+      | 00:01:00
+      | 05:00:00
+      | 10 days
+      | 34 years
+      | 3 mons
+(5 rows)
+

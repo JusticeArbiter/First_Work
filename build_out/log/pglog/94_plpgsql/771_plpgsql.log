@@ -1,0 +1,7 @@
+LOG:  00000: statement: DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, foo FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "foo" does not exist at character 33
+QUERY:  SELECT rtrim(roomno) AS roomno, foo FROM Room ORDER BY roomno
+CONTEXT:  PL/pgSQL function inline_code_block line 1 at FOR over SELECT rows
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  DO $$  DECLARE r record;  BEGIN  FOR r IN SELECT rtrim(roomno) AS roomno, foo FROM Room ORDER BY roomno  LOOP  RAISE NOTICE '%, %', r.roomno, r.comment;  END LOOP;  END$$;

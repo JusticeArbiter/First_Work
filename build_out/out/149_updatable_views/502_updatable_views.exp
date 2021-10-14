@@ -1,0 +1,6 @@
+CREATE TABLE t111 () INHERITS (t11, t12);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  00000: merging multiple inherited definitions of column "a"
+NOTICE:  00000: merging multiple inherited definitions of column "b"
+NOTICE:  00000: merging multiple inherited definitions of column "c"
+CREATE TABLE

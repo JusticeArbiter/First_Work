@@ -1,0 +1,7 @@
+SELECT * FROM collate_test1 WHERE b COLLATE "C" >= 'bbc';
+ a |  b  
+---+-----
+ 2 | äbc
+ 3 | bbc
+(2 rows)
+

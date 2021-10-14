@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TYPE test_type RENAME ATTRIBUTE d TO dd;
+LOCATION:  exec_simple_query, postgres.c:938

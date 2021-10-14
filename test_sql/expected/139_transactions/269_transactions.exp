@@ -1,0 +1,2 @@
+declare foo cursor for select * from abc;
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

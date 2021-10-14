@@ -1,0 +1,6 @@
+SELECT row_to_json(q)  FROM (SELECT '-Infinity'::float8 AS "float8field") q;
+         row_to_json         
+-----------------------------
+ {"float8field":"-Infinity"}
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: select max(min(unique1)) from tenk1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tenk1" does not exist at character 31
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select max(min(unique1)) from tenk1;

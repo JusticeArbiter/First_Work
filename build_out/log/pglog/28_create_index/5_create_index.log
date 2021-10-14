@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX onek_stringu1 ON onek USING btree(stringu1 name_ops);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "onek" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX onek_stringu1 ON onek USING btree(stringu1 name_ops);

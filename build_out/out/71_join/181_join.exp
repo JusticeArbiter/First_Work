@@ -1,0 +1,4 @@
+insert into yy values (301, NULL);
+ERROR:  42P01: relation "yy" does not exist
+LINE 1: insert into yy values (301, NULL);
+                    ^

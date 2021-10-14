@@ -1,0 +1,12 @@
+select exc_using(5, 'foobar');
+NOTICE:  00000: 1
+NOTICE:  00000: 2
+NOTICE:  00000: 3
+NOTICE:  00000: 4
+NOTICE:  00000: 5
+NOTICE:  00000: 6
+ exc_using 
+-----------
+        26
+(1 row)
+

@@ -1,0 +1,6 @@
+SELECT 'be_r' LIKE 'b_e__r' ESCAPE '_' AS "true";
+ true 
+------
+ t
+(1 row)
+

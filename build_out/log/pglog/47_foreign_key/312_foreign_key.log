@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO fktable VALUES (5, 10);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: insert or update on table "fktable" violates foreign key constraint "fktable_fk_fkey"
+DETAIL:  Key (fk)=(10) is not present in table "pktable".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3324
+STATEMENT:  INSERT INTO fktable VALUES (5, 10);

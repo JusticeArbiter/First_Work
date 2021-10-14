@@ -1,0 +1,11 @@
+SELECT p1.amprocfamily, p1.amprocnum, p2.proname, p3.opfname  FROM pg_amproc AS p1, pg_proc AS p2, pg_opfamily AS p3  WHERE p3.opfmethod = (SELECT oid FROM pg_am WHERE amname = 'hash')  AND p1.amprocfamily = p3.oid AND p1.amproc = p2.oid AND  (amprocnum != 1  OR proretset  OR prorettype != 'int4'::regtype  OR pronargs != 1  OR NOT physically_coercible(amproclefttype, proargtypes[0])  OR amproclefttype != amprocrighttype)  ORDER BY 1;
+ amprocfamily | amprocnum |    proname     |     opfname     
+--------------+-----------+----------------+-----------------
+          435 |         1 | hashint4       | date_ops
+         1999 |         1 | timestamp_hash | timestamptz_ops
+         2222 |         1 | hashchar       | bool_ops
+         2223 |         1 | hashvarlena    | bytea_ops
+         2225 |         1 | hashint4       | xid_ops
+         2226 |         1 | hashint4       | cid_ops
+(6 rows)
+

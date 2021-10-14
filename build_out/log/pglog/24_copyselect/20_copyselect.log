@@ -1,0 +1,2 @@
+LOG:  00000: statement: copy (select t from test1 where id = 1 UNION select * from v_test1 ORDER BY 1) to stdout;
+LOCATION:  exec_simple_query, postgres.c:938

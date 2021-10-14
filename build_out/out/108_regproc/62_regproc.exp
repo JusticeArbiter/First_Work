@@ -1,0 +1,6 @@
+SELECT to_regproc('ng_catalog.now');
+ to_regproc 
+------------
+ 
+(1 row)
+

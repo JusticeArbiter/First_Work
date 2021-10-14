@@ -1,0 +1,2 @@
+CREATE INDEX gpolygonind ON polygon_tbl USING gist (f1);
+ERROR:  42P01: relation "polygon_tbl" does not exist

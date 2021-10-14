@@ -1,0 +1,2 @@
+LOG:  00000: statement: select definition from pg_views where viewname='vw_ord';
+LOCATION:  exec_simple_query, postgres.c:938

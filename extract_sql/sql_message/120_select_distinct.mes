@@ -1,0 +1,26 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT DISTINCT two FROM tmp ORDER BY 1;
+ statement: SELECT DISTINCT ten FROM tmp ORDER BY 1;
+ statement: SELECT DISTINCT string4 FROM tmp ORDER BY 1;
+ statement: SELECT DISTINCT two, string4, ten                                +
+    FROM tmp                                                                 +
+    ORDER BY two using <, string4 using <, ten using <;
+ statement: SELECT DISTINCT p.age FROM person* p ORDER BY age using >;
+ statement: CREATE TEMP TABLE disttable (f1 integer);
+ statement: INSERT INTO DISTTABLE VALUES(1);
+ statement: INSERT INTO DISTTABLE VALUES(2);
+ statement: INSERT INTO DISTTABLE VALUES(3);
+ statement: INSERT INTO DISTTABLE VALUES(NULL);
+ statement: SELECT f1, f1 IS DISTINCT FROM 2 as "not 2" FROM disttable;
+ statement: SELECT f1, f1 IS DISTINCT FROM NULL as "not null" FROM disttable;
+ statement: SELECT f1, f1 IS DISTINCT FROM f1 as "false" FROM disttable;
+ statement: SELECT f1, f1 IS DISTINCT FROM f1+1 as "not null" FROM disttable;
+ statement: SELECT 1 IS DISTINCT FROM 2 as "yes";
+ statement: SELECT 2 IS DISTINCT FROM 2 as "no";
+ statement: SELECT 2 IS DISTINCT FROM null as "yes";
+ statement: SELECT null IS DISTINCT FROM null as "no";
+ statement: SELECT 1 IS NOT DISTINCT FROM 2 as "no";
+ statement: SELECT 2 IS NOT DISTINCT FROM 2 as "yes";
+ statement: SELECT 2 IS NOT DISTINCT FROM null as "no";
+ statement: SELECT null IS NOT DISTINCT FROM null as "yes";
+

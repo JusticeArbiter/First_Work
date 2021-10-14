@@ -1,0 +1,6 @@
+SELECT array_position(ARRAY['sun','mon','tue','wed','thu','fri','sat'], 'mon');
+ array_position 
+----------------
+              2
+(1 row)
+

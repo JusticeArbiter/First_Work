@@ -1,0 +1,4 @@
+insert into t2a values (200, 2001);
+ERROR:  42P01: relation "t2a" does not exist
+LINE 1: insert into t2a values (200, 2001);
+                    ^

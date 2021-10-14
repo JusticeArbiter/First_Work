@@ -1,0 +1,4 @@
+create function func_with_bad_set() returns int as $$ select 1 $$ language sql  set default_text_search_config = no_such_config;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+NOTICE:  42704: text search configuration "no_such_config" does not exist
+ERROR:  22023: invalid value for parameter "default_text_search_config": "no_such_config"

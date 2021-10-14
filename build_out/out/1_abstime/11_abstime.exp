@@ -1,0 +1,2 @@
+INSERT INTO ABSTIME_TBL (f1) VALUES (abstime 'infinity');
+INSERT 0 1

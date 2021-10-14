@@ -1,0 +1,2 @@
+DROP USER regressuser5;
+DROP ROLE

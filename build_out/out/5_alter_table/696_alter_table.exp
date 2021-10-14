@@ -1,0 +1,20 @@
+select relname, attname, attinhcount, attislocal  from pg_class join pg_attribute on (pg_class.oid = pg_attribute.attrelid)  where relname in ('p1','p2','c1','gc1') and attnum > 0 and not attisdropped  order by relname, attnum;
+ relname | attname | attinhcount | attislocal 
+---------+---------+-------------+------------
+ c1      | id      |           1 | f
+ c1      | name    |           2 | f
+ c1      | id2     |           1 | f
+ c1      | height  |           1 | f
+ c1      | age     |           0 | t
+ gc1     | id      |           1 | f
+ gc1     | name    |           1 | f
+ gc1     | id2     |           1 | f
+ gc1     | height  |           1 | f
+ gc1     | age     |           1 | f
+ p1      | id      |           0 | t
+ p1      | name    |           0 | t
+ p2      | id2     |           0 | t
+ p2      | name    |           0 | t
+ p2      | height  |           0 | t
+(15 rows)
+

@@ -1,0 +1,4 @@
+VACUUM FULL vaccluster;
+ERROR:  0A000: ANALYZE cannot be executed from VACUUM or ANALYZE
+CONTEXT:  SQL function "do_analyze" statement 1
+SQL function "wrap_do_analyze" statement 1

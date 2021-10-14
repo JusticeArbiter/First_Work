@@ -1,0 +1,6 @@
+LOG:  00000: statement: select '(a,])'::textrange;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: malformed range literal: "(a,])" at character 8
+DETAIL:  Junk after right parenthesis or bracket.
+LOCATION:  range_parse, rangetypes.c:2080
+STATEMENT:  select '(a,])'::textrange;

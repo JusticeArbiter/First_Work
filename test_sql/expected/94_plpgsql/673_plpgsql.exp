@@ -1,0 +1,6 @@
+select case_test(11);
+   case_test    
+----------------
+ eleven, twelve
+(1 row)
+

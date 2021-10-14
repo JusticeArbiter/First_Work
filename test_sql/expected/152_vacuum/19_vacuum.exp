@@ -1,0 +1,2 @@
+UPDATE vactst SET i = i + 1;
+UPDATE 1

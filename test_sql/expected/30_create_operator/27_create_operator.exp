@@ -1,0 +1,2 @@
+CREATE OPERATOR #@%# (  leftarg = int8  );
+ERROR:  42P13: operator procedure must be specified

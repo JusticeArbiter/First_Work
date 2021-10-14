@@ -1,0 +1,6 @@
+SELECT jsonb_typeof('"hello"') AS string;
+ string 
+--------
+ string
+(1 row)
+

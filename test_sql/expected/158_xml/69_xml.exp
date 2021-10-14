@@ -1,0 +1,6 @@
+SELECT xmlroot(xml '<foo/>', version no value, standalone yes);
+                   xmlroot                    
+----------------------------------------------
+ <?xml version="1.0" standalone="yes"?><foo/>
+(1 row)
+

@@ -1,0 +1,2 @@
+DECLARE c CURSOR FOR SELECT * FROM tenk1 JOIN tenk2 USING (unique1);
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

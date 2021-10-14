@@ -1,0 +1,11 @@
+LOG:  00000: statement: insert into upsert values(4, 'green') on conflict (key) do update set color = 'updated ' || upsert.color;
+LOCATION:  exec_simple_query, postgres.c:938
+WARNING:  01000: before insert (new): (4,green)
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into upsert values(4, 'green') on conflict (key) do update set color = 'updated ' || upsert.color;
+WARNING:  01000: before insert (new, modified): (5,"green trig modified")
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into upsert values(4, 'green') on conflict (key) do update set color = 'updated ' || upsert.color;
+WARNING:  01000: after insert (new): (5,"green trig modified")
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into upsert values(4, 'green') on conflict (key) do update set color = 'updated ' || upsert.color;

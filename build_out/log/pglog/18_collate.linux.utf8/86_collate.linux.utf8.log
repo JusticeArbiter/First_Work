@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT a, lower(coalesce(x, 'foo')), lower(coalesce(y, 'foo')) FROM collate_test10;
+LOCATION:  exec_simple_query, postgres.c:938

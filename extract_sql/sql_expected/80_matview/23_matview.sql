@@ -1,0 +1,1 @@
+CREATE VIEW tvvmv AS SELECT * FROM tvvm;

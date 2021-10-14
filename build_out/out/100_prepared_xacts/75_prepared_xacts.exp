@@ -1,0 +1,2 @@
+COMMIT PREPARED 'regress-two';
+ERROR:  42704: prepared transaction with identifier "regress-two" does not exist

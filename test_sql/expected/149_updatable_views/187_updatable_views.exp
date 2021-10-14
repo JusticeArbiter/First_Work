@@ -1,0 +1,7 @@
+SELECT * FROM rw_view2;
+  bb   | cc | aa 
+-------+----+----
+ Row 1 |  1 |  1
+ Row 2 |  2 |  2
+(2 rows)
+

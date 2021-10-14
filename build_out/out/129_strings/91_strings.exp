@@ -1,0 +1,6 @@
+SELECT OVERLAY('yabadoo' PLACING 'daba' FROM 5) AS "yabadaba";
+ yabadaba 
+----------
+ yabadaba
+(1 row)
+

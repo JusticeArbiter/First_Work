@@ -1,0 +1,2 @@
+DROP USER seclabel_user1;
+DROP ROLE

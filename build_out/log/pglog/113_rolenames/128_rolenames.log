@@ -1,0 +1,8 @@
+LOG:  00000: statement: ALTER TABLE testtab6 OWNER TO nonexistent;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER TABLE testtab6 OWNER TO nonexistent;
+ERROR:  42704: role "nonexistent" does not exist
+LOCATION:  get_role_oid, acl.c:5122
+STATEMENT:  ALTER TABLE testtab6 OWNER TO nonexistent;

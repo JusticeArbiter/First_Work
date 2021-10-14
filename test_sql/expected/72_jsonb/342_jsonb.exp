@@ -1,0 +1,6 @@
+SELECT * FROM jsonb_populate_record(NULL::jbpop,'{"a":"blurfl","x":43.2}') q;
+   a    | b | c 
+--------+---+---
+ blurfl |   | 
+(1 row)
+

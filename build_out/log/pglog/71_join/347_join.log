@@ -1,0 +1,6 @@
+LOG:  00000: statement: select t1.uunique1 from  tenk1 t1 join tenk2 t2 on t1.two = t2.two;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column t1.uunique1 does not exist at character 8
+HINT:  Perhaps you meant to reference the column "t1.unique1".
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select t1.uunique1 from  tenk1 t1 join tenk2 t2 on t1.two = t2.two;

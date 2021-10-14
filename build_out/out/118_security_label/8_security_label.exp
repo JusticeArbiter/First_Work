@@ -1,0 +1,2 @@
+CREATE USER seclabel_user2;
+CREATE ROLE

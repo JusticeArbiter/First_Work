@@ -1,0 +1,5 @@
+select 3 || 4.0;
+ERROR:  42883: operator does not exist: integer || numeric
+LINE 1: select 3 || 4.0;
+                 ^
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.

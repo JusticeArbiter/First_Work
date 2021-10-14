@@ -1,0 +1,2 @@
+LOG:  00000: statement: DELETE FROM tmp3 where a=5;
+LOCATION:  exec_simple_query, postgres.c:938

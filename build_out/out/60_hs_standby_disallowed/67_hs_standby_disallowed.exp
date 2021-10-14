@@ -1,0 +1,2 @@
+CLUSTER hs2 using hs1_pkey;
+ERROR:  42P01: relation "hs2" does not exist

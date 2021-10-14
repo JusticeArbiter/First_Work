@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT ' tru e '::text::boolean AS invalid;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type boolean: " tru e "
+LOCATION:  boolin, bool.c:153
+STATEMENT:  SELECT ' tru e '::text::boolean AS invalid;

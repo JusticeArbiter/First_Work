@@ -1,0 +1,2 @@
+drop domain domaindroptest cascade;
+ERROR:  42704: type "domaindroptest" does not exist

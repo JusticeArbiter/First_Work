@@ -1,0 +1,3 @@
+ALTER USER MAPPING FOR nonexistent SERVER sv9  OPTIONS (SET user 'nonexistent_alt');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER USER MAPPING
+ERROR:  42704: role "nonexistent" does not exist

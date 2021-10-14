@@ -1,0 +1,4 @@
+DROP ROLE alice;
+ERROR:  2BP01: role "alice" cannot be dropped because some objects depend on it
+DETAIL:  target of policy p on table tbl1
+privileges for table tbl1

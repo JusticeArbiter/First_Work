@@ -1,0 +1,2 @@
+explain (costs off) insert into insertconflicttest values(0, 'Crowberry') on conflict (lower(fruit) text_pattern_ops, upper(fruit) collate "C") do nothing;
+ERROR:  42P10: there is no unique or exclusion constraint matching the ON CONFLICT specification

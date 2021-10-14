@@ -1,0 +1,16 @@
+select ename, who = current_user as "matches user", action, newsal, oldsal from rtest_emplog order by ename, action, newsal;
+        ename         | matches user |   action   |   newsal   |   oldsal   
+----------------------+--------------+------------+------------+------------
+ gates                | t            | fired      |      $0.00 | $80,000.00
+ gates                | t            | hired      | $80,000.00 |      $0.00
+ maier                | t            | hired      |  $5,000.00 |      $0.00
+ maier                | t            | honored    |  $6,000.00 |  $5,000.00
+ mayr                 | t            | hired      |  $6,000.00 |      $0.00
+ mayr                 | t            | honored    |  $7,000.00 |  $6,000.00
+ meyer                | t            | hired      |  $4,000.00 |      $0.00
+ meyer                | t            | honored    |  $5,000.00 |  $4,000.00
+ wiecc                | t            | hired      |  $5,000.00 |      $0.00
+ wieck                | t            | honored    |  $6,000.00 |  $5,000.00
+ wieck                | t            | honored    |  $7,000.00 |  $6,000.00
+(11 rows)
+

@@ -1,0 +1,6 @@
+select * from duplic('foo'::text);
+  j  |     k     
+-----+-----------
+ foo | {foo,foo}
+(1 row)
+

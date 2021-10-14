@@ -1,0 +1,2 @@
+DROP TABLE vistest;
+ERROR:  42P01: table "vistest" does not exist

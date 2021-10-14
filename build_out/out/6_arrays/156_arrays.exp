@@ -1,0 +1,6 @@
+select null::int >= any ('{}');
+ ?column? 
+----------
+ f
+(1 row)
+

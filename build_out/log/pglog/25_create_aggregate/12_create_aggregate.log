@@ -1,0 +1,2 @@
+LOG:  00000: statement: create function sum3(int8,int8,int8) returns int8 as  'select $1 + $2 + $3' language sql strict immutable;
+LOCATION:  exec_simple_query, postgres.c:938

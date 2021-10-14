@@ -1,0 +1,5 @@
+LOG:  00000: statement: select B'001' & B'10';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22026: cannot AND bit strings of different sizes
+LOCATION:  bit_and, varbit.c:1226
+STATEMENT:  select B'001' & B'10';

@@ -1,0 +1,3 @@
+create rule r4 as on insert to rules_src do instead insert into rules_log AS trgt SELECT NEW.* RETURNING trgt.f1, trgt.f2;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+CREATE RULE

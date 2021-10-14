@@ -1,0 +1,4 @@
+DROP USER MAPPING IF EXISTS FOR nonexistent SERVER sv9;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP USER MAPPING
+NOTICE:  00000: role "nonexistent" does not exist, skipping
+DROP USER MAPPING

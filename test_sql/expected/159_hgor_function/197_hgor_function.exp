@@ -1,0 +1,6 @@
+select dump(32767::smallint);
+         dump          
+-----------------------
+ Typ=21 Len=2: 255,127
+(1 row)
+

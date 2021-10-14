@@ -1,0 +1,6 @@
+SELECT a FROM arrtest WHERE b = ARRAY[[[113,142],[1,147]]];
+       a       
+---------------
+ {16,25,3,4,5}
+(1 row)
+

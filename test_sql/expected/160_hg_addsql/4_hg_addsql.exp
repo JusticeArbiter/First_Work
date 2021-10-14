@@ -1,0 +1,6 @@
+select * from (select current_database());
+ current_database 
+------------------
+ highgo
+(1 row)
+

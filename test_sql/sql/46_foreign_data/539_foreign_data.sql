@@ -1,0 +1,1 @@
+ALTER TABLE pt1 ALTER COLUMN c1 SET (n_distinct = 100);

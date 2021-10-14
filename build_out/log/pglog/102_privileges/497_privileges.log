@@ -1,0 +1,2 @@
+LOG:  00000: statement: SET lo_compat_privileges = false;
+LOCATION:  exec_simple_query, postgres.c:938

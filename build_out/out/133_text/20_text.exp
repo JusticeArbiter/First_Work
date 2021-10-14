@@ -1,0 +1,6 @@
+select quote_literal('');
+ quote_literal 
+---------------
+ ''
+(1 row)
+

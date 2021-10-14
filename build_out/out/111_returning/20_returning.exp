@@ -1,0 +1,4 @@
+UPDATE foo SET f4 = f4 + f3 WHERE f4 = 99 RETURNING *;
+ERROR:  42P01: relation "foo" does not exist
+LINE 1: UPDATE foo SET f4 = f4 + f3 WHERE f4 = 99 RETURNING *;
+               ^

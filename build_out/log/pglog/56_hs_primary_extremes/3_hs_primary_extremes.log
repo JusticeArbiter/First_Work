@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE OR REPLACE FUNCTION hs_subxids (n integer)  RETURNS void  LANGUAGE plpgsql  AS $$  BEGIN  IF n <= 0 THEN RETURN; END IF;  INSERT INTO hs_extreme VALUES (n);  PERFORM hs_subxids(n - 1);  RETURN;  EXCEPTION WHEN raise_exception THEN NULL; END;  $$;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE OR REPLACE FUNCTION hs_subxids (n integer)  RETURNS void  LANGUAGE plpgsql  AS $$  BEGIN  IF n <= 0 THEN RETURN; END IF;  INSERT INTO hs_extreme VALUES (n);  PERFORM hs_subxids(n - 1);  RETURN;  EXCEPTION WHEN raise_exception THEN NULL; END;  $$;

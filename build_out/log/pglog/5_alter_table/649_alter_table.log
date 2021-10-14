@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table dropColumnchild drop column a;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: cannot drop inherited column "a"
+LOCATION:  ATExecDropColumn, tablecmds.c:5734
+STATEMENT:  alter table dropColumnchild drop column a;

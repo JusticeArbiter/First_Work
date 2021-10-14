@@ -1,0 +1,2 @@
+drop operator = (int4, nonesuch);
+ERROR:  42704: type "nonesuch" does not exist

@@ -1,0 +1,3 @@
+DROP TEXT SEARCH CONFIGURATION IF EXISTS test_tsconfig_exists;
+NOTICE:  00000: text search configuration "test_tsconfig_exists" does not exist, skipping
+DROP TEXT SEARCH CONFIGURATION

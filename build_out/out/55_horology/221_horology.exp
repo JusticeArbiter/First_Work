@@ -1,0 +1,3 @@
+SELECT to_timestamp('199711xy', 'YYYYMMDD');
+ERROR:  22007: invalid value "xy" for "DD"
+DETAIL:  Value must be an integer.

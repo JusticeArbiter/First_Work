@@ -1,0 +1,4 @@
+INSERT INTO f_star (class, a, c, f)  VALUES ('f', 21, 'hi marcel'::name, '(11,44),(22,55),(33,66)'::polygon);
+ERROR:  42P01: relation "f_star" does not exist
+LINE 1: INSERT INTO f_star (class, a, c, f)  VALUES ('f', 21, 'hi ma...
+                    ^

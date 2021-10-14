@@ -1,0 +1,3 @@
+create unique index expr_key_index on insertconflicttest(lower(fruit));
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+CREATE INDEX

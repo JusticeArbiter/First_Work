@@ -1,0 +1,6 @@
+select doubledecrement(3);
+ doubledecrement 
+-----------------
+               1
+(1 row)
+

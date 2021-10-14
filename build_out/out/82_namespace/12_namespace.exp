@@ -1,0 +1,6 @@
+DROP SCHEMA test_schema_renamed CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SCHEMA
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to table test_schema_renamed.abc
+drop cascades to view test_schema_renamed.abc_view
+DROP SCHEMA

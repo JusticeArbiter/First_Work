@@ -1,0 +1,7 @@
+LOG:  00000: statement: select cache_test_2();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "f1" does not exist at character 8
+QUERY:  SELECT f1 from v1
+CONTEXT:  PL/pgSQL function cache_test_2() line 1 at RETURN
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select cache_test_2();

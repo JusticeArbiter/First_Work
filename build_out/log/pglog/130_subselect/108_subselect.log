@@ -1,0 +1,2 @@
+LOG:  00000: statement: with q as (select max(f1) from int4_tbl group by f1 order by f1)  select q from q;
+LOCATION:  exec_simple_query, postgres.c:938

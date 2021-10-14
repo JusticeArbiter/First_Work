@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE brintest SET textcol = '' WHERE textcol IS NOT NULL;
+LOCATION:  exec_simple_query, postgres.c:938

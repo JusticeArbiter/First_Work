@@ -1,0 +1,5 @@
+LOG:  00000: statement: create table tt3 (ax int8, b int2, c numeric);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P07: relation "tt3" already exists
+LOCATION:  heap_create_with_catalog, heap.c:1066
+STATEMENT:  create table tt3 (ax int8, b int2, c numeric);

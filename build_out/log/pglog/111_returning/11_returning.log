@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE foo SET f3 = f3*2  FROM int4_tbl i  WHERE foo.f1 + 123455 = i.f1  RETURNING foo.*, i.f1 as "i.f1";
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "foo" does not exist at character 8
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  UPDATE foo SET f3 = f3*2  FROM int4_tbl i  WHERE foo.f1 + 123455 = i.f1  RETURNING foo.*, i.f1 as "i.f1";

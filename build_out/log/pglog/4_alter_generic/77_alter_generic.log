@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT fdwname FROM pg_foreign_data_wrapper WHERE fdwname like 'alt_fdw%';
+LOCATION:  exec_simple_query, postgres.c:938

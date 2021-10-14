@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT count(*) AS Three FROM TIMESTAMP_TBL WHERE d1 = timestamp without time zone 'tomorrow';
+LOCATION:  exec_simple_query, postgres.c:938

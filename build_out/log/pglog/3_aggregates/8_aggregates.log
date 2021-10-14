@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT sum(gpa) AS avg_6_8 FROM ONLY student;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "student" does not exist at character 38
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT sum(gpa) AS avg_6_8 FROM ONLY student;

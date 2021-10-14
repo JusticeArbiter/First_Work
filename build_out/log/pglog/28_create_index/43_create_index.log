@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE radix_text_tbl AS  SELECT name AS t FROM road WHERE name !~ '^[0-9]';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "road" does not exist at character 55
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE TABLE radix_text_tbl AS  SELECT name AS t FROM road WHERE name !~ '^[0-9]';

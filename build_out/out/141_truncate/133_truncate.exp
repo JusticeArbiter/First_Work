@@ -1,0 +1,4 @@
+SELECT nextval('truncate_a_id1');
+ERROR:  42P01: relation "truncate_a_id1" does not exist
+LINE 1: SELECT nextval('truncate_a_id1');
+                       ^

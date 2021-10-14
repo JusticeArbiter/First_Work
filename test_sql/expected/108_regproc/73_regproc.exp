@@ -1,0 +1,6 @@
+SELECT to_regnamespace('"Nonexistent"');
+ to_regnamespace 
+-----------------
+ 
+(1 row)
+

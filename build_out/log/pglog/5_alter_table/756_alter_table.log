@@ -1,0 +1,2 @@
+LOG:  00000: statement: update p1 set a1 = a1 + 1, f2 = upper(f2);
+LOCATION:  exec_simple_query, postgres.c:938

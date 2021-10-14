@@ -1,0 +1,7 @@
+select * from domview;
+ col1 
+------
+     
+    5
+(2 rows)
+

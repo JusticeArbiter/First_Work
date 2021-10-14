@@ -1,0 +1,2 @@
+UPDATE clustertest SET key = 100 WHERE key = 10;
+UPDATE 1

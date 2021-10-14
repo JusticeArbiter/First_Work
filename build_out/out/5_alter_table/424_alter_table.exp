@@ -1,0 +1,2 @@
+insert into atacc1 (test) values (NULL);
+INSERT 0 1

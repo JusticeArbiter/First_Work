@@ -1,0 +1,13 @@
+DROP FOREIGN DATA WRAPPER foo CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FOREIGN DATA WRAPPER
+NOTICE:  00000: drop cascades to 9 other objects
+DETAIL:  drop cascades to server s4
+drop cascades to user mapping for highgo on server s4
+drop cascades to user mapping for public on server s4
+drop cascades to server s6
+drop cascades to user mapping for highgo on server s6
+drop cascades to user mapping for public on server s6
+drop cascades to server s7
+drop cascades to user mapping for highgo on server s7
+drop cascades to server t2
+DROP FOREIGN DATA WRAPPER

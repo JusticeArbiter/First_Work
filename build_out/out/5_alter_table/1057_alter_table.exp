@@ -1,0 +1,2 @@
+alter text search configuration alter1.cfg set schema alter2;
+ALTER TEXT SEARCH CONFIGURATION

@@ -1,0 +1,2 @@
+LOG:  00000: statement: select 'infinity'::date, '-infinity'::date;
+LOCATION:  exec_simple_query, postgres.c:938

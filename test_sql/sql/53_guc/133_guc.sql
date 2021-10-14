@@ -1,0 +1,1 @@
+SET SESSION AUTHORIZATION temp_reset_user;

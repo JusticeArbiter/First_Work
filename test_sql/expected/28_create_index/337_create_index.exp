@@ -1,0 +1,2 @@
+INSERT INTO func_index_heap VALUES('AB','CDEFG');
+INSERT 0 1

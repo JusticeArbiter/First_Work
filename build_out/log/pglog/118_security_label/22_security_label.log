@@ -1,0 +1,5 @@
+LOG:  00000: statement: SECURITY LABEL FOR 'dummy' ON ROLE seclabel_user1 IS 'classified';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: security label provider "dummy" is not loaded
+LOCATION:  ExecSecLabelStmt, seclabel.c:83
+STATEMENT:  SECURITY LABEL FOR 'dummy' ON ROLE seclabel_user1 IS 'classified';

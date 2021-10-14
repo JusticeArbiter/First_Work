@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from rtest_vcomp where size_in_cm > 10.0 order by size_in_cm using >;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,4 @@
+select pg_get_ruledef(oid, true) from pg_rewrite  where ev_class = 'tt23v'::regclass and ev_type = '1';
+ERROR:  42P01: relation "tt23v" does not exist
+LINE 1: ...edef(oid, true) from pg_rewrite  where ev_class = 'tt23v'::r...
+                                                             ^

@@ -1,0 +1,4 @@
+create user mapping for regression_bob server useless_server;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE USER MAPPING
+NOTICE:  00000: test_event_trigger: ddl_command_end CREATE USER MAPPING
+CREATE USER MAPPING

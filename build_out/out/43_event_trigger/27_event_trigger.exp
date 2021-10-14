@@ -1,0 +1,5 @@
+create table event_trigger_fire1 (a int);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  00000: test_event_trigger: ddl_command_end CREATE TABLE
+CREATE TABLE

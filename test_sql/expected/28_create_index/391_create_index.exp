@@ -1,0 +1,2 @@
+DROP INDEX CONCURRENTLY "concur_index2", "concur_index3";
+ERROR:  0A000: DROP INDEX CONCURRENTLY does not support dropping multiple objects

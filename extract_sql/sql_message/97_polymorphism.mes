@@ -1,0 +1,501 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE FUNCTION stfp(anyarray) RETURNS anyarray AS                                                                                                                                                                                                         +
+ 'select $1' LANGUAGE SQL;
+ statement: CREATE FUNCTION stfnp(int[]) RETURNS int[] AS                                                                                                                                                                                                              +
+ 'select $1' LANGUAGE SQL;
+ statement: CREATE FUNCTION tfp(anyarray,anyelement) RETURNS anyarray AS                                                                                                                                                                                               +
+ 'select $1 || $2' LANGUAGE SQL;
+ statement: CREATE FUNCTION tfnp(int[],int) RETURNS int[] AS                                                                                                                                                                                                           +
+ 'select $1 || $2' LANGUAGE SQL;
+ statement: CREATE FUNCTION tf1p(anyarray,int) RETURNS anyarray AS                                                                                                                                                                                                     +
+ 'select $1' LANGUAGE SQL;
+ statement: CREATE FUNCTION tf2p(int[],anyelement) RETURNS int[] AS                                                                                                                                                                                                    +
+ 'select $1' LANGUAGE SQL;
+ statement: CREATE FUNCTION sum3(anyelement,anyelement,anyelement) returns anyelement AS                                                                                                                                                                               +
+ 'select $1+$2+$3' language sql strict;
+ statement: CREATE FUNCTION ffp(anyarray) RETURNS anyarray AS                                                                                                                                                                                                          +
+ 'select $1' LANGUAGE SQL;
+ statement: CREATE FUNCTION ffnp(int[]) returns int[] as                                                                                                                                                                                                               +
+ 'select $1' LANGUAGE SQL;
+ statement: CREATE AGGREGATE myaggp01a(*) (SFUNC = stfnp, STYPE = int4[],                                                                                                                                                                                              +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp02a(*) (SFUNC = stfnp, STYPE = anyarray,                                                                                                                                                                                            +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp03a(*) (SFUNC = stfp, STYPE = int4[],                                                                                                                                                                                               +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp03b(*) (SFUNC = stfp, STYPE = int4[],                                                                                                                                                                                               +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp04a(*) (SFUNC = stfp, STYPE = anyarray,                                                                                                                                                                                             +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp04b(*) (SFUNC = stfp, STYPE = anyarray,                                                                                                                                                                                             +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp05a(BASETYPE = int, SFUNC = tfnp, STYPE = int[],                                                                                                                                                                                    +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp06a(BASETYPE = int, SFUNC = tf2p, STYPE = int[],                                                                                                                                                                                    +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp07a(BASETYPE = anyelement, SFUNC = tfnp, STYPE = int[],                                                                                                                                                                             +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp08a(BASETYPE = anyelement, SFUNC = tf2p, STYPE = int[],                                                                                                                                                                             +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp09a(BASETYPE = int, SFUNC = tf1p, STYPE = int[],                                                                                                                                                                                    +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp09b(BASETYPE = int, SFUNC = tf1p, STYPE = int[],                                                                                                                                                                                    +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp10a(BASETYPE = int, SFUNC = tfp, STYPE = int[],                                                                                                                                                                                     +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp10b(BASETYPE = int, SFUNC = tfp, STYPE = int[],                                                                                                                                                                                     +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp11a(BASETYPE = anyelement, SFUNC = tf1p, STYPE = int[],                                                                                                                                                                             +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp11b(BASETYPE = anyelement, SFUNC = tf1p, STYPE = int[],                                                                                                                                                                             +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp12a(BASETYPE = anyelement, SFUNC = tfp, STYPE = int[],                                                                                                                                                                              +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp12b(BASETYPE = anyelement, SFUNC = tfp, STYPE = int[],                                                                                                                                                                              +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp13a(BASETYPE = int, SFUNC = tfnp, STYPE = anyarray,                                                                                                                                                                                 +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp14a(BASETYPE = int, SFUNC = tf2p, STYPE = anyarray,                                                                                                                                                                                 +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp15a(BASETYPE = anyelement, SFUNC = tfnp,                                                                                                                                                                                            +
+   STYPE = anyarray, FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp16a(BASETYPE = anyelement, SFUNC = tf2p,                                                                                                                                                                                            +
+   STYPE = anyarray, FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp17a(BASETYPE = int, SFUNC = tf1p, STYPE = anyarray,                                                                                                                                                                                 +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp17b(BASETYPE = int, SFUNC = tf1p, STYPE = anyarray,                                                                                                                                                                                 +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp18a(BASETYPE = int, SFUNC = tfp, STYPE = anyarray,                                                                                                                                                                                  +
+   FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp18b(BASETYPE = int, SFUNC = tfp, STYPE = anyarray,                                                                                                                                                                                  +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp19a(BASETYPE = anyelement, SFUNC = tf1p,                                                                                                                                                                                            +
+   STYPE = anyarray, FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp19b(BASETYPE = anyelement, SFUNC = tf1p,                                                                                                                                                                                            +
+   STYPE = anyarray, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp20a(BASETYPE = anyelement, SFUNC = tfp,                                                                                                                                                                                             +
+   STYPE = anyarray, FINALFUNC = ffp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggp20b(BASETYPE = anyelement, SFUNC = tfp,                                                                                                                                                                                             +
+   STYPE = anyarray, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn01a(*) (SFUNC = stfnp, STYPE = int4[],                                                                                                                                                                                              +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn01b(*) (SFUNC = stfnp, STYPE = int4[],                                                                                                                                                                                              +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn02a(*) (SFUNC = stfnp, STYPE = anyarray,                                                                                                                                                                                            +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn02b(*) (SFUNC = stfnp, STYPE = anyarray,                                                                                                                                                                                            +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn03a(*) (SFUNC = stfp, STYPE = int4[],                                                                                                                                                                                               +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn04a(*) (SFUNC = stfp, STYPE = anyarray,                                                                                                                                                                                             +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn05a(BASETYPE = int, SFUNC = tfnp, STYPE = int[],                                                                                                                                                                                    +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn05b(BASETYPE = int, SFUNC = tfnp, STYPE = int[],                                                                                                                                                                                    +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn06a(BASETYPE = int, SFUNC = tf2p, STYPE = int[],                                                                                                                                                                                    +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn06b(BASETYPE = int, SFUNC = tf2p, STYPE = int[],                                                                                                                                                                                    +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn07a(BASETYPE = anyelement, SFUNC = tfnp, STYPE = int[],                                                                                                                                                                             +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn07b(BASETYPE = anyelement, SFUNC = tfnp, STYPE = int[],                                                                                                                                                                             +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn08a(BASETYPE = anyelement, SFUNC = tf2p, STYPE = int[],                                                                                                                                                                             +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn08b(BASETYPE = anyelement, SFUNC = tf2p, STYPE = int[],                                                                                                                                                                             +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn09a(BASETYPE = int, SFUNC = tf1p, STYPE = int[],                                                                                                                                                                                    +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn10a(BASETYPE = int, SFUNC = tfp, STYPE = int[],                                                                                                                                                                                     +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn11a(BASETYPE = anyelement, SFUNC = tf1p, STYPE = int[],                                                                                                                                                                             +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn12a(BASETYPE = anyelement, SFUNC = tfp, STYPE = int[],                                                                                                                                                                              +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn13a(BASETYPE = int, SFUNC = tfnp, STYPE = anyarray,                                                                                                                                                                                 +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn13b(BASETYPE = int, SFUNC = tfnp, STYPE = anyarray,                                                                                                                                                                                 +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn14a(BASETYPE = int, SFUNC = tf2p, STYPE = anyarray,                                                                                                                                                                                 +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn14b(BASETYPE = int, SFUNC = tf2p, STYPE = anyarray,                                                                                                                                                                                 +
+   INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn15a(BASETYPE = anyelement, SFUNC = tfnp,                                                                                                                                                                                            +
+   STYPE = anyarray, FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn15b(BASETYPE = anyelement, SFUNC = tfnp,                                                                                                                                                                                            +
+   STYPE = anyarray, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn16a(BASETYPE = anyelement, SFUNC = tf2p,                                                                                                                                                                                            +
+   STYPE = anyarray, FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn16b(BASETYPE = anyelement, SFUNC = tf2p,                                                                                                                                                                                            +
+   STYPE = anyarray, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn17a(BASETYPE = int, SFUNC = tf1p, STYPE = anyarray,                                                                                                                                                                                 +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn18a(BASETYPE = int, SFUNC = tfp, STYPE = anyarray,                                                                                                                                                                                  +
+   FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn19a(BASETYPE = anyelement, SFUNC = tf1p,                                                                                                                                                                                            +
+   STYPE = anyarray, FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE myaggn20a(BASETYPE = anyelement, SFUNC = tfp,                                                                                                                                                                                             +
+   STYPE = anyarray, FINALFUNC = ffnp, INITCOND = '{}');
+ statement: CREATE AGGREGATE mysum2(anyelement,anyelement) (SFUNC = sum3,                                                                                                                                                                                              +
+   STYPE = anyelement, INITCOND = '0');
+ statement: create temp table t(f1 int, f2 int[], f3 text);
+ statement: insert into t values(1,array[1],'a');
+ statement: insert into t values(1,array[11],'b');
+ statement: insert into t values(1,array[111],'c');
+ statement: insert into t values(2,array[2],'a');
+ statement: insert into t values(2,array[22],'b');
+ statement: insert into t values(2,array[222],'c');
+ statement: insert into t values(3,array[3],'a');
+ statement: insert into t values(3,array[3],'b');
+ statement: select f3, myaggp01a(*) from t group by f3 order by f3;
+ statement: select f3, myaggp03a(*) from t group by f3 order by f3;
+ statement: select f3, myaggp03b(*) from t group by f3 order by f3;
+ statement: select f3, myaggp05a(f1) from t group by f3 order by f3;
+ statement: select f3, myaggp06a(f1) from t group by f3 order by f3;
+ statement: select f3, myaggp08a(f1) from t group by f3 order by f3;
+ statement: select f3, myaggp09a(f1) from t group by f3 order by f3;
+ statement: select f3, myaggp09b(f1) from t group by f3 order by f3;
+ statement: select f3, myaggp10a(f1) from t group by f3 order by f3;
+ statement: select f3, myaggp10b(f1) from t group by f3 order by f3;
+ statement: select f3, myaggp20a(f1) from t group by f3 order by f3;
+ statement: select f3, myaggp20b(f1) from t group by f3 order by f3;
+ statement: select f3, myaggn01a(*) from t group by f3 order by f3;
+ statement: select f3, myaggn01b(*) from t group by f3 order by f3;
+ statement: select f3, myaggn03a(*) from t group by f3 order by f3;
+ statement: select f3, myaggn05a(f1) from t group by f3 order by f3;
+ statement: select f3, myaggn05b(f1) from t group by f3 order by f3;
+ statement: select f3, myaggn06a(f1) from t group by f3 order by f3;
+ statement: select f3, myaggn06b(f1) from t group by f3 order by f3;
+ statement: select f3, myaggn08a(f1) from t group by f3 order by f3;
+ statement: select f3, myaggn08b(f1) from t group by f3 order by f3;
+ statement: select f3, myaggn09a(f1) from t group by f3 order by f3;
+ statement: select f3, myaggn10a(f1) from t group by f3 order by f3;
+ statement: select mysum2(f1, f1 + 1) from t;
+ statement: create function bleat(int) returns int as $$                                                                                                                                                                                                               +
+ begin                                                                                                                                                                                                                                                                 +
+   raise notice 'bleat %', $1;                                                                                                                                                                                                                                         +
+   return $1;                                                                                                                                                                                                                                                          +
+ end$$ language plpgsql;
+ statement: create function sql_if(bool, anyelement, anyelement) returns anyelement as $$                                                                                                                                                                              +
+ select case when $1 then $2 else $3 end $$ language sql;
+ statement: select f1, sql_if(f1 > 0, bleat(f1), bleat(f1 + 1)) from int4_tbl;
+ statement: select q2, sql_if(q2 > 0, q2, q2 + 1) from int8_tbl;
+ statement: CREATE AGGREGATE array_cat_accum (anyarray)                                                                                                                                                                                                                +
+ (                                                                                                                                                                                                                                                                     +
+     sfunc = array_cat,                                                                                                                                                                                                                                                +
+     stype = anyarray,                                                                                                                                                                                                                                                 +
+     initcond = '{}'                                                                                                                                                                                                                                                   +
+ );
+ statement: SELECT array_cat_accum(i)                                                                                                                                                                                                                                  +
+ FROM (VALUES (ARRAY[1,2]), (ARRAY[3,4])) as t(i);
+ statement: SELECT array_cat_accum(i)                                                                                                                                                                                                                                  +
+ FROM (VALUES (ARRAY[row(1,2),row(3,4)]), (ARRAY[row(5,6),row(7,8)])) as t(i);
+ statement: create function add_group(grp anyarray, ad anyelement, size integer)                                                                                                                                                                                       +
+   returns anyarray                                                                                                                                                                                                                                                    +
+   as $$                                                                                                                                                                                                                                                               +
+ begin                                                                                                                                                                                                                                                                 +
+   if grp is null then                                                                                                                                                                                                                                                 +
+     return array[ad];                                                                                                                                                                                                                                                 +
+   end if;                                                                                                                                                                                                                                                             +
+   if array_upper(grp, 1) < size then                                                                                                                                                                                                                                  +
+     return grp || ad;                                                                                                                                                                                                                                                 +
+   end if;                                                                                                                                                                                                                                                             +
+   return grp;                                                                                                                                                                                                                                                         +
+ end;                                                                                                                                                                                                                                                                  +
+ $$                                                                                                                                                                                                                                                                    +
+   language plpgsql immutable;
+ statement: create aggregate build_group(anyelement, integer) (                                                                                                                                                                                                        +
+   SFUNC = add_group,                                                                                                                                                                                                                                                  +
+   STYPE = anyarray                                                                                                                                                                                                                                                    +
+ );
+ statement: select build_group(q1,3) from int8_tbl;
+ statement: create aggregate build_group(int8, integer) (                                                                                                                                                                                                              +
+   SFUNC = add_group,                                                                                                                                                                                                                                                  +
+   STYPE = int2[]                                                                                                                                                                                                                                                      +
+ );
+ statement: create aggregate build_group(int8, integer) (                                                                                                                                                                                                              +
+   SFUNC = add_group,                                                                                                                                                                                                                                                  +
+   STYPE = int8[]                                                                                                                                                                                                                                                      +
+ );
+ statement: select distinct array_ndims(histogram_bounds) from pg_stats                                                                                                                                                                                                +
+ where histogram_bounds is not null;
+ statement: select max(histogram_bounds) from pg_stats where tablename = 'pg_am';
+ statement: create function myleast(variadic anyarray) returns anyelement as $$                                                                                                                                                                                        +
+   select min($1[i]) from generate_subscripts($1,1) g(i)                                                                                                                                                                                                               +
+ $$ language sql immutable strict;
+ statement: select myleast(10, 1, 20, 33);
+ statement: select myleast(1.1, 0.22, 0.55);
+ statement: select myleast('z'::text);
+ statement: select myleast();
+ statement: select myleast(variadic array[1,2,3,4,-1]);
+ statement: select myleast(variadic array[1.1, -5.5]);
+ statement: select myleast(variadic array[]::int[]);
+ statement: create function concat(text, variadic anyarray) returns text as $$                                                                                                                                                                                         +
+   select array_to_string($2, $1);                                                                                                                                                                                                                                     +
+ $$ language sql immutable strict;
+ statement: select concat('%', 1, 2, 3, 4, 5);
+ statement: select concat('|', 'a'::text, 'b', 'c');
+ statement: select concat('|', variadic array[1,2,33]);
+ statement: select concat('|', variadic array[]::int[]);
+ statement: drop function concat(text, anyarray);
+ statement: create function formarray(anyelement, variadic anyarray) returns anyarray as $$                                                                                                                                                                            +
+   select array_prepend($1, $2);                                                                                                                                                                                                                                       +
+ $$ language sql immutable strict;
+ statement: select formarray(1,2,3,4,5);
+ statement: select formarray(1.1, variadic array[1.2,55.5]);
+ statement: select formarray(1.1, array[1.2,55.5]);
+ statement: select formarray(1, 'x'::text);
+ statement: select formarray(1, variadic array['x'::text]);
+ statement: drop function formarray(anyelement, variadic anyarray);
+ statement: select pg_typeof(null);
+ statement: select pg_typeof(0);
+ statement: select pg_typeof(0.0);
+ statement: select pg_typeof(1+1 = 2);
+ statement: select pg_typeof('x');
+ statement: select pg_typeof('' || '');
+ statement: select pg_typeof(pg_typeof(0));
+ statement: select pg_typeof(array[1.2,55.5]);
+ statement: select pg_typeof(myleast(10, 1, 20, 33));
+ statement: create function dfunc(a int = 1, int = 2) returns int as $$                                                                                                                                                                                                +
+   select $1 + $2;                                                                                                                                                                                                                                                     +
+ $$ language sql;
+ statement: select dfunc();
+ statement: select dfunc(10);
+ statement: select dfunc(10, 20);
+ statement: select dfunc(10, 20, 30);
+ statement: drop function dfunc();
+ statement: drop function dfunc(int);
+ statement: drop function dfunc(int, int);
+ statement: create function dfunc(a int = 1, b int) returns int as $$                                                                                                                                                                                                  +
+   select $1 + $2;                                                                                                                                                                                                                                                     +
+ $$ language sql;
+ statement: create function dfunc(a int = 1, out sum int, b int = 2) as $$                                                                                                                                                                                             +
+   select $1 + $2;                                                                                                                                                                                                                                                     +
+ $$ language sql;
+ statement: select dfunc();
+ statement: SELECT n.nspname as "Schema",                                                                                                                                                                                                                              +
+   p.proname as "Name",                                                                                                                                                                                                                                                +
+   pg_catalog.pg_get_function_result(p.oid) as "Result data type",                                                                                                                                                                                                     +
+   pg_catalog.pg_get_function_arguments(p.oid) as "Argument data types",                                                                                                                                                                                               +
+  CASE                                                                                                                                                                                                                                                                 +
+   WHEN p.proisagg THEN 'agg'                                                                                                                                                                                                                                          +
+   WHEN p.proiswindow THEN 'window'                                                                                                                                                                                                                                    +
+   WHEN p.prorettype = 'pg_catalog.trigger'::pg_catalog.regtype THEN 'trigger'                                                                                                                                                                                         +
+   ELSE 'normal'                                                                                                                                                                                                                                                       +
+  END as "Type"                                                                                                                                                                                                                                                        +
+ FROM pg_catalog.pg_proc p                                                                                                                                                                                                                                             +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = p.pronamespace                                                                                                                                                                                                    +
+ WHERE p.proname ~ '^(dfunc)$'                                                                                                                                                                                                                                         +
+   AND pg_catalog.pg_function_is_visible(p.oid)                                                                                                                                                                                                                        +
+ ORDER BY 1, 2, 4;
+ statement: drop function dfunc(int, int);
+ statement: create function dfunc(a int DEFAULT 1.0, int DEFAULT '-1') returns int as $$                                                                                                                                                                               +
+   select $1 + $2;                                                                                                                                                                                                                                                     +
+ $$ language sql;
+ statement: select dfunc();
+ statement: create function dfunc(a text DEFAULT 'Hello', b text DEFAULT 'World') returns text as $$                                                                                                                                                                   +
+   select $1 || ', ' || $2;                                                                                                                                                                                                                                            +
+ $$ language sql;
+ statement: select dfunc();
+ statement: select dfunc('Hi');
+ statement: select dfunc('Hi', 'City');
+ statement: select dfunc(0);
+ statement: select dfunc(10, 20);
+ statement: drop function dfunc(int, int);
+ statement: drop function dfunc(text, text);
+ statement: create function dfunc(int = 1, int = 2) returns int as $$                                                                                                                                                                                                  +
+   select 2;                                                                                                                                                                                                                                                           +
+ $$ language sql;
+ statement: create function dfunc(int = 1, int = 2, int = 3, int = 4) returns int as $$                                                                                                                                                                                +
+   select 4;                                                                                                                                                                                                                                                           +
+ $$ language sql;
+ statement: select dfunc();
+ statement: select dfunc(1);
+ statement: select dfunc(1, 2);
+ statement: select dfunc(1, 2, 3);
+ statement: select dfunc(1, 2, 3, 4);
+ statement: drop function dfunc(int, int);
+ statement: drop function dfunc(int, int, int, int);
+ statement: create function dfunc(out int = 20) returns int as $$                                                                                                                                                                                                      +
+   select 1;                                                                                                                                                                                                                                                           +
+ $$ language sql;
+ statement: create function dfunc(anyelement = 'World'::text) returns text as $$                                                                                                                                                                                       +
+   select 'Hello, ' || $1::text;                                                                                                                                                                                                                                       +
+ $$ language sql;
+ statement: select dfunc();
+ statement: select dfunc(0);
+ statement: select dfunc(to_date('20081215','YYYYMMDD'));
+ statement: select dfunc('City'::text);
+ statement: drop function dfunc(anyelement);
+ statement: create function dfunc(a variadic int[]) returns int as                                                                                                                                                                                                     +
+ $$ select array_upper($1, 1) $$ language sql;
+ statement: select dfunc();
+ statement: select dfunc(10);
+ statement: select dfunc(10,20);
+ statement: create or replace function dfunc(a variadic int[] default array[]::int[]) returns int as                                                                                                                                                                   +
+ $$ select array_upper($1, 1) $$ language sql;
+ statement: select dfunc();
+ statement: select dfunc(10);
+ statement: select dfunc(10,20);
+ statement: create or replace function dfunc(a variadic int[]) returns int as                                                                                                                                                                                          +
+ $$ select array_upper($1, 1) $$ language sql;
+ statement: SELECT n.nspname as "Schema",                                                                                                                                                                                                                              +
+   p.proname as "Name",                                                                                                                                                                                                                                                +
+   pg_catalog.pg_get_function_result(p.oid) as "Result data type",                                                                                                                                                                                                     +
+   pg_catalog.pg_get_function_arguments(p.oid) as "Argument data types",                                                                                                                                                                                               +
+  CASE                                                                                                                                                                                                                                                                 +
+   WHEN p.proisagg THEN 'agg'                                                                                                                                                                                                                                          +
+   WHEN p.proiswindow THEN 'window'                                                                                                                                                                                                                                    +
+   WHEN p.prorettype = 'pg_catalog.trigger'::pg_catalog.regtype THEN 'trigger'                                                                                                                                                                                         +
+   ELSE 'normal'                                                                                                                                                                                                                                                       +
+  END as "Type"                                                                                                                                                                                                                                                        +
+ FROM pg_catalog.pg_proc p                                                                                                                                                                                                                                             +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = p.pronamespace                                                                                                                                                                                                    +
+ WHERE p.proname ~ '^(dfunc)$'                                                                                                                                                                                                                                         +
+   AND pg_catalog.pg_function_is_visible(p.oid)                                                                                                                                                                                                                        +
+ ORDER BY 1, 2, 4;
+ statement: drop function dfunc(a variadic int[]);
+ statement: create function dfunc(int = 1, int = 2, int = 3) returns int as $$                                                                                                                                                                                         +
+   select 3;                                                                                                                                                                                                                                                           +
+ $$ language sql;
+ statement: create function dfunc(int = 1, int = 2) returns int as $$                                                                                                                                                                                                  +
+   select 2;                                                                                                                                                                                                                                                           +
+ $$ language sql;
+ statement: create function dfunc(text) returns text as $$                                                                                                                                                                                                             +
+   select $1;                                                                                                                                                                                                                                                          +
+ $$ language sql;
+ statement: select dfunc(1);
+ statement: select dfunc('Hi');
+ statement: drop function dfunc(int, int, int);
+ statement: drop function dfunc(int, int);
+ statement: drop function dfunc(text);
+ statement: create function dfunc(a int, b int, c int = 0, d int = 0)                                                                                                                                                                                                  +
+   returns table (a int, b int, c int, d int) as $$                                                                                                                                                                                                                    +
+   select $1, $2, $3, $4;                                                                                                                                                                                                                                              +
+ $$ language sql;
+ statement: select (dfunc(10,20,30)).*;
+ statement: select (dfunc(a := 10, b := 20, c := 30)).*;
+ statement: select * from dfunc(a := 10, b := 20);
+ statement: select * from dfunc(b := 10, a := 20);
+ statement: select * from dfunc(0);
+ statement: select * from dfunc(1,2);
+ statement: select * from dfunc(1,2,c := 3);
+ statement: select * from dfunc(1,2,d := 3);
+ statement: select * from dfunc(x := 20, b := 10, x := 30);
+ statement: select * from dfunc(10, b := 20, 30);
+ statement: select * from dfunc(x := 10, b := 20, c := 30);
+ statement: select * from dfunc(10, 10, a := 20);
+ statement: select * from dfunc(1,c := 2,d := 3);
+ statement: drop function dfunc(int, int, int, int);
+ statement: create function dfunc(a varchar, b numeric, c date = current_date)                                                                                                                                                                                         +
+   returns table (a varchar, b numeric, c date) as $$                                                                                                                                                                                                                  +
+   select $1, $2, $3;                                                                                                                                                                                                                                                  +
+ $$ language sql;
+ statement: select (dfunc('Hello World', 20, '2009-07-25'::date)).*;
+ statement: select * from dfunc('Hello World', 20, '2009-07-25'::date);
+ statement: select * from dfunc(c := '2009-07-25'::date, a := 'Hello World', b := 20);
+ statement: select * from dfunc('Hello World', b := 20, c := '2009-07-25'::date);
+ statement: select * from dfunc('Hello World', c := '2009-07-25'::date, b := 20);
+ statement: select * from dfunc('Hello World', c := 20, b := '2009-07-25'::date);
+ statement: drop function dfunc(varchar, numeric, date);
+ statement: create function dfunc(a varchar = 'def a', out _a varchar, c numeric = NULL, out _c numeric)                                                                                                                                                               +
+ returns record as $$                                                                                                                                                                                                                                                  +
+   select $1, $2;                                                                                                                                                                                                                                                      +
+ $$ language sql;
+ statement: select (dfunc()).*;
+ statement: select * from dfunc();
+ statement: select * from dfunc('Hello', 100);
+ statement: select * from dfunc(a := 'Hello', c := 100);
+ statement: select * from dfunc(c := 100, a := 'Hello');
+ statement: select * from dfunc('Hello');
+ statement: select * from dfunc('Hello', c := 100);
+ statement: select * from dfunc(c := 100);
+ statement: create or replace function dfunc(a varchar = 'def a', out _a varchar, x numeric = NULL, out _c numeric)                                                                                                                                                    +
+ returns record as $$                                                                                                                                                                                                                                                  +
+   select $1, $2;                                                                                                                                                                                                                                                      +
+ $$ language sql;
+ statement: create or replace function dfunc(a varchar = 'def a', out _a varchar, numeric = NULL, out _c numeric)                                                                                                                                                      +
+ returns record as $$                                                                                                                                                                                                                                                  +
+   select $1, $2;                                                                                                                                                                                                                                                      +
+ $$ language sql;
+ statement: drop function dfunc(varchar, numeric);
+ statement: create function testfoo(a int, a int) returns int as $$ select 1;$$ language sql;
+ statement: create function testfoo(int, out a int, out a int) returns int as $$ select 1;$$ language sql;
+ statement: create function testfoo(out a int, inout a int) returns int as $$ select 1;$$ language sql;
+ statement: create function testfoo(a int, inout a int) returns int as $$ select 1;$$ language sql;
+ statement: create function testfoo(a int, out a int) returns int as $$ select $1;$$ language sql;
+ statement: select testfoo(37);
+ statement: drop function testfoo(int);
+ statement: create function testfoo(a int) returns table(a int) as $$ select $1;$$ language sql;
+ statement: select * from testfoo(37);
+ statement: drop function testfoo(int);
+ statement: create function dfunc(a anyelement, b anyelement = null, flag bool = true)                                                                                                                                                                                 +
+ returns anyelement as $$                                                                                                                                                                                                                                              +
+   select case when $3 then $1 else $2 end;                                                                                                                                                                                                                            +
+ $$ language sql;
+ statement: select dfunc(1,2);
+ statement: select dfunc('a'::text, 'b');
+ statement: select dfunc(a := 1, b := 2);
+ statement: select dfunc(a := 'a'::text, b := 'b');
+ statement: select dfunc(a := 'a'::text, b := 'b', flag := false);
+ statement: select dfunc(b := 'b'::text, a := 'a');
+ statement: select dfunc(a := 'a'::text, flag := true);
+ statement: select dfunc(a := 'a'::text, flag := false);
+ statement: select dfunc(b := 'b'::text, a := 'a', flag := true);
+ statement: select dfunc('a'::text, 'b', false);
+ statement: select dfunc('a'::text, 'b', flag := false);
+ statement: select dfunc('a'::text, 'b', true);
+ statement: select dfunc('a'::text, 'b', flag := true);
+ statement: select dfunc(a => 1, b => 2);
+ statement: select dfunc(a => 'a'::text, b => 'b');
+ statement: select dfunc(a => 'a'::text, b => 'b', flag => false);
+ statement: select dfunc(b => 'b'::text, a => 'a');
+ statement: select dfunc(a => 'a'::text, flag => true);
+ statement: select dfunc(a => 'a'::text, flag => false);
+ statement: select dfunc(b => 'b'::text, a => 'a', flag => true);
+ statement: select dfunc('a'::text, 'b', false);
+ statement: select dfunc('a'::text, 'b', flag => false);
+ statement: select dfunc('a'::text, 'b', true);
+ statement: select dfunc('a'::text, 'b', flag => true);
+ statement: CREATE VIEW dfview AS                                                                                                                                                                                                                                      +
+    SELECT q1, q2,                                                                                                                                                                                                                                                     +
+      dfunc(q1,q2, flag := q1>q2) as c3,                                                                                                                                                                                                                               +
+      dfunc(q1, flag := q1<q2, b := q2) as c4                                                                                                                                                                                                                          +
+      FROM int8_tbl;
+ statement: select * from dfview;
+ statement: SELECT c.oid,                                                                                                                                                                                                                                              +
+   n.nspname,                                                                                                                                                                                                                                                          +
+   c.relname                                                                                                                                                                                                                                                           +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                                                                                                                    +
+ WHERE c.relname ~ '^(dfview)$'                                                                                                                                                                                                                                        +
+   AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                                                                                                                                           +
+ ORDER BY 2, 3;
+ statement: SELECT c.relchecks, c.relkind, c.relhasindex, c.relhasrules, c.relhastriggers, c.relrowsecurity, c.relforcerowsecurity, c.relhasoids, pg_catalog.array_to_string(c.reloptions || array(select 'toast.' || x from pg_catalog.unnest(tc.reloptions) x), ', ')+
+ , c.reltablespace, CASE WHEN c.reloftype = 0 THEN '' ELSE c.reloftype::pg_catalog.regtype::pg_catalog.text END, c.relpersistence, c.relreplident                                                                                                                      +
+ FROM pg_catalog.pg_class c                                                                                                                                                                                                                                            +
+  LEFT JOIN pg_catalog.pg_class tc ON (c.reltoastrelid = tc.oid)                                                                                                                                                                                                       +
+ WHERE c.oid = '25790';
+ statement: SELECT a.attname,                                                                                                                                                                                                                                          +
+   pg_catalog.format_type(a.atttypid, a.atttypmod),                                                                                                                                                                                                                    +
+   (SELECT substring(pg_catalog.pg_get_expr(d.adbin, d.adrelid) for 128)                                                                                                                                                                                               +
+    FROM pg_catalog.pg_attrdef d                                                                                                                                                                                                                                       +
+    WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum AND a.atthasdef),                                                                                                                                                                                              +
+   a.attnotnull, a.attnum,                                                                                                                                                                                                                                             +
+   (SELECT c.collname FROM pg_catalog.pg_collation c, pg_catalog.pg_type t                                                                                                                                                                                             +
+    WHERE c.oid = a.attcollation AND t.oid = a.atttypid AND a.attcollation <> t.typcollation) AS attcollation,                                                                                                                                                         +
+   NULL AS indexdef,                                                                                                                                                                                                                                                   +
+   NULL AS attfdwoptions,                                                                                                                                                                                                                                              +
+   a.attstorage,                                                                                                                                                                                                                                                       +
+   CASE WHEN a.attstattarget=-1 THEN NULL ELSE a.attstattarget END AS attstattarget, pg_catalog.col_description(a.attrelid, a.attnum)                                                                                                                                  +
+ FROM pg_catalog.pg_attribute a                                                                                                                                                                                                                                        +
+ WHERE a.attrelid = '25790' AND a.attnum > 0 AND NOT a.attisdropped                                                                                                                                                                                                    +
+ ORDER BY a.attnum;
+ statement: SELECT pg_catalog.pg_get_viewdef('25790'::pg_catalog.oid, true);
+ statement: SELECT r.rulename, trim(trailing ';' from pg_catalog.pg_get_ruledef(r.oid, true))                                                                                                                                                                          +
+ FROM pg_catalog.pg_rewrite r                                                                                                                                                                                                                                          +
+ WHERE r.ev_class = '25790' AND r.rulename != '_RETURN' ORDER BY 1;
+ statement: drop view dfview;
+ statement: drop function dfunc(anyelement, anyelement, bool);
+

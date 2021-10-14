@@ -1,0 +1,2 @@
+LOG:  00000: statement: create conversion alter1.ascii_to_utf8 for 'sql_ascii' to 'utf8' from ascii_to_utf8;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+SELECT * FROM pg_authid WHERE rolname = 'test_bypassrls';
+    rolname     | rolsuper | rolinherit | rolcreaterole | rolcreatedb | rolcanlogin | rolreplication | rolbypassrls | rolconnlimit | rolpassword | rolvaliduntil 
+----------------+----------+------------+---------------+-------------+-------------+----------------+--------------+--------------+-------------+---------------
+ test_bypassrls | f        | t          | f             | f           | f           | f              | t            |           -1 |             | 
+(1 row)
+

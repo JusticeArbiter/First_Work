@@ -1,0 +1,6 @@
+LOG:  00000: statement: select f1,g from int4_tbl a full join lateral generate_series(0, a.f1) g on true;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P10: invalid reference to FROM-clause entry for table "a" at character 66
+DETAIL:  The combining JOIN type must be INNER or LEFT for a LATERAL reference.
+LOCATION:  check_lateral_ref_ok, parse_relation.c:431
+STATEMENT:  select f1,g from int4_tbl a full join lateral generate_series(0, a.f1) g on true;

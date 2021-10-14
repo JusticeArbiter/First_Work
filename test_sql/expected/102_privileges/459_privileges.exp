@@ -1,0 +1,6 @@
+SELECT lo_create(1002);
+ lo_create 
+-----------
+      1002
+(1 row)
+

@@ -1,0 +1,6 @@
+LOG:  00000: statement: select testoa(2,1,3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: value for domain orderedarray violates check constraint "sorted"
+CONTEXT:  PL/pgSQL function testoa(integer,integer,integer) line 1 at assignment
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4060
+STATEMENT:  select testoa(2,1,3);

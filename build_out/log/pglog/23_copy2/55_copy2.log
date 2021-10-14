@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE vistest (LIKE testeoc);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "testeoc" does not exist at character 28
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE TABLE vistest (LIKE testeoc);

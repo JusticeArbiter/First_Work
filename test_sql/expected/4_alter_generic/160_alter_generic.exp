@@ -1,0 +1,2 @@
+ALTER OPERATOR FAMILY alt_opf4 USING btree ADD FUNCTION 0 btint42cmp(int4, int2);
+ERROR:  42P17: invalid procedure number 0, must be between 1 and 2

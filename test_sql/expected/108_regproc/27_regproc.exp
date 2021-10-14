@@ -1,0 +1,6 @@
+SELECT regnamespace('pg_catalog');
+ regnamespace 
+--------------
+ pg_catalog
+(1 row)
+

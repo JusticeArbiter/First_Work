@@ -1,0 +1,2 @@
+declare foo scroll cursor for select * from rows from(generate_series(1,5),generate_series(1,2)) with ordinality as g(i,j,o);
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

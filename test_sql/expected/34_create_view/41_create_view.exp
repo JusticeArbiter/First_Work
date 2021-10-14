@@ -1,0 +1,4 @@
+CREATE VIEW v10_temp AS SELECT * FROM v7_temp;
+ERROR:  42P01: relation "v7_temp" does not exist
+LINE 1: CREATE VIEW v10_temp AS SELECT * FROM v7_temp;
+                                              ^

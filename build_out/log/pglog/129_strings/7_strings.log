@@ -1,0 +1,2 @@
+LOG:  00000: statement: SET standard_conforming_strings TO off;
+LOCATION:  exec_simple_query, postgres.c:938

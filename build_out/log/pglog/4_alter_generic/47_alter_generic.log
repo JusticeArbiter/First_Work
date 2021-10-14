@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER AGGREGATE alt_agg2(int) SET SCHEMA alt_nsp2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42723: function alt_agg2(integer) already exists in schema "alt_nsp2"
+LOCATION:  IsThereFunctionInNamespace, functioncmds.c:2036
+STATEMENT:  ALTER AGGREGATE alt_agg2(int) SET SCHEMA alt_nsp2;

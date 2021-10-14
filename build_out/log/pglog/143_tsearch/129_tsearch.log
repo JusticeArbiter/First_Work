@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT ts_rewrite(to_tsquery('5 & (6 | 5)'), to_tsquery('5'), to_tsquery(''));
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: text-search query doesn't contain lexemes: ""
+LOCATION:  parse_tsquery, tsquery.c:511
+STATEMENT:  SELECT ts_rewrite(to_tsquery('5 & (6 | 5)'), to_tsquery('5'), to_tsquery(''));

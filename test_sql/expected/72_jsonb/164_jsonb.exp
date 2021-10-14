@@ -1,0 +1,6 @@
+SELECT jsonb_array_length('[]');
+ jsonb_array_length 
+--------------------
+                  0
+(1 row)
+

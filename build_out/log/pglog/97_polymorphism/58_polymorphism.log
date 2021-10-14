@@ -1,0 +1,9 @@
+LOG:  00000: statement: CREATE AGGREGATE myaggn13a(BASETYPE = int, SFUNC = tfnp, STYPE = anyarray,  FINALFUNC = ffnp, INITCOND = '{}');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE AGGREGATE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE AGGREGATE myaggn13a(BASETYPE = int, SFUNC = tfnp, STYPE = anyarray,  FINALFUNC = ffnp, INITCOND = '{}');
+ERROR:  42P13: cannot determine transition data type
+DETAIL:  An aggregate using a polymorphic transition type must have at least one polymorphic argument.
+LOCATION:  AggregateCreate, pg_aggregate.c:142
+STATEMENT:  CREATE AGGREGATE myaggn13a(BASETYPE = int, SFUNC = tfnp, STYPE = anyarray,  FINALFUNC = ffnp, INITCOND = '{}');

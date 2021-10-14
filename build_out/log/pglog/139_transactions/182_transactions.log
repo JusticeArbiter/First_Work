@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT a FROM savepoints WHERE a BETWEEN 18 AND 22;
+LOCATION:  exec_simple_query, postgres.c:938

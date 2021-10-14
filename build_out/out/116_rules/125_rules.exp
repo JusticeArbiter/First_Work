@@ -1,0 +1,2 @@
+delete from rtest_emp where ename = 'gates';
+DELETE 1

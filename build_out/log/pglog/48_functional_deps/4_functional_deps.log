@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT id, keywords, title, body, created  FROM articles  GROUP BY title;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "articles" does not exist at character 49
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT id, keywords, title, body, created  FROM articles  GROUP BY title;

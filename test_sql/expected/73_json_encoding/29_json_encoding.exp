@@ -1,0 +1,6 @@
+SELECT jsonb '{ "a": "\ude04\ud83d" }' -> 'a';
+ERROR:  22P02: invalid input syntax for type json
+LINE 1: SELECT jsonb '{ "a": "\ude04\ud83d" }' -> 'a';
+                     ^
+DETAIL:  Unicode low surrogate must follow a high surrogate.
+CONTEXT:  JSON data, line 1: { "a":...

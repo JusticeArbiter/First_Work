@@ -1,0 +1,14 @@
+LOG:  00000: statement: select foreach_test(ARRAY[[(10,20),(40,69)],[(35,78),(88,76)]]::xy_tuple[]);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: (10,20)
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select foreach_test(ARRAY[[(10,20),(40,69)],[(35,78),(88,76)]]::xy_tuple[]);
+NOTICE:  00000: (40,69)
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select foreach_test(ARRAY[[(10,20),(40,69)],[(35,78),(88,76)]]::xy_tuple[]);
+NOTICE:  00000: (35,78)
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select foreach_test(ARRAY[[(10,20),(40,69)],[(35,78),(88,76)]]::xy_tuple[]);
+NOTICE:  00000: (88,76)
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select foreach_test(ARRAY[[(10,20),(40,69)],[(35,78),(88,76)]]::xy_tuple[]);

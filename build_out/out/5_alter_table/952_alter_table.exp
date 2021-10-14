@@ -1,0 +1,2 @@
+drop type lockmodes;
+ERROR:  42704: type "lockmodes" does not exist

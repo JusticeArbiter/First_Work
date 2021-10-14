@@ -1,0 +1,2 @@
+LOG:  00000: statement: select to_hex(256::bigint*256::bigint*256::bigint*256::bigint - 1) AS "ffffffff";
+LOCATION:  exec_simple_query, postgres.c:938

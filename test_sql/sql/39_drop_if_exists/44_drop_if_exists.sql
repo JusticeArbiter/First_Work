@@ -1,0 +1,1 @@
+DROP GROUP IF EXISTS tg1, tg2;

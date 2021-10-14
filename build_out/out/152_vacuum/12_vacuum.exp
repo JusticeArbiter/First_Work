@@ -1,0 +1,2 @@
+INSERT INTO vactst SELECT * FROM vactst;
+INSERT 0 512

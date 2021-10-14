@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO TIMESTAMP_TBL VALUES ('undefined');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: date/time value "undefined" is no longer supported at character 35
+LOCATION:  timestamp_in, timestamp.c:189
+STATEMENT:  INSERT INTO TIMESTAMP_TBL VALUES ('undefined');

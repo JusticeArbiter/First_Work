@@ -1,0 +1,11 @@
+SELECT '' AS six, diameter(f1) AS diameter  FROM CIRCLE_TBL;
+ six | diameter 
+-----+----------
+     |        6
+     |      200
+     |       10
+     |        6
+     |       20
+     |      230
+(6 rows)
+

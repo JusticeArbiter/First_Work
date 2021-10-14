@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT json_build_array(VARIADIC '{a,b,c}'::text[]);
+LOCATION:  exec_simple_query, postgres.c:938

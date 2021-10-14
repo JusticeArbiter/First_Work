@@ -1,0 +1,6 @@
+SELECT POSITION(B'' IN B'');
+ position 
+----------
+        0
+(1 row)
+

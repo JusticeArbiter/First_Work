@@ -1,0 +1,2 @@
+insert into revalidate_bug values (inverse(0));
+INSERT 0 1

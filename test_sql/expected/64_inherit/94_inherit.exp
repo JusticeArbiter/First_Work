@@ -1,0 +1,4 @@
+insert into bar2 values(3,3,3);
+ERROR:  42P01: relation "bar2" does not exist
+LINE 1: insert into bar2 values(3,3,3);
+                    ^

@@ -1,0 +1,2 @@
+LOG:  00000: statement: create domain alter1.posint integer check (value > 0);
+LOCATION:  exec_simple_query, postgres.c:938

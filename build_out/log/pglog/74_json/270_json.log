@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT json_object('{{a},{b}}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2202E: array must have two columns
+LOCATION:  json_object, json.c:2248
+STATEMENT:  SELECT json_object('{{a},{b}}');

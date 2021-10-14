@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT lo_unlink(1002);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: large object 1002 does not exist
+LOCATION:  LargeObjectDrop, pg_largeobject.c:113
+STATEMENT:  SELECT lo_unlink(1002);

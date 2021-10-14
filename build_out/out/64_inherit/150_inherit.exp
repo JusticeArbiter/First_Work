@@ -1,0 +1,6 @@
+select derived::base from derived;
+ derived 
+---------
+ (0)
+(1 row)
+

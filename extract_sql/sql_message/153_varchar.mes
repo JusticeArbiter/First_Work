@@ -1,0 +1,38 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE VARCHAR_TBL(f1 varchar(1));
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('a');
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('A');
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('1');
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES (2);
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('3');
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('');
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('cd');
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('c     ');
+ statement: SELECT '' AS seven, * FROM VARCHAR_TBL;
+ statement: SELECT '' AS six, c.*                            +
+    FROM VARCHAR_TBL c                                       +
+    WHERE c.f1 <> 'a';
+ statement: SELECT '' AS one, c.*                            +
+    FROM VARCHAR_TBL c                                       +
+    WHERE c.f1 = 'a';
+ statement: SELECT '' AS five, c.*                           +
+    FROM VARCHAR_TBL c                                       +
+    WHERE c.f1 < 'a';
+ statement: SELECT '' AS six, c.*                            +
+    FROM VARCHAR_TBL c                                       +
+    WHERE c.f1 <= 'a';
+ statement: SELECT '' AS one, c.*                            +
+    FROM VARCHAR_TBL c                                       +
+    WHERE c.f1 > 'a';
+ statement: SELECT '' AS two, c.*                            +
+    FROM VARCHAR_TBL c                                       +
+    WHERE c.f1 >= 'a';
+ statement: DROP TABLE VARCHAR_TBL;
+ statement: CREATE TABLE VARCHAR_TBL(f1 varchar(4));
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('a');
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('ab');
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('abcd');
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('abcde');
+ statement: INSERT INTO VARCHAR_TBL (f1) VALUES ('abcd    ');
+ statement: SELECT '' AS four, * FROM VARCHAR_TBL;
+

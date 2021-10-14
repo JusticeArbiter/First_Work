@@ -1,0 +1,4 @@
+insert into defp values (0), (1), (2);
+ERROR:  42P01: relation "defp" does not exist
+LINE 1: insert into defp values (0), (1), (2);
+                    ^

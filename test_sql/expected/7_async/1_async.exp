@@ -1,0 +1,6 @@
+SELECT pg_notify('notify_async1','sample message1');
+ pg_notify 
+-----------
+ 
+(1 row)
+

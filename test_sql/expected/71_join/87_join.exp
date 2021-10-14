@@ -1,0 +1,4 @@
+select * from y;
+ERROR:  42P01: relation "y" does not exist
+LINE 1: select * from y;
+                      ^

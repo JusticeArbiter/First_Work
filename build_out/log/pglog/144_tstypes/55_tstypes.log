@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT E'1&(''2''&('' 4''&(\\|5 | ''6 \\'' !|&'')))'::tsquery;
+LOCATION:  exec_simple_query, postgres.c:938

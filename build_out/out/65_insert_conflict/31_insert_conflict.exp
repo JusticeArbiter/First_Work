@@ -1,0 +1,5 @@
+insert into insertconflicttest values (1, 'Apple') on conflict do update set fruit = excluded.fruit;
+ERROR:  42601: ON CONFLICT DO UPDATE requires inference specification or constraint name
+LINE 1: ...nsert into insertconflicttest values (1, 'Apple') on conflic...
+                                                             ^
+HINT:  For example, ON CONFLICT (column_name).

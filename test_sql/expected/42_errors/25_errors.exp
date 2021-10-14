@@ -1,0 +1,2 @@
+drop aggregate newcnt (float4);
+ERROR:  42883: aggregate newcnt(real) does not exist

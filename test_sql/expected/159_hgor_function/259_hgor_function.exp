@@ -1,0 +1,6 @@
+select vsize('highgo DB,Hello!'::varchar);
+ vsize 
+-------
+    16
+(1 row)
+

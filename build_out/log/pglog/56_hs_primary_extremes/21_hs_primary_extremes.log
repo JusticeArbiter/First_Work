@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT count(*) > 257 FROM pg_locks;
+LOCATION:  exec_simple_query, postgres.c:938

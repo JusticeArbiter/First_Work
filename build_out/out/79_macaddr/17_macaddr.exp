@@ -1,0 +1,3 @@
+CREATE INDEX macaddr_data_btree ON macaddr_data USING btree (b);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+CREATE INDEX

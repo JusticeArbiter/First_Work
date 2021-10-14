@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS four, center(f1) AS center  FROM BOX_TBL;
+LOCATION:  exec_simple_query, postgres.c:938

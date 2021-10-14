@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT regexp_split_to_array('thE QUick bROWn FOx jUMPs ovEr The lazy dOG', 'e', 'i');
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+SELECT overlay(B'0101011100' placing '101' from 6);
+  overlay   
+------------
+ 0101010100
+(1 row)
+

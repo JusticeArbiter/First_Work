@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE FUNCTION nonsimple_expr_test() RETURNS integer AS $$  declare  i integer NOT NULL := 0;  begin  begin  i := (SELECT NULL::integer); -- should throw error  exception  WHEN OTHERS THEN  i := (SELECT 1::integer);  end;  return i;  end;  $$ LANGUAGE plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE FUNCTION nonsimple_expr_test() RETURNS integer AS $$  declare  i integer NOT NULL := 0;  begin  begin  i := (SELECT NULL::integer); -- should throw error  exception  WHEN OTHERS THEN  i := (SELECT 1::integer);  end;  return i;  end;  $$ LANGUAGE plpgsql;
+ERROR:  42601: syntax error at end of input at character 242
+LOCATION:  plpgsql_yyerror, pl_scanner.c:623
+STATEMENT:  CREATE FUNCTION nonsimple_expr_test() RETURNS integer AS $$  declare  i integer NOT NULL := 0;  begin  begin  i := (SELECT NULL::integer); -- should throw error  exception  WHEN OTHERS THEN  i := (SELECT 1::integer);  end;  return i;  end;  $$ LANGUAGE plpgsql;

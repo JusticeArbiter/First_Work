@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT sum(salary),  row_number() OVER (ORDER BY depname),  sum(sum(salary)) OVER (ORDER BY depname DESC)  FROM empsalary GROUP BY depname;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "empsalary" does not exist at character 113
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT sum(salary),  row_number() OVER (ORDER BY depname),  sum(sum(salary)) OVER (ORDER BY depname DESC)  FROM empsalary GROUP BY depname;

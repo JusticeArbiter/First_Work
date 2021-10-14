@@ -1,0 +1,8 @@
+LOG:  00000: statement: ALTER FOREIGN TABLE ft1 DROP CONSTRAINT IF EXISTS no_const;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER FOREIGN TABLE ft1 DROP CONSTRAINT IF EXISTS no_const;
+NOTICE:  00000: constraint "no_const" of relation "ft1" does not exist, skipping
+LOCATION:  ATExecDropConstraint, tablecmds.c:7754
+STATEMENT:  ALTER FOREIGN TABLE ft1 DROP CONSTRAINT IF EXISTS no_const;

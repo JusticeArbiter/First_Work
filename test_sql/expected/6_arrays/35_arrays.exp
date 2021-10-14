@@ -1,0 +1,4 @@
+update arrtest1 set i[0] = 0, t[0] = 'zero';
+ERROR:  42P01: relation "arrtest1" does not exist
+LINE 1: update arrtest1 set i[0] = 0, t[0] = 'zero';
+               ^

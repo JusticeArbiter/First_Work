@@ -1,0 +1,5 @@
+LOG:  00000: statement: select split_part('joeuser@mydatabase','@',0) AS "an error";
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: field position must be greater than zero
+LOCATION:  split_text, varlena.c:3697
+STATEMENT:  select split_part('joeuser@mydatabase','@',0) AS "an error";

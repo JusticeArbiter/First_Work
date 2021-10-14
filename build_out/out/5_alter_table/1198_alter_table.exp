@@ -1,0 +1,2 @@
+ALTER TABLE tt3 OF tt_t0;
+ERROR:  42804: table has column "y" where type requires "x"

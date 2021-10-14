@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER USER nonexistent SET application_name to 'BOMB';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: role "nonexistent" does not exist
+LOCATION:  get_rolespec_tuple, acl.c:5207
+STATEMENT:  ALTER USER nonexistent SET application_name to 'BOMB';

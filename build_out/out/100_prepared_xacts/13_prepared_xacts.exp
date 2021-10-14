@@ -1,0 +1,2 @@
+INSERT INTO pxtest1 VALUES ('ddd');
+INSERT 0 1

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SET ROLE unprivileged_role;
+LOCATION:  exec_simple_query, postgres.c:938

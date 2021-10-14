@@ -1,0 +1,2 @@
+insert into pktable(base1) values (3);
+INSERT 0 1

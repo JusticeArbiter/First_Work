@@ -1,0 +1,11 @@
+explain (costs off)  select ir from test_range_spgist where ir -|- int4range(10,20) order by ir;
+                       QUERY PLAN                        
+---------------------------------------------------------
+ Sort
+   Sort Key: ir
+   ->  Bitmap Heap Scan on test_range_spgist
+         Recheck Cond: (ir -|- '[10,20)'::int4range)
+         ->  Bitmap Index Scan on test_range_spgist_idx
+               Index Cond: (ir -|- '[10,20)'::int4range)
+(6 rows)
+

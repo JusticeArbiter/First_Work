@@ -1,0 +1,6 @@
+SELECT EXTRACT(CENTURY FROM INTERVAL '-99 y');
+ date_part 
+-----------
+         0
+(1 row)
+

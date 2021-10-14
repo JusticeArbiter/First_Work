@@ -1,0 +1,4 @@
+select least_agg(variadic array[q1,q2]) from int8_tbl;
+ERROR:  42P01: relation "int8_tbl" does not exist
+LINE 1: select least_agg(variadic array[q1,q2]) from int8_tbl;
+                                                     ^

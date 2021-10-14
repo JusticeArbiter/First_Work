@@ -1,0 +1,5 @@
+CREATE TABLE otherchild () INHERITS (firstparent, thirdparent);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  00000: merging multiple inherited definitions of column "tomorrow"
+ERROR:  42611: column "tomorrow" inherits conflicting default values
+HINT:  To resolve the conflict, specify a default explicitly.

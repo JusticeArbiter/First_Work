@@ -1,0 +1,5 @@
+SELECT * FROM my_property_secure WHERE f_leak(passwd);
+ cid | name | tel | passwd 
+-----+------+-----+--------
+(0 rows)
+

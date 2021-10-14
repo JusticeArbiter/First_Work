@@ -1,0 +1,2 @@
+LOG:  00000: statement: select avg(null::float8) from generate_series(1,3);
+LOCATION:  exec_simple_query, postgres.c:938

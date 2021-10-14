@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc1 alter a set not null;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" of relation "atacc1" does not exist
+LOCATION:  ATExecSetNotNull, tablecmds.c:5288
+STATEMENT:  alter table atacc1 alter a set not null;

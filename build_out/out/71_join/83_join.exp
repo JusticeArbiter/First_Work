@@ -1,0 +1,4 @@
+insert into y values (2,222);
+ERROR:  42P01: relation "y" does not exist
+LINE 1: insert into y values (2,222);
+                    ^

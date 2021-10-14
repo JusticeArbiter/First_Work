@@ -1,0 +1,4 @@
+TRUNCATE TABLE trunc_c;
+ERROR:  0A000: cannot truncate a table referenced in a foreign key constraint
+DETAIL:  Table "truncate_a" references "trunc_c".
+HINT:  Truncate table "truncate_a" at the same time, or use TRUNCATE ... CASCADE.

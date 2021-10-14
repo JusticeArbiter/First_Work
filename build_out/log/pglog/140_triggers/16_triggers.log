@@ -1,0 +1,8 @@
+LOG:  00000: statement: create trigger check_fkeys2_pkey_exist  before insert or update on fkeys2  for each row  execute procedure  check_primary_key ('fkey21', 'fkey22', 'pkeys', 'pkey1', 'pkey2');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create trigger check_fkeys2_pkey_exist  before insert or update on fkeys2  for each row  execute procedure  check_primary_key ('fkey21', 'fkey22', 'pkeys', 'pkey1', 'pkey2');
+ERROR:  42883: function check_primary_key() does not exist
+LOCATION:  LookupFuncName, parse_func.c:1922
+STATEMENT:  create trigger check_fkeys2_pkey_exist  before insert or update on fkeys2  for each row  execute procedure  check_primary_key ('fkey21', 'fkey22', 'pkeys', 'pkey1', 'pkey2');

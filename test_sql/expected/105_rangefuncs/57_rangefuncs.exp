@@ -1,0 +1,8 @@
+select * from foo2, foot(foo2.fooid) with ordinality as z(fooid,f2,ord) where foo2.f2 = z.f2;
+ fooid | f2  | fooid | f2  | ord 
+-------+-----+-------+-----+-----
+     1 |  11 |     1 |  11 |   1
+     2 |  22 |     2 |  22 |   1
+     1 | 111 |     1 | 111 |   2
+(3 rows)
+

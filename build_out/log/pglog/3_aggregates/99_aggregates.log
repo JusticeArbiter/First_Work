@@ -1,0 +1,2 @@
+LOG:  00000: statement: create table minmaxtest2() inherits (minmaxtest);
+LOCATION:  exec_simple_query, postgres.c:938

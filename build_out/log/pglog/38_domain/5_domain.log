@@ -1,0 +1,5 @@
+LOG:  00000: statement: drop domain domaindroptest cascade;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: drop cascades to type dependenttypetest
+LOCATION:  reportDependentObjects, dependency.c:1009
+STATEMENT:  drop domain domaindroptest cascade;

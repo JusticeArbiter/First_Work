@@ -1,0 +1,5 @@
+LOG:  00000: statement: delete from defp where f1 = 2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "defp" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  delete from defp where f1 = 2;

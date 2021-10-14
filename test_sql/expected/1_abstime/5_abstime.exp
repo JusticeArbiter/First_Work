@@ -1,0 +1,6 @@
+SELECT count(*) AS two FROM ABSTIME_TBL WHERE f1 = 'now' ;
+ two 
+-----
+   2
+(1 row)
+

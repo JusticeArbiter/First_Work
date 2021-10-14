@@ -1,0 +1,2 @@
+CREATE VIEW collview1 AS SELECT * FROM collate_test1 WHERE b COLLATE "C" >= 'bbc';
+ERROR:  42P07: relation "collview1" already exists

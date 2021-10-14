@@ -1,0 +1,1 @@
+EXPLAIN (costs off)  CREATE MATERIALIZED VIEW tm AS SELECT type, sum(amt) AS totamt FROM t GROUP BY type WITH NO DATA;

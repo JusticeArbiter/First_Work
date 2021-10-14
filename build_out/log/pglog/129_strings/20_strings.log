@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT E'De\\678dBeEf'::bytea;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type bytea at character 8
+LOCATION:  byteain, varlena.c:287
+STATEMENT:  SELECT E'De\\678dBeEf'::bytea;

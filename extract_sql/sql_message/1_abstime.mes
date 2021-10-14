@@ -1,0 +1,40 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE ABSTIME_TBL (f1 abstime);
+ statement: BEGIN;
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES (abstime 'now');
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES (abstime 'now');
+ statement: SELECT count(*) AS two FROM ABSTIME_TBL WHERE f1 = 'now' ;
+ statement: END;
+ statement: DELETE FROM ABSTIME_TBL;
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES ('Jan 14, 1973 03:14:21');
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES (abstime 'Mon May  1 00:30:30 1995');
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES (abstime 'epoch');
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES (abstime 'infinity');
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES (abstime '-infinity');
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES (abstime 'May 10, 1947 23:59:12');
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES ('Feb 35, 1946 10:00:00');
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES ('Feb 28, 1984 25:08:10');
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES ('bad date format');
+ statement: INSERT INTO ABSTIME_TBL (f1) VALUES ('Jun 10, 1843');
+ statement: SELECT '' AS eight, * FROM ABSTIME_TBL;
+ statement: SELECT '' AS six, * FROM ABSTIME_TBL                                     +
+    WHERE ABSTIME_TBL.f1 < abstime 'Jun 30, 2001';
+ statement: SELECT '' AS six, * FROM ABSTIME_TBL                                     +
+    WHERE ABSTIME_TBL.f1 > abstime '-infinity';
+ statement: SELECT '' AS six, * FROM ABSTIME_TBL                                     +
+    WHERE abstime 'May 10, 1947 23:59:12' <> ABSTIME_TBL.f1;
+ statement: SELECT '' AS three, * FROM ABSTIME_TBL                                   +
+    WHERE abstime 'epoch' >= ABSTIME_TBL.f1;
+ statement: SELECT '' AS four, * FROM ABSTIME_TBL                                    +
+    WHERE ABSTIME_TBL.f1 <= abstime 'Jan 14, 1973 03:14:21';
+ statement: SELECT '' AS four, * FROM ABSTIME_TBL                                    +
+   WHERE ABSTIME_TBL.f1 <?>                                                          +
+         tinterval '["Apr 1 1950 00:00:00" "Dec 30 1999 23:00:00"]';
+ statement: SELECT '' AS four, f1 AS abstime,                                        +
+   date_part('year', f1) AS year, date_part('month', f1) AS month,                   +
+   date_part('day',f1) AS day, date_part('hour', f1) AS hour,                        +
+   date_part('minute', f1) AS minute, date_part('second', f1) AS second              +
+   FROM ABSTIME_TBL                                                                  +
+   WHERE isfinite(f1)                                                                +
+   ORDER BY abstime;
+

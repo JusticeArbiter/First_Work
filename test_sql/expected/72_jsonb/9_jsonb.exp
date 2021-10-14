@@ -1,0 +1,6 @@
+SELECT '0'::jsonb;
+ jsonb 
+-------
+ 0
+(1 row)
+

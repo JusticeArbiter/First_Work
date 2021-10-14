@@ -1,0 +1,2 @@
+create table tt2 (a int, b int, c int);
+ERROR:  42P07: relation "tt2" already exists

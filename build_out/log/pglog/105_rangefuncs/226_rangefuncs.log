@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP SEQUENCE foo_rescan_seq1;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SEQUENCE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP SEQUENCE foo_rescan_seq1;
+ERROR:  42P01: sequence "foo_rescan_seq1" does not exist
+LOCATION:  DropErrorMsgNonExistent, tablecmds.c:756
+STATEMENT:  DROP SEQUENCE foo_rescan_seq1;

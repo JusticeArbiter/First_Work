@@ -1,0 +1,2 @@
+CREATE VIEW mysecview5 WITH (security_barrier=100)  AS SELECT * FROM tbl1 WHERE a > 100;
+ERROR:  22023: invalid value for boolean option "security_barrier": 100

@@ -1,0 +1,4 @@
+DROP MATERIALIZED VIEW IF EXISTS no_such_mv;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP MATERIALIZED VIEW
+NOTICE:  00000: materialized view "no_such_mv" does not exist, skipping
+DROP MATERIALIZED VIEW

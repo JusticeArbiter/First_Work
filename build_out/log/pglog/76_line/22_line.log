@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT lseg '[(1,1),(5,5)]' ?# line '[(2,0),(0,2)]';
+LOCATION:  exec_simple_query, postgres.c:938

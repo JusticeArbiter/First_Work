@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'UTF8', 'SHIFT_JIS_2004');

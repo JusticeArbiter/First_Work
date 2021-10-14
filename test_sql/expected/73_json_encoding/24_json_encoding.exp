@@ -1,0 +1,6 @@
+SELECT '"\u0045"'::jsonb;
+ jsonb 
+-------
+ "E"
+(1 row)
+

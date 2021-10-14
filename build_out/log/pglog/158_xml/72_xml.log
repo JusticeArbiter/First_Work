@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT xmlroot('<?xml version="1.1" standalone="yes"?><foo/>', version no value, standalone no);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT nspname, tmplname  FROM pg_ts_template t, pg_namespace n  WHERE t.tmplnamespace = n.oid AND nspname like 'alt_nsp%'  ORDER BY nspname, tmplname;
+LOCATION:  exec_simple_query, postgres.c:938

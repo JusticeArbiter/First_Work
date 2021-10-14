@@ -1,0 +1,6 @@
+LOG:  00000: statement: DELETE FROM r1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: update or delete on table "r1" violates foreign key constraint "r2_a_fkey" on table "r2"
+DETAIL:  Key (a)=(10) is still referenced from table "r2".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3338
+STATEMENT:  DELETE FROM r1;

@@ -1,0 +1,6 @@
+select array_elem_check(1.23456);
+ array_elem_check 
+------------------
+             1.23
+(1 row)
+

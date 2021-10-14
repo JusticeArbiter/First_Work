@@ -1,0 +1,6 @@
+SELECT '{ "name": "Bob", "tags": [ "enim", "qui"]}'::jsonb @> '{"tags":["qu"]}';
+ ?column? 
+----------
+ f
+(1 row)
+

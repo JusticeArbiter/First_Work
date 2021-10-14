@@ -1,0 +1,2 @@
+DROP OPERATOR CLASS test_operator_class USING btree;
+ERROR:  42704: operator class "test_operator_class" does not exist for access method "btree"

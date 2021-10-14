@@ -1,0 +1,11 @@
+WITH RECURSIVE t(n) AS (  SELECT 'foo'  UNION ALL  SELECT n || ' bar' FROM t WHERE length(n) < 20  )  SELECT n, n IS OF (text) as is_text FROM t;
+            n            | is_text 
+-------------------------+---------
+ foo                     | t
+ foo bar                 | t
+ foo bar bar             | t
+ foo bar bar bar         | t
+ foo bar bar bar bar     | t
+ foo bar bar bar bar bar | t
+(6 rows)
+

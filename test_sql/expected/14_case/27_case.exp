@@ -1,0 +1,5 @@
+SELECT * FROM CASE_TBL WHERE NULLIF(f,i) = 2;
+ i | f 
+---+---
+(0 rows)
+

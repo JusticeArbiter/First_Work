@@ -1,0 +1,2 @@
+DROP USER regression_user2;
+DROP ROLE

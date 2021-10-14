@@ -1,0 +1,5 @@
+LOG:  00000: statement: fetch absolute 1 from foo;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "foo" does not exist
+LOCATION:  PerformPortalFetch, portalcmds.c:168
+STATEMENT:  fetch absolute 1 from foo;

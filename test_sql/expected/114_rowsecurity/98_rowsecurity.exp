@@ -1,0 +1,3 @@
+CREATE TABLE t2 (c float) INHERITS (t1);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+ERROR:  42P07: relation "t2" already exists

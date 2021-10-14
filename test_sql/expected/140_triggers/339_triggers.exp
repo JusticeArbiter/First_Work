@@ -1,0 +1,5 @@
+create or replace function parent_del_func()  returns trigger language plpgsql as  $$  begin  delete from child where aid = old.aid;  if found then  delete from parent where aid = old.aid;  return null; -- cancel outer deletion  end if;  return old;  end;  $$;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42601: syntax error at end of input
+LINE 1: ...l; -- cancel outer deletion  end if;  return old;  end;  $$;
+                                                                    ^

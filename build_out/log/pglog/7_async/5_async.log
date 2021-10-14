@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT pg_notify(NULL,'sample message1');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: channel name cannot be empty
+LOCATION:  Async_Notify, async.c:556
+STATEMENT:  SELECT pg_notify(NULL,'sample message1');

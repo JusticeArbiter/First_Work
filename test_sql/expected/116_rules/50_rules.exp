@@ -1,0 +1,2 @@
+insert into rtest_t2 values (1, 21);
+INSERT 0 1

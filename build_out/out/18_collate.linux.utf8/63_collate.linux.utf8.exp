@@ -1,0 +1,6 @@
+SELECT 'bıt' ILIKE 'BIT' COLLATE "tr_TR" AS "true";
+ true 
+------
+ t
+(1 row)
+

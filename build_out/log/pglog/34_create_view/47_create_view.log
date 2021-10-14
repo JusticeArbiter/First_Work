@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW v13_temp AS SELECT seq1_temp.is_called FROM seq1_temp;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "seq1_temp" does not exist at character 57
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE VIEW v13_temp AS SELECT seq1_temp.is_called FROM seq1_temp;

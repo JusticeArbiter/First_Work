@@ -1,0 +1,5 @@
+LOG:  00000: statement: select a, d, grouping(a,b,c)  from gstest3  group by grouping sets ((a,b), (a,c));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "gstest3" does not exist at character 36
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select a, d, grouping(a,b,c)  from gstest3  group by grouping sets ((a,b), (a,c));

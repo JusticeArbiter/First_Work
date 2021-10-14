@@ -1,0 +1,34 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TYPE casttesttype;
+ statement: CREATE FUNCTION casttesttype_in(cstring)                                             +
+    RETURNS casttesttype                                                                         +
+    AS 'textin'                                                                                  +
+    LANGUAGE internal STRICT IMMUTABLE;
+ statement: CREATE FUNCTION casttesttype_out(casttesttype)                                       +
+    RETURNS cstring                                                                              +
+    AS 'textout'                                                                                 +
+    LANGUAGE internal STRICT IMMUTABLE;
+ statement: CREATE TYPE casttesttype (                                                           +
+    internallength = variable,                                                                   +
+    input = casttesttype_in,                                                                     +
+    output = casttesttype_out,                                                                   +
+    alignment = int4                                                                             +
+ );
+ statement: CREATE FUNCTION casttestfunc(casttesttype) RETURNS int4 LANGUAGE SQL AS              +
+ $$ SELECT 1; $$;
+ statement: SELECT casttestfunc('foo'::text);
+ statement: CREATE CAST (text AS casttesttype) WITHOUT FUNCTION;
+ statement: SELECT casttestfunc('foo'::text);
+ statement: SELECT casttestfunc('foo'::text::casttesttype);
+ statement: DROP CAST (text AS casttesttype);
+ statement: CREATE CAST (text AS casttesttype) WITHOUT FUNCTION AS IMPLICIT;
+ statement: SELECT casttestfunc('foo'::text);
+ statement: SELECT 1234::int4::casttesttype;
+ statement: CREATE CAST (int4 AS casttesttype) WITH INOUT;
+ statement: SELECT 1234::int4::casttesttype;
+ statement: DROP CAST (int4 AS casttesttype);
+ statement: CREATE FUNCTION int4_casttesttype(int4) RETURNS casttesttype LANGUAGE SQL AS         +
+ $$ SELECT ('foo'::text || $1::text)::casttesttype; $$;
+ statement: CREATE CAST (int4 AS casttesttype) WITH FUNCTION int4_casttesttype(int4) AS IMPLICIT;
+ statement: SELECT 1234::int4::casttesttype;
+

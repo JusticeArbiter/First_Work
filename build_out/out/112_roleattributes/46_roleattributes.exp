@@ -1,0 +1,6 @@
+SELECT * FROM pg_authid WHERE rolname = 'test_user_canlogin';
+      rolname       | rolsuper | rolinherit | rolcreaterole | rolcreatedb | rolcanlogin | rolreplication | rolbypassrls | rolconnlimit | rolpassword | rolvaliduntil 
+--------------------+----------+------------+---------------+-------------+-------------+----------------+--------------+--------------+-------------+---------------
+ test_user_canlogin | f        | t          | f             | f           | t           | f              | f            |           -1 |             | 
+(1 row)
+

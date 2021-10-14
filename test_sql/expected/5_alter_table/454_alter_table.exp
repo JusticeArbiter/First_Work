@@ -1,0 +1,2 @@
+alter table pg_class alter relname set not null;
+ERROR:  42501: permission denied: "pg_class" is a system catalog

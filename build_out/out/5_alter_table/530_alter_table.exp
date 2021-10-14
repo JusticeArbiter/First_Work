@@ -1,0 +1,6 @@
+select atacc1.* from atacc1;
+ b | c | d 
+---+---+---
+ 2 | 3 | 4
+(1 row)
+

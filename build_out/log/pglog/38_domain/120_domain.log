@@ -1,0 +1,2 @@
+LOG:  00000: statement: create domain ddef3 text DEFAULT 5;
+LOCATION:  exec_simple_query, postgres.c:938

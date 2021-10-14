@@ -1,0 +1,3 @@
+DROP SEQUENCE IF EXISTS test_sequence_exists;
+NOTICE:  00000: sequence "test_sequence_exists" does not exist, skipping
+DROP SEQUENCE

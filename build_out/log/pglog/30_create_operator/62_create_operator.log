@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE OPERATOR #*# (  leftarg = int8,  rightarg = int8,  procedure = fn_op6  );
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42723: operator #*# already exists
+LOCATION:  OperatorCreate, pg_operator.c:425
+STATEMENT:  CREATE OPERATOR #*# (  leftarg = int8,  rightarg = int8,  procedure = fn_op6  );

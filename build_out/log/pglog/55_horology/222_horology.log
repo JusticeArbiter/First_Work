@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT to_timestamp('10000000000', 'FMYYYY');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22008: value for "YYYY" in source string is out of range
+DETAIL:  Value must be in the range -2147483648 to 2147483647.
+LOCATION:  from_char_parse_int_len, formatting.c:2233
+STATEMENT:  SELECT to_timestamp('10000000000', 'FMYYYY');

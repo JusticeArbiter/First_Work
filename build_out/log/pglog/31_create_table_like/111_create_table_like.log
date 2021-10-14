@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP TABLE ctlt1, ctlt2, ctlt3, ctlt4, ctlt12_storage, ctlt12_comments, ctlt1_inh, ctlt13_inh, ctlt13_like, ctlt_all, ctla, ctlb CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: drop cascades to table inhe
+LOCATION:  reportDependentObjects, dependency.c:1009
+STATEMENT:  DROP TABLE ctlt1, ctlt2, ctlt3, ctlt4, ctlt12_storage, ctlt12_comments, ctlt1_inh, ctlt13_inh, ctlt13_like, ctlt_all, ctla, ctlb CASCADE;

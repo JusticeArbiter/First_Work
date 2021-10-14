@@ -1,0 +1,6 @@
+select * from tt14v;
+ f1  | f3 |  f4  
+-----+----+------
+ foo |    | quux
+(1 row)
+

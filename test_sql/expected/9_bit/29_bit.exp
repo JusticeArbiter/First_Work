@@ -1,0 +1,2 @@
+COPY bit_table FROM stdin;
+COPY 0

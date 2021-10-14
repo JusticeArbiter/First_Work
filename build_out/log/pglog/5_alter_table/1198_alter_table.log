@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE tt3 OF tt_t0;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: table has column "y" where type requires "x"
+LOCATION:  ATExecAddOf, tablecmds.c:10888
+STATEMENT:  ALTER TABLE tt3 OF tt_t0;

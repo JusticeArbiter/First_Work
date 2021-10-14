@@ -1,0 +1,4 @@
+INSERT INTO TIMESTAMP_TBL VALUES ('Feb 16 17:32:01 5097 BC');
+ERROR:  22008: timestamp out of range: "Feb 16 17:32:01 5097 BC"
+LINE 1: INSERT INTO TIMESTAMP_TBL VALUES ('Feb 16 17:32:01 5097 BC')...
+                                          ^

@@ -1,0 +1,3 @@
+CREATE VIEW xmlview2 AS SELECT xmlconcat('hello', 'you');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+CREATE VIEW

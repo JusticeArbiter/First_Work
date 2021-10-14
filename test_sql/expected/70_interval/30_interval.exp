@@ -1,0 +1,14 @@
+SELECT '' AS nine, * FROM INTERVAL_TBL  WHERE INTERVAL_TBL.f1 > interval '@ 3 seconds ago';
+ nine |       f1        
+------+-----------------
+      | 00:01:00
+      | 05:00:00
+      | 10 days
+      | 34 years
+      | 3 mons
+      | 1 day 02:03:04
+      | 6 years
+      | 5 mons
+      | 5 mons 12:00:00
+(9 rows)
+

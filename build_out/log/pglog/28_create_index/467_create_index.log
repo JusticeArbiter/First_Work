@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE UNIQUE INDEX onek_nulltest ON onek_with_null (unique2 nulls first,unique1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "onek_with_null" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE UNIQUE INDEX onek_nulltest ON onek_with_null (unique2 nulls first,unique1);

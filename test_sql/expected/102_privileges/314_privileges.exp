@@ -1,0 +1,4 @@
+DROP FUNCTION castfunc(int) CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FUNCTION
+NOTICE:  00000: drop cascades to cast from testdomain1 to testdomain3a
+DROP FUNCTION

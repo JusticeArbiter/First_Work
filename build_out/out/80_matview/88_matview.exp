@@ -1,0 +1,6 @@
+EXPLAIN (costs off)  SELECT * FROM tmm;
+   QUERY PLAN    
+-----------------
+ Seq Scan on tmm
+(1 row)
+

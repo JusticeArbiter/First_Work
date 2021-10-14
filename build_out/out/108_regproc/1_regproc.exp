@@ -1,0 +1,2 @@
+/* If objects exist, return oids */  CREATE ROLE regtestrole;
+CREATE ROLE

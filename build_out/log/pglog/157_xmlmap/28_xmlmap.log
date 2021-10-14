@@ -1,0 +1,5 @@
+LOG:  00000: statement: MOVE BACKWARD ALL IN xc;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "xc" does not exist
+LOCATION:  PerformPortalFetch, portalcmds.c:168
+STATEMENT:  MOVE BACKWARD ALL IN xc;

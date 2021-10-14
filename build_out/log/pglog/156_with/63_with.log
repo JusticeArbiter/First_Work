@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH RECURSIVE t(a) AS (  SELECT 11  UNION ALL  SELECT a+1 FROM t WHERE a < 50  )  DELETE FROM y USING t WHERE t.a = y.a RETURNING y.a;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "y" does not exist at character 96
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  WITH RECURSIVE t(a) AS (  SELECT 11  UNION ALL  SELECT a+1 FROM t WHERE a < 50  )  DELETE FROM y USING t WHERE t.a = y.a RETURNING y.a;

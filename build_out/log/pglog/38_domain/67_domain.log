@@ -1,0 +1,2 @@
+LOG:  00000: statement: update dcomptable set d1[2] = row(d1[2].i, d1[2].r);
+LOCATION:  exec_simple_query, postgres.c:938

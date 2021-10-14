@@ -1,0 +1,6 @@
+SELECT pg_sleep_for('2 seconds');
+ pg_sleep_for 
+--------------
+ 
+(1 row)
+

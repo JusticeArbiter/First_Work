@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE FUNCTION int42_in(cstring)  RETURNS int42  AS 'int4in'  LANGUAGE internal STRICT IMMUTABLE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  42809: return type int42 is only a shell
+LOCATION:  compute_return_type, functioncmds.c:105
+STATEMENT:  CREATE FUNCTION int42_in(cstring)  RETURNS int42  AS 'int4in'  LANGUAGE internal STRICT IMMUTABLE;

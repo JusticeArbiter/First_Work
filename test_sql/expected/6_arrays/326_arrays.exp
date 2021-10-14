@@ -1,0 +1,4 @@
+insert into src  select string_agg(random()::text,'') from generate_series(1,10000);
+ERROR:  42P01: relation "src" does not exist
+LINE 1: insert into src  select string_agg(random()::text,'') from g...
+                    ^

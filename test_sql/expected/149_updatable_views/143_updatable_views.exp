@@ -1,0 +1,7 @@
+SELECT table_name, is_insertable_into  FROM information_schema.tables  WHERE table_name LIKE 'rw_view%'  ORDER BY table_name;
+ table_name | is_insertable_into 
+------------+--------------------
+ rw_view1   | NO
+ rw_view2   | NO
+(2 rows)
+

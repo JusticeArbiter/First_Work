@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT AVG(random) FROM RANDOM_TBL  HAVING AVG(random) NOT BETWEEN 80 AND 120;
+LOCATION:  exec_simple_query, postgres.c:938

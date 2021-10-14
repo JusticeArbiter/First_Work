@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE iportaltest (  i int4,  d float4,  p polygon  );
+LOCATION:  exec_simple_query, postgres.c:938

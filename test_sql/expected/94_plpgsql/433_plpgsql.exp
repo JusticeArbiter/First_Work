@@ -1,0 +1,6 @@
+select excpt_test1();
+ERROR:  42703: column "sqlstate" does not exist
+LINE 1: SELECT sqlstate
+               ^
+QUERY:  SELECT sqlstate
+CONTEXT:  PL/pgSQL function excpt_test1() line 1 at RAISE

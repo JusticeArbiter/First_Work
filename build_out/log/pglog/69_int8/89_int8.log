@@ -1,0 +1,5 @@
+LOG:  00000: statement: select '9223372036854775800'::int8 - '-9223372036854775800'::int8;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: bigint out of range
+LOCATION:  int8mi, int8.c:550
+STATEMENT:  select '9223372036854775800'::int8 - '-9223372036854775800'::int8;

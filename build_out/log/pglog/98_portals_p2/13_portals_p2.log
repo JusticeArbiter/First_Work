@@ -1,0 +1,5 @@
+LOG:  00000: statement: DECLARE foo24 CURSOR FOR  SELECT * FROM onek2 WHERE unique1 = 50;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "onek2" does not exist at character 41
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  DECLARE foo24 CURSOR FOR  SELECT * FROM onek2 WHERE unique1 = 50;

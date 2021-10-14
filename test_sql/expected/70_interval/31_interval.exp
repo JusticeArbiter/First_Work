@@ -1,0 +1,50 @@
+SELECT '' AS fortyfive, r1.*, r2.*  FROM INTERVAL_TBL r1, INTERVAL_TBL r2  WHERE r1.f1 > r2.f1  ORDER BY r1.f1, r2.f1;
+ fortyfive |       f1        |       f1        
+-----------+-----------------+-----------------
+           | 00:01:00        | -00:00:14
+           | 05:00:00        | -00:00:14
+           | 05:00:00        | 00:01:00
+           | 1 day 02:03:04  | -00:00:14
+           | 1 day 02:03:04  | 00:01:00
+           | 1 day 02:03:04  | 05:00:00
+           | 10 days         | -00:00:14
+           | 10 days         | 00:01:00
+           | 10 days         | 05:00:00
+           | 10 days         | 1 day 02:03:04
+           | 3 mons          | -00:00:14
+           | 3 mons          | 00:01:00
+           | 3 mons          | 05:00:00
+           | 3 mons          | 1 day 02:03:04
+           | 3 mons          | 10 days
+           | 5 mons          | -00:00:14
+           | 5 mons          | 00:01:00
+           | 5 mons          | 05:00:00
+           | 5 mons          | 1 day 02:03:04
+           | 5 mons          | 10 days
+           | 5 mons          | 3 mons
+           | 5 mons 12:00:00 | -00:00:14
+           | 5 mons 12:00:00 | 00:01:00
+           | 5 mons 12:00:00 | 05:00:00
+           | 5 mons 12:00:00 | 1 day 02:03:04
+           | 5 mons 12:00:00 | 10 days
+           | 5 mons 12:00:00 | 3 mons
+           | 5 mons 12:00:00 | 5 mons
+           | 6 years         | -00:00:14
+           | 6 years         | 00:01:00
+           | 6 years         | 05:00:00
+           | 6 years         | 1 day 02:03:04
+           | 6 years         | 10 days
+           | 6 years         | 3 mons
+           | 6 years         | 5 mons
+           | 6 years         | 5 mons 12:00:00
+           | 34 years        | -00:00:14
+           | 34 years        | 00:01:00
+           | 34 years        | 05:00:00
+           | 34 years        | 1 day 02:03:04
+           | 34 years        | 10 days
+           | 34 years        | 3 mons
+           | 34 years        | 5 mons
+           | 34 years        | 5 mons 12:00:00
+           | 34 years        | 6 years
+(45 rows)
+

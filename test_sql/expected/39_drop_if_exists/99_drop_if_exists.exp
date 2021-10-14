@@ -1,0 +1,2 @@
+DROP SERVER test_server_exists;
+ERROR:  42704: server "test_server_exists" does not exist

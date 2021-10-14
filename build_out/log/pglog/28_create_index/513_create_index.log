@@ -1,0 +1,2 @@
+LOG:  00000: statement: SET search_path = 'schema_to_reindex';
+LOCATION:  exec_simple_query, postgres.c:938

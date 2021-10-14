@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT * FROM foo WHERE id IN  (SELECT id2 FROM (SELECT id2 FROM bar GROUP BY id2) AS s);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "foo" does not exist at character 15
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT * FROM foo WHERE id IN  (SELECT id2 FROM (SELECT id2 FROM bar GROUP BY id2) AS s);

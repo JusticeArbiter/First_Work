@@ -1,0 +1,4 @@
+GRANT USAGE ON LANGUAGE c TO PUBLIC;
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+ERROR:  42809: language "c" is not trusted
+HINT:  Only superusers can use untrusted languages.

@@ -1,0 +1,13 @@
+SELECT a, b FROM collate_test1 UNION ALL SELECT a, b FROM collate_test1 ORDER BY 2;
+ a |  b  
+---+-----
+ 1 | abc
+ 1 | abc
+ 4 | ABC
+ 4 | ABC
+ 2 | äbc
+ 2 | äbc
+ 3 | bbc
+ 3 | bbc
+(8 rows)
+

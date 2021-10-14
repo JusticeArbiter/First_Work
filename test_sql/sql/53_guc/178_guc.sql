@@ -1,0 +1,1 @@
+reset check_function_bodies;

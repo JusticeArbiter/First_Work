@@ -1,0 +1,6 @@
+SELECT -2+3 AS one;
+ one 
+-----
+   1
+(1 row)
+

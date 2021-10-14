@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, trflang  FROM pg_catalog.pg_transform fk  WHERE trflang != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_language pk WHERE pk.oid = fk.trflang);
+LOCATION:  exec_simple_query, postgres.c:938

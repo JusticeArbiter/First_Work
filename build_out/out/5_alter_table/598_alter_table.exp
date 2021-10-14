@@ -1,0 +1,2 @@
+create index "testing_idx" on atacc1(a);
+ERROR:  42703: column "a" does not exist

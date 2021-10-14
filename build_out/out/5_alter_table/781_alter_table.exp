@@ -1,0 +1,2 @@
+insert into anothertab (atcol1, atcol2) values (default, null);
+INSERT 0 1

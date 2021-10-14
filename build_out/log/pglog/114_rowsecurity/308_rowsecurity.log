@@ -1,0 +1,14 @@
+LOG:  00000: statement: SELECT * FROM z1 WHERE f_leak(b);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: f_leak => aba
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM z1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => bbb
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM z1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => ccc
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM z1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => dad
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM z1 WHERE f_leak(b);

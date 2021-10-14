@@ -1,0 +1,1 @@
+ALTER TABLE unlogged3 SET LOGGED;

@@ -1,0 +1,2 @@
+alter table atacc2 add foreign key (id) references atacc1(a);
+ERROR:  42703: column "a" referenced in foreign key constraint does not exist

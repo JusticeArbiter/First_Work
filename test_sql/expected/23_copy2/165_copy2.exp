@@ -1,0 +1,2 @@
+DROP TABLE forcetest;
+ERROR:  42P01: table "forcetest" does not exist

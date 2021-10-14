@@ -1,0 +1,2 @@
+ALTER INDEX tmp_onek_unique1 RENAME TO onek_unique1;
+ERROR:  42P01: relation "tmp_onek_unique1" does not exist

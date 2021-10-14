@@ -1,0 +1,2 @@
+ALTER TYPE planets ADD VALUE 'pluto' AFTER 'zeus';
+ERROR:  22023: "zeus" is not an existing enum label

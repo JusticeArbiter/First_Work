@@ -1,0 +1,1 @@
+CREATE POLICY p4 ON rls_tbl FOR DELETE USING (c1 <= 3);

@@ -1,0 +1,3 @@
+SELECT * FROM mvtest2;
+ERROR:  55000: materialized view "mvtest2" has not been populated
+HINT:  Use the REFRESH MATERIALIZED VIEW command.

@@ -1,0 +1,11 @@
+SELECT atest1.*,atest5.one FROM atest1 JOIN atest5 ON (atest1.a = atest5.one);
+ a |  b  | one 
+---+-----+-----
+ 1 | two |   1
+ 1 | two |   1
+ 1 | two |   1
+ 1 | two |   1
+ 1 | two |   1
+ 1 | two |   1
+(6 rows)
+

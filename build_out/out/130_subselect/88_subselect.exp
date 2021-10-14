@@ -1,0 +1,4 @@
+insert into ta values(2,2);
+ERROR:  42P01: relation "ta" does not exist
+LINE 1: insert into ta values(2,2);
+                    ^

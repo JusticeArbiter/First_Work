@@ -1,0 +1,4 @@
+SELECT test_json -> 2 FROM test_jsonb WHERE json_type = 'scalar';
+ERROR:  42P01: relation "test_jsonb" does not exist
+LINE 1: SELECT test_json -> 2 FROM test_jsonb WHERE json_type = 'sca...
+                                   ^

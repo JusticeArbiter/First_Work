@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE EVENT TRIGGER start_rls_command ON ddl_command_start  WHEN TAG IN ('CREATE POLICY', 'ALTER POLICY', 'DROP POLICY') EXECUTE PROCEDURE start_command();
+LOCATION:  exec_simple_query, postgres.c:938

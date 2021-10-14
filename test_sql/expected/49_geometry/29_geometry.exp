@@ -1,0 +1,4 @@
+SELECT '' AS four, f1 AS open_path, polygon( pclose(f1)) AS polygon  FROM PATH_TBL  WHERE isopen(f1);
+ERROR:  42P01: relation "path_tbl" does not exist
+LINE 1: ... open_path, polygon( pclose(f1)) AS polygon  FROM PATH_TBL  ...
+                                                             ^

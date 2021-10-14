@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('large object', '{123}', '{}');
+ERROR:  42704: large object 123 does not exist

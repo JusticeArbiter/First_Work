@@ -1,0 +1,6 @@
+LOG:  00000: statement: select x < y from collate_test10;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P22: could not determine which collation to use for string comparison
+HINT:  Use the COLLATE clause to set the collation explicitly.
+LOCATION:  varstr_cmp, varlena.c:1411
+STATEMENT:  select x < y from collate_test10;

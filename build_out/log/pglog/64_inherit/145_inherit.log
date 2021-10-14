@@ -1,0 +1,8 @@
+LOG:  00000: statement: create table c2 (constraint p2chk check (ff1 > 10) no inherit) inherits (p1);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create table c2 (constraint p2chk check (ff1 > 10) no inherit) inherits (p1);
+ERROR:  42P17: constraint "p2chk" conflicts with inherited constraint on relation "c2"
+LOCATION:  MergeWithExistingConstraint, heap.c:2478
+STATEMENT:  create table c2 (constraint p2chk check (ff1 > 10) no inherit) inherits (p1);

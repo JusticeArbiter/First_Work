@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE test_inh_check ALTER COLUMN b TYPE numeric;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging constraint "bmerged" with inherited definition
+LOCATION:  MergeWithExistingConstraint, heap.c:2493
+STATEMENT:  ALTER TABLE test_inh_check ALTER COLUMN b TYPE numeric;

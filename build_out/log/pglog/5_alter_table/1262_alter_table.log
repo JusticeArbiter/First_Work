@@ -1,0 +1,2 @@
+LOG:  00000: statement: COMMENT ON COLUMN comment_test_child.id IS 'Column ''id'' on comment_test_child';
+LOCATION:  exec_simple_query, postgres.c:938

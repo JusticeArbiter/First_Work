@@ -1,0 +1,5 @@
+LOG:  00000: statement: fetch all from test2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "test2" does not exist
+LOCATION:  PerformPortalFetch, portalcmds.c:168
+STATEMENT:  fetch all from test2;

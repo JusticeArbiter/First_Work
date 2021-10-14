@@ -1,0 +1,12 @@
+select * from rtest_t4;
+ a  |                  b                  
+----+-------------------------------------
+  1 | Record should go to rtest_t4
+  2 | Record should go to rtest_t4
+ 20 | Record should go to rtest_t4 and t6
+ 26 | Record should go to rtest_t4 and t8
+ 28 | Record should go to rtest_t4 and t8
+ 30 | Record should go to rtest_t4
+ 40 | Record should go to rtest_t4
+(7 rows)
+

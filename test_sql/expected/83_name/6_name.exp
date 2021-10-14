@@ -1,0 +1,2 @@
+INSERT INTO NAME_TBL(f1) VALUES ('asdfghjkl;');
+INSERT 0 1

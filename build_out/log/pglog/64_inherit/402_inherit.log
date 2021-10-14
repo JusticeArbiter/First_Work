@@ -1,0 +1,5 @@
+LOG:  00000: statement: create temp table patest0 (id, x) as  select x, x from generate_series(0,1000) x;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE AS
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create temp table patest0 (id, x) as  select x, x from generate_series(0,1000) x;

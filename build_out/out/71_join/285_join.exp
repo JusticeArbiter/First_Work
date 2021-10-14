@@ -1,0 +1,12 @@
+explain (costs off)  select * from int4_tbl a left join tenk1 b on f1 = unique2 where f1 = 0;
+             QUERY PLAN              
+-------------------------------------
+ Nested Loop Left Join
+   Join Filter: (a.f1 = b.unique2)
+   ->  Seq Scan on int4_tbl a
+         Filter: (f1 = 0)
+   ->  Materialize
+         ->  Seq Scan on tenk1 b
+               Filter: (unique2 = 0)
+(7 rows)
+

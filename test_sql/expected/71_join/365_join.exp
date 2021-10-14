@@ -1,0 +1,8 @@
+select * from generate_series(100,200) g,  lateral (select * from int8_tbl a where g = q1 union all  select * from int8_tbl b where g = q2) ss;
+  g  |        q1        |        q2        
+-----+------------------+------------------
+ 123 |              123 |              456
+ 123 |              123 | 4567890123456789
+ 123 | 4567890123456789 |              123
+(3 rows)
+

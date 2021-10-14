@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE OR REPLACE VIEW mysecview1  AS SELECT * FROM tbl1 WHERE a = 256;
+LOCATION:  exec_simple_query, postgres.c:938

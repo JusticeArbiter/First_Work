@@ -1,0 +1,6 @@
+select nvl(null,2016::int);
+ nvl  
+------
+ 2016
+(1 row)
+

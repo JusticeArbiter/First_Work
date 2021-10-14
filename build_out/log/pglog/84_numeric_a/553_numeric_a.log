@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT a, ceil(a), ceiling(a), floor(a), round(a) FROM ceil_floor_round;
+LOCATION:  exec_simple_query, postgres.c:938

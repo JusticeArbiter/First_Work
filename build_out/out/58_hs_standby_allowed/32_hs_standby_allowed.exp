@@ -1,0 +1,6 @@
+select count(*) as should_be_2 from hs2;
+ should_be_2 
+-------------
+           2
+(1 row)
+

@@ -1,0 +1,7 @@
+select * from capitals;
+    name    | population | altitude | state 
+------------+------------+----------+-------
+ Sacramento |     369400 |       30 | CA
+ Madison    |     191300 |      845 | WI
+(2 rows)
+

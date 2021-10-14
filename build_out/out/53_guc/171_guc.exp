@@ -1,0 +1,4 @@
+select myfunc(0);
+ERROR:  22012: division by zero
+CONTEXT:  SQL statement "SELECT 1/$1"
+PL/pgSQL function myfunc(integer) line 1 at PERFORM

@@ -1,0 +1,4 @@
+select raise_test();
+NOTICE:  00000: SQLSTATE: 1234F SQLERRM: check me
+ERROR:  1234F: check me
+DETAIL:  some detail info

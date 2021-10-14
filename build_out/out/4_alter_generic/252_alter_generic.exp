@@ -1,0 +1,2 @@
+ALTER TEXT SEARCH DICTIONARY alt_ts_dict3 SET SCHEMA alt_nsp2;
+ERROR:  42704: text search dictionary "alt_ts_dict3" does not exist

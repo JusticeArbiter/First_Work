@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE tmp3 add constraint tmpconstr foreign key (a) references tmp2 match full;
+LOCATION:  exec_simple_query, postgres.c:938

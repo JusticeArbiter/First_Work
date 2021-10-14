@@ -1,0 +1,6 @@
+select userenv('current_user'::text);
+ userenv 
+---------
+ highgo
+(1 row)
+

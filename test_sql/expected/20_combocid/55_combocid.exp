@@ -1,0 +1,6 @@
+SELECT * FROM testcase WHERE testcase.id = 1 FOR UPDATE;
+ id | balance 
+----+---------
+  1 |       0
+(1 row)
+

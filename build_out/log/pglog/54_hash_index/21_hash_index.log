@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE hash_f8_heap  SET random = '-1234.1234'::float8  WHERE hash_f8_heap.seqno = 8906;
+LOCATION:  exec_simple_query, postgres.c:938

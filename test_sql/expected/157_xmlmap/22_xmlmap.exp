@@ -1,0 +1,23 @@
+SELECT query_to_xml('SELECT * FROM testxmlschema.test1', false, false, '');
+                         query_to_xml                          
+---------------------------------------------------------------
+ <table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">+
+                                                              +
+ <row>                                                        +
+   <a>1</a>                                                   +
+   <b>one</b>                                                 +
+ </row>                                                       +
+                                                              +
+ <row>                                                        +
+   <a>2</a>                                                   +
+   <b>two</b>                                                 +
+ </row>                                                       +
+                                                              +
+ <row>                                                        +
+   <a>-1</a>                                                  +
+ </row>                                                       +
+                                                              +
+ </table>                                                     +
+ 
+(1 row)
+

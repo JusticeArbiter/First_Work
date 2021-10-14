@@ -1,0 +1,8 @@
+LOG:  00000: statement: SELECT xpath('/*', '<relativens xmlns=''relative''/>');
+LOCATION:  exec_simple_query, postgres.c:938
+WARNING:  01000: line 1: xmlns: URI relative is not absolute
+	<relativens xmlns='relative'/>
+	                            ^
+CONTEXT:  SQL function "xpath" statement 1
+LOCATION:  xml_errorHandler, xml.c:1712
+STATEMENT:  SELECT xpath('/*', '<relativens xmlns=''relative''/>');

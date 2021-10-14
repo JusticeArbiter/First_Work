@@ -1,0 +1,4 @@
+DROP FUNCTION leak2(integer, integer) CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FUNCTION
+NOTICE:  00000: drop cascades to operator >>>(integer,integer)
+DROP FUNCTION

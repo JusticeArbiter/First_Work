@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT * FROM  (SELECT 1 AS x) ss1  LEFT JOIN  (SELECT q1, q2, COALESCE(dat1, q1) AS y  FROM int8_tbl LEFT JOIN innertab ON q2 = id) ss2  ON true;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "innertab" does not exist at character 113
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT * FROM  (SELECT 1 AS x) ss1  LEFT JOIN  (SELECT q1, q2, COALESCE(dat1, q1) AS y  FROM int8_tbl LEFT JOIN innertab ON q2 = id) ss2  ON true;

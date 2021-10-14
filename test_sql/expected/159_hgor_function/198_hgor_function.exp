@@ -1,0 +1,6 @@
+select dump(32767::smallint,8::int4);
+         dump          
+-----------------------
+ Typ=21 Len=2: 377,177
+(1 row)
+

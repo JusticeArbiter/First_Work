@@ -1,0 +1,4 @@
+DROP MATERIALIZED VIEW mv1 CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP MATERIALIZED VIEW
+NOTICE:  00000: drop cascades to materialized view mv2
+DROP MATERIALIZED VIEW

@@ -1,0 +1,2 @@
+DECLARE hsc CURSOR FOR select * from hs3;
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

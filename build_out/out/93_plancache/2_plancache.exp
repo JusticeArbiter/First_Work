@@ -1,0 +1,4 @@
+PREPARE prepstmt AS SELECT * FROM pcachetest;
+ERROR:  42P01: relation "pcachetest" does not exist
+LINE 1: PREPARE prepstmt AS SELECT * FROM pcachetest;
+                                          ^

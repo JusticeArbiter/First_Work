@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '19970710 173201' AT TIME ZONE 'America/Does_not_exist';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: time zone "America/Does_not_exist" not recognized
+LOCATION:  timestamptz_zone, timestamp.c:5257
+STATEMENT:  SELECT '19970710 173201' AT TIME ZONE 'America/Does_not_exist';

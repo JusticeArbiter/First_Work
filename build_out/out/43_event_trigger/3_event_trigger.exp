@@ -1,0 +1,3 @@
+create function test_event_trigger_arg(name text)  returns event_trigger as $$ BEGIN RETURN 1; END $$ language plpgsql;
+ERROR:  42P13: event trigger functions cannot have declared arguments
+CONTEXT:  compilation of PL/pgSQL function "test_event_trigger_arg" near line 1

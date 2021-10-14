@@ -1,0 +1,6 @@
+SELECT to_regoper('ng_catalog.||/');
+ to_regoper 
+------------
+ 
+(1 row)
+

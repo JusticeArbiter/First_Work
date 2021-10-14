@@ -1,0 +1,6 @@
+select to_yminterval('13-11 08:00:00'::interval);
+       to_yminterval       
+---------------------------
+ 13 years 11 mons 08:00:00
+(1 row)
+

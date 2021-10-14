@@ -1,0 +1,2 @@
+CREATE TABLE inhg (LIKE inhx);
+CREATE TABLE

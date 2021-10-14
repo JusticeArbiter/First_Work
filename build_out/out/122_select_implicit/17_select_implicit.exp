@@ -1,0 +1,15 @@
+SELECT c FROM test_missing_target ORDER BY a;
+    c     
+----------
+ XXXX    
+ ABAB    
+ ABAB    
+ BBBB    
+ BBBB    
+ bbbb    
+ cccc    
+ cccc    
+ CCCC    
+ CCCC    
+(10 rows)
+

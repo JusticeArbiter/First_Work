@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT q1 FROM int8_tbl EXCEPT ALL SELECT q1 FROM int8_tbl FOR NO KEY UPDATE;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: FOR NO KEY UPDATE is not allowed with UNION/INTERSECT/EXCEPT
+LOCATION:  transformSetOperationStmt, analyze.c:1480
+STATEMENT:  SELECT q1 FROM int8_tbl EXCEPT ALL SELECT q1 FROM int8_tbl FOR NO KEY UPDATE;

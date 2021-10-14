@@ -1,0 +1,3 @@
+CREATE TABLE persons5 OF stuff;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+ERROR:  42809: type stuff is not a composite type

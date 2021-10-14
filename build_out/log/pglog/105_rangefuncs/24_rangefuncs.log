@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from unnest(array[10,20],array['foo','bar'],array[1.0]);
+LOCATION:  exec_simple_query, postgres.c:938

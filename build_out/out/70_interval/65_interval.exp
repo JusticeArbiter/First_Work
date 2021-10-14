@@ -1,0 +1,4 @@
+SELECT '1 second 2 seconds'::interval;
+ERROR:  22007: invalid input syntax for type interval: "1 second 2 seconds"
+LINE 1: SELECT '1 second 2 seconds'::interval;
+               ^

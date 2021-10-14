@@ -1,0 +1,4 @@
+CREATE SEQUENCE IF NOT EXISTS sequence_test;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SEQUENCE
+NOTICE:  42P07: relation "sequence_test" already exists, skipping
+CREATE SEQUENCE

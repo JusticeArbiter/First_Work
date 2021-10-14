@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT DATE_TRUNC('DECADE', DATE '1993-12-25');
+LOCATION:  exec_simple_query, postgres.c:938

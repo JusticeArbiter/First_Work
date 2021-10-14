@@ -1,0 +1,8 @@
+SELECT '' AS "xxx", *  FROM J1_TBL t1 (a, b, c) NATURAL JOIN J2_TBL t2 (d, a);
+ xxx | a | b |  c   | d 
+-----+---+---+------+---
+     | 0 |   | zero |  
+     | 2 | 3 | two  | 2
+     | 4 | 1 | four | 2
+(3 rows)
+

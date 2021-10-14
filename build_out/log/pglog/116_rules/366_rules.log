@@ -1,0 +1,2 @@
+LOG:  00000: statement: update vview set descrip='test2' where pid=2;
+LOCATION:  exec_simple_query, postgres.c:938

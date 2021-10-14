@@ -1,0 +1,6 @@
+LOG:  00000: statement: ALTER TABLE collate_test22 ADD FOREIGN KEY (f2) REFERENCES collate_test20;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: insert or update on table "collate_test22" violates foreign key constraint "collate_test22_f2_fkey"
+DETAIL:  Key (f2)=(baz) is not present in table "collate_test20".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3324
+STATEMENT:  ALTER TABLE collate_test22 ADD FOREIGN KEY (f2) REFERENCES collate_test20;

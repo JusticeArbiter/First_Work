@@ -1,0 +1,4 @@
+insert into test_table values ('b', 'a');
+ERROR:  42P01: relation "test_table" does not exist
+LINE 1: insert into test_table values ('b', 'a');
+                    ^

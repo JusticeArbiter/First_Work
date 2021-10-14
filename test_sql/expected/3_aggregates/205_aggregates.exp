@@ -1,0 +1,5 @@
+select test_rank(3) within group (order by x)  from (values (1),(1),(2),(2),(3),(3),(4)) v(x);
+ERROR:  42883: function test_rank(integer, integer) does not exist
+LINE 1: select test_rank(3) within group (order by x)  from (values ...
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

@@ -1,0 +1,7 @@
+INSERT INTO rw_view2(base_a) VALUES (1.1) RETURNING t;
+        t         
+------------------
+ 1.96475965724865
+(1 row)
+
+INSERT 0 1

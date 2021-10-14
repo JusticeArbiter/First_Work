@@ -1,0 +1,2 @@
+LOG:  00000: statement: create table alter1.t1(f1 serial primary key, f2 int check (f2 > 0));
+LOCATION:  exec_simple_query, postgres.c:938

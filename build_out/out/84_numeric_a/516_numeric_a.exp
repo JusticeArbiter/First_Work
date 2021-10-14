@@ -1,0 +1,2 @@
+DELETE FROM num_result;
+DELETE 10

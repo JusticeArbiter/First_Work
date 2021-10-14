@@ -1,0 +1,7 @@
+EXPLAIN (COSTS OFF) SELECT * FROM rls_sbv WHERE (a = 1);
+            QUERY PLAN             
+-----------------------------------
+ Seq Scan on y1
+   Filter: (f_leak(b) AND (a = 1))
+(2 rows)
+

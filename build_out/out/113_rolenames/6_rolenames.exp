@@ -1,0 +1,2 @@
+CREATE ROLE "current_user";
+CREATE ROLE

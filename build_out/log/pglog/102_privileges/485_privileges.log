@@ -1,0 +1,8 @@
+LOG:  00000: statement: GRANT UPDATE ON LARGE OBJECT 1006 TO regressuser3;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  GRANT UPDATE ON LARGE OBJECT 1006 TO regressuser3;
+ERROR:  42704: large object 1006 does not exist
+LOCATION:  objectNamesToOids, aclchk.c:677
+STATEMENT:  GRANT UPDATE ON LARGE OBJECT 1006 TO regressuser3;

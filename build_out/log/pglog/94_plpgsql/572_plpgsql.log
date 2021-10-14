@@ -1,0 +1,7 @@
+LOG:  00000: statement: select forc01();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "forc_test" does not exist at character 15
+QUERY:  select * from forc_test
+CONTEXT:  PL/pgSQL function forc01() line 1 at FOR over cursor
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select forc01();

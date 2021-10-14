@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO RELTIME_TBL (f1) VALUES ('badly formatted reltime');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type reltime: "badly formatted reltime" at character 38
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  INSERT INTO RELTIME_TBL (f1) VALUES ('badly formatted reltime');

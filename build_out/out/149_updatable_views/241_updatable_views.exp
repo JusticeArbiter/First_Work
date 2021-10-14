@@ -1,0 +1,2 @@
+INSERT INTO base_tbl VALUES (2, 'Row 2');
+INSERT 0 1

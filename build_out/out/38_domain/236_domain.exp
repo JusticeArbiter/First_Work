@@ -1,0 +1,2 @@
+select doubledecrement(null);
+ERROR:  23502: domain pos_int does not allow null values

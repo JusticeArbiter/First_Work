@@ -1,0 +1,3 @@
+CREATE OPERATOR !+! (PROCEDURE = int4pl, LEFTARG = testdomain1, RIGHTARG = testdomain1);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE OPERATOR
+ERROR:  42883: function int4pl(testdomain1, testdomain1) does not exist

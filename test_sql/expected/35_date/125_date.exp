@@ -1,0 +1,5 @@
+SELECT date '99-Jan-08';
+ERROR:  22008: date/time field value out of range: "99-Jan-08"
+LINE 1: SELECT date '99-Jan-08';
+                    ^
+HINT:  Perhaps you need a different "datestyle" setting.

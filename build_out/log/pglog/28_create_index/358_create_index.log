@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE UNIQUE INDEX CONCURRENTLY IF NOT EXISTS concur_index2 ON concur_heap(f1);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  42P07: relation "concur_index2" already exists, skipping
+LOCATION:  index_create, index.c:786
+STATEMENT:  CREATE UNIQUE INDEX CONCURRENTLY IF NOT EXISTS concur_index2 ON concur_heap(f1);

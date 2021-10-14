@@ -1,0 +1,2 @@
+LOG:  00000: statement: create view v1a as select * from (tt2 natural join tt3) j;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT 'NaN x'::float4;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type real: "NaN x" at character 8
+LOCATION:  float4in, float.c:314
+STATEMENT:  SELECT 'NaN x'::float4;

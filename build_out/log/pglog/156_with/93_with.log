@@ -1,0 +1,2 @@
+LOG:  00000: statement: with cte(foo) as ( values(42) ) values((select foo from cte));
+LOCATION:  exec_simple_query, postgres.c:938

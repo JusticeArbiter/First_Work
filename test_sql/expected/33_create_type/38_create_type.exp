@@ -1,0 +1,5 @@
+DROP TYPE base_type CASCADE;
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to function base_fn_out(base_type)
+drop cascades to function base_fn_in(cstring)
+DROP TYPE

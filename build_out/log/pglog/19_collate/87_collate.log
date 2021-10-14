@@ -1,0 +1,6 @@
+LOG:  00000: statement: WITH RECURSIVE foo(x) AS  (SELECT x FROM (VALUES('a' COLLATE "C"),('b')) t(x)  UNION ALL  SELECT (x || 'c') COLLATE "POSIX" FROM foo WHERE length(x) < 10)  SELECT * FROM foo;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P21: recursive query "foo" column 1 has collation "C" in non-recursive term but collation "POSIX" overall at character 35
+HINT:  Use the COLLATE clause to set the collation of the non-recursive term.
+LOCATION:  analyzeCTE, parse_cte.c:329
+STATEMENT:  WITH RECURSIVE foo(x) AS  (SELECT x FROM (VALUES('a' COLLATE "C"),('b')) t(x)  UNION ALL  SELECT (x || 'c') COLLATE "POSIX" FROM foo WHERE length(x) < 10)  SELECT * FROM foo;

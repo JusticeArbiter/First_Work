@@ -1,0 +1,12 @@
+select * from inserttest;
+ col1 | col2 |      col3       
+------+------+-----------------
+      |    3 | testing
+      |    5 | testing
+      |    5 | test
+      |    7 | testing
+   10 |   20 | 40
+   -1 |    2 | testing
+    2 |    3 | values are fun!
+(7 rows)
+

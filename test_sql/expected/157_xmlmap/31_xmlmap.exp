@@ -1,0 +1,41 @@
+SELECT schema_to_xml('testxmlschema', false, true, '');
+                             schema_to_xml                             
+-----------------------------------------------------------------------
+ <testxmlschema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">+
+                                                                      +
+ <test1>                                                              +
+   <a>1</a>                                                           +
+   <b>one</b>                                                         +
+ </test1>                                                             +
+                                                                      +
+ <test1>                                                              +
+   <a>2</a>                                                           +
+   <b>two</b>                                                         +
+ </test1>                                                             +
+                                                                      +
+ <test1>                                                              +
+   <a>-1</a>                                                          +
+ </test1>                                                             +
+                                                                      +
+                                                                      +
+ <test2>                                                              +
+   <z>55</z>                                                          +
+   <y>abc</y>                                                         +
+   <x>def   </x>                                                      +
+   <w>98.60</w>                                                       +
+   <v>2</v>                                                           +
+   <u>999</u>                                                         +
+   <t>0</t>                                                           +
+   <s>21:07:00</s>                                                    +
+   <r>2009-06-08T21:07:30</r>                                         +
+   <q>2009-06-08</q>                                                  +
+   <o>ABC</o>                                                         +
+   <n>true</n>                                                        +
+   <m>WFla</m>                                                        +
+ </test2>                                                             +
+                                                                      +
+                                                                      +
+ </testxmlschema>                                                     +
+ 
+(1 row)
+

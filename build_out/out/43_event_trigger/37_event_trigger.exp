@@ -1,0 +1,2 @@
+alter role regression_bob superuser;
+ALTER ROLE

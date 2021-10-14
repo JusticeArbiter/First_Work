@@ -1,0 +1,2 @@
+insert into test_1 (name) values ('Test 2');
+INSERT 0 1

@@ -1,0 +1,4 @@
+SELECT 1 AS one FROM test_having HAVING a > 1;
+ERROR:  42803: column "test_having.a" must appear in the GROUP BY clause or be used in an aggregate function
+LINE 1: SELECT 1 AS one FROM test_having HAVING a > 1;
+                                                ^

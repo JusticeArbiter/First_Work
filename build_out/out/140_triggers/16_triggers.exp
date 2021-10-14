@@ -1,0 +1,3 @@
+create trigger check_fkeys2_pkey_exist  before insert or update on fkeys2  for each row  execute procedure  check_primary_key ('fkey21', 'fkey22', 'pkeys', 'pkey1', 'pkey2');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+ERROR:  42883: function check_primary_key() does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE shoe_data (  shoename char(10),  sh_avail integer,  slcolor char(10),  slminlen float,  slmaxlen float,  slunit char(8)  );
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TABLE shoe_data (  shoename char(10),  sh_avail integer,  slcolor char(10),  slminlen float,  slmaxlen float,  slunit char(8)  );

@@ -1,0 +1,11 @@
+SELECT * FROM chkrolattr();
+     role     | rolekeyword  | canlogin | replication 
+--------------+--------------+----------+-------------
+ None         | -            | f        | t
+ Public       | -            | f        | t
+ current_user | -            | f        | t
+ highgo       | current_user | t        | t
+ highgo       | session_user | t        | t
+ session_user | -            | f        | t
+(6 rows)
+

@@ -1,0 +1,4 @@
+select '(Joe,"Blow,Jr")'::fullname;
+ERROR:  42704: type "fullname" does not exist
+LINE 1: select '(Joe,"Blow,Jr")'::fullname;
+                                  ^

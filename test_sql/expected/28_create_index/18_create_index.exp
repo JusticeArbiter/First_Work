@@ -1,0 +1,2 @@
+COMMENT ON INDEX six IS NULL;
+ERROR:  42P01: relation "six" does not exist

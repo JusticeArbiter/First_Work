@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TEMP TABLE mytab (foo widget(42,13));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: type "widget" does not exist at character 30
+LOCATION:  typenameType, parse_type.c:257
+STATEMENT:  CREATE TEMP TABLE mytab (foo widget(42,13));

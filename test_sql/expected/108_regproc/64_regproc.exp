@@ -1,0 +1,6 @@
+SELECT to_regclass('ng_catalog.pg_class');
+ to_regclass 
+-------------
+ 
+(1 row)
+

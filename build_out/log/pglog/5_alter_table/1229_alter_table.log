@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE IF EXISTS tt8 RENAME COLUMN f TO f1;
+LOCATION:  exec_simple_query, postgres.c:938

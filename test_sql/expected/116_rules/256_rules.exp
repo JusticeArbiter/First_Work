@@ -1,0 +1,11 @@
+select * from rtest_vview2;
+ a |   b    
+---+--------
+ 1 | item 1
+ 2 | item 2
+ 3 | item 3
+ 5 | item 5
+ 7 | item 7
+ 8 | item 8
+(6 rows)
+

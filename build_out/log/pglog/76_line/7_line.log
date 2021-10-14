@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO LINE_TBL VALUES ('[(1,0),(1,0)]');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid line specification: must be two distinct points at character 30
+LOCATION:  line_in, geo_ops.c:994
+STATEMENT:  INSERT INTO LINE_TBL VALUES ('[(1,0),(1,0)]');

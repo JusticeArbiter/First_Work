@@ -1,0 +1,4 @@
+SELECT regclass('ng_catalog.pg_class');
+ERROR:  3F000: schema "ng_catalog" does not exist
+LINE 1: SELECT regclass('ng_catalog.pg_class');
+                        ^

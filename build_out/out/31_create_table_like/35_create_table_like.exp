@@ -1,0 +1,2 @@
+INSERT INTO inhg (xx, yy, x) VALUES ('test', 10, 15);
+INSERT 0 1

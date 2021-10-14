@@ -1,0 +1,5 @@
+select dfunc(1, 2);
+ERROR:  42725: function dfunc(integer, integer) is not unique
+LINE 1: select dfunc(1, 2);
+               ^
+HINT:  Could not choose a best candidate function. You might need to add explicit type casts.

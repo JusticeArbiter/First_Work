@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN foo_mat(11,13) WITH ORDINALITY AS f(i,s,o) ON (r+i)<100;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "foo_rescan_seq2" does not exist at character 20
+QUERY:  SELECT (i, nextval('foo_rescan_seq2'))
+CONTEXT:  PL/pgSQL function foo_mat(integer,integer) line 1 at RETURN NEXT
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN foo_mat(11,13) WITH ORDINALITY AS f(i,s,o) ON (r+i)<100;

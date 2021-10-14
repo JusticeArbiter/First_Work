@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT CONVERT('foo', 'KOI8R', 'MULE_INTERNAL');
+LOCATION:  exec_simple_query, postgres.c:938

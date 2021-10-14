@@ -1,0 +1,2 @@
+ALTER TEXT SEARCH CONFIGURATION alt_ts_conf1 RENAME TO alt_ts_conf2;
+ERROR:  42710: text search configuration "alt_ts_conf2" already exists in schema "public"

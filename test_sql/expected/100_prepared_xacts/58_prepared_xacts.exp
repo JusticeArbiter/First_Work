@@ -1,0 +1,2 @@
+DECLARE foo CURSOR FOR SELECT * FROM pxtest4;
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks

@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH RECURSIVE foo(i) AS  (values (1)  UNION ALL  (SELECT i+1 FROM foo WHERE i < 10  INTERSECT  SELECT i+1 FROM foo WHERE i < 5)  ) SELECT * FROM foo;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P19: recursive reference to query "foo" must not appear more than once at character 113
+LOCATION:  checkWellFormedRecursionWalker, parse_cte.c:781
+STATEMENT:  WITH RECURSIVE foo(i) AS  (values (1)  UNION ALL  (SELECT i+1 FROM foo WHERE i < 10  INTERSECT  SELECT i+1 FROM foo WHERE i < 5)  ) SELECT * FROM foo;

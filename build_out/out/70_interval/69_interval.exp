@@ -1,0 +1,4 @@
+SELECT '1 day 1 day'::interval;
+ERROR:  22007: invalid input syntax for type interval: "1 day 1 day"
+LINE 1: SELECT '1 day 1 day'::interval;
+               ^

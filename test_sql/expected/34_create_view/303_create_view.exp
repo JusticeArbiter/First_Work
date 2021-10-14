@@ -1,0 +1,10 @@
+select pg_get_viewdef('vv5', true);
+      pg_get_viewdef       
+---------------------------
+  SELECT tt9.x,           +
+     tt9.y,               +
+     tt10.z               +
+    FROM tt9              +
+      JOIN tt10 USING (x);
+(1 row)
+

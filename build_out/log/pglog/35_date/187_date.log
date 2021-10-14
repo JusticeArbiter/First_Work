@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT EXTRACT(DECADE FROM DATE '0002-12-31 BC');
+LOCATION:  exec_simple_query, postgres.c:938

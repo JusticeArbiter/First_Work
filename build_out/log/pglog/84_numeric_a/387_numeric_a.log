@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO num_exp_div VALUES (9,3,'-5783481.21694835730858468677');
+LOCATION:  exec_simple_query, postgres.c:938

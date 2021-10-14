@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER AGGREGATE testagg1(int2) OWNER TO CURRENT_USER;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER AGGREGATE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER AGGREGATE testagg1(int2) OWNER TO CURRENT_USER;

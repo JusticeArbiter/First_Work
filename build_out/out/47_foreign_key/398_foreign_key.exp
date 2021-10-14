@@ -1,0 +1,4 @@
+INSERT INTO tasks VALUES (1,1,NULL,NULL);
+ERROR:  42P01: relation "tasks" does not exist
+LINE 1: INSERT INTO tasks VALUES (1,1,NULL,NULL);
+                    ^

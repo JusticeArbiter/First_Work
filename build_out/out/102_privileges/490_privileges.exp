@@ -1,0 +1,10 @@
+SELECT oid, pg_get_userbyid(lomowner) ownername, lomacl FROM pg_largeobject_metadata WHERE oid >= 1000 AND oid < 3000 ORDER BY oid;
+ oid  | ownername |                              lomacl                              
+------+-----------+------------------------------------------------------------------
+ 1002 | highgo    | 
+ 1003 | highgo    | {highgo=rw/highgo,regressuser2=r/highgo}
+ 1004 | highgo    | {highgo=rw/highgo,regressuser2=rw/highgo}
+ 1005 | highgo    | {highgo=rw/highgo,regressuser2=r*w/highgo,regressuser3=r/highgo}
+ 2001 | highgo    | {highgo=rw/highgo,regressuser3=rw/highgo}
+(5 rows)
+

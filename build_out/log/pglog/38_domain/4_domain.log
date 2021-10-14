@@ -1,0 +1,7 @@
+LOG:  00000: statement: drop domain domaindroptest;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: cannot drop type domaindroptest because other objects depend on it
+DETAIL:  type dependenttypetest depends on type domaindroptest
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+LOCATION:  reportDependentObjects, dependency.c:985
+STATEMENT:  drop domain domaindroptest;

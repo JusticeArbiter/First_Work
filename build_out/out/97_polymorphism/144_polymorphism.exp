@@ -1,0 +1,6 @@
+select pg_typeof('' || '');
+ pg_typeof 
+-----------
+ text
+(1 row)
+

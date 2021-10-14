@@ -1,0 +1,10 @@
+select * from generate_series(0.0::numeric, 4.0::numeric);
+ generate_series 
+-----------------
+             0.0
+             1.0
+             2.0
+             3.0
+             4.0
+(5 rows)
+

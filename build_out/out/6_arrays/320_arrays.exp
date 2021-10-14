@@ -1,0 +1,4 @@
+create temp table t1 (f1 int8_tbl[]);
+ERROR:  42704: type "int8_tbl[]" does not exist
+LINE 1: create temp table t1 (f1 int8_tbl[]);
+                                 ^

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT max(c) AS max, min(c) AS min FROM INET_TBL;
+LOCATION:  exec_simple_query, postgres.c:938

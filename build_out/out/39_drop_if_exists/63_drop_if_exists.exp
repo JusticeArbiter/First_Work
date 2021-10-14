@@ -1,0 +1,2 @@
+DROP EXTENSION test_extension_exists;
+ERROR:  42704: extension "test_extension_exists" does not exist

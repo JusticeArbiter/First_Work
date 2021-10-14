@@ -1,0 +1,14 @@
+LOG:  00000: statement: select * from rttest();
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: t 2
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select * from rttest();
+NOTICE:  00000: f 0
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select * from rttest();
+NOTICE:  00000: t 2
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select * from rttest();
+NOTICE:  00000: f 0
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select * from rttest();

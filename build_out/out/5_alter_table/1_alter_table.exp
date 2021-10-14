@@ -1,0 +1,2 @@
+CREATE TABLE tmp (initial int4);
+CREATE TABLE

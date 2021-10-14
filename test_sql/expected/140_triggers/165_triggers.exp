@@ -1,0 +1,2 @@
+delete from trigger_test;
+DELETE 1

@@ -1,0 +1,2 @@
+CREATE USER regtest_addr_user;
+CREATE ROLE

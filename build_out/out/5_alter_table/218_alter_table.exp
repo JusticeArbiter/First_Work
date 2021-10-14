@@ -1,0 +1,2 @@
+ALTER TABLE tmp3 VALIDATE CONSTRAINT b_le_20;
+ERROR:  23514: check constraint "b_le_20" is violated by some row

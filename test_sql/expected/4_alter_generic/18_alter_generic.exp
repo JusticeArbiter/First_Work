@@ -1,0 +1,2 @@
+ALTER AGGREGATE alt_func1(int) RENAME TO alt_func3;
+ERROR:  42809: function alt_func1(integer) is not an aggregate

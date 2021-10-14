@@ -1,0 +1,6 @@
+select int4range(1, 10, '[]');
+ int4range 
+-----------
+ [1,11)
+(1 row)
+

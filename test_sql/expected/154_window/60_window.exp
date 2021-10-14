@@ -1,0 +1,2 @@
+SELECT pg_get_viewdef('v_window');
+ERROR:  42P01: relation "v_window" does not exist

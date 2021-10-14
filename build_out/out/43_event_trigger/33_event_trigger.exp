@@ -1,0 +1,4 @@
+create server useless_server foreign data wrapper useless;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SERVER
+NOTICE:  00000: test_event_trigger: ddl_command_end CREATE SERVER
+CREATE SERVER

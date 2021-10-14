@@ -1,0 +1,3 @@
+ALTER SERVER s3 OPTIONS ("tns name" 'orcl', port '1521');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER SERVER
+ALTER SERVER

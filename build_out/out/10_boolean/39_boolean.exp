@@ -1,0 +1,2 @@
+SELECT ' tru e '::text::boolean AS invalid;
+ERROR:  22P02: invalid input syntax for type boolean: " tru e "

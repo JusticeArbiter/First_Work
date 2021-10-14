@@ -1,0 +1,1 @@
+ALTER FUNCTION functext_E_1(int) LEAKPROOF;

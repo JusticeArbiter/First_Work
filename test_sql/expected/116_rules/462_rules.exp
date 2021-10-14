@@ -1,0 +1,3 @@
+create rule r2 as on update to rules_src do also  values(old.*, 'old'), (new.*, 'new');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+CREATE RULE

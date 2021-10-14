@@ -1,0 +1,4 @@
+INSERT INTO t2 VALUES ('ab'), ('xy');
+ERROR:  22P02: invalid input syntax for integer: "ab"
+LINE 1: INSERT INTO t2 VALUES ('ab'), ('xy');
+                               ^

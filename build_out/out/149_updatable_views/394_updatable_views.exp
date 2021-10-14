@@ -1,0 +1,2 @@
+EXECUTE ins(10, ARRAY[4,5]);
+ERROR:  26000: prepared statement "ins" does not exist

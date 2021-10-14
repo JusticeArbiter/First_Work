@@ -1,0 +1,2 @@
+alter table def_test alter column c1 set default 'wrong_datatype';
+ERROR:  22P02: invalid input syntax for integer: "wrong_datatype"

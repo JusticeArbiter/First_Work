@@ -1,0 +1,5 @@
+LOG:  00000: statement: select pg_get_viewdef('v2a', true);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "v2a" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  select pg_get_viewdef('v2a', true);

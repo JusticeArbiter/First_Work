@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT count(*) FROM test_missing_target GROUP BY a ORDER BY b;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42803: column "test_missing_target.b" must appear in the GROUP BY clause or be used in an aggregate function at character 62
+LOCATION:  check_ungrouped_columns_walker, parse_agg.c:1328
+STATEMENT:  SELECT count(*) FROM test_missing_target GROUP BY a ORDER BY b;

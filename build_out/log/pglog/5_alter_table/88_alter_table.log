@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER INDEX IF EXISTS __onek_unique1 RENAME TO tmp_onek_unique1;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: relation "__onek_unique1" does not exist, skipping
+LOCATION:  RenameRelation, tablecmds.c:2564
+STATEMENT:  ALTER INDEX IF EXISTS __onek_unique1 RENAME TO tmp_onek_unique1;

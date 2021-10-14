@@ -1,0 +1,142 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE OPERATOR ## (                                               +
+    leftarg = path,                                                            +
+    rightarg = path,                                                           +
+    procedure = path_inter,                                                    +
+    commutator = ##                                                            +
+ );
+ statement: CREATE OPERATOR <% (                                               +
+    leftarg = point,                                                           +
+    rightarg = widget,                                                         +
+    procedure = pt_in_widget,                                                  +
+    commutator = >% ,                                                          +
+    negator = >=%                                                              +
+ );
+ statement: CREATE OPERATOR @#@ (                                              +
+    rightarg = int8,                                                           +
+    procedure = numeric_fac                                                    +
+ );
+ statement: CREATE OPERATOR #@# (                                              +
+    leftarg = int8,                                                            +
+    procedure = numeric_fac                                                    +
+ );
+ statement: CREATE OPERATOR #%# (                                              +
+    leftarg = int8,                                                            +
+    procedure = numeric_fac                                                    +
+ );
+ statement: COMMENT ON OPERATOR ###### (int4, NONE) IS 'bad right unary';
+ statement: BEGIN TRANSACTION;
+ statement: CREATE ROLE regress_rol_op1;
+ statement: CREATE SCHEMA schema_op1;
+ statement: GRANT USAGE ON SCHEMA schema_op1 TO PUBLIC;
+ statement: REVOKE USAGE ON SCHEMA schema_op1 FROM regress_rol_op1;
+ statement: SET ROLE regress_rol_op1;
+ statement: CREATE OPERATOR schema_op1.#*# (                                   +
+    leftarg = int8,                                                            +
+    procedure = numeric_fac                                                    +
+ );
+ statement: ROLLBACK;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE OPERATOR #*# (                                              +
+    leftarg = SETOF int8,                                                      +
+    procedure = numeric_fac                                                    +
+ );
+ statement: ROLLBACK;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE OPERATOR #*# (                                              +
+    rightarg = SETOF int8,                                                     +
+    procedure = numeric_fac                                                    +
+ );
+ statement: ROLLBACK;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE OR REPLACE FUNCTION fn_op2(boolean, boolean)                +
+ RETURNS boolean AS $$                                                         +
+     SELECT NULL::BOOLEAN;                                                     +
+ $$ LANGUAGE sql IMMUTABLE;
+ statement: CREATE OPERATOR === (                                              +
+     LEFTARG = boolean,                                                        +
+     RIGHTARG = boolean,                                                       +
+     PROCEDURE = fn_op2,                                                       +
+     COMMUTATOR = ===,                                                         +
+     NEGATOR = !==,                                                            +
+     RESTRICT = contsel,                                                       +
+     JOIN = contjoinsel,                                                       +
+     SORT1, SORT2, LTCMP, GTCMP, HASHES, MERGES                                +
+ );
+ statement: ROLLBACK;
+ statement: CREATE OPERATOR #@%# (                                             +
+    leftarg = int8,                                                            +
+    procedure = numeric_fac,                                                   +
+    invalid_att = int8                                                         +
+ );
+ statement: CREATE OPERATOR #@%# (                                             +
+    procedure = numeric_fac                                                    +
+ );
+ statement: CREATE OPERATOR #@%# (                                             +
+    leftarg = int8                                                             +
+ );
+ statement: BEGIN TRANSACTION;
+ statement: CREATE ROLE regress_rol_op3;
+ statement: CREATE TYPE type_op3 AS ENUM ('new', 'open', 'closed');
+ statement: CREATE FUNCTION fn_op3(type_op3, int8)                             +
+ RETURNS int8 AS $$                                                            +
+     SELECT NULL::int8;                                                        +
+ $$ LANGUAGE sql IMMUTABLE;
+ statement: REVOKE USAGE ON TYPE type_op3 FROM regress_rol_op3;
+ statement: REVOKE USAGE ON TYPE type_op3 FROM PUBLIC;
+ statement: SET ROLE regress_rol_op3;
+ statement: CREATE OPERATOR #*# (                                              +
+    leftarg = type_op3,                                                        +
+    rightarg = int8,                                                           +
+    procedure = fn_op3                                                         +
+ );
+ statement: ROLLBACK;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE ROLE regress_rol_op4;
+ statement: CREATE TYPE type_op4 AS ENUM ('new', 'open', 'closed');
+ statement: CREATE FUNCTION fn_op4(int8, type_op4)                             +
+ RETURNS int8 AS $$                                                            +
+     SELECT NULL::int8;                                                        +
+ $$ LANGUAGE sql IMMUTABLE;
+ statement: REVOKE USAGE ON TYPE type_op4 FROM regress_rol_op4;
+ statement: REVOKE USAGE ON TYPE type_op4 FROM PUBLIC;
+ statement: SET ROLE regress_rol_op4;
+ statement: CREATE OPERATOR #*# (                                              +
+    leftarg = int8,                                                            +
+    rightarg = type_op4,                                                       +
+    procedure = fn_op4                                                         +
+ );
+ statement: ROLLBACK;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE ROLE regress_rol_op5;
+ statement: CREATE TYPE type_op5 AS ENUM ('new', 'open', 'closed');
+ statement: CREATE FUNCTION fn_op5(int8, int8)                                 +
+ RETURNS int8 AS $$                                                            +
+     SELECT NULL::int8;                                                        +
+ $$ LANGUAGE sql IMMUTABLE;
+ statement: REVOKE EXECUTE ON FUNCTION fn_op5(int8, int8) FROM regress_rol_op5;
+ statement: REVOKE EXECUTE ON FUNCTION fn_op5(int8, int8) FROM PUBLIC;
+ statement: SET ROLE regress_rol_op5;
+ statement: CREATE OPERATOR #*# (                                              +
+    leftarg = int8,                                                            +
+    rightarg = int8,                                                           +
+    procedure = fn_op5                                                         +
+ );
+ statement: ROLLBACK;
+ statement: BEGIN TRANSACTION;
+ statement: CREATE ROLE regress_rol_op6;
+ statement: CREATE TYPE type_op6 AS ENUM ('new', 'open', 'closed');
+ statement: CREATE FUNCTION fn_op6(int8, int8)                                 +
+ RETURNS type_op6 AS $$                                                        +
+     SELECT NULL::type_op6;                                                    +
+ $$ LANGUAGE sql IMMUTABLE;
+ statement: REVOKE USAGE ON TYPE type_op6 FROM regress_rol_op6;
+ statement: REVOKE USAGE ON TYPE type_op6 FROM PUBLIC;
+ statement: SET ROLE regress_rol_op6;
+ statement: CREATE OPERATOR #*# (                                              +
+    leftarg = int8,                                                            +
+    rightarg = int8,                                                           +
+    procedure = fn_op6                                                         +
+ );
+ statement: ROLLBACK;
+

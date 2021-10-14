@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO TIMESTAMP_TBL VALUES ('Feb 16 17:32:01 5097 BC');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22008: timestamp out of range: "Feb 16 17:32:01 5097 BC" at character 35
+LOCATION:  timestamp_in, timestamp.c:171
+STATEMENT:  INSERT INTO TIMESTAMP_TBL VALUES ('Feb 16 17:32:01 5097 BC');

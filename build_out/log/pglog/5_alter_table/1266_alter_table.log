@@ -1,0 +1,6 @@
+LOG:  00000: statement: ALTER TABLE comment_test ALTER COLUMN id SET DATA TYPE int USING id::integer;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: foreign key constraint "comment_test_child_fk" cannot be implemented
+DETAIL:  Key columns "id" and "id" are of incompatible types: text and integer.
+LOCATION:  ATAddForeignKeyConstraint, tablecmds.c:6473
+STATEMENT:  ALTER TABLE comment_test ALTER COLUMN id SET DATA TYPE int USING id::integer;

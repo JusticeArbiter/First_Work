@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT distinct * FROM (values (jsonb '{}' || ''::text),('{}')) v(j);
+LOCATION:  exec_simple_query, postgres.c:938

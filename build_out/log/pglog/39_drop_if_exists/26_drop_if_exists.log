@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE type test_type_exists as (a int, b text);
+LOCATION:  exec_simple_query, postgres.c:938

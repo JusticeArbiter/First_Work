@@ -1,0 +1,3 @@
+create function int8alias2in(cstring) returns int8alias2  strict immutable language internal as 'int8in';
+NOTICE:  42809: return type int8alias2 is only a shell
+CREATE FUNCTION

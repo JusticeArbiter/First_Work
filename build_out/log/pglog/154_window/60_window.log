@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT pg_get_viewdef('v_window');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "v_window" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  SELECT pg_get_viewdef('v_window');

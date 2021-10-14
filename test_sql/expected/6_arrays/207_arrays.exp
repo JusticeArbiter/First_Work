@@ -1,0 +1,6 @@
+select array[]::text[];
+ array 
+-------
+ {}
+(1 row)
+

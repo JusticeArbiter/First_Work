@@ -1,0 +1,6 @@
+select array[1,2]::orderedpair;
+ array 
+-------
+ {1,2}
+(1 row)
+

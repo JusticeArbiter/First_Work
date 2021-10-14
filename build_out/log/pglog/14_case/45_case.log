@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT CASE volfoo('bar') WHEN 'foo'::foodomain THEN 'is foo' ELSE 'is not foo' END;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+fetch all from c2;
+ERROR:  34000: cursor "c2" does not exist

@@ -1,0 +1,4 @@
+UPDATE main_table SET a = a + 1 WHERE b < 30;
+NOTICE:  00000: trigger_func(after_upd_row) called: action = UPDATE, when = AFTER, level = ROW
+NOTICE:  00000: trigger_func(after_upd_stmt) called: action = UPDATE, when = AFTER, level = STATEMENT
+UPDATE 1

@@ -1,0 +1,1 @@
+SELECT '' AS four, * FROM POLYGON_TBL;

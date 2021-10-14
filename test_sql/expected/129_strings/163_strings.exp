@@ -1,0 +1,2 @@
+SELECT substr(f1, 5, -1) from toasttest;
+ERROR:  22011: negative substring length not allowed

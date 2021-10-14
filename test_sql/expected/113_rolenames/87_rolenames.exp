@@ -1,0 +1,2 @@
+ALTER USER ALL RESET application_name;
+ALTER ROLE

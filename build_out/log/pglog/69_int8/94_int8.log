@@ -1,0 +1,5 @@
+LOG:  00000: statement: select abs('-9223372036854775808'::int8);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: bigint out of range
+LOCATION:  int8abs, int8.c:640
+STATEMENT:  select abs('-9223372036854775808'::int8);

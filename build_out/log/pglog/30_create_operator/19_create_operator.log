@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE OPERATOR #*# (  rightarg = SETOF int8,  procedure = numeric_fac  );
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P13: SETOF type not allowed for operator argument
+LOCATION:  DefineOperator, operatorcmds.c:118
+STATEMENT:  CREATE OPERATOR #*# (  rightarg = SETOF int8,  procedure = numeric_fac  );

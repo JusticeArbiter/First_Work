@@ -1,0 +1,6 @@
+SELECT ||/ float8 '27' AS three;
+ three 
+-------
+     3
+(1 row)
+

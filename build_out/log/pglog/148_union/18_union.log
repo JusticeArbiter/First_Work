@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT f1 AS five FROM FLOAT8_TBL  UNION  SELECT f1 FROM FLOAT8_TBL  ORDER BY 1;
+LOCATION:  exec_simple_query, postgres.c:938

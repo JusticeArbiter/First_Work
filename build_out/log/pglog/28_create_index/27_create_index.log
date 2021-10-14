@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX gpolygonind ON polygon_tbl USING gist (f1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "polygon_tbl" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX gpolygonind ON polygon_tbl USING gist (f1);

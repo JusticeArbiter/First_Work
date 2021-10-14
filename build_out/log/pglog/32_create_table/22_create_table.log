@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE e_star (  e int2  ) INHERITS (c_star);
+LOCATION:  exec_simple_query, postgres.c:938

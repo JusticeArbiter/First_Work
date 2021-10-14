@@ -1,0 +1,201 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE hobbies_r (                                                                             +
+         name            text,                                                                                   +
+         person          text                                                                                    +
+ );
+ statement: CREATE TABLE equipment_r (                                                                           +
+         name            text,                                                                                   +
+         hobby           text                                                                                    +
+ );
+ statement: CREATE TABLE onek (                                                                                  +
+         unique1         int4,                                                                                   +
+         unique2         int4,                                                                                   +
+         two                     int4,                                                                           +
+         four            int4,                                                                                   +
+         ten                     int4,                                                                           +
+         twenty          int4,                                                                                   +
+         hundred         int4,                                                                                   +
+         thousand        int4,                                                                                   +
+         twothousand     int4,                                                                                   +
+         fivethous       int4,                                                                                   +
+         tenthous        int4,                                                                                   +
+         odd                     int4,                                                                           +
+         even            int4,                                                                                   +
+         stringu1        name,                                                                                   +
+         stringu2        name,                                                                                   +
+         string4         name                                                                                    +
+ );
+ statement: CREATE TABLE tenk1 (                                                                                 +
+         unique1         int4,                                                                                   +
+         unique2         int4,                                                                                   +
+         two                     int4,                                                                           +
+         four            int4,                                                                                   +
+         ten                     int4,                                                                           +
+         twenty          int4,                                                                                   +
+         hundred         int4,                                                                                   +
+         thousand        int4,                                                                                   +
+         twothousand     int4,                                                                                   +
+         fivethous       int4,                                                                                   +
+         tenthous        int4,                                                                                   +
+         odd                     int4,                                                                           +
+         even            int4,                                                                                   +
+         stringu1        name,                                                                                   +
+         stringu2        name,                                                                                   +
+         string4         name                                                                                    +
+ ) WITH OIDS;
+ statement: CREATE TABLE tenk2 (                                                                                 +
+         unique1         int4,                                                                                   +
+         unique2         int4,                                                                                   +
+         two             int4,                                                                                   +
+         four            int4,                                                                                   +
+         ten                     int4,                                                                           +
+         twenty          int4,                                                                                   +
+         hundred         int4,                                                                                   +
+         thousand        int4,                                                                                   +
+         twothousand int4,                                                                                       +
+         fivethous       int4,                                                                                   +
+         tenthous        int4,                                                                                   +
+         odd                     int4,                                                                           +
+         even            int4,                                                                                   +
+         stringu1        name,                                                                                   +
+         stringu2        name,                                                                                   +
+         string4         name                                                                                    +
+ );
+ statement: CREATE TABLE person (                                                                                +
+         name            text,                                                                                   +
+         age                     int4,                                                                           +
+         location        point                                                                                   +
+ );
+ statement: CREATE TABLE emp (                                                                                   +
+         salary          int4,                                                                                   +
+         manager         name                                                                                    +
+ ) INHERITS (person) WITH OIDS;
+ statement: CREATE TABLE student (                                                                               +
+         gpa             float8                                                                                  +
+ ) INHERITS (person);
+ statement: CREATE TABLE stud_emp (                                                                              +
+         percent         int4                                                                                    +
+ ) INHERITS (emp, student);
+ statement: CREATE TABLE city (                                                                                  +
+         name            name,                                                                                   +
+         location        box,                                                                                    +
+         budget          city_budget                                                                             +
+ );
+ statement: CREATE TABLE dept (                                                                                  +
+         dname           name,                                                                                   +
+         mgrname         text                                                                                    +
+ );
+ statement: CREATE TABLE slow_emp4000 (                                                                          +
+         home_base        box                                                                                    +
+ );
+ statement: CREATE TABLE fast_emp4000 (                                                                          +
+         home_base        box                                                                                    +
+ );
+ statement: CREATE TABLE road (                                                                                  +
+         name            text,                                                                                   +
+         thepath         path                                                                                    +
+ );
+ statement: CREATE TABLE ihighway () INHERITS (road);
+ statement: CREATE TABLE shighway (                                                                              +
+         surface         text                                                                                    +
+ ) INHERITS (road);
+ statement: CREATE TABLE real_city (                                                                             +
+         pop                     int4,                                                                           +
+         cname           text,                                                                                   +
+         outline         path                                                                                    +
+ );
+ statement: CREATE TABLE a_star (                                                                                +
+         class           char,                                                                                   +
+         a                       int4                                                                            +
+ );
+ statement: CREATE TABLE b_star (                                                                                +
+         b                       text                                                                            +
+ ) INHERITS (a_star);
+ statement: CREATE TABLE c_star (                                                                                +
+         c                       name                                                                            +
+ ) INHERITS (a_star);
+ statement: CREATE TABLE d_star (                                                                                +
+         d                       float8                                                                          +
+ ) INHERITS (b_star, c_star);
+ statement: CREATE TABLE e_star (                                                                                +
+         e                       int2                                                                            +
+ ) INHERITS (c_star);
+ statement: CREATE TABLE f_star (                                                                                +
+         f                       polygon                                                                         +
+ ) INHERITS (e_star);
+ statement: CREATE TABLE aggtest (                                                                               +
+         a                       int2,                                                                           +
+         b                       float4                                                                          +
+ );
+ statement: CREATE TABLE hash_i4_heap (                                                                          +
+         seqno           int4,                                                                                   +
+         random          int4                                                                                    +
+ );
+ statement: CREATE TABLE hash_name_heap (                                                                        +
+         seqno           int4,                                                                                   +
+         random          name                                                                                    +
+ );
+ statement: CREATE TABLE hash_txt_heap (                                                                         +
+         seqno           int4,                                                                                   +
+         random          text                                                                                    +
+ );
+ statement: CREATE TABLE hash_f8_heap (                                                                          +
+         seqno           int4,                                                                                   +
+         random          float8                                                                                  +
+ );
+ statement: CREATE TABLE bt_i4_heap (                                                                            +
+         seqno           int4,                                                                                   +
+         random          int4                                                                                    +
+ );
+ statement: CREATE TABLE bt_name_heap (                                                                          +
+         seqno           name,                                                                                   +
+         random          int4                                                                                    +
+ );
+ statement: CREATE TABLE bt_txt_heap (                                                                           +
+         seqno           text,                                                                                   +
+         random          int4                                                                                    +
+ );
+ statement: CREATE TABLE bt_f8_heap (                                                                            +
+         seqno           float8,                                                                                 +
+         random          int4                                                                                    +
+ );
+ statement: CREATE TABLE array_op_test (                                                                         +
+         seqno           int4,                                                                                   +
+         i                       int4[],                                                                         +
+         t                       text[]                                                                          +
+ );
+ statement: CREATE TABLE array_index_op_test (                                                                   +
+         seqno           int4,                                                                                   +
+         i                       int4[],                                                                         +
+         t                       text[]                                                                          +
+ );
+ statement: CREATE TABLE testjsonb (                                                                             +
+        j jsonb                                                                                                  +
+ );
+ statement: CREATE TABLE IF NOT EXISTS test_tsvector(                                                            +
+         t text,                                                                                                 +
+         a tsvector                                                                                              +
+ );
+ statement: CREATE TABLE IF NOT EXISTS test_tsvector(                                                            +
+         t text                                                                                                  +
+ );
+ statement: CREATE UNLOGGED TABLE unlogged1 (a int primary key);
+ statement: CREATE TEMPORARY TABLE unlogged2 (a int primary key);
+ statement: SELECT relname, relkind, relpersistence FROM pg_class WHERE relname ~ '^unlogged\d' ORDER BY relname;
+ statement: REINDEX INDEX unlogged1_pkey;
+ statement: REINDEX INDEX unlogged2_pkey;
+ statement: SELECT relname, relkind, relpersistence FROM pg_class WHERE relname ~ '^unlogged\d' ORDER BY relname;
+ statement: DROP TABLE unlogged2;
+ statement: INSERT INTO unlogged1 VALUES (42);
+ statement: CREATE UNLOGGED TABLE public.unlogged2 (a int primary key);
+ statement: CREATE UNLOGGED TABLE pg_temp.unlogged3 (a int primary key);
+ statement: CREATE TABLE pg_temp.implicitly_temp (a int primary key);
+ statement: CREATE TEMP TABLE explicitly_temp (a int primary key);
+ statement: CREATE TEMP TABLE pg_temp.doubly_temp (a int primary key);
+ statement: CREATE TEMP TABLE public.temp_to_perm (a int primary key);
+ statement: DROP TABLE unlogged1, public.unlogged2;
+ statement: CREATE TABLE as_select1 AS SELECT * FROM pg_class WHERE relkind = 'r';
+ statement: CREATE TABLE as_select1 AS SELECT * FROM pg_class WHERE relkind = 'r';
+ statement: CREATE TABLE IF NOT EXISTS as_select1 AS SELECT * FROM pg_class WHERE relkind = 'r';
+ statement: DROP TABLE as_select1;
+

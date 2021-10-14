@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT numnode( 'new'::tsquery );
+LOCATION:  exec_simple_query, postgres.c:938

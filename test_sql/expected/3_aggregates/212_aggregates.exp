@@ -1,0 +1,4 @@
+select rank('fred') within group (order by x) from generate_series(1,5) x;
+ERROR:  22P02: invalid input syntax for integer: "fred"
+LINE 1: select rank('fred') within group (order by x) from generate_...
+                    ^

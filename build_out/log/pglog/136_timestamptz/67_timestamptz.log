@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO TIMESTAMPTZ_TBL VALUES ('19970710 173201 America/Does_not_exist');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: time zone "america/does_not_exist" not recognized at character 37
+LOCATION:  DecodeDateTime, datetime.c:927
+STATEMENT:  INSERT INTO TIMESTAMPTZ_TBL VALUES ('19970710 173201 America/Does_not_exist');

@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TYPE casttesttype (  internallength = variable,  input = casttesttype_in,  output = casttesttype_out,  alignment = int4  );
+LOCATION:  exec_simple_query, postgres.c:938

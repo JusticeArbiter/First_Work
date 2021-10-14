@@ -1,0 +1,5 @@
+SELECT * FROM trunc_fa;
+ col1 | col2a 
+------+-------
+(0 rows)
+

@@ -1,0 +1,6 @@
+SELECT xmlcomment('test');
+ xmlcomment  
+-------------
+ <!--test-->
+(1 row)
+

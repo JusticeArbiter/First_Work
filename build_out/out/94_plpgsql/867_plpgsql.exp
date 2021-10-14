@@ -1,0 +1,4 @@
+do $$  declare v_test plpgsql_arr_domain := array[1];  begin  v_test := 0 || v_test; -- fail  end;  $$;
+ERROR:  42601: syntax error at end of input
+LINE 1: ... array[1];  begin  v_test := 0 || v_test; -- fail  end;  $$;
+                                                                    ^

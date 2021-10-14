@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT to_tsvector('thesaurus_tst', 'Supernovae star is very new star and usually called supernovae (abbreviation SN)');
+LOCATION:  exec_simple_query, postgres.c:938

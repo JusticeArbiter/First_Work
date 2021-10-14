@@ -1,0 +1,6 @@
+SHOW track_counts;
+ track_counts 
+--------------
+ on
+(1 row)
+

@@ -1,0 +1,1 @@
+INSERT INTO wi SELECT i+44 FROM wo;

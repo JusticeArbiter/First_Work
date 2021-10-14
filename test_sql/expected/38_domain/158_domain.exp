@@ -1,0 +1,2 @@
+create domain con as integer;
+CREATE DOMAIN

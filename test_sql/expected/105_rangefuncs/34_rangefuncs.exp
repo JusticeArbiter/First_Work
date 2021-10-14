@@ -1,0 +1,5 @@
+select definition from pg_views where viewname='vw_ord';
+ definition 
+------------
+(0 rows)
+

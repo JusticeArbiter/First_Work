@@ -1,0 +1,3 @@
+alter table if exists doesnt_exist_tab rename column a to d;
+NOTICE:  00000: relation "doesnt_exist_tab" does not exist, skipping
+ALTER TABLE

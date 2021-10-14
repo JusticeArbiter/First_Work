@@ -1,0 +1,4 @@
+INSERT INTO t1 VALUES ('a', 'b'), ('x', 'y');
+ERROR:  42P01: relation "t1" does not exist
+LINE 1: INSERT INTO t1 VALUES ('a', 'b'), ('x', 'y');
+                    ^

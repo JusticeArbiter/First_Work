@@ -1,0 +1,6 @@
+select quote_literal('abc''');
+ quote_literal 
+---------------
+ 'abc'''
+(1 row)
+

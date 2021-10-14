@@ -1,0 +1,6 @@
+SELECT '19970710 173201' AT TIME ZONE 'America/New_York';
+      timezone       
+---------------------
+ 1997-07-10 05:32:01
+(1 row)
+

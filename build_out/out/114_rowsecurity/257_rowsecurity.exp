@@ -1,0 +1,9 @@
+EXPLAIN (COSTS OFF) SELECT * FROM bv1 WHERE f_leak(b);
+       QUERY PLAN        
+-------------------------
+ Subquery Scan on bv1
+   Filter: f_leak(bv1.b)
+   ->  Seq Scan on b1
+         Filter: (a > 0)
+(4 rows)
+

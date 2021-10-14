@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into selfconflict values (6,1), (6,2) on conflict(f1) do update set f2 = 0;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  21000: ON CONFLICT DO UPDATE command cannot affect row a second time
+HINT:  Ensure that no rows proposed for insertion within the same command have duplicate constrained values.
+LOCATION:  ExecOnConflictUpdate, nodeModifyTable.c:1119
+STATEMENT:  insert into selfconflict values (6,1), (6,2) on conflict(f1) do update set f2 = 0;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '{"a":"b", "c":"q"}'::jsonb <@ '{"a":"b", "b":1, "c":null}';
+LOCATION:  exec_simple_query, postgres.c:938

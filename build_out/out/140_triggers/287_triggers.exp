@@ -1,0 +1,2 @@
+DELETE FROM european_city_view;
+DELETE 0

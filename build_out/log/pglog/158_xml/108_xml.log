@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT xpath('', '<!-- error -->');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22000: empty XPath expression
+CONTEXT:  SQL function "xpath" statement 1
+LOCATION:  xpath_internal, xml.c:3833
+STATEMENT:  SELECT xpath('', '<!-- error -->');

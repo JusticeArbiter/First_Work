@@ -1,0 +1,2 @@
+LOG:  00000: statement: create unique index ec1_expr2 on ec1((ff + 2 + 1));
+LOCATION:  exec_simple_query, postgres.c:938

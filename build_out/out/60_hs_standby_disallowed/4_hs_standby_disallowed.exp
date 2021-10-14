@@ -1,0 +1,6 @@
+select * from hs1 FOR SHARE;
+ col1 
+------
+    1
+(1 row)
+

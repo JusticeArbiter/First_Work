@@ -1,0 +1,5 @@
+CREATE TEMP VIEW joinview AS  SELECT foo.*, other FROM foo JOIN joinme ON (f2 = f2j);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+ERROR:  42P01: relation "foo" does not exist
+LINE 1: ...E TEMP VIEW joinview AS  SELECT foo.*, other FROM foo JOIN j...
+                                                             ^

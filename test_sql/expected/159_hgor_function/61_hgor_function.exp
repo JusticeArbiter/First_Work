@@ -1,0 +1,6 @@
+select decode('d'::char,'g'::char,1511::int4,1);
+ decode 
+--------
+      1
+(1 row)
+

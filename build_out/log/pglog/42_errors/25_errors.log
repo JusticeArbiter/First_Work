@@ -1,0 +1,5 @@
+LOG:  00000: statement: drop aggregate newcnt (float4);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: aggregate newcnt(real) does not exist
+LOCATION:  LookupAggNameTypeNames, parse_func.c:2014
+STATEMENT:  drop aggregate newcnt (float4);

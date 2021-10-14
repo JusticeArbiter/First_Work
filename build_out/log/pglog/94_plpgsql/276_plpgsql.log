@@ -1,0 +1,6 @@
+LOG:  00000: statement: update PSlot set slotlink = 'PS.not.there' where slotname = 'PS.base.a1';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  P0001: PS.not.there         does not exist
+CONTEXT:  PL/pgSQL function tg_slotlink_a() line 1 at assignment
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  update PSlot set slotlink = 'PS.not.there' where slotname = 'PS.base.a1';

@@ -1,0 +1,2 @@
+insert into rtest_view2 values (7);
+INSERT 0 1

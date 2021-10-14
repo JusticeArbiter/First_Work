@@ -1,0 +1,6 @@
+SELECT 'red' = ALL ('{red,green,blue}'::rainbow[]);
+ ?column? 
+----------
+ f
+(1 row)
+

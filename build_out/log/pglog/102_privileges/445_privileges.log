@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT dogrant_fails();
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: role "regressuser5" is already a member of role "regressgroup2"
+CONTEXT:  SQL function "dogrant_fails" statement 1
+LOCATION:  AddRoleMems, user.c:1460
+STATEMENT:  SELECT dogrant_fails();

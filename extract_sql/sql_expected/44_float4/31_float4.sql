@@ -1,0 +1,1 @@
+SELECT '' AS five, * FROM FLOAT4_TBL;

@@ -1,0 +1,6 @@
+SELECT 'a:* & nbb:*ac | doo:a* | goo'::tsquery;
+                 tsquery                  
+------------------------------------------
+ ( 'a':* & 'nbb':*AC | 'doo':*A ) | 'goo'
+(1 row)
+

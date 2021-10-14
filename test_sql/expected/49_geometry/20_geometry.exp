@@ -1,0 +1,4 @@
+SELECT '' AS eight, npoints(f1) AS npoints, f1 AS path FROM PATH_TBL;
+ERROR:  42P01: relation "path_tbl" does not exist
+LINE 1: ... AS eight, npoints(f1) AS npoints, f1 AS path FROM PATH_TBL;
+                                                              ^

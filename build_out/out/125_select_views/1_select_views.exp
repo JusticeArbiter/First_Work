@@ -1,0 +1,5 @@
+SELECT * FROM street;
+ name | thepath | cname 
+------+---------+-------
+(0 rows)
+

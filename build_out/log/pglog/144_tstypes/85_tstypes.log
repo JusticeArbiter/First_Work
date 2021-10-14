@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 'supeznova supernova'::tsvector @@ 'super:*'::tsquery AS "true";
+LOCATION:  exec_simple_query, postgres.c:938

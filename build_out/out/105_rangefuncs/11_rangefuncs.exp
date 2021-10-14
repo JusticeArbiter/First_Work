@@ -1,0 +1,7 @@
+select * from unnest(array['a','b']) with ordinality as z(a,ord);
+ a | ord 
+---+-----
+ a |   1
+ b |   2
+(2 rows)
+

@@ -1,0 +1,2 @@
+insert into inserttest values (DEFAULT, 5, 'test');
+INSERT 0 1

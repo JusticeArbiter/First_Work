@@ -1,0 +1,6 @@
+SELECT to_tsquery('english', '(asd&!and)|fghj');
+   to_tsquery   
+----------------
+ 'asd' | 'fghj'
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT time '03:30' + interval '1 month 04:01' AS "07:31:00";
+LOCATION:  exec_simple_query, postgres.c:938

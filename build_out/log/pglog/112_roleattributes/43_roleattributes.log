@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE USER test_user_canlogin WITH NOLOGIN;
+LOCATION:  exec_simple_query, postgres.c:938

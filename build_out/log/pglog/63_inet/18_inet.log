@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO INET_TBL (c, i) VALUES ('10:23::8000/113', '10:23::ffff');
+LOCATION:  exec_simple_query, postgres.c:938

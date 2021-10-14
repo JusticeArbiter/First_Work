@@ -1,0 +1,6 @@
+select decode(1,1,1607::int4);
+ decode 
+--------
+   1607
+(1 row)
+

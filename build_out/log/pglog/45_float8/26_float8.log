@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT ' INFINITY x'::float8;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type double precision: " INFINITY x" at character 8
+LOCATION:  float8in, float.c:513
+STATEMENT:  SELECT ' INFINITY x'::float8;

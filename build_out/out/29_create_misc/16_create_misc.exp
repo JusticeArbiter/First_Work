@@ -1,0 +1,4 @@
+INSERT INTO a_star (class, a) VALUES ('a', 1);
+ERROR:  42P01: relation "a_star" does not exist
+LINE 1: INSERT INTO a_star (class, a) VALUES ('a', 1);
+                    ^

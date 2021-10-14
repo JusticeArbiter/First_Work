@@ -1,0 +1,6 @@
+SELECT '["a","b","c",[1,2],null]'::jsonb -> -5;
+ ?column? 
+----------
+ "a"
+(1 row)
+

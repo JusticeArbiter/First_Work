@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP INDEX CONCURRENTLY "concur_index2", "concur_index3";
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: DROP INDEX CONCURRENTLY does not support dropping multiple objects
+LOCATION:  RemoveRelations, tablecmds.c:818
+STATEMENT:  DROP INDEX CONCURRENTLY "concur_index2", "concur_index3";

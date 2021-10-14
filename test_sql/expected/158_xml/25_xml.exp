@@ -1,0 +1,6 @@
+SELECT xmlelement(name foo, text 'bar');
+   xmlelement   
+----------------
+ <foo>bar</foo>
+(1 row)
+

@@ -1,0 +1,6 @@
+LOG:  00000: statement: select 'foo'::text = any((select array['abc','def','foo']::text[]));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: operator does not exist: text = text[] at character 20
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+LOCATION:  op_error, parse_oper.c:726
+STATEMENT:  select 'foo'::text = any((select array['abc','def','foo']::text[]));

@@ -1,0 +1,8 @@
+LOG:  00000: statement: create or replace function forc_bad() returns void as $$  declare  c refcursor;  begin  for r in c loop  raise notice '%', r.i;  end loop;  end;  $$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create or replace function forc_bad() returns void as $$  declare  c refcursor;  begin  for r in c loop  raise notice '%', r.i;  end loop;  end;  $$ language plpgsql;
+ERROR:  42601: cursor FOR loop must use a bound cursor variable at character 98
+LOCATION:  plpgsql_yyparse, pl_gram.y:1372
+STATEMENT:  create or replace function forc_bad() returns void as $$  declare  c refcursor;  begin  for r in c loop  raise notice '%', r.i;  end loop;  end;  $$ language plpgsql;

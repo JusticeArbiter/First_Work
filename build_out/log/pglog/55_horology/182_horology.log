@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT to_timestamp('1985 January 12', 'YYYY FMMonth DD');
+LOCATION:  exec_simple_query, postgres.c:938

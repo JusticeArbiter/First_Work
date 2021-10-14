@@ -1,0 +1,6 @@
+select 'foo' not like all (array['%a', '%o']);
+ ?column? 
+----------
+ f
+(1 row)
+

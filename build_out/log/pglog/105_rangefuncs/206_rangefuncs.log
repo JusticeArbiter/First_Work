@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "foo_rescan_seq1" does not exist at character 15
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);

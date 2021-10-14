@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into matest1 (name) values ('Test 1');
+LOCATION:  exec_simple_query, postgres.c:938

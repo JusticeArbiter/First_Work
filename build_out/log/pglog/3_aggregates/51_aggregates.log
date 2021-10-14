@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT sum2(q1,q2) FROM int8_tbl;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "int8_tbl" does not exist at character 25
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT sum2(q1,q2) FROM int8_tbl;

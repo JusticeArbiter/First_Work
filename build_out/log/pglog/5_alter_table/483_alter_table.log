@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table only parent alter a set not null;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23502: column "a" contains null values
+LOCATION:  ATRewriteTable, tablecmds.c:4181
+STATEMENT:  alter table only parent alter a set not null;

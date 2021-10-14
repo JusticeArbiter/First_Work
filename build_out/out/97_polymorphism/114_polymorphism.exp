@@ -1,0 +1,3 @@
+create aggregate build_group(int8, integer) (  SFUNC = add_group,  STYPE = int2[]  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE AGGREGATE
+ERROR:  42883: function add_group(smallint[], bigint, integer) does not exist

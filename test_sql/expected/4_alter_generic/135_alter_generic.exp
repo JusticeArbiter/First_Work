@@ -1,0 +1,2 @@
+ALTER OPERATOR FAMILY alt_opf1 USING hash RENAME TO alt_opf4;
+ERROR:  42710: operator family "alt_opf4" for access method "hash" already exists in schema "public"

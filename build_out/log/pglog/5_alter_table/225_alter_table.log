@@ -1,0 +1,8 @@
+LOG:  00000: statement: ALTER TABLE tmp3 VALIDATE CONSTRAINT identity;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: boo: 16
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER TABLE tmp3 VALIDATE CONSTRAINT identity;
+NOTICE:  00000: boo: 20
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER TABLE tmp3 VALIDATE CONSTRAINT identity;

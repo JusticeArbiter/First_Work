@@ -1,0 +1,6 @@
+SELECT has_server_privilege('s8', 'USAGE');
+ has_server_privilege 
+----------------------
+ t
+(1 row)
+

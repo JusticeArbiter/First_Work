@@ -1,0 +1,6 @@
+SELECT testfunc1(5), testfunc2(5);
+ testfunc1 | testfunc2 
+-----------+-----------
+        10 |        15
+(1 row)
+

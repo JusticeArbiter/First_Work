@@ -1,0 +1,2 @@
+insert into domcontest values (-5);
+ERROR:  23514: value for domain con violates check constraint "con_check"

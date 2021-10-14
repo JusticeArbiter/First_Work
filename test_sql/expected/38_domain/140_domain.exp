@@ -1,0 +1,2 @@
+update domnotnull set col1 = 5;
+UPDATE 1

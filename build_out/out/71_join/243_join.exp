@@ -1,0 +1,16 @@
+explain (costs off)  select * from  tenk1 join int4_tbl on f1 = twothousand,  int4(sin(1)) q1,  int4(sin(0)) q2  where thousand = (q1 + q2);
+                         QUERY PLAN                          
+-------------------------------------------------------------
+ Hash Join
+   Hash Cond: (int4_tbl.f1 = tenk1.twothousand)
+   ->  Seq Scan on int4_tbl
+   ->  Hash
+         ->  Hash Join
+               Hash Cond: (tenk1.thousand = (q1.q1 + q2.q2))
+               ->  Seq Scan on tenk1
+               ->  Hash
+                     ->  Nested Loop
+                           ->  Function Scan on q1
+                           ->  Function Scan on q2
+(11 rows)
+

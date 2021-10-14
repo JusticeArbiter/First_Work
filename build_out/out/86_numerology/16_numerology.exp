@@ -1,0 +1,7 @@
+SELECT DISTINCT f1 AS two FROM TEMP_GROUP ORDER BY 1;
+ two 
+-----
+   1
+   2
+(2 rows)
+

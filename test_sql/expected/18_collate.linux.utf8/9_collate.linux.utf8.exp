@@ -1,0 +1,4 @@
+CREATE TABLE collate_test_fail (  a int,  b text COLLATE "ja_JP.eucjp"  );
+ERROR:  42704: collation "ja_JP.eucjp" for encoding "UTF8" does not exist
+LINE 1: CREATE TABLE collate_test_fail (  a int,  b text COLLATE "ja...
+                                                         ^

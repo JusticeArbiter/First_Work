@@ -1,0 +1,5 @@
+LOG:  00000: statement: create temp table t1 (f1 int8_tbl[]);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: type "int8_tbl[]" does not exist at character 26
+LOCATION:  typenameType, parse_type.c:257
+STATEMENT:  create temp table t1 (f1 int8_tbl[]);

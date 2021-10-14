@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT to_regnamespace('foo.bar');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42602: invalid name syntax
+LOCATION:  to_regnamespace, regproc.c:1740
+STATEMENT:  SELECT to_regnamespace('foo.bar');

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT btrim(E'\\000trim\\000'::bytea, ''::bytea);
+LOCATION:  exec_simple_query, postgres.c:938

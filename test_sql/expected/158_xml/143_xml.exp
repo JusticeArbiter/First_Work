@@ -1,0 +1,2 @@
+INSERT INTO query VALUES ('/menu/beers/cost[text() = ''lots'']');
+INSERT 0 1

@@ -1,0 +1,2 @@
+LOG:  00000: statement: select '[2010-01-01 01:00:00 -05, 2010-01-01 02:00:00 -08)'::tstzrange;
+LOCATION:  exec_simple_query, postgres.c:938

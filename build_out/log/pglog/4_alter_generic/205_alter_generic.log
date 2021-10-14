@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION fn_opf13 (int4) RETURNS BIGINT AS 'SELECT NULL::BIGINT;' LANGUAGE SQL;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,7 @@
+select * from nulltest;
+ col1 | col2 | col3 | col4 | col5 
+------+------+------+------+------
+ a    | b    | c    | d    | c
+ a    | b    | c    |      | d
+(2 rows)
+

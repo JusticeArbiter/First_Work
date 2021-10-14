@@ -1,0 +1,6 @@
+select * from dfunc('Hello');
+  _a   | _c 
+-------+----
+ Hello |   
+(1 row)
+

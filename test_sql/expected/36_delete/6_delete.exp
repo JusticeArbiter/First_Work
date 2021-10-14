@@ -1,0 +1,5 @@
+DELETE FROM delete_test dt WHERE delete_test.a > 25;
+ERROR:  42P01: invalid reference to FROM-clause entry for table "delete_test"
+LINE 1: DELETE FROM delete_test dt WHERE delete_test.a > 25;
+                                         ^
+HINT:  Perhaps you meant to reference the table alias "dt".

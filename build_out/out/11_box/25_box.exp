@@ -1,0 +1,9 @@
+SELECT '' AS four, height(f1), width(f1) FROM BOX_TBL;
+ four | height | width 
+------+--------+-------
+      |      2 |     2
+      |      2 |     2
+      |      1 |     0
+      |      0 |     0
+(4 rows)
+

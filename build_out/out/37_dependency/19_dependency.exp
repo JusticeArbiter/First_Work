@@ -1,0 +1,4 @@
+DROP USER regression_user3;
+ERROR:  2BP01: role "regression_user3" cannot be dropped because some objects depend on it
+DETAIL:  owner of sequence deptest_f1_seq
+owner of table deptest

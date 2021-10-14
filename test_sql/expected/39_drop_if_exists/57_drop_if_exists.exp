@@ -1,0 +1,2 @@
+DROP TEXT SEARCH TEMPLATE test_tstemplate_exists;
+ERROR:  42704: text search template "test_tstemplate_exists" does not exist

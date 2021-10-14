@@ -1,0 +1,4 @@
+SELECT regprocedure('absinthe(numeric)');
+ERROR:  42883: function "absinthe(numeric)" does not exist
+LINE 1: SELECT regprocedure('absinthe(numeric)');
+                            ^

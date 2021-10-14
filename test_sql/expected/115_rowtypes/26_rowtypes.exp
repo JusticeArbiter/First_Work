@@ -1,0 +1,4 @@
+insert into quadtable (f1, q.c1.r, q.c2.i) values(44,55,66);
+ERROR:  42P01: relation "quadtable" does not exist
+LINE 1: insert into quadtable (f1, q.c1.r, q.c2.i) values(44,55,66);
+                    ^

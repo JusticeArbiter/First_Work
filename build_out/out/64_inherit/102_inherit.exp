@@ -1,0 +1,4 @@
+CREATE TABLE jointchild () INHERITS (firstparent, secondparent);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  00000: merging multiple inherited definitions of column "tomorrow"
+CREATE TABLE

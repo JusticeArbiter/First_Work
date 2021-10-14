@@ -1,0 +1,11 @@
+EXPLAIN (COSTS OFF) DELETE FROM bv1 WHERE a = 6 AND f_leak(b);
+                    QUERY PLAN                     
+---------------------------------------------------
+ Delete on b1 b1_1
+   ->  Subquery Scan on b1
+         Filter: f_leak(b1.b)
+         ->  LockRows
+               ->  Seq Scan on b1 b1_2
+                     Filter: ((a > 0) AND (a = 6))
+(6 rows)
+

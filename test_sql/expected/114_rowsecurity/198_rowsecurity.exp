@@ -1,0 +1,10 @@
+SELECT (SELECT x FROM s1 LIMIT 1) xx, * FROM s2 WHERE y like '%28%';
+ xx | x  |                y                 
+----+----+----------------------------------
+ -6 | -6 | 596a3d04481816330f07e4f97510c28f
+ -4 | -4 | 0267aaf632e87a63288a08331f22c7c3
+ -3 | -3 | b3149ecea4628efd23d2f86e5a723472
+  2 |  2 | c81e728d9d4c2f636f067f89cc14862c
+  3 |  3 | eccbc87e4b5ce2fe28308fd9f2a7baf3
+(5 rows)
+

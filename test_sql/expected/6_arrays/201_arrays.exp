@@ -1,0 +1,6 @@
+select '{}'::text[];
+ text 
+------
+ {}
+(1 row)
+

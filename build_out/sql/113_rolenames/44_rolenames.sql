@@ -1,0 +1,1 @@
+ALTER USER "session_user" WITH REPLICATION;

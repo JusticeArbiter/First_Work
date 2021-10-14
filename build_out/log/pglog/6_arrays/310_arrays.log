@@ -1,0 +1,5 @@
+LOG:  00000: statement: select array_remove('{{1,2,2},{1,4,3}}', 2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: removing elements from multidimensional arrays is not supported
+LOCATION:  array_replace_internal, arrayfuncs.c:6002
+STATEMENT:  select array_remove('{{1,2,2},{1,4,3}}', 2);

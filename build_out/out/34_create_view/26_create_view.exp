@@ -1,0 +1,4 @@
+CREATE VIEW temp_view_test.v2 AS SELECT * FROM base_table;
+ERROR:  42P01: relation "base_table" does not exist
+LINE 1: CREATE VIEW temp_view_test.v2 AS SELECT * FROM base_table;
+                                                       ^

@@ -1,0 +1,6 @@
+SELECT regexp_replace('AAA', '^|$', 'Z', 'g');
+ regexp_replace 
+----------------
+ ZAAAZ
+(1 row)
+

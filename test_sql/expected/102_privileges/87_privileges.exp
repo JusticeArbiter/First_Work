@@ -1,0 +1,2 @@
+COPY atest2 FROM stdin;
+COPY 0

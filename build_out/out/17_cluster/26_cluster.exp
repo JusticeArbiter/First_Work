@@ -1,0 +1,2 @@
+INSERT INTO clstr_tst (b, c) VALUES (27, 'veintisiete');
+INSERT 0 1

@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH t AS (  UPDATE y SET a = a * 100 RETURNING *  )  SELECT * FROM t LIMIT 10;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "y" does not exist at character 21
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  WITH t AS (  UPDATE y SET a = a * 100 RETURNING *  )  SELECT * FROM t LIMIT 10;

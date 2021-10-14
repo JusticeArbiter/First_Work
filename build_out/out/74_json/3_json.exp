@@ -1,0 +1,6 @@
+SELECT '"abc"'::json;
+ json  
+-------
+ "abc"
+(1 row)
+

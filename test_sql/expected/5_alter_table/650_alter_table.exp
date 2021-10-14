@@ -1,0 +1,2 @@
+alter table only dropColumnChild drop column b;
+ERROR:  42P16: cannot drop inherited column "b"

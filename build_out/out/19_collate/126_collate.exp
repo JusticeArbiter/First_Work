@@ -1,0 +1,6 @@
+SELECT collation for ((SELECT b FROM collate_test1 LIMIT 1));
+ pg_collation_for 
+------------------
+ "en_US"
+(1 row)
+

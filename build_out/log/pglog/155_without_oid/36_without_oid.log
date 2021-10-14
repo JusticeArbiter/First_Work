@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT count(oid) FROM create_table_test3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "oid" does not exist at character 14
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  SELECT count(oid) FROM create_table_test3;

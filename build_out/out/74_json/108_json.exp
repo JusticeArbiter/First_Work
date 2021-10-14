@@ -1,0 +1,6 @@
+select '{"a": [{"b": "c"}, {"b": "cc"}]}'::json -> null::int;
+ ?column? 
+----------
+ 
+(1 row)
+

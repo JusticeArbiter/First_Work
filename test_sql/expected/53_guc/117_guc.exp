@@ -1,0 +1,2 @@
+SET datestyle = iso, ymd;
+SET

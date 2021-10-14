@@ -1,0 +1,3 @@
+drop table self_ref_trigger;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+ERROR:  42P01: table "self_ref_trigger" does not exist

@@ -1,0 +1,3 @@
+DROP CAST IF EXISTS (text AS text);
+NOTICE:  00000: cast from type text to type text does not exist, skipping
+DROP CAST

@@ -1,0 +1,4 @@
+insert into numeric_table values (1), (1.000000000000000000001), (2), (3);
+ERROR:  42P01: relation "numeric_table" does not exist
+LINE 1: insert into numeric_table values (1), (1.0000000000000000000...
+                    ^

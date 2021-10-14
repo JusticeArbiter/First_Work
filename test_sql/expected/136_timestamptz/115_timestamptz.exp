@@ -1,0 +1,6 @@
+SELECT '' AS one, d1 FROM TIMESTAMPTZ_TBL  WHERE d1 = timestamp with time zone '1997-01-02';
+ one |           d1           
+-----+------------------------
+     | 1997-01-02 00:00:00+08
+(1 row)
+

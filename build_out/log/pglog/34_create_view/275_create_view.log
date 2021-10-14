@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter table tt5 add column cc int;
+LOCATION:  exec_simple_query, postgres.c:938

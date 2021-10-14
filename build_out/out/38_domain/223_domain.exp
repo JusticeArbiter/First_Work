@@ -1,0 +1,2 @@
+alter table domain_test add column c str_domain;
+ERROR:  23502: domain str_domain does not allow null values

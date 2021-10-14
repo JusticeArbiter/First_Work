@@ -1,0 +1,1 @@
+CREATE POLICY p2 ON y2 USING (a % 3 = 0);

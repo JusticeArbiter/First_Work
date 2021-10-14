@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'EUC_TW', 'UTF8');

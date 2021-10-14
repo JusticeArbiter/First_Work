@@ -1,0 +1,2 @@
+LOG:  00000: statement: set escape_string_warning = off;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+DROP TABLE x, y;
+ERROR:  42P01: table "x" does not exist

@@ -1,0 +1,2 @@
+ALTER ROLE test_superuser WITH SUPERUSER;
+ALTER ROLE

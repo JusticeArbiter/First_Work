@@ -1,0 +1,4 @@
+ALTER SEQUENCE IF EXISTS sequence_test2 RESTART WITH 24  INCREMENT BY 4 MAXVALUE 36 MINVALUE 5 CYCLE;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER SEQUENCE
+NOTICE:  00000: relation "sequence_test2" does not exist, skipping
+ALTER SEQUENCE

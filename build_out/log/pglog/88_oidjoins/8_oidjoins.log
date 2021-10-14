@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, aggtranstype  FROM pg_catalog.pg_aggregate fk  WHERE aggtranstype != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_type pk WHERE pk.oid = fk.aggtranstype);
+LOCATION:  exec_simple_query, postgres.c:938

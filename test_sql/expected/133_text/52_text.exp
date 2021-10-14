@@ -1,0 +1,6 @@
+select format('%s, %s', variadic array['Hello','World']);
+    format    
+--------------
+ Hello, World
+(1 row)
+

@@ -1,0 +1,6 @@
+create table c3 (f4 int) inherits(c1,c2);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  00000: merging multiple inherited definitions of column "f1"
+NOTICE:  00000: merging multiple inherited definitions of column "f2"
+NOTICE:  00000: merging multiple inherited definitions of column "f3"
+CREATE TABLE

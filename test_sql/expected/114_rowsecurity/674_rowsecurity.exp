@@ -1,0 +1,9 @@
+DELETE FROM r2 RETURNING *;
+ a 
+---
+ 2
+ 2
+ 2
+(3 rows)
+
+DELETE 3

@@ -1,0 +1,7 @@
+UPDATE rw_view2 SET b='Row three' WHERE a=3 RETURNING *;
+ a |     b     
+---+-----------
+ 3 | Row three
+(1 row)
+
+UPDATE 1

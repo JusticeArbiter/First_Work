@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT count(b) FROM test_missing_target  GROUP BY (b + 1) / 2 ORDER BY (b + 1) / 2 desc;
+LOCATION:  exec_simple_query, postgres.c:938

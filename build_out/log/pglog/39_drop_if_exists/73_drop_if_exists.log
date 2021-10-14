@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP OPERATOR @#@ (int, int);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: operator does not exist: integer @#@ integer
+LOCATION:  LookupOperName, parse_oper.c:128
+STATEMENT:  DROP OPERATOR @#@ (int, int);

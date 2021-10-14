@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE serialTest2 (f1 text, f2 serial, f3 smallserial, f4 serial2, f5 bigserial, f6 serial8);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TABLE serialTest2 (f1 text, f2 serial, f3 smallserial, f4 serial2, f5 bigserial, f6 serial8);

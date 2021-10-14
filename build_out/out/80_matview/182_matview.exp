@@ -1,0 +1,3 @@
+create materialized view mvtest_error as select 1/0 as x with no data;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE MATERIALIZED VIEW
+CREATE MATERIALIZED VIEW

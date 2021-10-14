@@ -1,0 +1,2 @@
+DROP CAST (text AS text);
+ERROR:  42704: cast from type text to type text does not exist

@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP USER regressuser2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: role "regressuser2" cannot be dropped because some objects depend on it
+DETAIL:  privileges for type testdomain1
+	privileges for type testtype1
+	privileges for language sql
+LOCATION:  DropRole, user.c:1027
+STATEMENT:  DROP USER regressuser2;

@@ -1,0 +1,3 @@
+CREATE TABLE customer (  cid int primary key,  name text not null,  tel text,  passwd text  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

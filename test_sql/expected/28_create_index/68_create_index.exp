@@ -1,0 +1,4 @@
+SELECT * FROM point_tbl WHERE f1 IS NULL;
+ERROR:  42P01: relation "point_tbl" does not exist
+LINE 1: SELECT * FROM point_tbl WHERE f1 IS NULL;
+                      ^

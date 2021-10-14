@@ -1,0 +1,6 @@
+SELECT ts_lexize('synonym', 'PoStGrEs');
+ ts_lexize 
+-----------
+ {pgsql}
+(1 row)
+

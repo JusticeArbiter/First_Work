@@ -1,0 +1,6 @@
+SELECT to_char(now(), 'OF');
+ to_char 
+---------
+ +08
+(1 row)
+

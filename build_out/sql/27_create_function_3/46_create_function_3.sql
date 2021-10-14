@@ -1,0 +1,1 @@
+ALTER FUNCTION functext_F_1(int) IMMUTABLE;

@@ -1,0 +1,9 @@
+SELECT '' AS five, c.*  FROM CHAR_TBL c  WHERE c.f1 < 'a';
+ five | f1 
+------+----
+      | 1
+      | 2
+      | 3
+      |  
+(4 rows)
+

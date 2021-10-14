@@ -1,0 +1,11 @@
+LOG:  00000: statement: SELECT * FROM my_property_normal WHERE f_leak(passwd);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: f_leak => passwd123
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM my_property_normal WHERE f_leak(passwd);
+NOTICE:  00000: f_leak => beafsteak
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM my_property_normal WHERE f_leak(passwd);
+NOTICE:  00000: f_leak => hamburger
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SELECT * FROM my_property_normal WHERE f_leak(passwd);

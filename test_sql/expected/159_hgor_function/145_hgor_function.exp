@@ -1,0 +1,6 @@
+select greatest('a','b','A','B');
+ greatest 
+----------
+ B
+(1 row)
+

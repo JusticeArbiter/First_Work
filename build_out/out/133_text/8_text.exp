@@ -1,0 +1,6 @@
+select 'four: '::text || 2+2;
+ ?column? 
+----------
+ four: 4
+(1 row)
+

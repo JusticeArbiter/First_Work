@@ -1,0 +1,12 @@
+SELECT '' AS seven, * FROM VARCHAR_TBL;
+ seven | f1 
+-------+----
+       | a
+       | A
+       | 1
+       | 2
+       | 3
+       | 
+       | c
+(7 rows)
+

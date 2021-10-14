@@ -1,0 +1,4 @@
+INSERT INTO fktable VALUES (0, 20);
+ERROR:  42P01: relation "fktable" does not exist
+LINE 1: INSERT INTO fktable VALUES (0, 20);
+                    ^

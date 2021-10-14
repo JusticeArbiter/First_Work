@@ -1,0 +1,3 @@
+alter table depth0 add c text;
+NOTICE:  00000: merging definition of column "c" for child "depth1"
+ALTER TABLE

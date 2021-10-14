@@ -1,0 +1,7 @@
+SELECT '' AS six, c AS cidr, i AS inet FROM INET_TBL  WHERE c = i;
+ six |      cidr      |      inet      
+-----+----------------+----------------
+     | 192.168.1.0/24 | 192.168.1.0/24
+     | 10.1.2.3/32    | 10.1.2.3
+(2 rows)
+

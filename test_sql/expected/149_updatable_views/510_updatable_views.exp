@@ -1,0 +1,4 @@
+UPDATE v1 SET a=100 WHERE snoop(a) AND leakproof(a) AND a = 3;
+ERROR:  42703: column "a" does not exist
+LINE 1: UPDATE v1 SET a=100 WHERE snoop(a) AND leakproof(a) AND a = ...
+                                        ^

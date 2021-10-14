@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from  int8_tbl a left join  lateral (select *, a.q2 as x from int8_tbl b) ss on a.q2 = ss.q1;
+LOCATION:  exec_simple_query, postgres.c:938

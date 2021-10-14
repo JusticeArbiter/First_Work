@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT date '99 08 Jan';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type date: "99 08 Jan" at character 13
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  SELECT date '99 08 Jan';

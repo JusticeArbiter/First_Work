@@ -1,0 +1,5 @@
+LOG:  00000: statement: explain (costs off) insert into insertconflicttest values(0, 'Crowberry') on conflict (key) do nothing;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P10: there is no unique or exclusion constraint matching the ON CONFLICT specification
+LOCATION:  infer_arbiter_indexes, plancat.c:663
+STATEMENT:  explain (costs off) insert into insertconflicttest values(0, 'Crowberry') on conflict (key) do nothing;

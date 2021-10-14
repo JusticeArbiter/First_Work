@@ -1,0 +1,6 @@
+select non_strict(NULL);
+ non_strict 
+------------
+ 
+(1 row)
+

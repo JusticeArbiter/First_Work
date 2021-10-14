@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT regexp_matches('foo' || chr(10) || 'bar' || chr(10) || 'bequq' || chr(10) || 'baz', '^', 'mg');
+LOCATION:  exec_simple_query, postgres.c:938

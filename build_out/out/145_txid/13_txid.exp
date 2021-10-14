@@ -1,0 +1,4 @@
+select snap from snapshot_test order by nr;
+ERROR:  42P01: relation "snapshot_test" does not exist
+LINE 1: select snap from snapshot_test order by nr;
+                         ^

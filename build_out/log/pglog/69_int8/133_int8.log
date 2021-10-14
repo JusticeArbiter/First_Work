@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT (-9223372036854775808)::int8 / (-1)::int2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: bigint out of range
+LOCATION:  int82div, int8.c:1112
+STATEMENT:  SELECT (-9223372036854775808)::int8 / (-1)::int2;

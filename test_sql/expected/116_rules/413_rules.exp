@@ -1,0 +1,6 @@
+select * from fooview;
+ x |  y  
+---+-----
+ 1 | aaa
+(1 row)
+

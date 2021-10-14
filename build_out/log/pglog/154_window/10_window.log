@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT four FROM tenk1 WHERE FALSE WINDOW w AS (PARTITION BY ten);
+LOCATION:  exec_simple_query, postgres.c:938

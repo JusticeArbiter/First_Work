@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE ctlt3 (a text CHECK (length(a) < 5), c text);
+LOCATION:  exec_simple_query, postgres.c:938

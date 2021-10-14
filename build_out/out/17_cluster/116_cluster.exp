@@ -1,0 +1,2 @@
+drop table clstr_temp;
+ERROR:  42P01: table "clstr_temp" does not exist

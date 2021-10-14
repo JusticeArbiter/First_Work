@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP FUNCTION base_fn_out(opaque);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: function base_fn_out(opaque) does not exist
+LOCATION:  LookupFuncName, parse_func.c:1922
+STATEMENT:  DROP FUNCTION base_fn_out(opaque);

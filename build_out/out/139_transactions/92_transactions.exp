@@ -1,0 +1,2 @@
+INSERT into barbaz VALUES (1);
+INSERT 0 1

@@ -1,0 +1,3 @@
+insert into child (a, b) values (NULL, 'foo');
+ERROR:  23502: null value in column "a" violates not-null constraint
+DETAIL:  Failing row contains (null, foo).

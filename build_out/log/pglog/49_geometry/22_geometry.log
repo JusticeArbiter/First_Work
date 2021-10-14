@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS eight, p1.f1 + point '(10,10)' AS dist_add  FROM PATH_TBL p1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "path_tbl" does not exist at character 63
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT '' AS eight, p1.f1 + point '(10,10)' AS dist_add  FROM PATH_TBL p1;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TEMP TABLE tt (num2 int, value text);
+LOCATION:  exec_simple_query, postgres.c:938

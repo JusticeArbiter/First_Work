@@ -1,0 +1,5 @@
+SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_sql(10+r,13);
+ERROR:  42883: function foo_sql(integer, integer) does not exist
+LINE 1: SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_sql(10+r,13);
+                                                 ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

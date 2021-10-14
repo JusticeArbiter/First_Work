@@ -1,0 +1,6 @@
+select 'xxx' ~ '^([bc])\1*$' as f;
+ f 
+---
+ f
+(1 row)
+

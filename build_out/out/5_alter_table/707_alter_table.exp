@@ -1,0 +1,5 @@
+drop table p1, p2 cascade;
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to table c1
+drop cascades to table gc1
+DROP TABLE

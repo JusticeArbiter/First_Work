@@ -1,0 +1,5 @@
+LOG:  00000: statement: create function int8alias2out(int8alias2) returns cstring  strict immutable language internal as 'int8out';
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  42809: argument type int8alias2 is only a shell
+LOCATION:  interpret_function_parameter_list, functioncmds.c:251
+STATEMENT:  create function int8alias2out(int8alias2) returns cstring  strict immutable language internal as 'int8out';

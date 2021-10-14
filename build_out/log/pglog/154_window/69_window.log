@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT count(*) OVER w FROM tenk1 WINDOW w AS (ORDER BY unique1), w AS (ORDER BY unique1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P20: window "w" is already defined at character 72
+LOCATION:  transformWindowDefinitions, parse_clause.c:2383
+STATEMENT:  SELECT count(*) OVER w FROM tenk1 WINDOW w AS (ORDER BY unique1), w AS (ORDER BY unique1);

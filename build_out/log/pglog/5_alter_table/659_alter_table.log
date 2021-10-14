@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table only renameColumn rename column a to d;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: inherited column "a" must be renamed in child tables too
+LOCATION:  renameatt_internal, tablecmds.c:2260
+STATEMENT:  alter table only renameColumn rename column a to d;

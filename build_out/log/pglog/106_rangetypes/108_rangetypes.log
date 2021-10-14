@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from numrange_test natural join numrange_test2 order by nr;
+LOCATION:  exec_simple_query, postgres.c:938

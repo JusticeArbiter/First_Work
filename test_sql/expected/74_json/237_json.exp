@@ -1,0 +1,3 @@
+SELECT json_build_object('{a,b,c}'::text[]);
+ERROR:  22023: argument list must have even number of elements
+HINT:  The arguments of json_build_object() must consist of alternating keys and values.

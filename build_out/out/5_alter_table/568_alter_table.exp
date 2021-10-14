@@ -1,0 +1,2 @@
+vacuum analyze atacc1(a);
+ERROR:  42703: column "a" of relation "atacc1" does not exist

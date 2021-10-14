@@ -1,0 +1,4 @@
+INSERT INTO c_star (class) VALUES ('c');
+ERROR:  42P01: relation "c_star" does not exist
+LINE 1: INSERT INTO c_star (class) VALUES ('c');
+                    ^

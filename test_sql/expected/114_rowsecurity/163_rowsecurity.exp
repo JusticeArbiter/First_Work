@@ -1,0 +1,6 @@
+DROP VIEW rec1v, rec2v CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP VIEW
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to policy r1 on table rec1
+drop cascades to policy r2 on table rec2
+DROP VIEW

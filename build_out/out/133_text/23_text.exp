@@ -1,0 +1,6 @@
+select concat(variadic array[1,2,3]);
+ concat 
+--------
+ 123
+(1 row)
+

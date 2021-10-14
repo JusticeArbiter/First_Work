@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE LANGUAGE alt_lang1 HANDLER plpgsql_call_handler;
+LOCATION:  exec_simple_query, postgres.c:938

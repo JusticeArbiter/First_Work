@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table stud_emp rename to stud_emp;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P07: relation "stud_emp" already exists
+LOCATION:  RenameRelationInternal, tablecmds.c:2616
+STATEMENT:  alter table stud_emp rename to stud_emp;

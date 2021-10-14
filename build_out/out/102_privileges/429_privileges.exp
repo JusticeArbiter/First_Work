@@ -1,0 +1,6 @@
+SELECT has_table_privilege('regressuser2', 'atest4', 'SELECT');
+ has_table_privilege 
+---------------------
+ f
+(1 row)
+

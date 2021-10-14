@@ -1,0 +1,2 @@
+COPY basictest (testvarchar) FROM stdin;
+COPY 0

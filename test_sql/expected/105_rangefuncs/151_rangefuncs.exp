@@ -1,0 +1,2 @@
+select pg_get_viewdef('vw_foo');
+ERROR:  42P01: relation "vw_foo" does not exist

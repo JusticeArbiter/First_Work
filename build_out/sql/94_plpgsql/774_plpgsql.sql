@@ -1,0 +1,1 @@
+select scope_test();

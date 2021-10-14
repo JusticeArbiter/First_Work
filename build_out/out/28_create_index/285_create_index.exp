@@ -1,0 +1,4 @@
+SELECT * FROM array_index_op_test WHERE i @> '{}' ORDER BY seqno;
+ERROR:  42P01: relation "array_index_op_test" does not exist
+LINE 1: SELECT * FROM array_index_op_test WHERE i @> '{}' ORDER BY s...
+                      ^

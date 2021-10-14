@@ -1,0 +1,1 @@
+CREATE OR REPLACE FUNCTION hs_subxids (n integer)  RETURNS void  LANGUAGE plpgsql  AS $$  BEGIN  IF n <= 0 THEN RETURN; END IF;  INSERT INTO hs_extreme VALUES (n);  PERFORM hs_subxids(n - 1);  RETURN;  EXCEPTION WHEN raise_exception THEN NULL; END;  $$;

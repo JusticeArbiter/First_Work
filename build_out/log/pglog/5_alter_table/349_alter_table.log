@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into atacc3 (test2) values (3);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT f1, f1::INTERVAL DAY TO MINUTE AS "minutes",  (f1 + INTERVAL '1 month')::INTERVAL MONTH::INTERVAL YEAR AS "years"  FROM interval_tbl;
+LOCATION:  exec_simple_query, postgres.c:938

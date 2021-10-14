@@ -1,0 +1,6 @@
+select jsonb_strip_nulls('{"a": {"b": null, "c": null}, "d": {} }');
+ jsonb_strip_nulls  
+--------------------
+ {"a": {}, "d": {}}
+(1 row)
+

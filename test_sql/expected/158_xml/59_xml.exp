@@ -1,0 +1,6 @@
+SELECT xmlpi(name xmlstuff);
+    xmlpi     
+--------------
+ <?xmlstuff?>
+(1 row)
+

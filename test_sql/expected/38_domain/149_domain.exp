@@ -1,0 +1,2 @@
+insert into domdeftest default values;
+INSERT 0 1

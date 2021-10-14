@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT E'\\xDeAdBeEx'::bytea;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: invalid hexadecimal digit: "x" at character 8
+LOCATION:  get_hex, encode.c:150
+STATEMENT:  SELECT E'\\xDeAdBeEx'::bytea;

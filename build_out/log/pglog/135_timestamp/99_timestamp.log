@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS "64", d1 FROM TIMESTAMP_TBL;
+LOCATION:  exec_simple_query, postgres.c:938

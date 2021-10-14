@@ -1,0 +1,19 @@
+explain (verbose, costs off) select * from matest0 order by 1-id;
+                         QUERY PLAN                         
+------------------------------------------------------------
+ Sort
+   Output: matest0.id, matest0.name, ((1 - matest0.id))
+   Sort Key: ((1 - matest0.id))
+   ->  Result
+         Output: matest0.id, matest0.name, (1 - matest0.id)
+         ->  Append
+               ->  Seq Scan on public.matest0
+                     Output: matest0.id, matest0.name
+               ->  Seq Scan on public.matest1
+                     Output: matest1.id, matest1.name
+               ->  Seq Scan on public.matest2
+                     Output: matest2.id, matest2.name
+               ->  Seq Scan on public.matest3
+                     Output: matest3.id, matest3.name
+(14 rows)
+

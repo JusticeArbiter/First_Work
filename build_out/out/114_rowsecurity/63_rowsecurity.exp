@@ -1,0 +1,3 @@
+DELETE FROM category WHERE cid = 33;
+ERROR:  23503: update or delete on table "category" violates foreign key constraint "document_cid_fkey" on table "document"
+DETAIL:  Key (cid)=(33) is still referenced from table "document".

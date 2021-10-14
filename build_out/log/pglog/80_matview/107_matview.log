@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT type, m.totamt AS mtot, v.totamt AS vtot FROM tm m LEFT JOIN tv v USING (type) ORDER BY type;
+LOCATION:  exec_simple_query, postgres.c:938

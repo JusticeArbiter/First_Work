@@ -1,0 +1,1 @@
+INSERT INTO TEXT_TBL VALUES ('doh!');

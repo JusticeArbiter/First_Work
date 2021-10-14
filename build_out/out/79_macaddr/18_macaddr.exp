@@ -1,0 +1,4 @@
+CREATE INDEX macaddr_data_hash ON macaddr_data USING hash (b);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+WARNING:  01000: hash indexes are not WAL-logged and their use is discouraged
+CREATE INDEX

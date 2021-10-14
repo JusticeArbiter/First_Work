@@ -1,0 +1,1 @@
+CREATE TEMP VIEW ucview AS SELECT * FROM uctest;

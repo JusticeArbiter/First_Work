@@ -1,0 +1,6 @@
+select textrange_c('A','Z') @> 'b'::text;
+ ?column? 
+----------
+ f
+(1 row)
+

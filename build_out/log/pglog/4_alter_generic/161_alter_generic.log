@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf4 USING btree ADD FUNCTION 6 btint42cmp(int4, int2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P17: invalid procedure number 6, must be between 1 and 2
+LOCATION:  AlterOpFamilyAdd, opclasscmds.c:912
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf4 USING btree ADD FUNCTION 6 btint42cmp(int4, int2);

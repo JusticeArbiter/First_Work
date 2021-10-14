@@ -1,0 +1,3 @@
+create index matest0i on matest0 (b, c);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+CREATE INDEX

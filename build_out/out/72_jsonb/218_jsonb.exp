@@ -1,0 +1,6 @@
+SELECT jsonb_typeof('false') AS boolean;
+ boolean 
+---------
+ boolean
+(1 row)
+

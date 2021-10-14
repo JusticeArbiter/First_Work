@@ -1,0 +1,2 @@
+DROP AGGREGATE test_aggregate_exists(*);
+ERROR:  42883: aggregate test_aggregate_exists(*) does not exist

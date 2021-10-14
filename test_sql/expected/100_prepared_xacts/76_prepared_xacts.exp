@@ -1,0 +1,4 @@
+SELECT * FROM pxtest3;
+ERROR:  42P01: relation "pxtest3" does not exist
+LINE 1: SELECT * FROM pxtest3;
+                      ^

@@ -1,0 +1,6 @@
+LOG:  00000: statement: select foreach_test(ARRAY[[1,2],[3,4]]);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: FOREACH ... SLICE loop variable must be of an array type
+CONTEXT:  PL/pgSQL function foreach_test(anyarray) line 1 at FOREACH over array
+LOCATION:  exec_stmt_foreach_a, pl_exec.c:2380
+STATEMENT:  select foreach_test(ARRAY[[1,2],[3,4]]);

@@ -1,0 +1,19 @@
+explain (verbose, costs off)  select s1, s2, sm  from generate_series(1, 3) s1,  lateral (select s2, sum(s1 + s2) sm  from generate_series(1, 3) s2 group by s2) ss  order by 1, 2;
+                            QUERY PLAN                            
+------------------------------------------------------------------
+ Sort
+   Output: s1.s1, s2.s2, (sum((s1.s1 + s2.s2)))
+   Sort Key: s1.s1, s2.s2
+   ->  Nested Loop
+         Output: s1.s1, s2.s2, (sum((s1.s1 + s2.s2)))
+         ->  Function Scan on pg_catalog.generate_series s1
+               Output: s1.s1
+               Function Call: generate_series(1, 3)
+         ->  HashAggregate
+               Output: s2.s2, sum((s1.s1 + s2.s2))
+               Group Key: s2.s2
+               ->  Function Scan on pg_catalog.generate_series s2
+                     Output: s2.s2
+                     Function Call: generate_series(1, 3)
+(14 rows)
+

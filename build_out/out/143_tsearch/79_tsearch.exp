@@ -1,0 +1,6 @@
+SELECT to_tsquery('english', '''the wether'':dc & '' sKies '':BC ');
+       to_tsquery       
+------------------------
+ 'wether':CD & 'sky':BC
+(1 row)
+

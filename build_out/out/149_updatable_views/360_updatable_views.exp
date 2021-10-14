@@ -1,0 +1,4 @@
+ALTER VIEW rw_view1 SET (check_option=here);
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER VIEW
+ERROR:  22023: invalid value for "check_option" option
+DETAIL:  Valid values are "local" and "cascaded".

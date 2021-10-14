@@ -1,0 +1,6 @@
+LOG:  00000: statement: DROP ROLE alice;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: role "alice" cannot be dropped because some objects depend on it
+DETAIL:  privileges for table tbl1
+LOCATION:  DropRole, user.c:1027
+STATEMENT:  DROP ROLE alice;

@@ -1,0 +1,4 @@
+SELECT 'first line'  ' - next line'  ' - third line'  AS "Three lines to one";
+ERROR:  42601: syntax error at or near "' - next line'"
+LINE 1: SELECT 'first line'  ' - next line'  ' - third line'  AS "Th...
+                             ^

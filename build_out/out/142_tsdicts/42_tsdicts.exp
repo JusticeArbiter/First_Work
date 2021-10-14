@@ -1,0 +1,6 @@
+SELECT to_tsquery('ispell_tst', 'footballklubber');
+                                  to_tsquery                                  
+------------------------------------------------------------------------------
+ ( 'footballklubber' | 'foot' & 'ball' & 'klubber' ) | 'football' & 'klubber'
+(1 row)
+

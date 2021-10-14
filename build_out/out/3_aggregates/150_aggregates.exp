@@ -1,0 +1,4 @@
+select * from agg_view1;
+ERROR:  42P01: relation "agg_view1" does not exist
+LINE 1: select * from agg_view1;
+                      ^

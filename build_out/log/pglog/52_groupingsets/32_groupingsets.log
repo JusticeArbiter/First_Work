@@ -1,0 +1,5 @@
+LOG:  00000: statement: select a, b, grouping(a, b), sum(t1.v), max(t2.c)  from gstest1 t1 join gstest2 t2 using (a,b)  group by grouping sets ((a, b), ());
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "gstest1" does not exist at character 57
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select a, b, grouping(a, b), sum(t1.v), max(t2.c)  from gstest1 t1 join gstest2 t2 using (a,b)  group by grouping sets ((a, b), ());

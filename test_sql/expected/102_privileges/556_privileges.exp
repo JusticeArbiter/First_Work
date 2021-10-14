@@ -1,0 +1,4 @@
+DROP SCHEMA testns CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SCHEMA
+NOTICE:  00000: drop cascades to table testns.acltest1
+DROP SCHEMA

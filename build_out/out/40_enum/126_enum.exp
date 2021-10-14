@@ -1,0 +1,2 @@
+ALTER TYPE bogus RENAME TO bogon;
+ALTER TYPE

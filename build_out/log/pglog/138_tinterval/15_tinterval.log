@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS three, t.*  FROM TINTERVAL_TBL t  WHERE t.f1 #>= '@ 3 years';
+LOCATION:  exec_simple_query, postgres.c:938

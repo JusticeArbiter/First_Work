@@ -1,0 +1,4 @@
+INSERT INTO ABSTIME_TBL (f1) VALUES ('Feb 28, 1984 25:08:10');
+ERROR:  22008: date/time field value out of range: "Feb 28, 1984 25:08:10"
+LINE 1: INSERT INTO ABSTIME_TBL (f1) VALUES ('Feb 28, 1984 25:08:10'...
+                                             ^

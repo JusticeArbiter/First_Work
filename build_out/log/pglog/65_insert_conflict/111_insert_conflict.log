@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into insertconflict values (1, 2)  on conflict (coalesce(a, 0)) do nothing;
+LOCATION:  exec_simple_query, postgres.c:938

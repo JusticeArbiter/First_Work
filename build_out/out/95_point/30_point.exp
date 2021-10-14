@@ -1,0 +1,4 @@
+INSERT INTO point_gist_tbl VALUES ('(0.0000009,0.0000009)');
+ERROR:  42P01: relation "point_gist_tbl" does not exist
+LINE 1: INSERT INTO point_gist_tbl VALUES ('(0.0000009,0.0000009)');
+                    ^

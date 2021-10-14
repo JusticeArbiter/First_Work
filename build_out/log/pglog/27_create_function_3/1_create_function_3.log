@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE USER regtest_unpriv_user;
+LOCATION:  exec_simple_query, postgres.c:938

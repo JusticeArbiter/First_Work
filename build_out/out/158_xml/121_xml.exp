@@ -1,0 +1,6 @@
+SELECT xpath('/nosuchtag', '<root/>');
+ xpath 
+-------
+ {}
+(1 row)
+

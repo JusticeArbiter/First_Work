@@ -1,0 +1,2 @@
+select array_agg('{}'::int[]) from generate_series(1,2);
+ERROR:  2202E: cannot accumulate empty arrays

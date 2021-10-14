@@ -1,0 +1,6 @@
+select (dfunc()).*;
+  _a   | _c 
+-------+----
+ def a |   
+(1 row)
+

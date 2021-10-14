@@ -1,0 +1,9 @@
+SELECT count(c) FROM test_missing_target  GROUP BY lower(test_missing_target.c)  ORDER BY lower(test_missing_target.c);
+ count 
+-------
+     2
+     3
+     4
+     1
+(4 rows)
+

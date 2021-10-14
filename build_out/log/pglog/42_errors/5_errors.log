@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from pg_database where nonesuch = pg_database.datname;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "nonesuch" does not exist at character 33
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select * from pg_database where nonesuch = pg_database.datname;

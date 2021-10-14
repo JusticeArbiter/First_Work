@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT rank() OVER (ORDER BY length('abc'));
+LOCATION:  exec_simple_query, postgres.c:938

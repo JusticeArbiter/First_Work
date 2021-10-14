@@ -1,0 +1,6 @@
+select format('>>%1$-10I<<', 'Hello');
+     format     
+----------------
+ >>"Hello"   <<
+(1 row)
+

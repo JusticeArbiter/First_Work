@@ -1,0 +1,9 @@
+SELECT substr(f1, -1, 5) from toasttest;
+  substr  
+----------
+ \x313233
+ \x313233
+ \x313233
+ \x313233
+(4 rows)
+

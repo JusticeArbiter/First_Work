@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter domain con add constraint t check (VALUE < 1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: column "col1" of table "domcontest" contains values that violate the new constraint
+LOCATION:  validateDomainConstraint, typecmds.c:2757
+STATEMENT:  alter domain con add constraint t check (VALUE < 1);

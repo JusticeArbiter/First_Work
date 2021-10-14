@@ -1,0 +1,5 @@
+LOG:  00000: statement: select '[2010-01-01 01:00:00 -08, 2010-01-01 02:00:00 -05)'::tstzrange;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22000: range lower bound must be less than or equal to range upper bound at character 8
+LOCATION:  range_serialize, rangetypes.c:1543
+STATEMENT:  select '[2010-01-01 01:00:00 -08, 2010-01-01 02:00:00 -05)'::tstzrange;

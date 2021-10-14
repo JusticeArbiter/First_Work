@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO num_exp_power_10_ln VALUES (4,'7405685069594999.07733999469386277636');
+LOCATION:  exec_simple_query, postgres.c:938

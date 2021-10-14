@@ -1,0 +1,10 @@
+SELECT * FROM clustertest;
+ key 
+-----
+  20
+  30
+ 100
+  35
+  80
+(5 rows)
+

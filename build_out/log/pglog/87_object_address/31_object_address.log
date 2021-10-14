@@ -1,0 +1,20 @@
+LOG:  00000: statement: DO $$  DECLARE  objtype text;  BEGIN  FOR objtype IN VALUES ('toast table'), ('index column'), ('sequence column'),  ('toast table column'), ('view column'), ('materialized view column')  LOOP  BEGIN  PERFORM pg_get_object_address(objtype, '{one}', '{}');  EXCEPTION WHEN invalid_parameter_value THEN  RAISE WARNING 'error for %: %', objtype, sqlerrm;  END;  END LOOP;  END;  $$;
+LOCATION:  exec_simple_query, postgres.c:938
+WARNING:  01000: error for toast table: unsupported object type "toast table"
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE  objtype text;  BEGIN  FOR objtype IN VALUES ('toast table'), ('index column'), ('sequence column'),  ('toast table column'), ('view column'), ('materialized view column')  LOOP  BEGIN  PERFORM pg_get_object_address(objtype, '{one}', '{}');  EXCEPTION WHEN invalid_parameter_value THEN  RAISE WARNING 'error for %: %', objtype, sqlerrm;  END;  END LOOP;  END;  $$;
+WARNING:  01000: error for index column: unsupported object type "index column"
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE  objtype text;  BEGIN  FOR objtype IN VALUES ('toast table'), ('index column'), ('sequence column'),  ('toast table column'), ('view column'), ('materialized view column')  LOOP  BEGIN  PERFORM pg_get_object_address(objtype, '{one}', '{}');  EXCEPTION WHEN invalid_parameter_value THEN  RAISE WARNING 'error for %: %', objtype, sqlerrm;  END;  END LOOP;  END;  $$;
+WARNING:  01000: error for sequence column: unsupported object type "sequence column"
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE  objtype text;  BEGIN  FOR objtype IN VALUES ('toast table'), ('index column'), ('sequence column'),  ('toast table column'), ('view column'), ('materialized view column')  LOOP  BEGIN  PERFORM pg_get_object_address(objtype, '{one}', '{}');  EXCEPTION WHEN invalid_parameter_value THEN  RAISE WARNING 'error for %: %', objtype, sqlerrm;  END;  END LOOP;  END;  $$;
+WARNING:  01000: error for toast table column: unsupported object type "toast table column"
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE  objtype text;  BEGIN  FOR objtype IN VALUES ('toast table'), ('index column'), ('sequence column'),  ('toast table column'), ('view column'), ('materialized view column')  LOOP  BEGIN  PERFORM pg_get_object_address(objtype, '{one}', '{}');  EXCEPTION WHEN invalid_parameter_value THEN  RAISE WARNING 'error for %: %', objtype, sqlerrm;  END;  END LOOP;  END;  $$;
+WARNING:  01000: error for view column: unsupported object type "view column"
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE  objtype text;  BEGIN  FOR objtype IN VALUES ('toast table'), ('index column'), ('sequence column'),  ('toast table column'), ('view column'), ('materialized view column')  LOOP  BEGIN  PERFORM pg_get_object_address(objtype, '{one}', '{}');  EXCEPTION WHEN invalid_parameter_value THEN  RAISE WARNING 'error for %: %', objtype, sqlerrm;  END;  END LOOP;  END;  $$;
+WARNING:  01000: error for materialized view column: unsupported object type "materialized view column"
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DO $$  DECLARE  objtype text;  BEGIN  FOR objtype IN VALUES ('toast table'), ('index column'), ('sequence column'),  ('toast table column'), ('view column'), ('materialized view column')  LOOP  BEGIN  PERFORM pg_get_object_address(objtype, '{one}', '{}');  EXCEPTION WHEN invalid_parameter_value THEN  RAISE WARNING 'error for %: %', objtype, sqlerrm;  END;  END LOOP;  END;  $$;

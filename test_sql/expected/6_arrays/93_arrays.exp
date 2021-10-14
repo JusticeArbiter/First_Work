@@ -1,0 +1,2 @@
+SELECT array_position(ARRAY[[1,2],[3,4]], 3);
+ERROR:  0A000: searching for elements in multidimensional arrays is not supported

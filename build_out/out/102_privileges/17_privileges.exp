@@ -1,0 +1,2 @@
+CREATE USER regressuser5;
+ERROR:  42710: role "regressuser5" already exists

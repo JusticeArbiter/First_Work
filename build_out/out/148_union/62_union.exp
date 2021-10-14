@@ -1,0 +1,5 @@
+CREATE TEMP TABLE t2c (primary key (ab)) INHERITS (t2);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+ERROR:  42703: column "ab" named in key does not exist
+LINE 1: CREATE TEMP TABLE t2c (primary key (ab)) INHERITS (t2);
+                               ^

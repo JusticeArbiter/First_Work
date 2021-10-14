@@ -1,0 +1,5 @@
+LOG:  00000: statement: DECLARE tablesample_cur CURSOR FOR  SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (50) REPEATABLE (0);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks
+LOCATION:  CheckTransactionChain, xact.c:3222
+STATEMENT:  DECLARE tablesample_cur CURSOR FOR  SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (50) REPEATABLE (0);

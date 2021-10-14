@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT date '1991-02-03' - time with time zone '04:05:06 UTC' AS "Subtract Time UTC";
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: operator does not exist: date - time with time zone at character 26
+HINT:  No operator matches the given name and argument type(s). You might need to add explicit type casts.
+LOCATION:  op_error, parse_oper.c:726
+STATEMENT:  SELECT date '1991-02-03' - time with time zone '04:05:06 UTC' AS "Subtract Time UTC";

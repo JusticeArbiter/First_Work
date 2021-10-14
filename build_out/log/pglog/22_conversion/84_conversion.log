@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT CONVERT('Postgres \321\201\320\273\320\276\320\275 \360\237\220\230 \350\261\241 \303\251le\314\201phant', 'UTF-8', 'GB18030');
+LOCATION:  exec_simple_query, postgres.c:938

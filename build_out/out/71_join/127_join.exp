@@ -1,0 +1,4 @@
+INSERT INTO t3 VALUES (500, 100);
+ERROR:  42P01: relation "t3" does not exist
+LINE 1: INSERT INTO t3 VALUES (500, 100);
+                    ^

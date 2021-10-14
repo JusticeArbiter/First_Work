@@ -1,0 +1,6 @@
+select remainder(10.1::numeric,3.1::numeric);
+ remainder 
+-----------
+       0.8
+(1 row)
+

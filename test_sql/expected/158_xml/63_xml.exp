@@ -1,0 +1,3 @@
+SELECT xmlpi(name xml, null);
+ERROR:  42601: invalid XML processing instruction
+DETAIL:  XML processing instruction target name cannot be "xml".

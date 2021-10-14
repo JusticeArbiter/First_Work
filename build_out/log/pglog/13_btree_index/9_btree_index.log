@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT b.*  FROM bt_txt_heap b  WHERE b.seqno = '4500'::text;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "bt_txt_heap" does not exist at character 18
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT b.*  FROM bt_txt_heap b  WHERE b.seqno = '4500'::text;

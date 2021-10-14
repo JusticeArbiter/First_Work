@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from  int8_tbl x join (int4_tbl x cross join int4_tbl y) j on q1 = f1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42702: column reference "f1" is ambiguous at character 77
+LOCATION:  scanRTEForColumn, parse_relation.c:670
+STATEMENT:  select * from  int8_tbl x join (int4_tbl x cross join int4_tbl y) j on q1 = f1;

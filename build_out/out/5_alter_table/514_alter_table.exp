@@ -1,0 +1,2 @@
+insert into def_view_test default values;
+INSERT 0 1

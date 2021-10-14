@@ -1,0 +1,2 @@
+ALTER TABLE tmp ADD COLUMN n oidvector;
+ALTER TABLE

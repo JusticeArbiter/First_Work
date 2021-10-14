@@ -1,0 +1,2 @@
+alter table atacc1 alter "........pg.dropped.1........" drop default;
+ERROR:  42703: column "........pg.dropped.1........" of relation "atacc1" does not exist

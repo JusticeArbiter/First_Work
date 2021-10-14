@@ -1,0 +1,5 @@
+LOG:  00000: statement: EXECUTE q3(5::smallint, 10.5::float, false, 500::oid, 4::bigint, 'bytea');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  26000: prepared statement "q3" does not exist
+LOCATION:  FetchPreparedStatement, prepare.c:504
+STATEMENT:  EXECUTE q3(5::smallint, 10.5::float, false, 500::oid, 4::bigint, 'bytea');

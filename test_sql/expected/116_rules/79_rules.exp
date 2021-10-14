@@ -1,0 +1,10 @@
+select * from rtest_v1 where b isnull;
+ a | b 
+---+---
+ 1 |  
+ 2 |  
+ 3 |  
+ 4 |  
+ 5 |  
+(5 rows)
+

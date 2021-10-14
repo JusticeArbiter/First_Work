@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER FUNCTION alt_func3(int) RENAME TO alt_func4;
+LOCATION:  exec_simple_query, postgres.c:938

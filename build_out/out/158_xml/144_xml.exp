@@ -1,0 +1,6 @@
+SELECT COUNT(id) FROM xmltest, query WHERE xmlexists(expr PASSING BY REF data);
+ count 
+-------
+     2
+(1 row)
+

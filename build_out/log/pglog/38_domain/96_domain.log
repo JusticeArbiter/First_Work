@@ -1,0 +1,2 @@
+LOG:  00000: statement: create domain dcheck varchar(15) NOT NULL CHECK (VALUE = 'a' OR VALUE = 'c' OR VALUE = 'd');
+LOCATION:  exec_simple_query, postgres.c:938

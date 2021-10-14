@@ -1,0 +1,12 @@
+SELECT mvtest_func();
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE MATERIALIZED VIEW
+CONTEXT:  SQL statement "CREATE MATERIALIZED VIEW mvtest1 AS SELECT 1 AS x"
+PL/pgSQL function mvtest_func() line 1 at SQL statement
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE MATERIALIZED VIEW
+CONTEXT:  SQL statement "CREATE MATERIALIZED VIEW mvtest2 AS SELECT 1 AS x WITH NO DATA"
+PL/pgSQL function mvtest_func() line 1 at SQL statement
+ mvtest_func 
+-------------
+ 
+(1 row)
+

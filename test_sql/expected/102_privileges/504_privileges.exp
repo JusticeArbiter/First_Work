@@ -1,0 +1,2 @@
+SELECT lo_export(1001, '/dev/null');
+ERROR:  42704: large object 1001 does not exist

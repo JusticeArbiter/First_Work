@@ -1,0 +1,6 @@
+SELECT 'bear' LIKE 'b_ear' ESCAPE '_' AS "true";
+ true 
+------
+ t
+(1 row)
+

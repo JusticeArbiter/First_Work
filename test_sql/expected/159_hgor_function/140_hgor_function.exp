@@ -1,0 +1,6 @@
+select least('a','A','b','B');
+ least 
+-------
+ a
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH RECURSIVE t AS (  INSERT INTO y  SELECT * FROM t  )  VALUES(FALSE);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P19: recursive query "t" must not contain data-modifying statements at character 16
+LOCATION:  checkWellFormedRecursion, parse_cte.c:653
+STATEMENT:  WITH RECURSIVE t AS (  INSERT INTO y  SELECT * FROM t  )  VALUES(FALSE);

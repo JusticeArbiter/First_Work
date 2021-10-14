@@ -1,0 +1,9 @@
+SELECT count(*) FROM test_missing_target GROUP BY b ORDER BY b;
+ count 
+-------
+     1
+     2
+     3
+     4
+(4 rows)
+

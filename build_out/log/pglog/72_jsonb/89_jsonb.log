@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT jsonb_object_keys(test_json) FROM test_jsonb WHERE json_type = 'scalar';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "test_jsonb" does not exist at character 42
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT jsonb_object_keys(test_json) FROM test_jsonb WHERE json_type = 'scalar';

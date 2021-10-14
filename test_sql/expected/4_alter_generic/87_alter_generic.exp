@@ -1,0 +1,2 @@
+ALTER LANGUAGE alt_lang2 OWNER TO regtest_alter_user3;
+ERROR:  42704: language "alt_lang2" does not exist

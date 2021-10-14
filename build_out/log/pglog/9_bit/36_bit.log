@@ -1,0 +1,5 @@
+LOG:  00000: statement: select B'0010' # B'011101';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22026: cannot XOR bit strings of different sizes
+LOCATION:  bitxor, varbit.c:1315
+STATEMENT:  select B'0010' # B'011101';

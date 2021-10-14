@@ -1,0 +1,4 @@
+INSERT INTO OID_TBL(f1) VALUES ('');
+ERROR:  22P02: invalid input syntax for type oid: ""
+LINE 1: INSERT INTO OID_TBL(f1) VALUES ('');
+                                        ^

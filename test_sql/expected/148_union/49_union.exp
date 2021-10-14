@@ -1,0 +1,4 @@
+SELECT '3.4'::numeric UNION SELECT 'foo';
+ERROR:  22P02: invalid input syntax for type numeric: "foo"
+LINE 1: SELECT '3.4'::numeric UNION SELECT 'foo';
+                                           ^

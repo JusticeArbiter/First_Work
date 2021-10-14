@@ -1,0 +1,2 @@
+COPY x TO stdout;
+ERROR:  42P01: relation "x" does not exist

@@ -1,0 +1,3 @@
+CREATE SEQUENCE seq3;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SEQUENCE
+ERROR:  42P07: relation "seq3" already exists

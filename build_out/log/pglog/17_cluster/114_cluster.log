@@ -1,0 +1,5 @@
+LOG:  00000: statement: cluster clstr_temp using clstr_temp_pkey;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "clstr_temp" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  cluster clstr_temp using clstr_temp_pkey;

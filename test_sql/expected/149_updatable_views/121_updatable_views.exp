@@ -1,0 +1,9 @@
+SELECT table_name, column_name, is_updatable  FROM information_schema.columns  WHERE table_name LIKE 'rw_view%'  ORDER BY table_name, ordinal_position;
+ table_name | column_name | is_updatable 
+------------+-------------+--------------
+ rw_view1   | a           | NO
+ rw_view1   | b           | NO
+ rw_view2   | a           | NO
+ rw_view2   | b           | NO
+(4 rows)
+

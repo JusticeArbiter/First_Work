@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE GROUP regressgroup2 WITH USER regressuser1, regressuser2;
+LOCATION:  exec_simple_query, postgres.c:938

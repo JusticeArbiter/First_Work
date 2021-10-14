@@ -1,0 +1,2 @@
+SELECT (-32768)::int2 / (-1)::int2;
+ERROR:  22003: smallint out of range

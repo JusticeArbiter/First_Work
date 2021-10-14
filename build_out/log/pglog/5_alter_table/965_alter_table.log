@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter table alterlock cluster on alterlock_pkey;
+LOCATION:  exec_simple_query, postgres.c:938

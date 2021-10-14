@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT pg_get_object_address('tablespace', '{one,two}', '{}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: tablespace name cannot be qualified
+LOCATION:  get_object_address_unqualified, objectaddress.c:1053
+STATEMENT:  SELECT pg_get_object_address('tablespace', '{one,two}', '{}');

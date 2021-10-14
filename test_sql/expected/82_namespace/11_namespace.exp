@@ -1,0 +1,4 @@
+CREATE SCHEMA IF NOT EXISTS test_schema_renamed;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SCHEMA
+NOTICE:  42P06: schema "test_schema_renamed" already exists, skipping
+CREATE SCHEMA

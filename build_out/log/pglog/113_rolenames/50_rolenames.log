@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER USER testrol2 WITH NOREPLICATION;
+LOCATION:  exec_simple_query, postgres.c:938

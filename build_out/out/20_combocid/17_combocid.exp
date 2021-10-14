@@ -1,0 +1,4 @@
+UPDATE combocidtest SET foobar = foobar + 10;
+ERROR:  42P01: relation "combocidtest" does not exist
+LINE 1: UPDATE combocidtest SET foobar = foobar + 10;
+               ^

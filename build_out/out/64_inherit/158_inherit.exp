@@ -1,0 +1,6 @@
+select p2text(c1.*) from c1;
+ p2text 
+--------
+ hi
+(1 row)
+

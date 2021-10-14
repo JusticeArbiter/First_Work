@@ -1,0 +1,6 @@
+SELECT date 'J1520447' AS "Confucius' Birthday";
+ Confucius' Birthday 
+---------------------
+ 0551-09-28 BC
+(1 row)
+

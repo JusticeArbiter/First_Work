@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT jsonb '{ "a": "\ude04X" }' -> 'a';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type json at character 14
+DETAIL:  Unicode low surrogate must follow a high surrogate.
+CONTEXT:  JSON data, line 1: { "a":...
+LOCATION:  json_lex_string, json.c:854
+STATEMENT:  SELECT jsonb '{ "a": "\ude04X" }' -> 'a';

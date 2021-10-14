@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '-10e400'::float8;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: "-10e400" is out of range for type double precision at character 8
+LOCATION:  float8in, float.c:483
+STATEMENT:  SELECT '-10e400'::float8;

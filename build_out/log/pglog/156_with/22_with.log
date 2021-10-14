@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO department VALUES (7, 5, 'G');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "department" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  INSERT INTO department VALUES (7, 5, 'G');

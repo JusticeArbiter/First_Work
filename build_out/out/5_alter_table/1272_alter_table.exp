@@ -1,0 +1,6 @@
+SHOW allow_system_table_mods;
+ allow_system_table_mods 
+-------------------------
+ off
+(1 row)
+

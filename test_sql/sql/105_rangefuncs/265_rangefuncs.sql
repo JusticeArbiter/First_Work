@@ -1,0 +1,1 @@
+SELECT * FROM foo() GROUP BY 1;

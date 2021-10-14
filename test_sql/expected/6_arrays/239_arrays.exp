@@ -1,0 +1,6 @@
+select array_fill(null::text, array[3,3]);
+                      array_fill                      
+------------------------------------------------------
+ {{NULL,NULL,NULL},{NULL,NULL,NULL},{NULL,NULL,NULL}}
+(1 row)
+

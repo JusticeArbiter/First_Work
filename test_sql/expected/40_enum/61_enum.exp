@@ -1,0 +1,7 @@
+SELECT * FROM enumtest WHERE col >= 'yellow' ORDER BY col;
+  col   
+--------
+ yellow
+ green
+(2 rows)
+

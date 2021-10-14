@@ -1,0 +1,5 @@
+CREATE TABLE stud_emp (  percent int4  ) INHERITS (emp, student);
+NOTICE:  00000: merging multiple inherited definitions of column "name"
+NOTICE:  00000: merging multiple inherited definitions of column "age"
+NOTICE:  00000: merging multiple inherited definitions of column "location"
+CREATE TABLE

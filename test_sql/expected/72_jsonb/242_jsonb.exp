@@ -1,0 +1,2 @@
+SELECT jsonb_build_object(VARIADIC ARRAY[NULL, 'a']::text[]);
+ERROR:  22023: argument 1: key must not be null

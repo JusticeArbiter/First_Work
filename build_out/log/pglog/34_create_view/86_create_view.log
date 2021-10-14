@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW tt1 AS  SELECT * FROM (  VALUES  ('abc'::varchar(3), '0123456789', 42, 'abcd'::varchar(4)),  ('0123456789', 'abc'::varchar(3), 42.12, 'abc'::varchar(4))  ) vv(a,b,c,d);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P07: relation "tt1" already exists
+LOCATION:  heap_create_with_catalog, heap.c:1066
+STATEMENT:  CREATE VIEW tt1 AS  SELECT * FROM (  VALUES  ('abc'::varchar(3), '0123456789', 42, 'abcd'::varchar(4)),  ('0123456789', 'abc'::varchar(3), 42.12, 'abc'::varchar(4))  ) vv(a,b,c,d);

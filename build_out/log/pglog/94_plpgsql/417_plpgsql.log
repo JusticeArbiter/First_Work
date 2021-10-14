@@ -1,0 +1,8 @@
+LOG:  00000: statement: create function bad_sql2() returns int as $$  declare r record;  begin  for r in select I fought the law, the law won LOOP  raise notice 'in loop';  end loop;  return 5;  end;$$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function bad_sql2() returns int as $$  declare r record;  begin  for r in select I fought the law, the law won LOOP  raise notice 'in loop';  end loop;  return 5;  end;$$ language plpgsql;
+ERROR:  42601: syntax error at or near "the" at character 98
+LOCATION:  scanner_yyerror, scan.l:1082
+STATEMENT:  create function bad_sql2() returns int as $$  declare r record;  begin  for r in select I fought the law, the law won LOOP  raise notice 'in loop';  end loop;  return 5;  end;$$ language plpgsql;

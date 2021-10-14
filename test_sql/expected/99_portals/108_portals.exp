@@ -1,0 +1,6 @@
+SELECT declares_cursor('AB%');
+ declares_cursor 
+-----------------
+ 
+(1 row)
+

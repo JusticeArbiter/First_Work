@@ -1,0 +1,12 @@
+explain (costs off)  select * from generate_series(100,200) g,  lateral (select * from int8_tbl a where g = q1 union all  select * from int8_tbl b where g = q2) ss;
+                QUERY PLAN                
+------------------------------------------
+ Nested Loop
+   ->  Function Scan on generate_series g
+   ->  Append
+         ->  Seq Scan on int8_tbl a
+               Filter: (g.g = q1)
+         ->  Seq Scan on int8_tbl b
+               Filter: (g.g = q2)
+(7 rows)
+

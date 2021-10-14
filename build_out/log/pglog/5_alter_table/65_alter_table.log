@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE tmp RENAME TO tmp_new;
+LOCATION:  exec_simple_query, postgres.c:938

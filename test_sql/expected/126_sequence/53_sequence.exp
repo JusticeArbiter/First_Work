@@ -1,0 +1,3 @@
+CREATE TEMP TABLE t1 (  f1 serial,  f2 int DEFAULT nextval('myseq2'),  f3 int DEFAULT nextval('myseq3'::text)  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+ERROR:  42P01: relation "myseq2" does not exist

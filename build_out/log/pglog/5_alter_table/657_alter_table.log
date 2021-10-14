@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table renameColumnChild rename column a to d;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: cannot rename inherited column "a"
+LOCATION:  renameatt_internal, tablecmds.c:2307
+STATEMENT:  alter table renameColumnChild rename column a to d;

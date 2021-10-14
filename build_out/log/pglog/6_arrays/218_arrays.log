@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT max(f1), min(f1), max(f2), min(f2), max(f3), min(f3) FROM arraggtest;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "arraggtest" does not exist at character 66
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT max(f1), min(f1), max(f2), min(f2), max(f3), min(f3) FROM arraggtest;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE FUNCTION casttesttype_in(cstring)  RETURNS casttesttype  AS 'textin'  LANGUAGE internal STRICT IMMUTABLE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  42809: return type casttesttype is only a shell
+LOCATION:  compute_return_type, functioncmds.c:105
+STATEMENT:  CREATE FUNCTION casttesttype_in(cstring)  RETURNS casttesttype  AS 'textin'  LANGUAGE internal STRICT IMMUTABLE;

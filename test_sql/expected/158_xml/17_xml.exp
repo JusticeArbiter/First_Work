@@ -1,0 +1,6 @@
+SELECT xmlconcat(NULL);
+ xmlconcat 
+-----------
+ 
+(1 row)
+

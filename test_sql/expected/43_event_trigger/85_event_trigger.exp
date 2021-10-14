@@ -1,0 +1,4 @@
+ALTER TABLE evttrig.one ALTER COLUMN col_b DROP DEFAULT;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+NOTICE:  00000: NORMAL: orig=t normal=f istemp=f type=default value identity=for evttrig.one.col_b name={evttrig,one,col_b} args={}
+ALTER TABLE

@@ -1,0 +1,5 @@
+LOG:  00000: statement: DELETE FROM t3 USING t1 table1 WHERE t3.x = table1.a;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "t3" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  DELETE FROM t3 USING t1 table1 WHERE t3.x = table1.a;

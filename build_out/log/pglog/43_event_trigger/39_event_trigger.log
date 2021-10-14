@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter event trigger regress_event_trigger rename to regress_event_trigger2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: event trigger "regress_event_trigger2" already exists
+LOCATION:  report_name_conflict, alter.c:98
+STATEMENT:  alter event trigger regress_event_trigger rename to regress_event_trigger2;

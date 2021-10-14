@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE rls_t1 FORCE ROW LEVEL SECURITY;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,4 @@
+SELECT regrole('regtestrole');
+ERROR:  42704: role "regtestrole" does not exist
+LINE 1: SELECT regrole('regtestrole');
+                       ^

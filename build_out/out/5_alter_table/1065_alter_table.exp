@@ -1,0 +1,6 @@
+select alter2.plus1(41);
+ plus1 
+-------
+    42
+(1 row)
+

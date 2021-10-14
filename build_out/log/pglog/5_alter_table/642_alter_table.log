@@ -1,0 +1,5 @@
+LOG:  00000: statement: copy test("........pg.dropped.1........") from stdin;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "........pg.dropped.1........" of relation "test" does not exist
+LOCATION:  CopyGetAttnums, copy.c:4445
+STATEMENT:  copy test("........pg.dropped.1........") from stdin;

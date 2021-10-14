@@ -1,0 +1,6 @@
+select format('>>%-10s<<', NULL);
+     format     
+----------------
+ >>          <<
+(1 row)
+

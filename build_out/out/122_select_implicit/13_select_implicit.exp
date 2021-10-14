@@ -1,0 +1,11 @@
+SELECT count(*) FROM test_missing_target GROUP BY test_missing_target.c ORDER BY c;
+ count 
+-------
+     2
+     1
+     2
+     2
+     2
+     1
+(6 rows)
+

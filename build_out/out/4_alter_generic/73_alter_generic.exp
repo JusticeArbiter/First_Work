@@ -1,0 +1,2 @@
+ALTER FOREIGN DATA WRAPPER alt_fdw1 RENAME TO alt_fdw2;
+ERROR:  42710: foreign-data wrapper "alt_fdw2" already exists

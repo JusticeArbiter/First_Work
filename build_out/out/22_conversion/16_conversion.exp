@@ -1,0 +1,6 @@
+SELECT CONVERT('foo', 'MULE_INTERNAL', 'KOI8R');
+ convert  
+----------
+ \x666f6f
+(1 row)
+

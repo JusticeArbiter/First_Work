@@ -1,0 +1,13 @@
+SELECT enumlabel, enumsortorder  FROM pg_enum  WHERE enumtypid = 'planets'::regtype  ORDER BY enumlabel::planets;
+ enumlabel | enumsortorder 
+-----------+---------------
+ mercury   |             0
+ venus     |             1
+ earth     |             2
+ mars      |             3
+ jupiter   |          3.25
+ saturn    |           3.5
+ uranus    |             4
+ neptune   |             5
+(8 rows)
+

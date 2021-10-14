@@ -1,0 +1,9 @@
+SELECT a, b, char_length(c) FROM update_test;
+ a  |  b  | char_length 
+----+-----+-------------
+ 21 | 101 |            
+    |     |            
+ 41 |  12 |       10000
+ 42 |  12 |       10000
+(4 rows)
+

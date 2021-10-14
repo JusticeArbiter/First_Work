@@ -1,0 +1,5 @@
+SELECT * FROM generate_series(1,2) r1, generate_series(r1,3) r2, ROWS FROM( foo_sql(10+r1,13), foo_mat(10+r2,13) );
+ERROR:  42883: function foo_sql(integer, integer) does not exist
+LINE 1: ...ies(1,2) r1, generate_series(r1,3) r2, ROWS FROM( foo_sql(10...
+                                                             ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

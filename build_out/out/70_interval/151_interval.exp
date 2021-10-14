@@ -1,0 +1,2 @@
+select make_interval(months := 'NaN'::float::int);
+ERROR:  22003: integer out of range

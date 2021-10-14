@@ -1,0 +1,16 @@
+SELECT DISTINCT p1.proargtypes[0], p2.proargtypes[0]  FROM pg_proc AS p1, pg_proc AS p2  WHERE p1.oid != p2.oid AND  p1.prosrc = p2.prosrc AND  p1.prolang = 12 AND p2.prolang = 12 AND  NOT p1.proisagg AND NOT p2.proisagg AND  p1.prosrc NOT LIKE E'range\\_constructor_' AND  p2.prosrc NOT LIKE E'range\\_constructor_' AND  (p1.proargtypes[0] < p2.proargtypes[0])  ORDER BY 1, 2;
+ proargtypes | proargtypes 
+-------------+-------------
+          20 |       19415
+          20 |       19419
+          23 |       18747
+          25 |        1042
+          25 |        1043
+          25 |       18135
+          25 |       18748
+        1114 |        1184
+        1560 |        1562
+       18135 |       18748
+       19415 |       19419
+(11 rows)
+

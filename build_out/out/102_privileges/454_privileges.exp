@@ -1,0 +1,6 @@
+SELECT has_sequence_privilege('regressuser1', 'x_seq', 'SELECT');
+ has_sequence_privilege 
+------------------------
+ f
+(1 row)
+

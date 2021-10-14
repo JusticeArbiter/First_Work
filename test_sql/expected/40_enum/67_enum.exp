@@ -1,0 +1,6 @@
+SELECT max(col) FROM enumtest;
+  max  
+-------
+ green
+(1 row)
+

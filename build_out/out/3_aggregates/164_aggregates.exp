@@ -1,0 +1,4 @@
+select string_agg(distinct f1, ',' order by f1) from varchar_tbl;
+ERROR:  42P01: relation "varchar_tbl" does not exist
+LINE 1: ...ect string_agg(distinct f1, ',' order by f1) from varchar_tb...
+                                                             ^

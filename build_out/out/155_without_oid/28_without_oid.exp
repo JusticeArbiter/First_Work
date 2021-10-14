@@ -1,0 +1,6 @@
+SELECT min(relpages) < max(relpages), min(reltuples) - max(reltuples) FROM pg_class  WHERE relname IN ('wi', 'wo');
+ ?column? | ?column? 
+----------+----------
+ t        |        0
+(1 row)
+

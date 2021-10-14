@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc2 add foreign key (id) references atacc1(a);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" referenced in foreign key constraint does not exist
+LOCATION:  transformColumnNameList, tablecmds.c:6989
+STATEMENT:  alter table atacc2 add foreign key (id) references atacc1(a);

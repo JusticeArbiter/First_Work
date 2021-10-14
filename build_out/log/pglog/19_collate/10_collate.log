@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE collate_test_fail (  a int COLLATE "C",  b text  );
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: collations are not supported by type integer at character 41
+LOCATION:  transformColumnType, parse_utilcmd.c:2741
+STATEMENT:  CREATE TABLE collate_test_fail (  a int COLLATE "C",  b text  );

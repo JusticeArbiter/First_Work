@@ -1,0 +1,6 @@
+LOG:  00000: statement: ALTER TYPE planets ADD VALUE  'plutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutopluto';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42602: invalid enum label "plutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutopluto"
+DETAIL:  Labels must be 63 characters or less.
+LOCATION:  AddEnumLabel, pg_enum.c:204
+STATEMENT:  ALTER TYPE planets ADD VALUE  'plutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutopluto';

@@ -1,0 +1,6 @@
+LOG:  00000: statement: COPY v_test1 TO STDOUT 
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: cannot copy from view "v_test1"
+HINT:  Try the COPY (SELECT ...) TO variant.
+LOCATION:  BeginCopyTo, copy.c:1703
+STATEMENT:  COPY v_test1 TO STDOUT 

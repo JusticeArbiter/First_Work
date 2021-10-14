@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT 1 AS one FROM test_having HAVING a > 1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42803: column "test_having.a" must appear in the GROUP BY clause or be used in an aggregate function at character 41
+LOCATION:  check_ungrouped_columns_walker, parse_agg.c:1328
+STATEMENT:  SELECT 1 AS one FROM test_having HAVING a > 1;

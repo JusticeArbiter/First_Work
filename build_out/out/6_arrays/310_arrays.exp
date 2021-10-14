@@ -1,0 +1,2 @@
+select array_remove('{{1,2,2},{1,4,3}}', 2);
+ERROR:  0A000: removing elements from multidimensional arrays is not supported

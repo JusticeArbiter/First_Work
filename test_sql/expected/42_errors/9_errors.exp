@@ -1,0 +1,2 @@
+drop table nonesuch;
+ERROR:  42P01: table "nonesuch" does not exist

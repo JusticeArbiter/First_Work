@@ -1,0 +1,9 @@
+SELECT i,COUNT(*) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)  FROM (VALUES(1,1),(2,2),(3,NULL),(4,NULL)) t(i,v);
+ i | count 
+---+-------
+ 1 |     4
+ 2 |     3
+ 3 |     2
+ 4 |     1
+(4 rows)
+

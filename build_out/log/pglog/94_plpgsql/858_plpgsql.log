@@ -1,0 +1,6 @@
+LOG:  00000: statement: do $$  declare var text := 'some value';  begin  assert 1=0, format('assertion failed, var = "%s"', var);  end;  $$;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  P0004: assertion failed, var = "some value"
+CONTEXT:  PL/pgSQL function inline_code_block line 1 at ASSERT
+LOCATION:  exec_stmt_assert, pl_exec.c:3279
+STATEMENT:  do $$  declare var text := 'some value';  begin  assert 1=0, format('assertion failed, var = "%s"', var);  end;  $$;

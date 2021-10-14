@@ -1,0 +1,4 @@
+WITH RECURSIVE subdepartment AS  (   SELECT * FROM department WHERE name = 'A'  )  SELECT * FROM subdepartment ORDER BY name;
+ERROR:  42P01: relation "department" does not exist
+LINE 1: ...ITH RECURSIVE subdepartment AS  (   SELECT * FROM department...
+                                                             ^

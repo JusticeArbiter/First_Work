@@ -1,0 +1,8 @@
+select * from rtest_v1;
+ a | b  
+---+----
+ 1 | 21
+ 2 | 22
+ 3 | 23
+(3 rows)
+

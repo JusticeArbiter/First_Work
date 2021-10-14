@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE USER MAPPING FOR USER SERVER sv3 OPTIONS (user 'USER');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE USER MAPPING
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE USER MAPPING FOR USER SERVER sv3 OPTIONS (user 'USER');

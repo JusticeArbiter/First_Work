@@ -1,0 +1,2 @@
+COPY forcetest (a, b, c) FROM STDIN WITH (FORMAT csv, FORCE_NULL(b), FORCE_NOT_NULL(c));
+ERROR:  42P01: relation "forcetest" does not exist

@@ -1,0 +1,1 @@
+create or replace function catch() returns void as $$  begin  raise notice '%', case_test(6);  exception  when case_not_found then  raise notice 'caught case_not_found % %', SQLSTATE, SQLERRM;  end  $$ language plpgsql;

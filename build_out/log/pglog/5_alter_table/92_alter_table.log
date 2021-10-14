@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW tmp_view (unique1) AS SELECT unique1 FROM tenk1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tenk1" does not exist at character 55
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE VIEW tmp_view (unique1) AS SELECT unique1 FROM tenk1;

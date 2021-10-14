@@ -1,0 +1,3 @@
+CREATE AGGREGATE myaggp07a(BASETYPE = anyelement, SFUNC = tfnp, STYPE = int[],  FINALFUNC = ffp, INITCOND = '{}');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE AGGREGATE
+ERROR:  42883: function tfnp(integer[], anyelement) does not exist

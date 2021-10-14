@@ -1,0 +1,6 @@
+select array_agg(array['Hello', i::text]) from generate_series(9,11) g(i);
+             array_agg             
+-----------------------------------
+ {{Hello,9},{Hello,10},{Hello,11}}
+(1 row)
+

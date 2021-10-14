@@ -1,0 +1,6 @@
+select array_length(array[1,2,3], 1);
+ array_length 
+--------------
+            3
+(1 row)
+

@@ -1,0 +1,4 @@
+with recursive q as (  select * from department  union all  (with x as (select * from q)  select * from x)  )  select * from q limit 24;
+ERROR:  42P01: relation "department" does not exist
+LINE 1: with recursive q as (  select * from department  union all  ...
+                                             ^

@@ -1,0 +1,4 @@
+select percentile_cont(0.5) within group (order by b), sum(b) from aggtest;
+ERROR:  42P01: relation "aggtest" does not exist
+LINE 1: ...le_cont(0.5) within group (order by b), sum(b) from aggtest;
+                                                               ^

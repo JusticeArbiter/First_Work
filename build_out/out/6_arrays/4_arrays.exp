@@ -1,0 +1,2 @@
+UPDATE arrtest SET e[1] = '2.2';
+UPDATE 1

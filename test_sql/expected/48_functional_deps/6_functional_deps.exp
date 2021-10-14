@@ -1,0 +1,4 @@
+SELECT id, keywords, title, body, created  FROM articles  GROUP BY keywords;
+ERROR:  42P01: relation "articles" does not exist
+LINE 1: SELECT id, keywords, title, body, created  FROM articles  GR...
+                                                        ^

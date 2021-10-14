@@ -1,0 +1,2 @@
+truncate table src;
+ERROR:  42P01: relation "src" does not exist

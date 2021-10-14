@@ -1,0 +1,6 @@
+SELECT NOT ARRAY[1.1,1.2,1.3] = ARRAY[1.1,1.2,1.3] AS "FALSE";
+ FALSE 
+-------
+ f
+(1 row)
+

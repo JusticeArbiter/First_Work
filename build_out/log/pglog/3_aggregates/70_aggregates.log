@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT  BOOL_OR(b1) AS "t",  BOOL_OR(b2) AS "t",  BOOL_OR(b3) AS "f",  BOOL_OR(b4) AS "n",  BOOL_OR(NOT b2) AS "f",  BOOL_OR(NOT b3) AS "t"  FROM bool_test;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "bool_test" does not exist at character 147
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT  BOOL_OR(b1) AS "t",  BOOL_OR(b2) AS "t",  BOOL_OR(b3) AS "f",  BOOL_OR(b4) AS "n",  BOOL_OR(NOT b2) AS "f",  BOOL_OR(NOT b3) AS "t"  FROM bool_test;

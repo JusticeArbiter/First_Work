@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT dup('xyz');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: could not determine polymorphic type because input has type "unknown"
+LOCATION:  enforce_generic_type_consistency, parse_coerce.c:1771
+STATEMENT:  SELECT dup('xyz');

@@ -1,0 +1,6 @@
+select myleast(variadic array[]::int[]);
+ myleast 
+---------
+        
+(1 row)
+

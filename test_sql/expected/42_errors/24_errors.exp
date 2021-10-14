@@ -1,0 +1,2 @@
+drop aggregate nonesuch (int4);
+ERROR:  42883: aggregate nonesuch(integer) does not exist

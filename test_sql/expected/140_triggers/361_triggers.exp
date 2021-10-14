@@ -1,0 +1,4 @@
+select * from self_ref_trigger;
+ERROR:  42P01: relation "self_ref_trigger" does not exist
+LINE 1: select * from self_ref_trigger;
+                      ^

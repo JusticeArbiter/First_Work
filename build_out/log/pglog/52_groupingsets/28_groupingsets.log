@@ -1,0 +1,5 @@
+LOG:  00000: statement: select sum(v), count(*) from gstest_empty group by grouping sets ((),(),());
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "gstest_empty" does not exist at character 30
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select sum(v), count(*) from gstest_empty group by grouping sets ((),(),());

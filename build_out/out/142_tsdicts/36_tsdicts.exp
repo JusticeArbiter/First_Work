@@ -1,0 +1,6 @@
+SELECT ts_lexize('synonym', 'indices');
+ ts_lexize 
+-----------
+ {index}
+(1 row)
+

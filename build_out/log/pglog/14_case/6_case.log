@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO CASE_TBL VALUES (4, NULL);
+LOCATION:  exec_simple_query, postgres.c:938

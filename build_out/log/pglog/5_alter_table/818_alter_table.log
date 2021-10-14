@@ -1,0 +1,2 @@
+LOG:  00000: statement: select reltoastrelid <> 0 as has_toast_table  from pg_class  where oid = 'test_storage'::regclass;
+LOCATION:  exec_simple_query, postgres.c:938

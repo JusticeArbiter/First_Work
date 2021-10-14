@@ -1,0 +1,2 @@
+LOG:  00000: statement: /* Columns aa, bb, xx value NULL, ee */  SELECT * FROM inhx;
+LOCATION:  exec_simple_query, postgres.c:938

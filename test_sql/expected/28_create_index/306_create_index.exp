@@ -1,0 +1,2 @@
+DROP INDEX intarrayidx, textarrayidx;
+ERROR:  42704: index "intarrayidx" does not exist

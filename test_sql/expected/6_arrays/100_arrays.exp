@@ -1,0 +1,6 @@
+SELECT array_positions(NULL, NULL::int);
+ array_positions 
+-----------------
+ 
+(1 row)
+

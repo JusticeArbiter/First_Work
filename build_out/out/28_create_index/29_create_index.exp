@@ -1,0 +1,4 @@
+INSERT INTO POINT_TBL(f1) VALUES (NULL);
+ERROR:  42P01: relation "point_tbl" does not exist
+LINE 1: INSERT INTO POINT_TBL(f1) VALUES (NULL);
+                    ^

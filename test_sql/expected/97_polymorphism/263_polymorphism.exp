@@ -1,0 +1,6 @@
+select dfunc('a'::text, 'b', true);
+ dfunc 
+-------
+ a
+(1 row)
+

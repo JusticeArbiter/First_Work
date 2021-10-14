@@ -1,0 +1,6 @@
+SELECT numnode( 'new & york'::tsquery );
+ numnode 
+---------
+       3
+(1 row)
+

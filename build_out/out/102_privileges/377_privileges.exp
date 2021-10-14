@@ -1,0 +1,6 @@
+select has_table_privilege(1,'select');
+ has_table_privilege 
+---------------------
+ 
+(1 row)
+

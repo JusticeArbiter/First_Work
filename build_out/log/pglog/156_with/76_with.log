@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH RECURSIVE x(n) AS (SELECT a FROM y WHERE a = 1  UNION ALL  SELECT x.n+1 FROM x FULL JOIN y ON x.n = y.a WHERE n < 10)  SELECT * FROM x;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P19: recursive reference to query "x" must not appear within an outer join at character 83
+LOCATION:  checkWellFormedRecursionWalker, parse_cte.c:773
+STATEMENT:  WITH RECURSIVE x(n) AS (SELECT a FROM y WHERE a = 1  UNION ALL  SELECT x.n+1 FROM x FULL JOIN y ON x.n = y.a WHERE n < 10)  SELECT * FROM x;

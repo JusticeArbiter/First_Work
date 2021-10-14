@@ -1,0 +1,1 @@
+SELECT f1::box  FROM POINT_TBL;

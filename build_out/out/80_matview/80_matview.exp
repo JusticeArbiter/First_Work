@@ -1,0 +1,2 @@
+INSERT INTO t VALUES (6, 'z', 13);
+INSERT 0 1

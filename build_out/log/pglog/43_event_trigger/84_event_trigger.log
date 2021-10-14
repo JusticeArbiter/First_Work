@@ -1,0 +1,11 @@
+LOG:  00000: statement: ALTER TABLE evttrig.two DROP COLUMN col_c;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER TABLE evttrig.two DROP COLUMN col_c;
+NOTICE:  00000: NORMAL: orig=t normal=f istemp=f type=table column identity=evttrig.two.col_c name={evttrig,two,col_c} args={}
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER TABLE evttrig.two DROP COLUMN col_c;
+NOTICE:  00000: NORMAL: orig=f normal=t istemp=f type=table constraint identity=two_col_c_check on evttrig.two name={evttrig,two,two_col_c_check} args={}
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER TABLE evttrig.two DROP COLUMN col_c;

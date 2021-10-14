@@ -1,0 +1,3 @@
+ALTER USER MAPPING FOR "Public" SERVER sv7  OPTIONS (SET user '"Public"_alt');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER USER MAPPING
+ALTER USER MAPPING

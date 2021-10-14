@@ -1,0 +1,2 @@
+insert into dom_table values (null);
+ERROR:  23514: value for domain inotnull violates check constraint "inotnull_check"

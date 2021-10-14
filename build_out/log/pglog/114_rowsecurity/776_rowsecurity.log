@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO r1 VALUES (10)  ON CONFLICT (a) DO UPDATE SET a = 30 RETURNING *;
+LOCATION:  exec_simple_query, postgres.c:938

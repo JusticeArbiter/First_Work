@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TEXT SEARCH CONFIGURATION test_tsconfig_exists (COPY=english);
+LOCATION:  exec_simple_query, postgres.c:938

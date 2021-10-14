@@ -1,0 +1,2 @@
+VACUUM ANALYZE vaccluster(i,i);
+ERROR:  42701: column "i" of relation "vaccluster" appears more than once

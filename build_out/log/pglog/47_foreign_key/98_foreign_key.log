@@ -1,0 +1,6 @@
+LOG:  00000: statement: UPDATE PKTABLE SET ptest1=0 WHERE ptest1=2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: update or delete on table "pktable" violates foreign key constraint "fktable_ftest1_fkey" on table "fktable"
+DETAIL:  Key (ptest1)=(2) is still referenced from table "fktable".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3338
+STATEMENT:  UPDATE PKTABLE SET ptest1=0 WHERE ptest1=2;

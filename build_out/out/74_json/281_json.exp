@@ -1,0 +1,7 @@
+select * from json_to_recordset('[{"a":1,"b":{"d":"foo"},"c":true},{"a":2,"c":false,"b":{"d":"bar"}}]')  as x(a int, b json, c boolean);
+ a |      b      | c 
+---+-------------+---
+ 1 | {"d":"foo"} | t
+ 2 | {"d":"bar"} | f
+(2 rows)
+

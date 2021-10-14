@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ts_rewrite('foo & bar & qq & new & york', 'new & york'::tsquery, 'big & apple | nyc | new & york & city');
+LOCATION:  exec_simple_query, postgres.c:938

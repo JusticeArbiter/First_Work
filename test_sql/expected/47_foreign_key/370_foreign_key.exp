@@ -1,0 +1,4 @@
+UPDATE fktable SET id = id + 1;
+ERROR:  42P01: relation "fktable" does not exist
+LINE 1: UPDATE fktable SET id = id + 1;
+               ^

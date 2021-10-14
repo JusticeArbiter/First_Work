@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT jsonb_build_object('{1,2,3}'::int[], 3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: key value must be scalar, not array, composite, or json
+LOCATION:  datum_to_jsonb, jsonb.c:725
+STATEMENT:  SELECT jsonb_build_object('{1,2,3}'::int[], 3);

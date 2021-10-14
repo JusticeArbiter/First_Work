@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP FOREIGN DATA WRAPPER alt_fdw2 CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: drop cascades to server alt_fserv2
+LOCATION:  reportDependentObjects, dependency.c:1009
+STATEMENT:  DROP FOREIGN DATA WRAPPER alt_fdw2 CASCADE;

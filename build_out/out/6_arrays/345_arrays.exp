@@ -1,0 +1,2 @@
+SELECT width_bucket(5, ARRAY[3, 4, NULL]);
+ERROR:  22004: thresholds array must not contain NULLs

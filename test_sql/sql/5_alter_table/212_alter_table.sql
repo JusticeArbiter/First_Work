@@ -1,0 +1,1 @@
+ALTER TABLE tmp3 VALIDATE CONSTRAINT b_greater_than_ten;

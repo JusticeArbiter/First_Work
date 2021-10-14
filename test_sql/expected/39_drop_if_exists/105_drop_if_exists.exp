@@ -1,0 +1,2 @@
+DROP OPERATOR FAMILY test_operator_family USING btree;
+ERROR:  42704: operator family "test_operator_family" does not exist for access method "btree"

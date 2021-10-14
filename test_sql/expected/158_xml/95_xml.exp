@@ -1,0 +1,2 @@
+EXECUTE foo ('good');
+ERROR:  26000: prepared statement "foo" does not exist

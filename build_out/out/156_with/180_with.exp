@@ -1,0 +1,4 @@
+WITH rcte AS ( SELECT max(id) AS maxid FROM parent )  DELETE FROM parent USING rcte WHERE id = maxid;
+ERROR:  42P01: relation "parent" does not exist
+LINE 1: WITH rcte AS ( SELECT max(id) AS maxid FROM parent )  DELETE...
+                                                    ^

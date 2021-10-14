@@ -1,0 +1,2 @@
+LOG:  00000: statement: create table basictest  ( testint4 domainint4  , testtext domaintext  , testvarchar domainvarchar  , testnumeric domainnumeric  );
+LOCATION:  exec_simple_query, postgres.c:938

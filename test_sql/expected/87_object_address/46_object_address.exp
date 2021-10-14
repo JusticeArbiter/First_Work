@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('database', '{one}', '{}');
+ERROR:  3D000: database "one" does not exist

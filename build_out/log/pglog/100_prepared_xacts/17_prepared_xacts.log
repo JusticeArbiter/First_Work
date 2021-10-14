@@ -1,0 +1,5 @@
+LOG:  00000: statement: COMMIT PREPARED 'foo2';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: prepared transaction with identifier "foo2" does not exist
+LOCATION:  LockGXact, twophase.c:539
+STATEMENT:  COMMIT PREPARED 'foo2';

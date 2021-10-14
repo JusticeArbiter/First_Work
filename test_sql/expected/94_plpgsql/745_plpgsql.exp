@@ -1,0 +1,6 @@
+select cast_invoker(20150719);
+ cast_invoker 
+--------------
+ 2015-07-19
+(1 row)
+

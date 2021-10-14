@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT '1f2'::jsonb;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type json at character 8
+DETAIL:  Token "1f2" is invalid.
+CONTEXT:  JSON data, line 1: 1f2
+LOCATION:  report_invalid_token, json.c:1244
+STATEMENT:  SELECT '1f2'::jsonb;

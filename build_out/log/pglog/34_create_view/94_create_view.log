@@ -1,0 +1,6 @@
+LOG:  00000: statement: DROP VIEW tt1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: "tt1" is not a view
+HINT:  Use DROP TABLE to remove a table.
+LOCATION:  DropErrorMsgWrongType, tablecmds.c:792
+STATEMENT:  DROP VIEW tt1;

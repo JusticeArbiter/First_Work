@@ -1,0 +1,6 @@
+select min_value as sequence_min_value from hsseq;
+ sequence_min_value 
+--------------------
+                  1
+(1 row)
+

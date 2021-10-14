@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH RECURSIVE subdepartment AS  (   SELECT name as root_name, * FROM department WHERE name = 'A'  UNION ALL   SELECT sd.root_name, d.* FROM department AS d, subdepartment AS sd  WHERE d.parent_department = sd.id  )  SELECT * FROM subdepartment ORDER BY name;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "department" does not exist at character 71
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  WITH RECURSIVE subdepartment AS  (   SELECT name as root_name, * FROM department WHERE name = 'A'  UNION ALL   SELECT sd.root_name, d.* FROM department AS d, subdepartment AS sd  WHERE d.parent_department = sd.id  )  SELECT * FROM subdepartment ORDER BY name;

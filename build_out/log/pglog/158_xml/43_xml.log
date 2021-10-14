@@ -1,0 +1,9 @@
+LOG:  00000: statement: SELECT xmlparse(content '<undefinedentity>&idontexist;</undefinedentity>');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2200N: invalid XML content
+DETAIL:  line 1: Entity 'idontexist' not defined
+	<undefinedentity>&idontexist;</undefinedentity>
+	                             ^
+	line 1: chunk is not well balanced
+LOCATION:  xml_ereport, xml.c:1555
+STATEMENT:  SELECT xmlparse(content '<undefinedentity>&idontexist;</undefinedentity>');

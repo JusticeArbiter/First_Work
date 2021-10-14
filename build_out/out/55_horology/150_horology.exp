@@ -1,0 +1,2 @@
+SELECT '' AS three, f1 as abstime, cast(f1 as timestamp) AS "timestamp"  FROM ABSTIME_TBL WHERE NOT isfinite(f1);
+ERROR:  0A000: cannot convert abstime "invalid" to timestamp

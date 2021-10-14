@@ -1,0 +1,2 @@
+DROP TYPE shell;
+ERROR:  42704: type "shell" does not exist

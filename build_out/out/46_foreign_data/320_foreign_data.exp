@@ -1,0 +1,9 @@
+SELECT * FROM information_schema.foreign_data_wrappers ORDER BY 1, 2;
+ foreign_data_wrapper_catalog | foreign_data_wrapper_name | authorization_identifier | library_name | foreign_data_wrapper_language 
+------------------------------+---------------------------+--------------------------+--------------+-------------------------------
+ highgo                       | dummy                     | highgo                   |              | c
+ highgo                       | foo                       | highgo                   |              | c
+ highgo                       | postgresql                | highgo                   |              | c
+ highgo                       | useless                   | highgo                   |              | c
+(4 rows)
+

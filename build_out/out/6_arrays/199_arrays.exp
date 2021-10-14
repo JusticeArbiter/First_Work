@@ -1,0 +1,5 @@
+select '{ }}'::text[];
+ERROR:  22P02: malformed array literal: "{ }}"
+LINE 1: select '{ }}'::text[];
+               ^
+DETAIL:  Junk after closing right brace.

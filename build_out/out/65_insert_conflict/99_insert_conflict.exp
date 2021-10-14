@@ -1,0 +1,10 @@
+explain (costs off) insert into insertconflicttest as i values (23, 'Avocado') on conflict (key) do update set fruit = excluded.fruit where excluded.* is null;
+               QUERY PLAN                
+-----------------------------------------
+ Insert on insertconflicttest i
+   Conflict Resolution: UPDATE
+   Conflict Arbiter Indexes: plain
+   Conflict Filter: (excluded.* IS NULL)
+   ->  Result
+(5 rows)
+

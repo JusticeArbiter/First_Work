@@ -1,0 +1,14 @@
+SELECT * FROM information_schema.foreign_servers ORDER BY 1, 2;
+ foreign_server_catalog | foreign_server_name | foreign_data_wrapper_catalog | foreign_data_wrapper_name | foreign_server_type | foreign_server_version | authorization_identifier 
+------------------------+---------------------+------------------------------+---------------------------+---------------------+------------------------+--------------------------
+ highgo                 | s0                  | highgo                       | dummy                     |                     |                        | highgo
+ highgo                 | s4                  | highgo                       | foo                       | oracle              |                        | highgo
+ highgo                 | s5                  | highgo                       | foo                       |                     | 15.0                   | regress_test_role
+ highgo                 | s6                  | highgo                       | foo                       |                     | 16.0                   | regress_test_indirect
+ highgo                 | s7                  | highgo                       | foo                       | oracle              | 17.0                   | highgo
+ highgo                 | s8                  | highgo                       | postgresql                |                     |                        | highgo
+ highgo                 | t1                  | highgo                       | foo                       |                     |                        | regress_test_indirect
+ highgo                 | t2                  | highgo                       | foo                       |                     |                        | highgo
+ highgo                 | useless_server      | highgo                       | useless                   |                     |                        | highgo
+(9 rows)
+

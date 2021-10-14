@@ -1,0 +1,6 @@
+SELECT 4! AS twenty_four;
+ twenty_four 
+-------------
+          24
+(1 row)
+

@@ -1,0 +1,3 @@
+SET LOCAL datestyle = 'SQL';
+WARNING:  25P01: SET LOCAL can only be used in transaction blocks
+SET

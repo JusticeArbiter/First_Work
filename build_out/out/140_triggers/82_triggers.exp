@@ -1,0 +1,4 @@
+COPY main_table (a, b) FROM stdin;
+NOTICE:  00000: trigger_func(before_ins_stmt) called: action = INSERT, when = BEFORE, level = STATEMENT
+NOTICE:  00000: trigger_func(after_ins_stmt) called: action = INSERT, when = AFTER, level = STATEMENT
+COPY 0

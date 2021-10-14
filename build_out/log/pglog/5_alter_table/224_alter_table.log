@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE tmp3 ADD CONSTRAINT IDENTITY check (b = boo(b)) NOT VALID;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging constraint "identity" with inherited definition
+LOCATION:  MergeWithExistingConstraint, heap.c:2493
+STATEMENT:  ALTER TABLE tmp3 ADD CONSTRAINT IDENTITY check (b = boo(b)) NOT VALID;

@@ -1,0 +1,4 @@
+insert into nt2 values (1,1,true,true);
+ERROR:  42P01: relation "nt2" does not exist
+LINE 1: insert into nt2 values (1,1,true,true);
+                    ^

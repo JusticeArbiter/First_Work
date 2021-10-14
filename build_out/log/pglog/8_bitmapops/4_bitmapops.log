@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE INDEX i_bmtest_b ON bmscantest(b);
+LOCATION:  exec_simple_query, postgres.c:938

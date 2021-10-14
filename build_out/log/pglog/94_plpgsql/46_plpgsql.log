@@ -1,0 +1,5 @@
+LOG:  00000: statement: create function tg_hslot_bd() returns trigger as '  declare  hubrec record;  begin  select into hubrec * from Hub where name = old.hubname;  if not found then  return old;  end if;  if old.slotno > hubrec.nslots then  return old;  end if;  raise exception ''no manual manipulation of HSlot'';  end;  ' language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function tg_hslot_bd() returns trigger as '  declare  hubrec record;  begin  select into hubrec * from Hub where name = old.hubname;  if not found then  return old;  end if;  if old.slotno > hubrec.nslots then  return old;  end if;  raise exception ''no manual manipulation of HSlot'';  end;  ' language plpgsql;

@@ -1,0 +1,4 @@
+INSERT INTO t2c VALUES ('vw'), ('cd'), ('mn'), ('ef');
+ERROR:  42P01: relation "t2c" does not exist
+LINE 1: INSERT INTO t2c VALUES ('vw'), ('cd'), ('mn'), ('ef');
+                    ^

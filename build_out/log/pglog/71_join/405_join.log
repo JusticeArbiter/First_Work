@@ -1,0 +1,6 @@
+LOG:  00000: statement: select f1,g from int4_tbl a, (select f1 as g) ss;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "f1" does not exist at character 38
+HINT:  There is a column named "f1" in table "a", but it cannot be referenced from this part of the query.
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select f1,g from int4_tbl a, (select f1 as g) ss;

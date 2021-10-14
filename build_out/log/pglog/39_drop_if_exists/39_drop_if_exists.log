@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP USER tu1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: role "tu1" does not exist
+LOCATION:  DropRole, user.c:972
+STATEMENT:  DROP USER tu1;

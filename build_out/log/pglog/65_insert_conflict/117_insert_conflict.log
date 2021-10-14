@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into insertconflictv values (1,'foo')  on conflict (f1) do update set f2 = excluded.f2;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,4 @@
+WITH RECURSIVE x(n) AS (SELECT n FROM x UNION ALL SELECT 1)  SELECT * FROM x;
+ERROR:  42P19: recursive reference to query "x" must not appear within its non-recursive term
+LINE 1: WITH RECURSIVE x(n) AS (SELECT n FROM x UNION ALL SELECT 1) ...
+                                              ^

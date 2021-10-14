@@ -1,0 +1,6 @@
+SELECT (timestamp without time zone 'tomorrow' > 'now') as "True";
+ True 
+------
+ t
+(1 row)
+

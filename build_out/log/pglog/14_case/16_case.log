@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '4' AS "One",  CASE  WHEN 1 > 2 THEN 3  ELSE 4  END AS "ELSE default";
+LOCATION:  exec_simple_query, postgres.c:938

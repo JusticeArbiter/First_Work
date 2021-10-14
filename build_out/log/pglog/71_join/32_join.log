@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS "xxx", ii, tt, kk  FROM (J1_TBL CROSS JOIN J2_TBL)  AS tx (ii, jj, tt, ii2, kk);
+LOCATION:  exec_simple_query, postgres.c:938

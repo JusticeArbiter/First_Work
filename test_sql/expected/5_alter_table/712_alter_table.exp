@@ -1,0 +1,8 @@
+select attrelid::regclass, attname, attinhcount, attislocal  from pg_attribute  where attnum > 0 and attrelid::regclass in ('depth0', 'depth1', 'depth2')  order by attrelid::regclass::text, attnum;
+ attrelid | attname | attinhcount | attislocal 
+----------+---------+-------------+------------
+ depth0   | c       |           0 | t
+ depth1   | c       |           1 | t
+ depth2   | c       |           1 | f
+(3 rows)
+

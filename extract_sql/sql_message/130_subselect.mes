@@ -1,0 +1,297 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT 1 AS one WHERE 1 IN (SELECT 1);
+ statement: SELECT 1 AS zero WHERE 1 NOT IN (SELECT 1);
+ statement: SELECT 1 AS zero WHERE 1 IN (SELECT 2);
+ statement: SELECT * FROM (SELECT 1 AS x) ss;
+ statement: SELECT * FROM ((SELECT 1 AS x)) ss;
+ statement: (SELECT 2) UNION SELECT 2;
+ statement: ((SELECT 2)) UNION SELECT 2;
+ statement: SELECT ((SELECT 2) UNION SELECT 2);
+ statement: SELECT (((SELECT 2)) UNION SELECT 2);
+ statement: SELECT (SELECT ARRAY[1,2,3])[1];
+ statement: SELECT ((SELECT ARRAY[1,2,3]))[2];
+ statement: SELECT (((SELECT ARRAY[1,2,3])))[3];
+ statement: CREATE TABLE SUBSELECT_TBL (                                                                                                                              +
+   f1 integer,                                                                                                                                                        +
+   f2 integer,                                                                                                                                                        +
+   f3 float                                                                                                                                                           +
+ );
+ statement: INSERT INTO SUBSELECT_TBL VALUES (1, 2, 3);
+ statement: INSERT INTO SUBSELECT_TBL VALUES (2, 3, 4);
+ statement: INSERT INTO SUBSELECT_TBL VALUES (3, 4, 5);
+ statement: INSERT INTO SUBSELECT_TBL VALUES (1, 1, 1);
+ statement: INSERT INTO SUBSELECT_TBL VALUES (2, 2, 2);
+ statement: INSERT INTO SUBSELECT_TBL VALUES (3, 3, 3);
+ statement: INSERT INTO SUBSELECT_TBL VALUES (6, 7, 8);
+ statement: INSERT INTO SUBSELECT_TBL VALUES (8, 9, NULL);
+ statement: SELECT '' AS eight, * FROM SUBSELECT_TBL;
+ statement: SELECT '' AS two, f1 AS "Constant Select" FROM SUBSELECT_TBL                                                                                              +
+   WHERE f1 IN (SELECT 1);
+ statement: SELECT '' AS six, f1 AS "Uncorrelated Field" FROM SUBSELECT_TBL                                                                                           +
+   WHERE f1 IN (SELECT f2 FROM SUBSELECT_TBL);
+ statement: SELECT '' AS six, f1 AS "Uncorrelated Field" FROM SUBSELECT_TBL                                                                                           +
+   WHERE f1 IN (SELECT f2 FROM SUBSELECT_TBL WHERE                                                                                                                    +
+     f2 IN (SELECT f1 FROM SUBSELECT_TBL));
+ statement: SELECT '' AS three, f1, f2                                                                                                                                +
+   FROM SUBSELECT_TBL                                                                                                                                                 +
+   WHERE (f1, f2) NOT IN (SELECT f2, CAST(f3 AS int4) FROM SUBSELECT_TBL                                                                                              +
+                          WHERE f3 IS NOT NULL);
+ statement: SELECT '' AS six, f1 AS "Correlated Field", f2 AS "Second Field"                                                                                          +
+   FROM SUBSELECT_TBL upper                                                                                                                                           +
+   WHERE f1 IN (SELECT f2 FROM SUBSELECT_TBL WHERE f1 = upper.f1);
+ statement: SELECT '' AS six, f1 AS "Correlated Field", f3 AS "Second Field"                                                                                          +
+   FROM SUBSELECT_TBL upper                                                                                                                                           +
+   WHERE f1 IN                                                                                                                                                        +
+     (SELECT f2 FROM SUBSELECT_TBL WHERE CAST(upper.f2 AS float) = f3);
+ statement: SELECT '' AS six, f1 AS "Correlated Field", f3 AS "Second Field"                                                                                          +
+   FROM SUBSELECT_TBL upper                                                                                                                                           +
+   WHERE f3 IN (SELECT upper.f1 + f2 FROM SUBSELECT_TBL                                                                                                               +
+                WHERE f2 = CAST(f3 AS integer));
+ statement: SELECT '' AS five, f1 AS "Correlated Field"                                                                                                               +
+   FROM SUBSELECT_TBL                                                                                                                                                 +
+   WHERE (f1, f2) IN (SELECT f2, CAST(f3 AS int4) FROM SUBSELECT_TBL                                                                                                  +
+                      WHERE f3 IS NOT NULL);
+ statement: SELECT '' AS eight, ss.f1 AS "Correlated Field", ss.f3 AS "Second Field"                                                                                  +
+   FROM SUBSELECT_TBL ss                                                                                                                                              +
+   WHERE f1 NOT IN (SELECT f1+1 FROM INT4_TBL                                                                                                                         +
+                    WHERE f1 != ss.f1 AND f1 < 2147483647);
+ statement: select q1, float8(count(*)) / (select count(*) from int8_tbl)                                                                                             +
+ from int8_tbl group by q1 order by q1;
+ statement: explain (costs off)                                                                                                                                       +
+ select * from int4_tbl o where exists                                                                                                                                +
+   (select 1 from int4_tbl i where i.f1=o.f1 limit null);
+ statement: explain (costs off)                                                                                                                                       +
+ select * from int4_tbl o where not exists                                                                                                                            +
+   (select 1 from int4_tbl i where i.f1=o.f1 limit 1);
+ statement: explain (costs off)                                                                                                                                       +
+ select * from int4_tbl o where exists                                                                                                                                +
+   (select 1 from int4_tbl i where i.f1=o.f1 limit 0);
+ statement: select count(*) from                                                                                                                                      +
+   (select 1 from tenk1 a                                                                                                                                             +
+    where unique1 IN (select hundred from tenk1 b)) ss;
+ statement: select count(distinct ss.ten) from                                                                                                                        +
+   (select ten from tenk1 a                                                                                                                                           +
+    where unique1 IN (select hundred from tenk1 b)) ss;
+ statement: select count(*) from                                                                                                                                      +
+   (select 1 from tenk1 a                                                                                                                                             +
+    where unique1 IN (select distinct hundred from tenk1 b)) ss;
+ statement: select count(distinct ss.ten) from                                                                                                                        +
+   (select ten from tenk1 a                                                                                                                                           +
+    where unique1 IN (select distinct hundred from tenk1 b)) ss;
+ statement: CREATE TEMP TABLE foo (id integer);
+ statement: CREATE TEMP TABLE bar (id1 integer, id2 integer);
+ statement: INSERT INTO foo VALUES (1);
+ statement: INSERT INTO bar VALUES (1, 1);
+ statement: INSERT INTO bar VALUES (2, 2);
+ statement: INSERT INTO bar VALUES (3, 1);
+ statement: SELECT * FROM foo WHERE id IN                                                                                                                             +
+     (SELECT id2 FROM (SELECT DISTINCT id1, id2 FROM bar) AS s);
+ statement: SELECT * FROM foo WHERE id IN                                                                                                                             +
+     (SELECT id2 FROM (SELECT id1,id2 FROM bar GROUP BY id1,id2) AS s);
+ statement: SELECT * FROM foo WHERE id IN                                                                                                                             +
+     (SELECT id2 FROM (SELECT id1, id2 FROM bar UNION                                                                                                                 +
+                       SELECT id1, id2 FROM bar) AS s);
+ statement: SELECT * FROM foo WHERE id IN                                                                                                                             +
+     (SELECT id2 FROM (SELECT DISTINCT ON (id2) id1, id2 FROM bar) AS s);
+ statement: SELECT * FROM foo WHERE id IN                                                                                                                             +
+     (SELECT id2 FROM (SELECT id2 FROM bar GROUP BY id2) AS s);
+ statement: SELECT * FROM foo WHERE id IN                                                                                                                             +
+     (SELECT id2 FROM (SELECT id2 FROM bar UNION                                                                                                                      +
+                       SELECT id2 FROM bar) AS s);
+ statement: CREATE TABLE orderstest (                                                                                                                                 +
+     approver_ref integer,                                                                                                                                            +
+     po_ref integer,                                                                                                                                                  +
+     ordercanceled boolean                                                                                                                                            +
+ );
+ statement: INSERT INTO orderstest VALUES (1, 1, false);
+ statement: INSERT INTO orderstest VALUES (66, 5, false);
+ statement: INSERT INTO orderstest VALUES (66, 6, false);
+ statement: INSERT INTO orderstest VALUES (66, 7, false);
+ statement: INSERT INTO orderstest VALUES (66, 1, true);
+ statement: INSERT INTO orderstest VALUES (66, 8, false);
+ statement: INSERT INTO orderstest VALUES (66, 1, false);
+ statement: INSERT INTO orderstest VALUES (77, 1, false);
+ statement: INSERT INTO orderstest VALUES (1, 1, false);
+ statement: INSERT INTO orderstest VALUES (66, 1, false);
+ statement: INSERT INTO orderstest VALUES (1, 1, false);
+ statement: CREATE VIEW orders_view AS                                                                                                                                +
+ SELECT *,                                                                                                                                                            +
+ (SELECT CASE                                                                                                                                                         +
+    WHEN ord.approver_ref=1 THEN '---' ELSE 'Approved'                                                                                                                +
+  END) AS "Approved",                                                                                                                                                 +
+ (SELECT CASE                                                                                                                                                         +
+  WHEN ord.ordercanceled                                                                                                                                              +
+  THEN 'Canceled'                                                                                                                                                     +
+  ELSE                                                                                                                                                                +
+   (SELECT CASE                                                                                                                                                       +
+                 WHEN ord.po_ref=1                                                                                                                                    +
+                 THEN                                                                                                                                                 +
+                  (SELECT CASE                                                                                                                                        +
+                                 WHEN ord.approver_ref=1                                                                                                              +
+                                 THEN '---'                                                                                                                           +
+                                 ELSE 'Approved'                                                                                                                      +
+                         END)                                                                                                                                         +
+                 ELSE 'PO'                                                                                                                                            +
+         END)                                                                                                                                                         +
+ END) AS "Status",                                                                                                                                                    +
+ (CASE                                                                                                                                                                +
+  WHEN ord.ordercanceled                                                                                                                                              +
+  THEN 'Canceled'                                                                                                                                                     +
+  ELSE                                                                                                                                                                +
+   (CASE                                                                                                                                                              +
+                 WHEN ord.po_ref=1                                                                                                                                    +
+                 THEN                                                                                                                                                 +
+                  (CASE                                                                                                                                               +
+                                 WHEN ord.approver_ref=1                                                                                                              +
+                                 THEN '---'                                                                                                                           +
+                                 ELSE 'Approved'                                                                                                                      +
+                         END)                                                                                                                                         +
+                 ELSE 'PO'                                                                                                                                            +
+         END)                                                                                                                                                         +
+ END) AS "Status_OK"                                                                                                                                                  +
+ FROM orderstest ord;
+ statement: SELECT * FROM orders_view;
+ statement: DROP TABLE orderstest cascade;
+ statement: create temp table parts (                                                                                                                                 +
+     partnum     text,                                                                                                                                                +
+     cost        float8                                                                                                                                               +
+ );
+ statement: create temp table shipped (                                                                                                                               +
+     ttype       char(2),                                                                                                                                             +
+     ordnum      int4,                                                                                                                                                +
+     partnum     text,                                                                                                                                                +
+     value       float8                                                                                                                                               +
+ );
+ statement: create temp view shipped_view as                                                                                                                          +
+     select * from shipped where ttype = 'wt';
+ statement: create rule shipped_view_insert as on insert to shipped_view do instead                                                                                   +
+     insert into shipped values('wt', new.ordnum, new.partnum, new.value);
+ statement: insert into parts (partnum, cost) values (1, 1234.56);
+ statement: insert into shipped_view (ordnum, partnum, value)                                                                                                         +
+     values (0, 1, (select cost from parts where partnum = '1'));
+ statement: select * from shipped_view;
+ statement: create rule shipped_view_update as on update to shipped_view do instead                                                                                   +
+     update shipped set partnum = new.partnum, value = new.value                                                                                                      +
+         where ttype = new.ttype and ordnum = new.ordnum;
+ statement: update shipped_view set value = 11                                                                                                                        +
+     from int4_tbl a join int4_tbl b                                                                                                                                  +
+       on (a.f1 = (select f1 from int4_tbl c where c.f1=b.f1))                                                                                                        +
+     where ordnum = a.f1;
+ statement: select * from shipped_view;
+ statement: select f1, ss1 as relabel from                                                                                                                            +
+     (select *, (select sum(f1) from int4_tbl b where f1 >= a.f1) as ss1                                                                                              +
+      from int4_tbl a) ss;
+ statement: select * from (                                                                                                                                           +
+   select max(unique1) from tenk1 as a                                                                                                                                +
+   where exists (select 1 from tenk1 as b where b.thousand = a.unique2)                                                                                               +
+ ) ss;
+ statement: select * from (                                                                                                                                           +
+   select min(unique1) from tenk1 as a                                                                                                                                +
+   where not exists (select 1 from tenk1 as b where b.unique2 = 10000)                                                                                                +
+ ) ss;
+ statement: create temp table numeric_table (num_col numeric);
+ statement: insert into numeric_table values (1), (1.000000000000000000001), (2), (3);
+ statement: create temp table float_table (float_col float8);
+ statement: insert into float_table values (1), (2), (3);
+ statement: select * from float_table                                                                                                                                 +
+   where float_col in (select num_col from numeric_table);
+ statement: select * from numeric_table                                                                                                                               +
+   where num_col in (select float_col from float_table);
+ statement: create temp table ta (id int primary key, val int);
+ statement: insert into ta values(1,1);
+ statement: insert into ta values(2,2);
+ statement: create temp table tb (id int primary key, aval int);
+ statement: insert into tb values(1,1);
+ statement: insert into tb values(2,1);
+ statement: insert into tb values(3,2);
+ statement: insert into tb values(4,2);
+ statement: create temp table tc (id int primary key, aid int);
+ statement: insert into tc values(1,1);
+ statement: insert into tc values(2,2);
+ statement: select                                                                                                                                                    +
+   ( select min(tb.id) from tb                                                                                                                                        +
+     where tb.aval = (select ta.val from ta where ta.id = tc.aid) ) as min_tb_id                                                                                      +
+ from tc;
+ statement: create temp table t1 (f1 numeric(14,0), f2 varchar(30));
+ statement: select * from                                                                                                                                             +
+   (select distinct f1, f2, (select f2 from t1 x where x.f1 = up.f1) as fs                                                                                            +
+    from t1 up) ss                                                                                                                                                    +
+ group by f1,f2,fs;
+ statement: create temp table table_a(id integer);
+ statement: insert into table_a values (42);
+ statement: create temp view view_a as select * from table_a;
+ statement: select view_a from view_a;
+ statement: select (select view_a) from view_a;
+ statement: select (select (select view_a)) from view_a;
+ statement: select (select (a.*)::text) from view_a a;
+ statement: select q from (select max(f1) from int4_tbl group by f1 order by f1) q;
+ statement: with q as (select max(f1) from int4_tbl group by f1 order by f1)                                                                                          +
+   select q from q;
+ statement: select                                                                                                                                                    +
+   (select sq1) as qq1                                                                                                                                                +
+ from                                                                                                                                                                 +
+   (select exists(select 1 from int4_tbl where f1 = q2) as sq1, 42 as dummy                                                                                           +
+    from int8_tbl) sq0                                                                                                                                                +
+   join                                                                                                                                                               +
+   int4_tbl i4 on dummy = i4.f1;
+ statement: create temp table upsert(key int4 primary key, val text);
+ statement: insert into upsert values(1, 'val') on conflict (key) do update set val = 'not seen';
+ statement: insert into upsert values(1, 'val') on conflict (key) do update set val = 'seen with subselect ' || (select f1 from int4_tbl where f1 != 0 limit 1)::text;
+ statement: select * from upsert;
+ statement: with aa as (select 'int4_tbl' u from int4_tbl limit 1)                                                                                                    +
+ insert into upsert values (1, 'x'), (999, 'y')                                                                                                                       +
+ on conflict (key) do update set val = (select u from aa)                                                                                                             +
+ returning *;
+ statement: create temp table outer_7597 (f1 int4, f2 int4);
+ statement: insert into outer_7597 values (0, 0);
+ statement: insert into outer_7597 values (1, 0);
+ statement: insert into outer_7597 values (0, null);
+ statement: insert into outer_7597 values (1, null);
+ statement: create temp table inner_7597(c1 int8, c2 int8);
+ statement: insert into inner_7597 values(0, null);
+ statement: select * from outer_7597 where (f1, f2) not in (select * from inner_7597);
+ statement: select '1'::text in (select '1'::name union all select '1'::name);
+ statement: select a.thousand from tenk1 a, tenk1 b                                                                                                                   +
+ where a.thousand = b.thousand                                                                                                                                        +
+   and exists ( select 1 from tenk1 c where b.hundred = c.hundred                                                                                                     +
+                    and not exists ( select 1 from tenk1 d                                                                                                            +
+                                     where a.thousand = d.thousand ) );
+ statement: explain (verbose, costs off)                                                                                                                              +
+   select x, x from                                                                                                                                                   +
+     (select (select now()) as x from (values(1),(2)) v(y)) ss;
+ statement: explain (verbose, costs off)                                                                                                                              +
+   select x, x from                                                                                                                                                   +
+     (select (select random()) as x from (values(1),(2)) v(y)) ss;
+ statement: explain (verbose, costs off)                                                                                                                              +
+   select x, x from                                                                                                                                                   +
+     (select (select now() where y=y) as x from (values(1),(2)) v(y)) ss;
+ statement: explain (verbose, costs off)                                                                                                                              +
+   select x, x from                                                                                                                                                   +
+     (select (select random() where y=y) as x from (values(1),(2)) v(y)) ss;
+ statement: create temp table nocolumns();
+ statement: select exists(select * from nocolumns);
+ statement: explain (verbose, costs off)                                                                                                                              +
+ select * from int4_tbl where                                                                                                                                         +
+   (case when f1 in (select unique1 from tenk1 a) then f1 else null end) in                                                                                           +
+   (select ten from tenk1 b);
+ statement: select * from int4_tbl where                                                                                                                              +
+   (case when f1 in (select unique1 from tenk1 a) then f1 else null end) in                                                                                           +
+   (select ten from tenk1 b);
+ statement: explain (verbose, costs off)                                                                                                                              +
+ select * from int4_tbl o where (f1, f1) in                                                                                                                           +
+   (select f1, generate_series(1,2) / 10 g from int4_tbl i group by f1);
+ statement: select * from int4_tbl o where (f1, f1) in                                                                                                                +
+   (select f1, generate_series(1,2) / 10 g from int4_tbl i group by f1);
+ statement: select (select q from                                                                                                                                     +
+          (select 1,2,3 where f1 > 0                                                                                                                                  +
+           union all                                                                                                                                                  +
+           select 4,5,6.0 where f1 <= 0                                                                                                                               +
+          ) q )                                                                                                                                                       +
+ from int4_tbl;
+ statement: create temp sequence ts1;
+ statement: select * from                                                                                                                                             +
+   (select distinct ten from tenk1) ss                                                                                                                                +
+   where ten < 10 + nextval('ts1')                                                                                                                                    +
+   order by 1;
+ statement: select nextval('ts1');
+

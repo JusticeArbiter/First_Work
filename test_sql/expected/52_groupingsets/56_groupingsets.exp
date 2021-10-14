@@ -1,0 +1,4 @@
+select v.c, (select count(*) from gstest2 group by () having v.c)  from (values (false),(true)) v(c) order by v.c;
+ERROR:  42P01: relation "gstest2" does not exist
+LINE 1: select v.c, (select count(*) from gstest2 group by () having...
+                                          ^

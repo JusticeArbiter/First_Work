@@ -1,0 +1,4 @@
+SELECT foo;
+ERROR:  42703: column "foo" does not exist
+LINE 1: SELECT foo;
+               ^

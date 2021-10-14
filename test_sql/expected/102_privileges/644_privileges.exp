@@ -1,0 +1,2 @@
+LOCK TABLE lock_table IN ACCESS SHARE MODE;
+ERROR:  25P01: LOCK TABLE can only be used in transaction blocks

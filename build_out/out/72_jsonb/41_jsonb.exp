@@ -1,0 +1,6 @@
+SELECT ' true '::jsonb;
+ jsonb 
+-------
+ true
+(1 row)
+

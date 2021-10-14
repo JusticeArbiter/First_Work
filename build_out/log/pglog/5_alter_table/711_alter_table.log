@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table depth0 add c text;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging definition of column "c" for child "depth1"
+LOCATION:  ATExecAddColumn, tablecmds.c:4792
+STATEMENT:  alter table depth0 add c text;

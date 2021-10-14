@@ -1,0 +1,2 @@
+alter table myview alter column test drop not null;
+ERROR:  42809: "myview" is not a table or foreign table

@@ -1,0 +1,6 @@
+SELECT xml '<foo>bar</foo>' IS DOCUMENT;
+ ?column? 
+----------
+ t
+(1 row)
+

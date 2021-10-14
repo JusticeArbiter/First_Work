@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX ON mv_foo (i);

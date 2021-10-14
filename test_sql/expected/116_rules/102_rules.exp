@@ -1,0 +1,2 @@
+insert into rtest_system values ('neptun', 'Fileserver');
+INSERT 0 1

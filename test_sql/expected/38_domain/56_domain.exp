@@ -1,0 +1,2 @@
+create type comptype as (r float8, i float8);
+CREATE TYPE

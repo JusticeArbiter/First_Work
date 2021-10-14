@@ -1,0 +1,5 @@
+LOG:  00000: statement: select rank(sum(x)) within group (order by x) from generate_series(1,5) x;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42803: aggregate function calls cannot be nested at character 13
+LOCATION:  check_agg_arguments, parse_agg.c:629
+STATEMENT:  select rank(sum(x)) within group (order by x) from generate_series(1,5) x;

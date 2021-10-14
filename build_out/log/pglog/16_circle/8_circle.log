@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO CIRCLE_TBL VALUES ('<(-100,0),-100>');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type circle: "<(-100,0),-100>" at character 32
+LOCATION:  circle_in, geo_ops.c:4639
+STATEMENT:  INSERT INTO CIRCLE_TBL VALUES ('<(-100,0),-100>');

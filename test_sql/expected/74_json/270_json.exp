@@ -1,0 +1,2 @@
+SELECT json_object('{{a},{b}}');
+ERROR:  2202E: array must have two columns

@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT * FROM get_users() WITH ORDINALITY;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: function get_users() does not exist at character 15
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+LOCATION:  ParseFuncOrColumn, parse_func.c:523
+STATEMENT:  SELECT * FROM get_users() WITH ORDINALITY;

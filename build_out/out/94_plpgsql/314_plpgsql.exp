@@ -1,0 +1,6 @@
+select * from f1(42);
+ j  |  k  
+----+-----
+ 43 | foo
+(1 row)
+

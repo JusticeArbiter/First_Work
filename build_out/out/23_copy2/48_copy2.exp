@@ -1,0 +1,2 @@
+COPY testeoc TO stdout CSV;
+ERROR:  42P01: relation "testeoc" does not exist

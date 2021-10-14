@@ -1,0 +1,2 @@
+LOG:  00000: statement: DROP TEXT SEARCH DICTIONARY test_tsdict_exists;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOCK TABLE lock_tbl1 IN ROW EXCLUSIVE MODE NOWAIT;
+ERROR:  25P01: LOCK TABLE can only be used in transaction blocks

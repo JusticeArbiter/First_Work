@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT h.seqno AS t20000  FROM hash_txt_heap h  WHERE h.random = '959363399'::text;
+LOCATION:  exec_simple_query, postgres.c:938

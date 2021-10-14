@@ -1,0 +1,4 @@
+SELECT * FROM (SELECT 1 INTO f) bar;
+ERROR:  42601: SELECT ... INTO is not allowed here
+LINE 1: SELECT * FROM (SELECT 1 INTO f) bar;
+                                     ^

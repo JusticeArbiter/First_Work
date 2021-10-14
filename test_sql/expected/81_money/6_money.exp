@@ -1,0 +1,6 @@
+SELECT m - '123.45' FROM money_data;
+ ?column? 
+----------
+   -$0.45
+(1 row)
+

@@ -1,0 +1,6 @@
+select nvl2(null,2,3);
+ nvl2 
+------
+    3
+(1 row)
+

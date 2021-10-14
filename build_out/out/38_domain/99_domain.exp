@@ -1,0 +1,2 @@
+INSERT INTO nulltest values ('a', 'b', 'c', 'd', 'c');
+INSERT 0 1

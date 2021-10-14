@@ -1,0 +1,2 @@
+insert into rtest_interface values ('orion', 'eth1');
+INSERT 0 1

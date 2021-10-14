@@ -1,0 +1,7 @@
+SELECT srvname FROM pg_foreign_server WHERE srvname like 'alt_fserv%';
+  srvname   
+------------
+ alt_fserv2
+ alt_fserv3
+(2 rows)
+

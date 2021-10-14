@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE temptest SET a = 0 FROM writetest WHERE temptest.a = 1 AND writetest.a = temptest.a;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "temptest" does not exist at character 8
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  UPDATE temptest SET a = 0 FROM writetest WHERE temptest.a = 1 AND writetest.a = temptest.a;

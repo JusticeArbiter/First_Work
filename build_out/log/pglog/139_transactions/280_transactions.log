@@ -1,0 +1,6 @@
+LOG:  00000: statement: DECLARE ctt CURSOR FOR SELECT create_temp_tab();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: function create_temp_tab() does not exist at character 31
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.
+LOCATION:  ParseFuncOrColumn, parse_func.c:523
+STATEMENT:  DECLARE ctt CURSOR FOR SELECT create_temp_tab();

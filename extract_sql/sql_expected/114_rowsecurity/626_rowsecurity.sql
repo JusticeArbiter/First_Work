@@ -1,0 +1,1 @@
+REVOKE ALL ON TABLE tbl1 FROM alice;

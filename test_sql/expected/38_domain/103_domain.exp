@@ -1,0 +1,2 @@
+INSERT INTO nulltest values ('a', NULL, 'c', 'd', 'c');
+ERROR:  23502: domain dnotnull does not allow null values

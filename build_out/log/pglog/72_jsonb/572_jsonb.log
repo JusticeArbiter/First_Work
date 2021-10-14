@@ -1,0 +1,5 @@
+LOG:  00000: statement: select '{"n":null, "a":1, "b":[1,2], "c":{"1":2}, "d":{"1":[2,3]}}'::jsonb #- '{b,-1e}';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: path element at position 2 is not an integer: "-1e"
+LOCATION:  setPathArray, jsonfuncs.c:3903
+STATEMENT:  select '{"n":null, "a":1, "b":[1,2], "c":{"1":2}, "d":{"1":[2,3]}}'::jsonb #- '{b,-1e}';

@@ -1,0 +1,4 @@
+SELECT bool '000' AS error;
+ERROR:  22P02: invalid input syntax for type boolean: "000"
+LINE 1: SELECT bool '000' AS error;
+                    ^

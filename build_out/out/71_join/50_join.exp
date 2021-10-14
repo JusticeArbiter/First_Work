@@ -1,0 +1,20 @@
+SELECT '' AS "xxx", *  FROM J1_TBL FULL OUTER JOIN J2_TBL USING (i)  ORDER BY i, k, t;
+ xxx | i | j |   t   | k  
+-----+---+---+-------+----
+     | 0 |   | zero  |   
+     | 1 | 4 | one   | -1
+     | 2 | 3 | two   |  2
+     | 2 | 3 | two   |  4
+     | 3 | 2 | three | -3
+     | 4 | 1 | four  |   
+     | 5 | 0 | five  | -5
+     | 5 | 0 | five  | -5
+     | 6 | 6 | six   |   
+     | 7 | 7 | seven |   
+     | 8 | 8 | eight |   
+     |   |   |       |  0
+     |   |   | null  |   
+     |   | 0 | zero  |   
+     |   |   |       |   
+(15 rows)
+

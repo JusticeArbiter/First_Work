@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TEXT SEARCH DICTIONARY test_tsdict_exists (  Template=ispell,  DictFile=ispell_sample,  AffFile=ispell_sample  );
+LOCATION:  exec_simple_query, postgres.c:938

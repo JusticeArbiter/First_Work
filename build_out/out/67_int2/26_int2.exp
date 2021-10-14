@@ -1,0 +1,8 @@
+SELECT '' AS three, i.* FROM INT2_TBL i WHERE i.f1 >= int2 '0';
+ three |  f1   
+-------+-------
+       |     0
+       |  1234
+       | 32767
+(3 rows)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE update_test t SET b = t.b + 10 WHERE t.a = 10;
+LOCATION:  exec_simple_query, postgres.c:938

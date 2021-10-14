@@ -1,0 +1,2 @@
+COMMENT ON TABLE tmp_wrong IS 'table comment';
+ERROR:  42P01: relation "tmp_wrong" does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT width_bucket(5, ARRAY[3, 4, NULL]);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22004: thresholds array must not contain NULLs
+LOCATION:  width_bucket_array, arrayfuncs.c:6284
+STATEMENT:  SELECT width_bucket(5, ARRAY[3, 4, NULL]);

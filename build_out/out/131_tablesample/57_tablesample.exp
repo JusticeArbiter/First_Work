@@ -1,0 +1,2 @@
+SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (200);
+ERROR:  2202H: sample percentage must be between 0 and 100

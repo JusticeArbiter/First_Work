@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT schema_to_xmlschema('testxmlschema', true, false, '');
+LOCATION:  exec_simple_query, postgres.c:938

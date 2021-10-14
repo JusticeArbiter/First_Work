@@ -1,0 +1,4 @@
+DELETE FROM foo WHERE f1 = 13;
+ERROR:  42P01: relation "foo" does not exist
+LINE 1: DELETE FROM foo WHERE f1 = 13;
+                    ^

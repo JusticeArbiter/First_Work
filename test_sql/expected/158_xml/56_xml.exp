@@ -1,0 +1,6 @@
+SELECT xmlparse(document '<nosuchprefix:tag/>');
+      xmlparse       
+---------------------
+ <nosuchprefix:tag/>
+(1 row)
+

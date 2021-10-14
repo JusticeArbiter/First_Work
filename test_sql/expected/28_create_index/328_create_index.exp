@@ -1,0 +1,2 @@
+CREATE INDEX hash_name_index ON hash_name_heap USING hash (random name_ops);
+ERROR:  42P01: relation "hash_name_heap" does not exist

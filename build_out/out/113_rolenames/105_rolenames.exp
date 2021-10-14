@@ -1,0 +1,4 @@
+CREATE SCHEMA IF NOT EXISTS newschema4 AUTHORIZATION testrolx;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SCHEMA
+NOTICE:  42P06: schema "newschema4" already exists, skipping
+CREATE SCHEMA

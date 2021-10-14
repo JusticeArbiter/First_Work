@@ -1,0 +1,6 @@
+SELECT two FROM atest5;
+ two 
+-----
+   2
+(1 row)
+

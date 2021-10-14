@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE tmp ADD COLUMN xmin integer;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42701: column name "xmin" conflicts with a system column name
+LOCATION:  check_for_column_name_collision, tablecmds.c:5078
+STATEMENT:  ALTER TABLE tmp ADD COLUMN xmin integer;

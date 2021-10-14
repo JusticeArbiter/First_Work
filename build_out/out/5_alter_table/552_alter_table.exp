@@ -1,0 +1,4 @@
+insert into atacc1 ("........pg.dropped.1........") values (10);
+ERROR:  42703: column "........pg.dropped.1........" of relation "atacc1" does not exist
+LINE 1: insert into atacc1 ("........pg.dropped.1........") values (...
+                            ^

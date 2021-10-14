@@ -1,0 +1,4 @@
+select (test_json->'field3') is null as expect_false  from test_json  where json_type = 'object';
+ERROR:  42P01: relation "test_json" does not exist
+LINE 1: ...est_json->'field3') is null as expect_false  from test_json ...
+                                                             ^

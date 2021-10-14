@@ -1,0 +1,6 @@
+select c2[2].f2 from comptable;
+ f2  
+-----
+ baz
+(1 row)
+

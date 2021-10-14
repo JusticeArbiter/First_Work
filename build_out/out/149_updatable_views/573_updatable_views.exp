@@ -1,0 +1,5 @@
+DROP VIEW v2;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP VIEW
+ERROR:  2BP01: cannot drop view v2 because other objects depend on it
+DETAIL:  policy p1 on table s1 depends on view v2
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.

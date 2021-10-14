@@ -1,0 +1,6 @@
+SELECT regtype('pg_catalog.int4');
+ regtype 
+---------
+ integer
+(1 row)
+

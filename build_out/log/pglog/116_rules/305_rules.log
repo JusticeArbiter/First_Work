@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO shoelace_data VALUES ('sl4', 8, 'black', 40.0 , 'inch');
+LOCATION:  exec_simple_query, postgres.c:938

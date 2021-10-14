@@ -1,0 +1,2 @@
+DEALLOCATE PREPARE ins;
+ERROR:  26000: prepared statement "ins" does not exist

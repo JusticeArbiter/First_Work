@@ -1,0 +1,8 @@
+LOG:  00000: statement: select * from conflict_test();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42702: column reference "q1" is ambiguous at character 8
+DETAIL:  It could refer to either a PL/pgSQL variable or a table column.
+QUERY:  select q1,q2 from int8_tbl
+CONTEXT:  PL/pgSQL function conflict_test() line 1 at FOR over SELECT rows
+LOCATION:  plpgsql_post_column_ref, pl_comp.c:1093
+STATEMENT:  select * from conflict_test();

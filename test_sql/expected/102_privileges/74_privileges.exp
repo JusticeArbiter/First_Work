@@ -1,0 +1,2 @@
+UPDATE atest2 SET col2 = NOT col2;
+UPDATE 1

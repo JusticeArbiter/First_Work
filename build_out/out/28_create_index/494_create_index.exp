@@ -1,0 +1,2 @@
+CREATE INDEX dupindexcols_i ON dupindexcols (f1, id, f1 text_pattern_ops);
+ERROR:  42P01: relation "dupindexcols" does not exist

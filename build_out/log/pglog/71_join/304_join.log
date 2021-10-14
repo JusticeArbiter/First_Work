@@ -1,0 +1,5 @@
+LOG:  00000: statement: explain (costs off)  SELECT a.* FROM a LEFT JOIN (b left join c on b.c_id = c.id)  ON (a.b_id = b.id);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column b.c_id does not exist at character 68
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  explain (costs off)  SELECT a.* FROM a LEFT JOIN (b left join c on b.c_id = c.id)  ON (a.b_id = b.id);

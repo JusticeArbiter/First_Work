@@ -1,0 +1,7 @@
+LOG:  00000: statement: select cast_invoker(-1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type date: "-1"
+CONTEXT:  SQL function "sql_to_date" statement 1
+	PL/pgSQL function cast_invoker(integer) while casting return value to function's return type
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  select cast_invoker(-1);

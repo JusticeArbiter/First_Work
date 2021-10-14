@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX bt_i4_index ON bt_i4_heap USING btree (seqno int4_ops);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "bt_i4_heap" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX bt_i4_index ON bt_i4_heap USING btree (seqno int4_ops);

@@ -1,0 +1,5 @@
+LOG:  00000: statement: COPY no_oids TO stdout WITH OIDS;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: table "no_oids" does not have OIDs
+LOCATION:  BeginCopy, copy.c:1408
+STATEMENT:  COPY no_oids TO stdout WITH OIDS;

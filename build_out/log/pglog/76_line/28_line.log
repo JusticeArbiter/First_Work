@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT point '(1,1)' @ line '[(0,0),(2,2)]';
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,4 @@
+WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT count(*) FROM x)  SELECT * FROM x;
+ERROR:  42P19: aggregate functions are not allowed in a recursive query's recursive term
+LINE 1: WITH RECURSIVE x(n) AS (SELECT 1 UNION ALL SELECT count(*) F...
+                                                          ^

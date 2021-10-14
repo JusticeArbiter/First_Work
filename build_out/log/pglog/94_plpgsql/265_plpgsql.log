@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into PHone values ('PH.fax001', 'Canon fax', 'WS.001.2a');
+LOCATION:  exec_simple_query, postgres.c:938

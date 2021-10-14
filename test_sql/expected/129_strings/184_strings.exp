@@ -1,0 +1,6 @@
+SELECT strpos('abcdef', 'cd') AS "pos_3";
+ pos_3 
+-------
+     3
+(1 row)
+

@@ -1,0 +1,6 @@
+select 3 as x, 4 as y 
+ x | y 
+---+---
+ 3 | 4
+(1 row)
+

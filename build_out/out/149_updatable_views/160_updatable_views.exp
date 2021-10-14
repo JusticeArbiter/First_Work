@@ -1,0 +1,12 @@
+EXPLAIN (costs off) DELETE FROM rw_view2 WHERE a=2;
+                        QUERY PLAN                        
+----------------------------------------------------------
+ Delete on rw_view1 rw_view1_1
+   ->  Subquery Scan on rw_view1
+         Filter: ((rw_view1.a < 10) AND (rw_view1.a = 2))
+         ->  Bitmap Heap Scan on base_tbl
+               Recheck Cond: (a > 0)
+               ->  Bitmap Index Scan on base_tbl_pkey
+                     Index Cond: (a > 0)
+(7 rows)
+

@@ -1,0 +1,4 @@
+SELECT id FROM test_tablesample_v1 TABLESAMPLE BERNOULLI (1);
+ERROR:  0A000: TABLESAMPLE clause can only be applied to tables and materialized views
+LINE 1: SELECT id FROM test_tablesample_v1 TABLESAMPLE BERNOULLI (1)...
+                       ^

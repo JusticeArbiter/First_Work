@@ -1,0 +1,3 @@
+ALTER SERVER s4 OWNER TO unprivileged_role;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER SERVER
+ALTER SERVER

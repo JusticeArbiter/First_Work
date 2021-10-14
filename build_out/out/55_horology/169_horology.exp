@@ -1,0 +1,4 @@
+SELECT '' AS "65", d1 AS european_postgres FROM TIMESTAMP_TBL;
+ERROR:  42P01: relation "timestamp_tbl" does not exist
+LINE 1: SELECT '' AS "65", d1 AS european_postgres FROM TIMESTAMP_TB...
+                                                        ^

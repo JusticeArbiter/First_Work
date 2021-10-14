@@ -1,0 +1,9 @@
+EXPLAIN (costs off)  CREATE MATERIALIZED VIEW tvvm AS SELECT * FROM tvv;
+        QUERY PLAN         
+---------------------------
+ Aggregate
+   ->  HashAggregate
+         Group Key: t.type
+         ->  Seq Scan on t
+(4 rows)
+

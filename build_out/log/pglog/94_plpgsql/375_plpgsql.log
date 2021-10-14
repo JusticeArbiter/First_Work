@@ -1,0 +1,8 @@
+LOG:  00000: statement: create function sp_add_user(a_login text) returns int as $$  declare my_id_user int;  begin  my_id_user = sp_id_user( a_login );  IF my_id_user > 0 THEN  RETURN -1; -- error code for existing user  END IF;  INSERT INTO users ( login ) VALUES ( a_login );  my_id_user = sp_id_user( a_login );  IF my_id_user = 0 THEN  RETURN -2; -- error code for insertion failure  END IF;  RETURN my_id_user;  end$$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function sp_add_user(a_login text) returns int as $$  declare my_id_user int;  begin  my_id_user = sp_id_user( a_login );  IF my_id_user > 0 THEN  RETURN -1; -- error code for existing user  END IF;  INSERT INTO users ( login ) VALUES ( a_login );  my_id_user = sp_id_user( a_login );  IF my_id_user = 0 THEN  RETURN -2; -- error code for insertion failure  END IF;  RETURN my_id_user;  end$$ language plpgsql;
+ERROR:  42601: syntax error at end of input at character 398
+LOCATION:  plpgsql_yyerror, pl_scanner.c:623
+STATEMENT:  create function sp_add_user(a_login text) returns int as $$  declare my_id_user int;  begin  my_id_user = sp_id_user( a_login );  IF my_id_user > 0 THEN  RETURN -1; -- error code for existing user  END IF;  INSERT INTO users ( login ) VALUES ( a_login );  my_id_user = sp_id_user( a_login );  IF my_id_user = 0 THEN  RETURN -2; -- error code for insertion failure  END IF;  RETURN my_id_user;  end$$ language plpgsql;

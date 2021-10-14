@@ -1,0 +1,2 @@
+ALTER TABLE tmp3 VALIDATE CONSTRAINT b_greater_than_ten;
+ERROR:  23514: check constraint "b_greater_than_ten" is violated by some row

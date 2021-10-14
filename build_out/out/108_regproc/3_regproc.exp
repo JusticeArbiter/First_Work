@@ -1,0 +1,6 @@
+SELECT regoperator('+(int4,int4)');
+    regoperator     
+--------------------
+ +(integer,integer)
+(1 row)
+

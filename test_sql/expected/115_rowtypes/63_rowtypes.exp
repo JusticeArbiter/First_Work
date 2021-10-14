@@ -1,0 +1,6 @@
+select ROW();
+ row 
+-----
+ ()
+(1 row)
+

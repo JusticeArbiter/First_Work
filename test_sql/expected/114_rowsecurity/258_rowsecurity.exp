@@ -1,0 +1,25 @@
+SELECT * FROM bv1 WHERE f_leak(b);
+NOTICE:  00000: f_leak => c4ca4238a0b923820dcc509a6f75849b
+NOTICE:  00000: f_leak => c81e728d9d4c2f636f067f89cc14862c
+NOTICE:  00000: f_leak => eccbc87e4b5ce2fe28308fd9f2a7baf3
+NOTICE:  00000: f_leak => a87ff679a2f3e71d9181a67b7542122c
+NOTICE:  00000: f_leak => e4da3b7fbbce2345d7772b0674a318d5
+NOTICE:  00000: f_leak => 1679091c5a880faf6fb5e6087eb1b2dc
+NOTICE:  00000: f_leak => 8f14e45fceea167a5a36dedd4bea2543
+NOTICE:  00000: f_leak => c9f0f895fb98ab9159f51fd0297e236d
+NOTICE:  00000: f_leak => 45c48cce2e2d7fbdea1afc51c7c6ad26
+NOTICE:  00000: f_leak => d3d9446802a44259755d38e6d163e820
+ a  |                b                 
+----+----------------------------------
+  1 | c4ca4238a0b923820dcc509a6f75849b
+  2 | c81e728d9d4c2f636f067f89cc14862c
+  3 | eccbc87e4b5ce2fe28308fd9f2a7baf3
+  4 | a87ff679a2f3e71d9181a67b7542122c
+  5 | e4da3b7fbbce2345d7772b0674a318d5
+  6 | 1679091c5a880faf6fb5e6087eb1b2dc
+  7 | 8f14e45fceea167a5a36dedd4bea2543
+  8 | c9f0f895fb98ab9159f51fd0297e236d
+  9 | 45c48cce2e2d7fbdea1afc51c7c6ad26
+ 10 | d3d9446802a44259755d38e6d163e820
+(10 rows)
+

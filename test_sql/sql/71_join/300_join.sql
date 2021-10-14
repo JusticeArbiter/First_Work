@@ -1,0 +1,1 @@
+INSERT INTO c VALUES (0), (1);

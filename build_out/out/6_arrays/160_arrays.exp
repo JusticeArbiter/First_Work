@@ -1,0 +1,4 @@
+select 33 * any (44);
+ERROR:  42809: op ANY/ALL (array) requires array on right side
+LINE 1: select 33 * any (44);
+                  ^

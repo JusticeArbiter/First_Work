@@ -1,0 +1,8 @@
+LOG:  00000: statement: SECURITY LABEL FOR 'dummy' ON TABLE seclabel_tbl1 IS 'classified';
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start SECURITY LABEL
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  SECURITY LABEL FOR 'dummy' ON TABLE seclabel_tbl1 IS 'classified';
+ERROR:  22023: security label provider "dummy" is not loaded
+LOCATION:  ExecSecLabelStmt, seclabel.c:83
+STATEMENT:  SECURITY LABEL FOR 'dummy' ON TABLE seclabel_tbl1 IS 'classified';

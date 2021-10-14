@@ -1,0 +1,2 @@
+drop domain domainchar4arr restrict;
+DROP DOMAIN

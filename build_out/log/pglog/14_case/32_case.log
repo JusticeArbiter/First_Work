@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE CASE_TBL  SET i = CASE WHEN i >= 3 THEN (- i)  ELSE (2 * i) END;
+LOCATION:  exec_simple_query, postgres.c:938

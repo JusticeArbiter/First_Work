@@ -1,0 +1,10 @@
+SELECT * FROM rw_view1 WHERE snoop(person);
+NOTICE:  00000: snooped value: Tom
+NOTICE:  00000: snooped value: Dick
+NOTICE:  00000: snooped value: Harry
+ person 
+--------
+ Tom
+ Harry
+(2 rows)
+

@@ -1,0 +1,3 @@
+DROP FOREIGN TABLE no_table;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FOREIGN TABLE
+ERROR:  42704: foreign table "no_table" does not exist

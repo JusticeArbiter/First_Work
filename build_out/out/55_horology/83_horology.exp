@@ -1,0 +1,6 @@
+SELECT timestamp with time zone '1999-03-01' - interval '1 second' AS "Feb 28";
+         Feb 28         
+------------------------
+ 1999-02-28 23:59:59+08
+(1 row)
+

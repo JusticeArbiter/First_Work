@@ -1,0 +1,7 @@
+LOG:  00000: statement: select myfunc(0);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22012: division by zero
+CONTEXT:  SQL statement "SELECT 1/$1"
+	PL/pgSQL function myfunc(integer) line 1 at PERFORM
+LOCATION:  int4div, int.c:719
+STATEMENT:  select myfunc(0);

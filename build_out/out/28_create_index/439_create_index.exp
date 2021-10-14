@@ -1,0 +1,4 @@
+INSERT INTO onek_with_null (unique1,unique2) VALUES (NULL, -1), (NULL, NULL);
+ERROR:  42P01: relation "onek_with_null" does not exist
+LINE 1: INSERT INTO onek_with_null (unique1,unique2) VALUES (NULL, -...
+                    ^

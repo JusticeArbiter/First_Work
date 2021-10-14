@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('extension', '{one}', '{}');
+ERROR:  42704: extension "one" does not exist

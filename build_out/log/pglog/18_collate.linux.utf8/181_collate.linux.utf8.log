@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE VIEW collate_dep_test3 AS SELECT text 'foo' COLLATE test0 AS foo;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+insert into ddtest2 values(2);
+INSERT 0 1

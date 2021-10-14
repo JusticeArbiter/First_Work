@@ -1,0 +1,7 @@
+SELECT '<>' IS NOT DOCUMENT;
+ERROR:  2200N: invalid XML content
+LINE 1: SELECT '<>' IS NOT DOCUMENT;
+               ^
+DETAIL:  line 1: StartTag: invalid element name
+<>
+ ^

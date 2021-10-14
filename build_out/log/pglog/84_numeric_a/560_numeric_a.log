@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT width_bucket(3.5::float8, 3.0::float8, 3.0::float8, 888);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2201G: lower bound cannot equal upper bound
+LOCATION:  width_bucket_float8, float.c:2793
+STATEMENT:  SELECT width_bucket(3.5::float8, 3.0::float8, 3.0::float8, 888);

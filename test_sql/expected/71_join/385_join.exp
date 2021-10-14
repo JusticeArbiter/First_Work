@@ -1,0 +1,4 @@
+insert into dual default values;
+ERROR:  42P01: relation "dual" does not exist
+LINE 1: insert into dual default values;
+                    ^

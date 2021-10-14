@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT chr(0);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  54000: null character not permitted
+LOCATION:  chr, oracle_compat.c:1000
+STATEMENT:  SELECT chr(0);

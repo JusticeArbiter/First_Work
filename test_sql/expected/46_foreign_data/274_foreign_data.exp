@@ -1,0 +1,3 @@
+DROP TABLE use_ft1_column_type;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+DROP TABLE

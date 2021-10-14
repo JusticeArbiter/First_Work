@@ -1,0 +1,1 @@
+INSERT INTO wi SELECT i+328 FROM wo;

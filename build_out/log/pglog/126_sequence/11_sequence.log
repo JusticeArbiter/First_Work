@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO serialTest2 (f1, f4)  VALUES ('bogus', -32769);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: smallint out of range
+LOCATION:  i4toi2, int.c:349
+STATEMENT:  INSERT INTO serialTest2 (f1, f4)  VALUES ('bogus', -32769);

@@ -1,0 +1,5 @@
+LOG:  00000: statement: REINDEX SCHEMA schema_to_reindex;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  3F000: schema "schema_to_reindex" does not exist
+LOCATION:  get_namespace_oid, namespace.c:2873
+STATEMENT:  REINDEX SCHEMA schema_to_reindex;

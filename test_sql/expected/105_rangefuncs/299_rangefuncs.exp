@@ -1,0 +1,4 @@
+select * from array_to_set(array['one', 'two']);
+ERROR:  42601: a column definition list is required for functions returning "record"
+LINE 1: select * from array_to_set(array['one', 'two']);
+                      ^

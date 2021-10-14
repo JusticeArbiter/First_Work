@@ -1,0 +1,6 @@
+SELECT xmlparse(content '<undefinedentity>&idontexist;</undefinedentity>');
+ERROR:  2200N: invalid XML content
+DETAIL:  line 1: Entity 'idontexist' not defined
+<undefinedentity>&idontexist;</undefinedentity>
+                             ^
+line 1: chunk is not well balanced

@@ -1,0 +1,4 @@
+SELECT jsonb_build_object('turbines',jsonb_object_agg(serial_num,jsonb_build_object('name',name,'type',type)))  FROM foo;
+ERROR:  42P01: relation "foo" does not exist
+LINE 1: ...num,jsonb_build_object('name',name,'type',type)))  FROM foo;
+                                                                   ^

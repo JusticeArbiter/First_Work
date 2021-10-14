@@ -1,0 +1,6 @@
+SELECT interval '1 2:03.5678' minute to second(2);
+     interval      
+-------------------
+ 1 day 00:02:03.57
+(1 row)
+

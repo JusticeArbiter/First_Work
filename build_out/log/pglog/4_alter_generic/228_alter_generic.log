@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf17 USING btree ADD  OPERATOR 1 < (int4, int2) ,  OPERATOR 2 <= (int4, int2) ,  OPERATOR 3 = (int4, int2) ,  OPERATOR 4 >= (int4, int2) ,  OPERATOR 5 > (int4, int2) ,  FUNCTION 1 btint42cmp(int4, int2) ,  FUNCTION 1 btint42cmp(int4, int2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P17: procedure number 1 for (integer,smallint) appears more than once
+LOCATION:  addFamilyMember, opclasscmds.c:1261
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf17 USING btree ADD  OPERATOR 1 < (int4, int2) ,  OPERATOR 2 <= (int4, int2) ,  OPERATOR 3 = (int4, int2) ,  OPERATOR 4 >= (int4, int2) ,  OPERATOR 5 > (int4, int2) ,  FUNCTION 1 btint42cmp(int4, int2) ,  FUNCTION 1 btint42cmp(int4, int2);

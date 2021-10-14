@@ -1,0 +1,2 @@
+LOG:  00000: statement: select max(foo COLLATE "C") filter (where (bar collate "POSIX") > '0')  from (values ('a', 'b')) AS v(foo,bar);
+LOCATION:  exec_simple_query, postgres.c:938

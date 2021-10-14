@@ -1,0 +1,2 @@
+LOG:  00000: statement: select ten, sum(distinct four) filter (where four::text ~ '123') from onek a  group by rollup(ten);
+LOCATION:  exec_simple_query, postgres.c:938

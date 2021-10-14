@@ -1,0 +1,4 @@
+insert into snapshot_test values (3, '100001:100009:100005,100007,100008');
+ERROR:  42P01: relation "snapshot_test" does not exist
+LINE 1: insert into snapshot_test values (3, '100001:100009:100005,1...
+                    ^

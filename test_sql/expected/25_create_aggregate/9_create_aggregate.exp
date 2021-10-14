@@ -1,0 +1,2 @@
+COMMENT ON AGGREGATE nosuchagg (*) IS 'should fail';
+ERROR:  42883: aggregate nosuchagg(*) does not exist

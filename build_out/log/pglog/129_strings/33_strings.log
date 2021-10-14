@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT CAST(f1 AS char(10)) AS "char(varchar)" FROM VARCHAR_TBL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "varchar_tbl" does not exist at character 53
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT CAST(f1 AS char(10)) AS "char(varchar)" FROM VARCHAR_TBL;

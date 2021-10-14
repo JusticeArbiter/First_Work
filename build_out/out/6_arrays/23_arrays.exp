@@ -1,0 +1,7 @@
+SELECT a FROM arrtest WHERE a[2] IS NULL;
+        a        
+-----------------
+ [4:4]={NULL}
+ {1,NULL,3,NULL}
+(2 rows)
+

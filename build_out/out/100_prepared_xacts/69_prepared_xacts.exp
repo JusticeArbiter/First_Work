@@ -1,0 +1,2 @@
+lock table pxtest3 in access share mode nowait;
+ERROR:  25P01: LOCK TABLE can only be used in transaction blocks

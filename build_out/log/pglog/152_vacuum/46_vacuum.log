@@ -1,0 +1,7 @@
+LOG:  00000: statement: ANALYZE vaccluster;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: ANALYZE cannot be executed from VACUUM or ANALYZE
+CONTEXT:  SQL function "do_analyze" statement 1
+	SQL function "wrap_do_analyze" statement 1
+LOCATION:  vacuum, vacuum.c:186
+STATEMENT:  ANALYZE vaccluster;

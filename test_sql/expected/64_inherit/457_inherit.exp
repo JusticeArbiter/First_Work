@@ -1,0 +1,10 @@
+explain (costs off)  SELECT thousand, tenthous, thousand+tenthous AS x FROM tenk1  UNION ALL  SELECT 42, 42, hundred FROM tenk1  ORDER BY thousand, tenthous;
+                 QUERY PLAN                 
+--------------------------------------------
+ Sort
+   Sort Key: tenk1.thousand, tenk1.tenthous
+   ->  Append
+         ->  Seq Scan on tenk1
+         ->  Seq Scan on tenk1 tenk1_1
+(5 rows)
+

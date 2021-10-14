@@ -1,0 +1,22 @@
+LOG:  00000: statement: DROP FOREIGN DATA WRAPPER foo;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FOREIGN DATA WRAPPER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP FOREIGN DATA WRAPPER foo;
+ERROR:  2BP01: cannot drop foreign-data wrapper foo because other objects depend on it
+DETAIL:  server s4 depends on foreign-data wrapper foo
+	user mapping for highgo on server s4 depends on server s4
+	user mapping for public on server s4 depends on server s4
+	server s5 depends on foreign-data wrapper foo
+	user mapping for highgo on server s5 depends on server s5
+	server s6 depends on foreign-data wrapper foo
+	user mapping for highgo on server s6 depends on server s6
+	server s7 depends on foreign-data wrapper foo
+	user mapping for highgo on server s7 depends on server s7
+	server t1 depends on foreign-data wrapper foo
+	user mapping for public on server t1 depends on server t1
+	server t2 depends on foreign-data wrapper foo
+	server s9 depends on foreign-data wrapper foo
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+LOCATION:  reportDependentObjects, dependency.c:985
+STATEMENT:  DROP FOREIGN DATA WRAPPER foo;

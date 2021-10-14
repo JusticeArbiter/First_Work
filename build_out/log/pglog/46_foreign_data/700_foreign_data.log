@@ -1,0 +1,5 @@
+LOG:  00000: statement: TRUNCATE pt1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: "ft2" is not a table
+LOCATION:  truncate_check_rel, tablecmds.c:1297
+STATEMENT:  TRUNCATE pt1;

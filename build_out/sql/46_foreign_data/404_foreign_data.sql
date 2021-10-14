@@ -1,0 +1,1 @@
+GRANT USAGE ON FOREIGN SERVER s9 TO unprivileged_role;

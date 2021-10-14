@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH wcte AS ( INSERT INTO child1 VALUES ( 42, 'new' ) RETURNING id AS newid )  UPDATE parent SET id = id + newid FROM wcte;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "child1" does not exist at character 28
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  WITH wcte AS ( INSERT INTO child1 VALUES ( 42, 'new' ) RETURNING id AS newid )  UPDATE parent SET id = id + newid FROM wcte;

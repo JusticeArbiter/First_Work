@@ -1,0 +1,2 @@
+INSERT INTO pktable VALUES (2000, 3);
+INSERT 0 1

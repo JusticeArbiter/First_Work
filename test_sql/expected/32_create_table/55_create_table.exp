@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS as_select1 AS SELECT * FROM pg_class WHERE relkind = 'r';
+NOTICE:  42P07: relation "as_select1" already exists, skipping
+CREATE TABLE AS

@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT '01'::json;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type json at character 8
+DETAIL:  Token "01" is invalid.
+CONTEXT:  JSON data, line 1: 01
+LOCATION:  report_invalid_token, json.c:1244
+STATEMENT:  SELECT '01'::json;

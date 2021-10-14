@@ -1,0 +1,8 @@
+LOG:  00000: statement: drop function sql_to_date(integer) cascade;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  drop function sql_to_date(integer) cascade;
+NOTICE:  00000: drop cascades to cast from integer to date
+LOCATION:  reportDependentObjects, dependency.c:1009
+STATEMENT:  drop function sql_to_date(integer) cascade;

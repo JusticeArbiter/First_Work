@@ -1,0 +1,5 @@
+LOG:  00000: statement: create function int8alias2in(cstring) returns int8alias2  strict immutable language internal as 'int8in';
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  42809: return type int8alias2 is only a shell
+LOCATION:  compute_return_type, functioncmds.c:105
+STATEMENT:  create function int8alias2in(cstring) returns int8alias2  strict immutable language internal as 'int8in';

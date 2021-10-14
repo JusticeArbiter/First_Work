@@ -1,0 +1,6 @@
+SELECT 'TrUe'::text::boolean AS true, 'fAlse'::text::boolean AS false;
+ true | false 
+------+-------
+ t    | f
+(1 row)
+

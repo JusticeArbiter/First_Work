@@ -1,0 +1,14 @@
+SELECT foo, length(foo) FROM regexp_split_to_table('the quick brown fox jumps over the lazy dog', $re$\s+$re$) AS foo;
+  foo  | length 
+-------+--------
+ the   |      3
+ quick |      5
+ brown |      5
+ fox   |      3
+ jumps |      5
+ over  |      4
+ the   |      3
+ lazy  |      4
+ dog   |      3
+(9 rows)
+

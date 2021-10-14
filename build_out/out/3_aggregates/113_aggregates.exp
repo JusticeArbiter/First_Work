@@ -1,0 +1,6 @@
+drop table minmaxtest cascade;
+NOTICE:  00000: drop cascades to 3 other objects
+DETAIL:  drop cascades to table minmaxtest1
+drop cascades to table minmaxtest2
+drop cascades to table minmaxtest3
+DROP TABLE

@@ -1,0 +1,4 @@
+SELECT max(four) AS max_3 FROM onek;
+ERROR:  42P01: relation "onek" does not exist
+LINE 1: SELECT max(four) AS max_3 FROM onek;
+                                       ^

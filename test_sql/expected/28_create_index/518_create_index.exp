@@ -1,0 +1,2 @@
+CREATE INDEX ON table2(col2);
+CREATE INDEX

@@ -1,0 +1,14 @@
+SELECT * FROM information_schema.user_mappings ORDER BY lower(authorization_identifier), 2, 3;
+ authorization_identifier | foreign_server_catalog | foreign_server_name 
+--------------------------+------------------------+---------------------
+ highgo                   | highgo                 | s4
+ highgo                   | highgo                 | s5
+ highgo                   | highgo                 | s6
+ highgo                   | highgo                 | s7
+ highgo                   | highgo                 | s8
+ highgo                   | highgo                 | t1
+ PUBLIC                   | highgo                 | s4
+ PUBLIC                   | highgo                 | t1
+ regression_bob           | highgo                 | useless_server
+(9 rows)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TEMP TABLE gcircle_tbl AS  SELECT circle(home_base) AS f1 FROM slow_emp4000;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "slow_emp4000" does not exist at character 71
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  CREATE TEMP TABLE gcircle_tbl AS  SELECT circle(home_base) AS f1 FROM slow_emp4000;

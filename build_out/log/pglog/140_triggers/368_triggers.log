@@ -1,0 +1,5 @@
+LOG:  00000: statement: create function upsert_after_func()  returns trigger language plpgsql as  $$  begin  if (TG_OP = 'UPDATE') then  raise warning 'after update (old): %', old.*::text;  raise warning 'after update (new): %', new.*::text;  elsif (TG_OP = 'INSERT') then  raise warning 'after insert (new): %', new.*::text;  end if;  return null;  end;  $$;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function upsert_after_func()  returns trigger language plpgsql as  $$  begin  if (TG_OP = 'UPDATE') then  raise warning 'after update (old): %', old.*::text;  raise warning 'after update (new): %', new.*::text;  elsif (TG_OP = 'INSERT') then  raise warning 'after insert (new): %', new.*::text;  end if;  return null;  end;  $$;

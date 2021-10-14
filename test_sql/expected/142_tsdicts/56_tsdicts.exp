@@ -1,0 +1,3 @@
+ALTER TEXT SEARCH CONFIGURATION thesaurus_tst ALTER MAPPING FOR  asciiword, hword_asciipart, asciihword  WITH synonym, thesaurus, english_stem;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TEXT SEARCH CONFIGURATION
+ALTER TEXT SEARCH CONFIGURATION

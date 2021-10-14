@@ -1,0 +1,5 @@
+LOG:  00000: statement: select '-9223372036854775808'::int8 / '0'::int2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22012: division by zero
+LOCATION:  int82div, int8.c:1094
+STATEMENT:  select '-9223372036854775808'::int8 / '0'::int2;

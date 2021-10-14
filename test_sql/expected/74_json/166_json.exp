@@ -1,0 +1,6 @@
+select '{"a": {"b":{"c": "foo"}}}'::json #> array['a','b'];
+   ?column?   
+--------------
+ {"c": "foo"}
+(1 row)
+

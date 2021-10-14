@@ -1,0 +1,2 @@
+LOG:  00000: statement: select json '{ "a": "dollar \u0024 character" }' ->> 'a' as correct_everywhere;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+CREATE INDEX tenk1_hundred ON tenk1 USING btree(hundred int4_ops);
+ERROR:  42P01: relation "tenk1" does not exist

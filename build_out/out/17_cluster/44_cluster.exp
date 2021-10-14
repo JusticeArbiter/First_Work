@@ -1,0 +1,2 @@
+INSERT INTO clstr_tst (b, c) VALUES (8, 'ocho');
+INSERT 0 1

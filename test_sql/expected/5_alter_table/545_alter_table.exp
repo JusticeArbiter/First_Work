@@ -1,0 +1,4 @@
+insert into atacc1 values (default, 11, 12, 13);
+ERROR:  42601: INSERT has more expressions than target columns
+LINE 1: insert into atacc1 values (default, 11, 12, 13);
+                                                    ^

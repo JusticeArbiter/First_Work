@@ -1,0 +1,5 @@
+LOG:  00000: statement: SET LOCAL datestyle = 'Postgres, MDY';
+LOCATION:  exec_simple_query, postgres.c:938
+WARNING:  25P01: SET LOCAL can only be used in transaction blocks
+LOCATION:  CheckTransactionChain, xact.c:3222
+STATEMENT:  SET LOCAL datestyle = 'Postgres, MDY';

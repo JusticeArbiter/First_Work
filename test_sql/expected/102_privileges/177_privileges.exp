@@ -1,0 +1,2 @@
+INSERT INTO atest5 (two) VALUES (3);
+INSERT 0 1

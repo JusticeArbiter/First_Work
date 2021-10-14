@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO SUBSELECT_TBL VALUES (3, 4, 5);
+LOCATION:  exec_simple_query, postgres.c:938

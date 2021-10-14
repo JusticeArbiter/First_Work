@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT pg_get_object_address('table', '{}', '{}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: name list length must be at least 1
+LOCATION:  pg_get_object_address, objectaddress.c:1908
+STATEMENT:  SELECT pg_get_object_address('table', '{}', '{}');

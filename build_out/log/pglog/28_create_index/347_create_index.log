@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO func_index_heap VALUES('ABCD', 'EF');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: duplicate key value violates unique constraint "func_index_index"
+DETAIL:  Key ((f1 || f2))=(ABCDEF) already exists.
+LOCATION:  _bt_check_unique, nbtinsert.c:432
+STATEMENT:  INSERT INTO func_index_heap VALUES('ABCD', 'EF');

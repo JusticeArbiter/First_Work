@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX bt_f8_index ON bt_f8_heap USING btree (seqno float8_ops);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "bt_f8_heap" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX bt_f8_index ON bt_f8_heap USING btree (seqno float8_ops);

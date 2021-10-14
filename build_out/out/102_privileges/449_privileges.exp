@@ -1,0 +1,2 @@
+REVOKE regressgroup2 FROM regressuser5;
+REVOKE ROLE

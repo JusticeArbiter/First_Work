@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH RECURSIVE x(n) AS (SELECT n FROM x UNION ALL SELECT 1)  SELECT * FROM x;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P19: recursive reference to query "x" must not appear within its non-recursive term at character 39
+LOCATION:  checkWellFormedRecursionWalker, parse_cte.c:773
+STATEMENT:  WITH RECURSIVE x(n) AS (SELECT n FROM x UNION ALL SELECT 1)  SELECT * FROM x;

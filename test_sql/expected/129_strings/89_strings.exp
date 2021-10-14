@@ -1,0 +1,6 @@
+SELECT POSITION('5' IN '1234567890') = '5' AS "5";
+ 5 
+---
+ t
+(1 row)
+

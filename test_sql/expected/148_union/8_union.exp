@@ -1,0 +1,7 @@
+SELECT 1.1 AS two UNION SELECT 2.2;
+ two 
+-----
+ 1.1
+ 2.2
+(2 rows)
+

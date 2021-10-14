@@ -1,0 +1,2 @@
+CREATE ROLE regress_alice;
+CREATE ROLE

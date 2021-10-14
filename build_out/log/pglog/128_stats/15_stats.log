@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO trunc_stats_test DEFAULT VALUES;
+LOCATION:  exec_simple_query, postgres.c:938

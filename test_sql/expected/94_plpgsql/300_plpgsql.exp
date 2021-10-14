@@ -1,0 +1,6 @@
+SELECT * FROM test_ret_rec_dyn(5) AS (a int, b numeric, c text);
+ a  | b |  c  
+----+---+-----
+ 50 | 5 | xxx
+(1 row)
+

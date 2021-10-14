@@ -1,0 +1,3 @@
+ALTER FOREIGN TABLE ft1 ALTER COLUMN xmin OPTIONS (ADD p1 'v1');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN TABLE
+ERROR:  0A000: cannot alter system column "xmin"

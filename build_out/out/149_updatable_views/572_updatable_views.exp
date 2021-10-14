@@ -1,0 +1,8 @@
+SELECT * FROM v2;
+ x  |                y                 
+----+----------------------------------
+ -4 | 0267aaf632e87a63288a08331f22c7c3
+  3 | eccbc87e4b5ce2fe28308fd9f2a7baf3
+  6 | 1679091c5a880faf6fb5e6087eb1b2dc
+(3 rows)
+

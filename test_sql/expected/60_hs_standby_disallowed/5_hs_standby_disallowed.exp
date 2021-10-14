@@ -1,0 +1,6 @@
+select * from hs1 FOR UPDATE;
+ col1 
+------
+    1
+(1 row)
+

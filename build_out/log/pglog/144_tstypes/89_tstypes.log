@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ts_rank(' a:1 sa:2C d g'::tsvector, 'a | sa:*');
+LOCATION:  exec_simple_query, postgres.c:938

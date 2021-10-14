@@ -1,0 +1,11 @@
+SELECT STDDEV_POP(n::numeric) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)  FROM (VALUES(1,NULL),(2,600),(3,470),(4,170),(5,430),(6,300)) r(i,n);
+     stddev_pop      
+---------------------
+    147.322774885623
+    147.322774885623
+    117.765657133139
+    106.144555520604
+ 65.0000000000000000
+                   0
+(6 rows)
+

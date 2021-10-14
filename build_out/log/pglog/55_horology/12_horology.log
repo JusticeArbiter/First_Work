@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT timestamp with time zone '2001/12/27 04:05:06.789-08';
+LOCATION:  exec_simple_query, postgres.c:938

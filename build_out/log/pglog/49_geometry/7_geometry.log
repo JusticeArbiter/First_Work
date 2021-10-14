@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS two, p1.f1  FROM POINT_TBL p1  WHERE ishorizontal(p1.f1, point '(0,0)');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "point_tbl" does not exist at character 31
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT '' AS two, p1.f1  FROM POINT_TBL p1  WHERE ishorizontal(p1.f1, point '(0,0)');

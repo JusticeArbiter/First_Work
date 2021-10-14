@@ -1,0 +1,6 @@
+select sessiontimezone();
+ sessiontimezone 
+-----------------
+ PRC
+(1 row)
+

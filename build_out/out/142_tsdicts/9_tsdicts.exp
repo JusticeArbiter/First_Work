@@ -1,0 +1,6 @@
+SELECT ts_lexize('ispell', 'rebook');
+ ts_lexize 
+-----------
+ 
+(1 row)
+

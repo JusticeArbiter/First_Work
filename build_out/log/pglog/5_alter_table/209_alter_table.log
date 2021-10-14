@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE tmp3 VALIDATE CONSTRAINT b_greater_than_ten;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: check constraint "b_greater_than_ten" is violated by some row
+LOCATION:  validateCheckConstraint, tablecmds.c:7371
+STATEMENT:  ALTER TABLE tmp3 VALIDATE CONSTRAINT b_greater_than_ten;

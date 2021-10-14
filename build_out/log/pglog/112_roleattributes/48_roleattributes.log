@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM pg_authid WHERE rolname = 'test_user_canlogin';
+LOCATION:  exec_simple_query, postgres.c:938

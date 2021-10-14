@@ -1,0 +1,5 @@
+SELECT a,b,~a AS "~ a",a & b AS "a & b",  a|b AS "a | b", a # b AS "a # b" FROM bit_table;
+ a | b | ~ a | a & b | a | b | a # b 
+---+---+-----+-------+-------+-------
+(0 rows)
+

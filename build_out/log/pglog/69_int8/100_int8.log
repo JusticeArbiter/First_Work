@@ -1,0 +1,5 @@
+LOG:  00000: statement: select '100'::int4 * '9223372036854775800'::int8;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: bigint out of range
+LOCATION:  int48mul, int8.c:991
+STATEMENT:  select '100'::int4 * '9223372036854775800'::int8;

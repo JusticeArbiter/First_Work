@@ -1,0 +1,6 @@
+SELECT m / 2 FROM money_data;
+ ?column? 
+----------
+   $61.50
+(1 row)
+

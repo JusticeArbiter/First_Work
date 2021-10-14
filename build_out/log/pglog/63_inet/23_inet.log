@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO INET_TBL (c, i) VALUES (cidr('ffff:ffff:ffff:ffff::/24'), '::192.168.1.226');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid cidr value: "ffff:ffff:ffff:ffff::/24" at character 42
+DETAIL:  Value has bits set to right of mask.
+LOCATION:  network_in, network.c:70
+STATEMENT:  INSERT INTO INET_TBL (c, i) VALUES (cidr('ffff:ffff:ffff:ffff::/24'), '::192.168.1.226');

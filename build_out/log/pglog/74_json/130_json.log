@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT json_array_length('[1,2,3,{"f1":1,"f2":[5,6]},4]');
+LOCATION:  exec_simple_query, postgres.c:938

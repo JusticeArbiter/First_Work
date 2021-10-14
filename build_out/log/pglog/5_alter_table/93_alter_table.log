@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE tmp_view RENAME TO tmp_view_new;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tmp_view" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  ALTER TABLE tmp_view RENAME TO tmp_view_new;

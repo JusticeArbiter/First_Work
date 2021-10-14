@@ -1,0 +1,4 @@
+select * from forc_test;
+ERROR:  42P01: relation "forc_test" does not exist
+LINE 1: select * from forc_test;
+                      ^

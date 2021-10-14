@@ -1,0 +1,5 @@
+LOG:  00000: statement: select array_agg(null::int[]) from generate_series(1,2);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22004: cannot accumulate null arrays
+LOCATION:  accumArrayResultArr, arrayfuncs.c:5187
+STATEMENT:  select array_agg(null::int[]) from generate_series(1,2);

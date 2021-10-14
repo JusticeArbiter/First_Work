@@ -1,0 +1,6 @@
+SELECT jsonb_build_object(1,2);
+ jsonb_build_object 
+--------------------
+ {"1": 2}
+(1 row)
+

@@ -1,0 +1,6 @@
+SELECT width_bucket(now(),  array['yesterday', 'today', 'tomorrow']::timestamptz[]);
+ width_bucket 
+--------------
+            2
+(1 row)
+

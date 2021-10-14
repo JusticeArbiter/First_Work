@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT xmlpi(name "xml-stylesheet", 'href="mystyle.css" type="text/css"');
+LOCATION:  exec_simple_query, postgres.c:938

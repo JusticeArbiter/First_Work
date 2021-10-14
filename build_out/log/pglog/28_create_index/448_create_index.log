@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT count(*) FROM onek_with_null WHERE unique1 IS NOT NULL AND unique1 > 500;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "onek_with_null" does not exist at character 22
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT count(*) FROM onek_with_null WHERE unique1 IS NOT NULL AND unique1 > 500;

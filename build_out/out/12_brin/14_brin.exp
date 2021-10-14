@@ -1,0 +1,6 @@
+SELECT brin_summarize_new_values('brinidx');
+ brin_summarize_new_values 
+---------------------------
+                         0
+(1 row)
+

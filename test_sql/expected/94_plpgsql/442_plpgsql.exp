@@ -1,0 +1,3 @@
+drop function excpt_test3();
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FUNCTION
+ERROR:  42883: function excpt_test3() does not exist

@@ -1,0 +1,13 @@
+LOG:  00000: statement: DROP TYPE person_type RESTRICT;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TYPE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP TYPE person_type RESTRICT;
+ERROR:  2BP01: cannot drop type person_type because other objects depend on it
+DETAIL:  table persons depends on type person_type
+	function get_all_persons() depends on type person_type
+	table persons2 depends on type person_type
+	table persons3 depends on type person_type
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+LOCATION:  reportDependentObjects, dependency.c:985
+STATEMENT:  DROP TYPE person_type RESTRICT;

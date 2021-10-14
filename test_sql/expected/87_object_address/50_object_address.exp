@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('foreign-data wrapper', '{one}', '{}');
+ERROR:  42704: foreign-data wrapper "one" does not exist

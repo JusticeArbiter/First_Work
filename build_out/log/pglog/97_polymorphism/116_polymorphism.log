@@ -1,0 +1,2 @@
+LOG:  00000: statement: select distinct array_ndims(histogram_bounds) from pg_stats  where histogram_bounds is not null;
+LOCATION:  exec_simple_query, postgres.c:938

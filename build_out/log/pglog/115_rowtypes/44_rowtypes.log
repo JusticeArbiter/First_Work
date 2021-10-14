@@ -1,0 +1,6 @@
+LOG:  00000: statement: select ROW('ABC','DEF') ~~ ROW('DEF','ABC') as fail;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: could not determine interpretation of row comparison operator ~~ at character 25
+HINT:  Row comparison operators must be associated with btree operator families.
+LOCATION:  make_row_comparison_op, parse_expr.c:2729
+STATEMENT:  select ROW('ABC','DEF') ~~ ROW('DEF','ABC') as fail;

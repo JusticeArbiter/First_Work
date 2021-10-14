@@ -1,0 +1,6 @@
+select * from rtest_v1;
+ a | b  
+---+----
+ 2 | 12
+(1 row)
+

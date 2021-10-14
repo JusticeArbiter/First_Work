@@ -1,0 +1,6 @@
+select numtodsinterval('05'::int4,'minute'::text);
+ numtodsinterval 
+-----------------
+ 00:05:00
+(1 row)
+

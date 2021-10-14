@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO tasks VALUES (2,2,2,NULL);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tasks" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  INSERT INTO tasks VALUES (2,2,2,NULL);

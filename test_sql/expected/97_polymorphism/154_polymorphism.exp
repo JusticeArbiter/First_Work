@@ -1,0 +1,3 @@
+drop function dfunc(int);
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FUNCTION
+ERROR:  42883: function dfunc(integer) does not exist

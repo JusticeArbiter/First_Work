@@ -1,0 +1,2 @@
+create table altinhoid () inherits (altwithoid) with oids;
+CREATE TABLE

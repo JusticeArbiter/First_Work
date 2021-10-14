@@ -1,0 +1,1 @@
+ALTER TABLE test9a ALTER COLUMN b TYPE testdomain1;

@@ -1,0 +1,2 @@
+drop sequence ddef4_seq;
+DROP SEQUENCE

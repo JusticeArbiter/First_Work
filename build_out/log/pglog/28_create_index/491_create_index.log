@@ -1,0 +1,5 @@
+LOG:  00000: statement: EXPLAIN (COSTS OFF)  SELECT count(*) FROM tenk1  WHERE hundred = 42 AND (thousand = 42 OR thousand = 99);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tenk1" does not exist at character 43
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  EXPLAIN (COSTS OFF)  SELECT count(*) FROM tenk1  WHERE hundred = 42 AND (thousand = 42 OR thousand = 99);

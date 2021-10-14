@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, opfnamespace  FROM pg_catalog.pg_opfamily fk  WHERE opfnamespace != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_namespace pk WHERE pk.oid = fk.opfnamespace);
+LOCATION:  exec_simple_query, postgres.c:938

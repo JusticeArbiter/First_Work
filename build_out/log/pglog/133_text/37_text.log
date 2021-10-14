@@ -1,0 +1,2 @@
+LOG:  00000: statement: select format('INSERT INTO %I VALUES(%L,%L)', 'mytab', 10, 'Hello');
+LOCATION:  exec_simple_query, postgres.c:938

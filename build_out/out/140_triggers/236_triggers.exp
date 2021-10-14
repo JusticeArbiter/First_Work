@@ -1,0 +1,4 @@
+UPDATE main_view SET b = 31 WHERE a = 20;
+ERROR:  42P01: relation "main_view" does not exist
+LINE 1: UPDATE main_view SET b = 31 WHERE a = 20;
+               ^

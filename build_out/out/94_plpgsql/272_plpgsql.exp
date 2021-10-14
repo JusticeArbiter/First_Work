@@ -1,0 +1,17 @@
+select * from PField_v1 where pfname = 'PF0_2' order by slotname;
+ pfname |       slotname       |            backside            |                                 patch                                  
+--------+----------------------+--------------------------------+------------------------------------------------------------------------
+ PF0_2  | PS.base.ta1          | Phone line -0 (Central call)   | PS.base.a1 -> WS.001.1a in room 001 -> Phone PH.hc001 (Hicom standard)
+ PF0_2  | PS.base.ta2          | Phone line -501 (Fax entrance) | PS.base.a3 -> WS.001.2a in room 001 -> Phone PH.fax001 (Canon fax)
+ PF0_2  | PS.base.ta3          | Phone line -102                | -
+ PF0_2  | PS.base.ta4          | -                              | -
+ PF0_2  | PS.base.ta5          | Phone line -103                | PS.base.b1 -> WS.002.1a in room 002 -> Phone PH.hc002 (Hicom standard)
+ PF0_2  | PS.base.ta6          | Phone line -104                | -
+ PF0_2  | PS.base.tb1          | -                              | -
+ PF0_2  | PS.base.tb2          | Phone line -106                | PS.base.b3 -> WS.002.2a in room 002 -> Phone PH.hc003 (Hicom standard)
+ PF0_2  | PS.base.tb3          | Phone line -108                | -
+ PF0_2  | PS.base.tb4          | Phone line -109                | -
+ PF0_2  | PS.base.tb5          | Phone line -121                | -
+ PF0_2  | PS.base.tb6          | Phone line -122                | -
+(12 rows)
+

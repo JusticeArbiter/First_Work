@@ -1,0 +1,4 @@
+INSERT INTO PG_LSN_TBL VALUES (' 0/12345678');
+ERROR:  22P02: invalid input syntax for type pg_lsn: " 0/12345678"
+LINE 1: INSERT INTO PG_LSN_TBL VALUES (' 0/12345678');
+                                       ^

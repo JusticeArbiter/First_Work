@@ -1,0 +1,5 @@
+SELECT xmlconcat('bad', '<syntax');
+ERROR:  2200N: invalid XML content
+LINE 1: SELECT xmlconcat('bad', '<syntax');
+                                ^
+DETAIL:  line 1: Couldn't find end of Start Tag syntax line 1

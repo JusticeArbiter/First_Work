@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT interval '1.234' second(2);
+LOCATION:  exec_simple_query, postgres.c:938

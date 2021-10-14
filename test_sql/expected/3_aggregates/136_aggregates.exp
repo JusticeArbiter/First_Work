@@ -1,0 +1,4 @@
+select pg_get_viewdef('agg_view1'::regclass);
+ERROR:  42P01: relation "agg_view1" does not exist
+LINE 1: select pg_get_viewdef('agg_view1'::regclass);
+                              ^

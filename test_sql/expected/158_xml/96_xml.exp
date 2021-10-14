@@ -1,0 +1,3 @@
+CREATE VIEW xmlview1 AS SELECT xmlcomment('test');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+CREATE VIEW

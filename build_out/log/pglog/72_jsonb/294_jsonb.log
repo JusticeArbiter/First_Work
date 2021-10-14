@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '{"f2":{"f3":1},"f4":{"f5":99,"f6":"stringy"}}'::jsonb#>>array['f2'];
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOG:  00000: statement: select 5 as x, 6 as y 
+LOCATION:  exec_simple_query, postgres.c:938

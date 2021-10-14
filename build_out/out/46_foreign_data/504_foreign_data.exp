@@ -1,0 +1,3 @@
+ALTER TABLE pt1 ADD COLUMN c8 integer;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+ALTER TABLE

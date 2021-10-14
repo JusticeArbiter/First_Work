@@ -1,0 +1,6 @@
+SELECT interval '1-2';
+   interval    
+---------------
+ 1 year 2 mons
+(1 row)
+

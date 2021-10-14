@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT ctid, staop3  FROM pg_catalog.pg_statistic fk  WHERE staop3 != 0 AND  NOT EXISTS(SELECT 1 FROM pg_catalog.pg_operator pk WHERE pk.oid = fk.staop3);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+SELECT rank() OVER (ORDER BY length('abc'));
+ rank 
+------
+    1
+(1 row)
+

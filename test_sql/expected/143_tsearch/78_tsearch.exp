@@ -1,0 +1,6 @@
+SELECT to_tsquery('simple', 'qwe & sKies ');
+   to_tsquery    
+-----------------
+ 'qwe' & 'skies'
+(1 row)
+

@@ -1,0 +1,6 @@
+select decode('hgdb'::text,'hgdb'::text,1.234::float4);
+ decode 
+--------
+  1.234
+(1 row)
+

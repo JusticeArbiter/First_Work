@@ -1,0 +1,2 @@
+LOG:  00000: statement: select 10.0 ^ -2147483648 as rounds_to_zero;
+LOCATION:  exec_simple_query, postgres.c:938

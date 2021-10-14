@@ -1,0 +1,7 @@
+SELECT xpath(NULL, NULL) IS NULL FROM xmltest;
+ ?column? 
+----------
+ t
+ t
+(2 rows)
+

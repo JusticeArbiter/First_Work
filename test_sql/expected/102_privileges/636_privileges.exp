@@ -1,0 +1,2 @@
+CREATE USER locktable_user;
+CREATE ROLE

@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO POLYGON_TBL(f1) VALUES ('(0,1,2,3');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type polygon: "(0,1,2,3" at character 37
+LOCATION:  poly_in, geo_ops.c:3517
+STATEMENT:  INSERT INTO POLYGON_TBL(f1) VALUES ('(0,1,2,3');

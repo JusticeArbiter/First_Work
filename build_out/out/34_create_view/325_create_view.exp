@@ -1,0 +1,4 @@
+select * from tt15v;
+ERROR:  42P01: relation "tt15v" does not exist
+LINE 1: select * from tt15v;
+                      ^

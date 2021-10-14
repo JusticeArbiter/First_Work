@@ -1,0 +1,6 @@
+SELECT ARRAY[[[[[['hello'],['world']]]]]];
+           array           
+---------------------------
+ {{{{{{hello},{world}}}}}}
+(1 row)
+

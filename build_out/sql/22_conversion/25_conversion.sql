@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'KOI8R', 'WIN866');

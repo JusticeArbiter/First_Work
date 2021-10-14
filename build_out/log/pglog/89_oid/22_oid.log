@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS five, o.* FROM OID_TBL o WHERE o.f1 <> '1234';
+LOCATION:  exec_simple_query, postgres.c:938

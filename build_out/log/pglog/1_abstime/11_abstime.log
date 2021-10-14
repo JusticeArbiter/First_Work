@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO ABSTIME_TBL (f1) VALUES (abstime 'infinity');
+LOCATION:  exec_simple_query, postgres.c:938

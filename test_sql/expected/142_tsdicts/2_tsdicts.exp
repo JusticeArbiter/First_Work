@@ -1,0 +1,6 @@
+SELECT ts_lexize('ispell', 'skies');
+ ts_lexize 
+-----------
+ {sky}
+(1 row)
+

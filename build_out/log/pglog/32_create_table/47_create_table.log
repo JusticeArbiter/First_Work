@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE UNLOGGED TABLE pg_temp.unlogged3 (a int primary key);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: only temporary relations may be created in temporary schemas at character 23
+LOCATION:  RangeVarAdjustRelationPersistence, namespace.c:658
+STATEMENT:  CREATE UNLOGGED TABLE pg_temp.unlogged3 (a int primary key);

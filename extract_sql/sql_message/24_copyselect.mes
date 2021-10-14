@@ -1,0 +1,38 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: create table test1 (id serial, t text);
+ statement: insert into test1 (t) values ('a');
+ statement: insert into test1 (t) values ('b');
+ statement: insert into test1 (t) values ('c');
+ statement: insert into test1 (t) values ('d');
+ statement: insert into test1 (t) values ('e');
+ statement: create table test2 (id serial, t text);
+ statement: insert into test2 (t) values ('A');
+ statement: insert into test2 (t) values ('B');
+ statement: insert into test2 (t) values ('C');
+ statement: insert into test2 (t) values ('D');
+ statement: insert into test2 (t) values ('E');
+ statement: create view v_test1                                                                                         +
+ as select 'v_'||t from test1;
+ statement: copy test1 to stdout;
+ statement: copy v_test1 to stdout;
+ statement: copy (select t from test1 where id=1) to stdout;
+ statement: copy (select t from test1 where id=3 for update) to stdout;
+ statement: copy (select t into temp test3 from test1 where id=3) to stdout;
+ statement: copy (select * from test1 join test2 using (id)) to stdout;
+ statement: copy (select t from test1 where id = 1 UNION select * from v_test1 ORDER BY 1) to stdout;
+ statement: copy (select * from (select t from test1 where id = 1 UNION select * from v_test1 ORDER BY 1) t1) to stdout;
+ statement: copy (select t from test1 where id = 1) to stdout csv header force quote t;
+ statement: COPY  test1 TO STDOUT 
+ statement: COPY  v_test1 TO STDOUT 
+ statement: COPY  ( select "id" , 'id' , 'id""' ||t, ( id + 1 ) *id,t, "test1" . "t" from test1 where id=3 ) TO STDOUT 
+ statement: drop table test2;
+ statement: drop view v_test1;
+ statement: drop table test1;
+ statement: copy (select 1) to stdout; select 1/0;
+ statement: select 1/0; copy (select 1) to stdout;
+ statement: copy (select 1) to stdout; copy (select 2) to stdout; select 0; select 3;
+ statement: create table test3 (c int);
+ statement: select 0; copy test3 from stdin; copy test3 from stdin; select 1;
+ statement: select * from test3;
+ statement: drop table test3;
+

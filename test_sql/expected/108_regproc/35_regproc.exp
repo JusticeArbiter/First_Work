@@ -1,0 +1,4 @@
+SELECT regoperator('++(int4,int4)');
+ERROR:  42883: operator does not exist: ++(int4,int4)
+LINE 1: SELECT regoperator('++(int4,int4)');
+                           ^

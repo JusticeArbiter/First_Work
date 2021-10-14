@@ -1,0 +1,3 @@
+CREATE TABLE pg_catalog.new_system_table();
+ERROR:  42501: permission denied to create "pg_catalog.new_system_table"
+DETAIL:  System catalog modifications are currently disallowed.

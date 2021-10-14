@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE t1 SET b=t1.b FROM t2  WHERE t1.a = 3 and t2.a = 3 AND f_leak(t1.b) AND f_leak(t2.b);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column t1.a does not exist at character 37
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  UPDATE t1 SET b=t1.b FROM t2  WHERE t1.a = 3 and t2.a = 3 AND f_leak(t1.b) AND f_leak(t2.b);

@@ -1,0 +1,4 @@
+select tableoid::regclass::text as relname, bar.* from bar order by 1,2;
+ERROR:  42P01: relation "bar" does not exist
+LINE 1: ...t tableoid::regclass::text as relname, bar.* from bar order ...
+                                                             ^

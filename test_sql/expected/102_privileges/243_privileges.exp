@@ -1,0 +1,5 @@
+SELECT atest6 FROM atest6;
+ atest6 
+--------
+(0 rows)
+

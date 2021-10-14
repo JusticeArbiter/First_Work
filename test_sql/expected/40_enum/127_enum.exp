@@ -1,0 +1,2 @@
+ALTER TYPE bogon ADD VALUE 'bad';
+ERROR:  42710: enum label "bad" already exists

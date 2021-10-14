@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 'h%wkeye' NOT LIKE 'h#%%' ESCAPE '#' AS "false";
+LOCATION:  exec_simple_query, postgres.c:938

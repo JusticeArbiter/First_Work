@@ -1,0 +1,5 @@
+SELECT ntile(NULL) OVER (ORDER BY ten, four), ten, four FROM tenk1 LIMIT 2;
+ ntile | ten | four 
+-------+-----+------
+(0 rows)
+

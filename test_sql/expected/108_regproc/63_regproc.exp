@@ -1,0 +1,6 @@
+SELECT to_regprocedure('ng_catalog.abs(numeric)');
+ to_regprocedure 
+-----------------
+ 
+(1 row)
+

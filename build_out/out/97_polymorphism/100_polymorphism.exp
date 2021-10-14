@@ -1,0 +1,4 @@
+select f3, myaggn08b(f1) from t group by f3 order by f3;
+ERROR:  42P01: relation "t" does not exist
+LINE 1: select f3, myaggn08b(f1) from t group by f3 order by f3;
+                                      ^

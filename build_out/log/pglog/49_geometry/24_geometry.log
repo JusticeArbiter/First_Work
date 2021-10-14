@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS twentyfour, p.f1, poly.f1, poly.f1 @> p.f1 AS contains  FROM POLYGON_TBL poly, POINT_TBL p;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "polygon_tbl" does not exist at character 75
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT '' AS twentyfour, p.f1, poly.f1, poly.f1 @> p.f1 AS contains  FROM POLYGON_TBL poly, POINT_TBL p;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE temp_view_test.tmp1 SET SCHEMA testviewschm2;
+LOCATION:  exec_simple_query, postgres.c:938

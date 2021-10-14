@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE table1(col1 SERIAL PRIMARY KEY);
+LOCATION:  exec_simple_query, postgres.c:938

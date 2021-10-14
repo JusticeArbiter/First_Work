@@ -1,0 +1,3 @@
+alter type rewritetype alter attribute a type varchar cascade;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TYPE
+ERROR:  0A000: cannot alter type "rewritetype" because column "rewritemetoo3.a" uses it

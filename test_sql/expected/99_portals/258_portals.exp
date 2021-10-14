@@ -1,0 +1,4 @@
+DECLARE c1 CURSOR FOR SELECT * FROM ucview;
+ERROR:  42P01: relation "ucview" does not exist
+LINE 1: DECLARE c1 CURSOR FOR SELECT * FROM ucview;
+                                            ^

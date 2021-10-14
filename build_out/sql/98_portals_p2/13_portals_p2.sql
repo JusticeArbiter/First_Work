@@ -1,0 +1,1 @@
+DECLARE foo24 CURSOR FOR  SELECT * FROM onek2 WHERE unique1 = 50;

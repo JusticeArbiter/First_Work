@@ -1,0 +1,4 @@
+INSERT INTO z VALUES (NULL, 'text');
+ERROR:  42P01: relation "z" does not exist
+LINE 1: INSERT INTO z VALUES (NULL, 'text');
+                    ^

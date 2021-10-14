@@ -1,0 +1,5 @@
+LOG:  00000: statement: explain (costs off)  SELECT * FROM  (SELECT a || b AS ab FROM t1  UNION ALL  SELECT * FROM t2) t  WHERE ab = 'ab';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "t1" does not exist at character 63
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  explain (costs off)  SELECT * FROM  (SELECT a || b AS ab FROM t1  UNION ALL  SELECT * FROM t2) t  WHERE ab = 'ab';

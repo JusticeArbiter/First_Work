@@ -1,0 +1,1 @@
+CREATE POLICY p ON t USING (max(c));

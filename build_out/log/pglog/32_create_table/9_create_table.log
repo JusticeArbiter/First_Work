@@ -1,0 +1,11 @@
+LOG:  00000: statement: CREATE TABLE stud_emp (  percent int4  ) INHERITS (emp, student);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging multiple inherited definitions of column "name"
+LOCATION:  MergeAttributes, tablecmds.c:1605
+STATEMENT:  CREATE TABLE stud_emp (  percent int4  ) INHERITS (emp, student);
+NOTICE:  00000: merging multiple inherited definitions of column "age"
+LOCATION:  MergeAttributes, tablecmds.c:1605
+STATEMENT:  CREATE TABLE stud_emp (  percent int4  ) INHERITS (emp, student);
+NOTICE:  00000: merging multiple inherited definitions of column "location"
+LOCATION:  MergeAttributes, tablecmds.c:1605
+STATEMENT:  CREATE TABLE stud_emp (  percent int4  ) INHERITS (emp, student);

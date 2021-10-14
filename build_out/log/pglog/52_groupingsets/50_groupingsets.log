@@ -1,0 +1,5 @@
+LOG:  00000: statement: select (select grouping(a,b) from gstest2) from gstest2 group by a,b;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "gstest2" does not exist at character 49
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select (select grouping(a,b) from gstest2) from gstest2 group by a,b;

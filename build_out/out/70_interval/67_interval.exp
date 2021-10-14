@@ -1,0 +1,4 @@
+SELECT '5.5 seconds 3 milliseconds'::interval;
+ERROR:  22007: invalid input syntax for type interval: "5.5 seconds 3 milliseconds"
+LINE 1: SELECT '5.5 seconds 3 milliseconds'::interval;
+               ^

@@ -1,0 +1,6 @@
+select to_json(timestamptz 'Infinity');
+  to_json   
+------------
+ "infinity"
+(1 row)
+

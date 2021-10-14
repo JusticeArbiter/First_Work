@@ -1,0 +1,7 @@
+select foreach_test(ARRAY[1,2,3,4]);
+NOTICE:  00000: {1,2,3,4}
+ foreach_test 
+--------------
+ 
+(1 row)
+

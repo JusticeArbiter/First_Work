@@ -1,0 +1,2 @@
+ALTER TYPE nosuchtype ADD ATTRIBUTE b text;
+ERROR:  42P01: relation "nosuchtype" does not exist

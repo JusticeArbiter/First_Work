@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP SCHEMA test_schema_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  3F000: schema "test_schema_exists" does not exist
+LOCATION:  get_namespace_oid, namespace.c:2873
+STATEMENT:  DROP SCHEMA test_schema_exists;

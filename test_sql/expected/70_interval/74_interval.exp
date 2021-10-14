@@ -1,0 +1,6 @@
+SELECT interval '999' day;
+ interval 
+----------
+ 999 days
+(1 row)
+

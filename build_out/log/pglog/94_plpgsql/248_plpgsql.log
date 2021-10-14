@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into PLine values ('PL.010', '-122', '', 'PS.base.tb6');
+LOCATION:  exec_simple_query, postgres.c:938

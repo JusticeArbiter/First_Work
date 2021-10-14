@@ -1,0 +1,7 @@
+LOG:  00000: statement: INSERT INTO ro_view13 VALUES (3, 'Row 3');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  55000: cannot insert into view "ro_view13"
+DETAIL:  Views that do not select from a single table or view are not automatically updatable.
+HINT:  To enable inserting into the view, provide an INSTEAD OF INSERT trigger or an unconditional ON INSERT DO INSTEAD rule.
+LOCATION:  rewriteTargetView, rewriteHandler.c:2675
+STATEMENT:  INSERT INTO ro_view13 VALUES (3, 'Row 3');

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TYPE not_existing_type (INPUT = array_in,  OUTPUT = array_out,  ELEMENT = int,  INTERNALLENGTH = 32);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: function array_out(not_existing_type) does not exist
+LOCATION:  findTypeOutputFunction, typecmds.c:1754
+STATEMENT:  CREATE TYPE not_existing_type (INPUT = array_in,  OUTPUT = array_out,  ELEMENT = int,  INTERNALLENGTH = 32);

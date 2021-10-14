@@ -1,0 +1,6 @@
+select numtodsinterval('05'::int4,'day'::text);
+ numtodsinterval 
+-----------------
+ 5 days
+(1 row)
+

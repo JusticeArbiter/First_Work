@@ -1,0 +1,1 @@
+SET SESSION AUTHORIZATION clstr_user;

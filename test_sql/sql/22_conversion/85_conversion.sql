@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'GBK', 'UTF8');

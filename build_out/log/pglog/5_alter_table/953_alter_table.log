@@ -1,0 +1,2 @@
+LOG:  00000: statement: create type lockmodes as enum (  'SIReadLock'  ,'AccessShareLock'  ,'RowShareLock'  ,'RowExclusiveLock'  ,'ShareUpdateExclusiveLock'  ,'ShareLock'  ,'ShareRowExclusiveLock'  ,'ExclusiveLock'  ,'AccessExclusiveLock'  );
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+comment on event trigger wrong.regress_event_trigger is 'test comment';
+ERROR:  42601: event trigger name cannot be qualified

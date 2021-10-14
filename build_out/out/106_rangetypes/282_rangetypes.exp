@@ -1,0 +1,6 @@
+select rangetypes_sql(int4range(1,10), ARRAY[2,20]);
+ rangetypes_sql 
+----------------
+             12
+(1 row)
+

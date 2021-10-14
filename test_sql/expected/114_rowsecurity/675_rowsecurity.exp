@@ -1,0 +1,6 @@
+INSERT INTO r1 SELECT a + 1 FROM r2 RETURNING *;
+ a 
+---
+(0 rows)
+
+INSERT 0 0

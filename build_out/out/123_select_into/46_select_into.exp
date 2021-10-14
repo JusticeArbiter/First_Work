@@ -1,0 +1,3 @@
+CREATE VIEW foo AS SELECT 1 INTO b;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+ERROR:  0A000: views must not contain SELECT INTO

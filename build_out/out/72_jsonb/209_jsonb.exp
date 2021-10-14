@@ -1,0 +1,6 @@
+SELECT jsonb_typeof('[]') AS array;
+ array 
+-------
+ array
+(1 row)
+

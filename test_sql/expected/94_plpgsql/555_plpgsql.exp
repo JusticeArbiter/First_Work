@@ -1,0 +1,10 @@
+select pl_qual_names(42);
+NOTICE:  00000: param1 = 2
+NOTICE:  00000: pl_qual_names.param1 = 42
+NOTICE:  00000: outerblock.param1 = 1
+NOTICE:  00000: innerblock.param1 = 2
+ pl_qual_names 
+---------------
+ 
+(1 row)
+

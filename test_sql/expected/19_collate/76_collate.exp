@@ -1,0 +1,10 @@
+SELECT a, b FROM collate_test2 EXCEPT SELECT a, b FROM collate_test2 WHERE a < 2 ORDER BY 2;
+ a |  b  
+---+-----
+ 2 | Abc
+ 4 | ABC
+ 4 | ABD
+ 3 | bbc
+ 2 | äbc
+(5 rows)
+

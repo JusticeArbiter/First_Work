@@ -1,0 +1,6 @@
+select 33 = any (null::int[]);
+ ?column? 
+----------
+ 
+(1 row)
+

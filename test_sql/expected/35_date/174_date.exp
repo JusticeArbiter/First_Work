@@ -1,0 +1,6 @@
+SELECT EXTRACT(CENTURY FROM DATE '2001-01-01');
+ date_part 
+-----------
+        21
+(1 row)
+

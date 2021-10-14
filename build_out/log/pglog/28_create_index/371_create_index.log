@@ -1,0 +1,6 @@
+LOG:  00000: statement: REINDEX TABLE concur_heap;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: could not create unique index "concur_index3"
+DETAIL:  Key (f2)=(b) is duplicated.
+LOCATION:  comparetup_index_btree, tuplesort.c:3616
+STATEMENT:  REINDEX TABLE concur_heap;

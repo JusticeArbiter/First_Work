@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (-1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2202H: sample percentage must be between 0 and 100
+LOCATION:  system_beginsamplescan, system.c:156
+STATEMENT:  SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (-1);

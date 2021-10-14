@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from  (select distinct f1, f2, (select f2 from t1 x where x.f1 = up.f1) as fs  from t1 up) ss  group by f1,f2,fs;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "t1" does not exist at character 94
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select * from  (select distinct f1, f2, (select f2 from t1 x where x.f1 = up.f1) as fs  from t1 up) ss  group by f1,f2,fs;

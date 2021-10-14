@@ -1,0 +1,5 @@
+LOG:  00000: statement: explain (costs off) select * from tt18v;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tt18v" does not exist at character 35
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  explain (costs off) select * from tt18v;

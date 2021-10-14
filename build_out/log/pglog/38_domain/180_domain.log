@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER DOMAIN things VALIDATE CONSTRAINT meow;
+LOCATION:  exec_simple_query, postgres.c:938

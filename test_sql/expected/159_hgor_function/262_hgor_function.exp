@@ -1,0 +1,6 @@
+select text_to_int16(2016);
+ text_to_int16 
+---------------
+          2016
+(1 row)
+

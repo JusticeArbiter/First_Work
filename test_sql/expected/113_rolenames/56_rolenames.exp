@@ -1,0 +1,2 @@
+ALTER USER nonexistent WITH NOREPLICATION;
+ERROR:  42704: role "nonexistent" does not exist

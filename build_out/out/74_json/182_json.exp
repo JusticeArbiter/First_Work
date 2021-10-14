@@ -1,0 +1,6 @@
+select 'null'::json #>> '{}';
+ ?column? 
+----------
+ 
+(1 row)
+

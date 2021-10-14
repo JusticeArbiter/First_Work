@@ -1,0 +1,6 @@
+SELECT * FROM foo(42) AS p(x);
+ x  
+----
+ 43
+(1 row)
+

@@ -1,0 +1,6 @@
+select dbtimezone();
+ dbtimezone 
+------------
+ PRC
+(1 row)
+

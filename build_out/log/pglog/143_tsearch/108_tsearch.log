@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT COUNT(*) FROM test_tsquery WHERE keyword < 'new & york';
+LOCATION:  exec_simple_query, postgres.c:938

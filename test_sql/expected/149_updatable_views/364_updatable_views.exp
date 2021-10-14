@@ -1,0 +1,3 @@
+ALTER VIEW rw_view2 RESET (check_option);
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER VIEW
+ALTER VIEW

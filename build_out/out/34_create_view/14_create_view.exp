@@ -1,0 +1,2 @@
+CREATE OR REPLACE VIEW viewtest AS  SELECT a FROM viewtest_tbl WHERE a <> 20;
+ERROR:  42P16: cannot drop columns from view

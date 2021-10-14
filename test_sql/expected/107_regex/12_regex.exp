@@ -1,0 +1,6 @@
+select 'abc abc abd' ~ '^(.+)( \1)+$' as f;
+ f 
+---
+ f
+(1 row)
+

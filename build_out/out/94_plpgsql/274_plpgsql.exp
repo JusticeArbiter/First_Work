@@ -1,0 +1,3 @@
+update PSlot set backlink = 'WS.not.there' where slotname = 'PS.base.a1';
+ERROR:  P0001: WS.not.there         does not exist
+CONTEXT:  PL/pgSQL function tg_backlink_a() line 1 at assignment

@@ -1,0 +1,10 @@
+LOG:  00000: statement: DROP TABLE city_table CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP TABLE city_table CASCADE;
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to view city_view
+	drop cascades to view european_city_view
+LOCATION:  reportDependentObjects, dependency.c:1003
+STATEMENT:  DROP TABLE city_table CASCADE;

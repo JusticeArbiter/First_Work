@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER AGGREGATE alt_agg3(int) OWNER TO regtest_alter_user2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: aggregate alt_agg3(integer) does not exist
+LOCATION:  LookupAggNameTypeNames, parse_func.c:2014
+STATEMENT:  ALTER AGGREGATE alt_agg3(int) OWNER TO regtest_alter_user2;

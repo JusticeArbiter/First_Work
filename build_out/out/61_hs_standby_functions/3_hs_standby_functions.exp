@@ -1,0 +1,3 @@
+select pg_start_backup('should fail');
+ERROR:  55000: WAL level not sufficient for making an online backup
+HINT:  wal_level must be set to "archive", "hot_standby", or "logical" at server start.

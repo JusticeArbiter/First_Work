@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE arrtest (  a int2[],  b int4[][][],  c name[],  d text[][],  e float8[],  f char(5)[],  g varchar(5)[]  );
+LOCATION:  exec_simple_query, postgres.c:938

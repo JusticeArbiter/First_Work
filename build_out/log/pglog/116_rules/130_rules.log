@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into rtest_emp select * from rtest_empmass;
+LOCATION:  exec_simple_query, postgres.c:938

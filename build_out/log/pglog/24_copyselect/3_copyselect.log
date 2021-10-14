@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into test1 (t) values ('b');
+LOCATION:  exec_simple_query, postgres.c:938

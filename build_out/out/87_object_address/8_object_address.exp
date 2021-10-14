@@ -1,0 +1,3 @@
+CREATE TEXT SEARCH DICTIONARY addr_ts_dict (template=simple);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TEXT SEARCH DICTIONARY
+CREATE TEXT SEARCH DICTIONARY

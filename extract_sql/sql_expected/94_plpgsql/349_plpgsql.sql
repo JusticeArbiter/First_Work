@@ -1,0 +1,1 @@
+create function test_variable_storage() returns text as $$  declare x text;  begin  x := '1234';  begin  x := x || '5678';  -- force error inside subtransaction SPI context  perform trap_zero_divide(-100);  exception  when others then  x := x || '9012';  end;  return x;  end$$ language plpgsql;

@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO FLOAT4_TBL(f1) VALUES ('-10e70');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: value out of range: overflow at character 36
+LOCATION:  float4in, float.c:320
+STATEMENT:  INSERT INTO FLOAT4_TBL(f1) VALUES ('-10e70');

@@ -1,0 +1,3 @@
+GRANT SELECT ON rls_view TO rls_regress_user1;
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+GRANT

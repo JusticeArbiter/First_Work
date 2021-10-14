@@ -1,0 +1,5 @@
+LOG:  00000: statement: DECLARE foo13 SCROLL CURSOR FOR SELECT * FROM tenk1 ORDER BY unique2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks
+LOCATION:  CheckTransactionChain, xact.c:3222
+STATEMENT:  DECLARE foo13 SCROLL CURSOR FOR SELECT * FROM tenk1 ORDER BY unique2;

@@ -1,0 +1,6 @@
+SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_mat(11,10+r);
+ERROR:  42P01: relation "foo_rescan_seq2" does not exist
+LINE 1: SELECT (i, nextval('foo_rescan_seq2'))
+                           ^
+QUERY:  SELECT (i, nextval('foo_rescan_seq2'))
+CONTEXT:  PL/pgSQL function foo_mat(integer,integer) line 1 at RETURN NEXT

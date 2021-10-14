@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT regexp_matches('foObARbEqUEbAz', $re$(bar)(beque)$re$, 'i');
+LOCATION:  exec_simple_query, postgres.c:938

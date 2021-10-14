@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO clstr_tst (b, c) VALUES (1111, 'this should fail');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23503: insert or update on table "clstr_tst" violates foreign key constraint "clstr_tst_con"
+DETAIL:  Key (b)=(1111) is not present in table "clstr_tst_s".
+LOCATION:  ri_ReportViolation, ri_triggers.c:3324
+STATEMENT:  INSERT INTO clstr_tst (b, c) VALUES (1111, 'this should fail');

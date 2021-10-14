@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table if exists doesnt_exist_tab rename column b to a;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: relation "doesnt_exist_tab" does not exist, skipping
+LOCATION:  renameatt, tablecmds.c:2371
+STATEMENT:  alter table if exists doesnt_exist_tab rename column b to a;

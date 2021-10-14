@@ -1,0 +1,3 @@
+CREATE TABLE num_exp_log10 (id int4, expected numeric(210,10));
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

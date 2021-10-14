@@ -1,0 +1,4 @@
+SELECT rank() OVER (ORDER BY rank() OVER (ORDER BY random()));
+ERROR:  42P20: window functions are not allowed in window definitions
+LINE 1: SELECT rank() OVER (ORDER BY rank() OVER (ORDER BY random())...
+                                     ^

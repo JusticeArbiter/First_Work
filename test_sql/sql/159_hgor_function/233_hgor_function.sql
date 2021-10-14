@@ -1,0 +1,1 @@
+INSERT INTO float_point_demo VALUES (1234.56,1234.56,1234.56);

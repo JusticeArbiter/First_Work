@@ -1,0 +1,3 @@
+CREATE USER MAPPING FOR unprivileged_role SERVER s10 OPTIONS (user 'secret');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE USER MAPPING
+CREATE USER MAPPING

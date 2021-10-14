@@ -1,0 +1,2 @@
+alter table parent_noinh_convalid validate constraint check_a_is_2;
+ERROR:  23514: check constraint "check_a_is_2" is violated by some row

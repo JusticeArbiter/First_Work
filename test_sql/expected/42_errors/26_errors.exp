@@ -1,0 +1,2 @@
+drop function nonesuch();
+ERROR:  42883: function nonesuch() does not exist

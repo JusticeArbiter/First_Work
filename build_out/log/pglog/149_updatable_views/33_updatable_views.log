@@ -1,0 +1,7 @@
+LOG:  00000: statement: UPDATE ro_view7 SET a=a+1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  55000: cannot update view "ro_view7"
+DETAIL:  Views containing WITH are not automatically updatable.
+HINT:  To enable updating the view, provide an INSTEAD OF UPDATE trigger or an unconditional ON UPDATE DO INSTEAD rule.
+LOCATION:  rewriteTargetView, rewriteHandler.c:2683
+STATEMENT:  UPDATE ro_view7 SET a=a+1;

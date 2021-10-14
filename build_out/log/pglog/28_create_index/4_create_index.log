@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX onek_hundred ON onek USING btree(hundred int4_ops);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "onek" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX onek_hundred ON onek USING btree(hundred int4_ops);

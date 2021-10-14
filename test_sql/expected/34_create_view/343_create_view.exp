@@ -1,0 +1,7 @@
+select pg_get_viewdef('tt19v', true);
+                                               pg_get_viewdef                                               
+------------------------------------------------------------------------------------------------------------
+  SELECT 'foo'::text = ANY (ARRAY['abc'::text, 'def'::text, 'foo'::text]) AS c1,                           +
+     'foo'::text = ANY ((( SELECT ARRAY['abc'::text, 'def'::text, 'foo'::text] AS "array"))::text[]) AS c2;
+(1 row)
+

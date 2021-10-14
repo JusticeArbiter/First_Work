@@ -1,0 +1,9 @@
+SELECT * FROM enumtest;
+  col   
+--------
+ red
+ orange
+ yellow
+ green
+(4 rows)
+

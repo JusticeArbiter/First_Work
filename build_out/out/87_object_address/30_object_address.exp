@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('table', '{NULL}', '{}');
+ERROR:  22023: name or argument lists may not contain nulls

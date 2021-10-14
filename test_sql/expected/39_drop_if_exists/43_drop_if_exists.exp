@@ -1,0 +1,2 @@
+DROP GROUP tg2;
+ERROR:  42704: role "tg2" does not exist

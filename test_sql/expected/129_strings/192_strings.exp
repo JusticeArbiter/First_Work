@@ -1,0 +1,6 @@
+select split_part('joeuser@mydatabase','@',3) AS "empty string";
+ empty string 
+--------------
+ 
+(1 row)
+

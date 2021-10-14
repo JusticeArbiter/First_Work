@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT to_tsquery('simple', 'qwe & sKies ');
+LOCATION:  exec_simple_query, postgres.c:938

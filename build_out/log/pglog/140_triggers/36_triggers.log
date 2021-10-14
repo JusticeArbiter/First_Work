@@ -1,0 +1,6 @@
+LOG:  00000: statement: update pkeys set pkey1 = 7, pkey2 = '70' where pkey1 = 10 and pkey2 = '1';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: duplicate key value violates unique constraint "pkeys_i"
+DETAIL:  Key (pkey1, pkey2)=(7, 70) already exists.
+LOCATION:  _bt_check_unique, nbtinsert.c:432
+STATEMENT:  update pkeys set pkey1 = 7, pkey2 = '70' where pkey1 = 10 and pkey2 = '1';

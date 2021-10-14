@@ -1,0 +1,2 @@
+LOG:  00000: statement: select dfunc('a'::text, 'b', flag := false);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+INSERT INTO money_data VALUES ('$123.454');
+INSERT 0 1

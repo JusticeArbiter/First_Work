@@ -1,0 +1,3 @@
+alter table anothertab alter column atcol1 type boolean;
+ERROR:  42804: column "atcol1" cannot be cast automatically to type boolean
+HINT:  You might need to specify "USING atcol1::boolean".

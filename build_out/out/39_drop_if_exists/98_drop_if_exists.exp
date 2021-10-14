@@ -1,0 +1,3 @@
+DROP FOREIGN DATA WRAPPER IF EXISTS test_fdw_exists;
+NOTICE:  00000: foreign-data wrapper "test_fdw_exists" does not exist, skipping
+DROP FOREIGN DATA WRAPPER

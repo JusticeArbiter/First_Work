@@ -1,0 +1,5 @@
+SELECT four FROM tenk1 WHERE FALSE WINDOW w AS (PARTITION BY ten);
+ four 
+------
+(0 rows)
+

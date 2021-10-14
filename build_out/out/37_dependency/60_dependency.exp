@@ -1,0 +1,4 @@
+DROP USER regression_user1;
+ERROR:  2BP01: role "regression_user1" cannot be dropped because some objects depend on it
+DETAIL:  owner of default privileges on new relations belonging to role regression_user1 in schema deptest
+privileges for table deptest1

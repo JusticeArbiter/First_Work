@@ -1,0 +1,5 @@
+SELECT * FROM trunc_e;
+ a | b 
+---+---
+(0 rows)
+

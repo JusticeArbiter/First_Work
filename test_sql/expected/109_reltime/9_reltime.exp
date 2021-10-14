@@ -1,0 +1,4 @@
+INSERT INTO RELTIME_TBL (f1) VALUES ('@ 30 eons ago');
+ERROR:  22007: invalid input syntax for type reltime: "@ 30 eons ago"
+LINE 1: INSERT INTO RELTIME_TBL (f1) VALUES ('@ 30 eons ago');
+                                             ^

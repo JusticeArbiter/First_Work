@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS five, i.f1, i.f1 - int4 '2' AS x FROM INT4_TBL i;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: integer out of range
+LOCATION:  int4mi, int.c:673
+STATEMENT:  SELECT '' AS five, i.f1, i.f1 - int4 '2' AS x FROM INT4_TBL i;

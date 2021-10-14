@@ -1,0 +1,1 @@
+ALTER USER "current_user" WITH REPLICATION;

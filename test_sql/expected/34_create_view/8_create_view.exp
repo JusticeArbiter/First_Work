@@ -1,0 +1,2 @@
+COPY viewtest_tbl FROM stdin;
+COPY 0

@@ -1,0 +1,6 @@
+SELECT xml_is_well_formed_content('<foo>bar</foo>');
+ xml_is_well_formed_content 
+----------------------------
+ t
+(1 row)
+

@@ -1,0 +1,2 @@
+alter table atacc1 add check ("........pg.dropped.1........" > 3);
+ERROR:  42703: column "........pg.dropped.1........" does not exist

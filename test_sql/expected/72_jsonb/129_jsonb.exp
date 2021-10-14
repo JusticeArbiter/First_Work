@@ -1,0 +1,6 @@
+SELECT '{"a":"b", "b":1, "c":null}'::jsonb @> '{"a":"b"}';
+ ?column? 
+----------
+ t
+(1 row)
+

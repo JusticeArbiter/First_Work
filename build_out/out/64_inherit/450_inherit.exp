@@ -1,0 +1,18 @@
+explain (costs off)  select t1.* from matest0 t1, matest0 t2  where t1.b = t2.b and t2.c = t2.d  order by t1.b limit 10;
+                         QUERY PLAN                          
+-------------------------------------------------------------
+ Limit
+   ->  Nested Loop
+         ->  Merge Append
+               Sort Key: t2.b
+               ->  Index Scan using matest0i on matest0 t2
+                     Filter: (c = d)
+               ->  Index Scan using matest1i on matest1 t2_1
+                     Filter: (c = d)
+         ->  Append
+               ->  Seq Scan on matest0 t1
+                     Filter: (t2.b = b)
+               ->  Index Scan using matest1i on matest1 t1_1
+                     Index Cond: (b = t2.b)
+(13 rows)
+

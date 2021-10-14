@@ -1,0 +1,9 @@
+select * from numrange_test natural join numrange_test2 order by nr;
+    nr     
+-----------
+ empty
+ (,5)
+ [1.1,2.2)
+ [1.1,2.2)
+(4 rows)
+

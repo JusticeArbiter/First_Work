@@ -1,0 +1,1 @@
+CREATE ROLE test_superuser WITH SUPERUSER;

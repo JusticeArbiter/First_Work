@@ -1,0 +1,2 @@
+insert into cities values ('Mariposa', 1200, 1953);
+INSERT 0 1

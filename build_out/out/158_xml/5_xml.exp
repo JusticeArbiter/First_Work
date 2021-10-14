@@ -1,0 +1,7 @@
+SELECT * FROM xmltest;
+ id |        data        
+----+--------------------
+  1 | <value>one</value>
+  2 | <value>two</value>
+(2 rows)
+

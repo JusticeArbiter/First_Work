@@ -1,0 +1,2 @@
+create table renameColumn (a int);
+CREATE TABLE

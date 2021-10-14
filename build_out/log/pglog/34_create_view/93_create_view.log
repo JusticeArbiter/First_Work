@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT a::varchar(3) FROM tt1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" does not exist at character 8
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  SELECT a::varchar(3) FROM tt1;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: COMMENT ON INDEX comment_test_pk IS 'Index backing the PRIMARY KEY of comment_test';
+LOCATION:  exec_simple_query, postgres.c:938

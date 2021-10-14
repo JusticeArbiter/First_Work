@@ -1,0 +1,6 @@
+select concat_ws(',', variadic array[1,2,3]);
+ concat_ws 
+-----------
+ 1,2,3
+(1 row)
+

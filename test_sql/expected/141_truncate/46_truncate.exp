@@ -1,0 +1,6 @@
+TRUNCATE TABLE trunc_c CASCADE;
+NOTICE:  00000: truncate cascades to table "truncate_a"
+NOTICE:  00000: truncate cascades to table "trunc_d"
+NOTICE:  00000: truncate cascades to table "trunc_e"
+NOTICE:  00000: truncate cascades to table "trunc_b"
+TRUNCATE TABLE

@@ -1,0 +1,2 @@
+CREATE INDEX bt_i4_index ON bt_i4_heap USING btree (seqno int4_ops);
+ERROR:  42P01: relation "bt_i4_heap" does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT * FROM point_tbl ORDER BY f1 <-> '0,1';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "point_tbl" does not exist at character 15
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT * FROM point_tbl ORDER BY f1 <-> '0,1';

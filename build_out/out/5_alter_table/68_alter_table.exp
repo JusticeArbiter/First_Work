@@ -1,0 +1,2 @@
+ALTER TABLE tmp RENAME TO tmp_new2;
+ERROR:  42P01: relation "tmp" does not exist

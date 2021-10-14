@@ -1,0 +1,4 @@
+CREATE TRIGGER invalid_trig INSTEAD OF UPDATE ON main_table  FOR EACH ROW EXECUTE PROCEDURE view_trigger('instead_of_upd');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+ERROR:  42809: "main_table" is a table
+DETAIL:  Tables cannot have INSTEAD OF triggers.

@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE bv1 SET b = 'yyy' WHERE a = 4 AND f_leak(b);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: f_leak => a87ff679a2f3e71d9181a67b7542122c
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE bv1 SET b = 'yyy' WHERE a = 4 AND f_leak(b);

@@ -1,0 +1,4 @@
+select ten, count(four), sum(DISTINCT four) from onek  group by ten order by ten;
+ERROR:  42P01: relation "onek" does not exist
+LINE 1: select ten, count(four), sum(DISTINCT four) from onek  group...
+                                                         ^

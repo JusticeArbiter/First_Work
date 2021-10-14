@@ -1,0 +1,3 @@
+ALTER POLICY p1 ON t1 RENAME TO p1;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER POLICY
+ERROR:  42710: policy "p1" for table "t1" already exists

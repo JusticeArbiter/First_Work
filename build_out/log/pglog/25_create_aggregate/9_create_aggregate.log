@@ -1,0 +1,5 @@
+LOG:  00000: statement: COMMENT ON AGGREGATE nosuchagg (*) IS 'should fail';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42883: aggregate nosuchagg(*) does not exist
+LOCATION:  LookupAggNameTypeNames, parse_func.c:2008
+STATEMENT:  COMMENT ON AGGREGATE nosuchagg (*) IS 'should fail';

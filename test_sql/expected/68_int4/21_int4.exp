@@ -1,0 +1,7 @@
+SELECT '' AS two, i.* FROM INT4_TBL i WHERE i.f1 < int4 '0';
+ two |     f1      
+-----+-------------
+     |     -123456
+     | -2147483647
+(2 rows)
+

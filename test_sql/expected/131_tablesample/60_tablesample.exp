@@ -1,0 +1,4 @@
+WITH query_select AS (SELECT * FROM test_tablesample)  SELECT * FROM query_select TABLESAMPLE BERNOULLI (5.5) REPEATABLE (1);
+ERROR:  0A000: TABLESAMPLE clause can only be applied to tables and materialized views
+LINE 1: ...S (SELECT * FROM test_tablesample)  SELECT * FROM query_sele...
+                                                             ^

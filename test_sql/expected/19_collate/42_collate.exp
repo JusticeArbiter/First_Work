@@ -1,0 +1,9 @@
+SELECT a, lower(x), lower(y), upper(x), upper(y), initcap(x), initcap(y) FROM collate_test10;
+ a | lower | lower | upper | upper | initcap | initcap 
+---+-------+-------+-------+-------+---------+---------
+ 1 | hij   | hij   | HIJ   | HİJ   | Hij     | Hij
+ 2 | hij   | hıj   | HIJ   | HIJ   | Hij     | Hıj
+ 1 | hij   | hij   | HIJ   | HİJ   | Hij     | Hij
+ 2 | hij   | hıj   | HIJ   | HIJ   | Hij     | Hıj
+(4 rows)
+

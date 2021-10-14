@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT d.*  FROM pg_default_acl d LEFT JOIN pg_namespace n ON defaclnamespace = n.oid  WHERE nspname IS NULL AND defaclnamespace != 0;
+LOCATION:  exec_simple_query, postgres.c:938

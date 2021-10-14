@@ -1,0 +1,8 @@
+SELECT * FROM test_missing_target3;
+ count 
+-------
+     1
+     5
+     4
+(3 rows)
+

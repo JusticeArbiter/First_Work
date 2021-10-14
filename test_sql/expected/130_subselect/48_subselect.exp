@@ -1,0 +1,4 @@
+SELECT * FROM foo WHERE id IN  (SELECT id2 FROM (SELECT id1, id2 FROM bar UNION  SELECT id1, id2 FROM bar) AS s);
+ERROR:  42P01: relation "foo" does not exist
+LINE 1: SELECT * FROM foo WHERE id IN  (SELECT id2 FROM (SELECT id1,...
+                      ^

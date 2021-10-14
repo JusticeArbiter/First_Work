@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT text 'text' || ' and unknown' AS "Concat text to unknown type";
+LOCATION:  exec_simple_query, postgres.c:938

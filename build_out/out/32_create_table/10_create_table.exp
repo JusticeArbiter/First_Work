@@ -1,0 +1,4 @@
+CREATE TABLE city (  name name,  location box,  budget city_budget  );
+ERROR:  42704: type "city_budget" does not exist
+LINE 1: ...E TABLE city (  name name,  location box,  budget city_budge...
+                                                             ^

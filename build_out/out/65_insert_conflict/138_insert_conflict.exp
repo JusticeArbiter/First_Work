@@ -1,0 +1,10 @@
+select tableoid::regclass, * from cities;
+ tableoid |     name      | population | altitude 
+----------+---------------+------------+----------
+ cities   | San Francisco |     724000 |       63
+ cities   | Mariposa      |       1200 |     1953
+ cities   | Las Vegas     |     583000 |     2001
+ capitals | Madison       |     191300 |      845
+ capitals | Sacramento    |  466400000 |       30
+(5 rows)
+

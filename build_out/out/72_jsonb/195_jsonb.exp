@@ -1,0 +1,6 @@
+SELECT jsonb '{"a":null, "b":"qq"}' ?| '{}'::text[];
+ ?column? 
+----------
+ f
+(1 row)
+

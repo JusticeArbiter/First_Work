@@ -1,0 +1,11 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: select txid_current();
+ statement: select length(txid_current_snapshot()::text) >= 4;
+ statement: select pg_start_backup('should fail');
+ statement: select pg_switch_xlog();
+ statement: select pg_stop_backup();
+ statement: select * from pg_prepared_xacts;
+ statement: select locktype, virtualxid, virtualtransaction, mode, granted+
+ from pg_locks where virtualxid = '1/1';
+ statement: select pg_cancel_backend(pg_backend_pid());
+

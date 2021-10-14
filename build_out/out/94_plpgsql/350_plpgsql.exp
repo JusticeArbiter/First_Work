@@ -1,0 +1,5 @@
+select test_variable_storage();
+ERROR:  42883: function test_variable_storage() does not exist
+LINE 1: select test_variable_storage();
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

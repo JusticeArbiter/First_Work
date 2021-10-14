@@ -1,0 +1,2 @@
+select make_date(2013, 2, 30);
+ERROR:  22008: date field value out of range: 2013-02-30

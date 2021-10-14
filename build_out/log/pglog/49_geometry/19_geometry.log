@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT bound_box(a.f1, b.f1)  FROM BOX_TBL a, BOX_TBL b;
+LOCATION:  exec_simple_query, postgres.c:938

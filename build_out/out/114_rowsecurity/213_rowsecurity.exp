@@ -1,0 +1,4 @@
+PREPARE p2(int) AS SELECT * FROM t1 WHERE a = $1;
+ERROR:  42703: column "a" does not exist
+LINE 1: PREPARE p2(int) AS SELECT * FROM t1 WHERE a = $1;
+                                                  ^

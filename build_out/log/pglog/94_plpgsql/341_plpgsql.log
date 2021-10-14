@@ -1,0 +1,7 @@
+LOG:  00000: statement: select subxact_rollback_semantics();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "foo" does not exist at character 13
+QUERY:  insert into foo values(x)
+CONTEXT:  PL/pgSQL function subxact_rollback_semantics() line 1 at SQL statement
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select subxact_rollback_semantics();

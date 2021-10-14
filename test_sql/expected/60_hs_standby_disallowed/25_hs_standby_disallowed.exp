@@ -1,0 +1,6 @@
+SELECT nextval('hsseq');
+ nextval 
+---------
+       1
+(1 row)
+

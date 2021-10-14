@@ -1,0 +1,2 @@
+SELECT 'Infinity'::float4::numeric;
+ERROR:  0A000: cannot convert infinity to numeric

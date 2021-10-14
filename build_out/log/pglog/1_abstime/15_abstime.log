@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO ABSTIME_TBL (f1) VALUES ('Feb 28, 1984 25:08:10');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22008: date/time field value out of range: "Feb 28, 1984 25:08:10" at character 38
+LOCATION:  DateTimeParseError, datetime.c:3810
+STATEMENT:  INSERT INTO ABSTIME_TBL (f1) VALUES ('Feb 28, 1984 25:08:10');

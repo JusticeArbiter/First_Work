@@ -1,0 +1,2 @@
+select numrange(1.0, 2.0) + numrange(2.5, 3.0);
+ERROR:  22000: result of range union would not be contiguous

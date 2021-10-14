@@ -1,0 +1,2 @@
+FETCH FIRST FROM tablesample_cur;
+ERROR:  34000: cursor "tablesample_cur" does not exist

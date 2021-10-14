@@ -1,0 +1,2 @@
+INSERT INTO d(aa) VALUES('ddddd');
+INSERT 0 1

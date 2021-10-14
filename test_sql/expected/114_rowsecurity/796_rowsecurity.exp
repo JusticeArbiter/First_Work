@@ -1,0 +1,3 @@
+DROP POLICY p1 ON dob_t1;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP POLICY
+ERROR:  42704: policy "p1" for table "dob_t1" does not exist

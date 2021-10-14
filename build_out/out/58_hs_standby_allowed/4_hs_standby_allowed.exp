@@ -1,0 +1,2 @@
+COPY hs1 TO '/tmp/copy_test';
+COPY 1

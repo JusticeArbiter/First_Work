@@ -1,0 +1,3 @@
+DROP ROLE bob;
+ERROR:  2BP01: role "bob" cannot be dropped because some objects depend on it
+DETAIL:  target of policy p on table tbl1

@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TYPE planets ADD VALUE 'pluto' AFTER 'zeus';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: "zeus" is not an existing enum label
+LOCATION:  AddEnumLabel, pg_enum.c:294
+STATEMENT:  ALTER TYPE planets ADD VALUE 'pluto' AFTER 'zeus';

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE FUNCTION recursion_test(int,int) RETURNS text AS '  DECLARE rslt text;  BEGIN  IF $1 <= 0 THEN  rslt = CAST($2 AS TEXT);  ELSE  rslt = CAST($1 AS TEXT) || '','' || recursion_test($1 - 1, $2);  END IF;  RETURN rslt;  END;' LANGUAGE plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE FUNCTION recursion_test(int,int) RETURNS text AS '  DECLARE rslt text;  BEGIN  IF $1 <= 0 THEN  rslt = CAST($2 AS TEXT);  ELSE  rslt = CAST($1 AS TEXT) || '','' || recursion_test($1 - 1, $2);  END IF;  RETURN rslt;  END;' LANGUAGE plpgsql;

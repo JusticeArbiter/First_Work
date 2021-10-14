@@ -1,0 +1,5 @@
+create temp view zv1 as select *,'dummy'::text AS junk from zt1;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+ERROR:  42P01: relation "zt1" does not exist
+LINE 1: ...te temp view zv1 as select *,'dummy'::text AS junk from zt1;
+                                                                   ^

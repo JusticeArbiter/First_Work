@@ -1,0 +1,4 @@
+INSERT INTO TIMESTAMP_TBL VALUES ('Feb 29 17:32:01 1997');
+ERROR:  22008: date/time field value out of range: "Feb 29 17:32:01 1997"
+LINE 1: INSERT INTO TIMESTAMP_TBL VALUES ('Feb 29 17:32:01 1997');
+                                          ^

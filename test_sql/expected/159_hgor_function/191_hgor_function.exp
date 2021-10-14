@@ -1,0 +1,6 @@
+select soundex('read'::text),soundex('red'::text);
+ soundex | soundex 
+---------+---------
+ R300    | R300
+(1 row)
+

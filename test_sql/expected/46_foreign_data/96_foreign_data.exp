@@ -1,0 +1,4 @@
+CREATE SERVER s8 FOREIGN DATA WRAPPER postgresql OPTIONS (foo '1');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE SERVER
+ERROR:  42601: invalid option "foo"
+HINT:  Valid options in this context are: authtype, service, connect_timeout, dbname, host, hostaddr, port, tty, options, requiressl, sslmode, gsslib

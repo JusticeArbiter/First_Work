@@ -1,0 +1,4 @@
+INSERT INTO joinme VALUES('zoo2', 54321);
+ERROR:  42P01: relation "joinme" does not exist
+LINE 1: INSERT INTO joinme VALUES('zoo2', 54321);
+                    ^

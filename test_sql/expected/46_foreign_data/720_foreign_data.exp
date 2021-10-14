@@ -1,0 +1,3 @@
+DROP ROLE unprivileged_role;
+ERROR:  2BP01: role "unprivileged_role" cannot be dropped because some objects depend on it
+DETAIL:  privileges for foreign-data wrapper postgresql

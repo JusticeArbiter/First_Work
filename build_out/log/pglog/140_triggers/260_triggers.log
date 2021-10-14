@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW city_view AS  SELECT city_id, city_name, population, country_name, continent  FROM city_table ci  LEFT JOIN country_table co ON co.country_id = ci.country_id;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE VIEW city_view AS  SELECT city_id, city_name, population, country_name, continent  FROM city_table ci  LEFT JOIN country_table co ON co.country_id = ci.country_id;

@@ -1,0 +1,4 @@
+UPDATE temptest SET a = 0 FROM writetest WHERE temptest.a = 1 AND writetest.a = temptest.a;
+ERROR:  42P01: relation "temptest" does not exist
+LINE 1: UPDATE temptest SET a = 0 FROM writetest WHERE temptest.a = ...
+               ^

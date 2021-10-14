@@ -1,0 +1,6 @@
+LOG:  00000: statement: UPDATE update_test AS t SET b = update_test.b + 10 WHERE t.a = 10;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: invalid reference to FROM-clause entry for table "update_test" at character 33
+HINT:  Perhaps you meant to reference the table alias "t".
+LOCATION:  errorMissingRTE, parse_relation.c:3134
+STATEMENT:  UPDATE update_test AS t SET b = update_test.b + 10 WHERE t.a = 10;

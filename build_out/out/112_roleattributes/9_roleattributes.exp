@@ -1,0 +1,2 @@
+CREATE ROLE test_def_inherit;
+CREATE ROLE

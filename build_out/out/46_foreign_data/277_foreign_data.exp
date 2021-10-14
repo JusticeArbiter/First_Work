@@ -1,0 +1,3 @@
+ALTER FOREIGN TABLE ft1 ALTER CONSTRAINT ft1_c9_check DEFERRABLE;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN TABLE
+ERROR:  42809: "ft1" is not a table

@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from dfunc(10, b := 20, 30);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: positional argument cannot follow named argument at character 34
+LOCATION:  ParseFuncOrColumn, parse_func.c:186
+STATEMENT:  select * from dfunc(10, b := 20, 30);

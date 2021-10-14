@@ -1,0 +1,2 @@
+LOG:  00000: statement: create domain testdomain1 as int constraint unsigned check (value > 0);
+LOCATION:  exec_simple_query, postgres.c:938

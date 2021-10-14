@@ -1,0 +1,5 @@
+SELECT * FROM ROWS FROM(generate_series(10,11), get_users()) WITH ORDINALITY;
+ERROR:  42883: function get_users() does not exist
+LINE 1: SELECT * FROM ROWS FROM(generate_series(10,11), get_users())...
+                                                        ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

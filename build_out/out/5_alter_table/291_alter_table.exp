@@ -1,0 +1,2 @@
+ALTER TABLE FKTABLE ADD FOREIGN KEY(ftest1, ftest2)  references pktable(ptest1, ptest2);
+ERROR:  42P01: relation "fktable" does not exist

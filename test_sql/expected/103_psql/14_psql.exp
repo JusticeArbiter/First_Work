@@ -1,0 +1,2 @@
+FETCH FORWARD 2 FROM _psql_cursor
+ERROR:  34000: cursor "_psql_cursor" does not exist

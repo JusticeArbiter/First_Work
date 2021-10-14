@@ -1,0 +1,2 @@
+LOG:  00000: statement: create table child (b varchar(255)) inherits (parent);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+SELECT 'Türkiye' COLLATE "en_US" ILIKE '%KI%' AS "true";
+ true 
+------
+ t
+(1 row)
+

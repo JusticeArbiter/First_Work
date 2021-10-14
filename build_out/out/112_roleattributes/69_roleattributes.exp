@@ -1,0 +1,2 @@
+DROP ROLE test_def_createrole;
+DROP ROLE

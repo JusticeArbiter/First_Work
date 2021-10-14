@@ -1,0 +1,15 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE LSEG_TBL (s lseg);
+ statement: INSERT INTO LSEG_TBL VALUES ('[(1,2),(3,4)]');
+ statement: INSERT INTO LSEG_TBL VALUES ('(0,0),(6,6)');
+ statement: INSERT INTO LSEG_TBL VALUES ('10,-10 ,-3,-4');
+ statement: INSERT INTO LSEG_TBL VALUES ('[-1e6,2e2,3e5, -4e1]');
+ statement: INSERT INTO LSEG_TBL VALUES ('(11,22,33,44)');
+ statement: INSERT INTO LSEG_TBL VALUES ('(3asdf,2 ,3,4r2)');
+ statement: INSERT INTO LSEG_TBL VALUES ('[1,2,3, 4');
+ statement: INSERT INTO LSEG_TBL VALUES ('[(,2),(3,4)]');
+ statement: INSERT INTO LSEG_TBL VALUES ('[(1,2),(3,4)');
+ statement: select * from LSEG_TBL;
+ statement: SELECT * FROM LSEG_TBL WHERE s <= lseg '[(1,2),(3,4)]';
+ statement: SELECT * FROM LSEG_TBL WHERE (s <-> lseg '[(1,2),(3,4)]') < 10;
+

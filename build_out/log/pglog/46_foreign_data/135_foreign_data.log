@@ -1,0 +1,9 @@
+LOG:  00000: statement: ALTER SERVER s8 OPTIONS (foo '1');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER SERVER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER SERVER s8 OPTIONS (foo '1');
+ERROR:  42601: invalid option "foo"
+HINT:  Valid options in this context are: authtype, service, connect_timeout, dbname, host, hostaddr, port, tty, options, requiressl, sslmode, gsslib
+LOCATION:  postgresql_fdw_validator, foreign.c:645
+STATEMENT:  ALTER SERVER s8 OPTIONS (foo '1');

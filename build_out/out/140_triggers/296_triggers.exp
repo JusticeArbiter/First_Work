@@ -1,0 +1,7 @@
+DELETE FROM european_city_view WHERE city_name = 'Cambridge' RETURNING *;
+ city_id | city_name | population | country_name | continent 
+---------+-----------+------------+--------------+-----------
+       4 | Cambridge |     122800 | UK           | Europe
+(1 row)
+
+DELETE 1

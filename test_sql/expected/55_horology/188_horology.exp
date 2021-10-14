@@ -1,0 +1,3 @@
+SELECT to_timestamp('97/Feb/16', 'YYMonDD');
+ERROR:  22007: invalid value "/Fe" for "Mon"
+DETAIL:  The given value did not match any of the allowed values for this field.

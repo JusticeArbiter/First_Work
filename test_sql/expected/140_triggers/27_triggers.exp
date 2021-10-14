@@ -1,0 +1,2 @@
+insert into fkeys values (10, '1', 2);
+INSERT 0 1

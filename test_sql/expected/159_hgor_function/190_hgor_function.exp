@@ -1,0 +1,6 @@
+select soundex('too'::text),soundex('two'::text);
+ soundex | soundex 
+---------+---------
+ T000    | T000
+(1 row)
+

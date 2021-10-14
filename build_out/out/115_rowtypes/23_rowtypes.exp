@@ -1,0 +1,4 @@
+select * from people;
+ERROR:  42P01: relation "people" does not exist
+LINE 1: select * from people;
+                      ^

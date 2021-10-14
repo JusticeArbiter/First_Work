@@ -1,0 +1,6 @@
+select json_strip_nulls(null);
+ json_strip_nulls 
+------------------
+ 
+(1 row)
+

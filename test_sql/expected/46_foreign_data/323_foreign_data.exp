@@ -1,0 +1,13 @@
+SELECT * FROM information_schema.foreign_server_options ORDER BY 1, 2, 3;
+ foreign_server_catalog | foreign_server_name |   option_name   | option_value 
+------------------------+---------------------+-----------------+--------------
+ highgo                 | s4                  | dbname          | b
+ highgo                 | s4                  | host            | a
+ highgo                 | s6                  | dbname          | b
+ highgo                 | s6                  | host            | a
+ highgo                 | s7                  | dbname          | b
+ highgo                 | s7                  | host            | a
+ highgo                 | s8                  | connect_timeout | 30
+ highgo                 | s8                  | dbname          | db1
+(8 rows)
+

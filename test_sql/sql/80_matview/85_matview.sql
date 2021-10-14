@@ -1,0 +1,1 @@
+SELECT * FROM tm ORDER BY type;

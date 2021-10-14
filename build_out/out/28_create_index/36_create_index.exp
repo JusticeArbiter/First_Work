@@ -1,0 +1,2 @@
+CREATE INDEX ggcircleind ON gcircle_tbl USING gist (f1);
+ERROR:  42P01: relation "gcircle_tbl" does not exist

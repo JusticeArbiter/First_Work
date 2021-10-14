@@ -1,0 +1,8 @@
+LOG:  00000: statement: SELECT xmlparse(document 'abc');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2200M: invalid XML document
+DETAIL:  line 1: Start tag expected, '<' not found
+	abc
+	^
+LOCATION:  xml_ereport, xml.c:1555
+STATEMENT:  SELECT xmlparse(document 'abc');

@@ -1,0 +1,4 @@
+ALTER FOREIGN TABLE IF EXISTS doesnt_exist_ft1 RENAME c1 TO foreign_column_1;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+NOTICE:  00000: relation "doesnt_exist_ft1" does not exist, skipping
+ALTER TABLE

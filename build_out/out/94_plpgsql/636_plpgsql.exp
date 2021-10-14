@@ -1,0 +1,2 @@
+select raise_test();
+ERROR:  22012: division_by_zero

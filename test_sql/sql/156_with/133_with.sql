@@ -1,0 +1,1 @@
+ALTER TABLE z ADD UNIQUE (k);

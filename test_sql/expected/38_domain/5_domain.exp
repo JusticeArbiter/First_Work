@@ -1,0 +1,3 @@
+drop domain domaindroptest cascade;
+NOTICE:  00000: drop cascades to type dependenttypetest
+DROP DOMAIN

@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from tttest where price_on <= 35 and price_off > 35 and price_id = 5;
+LOCATION:  exec_simple_query, postgres.c:938

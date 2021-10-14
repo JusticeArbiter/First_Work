@@ -1,0 +1,5 @@
+SELECT relname, b.* FROM b, pg_class where b.tableoid = pg_class.oid;
+ relname | aa | bb 
+---------+----+----
+(0 rows)
+

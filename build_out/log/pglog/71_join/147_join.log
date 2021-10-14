@@ -1,0 +1,5 @@
+LOG:  00000: statement: select tt1.*, tt2.* from tt2 right join tt1 on tt1.joincol = tt2.joincol;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column tt1.joincol does not exist at character 48
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select tt1.*, tt2.* from tt2 right join tt1 on tt1.joincol = tt2.joincol;

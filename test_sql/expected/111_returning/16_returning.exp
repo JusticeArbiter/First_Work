@@ -1,0 +1,4 @@
+INSERT INTO foochild VALUES(123,'child',999,-123);
+ERROR:  42P01: relation "foochild" does not exist
+LINE 1: INSERT INTO foochild VALUES(123,'child',999,-123);
+                    ^

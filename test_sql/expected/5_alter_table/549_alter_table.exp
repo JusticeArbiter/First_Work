@@ -1,0 +1,4 @@
+insert into atacc1 (a,b,c,d) values (10,11,12,13);
+ERROR:  42703: column "a" of relation "atacc1" does not exist
+LINE 1: insert into atacc1 (a,b,c,d) values (10,11,12,13);
+                            ^

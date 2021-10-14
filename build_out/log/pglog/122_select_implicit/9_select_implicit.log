@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO test_missing_target VALUES (7, 4, 'cccc', 'h');
+LOCATION:  exec_simple_query, postgres.c:938

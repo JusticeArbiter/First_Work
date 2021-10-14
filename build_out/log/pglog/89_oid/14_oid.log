@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO OID_TBL(f1) VALUES ('5 d');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type oid: "5 d" at character 33
+LOCATION:  oidin_subr, oid.c:85
+STATEMENT:  INSERT INTO OID_TBL(f1) VALUES ('5 d');

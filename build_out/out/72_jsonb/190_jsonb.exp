@@ -1,0 +1,6 @@
+SELECT jsonb_exists_any('{"a":null, "b":"qq"}', '{}'::text[]);
+ jsonb_exists_any 
+------------------
+ f
+(1 row)
+

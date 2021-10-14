@@ -1,0 +1,3 @@
+CREATE FUNCTION int42_out(int42)  RETURNS cstring  AS 'int4out'  LANGUAGE internal STRICT IMMUTABLE;
+NOTICE:  42809: argument type int42 is only a shell
+CREATE FUNCTION

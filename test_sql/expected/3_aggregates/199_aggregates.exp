@@ -1,0 +1,4 @@
+select percentile_cont(array[0,0.25,0.5,0.75,1]) within group (order by thousand)  from tenk1;
+ERROR:  42P01: relation "tenk1" does not exist
+LINE 1: ...5,0.5,0.75,1]) within group (order by thousand)  from tenk1;
+                                                                 ^

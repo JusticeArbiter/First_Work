@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into IFace values ('IF', 'orion', 'eth0', 'WS.002.1b');
+LOCATION:  exec_simple_query, postgres.c:938

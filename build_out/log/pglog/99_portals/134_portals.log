@@ -1,0 +1,2 @@
+LOG:  00000: statement: PREPARE cprep AS  SELECT name, statement, is_holdable, is_binary, is_scrollable FROM pg_cursors;
+LOCATION:  exec_simple_query, postgres.c:938

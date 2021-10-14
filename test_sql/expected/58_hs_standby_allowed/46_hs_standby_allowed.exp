@@ -1,0 +1,6 @@
+show synchronous_commit;
+ synchronous_commit 
+--------------------
+ on
+(1 row)
+

@@ -1,0 +1,10 @@
+explain (costs off) INSERT INTO hats VALUES ('h8', 'forbidden') RETURNING *;
+                                           QUERY PLAN                                            
+-------------------------------------------------------------------------------------------------
+ Insert on hat_data
+   Conflict Resolution: UPDATE
+   Conflict Arbiter Indexes: hat_data_unique_idx
+   Conflict Filter: ((excluded.hat_color <> 'forbidden'::bpchar) AND (hat_data.* <> excluded.*))
+   ->  Result
+(5 rows)
+

@@ -1,0 +1,6 @@
+SELECT date 'January 8, 99 BC';
+     date      
+---------------
+ 0099-01-08 BC
+(1 row)
+

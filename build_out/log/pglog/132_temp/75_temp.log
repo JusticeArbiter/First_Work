@@ -1,0 +1,5 @@
+LOG:  00000: statement: select pg_temp.whoami();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  3F000: schema "pg_temp" does not exist at character 8
+LOCATION:  get_namespace_oid, namespace.c:2873
+STATEMENT:  select pg_temp.whoami();

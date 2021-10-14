@@ -1,0 +1,4 @@
+insert into nt1 values (3,false,false);
+ERROR:  42P01: relation "nt1" does not exist
+LINE 1: insert into nt1 values (3,false,false);
+                    ^

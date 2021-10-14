@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE deptest1 (f1 int unique);
+LOCATION:  exec_simple_query, postgres.c:938

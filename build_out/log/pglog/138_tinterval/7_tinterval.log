@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO TINTERVAL_TBL (f1)  VALUES ('["bad time specifications" ""]');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type abstime: "bad time specifications" at character 41
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  INSERT INTO TINTERVAL_TBL (f1)  VALUES ('["bad time specifications" ""]');

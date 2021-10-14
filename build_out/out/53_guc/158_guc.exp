@@ -1,0 +1,3 @@
+alter function report_guc(text) set work_mem = '2MB';
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FUNCTION
+ALTER FUNCTION

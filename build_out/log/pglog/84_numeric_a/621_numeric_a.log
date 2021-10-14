@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO num_input_test(n1) VALUES ('- 1234');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type numeric: "- 1234" at character 40
+LOCATION:  set_var_from_str, numeric.c:4610
+STATEMENT:  INSERT INTO num_input_test(n1) VALUES ('- 1234');

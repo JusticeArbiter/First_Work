@@ -1,0 +1,6 @@
+SELECT 'foo' LIKE '%_' as t, 'f' LIKE '%_' as t, '' LIKE '%_' as f;
+ t | t | f 
+---+---+---
+ t | t | f
+(1 row)
+

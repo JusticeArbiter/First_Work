@@ -1,0 +1,6 @@
+LOG:  00000: statement: select compos();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for integer: "(1,hello)"
+CONTEXT:  PL/pgSQL function compos() while casting return value to function's return type
+LOCATION:  pg_atoi, numutils.c:62
+STATEMENT:  select compos();

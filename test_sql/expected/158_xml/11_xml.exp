@@ -1,0 +1,6 @@
+SELECT xmlconcat(xmlcomment('hello'),  xmlelement(NAME qux, 'foo'),  xmlcomment('world'));
+               xmlconcat                
+----------------------------------------
+ <!--hello--><qux>foo</qux><!--world-->
+(1 row)
+

@@ -1,0 +1,2 @@
+alter table myview drop d;
+ERROR:  42809: "myview" is not a table, composite type, or foreign table

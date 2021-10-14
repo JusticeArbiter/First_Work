@@ -1,0 +1,12 @@
+EXPLAIN (costs off) UPDATE rw_view2 SET a=3 WHERE a=2;
+                        QUERY PLAN                        
+----------------------------------------------------------
+ Update on rw_view1 rw_view1_1
+   ->  Subquery Scan on rw_view1
+         Filter: ((rw_view1.a < 10) AND (rw_view1.a = 2))
+         ->  Bitmap Heap Scan on base_tbl
+               Recheck Cond: (a > 0)
+               ->  Bitmap Index Scan on base_tbl_pkey
+                     Index Cond: (a > 0)
+(7 rows)
+

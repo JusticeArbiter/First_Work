@@ -1,0 +1,5 @@
+alter type rewritetype alter attribute a type text cascade;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TYPE
+NOTICE:  00000: Table is being rewritten (reason = 4)
+NOTICE:  00000: Table is being rewritten (reason = 4)
+ALTER TYPE

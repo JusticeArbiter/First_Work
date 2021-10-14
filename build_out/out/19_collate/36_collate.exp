@@ -1,0 +1,13 @@
+SELECT * FROM collate_test1 ORDER BY b;
+ a |  b  
+---+-----
+ 1 | abc
+ 1 | abc
+ 2 | Abc
+ 4 | ABC
+ 2 | äbc
+ 4 | ABD
+ 3 | bbc
+ 3 | bbc
+(8 rows)
+

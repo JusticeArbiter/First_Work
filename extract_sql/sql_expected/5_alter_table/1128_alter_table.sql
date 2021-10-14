@@ -1,0 +1,1 @@
+ALTER TYPE test_type2 ALTER ATTRIBUTE b TYPE varchar CASCADE;

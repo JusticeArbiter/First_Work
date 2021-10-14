@@ -1,0 +1,2 @@
+INSERT INTO t3 VALUES ( 'cc', 23 );
+INSERT 0 1

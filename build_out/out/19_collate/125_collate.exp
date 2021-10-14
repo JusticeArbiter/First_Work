@@ -1,0 +1,2 @@
+SELECT collation for ((SELECT a FROM collate_test1 LIMIT 1));
+ERROR:  42804: collations are not supported by type integer

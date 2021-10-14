@@ -1,0 +1,8 @@
+LOG:  00000: statement: COMMENT ON CONSTRAINT constrname_wrong ON FKTABLE IS 'fk constraint comment';
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start COMMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  COMMENT ON CONSTRAINT constrname_wrong ON FKTABLE IS 'fk constraint comment';
+ERROR:  42704: constraint "constrname_wrong" for table "fktable" does not exist
+LOCATION:  get_relation_constraint_oid, pg_constraint.c:808
+STATEMENT:  COMMENT ON CONSTRAINT constrname_wrong ON FKTABLE IS 'fk constraint comment';

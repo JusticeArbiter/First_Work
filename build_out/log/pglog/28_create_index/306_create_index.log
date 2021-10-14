@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP INDEX intarrayidx, textarrayidx;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: index "intarrayidx" does not exist
+LOCATION:  DropErrorMsgNonExistent, tablecmds.c:756
+STATEMENT:  DROP INDEX intarrayidx, textarrayidx;

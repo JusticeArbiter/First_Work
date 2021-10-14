@@ -1,0 +1,8 @@
+LOG:  00000: statement: SELECT '<>' IS NOT DOCUMENT;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2200N: invalid XML content at character 8
+DETAIL:  line 1: StartTag: invalid element name
+	<>
+	 ^
+LOCATION:  xml_ereport, xml.c:1555
+STATEMENT:  SELECT '<>' IS NOT DOCUMENT;

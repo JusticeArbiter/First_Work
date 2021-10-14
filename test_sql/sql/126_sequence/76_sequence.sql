@@ -1,0 +1,1 @@
+COMMENT ON SEQUENCE sequence_test2 IS NULL;

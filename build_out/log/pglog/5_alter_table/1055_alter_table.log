@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter conversion alter1.ascii_to_utf8 set schema alter2;
+LOCATION:  exec_simple_query, postgres.c:938

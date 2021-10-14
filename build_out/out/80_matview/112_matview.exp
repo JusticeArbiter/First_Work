@@ -1,0 +1,3 @@
+CREATE VIEW v_test1 AS SELECT 1 moo;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+CREATE VIEW

@@ -1,0 +1,89 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE pxtest1 (foobar VARCHAR(10));
+ statement: INSERT INTO pxtest1 VALUES ('aaa');
+ statement: BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+ statement: UPDATE pxtest1 SET foobar = 'bbb' WHERE foobar = 'aaa';
+ statement: SELECT * FROM pxtest1;
+ statement: PREPARE TRANSACTION 'foo1';
+ statement: SELECT * FROM pxtest1;
+ statement: SELECT gid FROM pg_prepared_xacts;
+ statement: ROLLBACK PREPARED 'foo1';
+ statement: SELECT * FROM pxtest1;
+ statement: SELECT gid FROM pg_prepared_xacts;
+ statement: BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+ statement: INSERT INTO pxtest1 VALUES ('ddd');
+ statement: SELECT * FROM pxtest1;
+ statement: PREPARE TRANSACTION 'foo2';
+ statement: SELECT * FROM pxtest1;
+ statement: COMMIT PREPARED 'foo2';
+ statement: SELECT * FROM pxtest1;
+ statement: BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+ statement: UPDATE pxtest1 SET foobar = 'eee' WHERE foobar = 'ddd';
+ statement: SELECT * FROM pxtest1;
+ statement: PREPARE TRANSACTION 'foo3';
+ statement: SELECT gid FROM pg_prepared_xacts;
+ statement: BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+ statement: INSERT INTO pxtest1 VALUES ('fff');
+ statement: PREPARE TRANSACTION 'foo3';
+ statement: SELECT * FROM pxtest1;
+ statement: ROLLBACK PREPARED 'foo3';
+ statement: SELECT * FROM pxtest1;
+ statement: BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+ statement: UPDATE pxtest1 SET foobar = 'eee' WHERE foobar = 'ddd';
+ statement: SELECT * FROM pxtest1;
+ statement: PREPARE TRANSACTION 'foo4';
+ statement: SELECT gid FROM pg_prepared_xacts;
+ statement: BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+ statement: SELECT * FROM pxtest1;
+ statement: INSERT INTO pxtest1 VALUES ('fff');
+ statement: PREPARE TRANSACTION 'foo5';
+ statement: SELECT gid FROM pg_prepared_xacts;
+ statement: ROLLBACK PREPARED 'foo4';
+ statement: SELECT gid FROM pg_prepared_xacts;
+ statement: DROP TABLE pxtest1;
+ statement: BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+ statement: CREATE TABLE pxtest2 (a int);
+ statement: INSERT INTO pxtest2 VALUES (1);
+ statement: SAVEPOINT a;
+ statement: INSERT INTO pxtest2 VALUES (2);
+ statement: ROLLBACK TO a;
+ statement: SAVEPOINT b;
+ statement: INSERT INTO pxtest2 VALUES (3);
+ statement: PREPARE TRANSACTION 'regress-one';
+ statement: CREATE TABLE pxtest3(fff int);
+ statement: BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+ statement: DROP TABLE pxtest3;
+ statement: CREATE TABLE pxtest4 (a int);
+ statement: INSERT INTO pxtest4 VALUES (1);
+ statement: INSERT INTO pxtest4 VALUES (2);
+ statement: DECLARE foo CURSOR FOR SELECT * FROM pxtest4;
+ statement: FETCH 1 FROM foo;
+ statement: PREPARE TRANSACTION 'regress-two';
+ statement: FETCH 1 FROM foo;
+ statement: SELECT * FROM pxtest2;
+ statement: SELECT gid FROM pg_prepared_xacts;
+ statement: begin;
+ statement: lock table pxtest3 in access share mode nowait;
+ statement: rollback;
+ statement: SELECT gid FROM pg_prepared_xacts;
+ statement: begin;
+ statement: lock table pxtest3 in access share mode nowait;
+ statement: rollback;
+ statement: COMMIT PREPARED 'regress-one';
+ statement: SELECT c.oid,                                          +
+   n.nspname,                                                      +
+   c.relname                                                       +
+ FROM pg_catalog.pg_class c                                        +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace+
+ WHERE c.relname ~ '^(pxtest2)$'                                   +
+   AND pg_catalog.pg_table_is_visible(c.oid)                       +
+ ORDER BY 2, 3;
+ statement: SELECT * FROM pxtest2;
+ statement: SELECT gid FROM pg_prepared_xacts;
+ statement: COMMIT PREPARED 'regress-two';
+ statement: SELECT * FROM pxtest3;
+ statement: SELECT gid FROM pg_prepared_xacts;
+ statement: DROP TABLE pxtest2;
+ statement: DROP TABLE pxtest3;
+ statement: DROP TABLE pxtest4;
+

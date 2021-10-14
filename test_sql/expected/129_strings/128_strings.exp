@@ -1,0 +1,6 @@
+SELECT 'maca' LIKE 'm%aca' ESCAPE '%' AS "true";
+ true 
+------
+ t
+(1 row)
+

@@ -1,0 +1,7 @@
+select * from parent;
+ b  
+----
+  2
+ 12
+(2 rows)
+

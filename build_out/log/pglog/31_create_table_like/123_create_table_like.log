@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP TABLE IF EXISTS ctlt4, ctlt10, ctlt11, ctlt11a, ctlt12;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: table "ctlt10" does not exist, skipping
+LOCATION:  DropErrorMsgNonExistent, tablecmds.c:760
+STATEMENT:  DROP TABLE IF EXISTS ctlt4, ctlt10, ctlt11, ctlt11a, ctlt12;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: drop rule def_view_test_ins on def_view_test;
+LOCATION:  exec_simple_query, postgres.c:938

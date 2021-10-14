@@ -1,0 +1,1 @@
+select lnnvl('t');

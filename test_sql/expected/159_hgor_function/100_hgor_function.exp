@@ -1,0 +1,6 @@
+select decode('hgdb'::text,'hgdb'::text,9999::bigint);
+ decode 
+--------
+   9999
+(1 row)
+

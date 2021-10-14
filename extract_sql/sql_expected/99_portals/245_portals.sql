@@ -1,0 +1,1 @@
+DECLARE c CURSOR FOR SELECT f1,count(*) FROM uctest GROUP BY f1;

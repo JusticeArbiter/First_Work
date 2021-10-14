@@ -1,0 +1,2 @@
+ALTER USER test_user_canlogin WITH NOLOGIN;
+ALTER ROLE

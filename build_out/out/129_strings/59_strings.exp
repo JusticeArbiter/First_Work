@@ -1,0 +1,6 @@
+SELECT regexp_matches('foobarbequebaz', $re$(bar)(.*)(beque)$re$);
+ regexp_matches 
+----------------
+ {bar,"",beque}
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '127.0.0.1'::inet + 10000000000;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: result is out of range
+LOCATION:  internal_inetpl, network.c:1436
+STATEMENT:  SELECT '127.0.0.1'::inet + 10000000000;

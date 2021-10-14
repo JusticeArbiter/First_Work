@@ -1,0 +1,6 @@
+SELECT INTERVAL '+02:00' AS "Two hours";
+ Two hours 
+-----------
+ 02:00:00
+(1 row)
+

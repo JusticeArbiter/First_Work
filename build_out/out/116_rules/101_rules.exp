@@ -1,0 +1,2 @@
+insert into rtest_system values ('notjw', 'WinNT Jan Wieck (notebook)');
+INSERT 0 1

@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into anothertab (atcol1, atcol2) values (45, null);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: new row for relation "anothertab" violates check constraint "anothertab_chk"
+DETAIL:  Failing row contains (45, null).
+LOCATION:  ExecConstraints, execMain.c:1725
+STATEMENT:  insert into anothertab (atcol1, atcol2) values (45, null);

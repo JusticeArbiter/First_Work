@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE european_city_view SET population = 10000;
+LOCATION:  exec_simple_query, postgres.c:938

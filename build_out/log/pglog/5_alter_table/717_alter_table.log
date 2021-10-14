@@ -1,0 +1,5 @@
+LOG:  00000: statement: select oid > 0, * from altstartwith;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "oid" does not exist at character 8
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select oid > 0, * from altstartwith;

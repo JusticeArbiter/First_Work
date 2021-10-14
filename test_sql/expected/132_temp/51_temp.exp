@@ -1,0 +1,3 @@
+CREATE TEMP TABLE temptest2(col int REFERENCES temptest1)  ON COMMIT DELETE ROWS;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+ERROR:  42P01: relation "temptest1" does not exist

@@ -1,0 +1,9 @@
+SELECT p1.oid, p1.relname  FROM pg_class as p1  WHERE p1.relkind NOT IN ('r', 'i', 's', 'S', 'c', 't', 'v', 'f');
+  oid  | relname 
+-------+---------
+ 18281 | matview
+ 23098 | mv_foo
+ 23126 | mvtest1
+ 23130 | mvtest2
+(4 rows)
+

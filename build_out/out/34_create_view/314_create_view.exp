@@ -1,0 +1,2 @@
+insert into tt14t values('foo', 'bar', 'baz', 'quux');
+INSERT 0 1

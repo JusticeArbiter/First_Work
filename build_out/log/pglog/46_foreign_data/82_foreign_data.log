@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP FOREIGN DATA WRAPPER foo CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FOREIGN DATA WRAPPER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP FOREIGN DATA WRAPPER foo CASCADE;
+ERROR:  42704: foreign-data wrapper "foo" does not exist
+LOCATION:  get_foreign_data_wrapper_oid, foreign.c:671
+STATEMENT:  DROP FOREIGN DATA WRAPPER foo CASCADE;

@@ -1,0 +1,6 @@
+SELECT foo(42);
+ foo 
+-----
+  43
+(1 row)
+

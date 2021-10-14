@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH t AS (  SELECT a FROM y  )  UPDATE y SET a = y.a-10 FROM t WHERE y.a > 20 AND t.a = y.a RETURNING y.a;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "y" does not exist at character 28
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  WITH t AS (  SELECT a FROM y  )  UPDATE y SET a = y.a-10 FROM t WHERE y.a > 20 AND t.a = y.a RETURNING y.a;

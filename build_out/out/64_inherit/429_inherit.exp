@@ -1,0 +1,2 @@
+insert into matest2 (name) values ('Test 4');
+INSERT 0 1

@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER AGGREGATE alt_func1(int) SET SCHEMA alt_nsp2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: function alt_func1(integer) is not an aggregate
+LOCATION:  LookupAggNameTypeNames, parse_func.c:2033
+STATEMENT:  ALTER AGGREGATE alt_func1(int) SET SCHEMA alt_nsp2;

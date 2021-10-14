@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE FUNCTION int42_out(int42)  RETURNS cstring  AS 'int4out'  LANGUAGE internal STRICT IMMUTABLE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  42809: argument type int42 is only a shell
+LOCATION:  interpret_function_parameter_list, functioncmds.c:251
+STATEMENT:  CREATE FUNCTION int42_out(int42)  RETURNS cstring  AS 'int4out'  LANGUAGE internal STRICT IMMUTABLE;

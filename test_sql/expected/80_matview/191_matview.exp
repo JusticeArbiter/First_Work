@@ -1,0 +1,2 @@
+CREATE ROLE user_dw;
+CREATE ROLE

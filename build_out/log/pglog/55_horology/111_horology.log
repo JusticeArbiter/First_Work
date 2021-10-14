@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT time with time zone '01:30-08' - interval '02:01' AS "23:29:00-08";
+LOCATION:  exec_simple_query, postgres.c:938

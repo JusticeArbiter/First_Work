@@ -1,0 +1,2 @@
+SELECT dup('xyz');
+ERROR:  42804: could not determine polymorphic type because input has type "unknown"

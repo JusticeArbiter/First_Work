@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW aliased_view_4 AS  select * from temp_view_test.tt1  where exists (select 1 from tt1 where temp_view_test.tt1.y1 = tt1.f1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column tt1.f1 does not exist at character 128
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  CREATE VIEW aliased_view_4 AS  select * from temp_view_test.tt1  where exists (select 1 from tt1 where temp_view_test.tt1.y1 = tt1.f1);

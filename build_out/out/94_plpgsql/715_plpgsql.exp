@@ -1,0 +1,3 @@
+DROP FUNCTION nonsimple_expr_test();
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FUNCTION
+ERROR:  42883: function nonsimple_expr_test() does not exist

@@ -1,0 +1,2 @@
+LOG:  00000: statement: DELETE FROM v WHERE EXISTS ( SELECT * FROM mv_v WHERE mv_v.a = v.a );
+LOCATION:  exec_simple_query, postgres.c:938

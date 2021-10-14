@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM rw_view1 ORDER BY a;
+LOCATION:  exec_simple_query, postgres.c:938

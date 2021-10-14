@@ -1,0 +1,4 @@
+EXPLAIN (COSTS OFF)  SELECT * FROM point_tbl ORDER BY f1 <-> '0,1';
+ERROR:  42P01: relation "point_tbl" does not exist
+LINE 1: EXPLAIN (COSTS OFF)  SELECT * FROM point_tbl ORDER BY f1 <->...
+                                           ^

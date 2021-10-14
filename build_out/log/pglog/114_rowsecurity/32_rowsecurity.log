@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO document VALUES  ( 1, 11, 1, 'rls_regress_user1', 'my first novel'),  ( 2, 11, 2, 'rls_regress_user1', 'my second novel'),  ( 3, 22, 2, 'rls_regress_user1', 'my science fiction'),  ( 4, 44, 1, 'rls_regress_user1', 'my first manga'),  ( 5, 44, 2, 'rls_regress_user1', 'my second manga'),  ( 6, 22, 1, 'rls_regress_user2', 'great science fiction'),  ( 7, 33, 2, 'rls_regress_user2', 'great technology book'),  ( 8, 44, 1, 'rls_regress_user2', 'great manga');
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,4 @@
+DROP SERVER s3 CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SERVER
+NOTICE:  00000: drop cascades to user mapping for highgo on server s3
+DROP SERVER

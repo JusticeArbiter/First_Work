@@ -1,0 +1,3 @@
+alter table dropcol drop column drop1, drop column drop2;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+ALTER TABLE

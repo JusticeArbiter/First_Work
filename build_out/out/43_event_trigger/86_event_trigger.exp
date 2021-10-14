@@ -1,0 +1,4 @@
+ALTER TABLE evttrig.one DROP CONSTRAINT one_pkey;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+NOTICE:  00000: NORMAL: orig=t normal=f istemp=f type=table constraint identity=one_pkey on evttrig.one name={evttrig,one,one_pkey} args={}
+ALTER TABLE

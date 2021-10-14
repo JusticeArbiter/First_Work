@@ -1,0 +1,6 @@
+SELECT regrole('"regtestrole"');
+   regrole   
+-------------
+ regtestrole
+(1 row)
+

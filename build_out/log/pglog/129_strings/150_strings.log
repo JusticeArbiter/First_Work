@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 'jack' LIKE '%____%' AS t;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter type insenum add value 'i9' before 'L2';
+LOCATION:  exec_simple_query, postgres.c:938

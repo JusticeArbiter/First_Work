@@ -1,0 +1,8 @@
+DROP TABLE mvtest_v CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+NOTICE:  00000: drop cascades to 4 other objects
+DETAIL:  drop cascades to materialized view mvtest_mv_v
+drop cascades to materialized view mvtest_mv_v_2
+drop cascades to materialized view mvtest_mv_v_3
+drop cascades to materialized view mvtest_mv_v_4
+DROP TABLE

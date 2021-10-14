@@ -1,0 +1,14 @@
+SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN unnest(array[10,20,30]) f(i) ON (r+i)<100;
+ r | i  
+---+----
+ 1 | 10
+ 1 | 20
+ 1 | 30
+ 2 | 10
+ 2 | 20
+ 2 | 30
+ 3 | 10
+ 3 | 20
+ 3 | 30
+(9 rows)
+

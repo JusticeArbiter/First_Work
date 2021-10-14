@@ -1,0 +1,4 @@
+WITH wcte AS ( INSERT INTO child1 VALUES ( 42, 'new' ) RETURNING id AS newid )  UPDATE parent SET id = id + newid FROM wcte;
+ERROR:  42P01: relation "child1" does not exist
+LINE 1: WITH wcte AS ( INSERT INTO child1 VALUES ( 42, 'new' ) RETUR...
+                                   ^

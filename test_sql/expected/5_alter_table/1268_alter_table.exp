@@ -1,0 +1,6 @@
+SELECT indexrelid::regclass::text as index, obj_description(indexrelid, 'pg_class') as comment FROM pg_index where indrelid = 'comment_test_child'::regclass ORDER BY 1, 2;
+         index         |                       comment                       
+-----------------------+-----------------------------------------------------
+ comment_test_child_fk | Index backing the FOREIGN KEY of comment_test_child
+(1 row)
+

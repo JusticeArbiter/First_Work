@@ -1,0 +1,2 @@
+CREATE ROLE "session_user";
+CREATE ROLE

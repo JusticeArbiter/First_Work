@@ -1,0 +1,8 @@
+EXPLAIN (costs off) UPDATE rw_view2 SET aaa=5 WHERE aaa=4;
+                       QUERY PLAN                       
+--------------------------------------------------------
+ Update on base_tbl
+   ->  Index Scan using base_tbl_pkey on base_tbl
+         Index Cond: ((a < 10) AND (a > 0) AND (a = 4))
+(3 rows)
+

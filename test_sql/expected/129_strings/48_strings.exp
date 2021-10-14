@@ -1,0 +1,6 @@
+SELECT SUBSTRING('abcdefg' FROM NULL FOR '#') IS NULL AS "True";
+ True 
+------
+ t
+(1 row)
+

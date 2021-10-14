@@ -1,0 +1,3 @@
+create temp table a (  code char not null,  constraint a_pk primary key (code)  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

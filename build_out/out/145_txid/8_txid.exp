@@ -1,0 +1,3 @@
+create temp table snapshot_test (  nr integer,  snap txid_snapshot  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT um.srvname AS "Server",  um.usename AS "User name"  FROM pg_catalog.pg_user_mappings um  ORDER BY 1, 2;
+LOCATION:  exec_simple_query, postgres.c:938

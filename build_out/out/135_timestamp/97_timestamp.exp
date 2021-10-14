@@ -1,0 +1,4 @@
+INSERT INTO TIMESTAMP_TBL VALUES ('Feb 16 17:32:01 -0097');
+ERROR:  22009: time zone displacement out of range: "Feb 16 17:32:01 -0097"
+LINE 1: INSERT INTO TIMESTAMP_TBL VALUES ('Feb 16 17:32:01 -0097');
+                                          ^

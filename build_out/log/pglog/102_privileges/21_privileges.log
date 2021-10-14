@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER GROUP regressgroup2 ADD USER regressuser2;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: role "regressuser2" is already a member of role "regressgroup2"
+LOCATION:  AddRoleMems, user.c:1460
+STATEMENT:  ALTER GROUP regressgroup2 ADD USER regressuser2;

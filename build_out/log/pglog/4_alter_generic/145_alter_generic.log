@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR CLASS alt_opc2 USING hash SET SCHEMA alt_nsp2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: operator class "alt_opc2" for access method "hash" already exists in schema "alt_nsp2"
+LOCATION:  IsThereOpClassInNamespace, opclasscmds.c:1708
+STATEMENT:  ALTER OPERATOR CLASS alt_opc2 USING hash SET SCHEMA alt_nsp2;

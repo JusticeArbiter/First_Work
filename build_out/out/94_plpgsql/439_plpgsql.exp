@@ -1,0 +1,6 @@
+select excpt_test4();
+   excpt_test4    
+------------------
+ division by zero
+(1 row)
+

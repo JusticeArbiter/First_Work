@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into HSlot values ('HS', 'base.hub1', 1, '');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: duplicate key value violates unique constraint "hslot_name"
+DETAIL:  Key (slotname)=(HS.base.hub1.1      ) already exists.
+LOCATION:  _bt_check_unique, nbtinsert.c:432
+STATEMENT:  insert into HSlot values ('HS', 'base.hub1', 1, '');

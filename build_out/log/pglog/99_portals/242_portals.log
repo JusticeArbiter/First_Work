@@ -1,0 +1,5 @@
+LOG:  00000: statement: DELETE FROM tenk1 WHERE CURRENT OF c;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "c" does not exist
+LOCATION:  execCurrentOf, execCurrent.c:67
+STATEMENT:  DELETE FROM tenk1 WHERE CURRENT OF c;

@@ -1,0 +1,4 @@
+DROP TABLE base_tbl, ref_tbl CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+NOTICE:  00000: drop cascades to view rw_view1
+DROP TABLE

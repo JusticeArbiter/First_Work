@@ -1,0 +1,3 @@
+create table trigtest2 (i int references trigtest(i) on delete cascade);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TABLE d_star (  d float8  ) INHERITS (b_star, c_star);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging multiple inherited definitions of column "class"
+LOCATION:  MergeAttributes, tablecmds.c:1605
+STATEMENT:  CREATE TABLE d_star (  d float8  ) INHERITS (b_star, c_star);
+NOTICE:  00000: merging multiple inherited definitions of column "a"
+LOCATION:  MergeAttributes, tablecmds.c:1605
+STATEMENT:  CREATE TABLE d_star (  d float8  ) INHERITS (b_star, c_star);

@@ -1,0 +1,1 @@
+CREATE SEQUENCE sequence_test2 START WITH 32;

@@ -1,0 +1,3 @@
+drop function testoa(x1 int, x2 int, x3 int);
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FUNCTION
+DROP FUNCTION

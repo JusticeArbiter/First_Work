@@ -1,0 +1,3 @@
+drop view vw_ord;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP VIEW
+ERROR:  42P01: view "vw_ord" does not exist

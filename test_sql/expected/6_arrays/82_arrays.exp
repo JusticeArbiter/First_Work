@@ -1,0 +1,6 @@
+SELECT ARRAY[ARRAY['hello'],ARRAY['world']];
+       array       
+-------------------
+ {{hello},{world}}
+(1 row)
+

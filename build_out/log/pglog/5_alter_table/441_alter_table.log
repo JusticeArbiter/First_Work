@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into atacc1 (test,test2) values (NULL,3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23502: null value in column "test" violates not-null constraint
+DETAIL:  Failing row contains (null, 3).
+LOCATION:  ExecConstraints, execMain.c:1699
+STATEMENT:  insert into atacc1 (test,test2) values (NULL,3);

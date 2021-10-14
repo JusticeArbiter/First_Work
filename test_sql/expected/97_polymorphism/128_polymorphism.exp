@@ -1,0 +1,6 @@
+select concat('|', 'a'::text, 'b', 'c');
+ concat 
+--------
+ a|b|c
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' as six, box(f1) AS box FROM CIRCLE_TBL;
+LOCATION:  exec_simple_query, postgres.c:938

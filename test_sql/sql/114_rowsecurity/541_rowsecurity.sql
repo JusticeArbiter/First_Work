@@ -1,0 +1,1 @@
+COPY copy_rel_to TO STDOUT WITH DELIMITER ',';

@@ -1,0 +1,8 @@
+LOG:  00000: statement: create rule insert_tt_rule as on insert to tt do also  insert into tt_log values(new.*);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create rule insert_tt_rule as on insert to tt do also  insert into tt_log values(new.*);
+ERROR:  42P01: relation "tt" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  create rule insert_tt_rule as on insert to tt do also  insert into tt_log values(new.*);

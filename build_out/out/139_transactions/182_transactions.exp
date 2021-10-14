@@ -1,0 +1,10 @@
+SELECT a FROM savepoints WHERE a BETWEEN 18 AND 22;
+ a  
+----
+ 18
+ 19
+ 20
+ 21
+ 22
+(5 rows)
+

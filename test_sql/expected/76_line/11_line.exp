@@ -1,0 +1,4 @@
+INSERT INTO LINE_TBL VALUES ('(3asdf,2 ,3,4r2)');
+ERROR:  22P02: invalid input syntax for type line: "(3asdf,2 ,3,4r2)"
+LINE 1: INSERT INTO LINE_TBL VALUES ('(3asdf,2 ,3,4r2)');
+                                     ^

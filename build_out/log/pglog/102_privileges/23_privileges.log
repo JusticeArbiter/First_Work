@@ -1,0 +1,2 @@
+LOG:  00000: statement: GRANT regressgroup2 TO regressuser4 WITH ADMIN OPTION;
+LOCATION:  exec_simple_query, postgres.c:938

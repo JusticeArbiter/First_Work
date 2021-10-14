@@ -1,0 +1,2 @@
+SELECT pg_get_object_address('schema', '{one}', '{}');
+ERROR:  3F000: schema "one" does not exist

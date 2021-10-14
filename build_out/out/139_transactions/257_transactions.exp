@@ -1,0 +1,2 @@
+insert into abc values (5);
+INSERT 0 1

@@ -1,0 +1,2 @@
+INSERT INTO rw_view1 VALUES(3,4);
+INSERT 0 1

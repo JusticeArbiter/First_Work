@@ -1,0 +1,18 @@
+LOG:  00000: statement: DROP TABLE t;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP TABLE t;
+ERROR:  2BP01: cannot drop table t because other objects depend on it
+DETAIL:  view tv depends on table t
+	view tvv depends on view tv
+	materialized view tvvm depends on view tvv
+	view tvvmv depends on materialized view tvvm
+	materialized view bb depends on view tvvmv
+	materialized view mvschema.tvm depends on view tv
+	materialized view tvmm depends on materialized view mvschema.tvm
+	materialized view tm depends on table t
+	materialized view tmm depends on materialized view tm
+HINT:  Use DROP ... CASCADE to drop the dependent objects too.
+LOCATION:  reportDependentObjects, dependency.c:985
+STATEMENT:  DROP TABLE t;

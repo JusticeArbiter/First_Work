@@ -1,0 +1,2 @@
+LOG:  00000: statement: EXPLAIN (COSTS OFF) WITH cte1 AS (SELECT * FROM t1 WHERE f_leak(b)) SELECT * FROM cte1;
+LOCATION:  exec_simple_query, postgres.c:938

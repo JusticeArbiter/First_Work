@@ -1,0 +1,6 @@
+SELECT CONVERT('foo', 'LATIN3', 'MULE_INTERNAL');
+ convert  
+----------
+ \x666f6f
+(1 row)
+

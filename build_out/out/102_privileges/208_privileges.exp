@@ -1,0 +1,12 @@
+SELECT one FROM atest5;
+ one 
+-----
+   2
+   2
+   2
+   2
+   8
+    
+    
+(7 rows)
+

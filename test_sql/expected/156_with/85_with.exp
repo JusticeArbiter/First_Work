@@ -1,0 +1,4 @@
+WITH RECURSIVE foo(i) AS  (values (1)  UNION ALL  (SELECT i+1 FROM foo WHERE i < 10  UNION ALL  SELECT i+1 FROM foo WHERE i < 5)  ) SELECT * FROM foo;
+ERROR:  42P19: recursive reference to query "foo" must not appear more than once
+LINE 1: ...FROM foo WHERE i < 10  UNION ALL  SELECT i+1 FROM foo WHERE ...
+                                                             ^

@@ -1,0 +1,6 @@
+select regexp_count('hello,./Hello,hello,good'::text,'hello'::text,2::int4,'i');
+ regexp_count 
+--------------
+            2
+(1 row)
+

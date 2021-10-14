@@ -1,0 +1,2 @@
+EXECUTE p2;
+ERROR:  26000: prepared statement "p2" does not exist

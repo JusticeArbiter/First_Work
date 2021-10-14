@@ -1,0 +1,6 @@
+SELECT EXTRACT(DECADE FROM DATE '0011-01-01 BC');
+ date_part 
+-----------
+        -1
+(1 row)
+

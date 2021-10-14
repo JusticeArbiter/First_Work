@@ -1,0 +1,6 @@
+SELECT SUBSTRING('abcdefg' FROM '(b|c)' FOR NULL) IS NULL AS "True";
+ True 
+------
+ t
+(1 row)
+

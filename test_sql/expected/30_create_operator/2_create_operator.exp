@@ -1,0 +1,2 @@
+CREATE OPERATOR <% (  leftarg = point,  rightarg = widget,  procedure = pt_in_widget,  commutator = >% ,  negator = >=%  );
+ERROR:  42704: type "widget" does not exist

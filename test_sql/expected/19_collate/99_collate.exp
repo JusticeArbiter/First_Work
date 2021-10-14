@@ -1,0 +1,2 @@
+CREATE INDEX collate_test1_idx4 ON collate_test1 (((b||'foo') COLLATE "POSIX"));
+ERROR:  42P07: relation "collate_test1_idx4" already exists

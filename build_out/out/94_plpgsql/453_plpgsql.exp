@@ -1,0 +1,5 @@
+select continue_test1();
+ERROR:  42883: function continue_test1() does not exist
+LINE 1: select continue_test1();
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

@@ -1,0 +1,6 @@
+LOG:  00000: statement: CREATE VIEW aliased_view_1 AS  select * from tt1  where exists (select 1 from tx1 where tt1.f1 = tx1.x1);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column tt1.f1 does not exist at character 89
+HINT:  Perhaps you meant to reference the column "tx1.x1".
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  CREATE VIEW aliased_view_1 AS  select * from tt1  where exists (select 1 from tx1 where tt1.f1 = tx1.x1);

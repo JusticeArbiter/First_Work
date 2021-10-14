@@ -1,0 +1,6 @@
+SELECT xml '<abc/>' IS NOT DOCUMENT;
+ ?column? 
+----------
+ f
+(1 row)
+

@@ -1,0 +1,11 @@
+SELECT * FROM my_property_normal v  WHERE f_leak('passwd') AND f_leak(passwd);
+NOTICE:  00000: f_leak => passwd
+NOTICE:  00000: f_leak => passwd123
+NOTICE:  00000: f_leak => passwd
+NOTICE:  00000: f_leak => beafsteak
+NOTICE:  00000: f_leak => passwd
+NOTICE:  00000: f_leak => hamburger
+ cid | name | tel | passwd 
+-----+------+-----+--------
+(0 rows)
+

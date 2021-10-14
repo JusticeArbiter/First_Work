@@ -1,0 +1,2 @@
+DROP LANGUAGE alt_lang2 CASCADE;
+ERROR:  42704: language "alt_lang2" does not exist

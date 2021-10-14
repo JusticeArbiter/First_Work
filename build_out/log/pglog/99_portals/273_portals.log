@@ -1,0 +1,5 @@
+LOG:  00000: statement: declare c cursor for select * from int8_tbl limit nochange(3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  25P01: DECLARE CURSOR can only be used in transaction blocks
+LOCATION:  CheckTransactionChain, xact.c:3222
+STATEMENT:  declare c cursor for select * from int8_tbl limit nochange(3);

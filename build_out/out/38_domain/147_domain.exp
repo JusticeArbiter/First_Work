@@ -1,0 +1,5 @@
+drop domain dnotnulltest cascade;
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to table domnotnull column col1
+drop cascades to table domnotnull column col2
+DROP DOMAIN

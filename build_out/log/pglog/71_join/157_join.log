@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into tt3 select x, repeat('xyzzy', 100) from generate_series(1,10000) x;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: column "x" is of type integer but expression is of type text at character 27
+HINT:  You will need to rewrite or cast the expression.
+LOCATION:  transformAssignedExpr, parse_target.c:540
+STATEMENT:  insert into tt3 select x, repeat('xyzzy', 100) from generate_series(1,10000) x;

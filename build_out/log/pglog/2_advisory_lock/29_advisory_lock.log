@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT count(*) FROM pg_locks WHERE locktype = 'advisory';
+LOCATION:  exec_simple_query, postgres.c:938

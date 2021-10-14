@@ -1,0 +1,10 @@
+select * from rtest_vcomp where size_in_cm > 10.0 order by size_in_cm using >;
+ part | size_in_cm 
+------+------------
+ p1   |        500
+ p2   |        300
+ p5   |      17.78
+ p4   |         15
+ p6   |     11.176
+(5 rows)
+

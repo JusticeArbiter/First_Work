@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT count(*) AS One FROM TIMESTAMPTZ_TBL WHERE d1 = timestamp(2) with time zone 'now';
+LOCATION:  exec_simple_query, postgres.c:938

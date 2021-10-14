@@ -1,0 +1,5 @@
+LOG:  00000: statement: select array_fill(1, array[1,2,null]);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22004: dimension values cannot be null
+LOCATION:  array_fill_internal, arrayfuncs.c:5724
+STATEMENT:  select array_fill(1, array[1,2,null]);

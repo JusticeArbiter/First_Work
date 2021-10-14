@@ -1,0 +1,5 @@
+LOG:  00000: statement: update selfref set a = 123 where a = 0;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "selfref" does not exist at character 8
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  update selfref set a = 123 where a = 0;

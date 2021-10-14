@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT a, b FROM collate_test4 ORDER BY b;
+LOCATION:  exec_simple_query, postgres.c:938

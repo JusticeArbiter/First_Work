@@ -1,0 +1,2 @@
+SELECT to_regrole('foo.bar');
+ERROR:  42602: invalid name syntax

@@ -1,0 +1,8 @@
+EXPLAIN (COSTS OFF)  SELECT * FROM collate_test10 ORDER BY x, y;
+                    QUERY PLAN                    
+--------------------------------------------------
+ Sort
+   Sort Key: x COLLATE "en_US", y COLLATE "tr_TR"
+   ->  Seq Scan on collate_test10
+(3 rows)
+

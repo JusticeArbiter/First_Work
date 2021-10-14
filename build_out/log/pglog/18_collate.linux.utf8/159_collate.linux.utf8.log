@@ -1,0 +1,6 @@
+LOG:  00000: statement: CREATE COLLATION testx (locale = 'nonsense');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: could not create locale "nonsense": No such file or directory
+DETAIL:  The operating system could not find any locale data for the locale name "nonsense".
+LOCATION:  report_newlocale_failure, pg_locale.c:1238
+STATEMENT:  CREATE COLLATION testx (locale = 'nonsense');

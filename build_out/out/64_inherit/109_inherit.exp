@@ -1,0 +1,6 @@
+select * from d;
+ aa | bb  | cc  |  dd   
+----+-----+-----+-------
+ 32 | one | two | three
+(1 row)
+

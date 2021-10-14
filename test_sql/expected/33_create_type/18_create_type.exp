@@ -1,0 +1,6 @@
+SELECT * FROM default_test;
+  f1   | f2 
+-------+----
+ zippo | 42
+(1 row)
+

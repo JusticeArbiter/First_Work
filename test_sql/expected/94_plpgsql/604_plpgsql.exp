@@ -1,0 +1,6 @@
+select compos();
+  compos   
+-----------
+ (1,hello)
+(1 row)
+

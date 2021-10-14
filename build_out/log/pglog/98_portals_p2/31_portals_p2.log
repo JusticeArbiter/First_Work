@@ -1,0 +1,5 @@
+LOG:  00000: statement: CLOSE foo16;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "foo16" does not exist
+LOCATION:  PerformPortalClose, portalcmds.c:222
+STATEMENT:  CLOSE foo16;

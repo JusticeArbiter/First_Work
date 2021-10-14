@@ -1,0 +1,4 @@
+CREATE MATERIALIZED VIEW IF NOT EXISTS mv_foo AS SELECT * FROM foo_data;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE MATERIALIZED VIEW
+NOTICE:  42P07: relation "mv_foo" already exists, skipping
+CREATE MATERIALIZED VIEW

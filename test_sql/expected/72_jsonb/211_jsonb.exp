@@ -1,0 +1,6 @@
+SELECT jsonb_typeof('null') AS "null";
+ null 
+------
+ null
+(1 row)
+

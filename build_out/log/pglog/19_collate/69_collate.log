@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT string_agg(x COLLATE "C", y COLLATE "POSIX") FROM collate_test10;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P21: collation mismatch between explicit collations "C" and "POSIX" at character 36
+LOCATION:  merge_collation_state, parse_collate.c:837
+STATEMENT:  SELECT string_agg(x COLLATE "C", y COLLATE "POSIX") FROM collate_test10;

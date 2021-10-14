@@ -1,0 +1,6 @@
+SELECT OVERLAY('babosa' PLACING 'ubb' FROM 2 FOR 4) AS "bubba";
+ bubba 
+-------
+ bubba
+(1 row)
+

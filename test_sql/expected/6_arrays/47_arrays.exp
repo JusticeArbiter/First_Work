@@ -1,0 +1,4 @@
+update arrtest1 set i[-5:-3] = array[-15,-14,-13], t[-5:-3] = array['m15','m14','m13'];
+ERROR:  42P01: relation "arrtest1" does not exist
+LINE 1: update arrtest1 set i[-5:-3] = array[-15,-14,-13], t[-5:-3] ...
+               ^

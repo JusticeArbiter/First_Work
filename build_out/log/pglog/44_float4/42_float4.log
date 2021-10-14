@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS bad, f.f1 / '0.0' from FLOAT4_TBL f;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22012: division by zero
+LOCATION:  float4div, float.c:785
+STATEMENT:  SELECT '' AS bad, f.f1 / '0.0' from FLOAT4_TBL f;

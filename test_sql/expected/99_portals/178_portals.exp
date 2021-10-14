@@ -1,0 +1,4 @@
+UPDATE uctest SET f1 = f1 + 10 WHERE CURRENT OF c1;
+ERROR:  42P01: relation "uctest" does not exist
+LINE 1: UPDATE uctest SET f1 = f1 + 10 WHERE CURRENT OF c1;
+               ^

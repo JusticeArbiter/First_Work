@@ -1,0 +1,2 @@
+SELECT jsonb_object('{{a,b,c},{b,c,d}}');
+ERROR:  2202E: array must have two columns

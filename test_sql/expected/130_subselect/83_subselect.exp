@@ -1,0 +1,4 @@
+insert into float_table values (1), (2), (3);
+ERROR:  42P01: relation "float_table" does not exist
+LINE 1: insert into float_table values (1), (2), (3);
+                    ^

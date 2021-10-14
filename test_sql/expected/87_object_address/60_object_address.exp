@@ -1,0 +1,12 @@
+DROP SCHEMA addr_nsp CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SCHEMA
+NOTICE:  00000: drop cascades to 8 other objects
+DETAIL:  drop cascades to table addr_nsp.gentable
+drop cascades to view addr_nsp.genview
+drop cascades to materialized view addr_nsp.genmatview
+drop cascades to type addr_nsp.gencomptype
+drop cascades to type addr_nsp.genenum
+drop cascades to function addr_nsp.genaggr(integer)
+drop cascades to type addr_nsp.gendomain
+drop cascades to function addr_nsp.trig()
+DROP SCHEMA

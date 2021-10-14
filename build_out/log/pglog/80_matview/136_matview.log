@@ -1,0 +1,9 @@
+LOG:  00000: statement: REFRESH MATERIALIZED VIEW CONCURRENTLY mv;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start REFRESH MATERIALIZED VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  REFRESH MATERIALIZED VIEW CONCURRENTLY mv;
+ERROR:  21000: new data for materialized view "mv" contains duplicate rows without any null columns
+DETAIL:  Row: (1,10)
+LOCATION:  refresh_by_match_merge, matview.c:614
+STATEMENT:  REFRESH MATERIALIZED VIEW CONCURRENTLY mv;

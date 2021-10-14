@@ -1,0 +1,2 @@
+delete from tttest where price_id = 5;
+DELETE 1

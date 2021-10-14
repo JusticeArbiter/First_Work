@@ -1,0 +1,6 @@
+select dfunc();
+    dfunc     
+--------------
+ Hello, World
+(1 row)
+

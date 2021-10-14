@@ -1,0 +1,5 @@
+LOG:  00000: statement: select '12:16:14,13'::txid_snapshot;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type txid_snapshot: "12:16:14,13" at character 8
+LOCATION:  parse_snapshot, txid.c:340
+STATEMENT:  select '12:16:14,13'::txid_snapshot;

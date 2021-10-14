@@ -1,0 +1,6 @@
+SELECT 'trailing' AS first;
+  first   
+----------
+ trailing
+(1 row)
+

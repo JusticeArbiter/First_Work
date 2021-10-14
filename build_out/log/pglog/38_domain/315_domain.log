@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into dom_table values (null);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: value for domain inotnull violates check constraint "inotnull_check"
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4060
+STATEMENT:  insert into dom_table values (null);

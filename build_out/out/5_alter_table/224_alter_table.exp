@@ -1,0 +1,3 @@
+ALTER TABLE tmp3 ADD CONSTRAINT IDENTITY check (b = boo(b)) NOT VALID;
+NOTICE:  00000: merging constraint "identity" with inherited definition
+ALTER TABLE

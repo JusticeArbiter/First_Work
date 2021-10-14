@@ -1,0 +1,5 @@
+select * from my_locks order by 1;
+ relname | max_lockmode 
+---------+--------------
+(0 rows)
+

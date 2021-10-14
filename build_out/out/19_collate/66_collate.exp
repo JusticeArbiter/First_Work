@@ -1,0 +1,6 @@
+SELECT min(b), max(b) FROM collate_test2;
+ min | max 
+-----+-----
+ abc | äbc
+(1 row)
+

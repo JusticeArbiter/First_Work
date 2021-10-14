@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TEXT SEARCH PARSER alt_ts_prs1 RENAME TO alt_ts_prs3;
+LOCATION:  exec_simple_query, postgres.c:938

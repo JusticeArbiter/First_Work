@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT make_timestamptz(1910, 12, 24, 0, 0, 0, 'Nehwon/Lankhmar');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: time zone "Nehwon/Lankhmar" not recognized
+LOCATION:  parse_sane_timezone, timestamp.c:559
+STATEMENT:  SELECT make_timestamptz(1910, 12, 24, 0, 0, 0, 'Nehwon/Lankhmar');

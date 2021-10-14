@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE domain test_domain_exists as int not null check (value > 0);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+select decode('b'::char,'b'::char,'y'::char,'n'::char);
+ decode 
+--------
+ y
+(1 row)
+

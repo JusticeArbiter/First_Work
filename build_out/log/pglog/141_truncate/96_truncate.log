@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT count(*) as "Row count in test table" FROM trunc_trigger_test;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+COPY x from stdin WITH DELIMITER AS ';' NULL AS '';
+ERROR:  42P01: relation "x" does not exist

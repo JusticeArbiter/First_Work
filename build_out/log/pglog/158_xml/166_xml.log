@@ -1,0 +1,9 @@
+LOG:  00000: statement: SELECT xpath('/*', '<invalidns xmlns=''&lt;''/>');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2200M: could not parse XML document
+DETAIL:  line 1: xmlns: '<' is not a valid URI
+	<invalidns xmlns='&lt;'/>
+	                       ^
+CONTEXT:  SQL function "xpath" statement 1
+LOCATION:  xml_ereport, xml.c:1555
+STATEMENT:  SELECT xpath('/*', '<invalidns xmlns=''&lt;''/>');

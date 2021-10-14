@@ -1,0 +1,3 @@
+SET TRANSACTION READ ONLY;
+WARNING:  25P01: SET TRANSACTION can only be used in transaction blocks
+SET

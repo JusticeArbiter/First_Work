@@ -1,0 +1,5 @@
+LOG:  00000: statement: COPY x from stdin;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "x" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  COPY x from stdin;

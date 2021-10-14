@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE INDEX grect2ind ON fast_emp4000 USING gist (home_base);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "fast_emp4000" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  CREATE INDEX grect2ind ON fast_emp4000 USING gist (home_base);

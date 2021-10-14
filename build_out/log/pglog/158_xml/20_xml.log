@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT xmlelement(name element,  xmlattributes ('unnamed and wrong'));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: unnamed XML attribute value must be a column reference at character 49
+LOCATION:  transformXmlExpr, parse_expr.c:2208
+STATEMENT:  SELECT xmlelement(name element,  xmlattributes ('unnamed and wrong'));

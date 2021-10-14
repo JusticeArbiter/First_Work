@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TABLE tt6 OF tt_t0;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: typed tables cannot inherit
+LOCATION:  ATExecAddOf, tablecmds.c:10846
+STATEMENT:  ALTER TABLE tt6 OF tt_t0;

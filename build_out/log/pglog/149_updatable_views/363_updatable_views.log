@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO rw_view2 VALUES (30);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  44000: new row violates check option for view "rw_view2"
+DETAIL:  Failing row contains (30).
+LOCATION:  ExecWithCheckOptions, execMain.c:1814
+STATEMENT:  INSERT INTO rw_view2 VALUES (30);

@@ -1,0 +1,7 @@
+SELECT fdwname FROM pg_foreign_data_wrapper WHERE fdwname like 'alt_fdw%';
+ fdwname  
+----------
+ alt_fdw2
+ alt_fdw3
+(2 rows)
+

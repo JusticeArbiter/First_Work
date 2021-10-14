@@ -1,0 +1,6 @@
+select greatest('瀚','高','数','据','库');
+ greatest 
+----------
+ 高
+(1 row)
+

@@ -1,0 +1,2 @@
+DROP FUNCTION test_function_exists(int, text, int[]);
+ERROR:  42883: function test_function_exists(integer, text, integer[]) does not exist

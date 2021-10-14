@@ -1,0 +1,6 @@
+select ROW() IS NULL;
+ ?column? 
+----------
+ t
+(1 row)
+

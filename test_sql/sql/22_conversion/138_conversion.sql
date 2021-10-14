@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'EUC_JIS_2004', 'UTF8');

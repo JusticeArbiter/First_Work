@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE OR REPLACE VIEW viewtest AS  SELECT a FROM viewtest_tbl WHERE a <> 20;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: cannot drop columns from view
+LOCATION:  checkViewTupleDesc, view.c:280
+STATEMENT:  CREATE OR REPLACE VIEW viewtest AS  SELECT a FROM viewtest_tbl WHERE a <> 20;

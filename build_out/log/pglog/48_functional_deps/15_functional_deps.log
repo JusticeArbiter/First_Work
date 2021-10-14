@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT product_id, p.name, (sum(s.units) * p.price) AS sales  FROM products p LEFT JOIN sales s USING (product_id)  GROUP BY product_id, p.name, p.price;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "products" does not exist at character 68
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT product_id, p.name, (sum(s.units) * p.price) AS sales  FROM products p LEFT JOIN sales s USING (product_id)  GROUP BY product_id, p.name, p.price;

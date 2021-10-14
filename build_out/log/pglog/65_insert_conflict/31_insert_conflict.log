@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into insertconflicttest values (1, 'Apple') on conflict do update set fruit = excluded.fruit;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: ON CONFLICT DO UPDATE requires inference specification or constraint name at character 52
+HINT:  For example, ON CONFLICT (column_name).
+LOCATION:  transformOnConflictArbiter, parse_clause.c:2861
+STATEMENT:  insert into insertconflicttest values (1, 'Apple') on conflict do update set fruit = excluded.fruit;

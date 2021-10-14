@@ -1,0 +1,4 @@
+select ROW() = ROW();
+ERROR:  0A000: cannot compare rows of zero length
+LINE 1: select ROW() = ROW();
+                     ^

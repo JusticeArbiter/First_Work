@@ -1,0 +1,31 @@
+LOG:  00000: statement: select cachebug();
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+CONTEXT:  SQL statement "drop table if exists temptable cascade"
+	PL/pgSQL function cachebug() line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select cachebug();
+NOTICE:  00000: table "temptable" does not exist, skipping
+CONTEXT:  SQL statement "drop table if exists temptable cascade"
+	PL/pgSQL function cachebug() line 1 at SQL statement
+LOCATION:  DropErrorMsgNonExistent, tablecmds.c:760
+STATEMENT:  select cachebug();
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE AS
+CONTEXT:  SQL statement "create temp table temptable as select * from generate_series(1,3) as f1"
+	PL/pgSQL function cachebug() line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select cachebug();
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+CONTEXT:  SQL statement "create temp view vv as select * from temptable"
+	PL/pgSQL function cachebug() line 1 at SQL statement
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select cachebug();
+NOTICE:  00000: 1
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select cachebug();
+NOTICE:  00000: 2
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select cachebug();
+NOTICE:  00000: 3
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select cachebug();

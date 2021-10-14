@@ -1,0 +1,6 @@
+select '42'::json #>> array['0'];
+ ?column? 
+----------
+ 
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: update voo set f1 = f1 + 1 where f2 = 'zoo2' RETURNING *, f1*2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "voo" does not exist at character 8
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  update voo set f1 = f1 + 1 where f2 = 'zoo2' RETURNING *, f1*2;

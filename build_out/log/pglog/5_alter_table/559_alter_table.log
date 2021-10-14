@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc1 drop bar;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "bar" of relation "atacc1" does not exist
+LOCATION:  ATExecDropColumn, tablecmds.c:5708
+STATEMENT:  alter table atacc1 drop bar;

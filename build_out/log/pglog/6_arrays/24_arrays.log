@@ -1,0 +1,2 @@
+LOG:  00000: statement: DELETE FROM arrtest WHERE a[2] IS NULL AND b IS NULL;
+LOCATION:  exec_simple_query, postgres.c:938

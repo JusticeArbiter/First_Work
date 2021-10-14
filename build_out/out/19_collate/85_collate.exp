@@ -1,0 +1,9 @@
+select x || y from collate_test10;
+ ?column? 
+----------
+ hijhij
+ HIJHIJ
+ hijhij
+ HIJHIJ
+(4 rows)
+

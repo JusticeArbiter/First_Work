@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO basictest values ('88', 'haha', 'short', '123.1212');
+LOCATION:  exec_simple_query, postgres.c:938

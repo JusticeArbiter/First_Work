@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO ceil_floor_round VALUES ('-5.499999');
+LOCATION:  exec_simple_query, postgres.c:938

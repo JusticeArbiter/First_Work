@@ -1,0 +1,2 @@
+delete from pktable;
+DELETE 1

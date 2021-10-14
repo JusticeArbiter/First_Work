@@ -1,0 +1,3 @@
+ALTER TABLE IF EXISTS tt8 ALTER COLUMN f SET DEFAULT 0;
+NOTICE:  00000: relation "tt8" does not exist, skipping
+ALTER TABLE

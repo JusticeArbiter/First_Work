@@ -1,0 +1,15 @@
+WITH RECURSIVE t(n) AS (  VALUES (1)  UNION ALL  SELECT n+1 FROM t)  SELECT * FROM t LIMIT 10;
+ n  
+----
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+(10 rows)
+

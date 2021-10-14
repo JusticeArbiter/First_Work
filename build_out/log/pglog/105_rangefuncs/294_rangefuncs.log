@@ -1,0 +1,2 @@
+LOG:  00000: statement: select t.a, t, t.a from foo1(10000) t limit 1;
+LOCATION:  exec_simple_query, postgres.c:938

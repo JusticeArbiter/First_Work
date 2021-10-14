@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '' AS three, q1, q2, q1 * q2 AS multiply FROM INT8_TBL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: bigint out of range
+LOCATION:  int8mul, int8.c:581
+STATEMENT:  SELECT '' AS three, q1, q2, q1 * q2 AS multiply FROM INT8_TBL;

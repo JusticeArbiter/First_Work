@@ -1,0 +1,11 @@
+SELECT * FROM atest1, atest5;
+ a |  b  | one | two | three | four 
+---+-----+-----+-----+-------+------
+ 1 | two |   1 |   2 |     3 |     
+ 1 | two |   1 |   2 |     3 |     
+ 1 | two |   1 |   2 |     3 |     
+ 1 | two |   1 |   2 |     3 |     
+ 1 | two |   1 |   2 |     3 |     
+ 1 | two |   1 |   2 |     3 |     
+(6 rows)
+

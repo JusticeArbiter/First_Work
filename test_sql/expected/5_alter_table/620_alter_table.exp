@@ -1,0 +1,2 @@
+insert into parent values (1, 2, 3);
+INSERT 0 1

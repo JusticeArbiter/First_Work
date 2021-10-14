@@ -1,0 +1,1 @@
+SET SESSION AUTHORIZATION regtest_alter_user1;

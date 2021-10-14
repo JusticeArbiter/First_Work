@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE PKTABLE set ptest2=2 WHERE ptest2=3 and ptest1=1;
+LOCATION:  exec_simple_query, postgres.c:938

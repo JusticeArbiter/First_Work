@@ -1,0 +1,2 @@
+LOCK hs1;
+ERROR:  25P01: LOCK TABLE can only be used in transaction blocks

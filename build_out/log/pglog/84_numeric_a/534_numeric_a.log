@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO fract_only VALUES (6, '0.99995');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: numeric field overflow
+DETAIL:  A field with precision 4, scale 4 must round to an absolute value less than 1.
+LOCATION:  apply_typmod, numeric.c:5193
+STATEMENT:  INSERT INTO fract_only VALUES (6, '0.99995');

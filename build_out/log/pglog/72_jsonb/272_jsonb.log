@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT jsonb_object('{{a,1},{b,2},{3,NULL},{"d e f","a b c"}}', '{{a,1},{b,2},{3,NULL},{"d e f","a b c"}}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2202E: wrong number of array subscripts
+LOCATION:  jsonb_object_two_arg, jsonb.c:1412
+STATEMENT:  SELECT jsonb_object('{{a,1},{b,2},{3,NULL},{"d e f","a b c"}}', '{{a,1},{b,2},{3,NULL},{"d e f","a b c"}}');

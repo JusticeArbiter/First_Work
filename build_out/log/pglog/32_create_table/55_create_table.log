@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE IF NOT EXISTS as_select1 AS SELECT * FROM pg_class WHERE relkind = 'r';
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  42P07: relation "as_select1" already exists, skipping
+LOCATION:  ExecCreateTableAs, createas.c:250
+STATEMENT:  CREATE TABLE IF NOT EXISTS as_select1 AS SELECT * FROM pg_class WHERE relkind = 'r';

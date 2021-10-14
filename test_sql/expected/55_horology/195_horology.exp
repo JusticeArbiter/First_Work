@@ -1,0 +1,6 @@
+SELECT to_timestamp('2005300', 'YYYYDDD');
+      to_timestamp      
+------------------------
+ 2005-10-27 00:00:00+08
+(1 row)
+

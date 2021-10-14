@@ -1,0 +1,5 @@
+LOG:  00000: statement: select 117743296169.0 ^ 1000000000 as overflows;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22003: value overflows numeric format
+LOCATION:  power_var_int, numeric.c:7145
+STATEMENT:  select 117743296169.0 ^ 1000000000 as overflows;

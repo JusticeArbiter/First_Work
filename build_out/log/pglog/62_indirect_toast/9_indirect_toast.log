@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE toasttest SET cnt = cnt +1, f1 = f1||'' RETURNING substring(toasttest::text, 1, 200);
+LOCATION:  exec_simple_query, postgres.c:938

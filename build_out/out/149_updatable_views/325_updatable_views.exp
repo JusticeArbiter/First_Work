@@ -1,0 +1,9 @@
+SELECT * FROM information_schema.views WHERE table_name = 'rw_view1';
+ table_catalog | table_schema | table_name |          view_definition           | check_option | is_updatable | is_insertable_into | is_trigger_updatable | is_trigger_deletable | is_trigger_insertable_into 
+---------------+--------------+------------+------------------------------------+--------------+--------------+--------------------+----------------------+----------------------+----------------------------
+ highgo        | public       | rw_view1   |  SELECT base_tbl.a,               +| LOCAL        | YES          | YES                | NO                   | NO                   | NO
+               |              |            |     base_tbl.b                    +|              |              |                    |                      |                      | 
+               |              |            |    FROM base_tbl                  +|              |              |                    |                      |                      | 
+               |              |            |   WHERE (base_tbl.a < base_tbl.b); |              |              |                    |                      |                      | 
+(1 row)
+

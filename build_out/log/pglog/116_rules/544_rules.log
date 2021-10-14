@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO hats VALUES ('h8', 'white') RETURNING *;
+LOCATION:  exec_simple_query, postgres.c:938

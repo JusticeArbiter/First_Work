@@ -1,0 +1,6 @@
+SELECT pg_switch_xlog();
+ pg_switch_xlog 
+----------------
+ 0/5582E70
+(1 row)
+

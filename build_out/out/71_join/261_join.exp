@@ -1,0 +1,11 @@
+explain (costs off)  select f1, unique2, case when unique2 is null then f1 else 0 end  from int4_tbl a left join tenk1 b on f1 = unique2  where (case when unique2 is null then f1 else 0 end) = 0;
+                             QUERY PLAN                             
+--------------------------------------------------------------------
+ Hash Left Join
+   Hash Cond: (a.f1 = b.unique2)
+   Filter: (CASE WHEN (b.unique2 IS NULL) THEN a.f1 ELSE 0 END = 0)
+   ->  Seq Scan on int4_tbl a
+   ->  Hash
+         ->  Seq Scan on tenk1 b
+(6 rows)
+

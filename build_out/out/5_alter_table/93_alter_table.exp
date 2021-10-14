@@ -1,0 +1,2 @@
+ALTER TABLE tmp_view RENAME TO tmp_view_new;
+ERROR:  42P01: relation "tmp_view" does not exist

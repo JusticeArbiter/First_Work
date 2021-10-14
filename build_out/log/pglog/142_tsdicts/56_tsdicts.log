@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TEXT SEARCH CONFIGURATION thesaurus_tst ALTER MAPPING FOR  asciiword, hword_asciipart, asciihword  WITH synonym, thesaurus, english_stem;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TEXT SEARCH CONFIGURATION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER TEXT SEARCH CONFIGURATION thesaurus_tst ALTER MAPPING FOR  asciiword, hword_asciipart, asciihword  WITH synonym, thesaurus, english_stem;

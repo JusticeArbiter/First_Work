@@ -1,0 +1,7 @@
+LOG:  00000: statement: DELETE FROM ro_view18;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  55000: cannot delete from view "ro_view18"
+DETAIL:  Views that do not select from a single table or view are not automatically updatable.
+HINT:  To enable deleting from the view, provide an INSTEAD OF DELETE trigger or an unconditional ON DELETE DO INSTEAD rule.
+LOCATION:  rewriteTargetView, rewriteHandler.c:2691
+STATEMENT:  DELETE FROM ro_view18;

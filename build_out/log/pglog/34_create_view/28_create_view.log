@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE SCHEMA test_schema  CREATE TEMP VIEW testview AS SELECT 1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P16: cannot create temporary relation in non-temporary schema
+LOCATION:  RangeVarAdjustRelationPersistence, namespace.c:643
+STATEMENT:  CREATE SCHEMA test_schema  CREATE TEMP VIEW testview AS SELECT 1;

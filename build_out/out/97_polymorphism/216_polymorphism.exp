@@ -1,0 +1,4 @@
+select * from dfunc(10, b := 20, 30);
+ERROR:  42601: positional argument cannot follow named argument
+LINE 1: select * from dfunc(10, b := 20, 30);
+                                         ^

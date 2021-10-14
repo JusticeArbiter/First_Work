@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION float8mi_int(float8, float8) RETURNS int AS  $$ SELECT CAST($1 - $2 AS INT); $$  LANGUAGE SQL;
+LOCATION:  exec_simple_query, postgres.c:938

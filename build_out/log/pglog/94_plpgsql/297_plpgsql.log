@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM test_ret_set_rec_dyn(5) AS (a int, b numeric, c text);
+LOCATION:  exec_simple_query, postgres.c:938

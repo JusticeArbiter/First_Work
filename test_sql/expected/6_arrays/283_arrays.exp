@@ -1,0 +1,6 @@
+select cardinality('{{1,2}}'::int[]);
+ cardinality 
+-------------
+           2
+(1 row)
+

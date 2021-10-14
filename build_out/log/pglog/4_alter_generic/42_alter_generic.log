@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER AGGREGATE alt_agg3(int) RENAME TO alt_agg4;
+LOCATION:  exec_simple_query, postgres.c:938

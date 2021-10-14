@@ -1,0 +1,6 @@
+SELECT jsonb_typeof('{}') AS object;
+ object 
+--------
+ object
+(1 row)
+

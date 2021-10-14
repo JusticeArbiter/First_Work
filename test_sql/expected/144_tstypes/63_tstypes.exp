@@ -1,0 +1,6 @@
+SELECT numnode( 'new'::tsquery );
+ numnode 
+---------
+       1
+(1 row)
+

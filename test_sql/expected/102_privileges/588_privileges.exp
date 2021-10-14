@@ -1,0 +1,2 @@
+DROP ROLE schemauser_renamed;
+DROP ROLE

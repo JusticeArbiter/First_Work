@@ -1,0 +1,3 @@
+ALTER TYPE test_typex DROP ATTRIBUTE a CASCADE;
+NOTICE:  00000: drop cascades to constraint test_tblx_y_check on table test_tblx
+ALTER TYPE

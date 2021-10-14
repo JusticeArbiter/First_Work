@@ -1,0 +1,6 @@
+SELECT count(*) FROM bmscantest WHERE a = 1 AND b = 1;
+ count 
+-------
+    23
+(1 row)
+

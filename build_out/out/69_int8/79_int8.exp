@@ -1,0 +1,10 @@
+SELECT '' AS to_char_16, to_char(q2, E'99999 "text" 9999 "9999" 999 "\\"text between quote marks\\"" 9999') FROM INT8_TBL;
+ to_char_16 |                          to_char                          
+------------+-----------------------------------------------------------
+            |       text      9999     "text between quote marks"   456
+            |  45678 text 9012 9999 345 "text between quote marks" 6789
+            |       text      9999     "text between quote marks"   123
+            |  45678 text 9012 9999 345 "text between quote marks" 6789
+            | -45678 text 9012 9999 345 "text between quote marks" 6789
+(5 rows)
+

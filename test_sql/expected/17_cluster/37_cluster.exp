@@ -1,0 +1,2 @@
+INSERT INTO clstr_tst (b, c) VALUES (17, 'diecisiete');
+INSERT 0 1

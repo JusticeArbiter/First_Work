@@ -1,0 +1,3 @@
+select compos();
+ERROR:  42804: cannot return non-composite value from function returning composite type
+CONTEXT:  PL/pgSQL function compos() line 1 at RETURN

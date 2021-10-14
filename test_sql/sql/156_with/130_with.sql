@@ -1,0 +1,1 @@
+WITH t AS (  UPDATE y SET a = a * 100 RETURNING *  )  SELECT * FROM t LIMIT 10;

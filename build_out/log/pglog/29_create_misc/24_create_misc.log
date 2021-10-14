@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO c_star (class, a) VALUES ('c', 6);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "c_star" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  INSERT INTO c_star (class, a) VALUES ('c', 6);

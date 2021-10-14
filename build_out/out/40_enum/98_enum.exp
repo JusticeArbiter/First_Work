@@ -1,0 +1,6 @@
+SELECT enum_first(NULL::rainbow);
+ enum_first 
+------------
+ red
+(1 row)
+

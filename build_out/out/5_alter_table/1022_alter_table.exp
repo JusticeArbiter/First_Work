@@ -1,0 +1,6 @@
+select test_strict(NULL);
+ test_strict 
+-------------
+ 
+(1 row)
+

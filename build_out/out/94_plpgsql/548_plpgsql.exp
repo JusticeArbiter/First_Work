@@ -1,0 +1,7 @@
+select * from sc_test();
+   sc_test   
+-------------
+ -2147483647
+      123456
+(2 rows)
+

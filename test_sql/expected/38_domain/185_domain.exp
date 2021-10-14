@@ -1,0 +1,2 @@
+insert into domtab (col1) values (5);
+INSERT 0 1

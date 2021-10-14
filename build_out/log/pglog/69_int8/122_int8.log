@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT * FROM generate_series('+4567890123456789'::int8, '+4567890123456799'::int8, 0);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: step size cannot equal zero
+LOCATION:  generate_series_step_int8, int8.c:1460
+STATEMENT:  SELECT * FROM generate_series('+4567890123456789'::int8, '+4567890123456799'::int8, 0);

@@ -1,0 +1,6 @@
+SELECT nextval('sequence_test'::regclass);
+ nextval 
+---------
+      33
+(1 row)
+

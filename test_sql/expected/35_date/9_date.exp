@@ -1,0 +1,4 @@
+INSERT INTO DATE_TBL VALUES ('1997-02-29');
+ERROR:  22008: date/time field value out of range: "1997-02-29"
+LINE 1: INSERT INTO DATE_TBL VALUES ('1997-02-29');
+                                     ^

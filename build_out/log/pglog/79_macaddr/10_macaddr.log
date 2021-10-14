@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO macaddr_data VALUES (9, 'not even close');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type macaddr: "not even close" at character 37
+LOCATION:  macaddr_in, mac.c:68
+STATEMENT:  INSERT INTO macaddr_data VALUES (9, 'not even close');

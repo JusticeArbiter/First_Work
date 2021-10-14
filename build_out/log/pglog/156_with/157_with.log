@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH t AS (  INSERT INTO y  VALUES  (21),  (22),  (23)  RETURNING *  )  SELECT * FROM t;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "y" does not exist at character 26
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  WITH t AS (  INSERT INTO y  VALUES  (21),  (22),  (23)  RETURNING *  )  SELECT * FROM t;

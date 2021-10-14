@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT lastval();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  55000: lastval is not yet defined in this session
+LOCATION:  lastval, sequence.c:811
+STATEMENT:  SELECT lastval();

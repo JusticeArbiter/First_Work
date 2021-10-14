@@ -1,0 +1,2 @@
+LOG:  00000: statement: create view vv1 as select * from (tt5 cross join tt6) j(aa,bb,cc,dd);
+LOCATION:  exec_simple_query, postgres.c:938

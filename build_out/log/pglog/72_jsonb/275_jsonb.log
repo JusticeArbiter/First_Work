@@ -1,0 +1,5 @@
+LOG:  00000: statement: select jsonb_object('{a,b,NULL,"d e f"}','{1,2,3,"a b c"}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22004: null value not allowed for object key
+LOCATION:  jsonb_object_two_arg, jsonb.c:1439
+STATEMENT:  select jsonb_object('{a,b,NULL,"d e f"}','{1,2,3,"a b c"}');

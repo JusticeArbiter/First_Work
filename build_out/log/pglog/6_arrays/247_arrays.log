@@ -1,0 +1,5 @@
+LOG:  00000: statement: select array_fill(1, null, array[2,2]);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22004: dimension array or low bound array cannot be null
+LOCATION:  array_fill_with_lower_bounds, arrayfuncs.c:5616
+STATEMENT:  select array_fill(1, null, array[2,2]);

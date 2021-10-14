@@ -1,0 +1,6 @@
+SELECT 'indio' LIKE '_ndio' AS "true";
+ true 
+------
+ t
+(1 row)
+

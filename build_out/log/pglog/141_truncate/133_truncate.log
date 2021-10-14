@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT nextval('truncate_a_id1');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "truncate_a_id1" does not exist at character 16
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  SELECT nextval('truncate_a_id1');

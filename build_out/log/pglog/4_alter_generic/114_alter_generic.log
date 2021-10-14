@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf1 USING hash RENAME TO alt_opf2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: operator family "alt_opf2" for access method "hash" already exists in schema "public"
+LOCATION:  IsThereOpFamilyInNamespace, opclasscmds.c:1731
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf1 USING hash RENAME TO alt_opf2;

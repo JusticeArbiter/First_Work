@@ -1,0 +1,6 @@
+SELECT 'indio' LIKE 'ind_o' ESCAPE '$' AS "true";
+ true 
+------
+ t
+(1 row)
+

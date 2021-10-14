@@ -1,0 +1,5 @@
+CREATE TRIGGER error_del_when BEFORE INSERT OR UPDATE ON main_table  FOR EACH ROW WHEN (NEW.tableoid <> 0)  EXECUTE PROCEDURE trigger_func('error_when_sys_column');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+ERROR:  0A000: BEFORE trigger's WHEN condition cannot reference NEW system columns
+LINE 1: ...NSERT OR UPDATE ON main_table  FOR EACH ROW WHEN (NEW.tableo...
+                                                             ^

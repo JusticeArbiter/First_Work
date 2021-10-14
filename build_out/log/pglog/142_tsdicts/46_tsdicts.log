@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT to_tsvector('hunspell_tst', 'Booking the skies after rebookings for footballklubber from a foot');
+LOCATION:  exec_simple_query, postgres.c:938

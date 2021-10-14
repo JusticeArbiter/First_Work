@@ -1,0 +1,2 @@
+delete from HSlot;
+ERROR:  P0001: no manual manipulation of HSlot

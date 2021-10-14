@@ -1,0 +1,5 @@
+LOG:  00000: statement: select 'xyz' ~ 'x(\w)(?=(\1))';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2201B: invalid regular expression: invalid backreference number
+LOCATION:  RE_compile_and_cache, regexp.c:204
+STATEMENT:  select 'xyz' ~ 'x(\w)(?=(\1))';

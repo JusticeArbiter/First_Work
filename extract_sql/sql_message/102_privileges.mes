@@ -1,0 +1,877 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SET client_min_messages TO 'warning';
+ statement: DROP ROLE IF EXISTS regressgroup1;
+ statement: DROP ROLE IF EXISTS regressgroup2;
+ statement: DROP ROLE IF EXISTS regressuser1;
+ statement: DROP ROLE IF EXISTS regressuser2;
+ statement: DROP ROLE IF EXISTS regressuser3;
+ statement: DROP ROLE IF EXISTS regressuser4;
+ statement: DROP ROLE IF EXISTS regressuser5;
+ statement: DROP ROLE IF EXISTS regressuser6;
+ statement: SELECT lo_unlink(oid) FROM pg_largeobject_metadata WHERE oid >= 1000 AND oid < 3000 ORDER BY oid;
+ statement: RESET client_min_messages;
+ statement: CREATE USER regressuser1;
+ statement: CREATE USER regressuser2;
+ statement: CREATE USER regressuser3;
+ statement: CREATE USER regressuser4;
+ statement: CREATE USER regressuser5;
+ statement: CREATE USER regressuser5;
+ statement: CREATE GROUP regressgroup1;
+ statement: CREATE GROUP regressgroup2 WITH USER regressuser1, regressuser2;
+ statement: ALTER GROUP regressgroup1 ADD USER regressuser4;
+ statement: ALTER GROUP regressgroup2 ADD USER regressuser2;
+ statement: ALTER GROUP regressgroup2 DROP USER regressuser2;
+ statement: GRANT regressgroup2 TO regressuser4 WITH ADMIN OPTION;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: SELECT session_user, current_user;
+ statement: CREATE TABLE atest1 ( a int, b text );
+ statement: SELECT * FROM atest1;
+ statement: INSERT INTO atest1 VALUES (1, 'one');
+ statement: DELETE FROM atest1;
+ statement: UPDATE atest1 SET a = 1 WHERE b = 'blech';
+ statement: TRUNCATE atest1;
+ statement: BEGIN;
+ statement: LOCK atest1 IN ACCESS EXCLUSIVE MODE;
+ statement: COMMIT;
+ statement: REVOKE ALL ON atest1 FROM PUBLIC;
+ statement: SELECT * FROM atest1;
+ statement: GRANT ALL ON atest1 TO regressuser2;
+ statement: GRANT SELECT ON atest1 TO regressuser3, regressuser4;
+ statement: SELECT * FROM atest1;
+ statement: CREATE TABLE atest2 (col1 varchar(10), col2 boolean);
+ statement: GRANT SELECT ON atest2 TO regressuser2;
+ statement: GRANT UPDATE ON atest2 TO regressuser3;
+ statement: GRANT INSERT ON atest2 TO regressuser4;
+ statement: GRANT TRUNCATE ON atest2 TO regressuser5;
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: SELECT session_user, current_user;
+ statement: SELECT * FROM atest1;
+ statement: SELECT * FROM atest2;
+ statement: INSERT INTO atest1 VALUES (2, 'two');
+ statement: INSERT INTO atest2 VALUES ('foo', true);
+ statement: INSERT INTO atest1 SELECT 1, b FROM atest1;
+ statement: UPDATE atest1 SET a = 1 WHERE a = 2;
+ statement: UPDATE atest2 SET col2 = NOT col2;
+ statement: SELECT * FROM atest1 FOR UPDATE;
+ statement: SELECT * FROM atest2 FOR UPDATE;
+ statement: DELETE FROM atest2;
+ statement: TRUNCATE atest2;
+ statement: BEGIN;
+ statement: LOCK atest2 IN ACCESS EXCLUSIVE MODE;
+ statement: COMMIT;
+ statement: COPY atest2 FROM stdin;
+ statement: GRANT ALL ON atest1 TO PUBLIC;
+ statement: SELECT * FROM atest1 WHERE ( b IN ( SELECT col1 FROM atest2 ) );
+ statement: SELECT * FROM atest2 WHERE ( col1 IN ( SELECT b FROM atest1 ) );
+ statement: SET SESSION AUTHORIZATION regressuser3;
+ statement: SELECT session_user, current_user;
+ statement: SELECT * FROM atest1;
+ statement: SELECT * FROM atest2;
+ statement: INSERT INTO atest1 VALUES (2, 'two');
+ statement: INSERT INTO atest2 VALUES ('foo', true);
+ statement: INSERT INTO atest1 SELECT 1, b FROM atest1;
+ statement: UPDATE atest1 SET a = 1 WHERE a = 2;
+ statement: UPDATE atest2 SET col2 = NULL;
+ statement: UPDATE atest2 SET col2 = NOT col2;
+ statement: UPDATE atest2 SET col2 = true FROM atest1 WHERE atest1.a = 5;
+ statement: SELECT * FROM atest1 FOR UPDATE;
+ statement: SELECT * FROM atest2 FOR UPDATE;
+ statement: DELETE FROM atest2;
+ statement: TRUNCATE atest2;
+ statement: BEGIN;
+ statement: LOCK atest2 IN ACCESS EXCLUSIVE MODE;
+ statement: COMMIT;
+ statement: COPY atest2 FROM stdin;
+ statement: SELECT * FROM atest1 WHERE ( b IN ( SELECT col1 FROM atest2 ) );
+ statement: SELECT * FROM atest2 WHERE ( col1 IN ( SELECT b FROM atest1 ) );
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: COPY atest2 FROM stdin;
+ statement: SELECT * FROM atest1;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: CREATE TABLE atest12 as                                                                                                                                 +
+   SELECT x AS a, 10001 - x AS b FROM generate_series(1,10000) x;
+ statement: CREATE INDEX ON atest12 (a);
+ statement: CREATE INDEX ON atest12 (abs(a));
+ statement: VACUUM ANALYZE atest12;
+ statement: CREATE FUNCTION leak(integer,integer) RETURNS boolean                                                                                                   +
+   AS $$begin return $1 < $2; end$$                                                                                                                                 +
+   LANGUAGE plpgsql immutable;
+ statement: CREATE OPERATOR <<< (procedure = leak, leftarg = integer, rightarg = integer,                                                                           +
+                      restrict = scalarltsel);
+ statement: CREATE VIEW atest12v AS                                                                                                                                 +
+   SELECT * FROM atest12 WHERE b <<< 5;
+ statement: GRANT SELECT ON atest12v TO PUBLIC;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM atest12v x, atest12v y WHERE x.a = y.b;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM atest12 x, atest12 y                                                                                                  +
+   WHERE x.a = y.b and abs(y.a) <<< 5;
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: CREATE FUNCTION leak2(integer,integer) RETURNS boolean                                                                                                  +
+   AS $$begin raise notice 'leak % %', $1, $2; return $1 > $2; end$$                                                                                                +
+   LANGUAGE plpgsql immutable;
+ statement: CREATE OPERATOR >>> (procedure = leak2, leftarg = integer, rightarg = integer,                                                                          +
+                      restrict = scalargtsel);
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM atest12 WHERE a >>> 0;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM atest12v x, atest12v y WHERE x.a = y.b;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: GRANT SELECT (a, b) ON atest12 TO PUBLIC;
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM atest12v x, atest12v y WHERE x.a = y.b;
+ statement: EXPLAIN (COSTS OFF) SELECT * FROM atest12 x, atest12 y                                                                                                  +
+   WHERE x.a = y.b and abs(y.a) <<< 5;
+ statement: DROP FUNCTION leak2(integer, integer) CASCADE;
+ statement: SET SESSION AUTHORIZATION regressuser3;
+ statement: CREATE TABLE atest3 (one int, two int, three int);
+ statement: GRANT DELETE ON atest3 TO GROUP regressgroup2;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: SELECT * FROM atest3;
+ statement: DELETE FROM atest3;
+ statement: SET SESSION AUTHORIZATION regressuser3;
+ statement: CREATE VIEW atestv1 AS SELECT * FROM atest1;
+ statement: /* The next *should* fail, but it's not implemented that way yet. */                                                                                    +
+ CREATE VIEW atestv2 AS SELECT * FROM atest2;
+ statement: CREATE VIEW atestv3 AS SELECT * FROM atest3;
+ statement: /* Empty view is a corner case that failed in 9.2. */                                                                                                   +
+ CREATE VIEW atestv0 AS SELECT 0 as x WHERE false;
+ statement: SELECT * FROM atestv1;
+ statement: SELECT * FROM atestv2;
+ statement: GRANT SELECT ON atestv1, atestv3 TO regressuser4;
+ statement: GRANT SELECT ON atestv2 TO regressuser2;
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: SELECT * FROM atestv1;
+ statement: SELECT * FROM atestv2;
+ statement: SELECT * FROM atestv3;
+ statement: SELECT * FROM atestv0;
+ statement: select * from                                                                                                                                           +
+   ((select a.q1 as x from int8_tbl a offset 0)                                                                                                                     +
+    union all                                                                                                                                                       +
+    (select b.q2 as x from int8_tbl b offset 0)) ss                                                                                                                 +
+ where false;
+ statement: set constraint_exclusion = on;
+ statement: select * from                                                                                                                                           +
+   ((select a.q1 as x, random() from int8_tbl a where q1 > 0)                                                                                                       +
+    union all                                                                                                                                                       +
+    (select b.q2 as x, random() from int8_tbl b where q2 > 0)) ss                                                                                                   +
+ where x < 0;
+ statement: reset constraint_exclusion;
+ statement: CREATE VIEW atestv4 AS SELECT * FROM atestv3;
+ statement: SELECT * FROM atestv4;
+ statement: GRANT SELECT ON atestv4 TO regressuser2;
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: SELECT * FROM atestv3;
+ statement: SELECT * FROM atestv4;
+ statement: SELECT * FROM atest2;
+ statement: SELECT * FROM atestv2;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: CREATE TABLE atest5 (one int, two int unique, three int, four int unique);
+ statement: CREATE TABLE atest6 (one int, two int, blue int);
+ statement: GRANT SELECT (one), INSERT (two), UPDATE (three) ON atest5 TO regressuser4;
+ statement: GRANT ALL (one) ON atest5 TO regressuser3;
+ statement: INSERT INTO atest5 VALUES (1,2,3);
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: SELECT * FROM atest5;
+ statement: SELECT one FROM atest5;
+ statement: COPY atest5 (one) TO stdout;
+ statement: SELECT two FROM atest5;
+ statement: COPY atest5 (two) TO stdout;
+ statement: SELECT atest5 FROM atest5;
+ statement: COPY atest5 (one,two) TO stdout;
+ statement: SELECT 1 FROM atest5;
+ statement: SELECT 1 FROM atest5 a JOIN atest5 b USING (one);
+ statement: SELECT 1 FROM atest5 a JOIN atest5 b USING (two);
+ statement: SELECT 1 FROM atest5 a NATURAL JOIN atest5 b;
+ statement: SELECT (j.*) IS NULL FROM (atest5 a JOIN atest5 b USING (one)) j;
+ statement: SELECT 1 FROM atest5 WHERE two = 2;
+ statement: SELECT * FROM atest1, atest5;
+ statement: SELECT atest1.* FROM atest1, atest5;
+ statement: SELECT atest1.*,atest5.one FROM atest1, atest5;
+ statement: SELECT atest1.*,atest5.one FROM atest1 JOIN atest5 ON (atest1.a = atest5.two);
+ statement: SELECT atest1.*,atest5.one FROM atest1 JOIN atest5 ON (atest1.a = atest5.one);
+ statement: SELECT one, two FROM atest5;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: GRANT SELECT (one,two) ON atest6 TO regressuser4;
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: SELECT one, two FROM atest5 NATURAL JOIN atest6;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: GRANT SELECT (two) ON atest5 TO regressuser4;
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: SELECT one, two FROM atest5 NATURAL JOIN atest6;
+ statement: INSERT INTO atest5 (two) VALUES (3);
+ statement: COPY atest5 FROM stdin;
+ statement: COPY atest5 (two) FROM stdin;
+ statement: INSERT INTO atest5 (three) VALUES (4);
+ statement: INSERT INTO atest5 VALUES (5,5,5);
+ statement: UPDATE atest5 SET three = 10;
+ statement: UPDATE atest5 SET one = 8;
+ statement: UPDATE atest5 SET three = 5, one = 2;
+ statement: INSERT INTO atest5(two) VALUES (6) ON CONFLICT (two) DO UPDATE set three = 10;
+ statement: INSERT INTO atest5(two) VALUES (6) ON CONFLICT (two) DO UPDATE set three = 10 RETURNING atest5.three;
+ statement: INSERT INTO atest5(two) VALUES (6) ON CONFLICT (two) DO UPDATE set three = 10 RETURNING atest5.one;
+ statement: INSERT INTO atest5(two) VALUES (6) ON CONFLICT (two) DO UPDATE set three = EXCLUDED.one;
+ statement: INSERT INTO atest5(two) VALUES (6) ON CONFLICT (two) DO UPDATE set three = EXCLUDED.three;
+ statement: INSERT INTO atest5(two) VALUES (6) ON CONFLICT (two) DO UPDATE set one = 8;
+ statement: INSERT INTO atest5(three) VALUES (4) ON CONFLICT (two) DO UPDATE set three = 10;
+ statement: INSERT INTO atest5(four) VALUES (4);
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: GRANT INSERT (four) ON atest5 TO regressuser4;
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: INSERT INTO atest5(four) VALUES (4) ON CONFLICT (four) DO UPDATE set three = 3;
+ statement: INSERT INTO atest5(four) VALUES (4) ON CONFLICT ON CONSTRAINT atest5_four_key DO UPDATE set three = 3;
+ statement: INSERT INTO atest5(four) VALUES (4);
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: GRANT SELECT (four) ON atest5 TO regressuser4;
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: INSERT INTO atest5(four) VALUES (4) ON CONFLICT (four) DO UPDATE set three = 3;
+ statement: INSERT INTO atest5(four) VALUES (4) ON CONFLICT ON CONSTRAINT atest5_four_key DO UPDATE set three = 3;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: REVOKE ALL (one) ON atest5 FROM regressuser4;
+ statement: GRANT SELECT (one,two,blue) ON atest6 TO regressuser4;
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: SELECT one FROM atest5;
+ statement: UPDATE atest5 SET one = 1;
+ statement: SELECT atest6 FROM atest6;
+ statement: COPY atest6 TO stdout;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: CREATE TABLE t1 (c1 int, c2 int, c3 int check (c3 < 5), primary key (c1, c2));
+ statement: GRANT SELECT (c1) ON t1 TO regressuser2;
+ statement: GRANT INSERT (c1, c2, c3) ON t1 TO regressuser2;
+ statement: GRANT UPDATE (c1, c2, c3) ON t1 TO regressuser2;
+ statement: INSERT INTO t1 VALUES (1, 1, 1);
+ statement: INSERT INTO t1 VALUES (1, 2, 1);
+ statement: INSERT INTO t1 VALUES (2, 1, 2);
+ statement: INSERT INTO t1 VALUES (2, 2, 2);
+ statement: INSERT INTO t1 VALUES (3, 1, 3);
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: INSERT INTO t1 (c1, c2) VALUES (1, 1);
+ statement: UPDATE t1 SET c2 = 1;
+ statement: INSERT INTO t1 (c1, c2) VALUES (null, null);
+ statement: INSERT INTO t1 (c3) VALUES (null);
+ statement: INSERT INTO t1 (c1) VALUES (5);
+ statement: UPDATE t1 SET c3 = 10;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: DROP TABLE t1;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: ALTER TABLE atest6 ADD COLUMN three integer;
+ statement: GRANT DELETE ON atest5 TO regressuser3;
+ statement: GRANT SELECT (two) ON atest5 TO regressuser3;
+ statement: REVOKE ALL (one) ON atest5 FROM regressuser3;
+ statement: GRANT SELECT (one) ON atest5 TO regressuser4;
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: SELECT atest6 FROM atest6;
+ statement: SELECT one FROM atest5 NATURAL JOIN atest6;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: ALTER TABLE atest6 DROP COLUMN three;
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: SELECT atest6 FROM atest6;
+ statement: SELECT one FROM atest5 NATURAL JOIN atest6;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: ALTER TABLE atest6 DROP COLUMN two;
+ statement: REVOKE SELECT (one,blue) ON atest6 FROM regressuser4;
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: SELECT * FROM atest6;
+ statement: SELECT 1 FROM atest6;
+ statement: SET SESSION AUTHORIZATION regressuser3;
+ statement: DELETE FROM atest5 WHERE one = 1;
+ statement: DELETE FROM atest5 WHERE two = 2;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: CREATE TABLE atestp1 (f1 int, f2 int) WITH OIDS;
+ statement: CREATE TABLE atestp2 (fx int, fy int) WITH OIDS;
+ statement: CREATE TABLE atestc (fz int) INHERITS (atestp1, atestp2);
+ statement: GRANT SELECT(fx,fy,oid) ON atestp2 TO regressuser2;
+ statement: GRANT SELECT(fx) ON atestc TO regressuser2;
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: SELECT fx FROM atestp2;
+ statement: SELECT fy FROM atestp2;
+ statement: SELECT atestp2 FROM atestp2;
+ statement: SELECT oid FROM atestp2;
+ statement: SELECT fy FROM atestc;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: GRANT SELECT(fy,oid) ON atestc TO regressuser2;
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: SELECT fx FROM atestp2;
+ statement: SELECT fy FROM atestp2;
+ statement: SELECT atestp2 FROM atestp2;
+ statement: SELECT oid FROM atestp2;
+ statement: REVOKE ALL PRIVILEGES ON LANGUAGE sql FROM PUBLIC;
+ statement: GRANT USAGE ON LANGUAGE sql TO regressuser1;
+ statement: GRANT USAGE ON LANGUAGE c TO PUBLIC;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: GRANT USAGE ON LANGUAGE sql TO regressuser2;
+ statement: CREATE FUNCTION testfunc1(int) RETURNS int AS 'select 2 * $1;' LANGUAGE sql;
+ statement: CREATE FUNCTION testfunc2(int) RETURNS int AS 'select 3 * $1;' LANGUAGE sql;
+ statement: REVOKE ALL ON FUNCTION testfunc1(int), testfunc2(int) FROM PUBLIC;
+ statement: GRANT EXECUTE ON FUNCTION testfunc1(int), testfunc2(int) TO regressuser2;
+ statement: GRANT USAGE ON FUNCTION testfunc1(int) TO regressuser3;
+ statement: GRANT ALL PRIVILEGES ON FUNCTION testfunc1(int) TO regressuser4;
+ statement: GRANT ALL PRIVILEGES ON FUNCTION testfunc_nosuch(int) TO regressuser4;
+ statement: CREATE FUNCTION testfunc4(boolean) RETURNS text                                                                                                         +
+   AS 'select col1 from atest2 where col2 = $1;'                                                                                                                    +
+   LANGUAGE sql SECURITY DEFINER;
+ statement: GRANT EXECUTE ON FUNCTION testfunc4(boolean) TO regressuser3;
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: SELECT testfunc1(5), testfunc2(5);
+ statement: CREATE FUNCTION testfunc3(int) RETURNS int AS 'select 2 * $1;' LANGUAGE sql;
+ statement: SET SESSION AUTHORIZATION regressuser3;
+ statement: SELECT testfunc1(5);
+ statement: SELECT col1 FROM atest2 WHERE col2 = true;
+ statement: SELECT testfunc4(true);
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: SELECT testfunc1(5);
+ statement: DROP FUNCTION testfunc1(int);
+ statement: DROP FUNCTION testfunc1(int);
+ statement: GRANT ALL PRIVILEGES ON LANGUAGE sql TO PUBLIC;
+ statement: CREATE TYPE testtype1 AS (a int, b text);
+ statement: REVOKE USAGE ON TYPE testtype1 FROM PUBLIC;
+ statement: GRANT USAGE ON TYPE testtype1 TO regressuser2;
+ statement: GRANT USAGE ON TYPE _testtype1 TO regressuser2;
+ statement: GRANT USAGE ON DOMAIN testtype1 TO regressuser2;
+ statement: CREATE DOMAIN testdomain1 AS int;
+ statement: REVOKE USAGE on DOMAIN testdomain1 FROM PUBLIC;
+ statement: GRANT USAGE ON DOMAIN testdomain1 TO regressuser2;
+ statement: GRANT USAGE ON TYPE testdomain1 TO regressuser2;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: CREATE AGGREGATE testagg1a(testdomain1) (sfunc = int4_sum, stype = bigint);
+ statement: CREATE DOMAIN testdomain2a AS testdomain1;
+ statement: CREATE DOMAIN testdomain3a AS int;
+ statement: CREATE FUNCTION castfunc(int) RETURNS testdomain3a AS $$ SELECT $1::testdomain3a $$ LANGUAGE SQL;
+ statement: CREATE CAST (testdomain1 AS testdomain3a) WITH FUNCTION castfunc(int);
+ statement: DROP FUNCTION castfunc(int) CASCADE;
+ statement: DROP DOMAIN testdomain3a;
+ statement: CREATE FUNCTION testfunc5a(a testdomain1) RETURNS int LANGUAGE SQL AS $$ SELECT $1 $$;
+ statement: CREATE FUNCTION testfunc6a(b int) RETURNS testdomain1 LANGUAGE SQL AS $$ SELECT $1::testdomain1 $$;
+ statement: CREATE OPERATOR !+! (PROCEDURE = int4pl, LEFTARG = testdomain1, RIGHTARG = testdomain1);
+ statement: CREATE TABLE test5a (a int, b testdomain1);
+ statement: CREATE TABLE test6a OF testtype1;
+ statement: CREATE TABLE test10a (a int[], b testtype1[]);
+ statement: CREATE TABLE test9a (a int, b int);
+ statement: ALTER TABLE test9a ADD COLUMN c testdomain1;
+ statement: ALTER TABLE test9a ALTER COLUMN b TYPE testdomain1;
+ statement: CREATE TYPE test7a AS (a int, b testdomain1);
+ statement: CREATE TYPE test8a AS (a int, b int);
+ statement: ALTER TYPE test8a ADD ATTRIBUTE c testdomain1;
+ statement: ALTER TYPE test8a ALTER ATTRIBUTE b TYPE testdomain1;
+ statement: CREATE TABLE test11a AS (SELECT 1::testdomain1 AS a);
+ statement: REVOKE ALL ON TYPE testtype1 FROM PUBLIC;
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: CREATE AGGREGATE testagg1b(testdomain1) (sfunc = int4_sum, stype = bigint);
+ statement: CREATE DOMAIN testdomain2b AS testdomain1;
+ statement: CREATE DOMAIN testdomain3b AS int;
+ statement: CREATE FUNCTION castfunc(int) RETURNS testdomain3b AS $$ SELECT $1::testdomain3b $$ LANGUAGE SQL;
+ statement: CREATE CAST (testdomain1 AS testdomain3b) WITH FUNCTION castfunc(int);
+ statement: CREATE FUNCTION testfunc5b(a testdomain1) RETURNS int LANGUAGE SQL AS $$ SELECT $1 $$;
+ statement: CREATE FUNCTION testfunc6b(b int) RETURNS testdomain1 LANGUAGE SQL AS $$ SELECT $1::testdomain1 $$;
+ statement: CREATE OPERATOR !! (PROCEDURE = testfunc5b, RIGHTARG = testdomain1);
+ statement: CREATE TABLE test5b (a int, b testdomain1);
+ statement: CREATE TABLE test6b OF testtype1;
+ statement: CREATE TABLE test10b (a int[], b testtype1[]);
+ statement: CREATE TABLE test9b (a int, b int);
+ statement: ALTER TABLE test9b ADD COLUMN c testdomain1;
+ statement: ALTER TABLE test9b ALTER COLUMN b TYPE testdomain1;
+ statement: CREATE TYPE test7b AS (a int, b testdomain1);
+ statement: CREATE TYPE test8b AS (a int, b int);
+ statement: ALTER TYPE test8b ADD ATTRIBUTE c testdomain1;
+ statement: ALTER TYPE test8b ALTER ATTRIBUTE b TYPE testdomain1;
+ statement: CREATE TABLE test11b AS (SELECT 1::testdomain1 AS a);
+ statement: REVOKE ALL ON TYPE testtype1 FROM PUBLIC;
+ statement: DROP AGGREGATE testagg1b(testdomain1);
+ statement: DROP DOMAIN testdomain2b;
+ statement: DROP OPERATOR !! (NONE, testdomain1);
+ statement: DROP FUNCTION testfunc5b(a testdomain1);
+ statement: DROP FUNCTION testfunc6b(b int);
+ statement: DROP TABLE test5b;
+ statement: DROP TABLE test6b;
+ statement: DROP TABLE test9b;
+ statement: DROP TABLE test10b;
+ statement: DROP TYPE test7b;
+ statement: DROP TYPE test8b;
+ statement: DROP CAST (testdomain1 AS testdomain3b);
+ statement: DROP FUNCTION castfunc(int) CASCADE;
+ statement: DROP DOMAIN testdomain3b;
+ statement: DROP TABLE test11b;
+ statement: DROP TYPE testtype1;
+ statement: DROP DOMAIN testdomain1;
+ statement: SET SESSION AUTHORIZATION regressuser5;
+ statement: TRUNCATE atest2;
+ statement: TRUNCATE atest3;
+ statement: select has_table_privilege(NULL,'pg_authid','select');
+ statement: select has_table_privilege('pg_shad','select');
+ statement: select has_table_privilege('nosuchuser','pg_authid','select');
+ statement: select has_table_privilege('pg_authid','sel');
+ statement: select has_table_privilege(-999999,'pg_authid','update');
+ statement: select has_table_privilege(1,'select');
+ statement: select has_table_privilege(current_user,'pg_authid','select');
+ statement: select has_table_privilege(current_user,'pg_authid','insert');
+ statement: select has_table_privilege(t2.oid,'pg_authid','update')                                                                                                 +
+ from (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege(t2.oid,'pg_authid','delete')                                                                                                 +
+ from (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege(current_user,t1.oid,'rule')                                                                                                  +
+ from (select oid from pg_class where relname = 'pg_authid') as t1;
+ statement: select has_table_privilege(current_user,t1.oid,'references')                                                                                            +
+ from (select oid from pg_class where relname = 'pg_authid') as t1;
+ statement: select has_table_privilege(t2.oid,t1.oid,'select')                                                                                                      +
+ from (select oid from pg_class where relname = 'pg_authid') as t1,                                                                                                 +
+   (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege(t2.oid,t1.oid,'insert')                                                                                                      +
+ from (select oid from pg_class where relname = 'pg_authid') as t1,                                                                                                 +
+   (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege('pg_authid','update');
+ statement: select has_table_privilege('pg_authid','delete');
+ statement: select has_table_privilege('pg_authid','truncate');
+ statement: select has_table_privilege(t1.oid,'select')                                                                                                             +
+ from (select oid from pg_class where relname = 'pg_authid') as t1;
+ statement: select has_table_privilege(t1.oid,'trigger')                                                                                                            +
+ from (select oid from pg_class where relname = 'pg_authid') as t1;
+ statement: SET SESSION AUTHORIZATION regressuser3;
+ statement: select has_table_privilege(current_user,'pg_class','select');
+ statement: select has_table_privilege(current_user,'pg_class','insert');
+ statement: select has_table_privilege(t2.oid,'pg_class','update')                                                                                                  +
+ from (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege(t2.oid,'pg_class','delete')                                                                                                  +
+ from (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege(current_user,t1.oid,'references')                                                                                            +
+ from (select oid from pg_class where relname = 'pg_class') as t1;
+ statement: select has_table_privilege(t2.oid,t1.oid,'select')                                                                                                      +
+ from (select oid from pg_class where relname = 'pg_class') as t1,                                                                                                  +
+   (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege(t2.oid,t1.oid,'insert')                                                                                                      +
+ from (select oid from pg_class where relname = 'pg_class') as t1,                                                                                                  +
+   (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege('pg_class','update');
+ statement: select has_table_privilege('pg_class','delete');
+ statement: select has_table_privilege('pg_class','truncate');
+ statement: select has_table_privilege(t1.oid,'select')                                                                                                             +
+ from (select oid from pg_class where relname = 'pg_class') as t1;
+ statement: select has_table_privilege(t1.oid,'trigger')                                                                                                            +
+ from (select oid from pg_class where relname = 'pg_class') as t1;
+ statement: select has_table_privilege(current_user,'atest1','select');
+ statement: select has_table_privilege(current_user,'atest1','insert');
+ statement: select has_table_privilege(t2.oid,'atest1','update')                                                                                                    +
+ from (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege(t2.oid,'atest1','delete')                                                                                                    +
+ from (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege(current_user,t1.oid,'references')                                                                                            +
+ from (select oid from pg_class where relname = 'atest1') as t1;
+ statement: select has_table_privilege(t2.oid,t1.oid,'select')                                                                                                      +
+ from (select oid from pg_class where relname = 'atest1') as t1,                                                                                                    +
+   (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege(t2.oid,t1.oid,'insert')                                                                                                      +
+ from (select oid from pg_class where relname = 'atest1') as t1,                                                                                                    +
+   (select oid from pg_roles where rolname = current_user) as t2;
+ statement: select has_table_privilege('atest1','update');
+ statement: select has_table_privilege('atest1','delete');
+ statement: select has_table_privilege('atest1','truncate');
+ statement: select has_table_privilege(t1.oid,'select')                                                                                                             +
+ from (select oid from pg_class where relname = 'atest1') as t1;
+ statement: select has_table_privilege(t1.oid,'trigger')                                                                                                            +
+ from (select oid from pg_class where relname = 'atest1') as t1;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: CREATE TABLE atest4 (a int);
+ statement: GRANT SELECT ON atest4 TO regressuser2 WITH GRANT OPTION;
+ statement: GRANT UPDATE ON atest4 TO regressuser2;
+ statement: GRANT SELECT ON atest4 TO GROUP regressgroup1 WITH GRANT OPTION;
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: GRANT SELECT ON atest4 TO regressuser3;
+ statement: GRANT UPDATE ON atest4 TO regressuser3;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: REVOKE SELECT ON atest4 FROM regressuser3;
+ statement: SELECT has_table_privilege('regressuser3', 'atest4', 'SELECT');
+ statement: REVOKE SELECT ON atest4 FROM regressuser2;
+ statement: REVOKE GRANT OPTION FOR SELECT ON atest4 FROM regressuser2 CASCADE;
+ statement: SELECT has_table_privilege('regressuser2', 'atest4', 'SELECT');
+ statement: SELECT has_table_privilege('regressuser3', 'atest4', 'SELECT');
+ statement: SELECT has_table_privilege('regressuser1', 'atest4', 'SELECT WITH GRANT OPTION');
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: CREATE FUNCTION dogrant_ok() RETURNS void LANGUAGE sql SECURITY DEFINER AS                                                                              +
+         'GRANT regressgroup2 TO regressuser5';
+ statement: GRANT regressgroup2 TO regressuser5;
+ statement: SET ROLE regressgroup2;
+ statement: GRANT regressgroup2 TO regressuser5;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: GRANT regressgroup2 TO regressuser5;
+ statement: SELECT dogrant_ok();
+ statement: SET ROLE regressgroup2;
+ statement: GRANT regressgroup2 TO regressuser5;
+ statement: SET SESSION AUTHORIZATION regressgroup2;
+ statement: GRANT regressgroup2 TO regressuser5;
+ statement: CREATE FUNCTION dogrant_fails() RETURNS void LANGUAGE sql SECURITY DEFINER AS                                                                           +
+         'GRANT regressgroup2 TO regressuser5';
+ statement: SELECT dogrant_fails();
+ statement: DROP FUNCTION dogrant_fails();
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: DROP FUNCTION dogrant_ok();
+ statement: REVOKE regressgroup2 FROM regressuser5;
+ statement: CREATE SEQUENCE x_seq;
+ statement: GRANT USAGE on x_seq to regressuser2;
+ statement: SELECT has_sequence_privilege('regressuser1', 'atest1', 'SELECT');
+ statement: SELECT has_sequence_privilege('regressuser1', 'x_seq', 'INSERT');
+ statement: SELECT has_sequence_privilege('regressuser1', 'x_seq', 'SELECT');
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: SELECT has_sequence_privilege('x_seq', 'USAGE');
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: SELECT lo_create(1001);
+ statement: SELECT lo_create(1002);
+ statement: SELECT lo_create(1003);
+ statement: SELECT lo_create(1004);
+ statement: SELECT lo_create(1005);
+ statement: GRANT ALL ON LARGE OBJECT 1001 TO PUBLIC;
+ statement: GRANT SELECT ON LARGE OBJECT 1003 TO regressuser2;
+ statement: GRANT SELECT,UPDATE ON LARGE OBJECT 1004 TO regressuser2;
+ statement: GRANT ALL ON LARGE OBJECT 1005 TO regressuser2;
+ statement: GRANT SELECT ON LARGE OBJECT 1005 TO regressuser2 WITH GRANT OPTION;
+ statement: GRANT SELECT, INSERT ON LARGE OBJECT 1001 TO PUBLIC;
+ statement: GRANT SELECT, UPDATE ON LARGE OBJECT 1001 TO nosuchuser;
+ statement: GRANT SELECT, UPDATE ON LARGE OBJECT  999 TO PUBLIC;
+ statement: SET SESSION AUTHORIZATION regressuser2;
+ statement: SELECT lo_create(2001);
+ statement: SELECT lo_create(2002);
+ statement: SELECT loread(lo_open(1001, x'20000'::int), 32);
+ statement: SELECT lowrite(lo_open(1001, x'40000'::int), 'abcd');
+ statement: SELECT loread(lo_open(1001, x'40000'::int), 32);
+ statement: SELECT loread(lo_open(1002, x'40000'::int), 32);
+ statement: SELECT loread(lo_open(1003, x'40000'::int), 32);
+ statement: SELECT loread(lo_open(1004, x'40000'::int), 32);
+ statement: SELECT lowrite(lo_open(1001, x'20000'::int), 'abcd');
+ statement: SELECT lowrite(lo_open(1002, x'20000'::int), 'abcd');
+ statement: SELECT lowrite(lo_open(1003, x'20000'::int), 'abcd');
+ statement: SELECT lowrite(lo_open(1004, x'20000'::int), 'abcd');
+ statement: GRANT SELECT ON LARGE OBJECT 1005 TO regressuser3;
+ statement: GRANT UPDATE ON LARGE OBJECT 1006 TO regressuser3;
+ statement: REVOKE ALL ON LARGE OBJECT 2001, 2002 FROM PUBLIC;
+ statement: GRANT ALL ON LARGE OBJECT 2001 TO regressuser3;
+ statement: SELECT lo_unlink(1001);
+ statement: SELECT lo_unlink(2002);
+ statement: SELECT oid, pg_get_userbyid(lomowner) ownername, lomacl FROM pg_largeobject_metadata WHERE oid >= 1000 AND oid < 3000 ORDER BY oid;
+ statement: SET SESSION AUTHORIZATION regressuser3;
+ statement: SELECT loread(lo_open(1001, x'40000'::int), 32);
+ statement: SELECT loread(lo_open(1003, x'40000'::int), 32);
+ statement: SELECT loread(lo_open(1005, x'40000'::int), 32);
+ statement: SELECT lo_truncate(lo_open(1005, x'20000'::int), 10);
+ statement: SELECT lo_truncate(lo_open(2001, x'20000'::int), 10);
+ statement: SET lo_compat_privileges = false;
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: SELECT loread(lo_open(1002, x'40000'::int), 32);
+ statement: SELECT lowrite(lo_open(1002, x'20000'::int), 'abcd');
+ statement: SELECT lo_truncate(lo_open(1002, x'20000'::int), 10);
+ statement: SELECT lo_put(1002, 1, 'abcd');
+ statement: SELECT lo_unlink(1002);
+ statement: SELECT lo_export(1001, '/dev/null');
+ statement: SET lo_compat_privileges = true;
+ statement: SET SESSION AUTHORIZATION regressuser4;
+ statement: SELECT loread(lo_open(1002, x'40000'::int), 32);
+ statement: SELECT lowrite(lo_open(1002, x'20000'::int), 'abcd');
+ statement: SELECT lo_truncate(lo_open(1002, x'20000'::int), 10);
+ statement: SELECT lo_unlink(1002);
+ statement: SELECT lo_export(1001, '/dev/null');
+ statement: SELECT * FROM pg_largeobject LIMIT 0;
+ statement: SET SESSION AUTHORIZATION regressuser1;
+ statement: SELECT * FROM pg_largeobject LIMIT 0;
+ statement: CREATE SCHEMA testns;
+ statement: GRANT ALL ON SCHEMA testns TO regressuser1;
+ statement: CREATE TABLE testns.acltest1 (x int);
+ statement: SELECT has_table_privilege('regressuser1', 'testns.acltest1', 'SELECT');
+ statement: SELECT has_table_privilege('regressuser1', 'testns.acltest1', 'INSERT');
+ statement: ALTER DEFAULT PRIVILEGES IN SCHEMA testns GRANT SELECT ON TABLES TO public;
+ statement: SELECT has_table_privilege('regressuser1', 'testns.acltest1', 'SELECT');
+ statement: SELECT has_table_privilege('regressuser1', 'testns.acltest1', 'INSERT');
+ statement: DROP TABLE testns.acltest1;
+ statement: CREATE TABLE testns.acltest1 (x int);
+ statement: SELECT has_table_privilege('regressuser1', 'testns.acltest1', 'SELECT');
+ statement: SELECT has_table_privilege('regressuser1', 'testns.acltest1', 'INSERT');
+ statement: ALTER DEFAULT PRIVILEGES IN SCHEMA testns GRANT INSERT ON TABLES TO regressuser1;
+ statement: DROP TABLE testns.acltest1;
+ statement: CREATE TABLE testns.acltest1 (x int);
+ statement: SELECT has_table_privilege('regressuser1', 'testns.acltest1', 'SELECT');
+ statement: SELECT has_table_privilege('regressuser1', 'testns.acltest1', 'INSERT');
+ statement: ALTER DEFAULT PRIVILEGES IN SCHEMA testns REVOKE INSERT ON TABLES FROM regressuser1;
+ statement: DROP TABLE testns.acltest1;
+ statement: CREATE TABLE testns.acltest1 (x int);
+ statement: SELECT has_table_privilege('regressuser1', 'testns.acltest1', 'SELECT');
+ statement: SELECT has_table_privilege('regressuser1', 'testns.acltest1', 'INSERT');
+ statement: ALTER DEFAULT PRIVILEGES FOR ROLE regressuser1 REVOKE EXECUTE ON FUNCTIONS FROM public;
+ statement: SET ROLE regressuser1;
+ statement: CREATE FUNCTION testns.foo() RETURNS int AS 'select 1' LANGUAGE sql;
+ statement: SELECT has_function_privilege('regressuser2', 'testns.foo()', 'EXECUTE');
+ statement: ALTER DEFAULT PRIVILEGES IN SCHEMA testns GRANT EXECUTE ON FUNCTIONS to public;
+ statement: DROP FUNCTION testns.foo();
+ statement: CREATE FUNCTION testns.foo() RETURNS int AS 'select 1' LANGUAGE sql;
+ statement: SELECT has_function_privilege('regressuser2', 'testns.foo()', 'EXECUTE');
+ statement: DROP FUNCTION testns.foo();
+ statement: ALTER DEFAULT PRIVILEGES FOR ROLE regressuser1 REVOKE USAGE ON TYPES FROM public;
+ statement: CREATE DOMAIN testns.testdomain1 AS int;
+ statement: SELECT has_type_privilege('regressuser2', 'testns.testdomain1', 'USAGE');
+ statement: ALTER DEFAULT PRIVILEGES IN SCHEMA testns GRANT USAGE ON TYPES to public;
+ statement: DROP DOMAIN testns.testdomain1;
+ statement: CREATE DOMAIN testns.testdomain1 AS int;
+ statement: SELECT has_type_privilege('regressuser2', 'testns.testdomain1', 'USAGE');
+ statement: DROP DOMAIN testns.testdomain1;
+ statement: RESET ROLE;
+ statement: SELECT count(*)                                                                                                                                         +
+   FROM pg_default_acl d LEFT JOIN pg_namespace n ON defaclnamespace = n.oid                                                                                        +
+   WHERE nspname = 'testns';
+ statement: DROP SCHEMA testns CASCADE;
+ statement: SELECT d.*                                                                                                                                              +
+   FROM pg_default_acl d LEFT JOIN pg_namespace n ON defaclnamespace = n.oid                                                                                        +
+   WHERE nspname IS NULL AND defaclnamespace != 0;
+ statement: CREATE SCHEMA testns;
+ statement: CREATE TABLE testns.t1 (f1 int);
+ statement: CREATE TABLE testns.t2 (f1 int);
+ statement: SELECT has_table_privilege('regressuser1', 'testns.t1', 'SELECT');
+ statement: GRANT ALL ON ALL TABLES IN SCHEMA testns TO regressuser1;
+ statement: SELECT has_table_privilege('regressuser1', 'testns.t1', 'SELECT');
+ statement: SELECT has_table_privilege('regressuser1', 'testns.t2', 'SELECT');
+ statement: REVOKE ALL ON ALL TABLES IN SCHEMA testns FROM regressuser1;
+ statement: SELECT has_table_privilege('regressuser1', 'testns.t1', 'SELECT');
+ statement: SELECT has_table_privilege('regressuser1', 'testns.t2', 'SELECT');
+ statement: CREATE FUNCTION testns.testfunc(int) RETURNS int AS 'select 3 * $1;' LANGUAGE sql;
+ statement: SELECT has_function_privilege('regressuser1', 'testns.testfunc(int)', 'EXECUTE');
+ statement: REVOKE ALL ON ALL FUNCTIONS IN SCHEMA testns FROM PUBLIC;
+ statement: SELECT has_function_privilege('regressuser1', 'testns.testfunc(int)', 'EXECUTE');
+ statement: SET client_min_messages TO 'warning';
+ statement: DROP SCHEMA testns CASCADE;
+ statement: RESET client_min_messages;
+ statement: CREATE ROLE schemauser1 superuser login;
+ statement: CREATE ROLE schemauser2 superuser login;
+ statement: SET SESSION ROLE schemauser1;
+ statement: CREATE SCHEMA testns;
+ statement: SELECT nspname, rolname FROM pg_namespace, pg_roles WHERE pg_namespace.nspname = 'testns' AND pg_namespace.nspowner = pg_roles.oid;
+ statement: ALTER SCHEMA testns OWNER TO schemauser2;
+ statement: ALTER ROLE schemauser2 RENAME TO schemauser_renamed;
+ statement: SELECT nspname, rolname FROM pg_namespace, pg_roles WHERE pg_namespace.nspname = 'testns' AND pg_namespace.nspowner = pg_roles.oid;
+ statement: set session role schemauser_renamed;
+ statement: SET client_min_messages TO 'warning';
+ statement: DROP SCHEMA testns CASCADE;
+ statement: RESET client_min_messages;
+ statement: DROP ROLE schemauser1;
+ statement: DROP ROLE schemauser_renamed;
+ statement: set session role regressuser1;
+ statement: create table dep_priv_test (a int);
+ statement: grant select on dep_priv_test to regressuser2 with grant option;
+ statement: grant select on dep_priv_test to regressuser3 with grant option;
+ statement: set session role regressuser2;
+ statement: grant select on dep_priv_test to regressuser4 with grant option;
+ statement: set session role regressuser3;
+ statement: grant select on dep_priv_test to regressuser4 with grant option;
+ statement: set session role regressuser4;
+ statement: grant select on dep_priv_test to regressuser5;
+ statement: SELECT n.nspname as "Schema",                                                                                                                           +
+   c.relname as "Name",                                                                                                                                             +
+   CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'S' THEN 'sequence' WHEN 'f' THEN 'foreign table' END as "Type",+
+   pg_catalog.array_to_string(c.relacl, E'\n') AS "Access privileges",                                                                                              +
+   pg_catalog.array_to_string(ARRAY(                                                                                                                                +
+     SELECT attname || E':\n  ' || pg_catalog.array_to_string(attacl, E'\n  ')                                                                                      +
+     FROM pg_catalog.pg_attribute a                                                                                                                                 +
+     WHERE attrelid = c.oid AND NOT attisdropped AND attacl IS NOT NULL                                                                                             +
+   ), E'\n') AS "Column privileges",                                                                                                                                +
+   pg_catalog.array_to_string(ARRAY(                                                                                                                                +
+     SELECT polname                                                                                                                                                 +
+     || CASE WHEN polcmd != '*' THEN                                                                                                                                +
+            E' (' || polcmd || E'):'                                                                                                                                +
+        ELSE E':'                                                                                                                                                   +
+        END                                                                                                                                                         +
+     || CASE WHEN polqual IS NOT NULL THEN                                                                                                                          +
+            E'\n  (u): ' || pg_catalog.pg_get_expr(polqual, polrelid)                                                                                               +
+        ELSE E''                                                                                                                                                    +
+        END                                                                                                                                                         +
+     || CASE WHEN polwithcheck IS NOT NULL THEN                                                                                                                     +
+            E'\n  (c): ' || pg_catalog.pg_get_expr(polwithcheck, polrelid)                                                                                          +
+        ELSE E''                                                                                                                                                    +
+        END    || CASE WHEN polroles <> '{0}' THEN                                                                                                                  +
+            E'\n  to: ' || pg_catalog.array_to_string(                                                                                                              +
+                ARRAY(                                                                                                                                              +
+                    SELECT rolname                                                                                                                                  +
+                    FROM pg_catalog.pg_roles                                                                                                                        +
+                    WHERE oid = ANY (polroles)                                                                                                                      +
+                    ORDER BY 1                                                                                                                                      +
+                ), E', ')                                                                                                                                           +
+        ELSE E''                                                                                                                                                    +
+        END                                                                                                                                                         +
+     FROM pg_catalog.pg_policy pol                                                                                                                                  +
+     WHERE polrelid = c.oid), E'\n')                                                                                                                                +
+     AS "Policies"                                                                                                                                                  +
+ FROM pg_catalog.pg_class c                                                                                                                                         +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                 +
+ WHERE c.relkind IN ('r', 'v', 'm', 'S', 'f')                                                                                                                       +
+   AND c.relname ~ '^(dep_priv_test)$'                                                                                                                              +
+   AND n.nspname !~ '^pg_' AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                +
+ ORDER BY 1, 2;
+ statement: set session role regressuser2;
+ statement: revoke select on dep_priv_test from regressuser4 cascade;
+ statement: SELECT n.nspname as "Schema",                                                                                                                           +
+   c.relname as "Name",                                                                                                                                             +
+   CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'S' THEN 'sequence' WHEN 'f' THEN 'foreign table' END as "Type",+
+   pg_catalog.array_to_string(c.relacl, E'\n') AS "Access privileges",                                                                                              +
+   pg_catalog.array_to_string(ARRAY(                                                                                                                                +
+     SELECT attname || E':\n  ' || pg_catalog.array_to_string(attacl, E'\n  ')                                                                                      +
+     FROM pg_catalog.pg_attribute a                                                                                                                                 +
+     WHERE attrelid = c.oid AND NOT attisdropped AND attacl IS NOT NULL                                                                                             +
+   ), E'\n') AS "Column privileges",                                                                                                                                +
+   pg_catalog.array_to_string(ARRAY(                                                                                                                                +
+     SELECT polname                                                                                                                                                 +
+     || CASE WHEN polcmd != '*' THEN                                                                                                                                +
+            E' (' || polcmd || E'):'                                                                                                                                +
+        ELSE E':'                                                                                                                                                   +
+        END                                                                                                                                                         +
+     || CASE WHEN polqual IS NOT NULL THEN                                                                                                                          +
+            E'\n  (u): ' || pg_catalog.pg_get_expr(polqual, polrelid)                                                                                               +
+        ELSE E''                                                                                                                                                    +
+        END                                                                                                                                                         +
+     || CASE WHEN polwithcheck IS NOT NULL THEN                                                                                                                     +
+            E'\n  (c): ' || pg_catalog.pg_get_expr(polwithcheck, polrelid)                                                                                          +
+        ELSE E''                                                                                                                                                    +
+        END    || CASE WHEN polroles <> '{0}' THEN                                                                                                                  +
+            E'\n  to: ' || pg_catalog.array_to_string(                                                                                                              +
+                ARRAY(                                                                                                                                              +
+                    SELECT rolname                                                                                                                                  +
+                    FROM pg_catalog.pg_roles                                                                                                                        +
+                    WHERE oid = ANY (polroles)                                                                                                                      +
+                    ORDER BY 1                                                                                                                                      +
+                ), E', ')                                                                                                                                           +
+        ELSE E''                                                                                                                                                    +
+        END                                                                                                                                                         +
+     FROM pg_catalog.pg_policy pol                                                                                                                                  +
+     WHERE polrelid = c.oid), E'\n')                                                                                                                                +
+     AS "Policies"                                                                                                                                                  +
+ FROM pg_catalog.pg_class c                                                                                                                                         +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                 +
+ WHERE c.relkind IN ('r', 'v', 'm', 'S', 'f')                                                                                                                       +
+   AND c.relname ~ '^(dep_priv_test)$'                                                                                                                              +
+   AND n.nspname !~ '^pg_' AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                +
+ ORDER BY 1, 2;
+ statement: set session role regressuser3;
+ statement: revoke select on dep_priv_test from regressuser4 cascade;
+ statement: SELECT n.nspname as "Schema",                                                                                                                           +
+   c.relname as "Name",                                                                                                                                             +
+   CASE c.relkind WHEN 'r' THEN 'table' WHEN 'v' THEN 'view' WHEN 'm' THEN 'materialized view' WHEN 'S' THEN 'sequence' WHEN 'f' THEN 'foreign table' END as "Type",+
+   pg_catalog.array_to_string(c.relacl, E'\n') AS "Access privileges",                                                                                              +
+   pg_catalog.array_to_string(ARRAY(                                                                                                                                +
+     SELECT attname || E':\n  ' || pg_catalog.array_to_string(attacl, E'\n  ')                                                                                      +
+     FROM pg_catalog.pg_attribute a                                                                                                                                 +
+     WHERE attrelid = c.oid AND NOT attisdropped AND attacl IS NOT NULL                                                                                             +
+   ), E'\n') AS "Column privileges",                                                                                                                                +
+   pg_catalog.array_to_string(ARRAY(                                                                                                                                +
+     SELECT polname                                                                                                                                                 +
+     || CASE WHEN polcmd != '*' THEN                                                                                                                                +
+            E' (' || polcmd || E'):'                                                                                                                                +
+        ELSE E':'                                                                                                                                                   +
+        END                                                                                                                                                         +
+     || CASE WHEN polqual IS NOT NULL THEN                                                                                                                          +
+            E'\n  (u): ' || pg_catalog.pg_get_expr(polqual, polrelid)                                                                                               +
+        ELSE E''                                                                                                                                                    +
+        END                                                                                                                                                         +
+     || CASE WHEN polwithcheck IS NOT NULL THEN                                                                                                                     +
+            E'\n  (c): ' || pg_catalog.pg_get_expr(polwithcheck, polrelid)                                                                                          +
+        ELSE E''                                                                                                                                                    +
+        END    || CASE WHEN polroles <> '{0}' THEN                                                                                                                  +
+            E'\n  to: ' || pg_catalog.array_to_string(                                                                                                              +
+                ARRAY(                                                                                                                                              +
+                    SELECT rolname                                                                                                                                  +
+                    FROM pg_catalog.pg_roles                                                                                                                        +
+                    WHERE oid = ANY (polroles)                                                                                                                      +
+                    ORDER BY 1                                                                                                                                      +
+                ), E', ')                                                                                                                                           +
+        ELSE E''                                                                                                                                                    +
+        END                                                                                                                                                         +
+     FROM pg_catalog.pg_policy pol                                                                                                                                  +
+     WHERE polrelid = c.oid), E'\n')                                                                                                                                +
+     AS "Policies"                                                                                                                                                  +
+ FROM pg_catalog.pg_class c                                                                                                                                         +
+      LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace                                                                                                 +
+ WHERE c.relkind IN ('r', 'v', 'm', 'S', 'f')                                                                                                                       +
+   AND c.relname ~ '^(dep_priv_test)$'                                                                                                                              +
+   AND n.nspname !~ '^pg_' AND pg_catalog.pg_table_is_visible(c.oid)                                                                                                +
+ ORDER BY 1, 2;
+ statement: set session role regressuser1;
+ statement: drop table dep_priv_test;
+ statement: drop sequence x_seq;
+ statement: DROP FUNCTION testfunc2(int);
+ statement: DROP FUNCTION testfunc4(boolean);
+ statement: DROP VIEW atestv0;
+ statement: DROP VIEW atestv1;
+ statement: DROP VIEW atestv2;
+ statement: DROP VIEW atestv3 CASCADE;
+ statement: DROP VIEW atestv4;
+ statement: DROP TABLE atest1;
+ statement: DROP TABLE atest2;
+ statement: DROP TABLE atest3;
+ statement: DROP TABLE atest4;
+ statement: DROP TABLE atest5;
+ statement: DROP TABLE atest6;
+ statement: DROP TABLE atestc;
+ statement: DROP TABLE atestp1;
+ statement: DROP TABLE atestp2;
+ statement: SELECT lo_unlink(oid) FROM pg_largeobject_metadata WHERE oid >= 1000 AND oid < 3000 ORDER BY oid;
+ statement: DROP GROUP regressgroup1;
+ statement: DROP GROUP regressgroup2;
+ statement: REVOKE USAGE ON LANGUAGE sql FROM regressuser1;
+ statement: DROP OWNED BY regressuser1;
+ statement: DROP USER regressuser1;
+ statement: DROP USER regressuser2;
+ statement: DROP USER regressuser3;
+ statement: DROP USER regressuser4;
+ statement: DROP USER regressuser5;
+ statement: DROP USER regressuser6;
+ statement: CREATE USER locktable_user;
+ statement: CREATE TABLE lock_table (a int);
+ statement: GRANT SELECT ON lock_table TO locktable_user;
+ statement: SET SESSION AUTHORIZATION locktable_user;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ROW EXCLUSIVE MODE;
+ statement: ROLLBACK;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ACCESS SHARE MODE;
+ statement: COMMIT;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ACCESS EXCLUSIVE MODE;
+ statement: ROLLBACK;
+ statement: REVOKE SELECT ON lock_table FROM locktable_user;
+ statement: GRANT INSERT ON lock_table TO locktable_user;
+ statement: SET SESSION AUTHORIZATION locktable_user;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ROW EXCLUSIVE MODE;
+ statement: COMMIT;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ACCESS SHARE MODE;
+ statement: ROLLBACK;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ACCESS EXCLUSIVE MODE;
+ statement: ROLLBACK;
+ statement: REVOKE INSERT ON lock_table FROM locktable_user;
+ statement: GRANT UPDATE ON lock_table TO locktable_user;
+ statement: SET SESSION AUTHORIZATION locktable_user;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ROW EXCLUSIVE MODE;
+ statement: COMMIT;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ACCESS SHARE MODE;
+ statement: ROLLBACK;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ACCESS EXCLUSIVE MODE;
+ statement: COMMIT;
+ statement: REVOKE UPDATE ON lock_table FROM locktable_user;
+ statement: GRANT DELETE ON lock_table TO locktable_user;
+ statement: SET SESSION AUTHORIZATION locktable_user;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ROW EXCLUSIVE MODE;
+ statement: COMMIT;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ACCESS SHARE MODE;
+ statement: ROLLBACK;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ACCESS EXCLUSIVE MODE;
+ statement: COMMIT;
+ statement: REVOKE DELETE ON lock_table FROM locktable_user;
+ statement: GRANT TRUNCATE ON lock_table TO locktable_user;
+ statement: SET SESSION AUTHORIZATION locktable_user;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ROW EXCLUSIVE MODE;
+ statement: COMMIT;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ACCESS SHARE MODE;
+ statement: ROLLBACK;
+ statement: BEGIN;
+ statement: LOCK TABLE lock_table IN ACCESS EXCLUSIVE MODE;
+ statement: COMMIT;
+ statement: REVOKE TRUNCATE ON lock_table FROM locktable_user;
+ statement: DROP TABLE lock_table;
+ statement: DROP USER locktable_user;
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc1 drop xmin;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: cannot drop system column "xmin"
+LOCATION:  ATExecDropColumn, tablecmds.c:5727
+STATEMENT:  alter table atacc1 drop xmin;

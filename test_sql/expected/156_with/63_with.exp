@@ -1,0 +1,4 @@
+WITH RECURSIVE t(a) AS (  SELECT 11  UNION ALL  SELECT a+1 FROM t WHERE a < 50  )  DELETE FROM y USING t WHERE t.a = y.a RETURNING y.a;
+ERROR:  42P01: relation "y" does not exist
+LINE 1: ...L  SELECT a+1 FROM t WHERE a < 50  )  DELETE FROM y USING t ...
+                                                             ^

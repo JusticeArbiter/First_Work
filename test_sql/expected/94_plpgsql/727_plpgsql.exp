@@ -1,0 +1,4 @@
+select error2('nonexistent.stuffs');
+ERROR:  3F000: schema "nonexistent" does not exist
+CONTEXT:  SQL function "error1" statement 1
+PL/pgSQL function error2(text) line 1 at RETURN

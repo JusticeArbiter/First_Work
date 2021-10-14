@@ -1,0 +1,2 @@
+EXPLAIN (COSTS OFF) EXECUTE p1(2);
+ERROR:  26000: prepared statement "p1" does not exist

@@ -1,0 +1,2 @@
+DROP CONVERSION test_conversion_exists;
+ERROR:  42704: conversion "test_conversion_exists" does not exist

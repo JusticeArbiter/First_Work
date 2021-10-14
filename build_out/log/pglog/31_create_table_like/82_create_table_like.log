@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE ctlt13_inh () INHERITS (ctlt1, ctlt3);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging multiple inherited definitions of column "a"
+LOCATION:  MergeAttributes, tablecmds.c:1605
+STATEMENT:  CREATE TABLE ctlt13_inh () INHERITS (ctlt1, ctlt3);

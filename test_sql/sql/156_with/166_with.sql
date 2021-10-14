@@ -1,0 +1,1 @@
+WITH t AS (  INSERT INTO y  VALUES  (41),  (42),  (43)  RETURNING *  )  SELECT * FROM t;

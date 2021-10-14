@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '["9", ["7", "3"], ["1"]]'::jsonb @> '["9", ["7", "3"], ["1"]]'::jsonb;
+LOCATION:  exec_simple_query, postgres.c:938

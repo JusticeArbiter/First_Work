@@ -1,0 +1,6 @@
+SELECT nspname, dictname, rolname  FROM pg_ts_dict t, pg_namespace n, pg_authid a  WHERE t.dictnamespace = n.oid AND t.dictowner = a.oid  AND n.nspname in ('alt_nsp1', 'alt_nsp2')  ORDER BY nspname, dictname;
+ nspname  |   dictname   |       rolname       
+----------+--------------+---------------------
+ alt_nsp2 | alt_ts_dict2 | regtest_alter_user3
+(1 row)
+

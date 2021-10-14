@@ -1,0 +1,4 @@
+CREATE TABLE collate_test_fail (  a int COLLATE "C",  b text  );
+ERROR:  42804: collations are not supported by type integer
+LINE 1: CREATE TABLE collate_test_fail (  a int COLLATE "C",  b text...
+                                                ^

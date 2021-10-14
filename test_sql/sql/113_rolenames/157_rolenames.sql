@@ -1,0 +1,1 @@
+CREATE SERVER sv5 FOREIGN DATA WRAPPER test_wrapper;

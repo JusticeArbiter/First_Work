@@ -1,0 +1,4 @@
+insert into t values(1,array[1],'a');
+ERROR:  42P01: relation "t" does not exist
+LINE 1: insert into t values(1,array[1],'a');
+                    ^

@@ -1,0 +1,3 @@
+CREATE TABLE persons3 OF person_type (  PRIMARY KEY (id),  name WITH OPTIONS DEFAULT ''  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

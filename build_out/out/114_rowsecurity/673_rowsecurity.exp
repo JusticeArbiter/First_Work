@@ -1,0 +1,9 @@
+UPDATE r2 SET a = 2 RETURNING *;
+ a 
+---
+ 2
+ 2
+ 2
+(3 rows)
+
+UPDATE 3

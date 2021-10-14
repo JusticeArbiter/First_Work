@@ -1,0 +1,3 @@
+CREATE AGGREGATE myaggp12b(BASETYPE = anyelement, SFUNC = tfp, STYPE = int[],  INITCOND = '{}');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE AGGREGATE
+ERROR:  42883: function tfp(integer[], anyelement) does not exist

@@ -1,0 +1,3 @@
+CREATE TEXT SEARCH DICTIONARY thesaurus (  Template=thesaurus,  DictFile=thesaurus_sample,  Dictionary=english_stem  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TEXT SEARCH DICTIONARY
+CREATE TEXT SEARCH DICTIONARY

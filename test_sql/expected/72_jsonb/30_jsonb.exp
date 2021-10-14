@@ -1,0 +1,6 @@
+SELECT '{"abc"::1}'::jsonb;
+ERROR:  22P02: invalid input syntax for type json
+LINE 1: SELECT '{"abc"::1}'::jsonb;
+               ^
+DETAIL:  Expected JSON value, but found ":".
+CONTEXT:  JSON data, line 1: {"abc"::...

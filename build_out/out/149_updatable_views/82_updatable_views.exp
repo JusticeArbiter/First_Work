@@ -1,0 +1,7 @@
+SELECT table_name, column_name, is_updatable  FROM information_schema.columns  WHERE table_name = 'rw_view1'  ORDER BY ordinal_position;
+ table_name | column_name | is_updatable 
+------------+-------------+--------------
+ rw_view1   | a           | YES
+ rw_view1   | b           | YES
+(2 rows)
+

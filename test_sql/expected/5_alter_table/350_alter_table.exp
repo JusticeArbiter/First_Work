@@ -1,0 +1,5 @@
+select test2 from atacc2;
+ test2 
+-------
+(0 rows)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: EXPLAIN (COSTS OFF) DELETE FROM only t1 WHERE f_leak(b);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "b" does not exist at character 54
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  EXPLAIN (COSTS OFF) DELETE FROM only t1 WHERE f_leak(b);

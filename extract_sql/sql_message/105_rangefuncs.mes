@@ -1,0 +1,449 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT name, setting FROM pg_settings WHERE name LIKE 'enable%';
+ statement: CREATE TABLE foo2(fooid int, f2 int);
+ statement: INSERT INTO foo2 VALUES(1, 11);
+ statement: INSERT INTO foo2 VALUES(2, 22);
+ statement: INSERT INTO foo2 VALUES(1, 111);
+ statement: CREATE FUNCTION foot(int) returns setof foo2 as 'SELECT * FROM foo2 WHERE fooid = $1 ORDER BY f2;' LANGUAGE SQL;
+ statement: select * from foot(1) with ordinality as z(a,b,ord);
+ statement: select * from foot(1) with ordinality as z(a,b,ord) where b > 100;
+ statement: select a,b,ord from foot(1) with ordinality as z(a,b,ord);
+ statement: select a,ord from unnest(array['a','b']) with ordinality as z(a,ord);
+ statement: select * from unnest(array['a','b']) with ordinality as z(a,ord);
+ statement: select a,ord from unnest(array[1.0::float8]) with ordinality as z(a,ord);
+ statement: select * from unnest(array[1.0::float8]) with ordinality as z(a,ord);
+ statement: select row_to_json(s.*) from generate_series(11,14) with ordinality s;
+ statement: create temporary view vw_ord as select * from (values (1)) v(n) join foot(1) with ordinality as z(a,b,ord) on (n=ord);
+ statement: select * from vw_ord;
+ statement: select definition from pg_views where viewname='vw_ord';
+ statement: drop view vw_ord;
+ statement: select * from rows from(foot(1),foot(2)) with ordinality as z(a,b,c,d,ord);
+ statement: create temporary view vw_ord as select * from (values (1)) v(n) join rows from(foot(1),foot(2)) with ordinality as z(a,b,c,d,ord) on (n=ord);
+ statement: select * from vw_ord;
+ statement: select definition from pg_views where viewname='vw_ord';
+ statement: drop view vw_ord;
+ statement: select * from unnest(array[10,20],array['foo','bar'],array[1.0]);
+ statement: select * from unnest(array[10,20],array['foo','bar'],array[1.0]) with ordinality as z(a,b,c,ord);
+ statement: select * from rows from(unnest(array[10,20],array['foo','bar'],array[1.0])) with ordinality as z(a,b,c,ord);
+ statement: select * from rows from(unnest(array[10,20],array['foo','bar']), generate_series(101,102)) with ordinality as z(a,b,c,ord);
+ statement: create temporary view vw_ord as select * from unnest(array[10,20],array['foo','bar'],array[1.0]) as z(a,b,c);
+ statement: select * from vw_ord;
+ statement: select definition from pg_views where viewname='vw_ord';
+ statement: drop view vw_ord;
+ statement: create temporary view vw_ord as select * from rows from(unnest(array[10,20],array['foo','bar'],array[1.0])) as z(a,b,c);
+ statement: select * from vw_ord;
+ statement: select definition from pg_views where viewname='vw_ord';
+ statement: drop view vw_ord;
+ statement: create temporary view vw_ord as select * from rows from(unnest(array[10,20],array['foo','bar']), generate_series(1,2)) as z(a,b,c);
+ statement: select * from vw_ord;
+ statement: select definition from pg_views where viewname='vw_ord';
+ statement: drop view vw_ord;
+ statement: begin;
+ statement: declare foo scroll cursor for select * from rows from(generate_series(1,5),generate_series(1,2)) with ordinality as g(i,j,o);
+ statement: fetch all from foo;
+ statement: fetch backward all from foo;
+ statement: fetch all from foo;
+ statement: fetch next from foo;
+ statement: fetch next from foo;
+ statement: fetch prior from foo;
+ statement: fetch absolute 1 from foo;
+ statement: fetch next from foo;
+ statement: fetch next from foo;
+ statement: fetch next from foo;
+ statement: fetch prior from foo;
+ statement: fetch prior from foo;
+ statement: fetch prior from foo;
+ statement: commit;
+ statement: select * from foo2, foot(foo2.fooid) z where foo2.f2 = z.f2;
+ statement: select * from foo2, foot(foo2.fooid) with ordinality as z(fooid,f2,ord) where foo2.f2 = z.f2;
+ statement: select * from foo2 where f2 in (select f2 from foot(foo2.fooid) z where z.fooid = foo2.fooid) ORDER BY 1,2;
+ statement: select * from foo2 where f2 in (select f2 from foot(1) z where z.fooid = foo2.fooid) ORDER BY 1,2;
+ statement: select * from foo2 where f2 in (select f2 from foot(foo2.fooid) z where z.fooid = 1) ORDER BY 1,2;
+ statement: select foot.fooid, foot.f2 from foot(sin(pi()/2)::int) ORDER BY 1,2;
+ statement: CREATE TABLE foo (fooid int, foosubid int, fooname text, primary key(fooid,foosubid));
+ statement: INSERT INTO foo VALUES(1,1,'Joe');
+ statement: INSERT INTO foo VALUES(1,2,'Ed');
+ statement: INSERT INTO foo VALUES(2,1,'Mary');
+ statement: CREATE FUNCTION getfoo1(int) RETURNS int AS 'SELECT $1;' LANGUAGE SQL;
+ statement: SELECT * FROM getfoo1(1) AS t1;
+ statement: SELECT * FROM getfoo1(1) WITH ORDINALITY AS t1(v,o);
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo1(1);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo1(1) WITH ORDINALITY as t1(v,o);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE FUNCTION getfoo2(int) RETURNS setof int AS 'SELECT fooid FROM foo WHERE fooid = $1;' LANGUAGE SQL;
+ statement: SELECT * FROM getfoo2(1) AS t1;
+ statement: SELECT * FROM getfoo2(1) WITH ORDINALITY AS t1(v,o);
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo2(1);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo2(1) WITH ORDINALITY AS t1(v,o);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE FUNCTION getfoo3(int) RETURNS setof text AS 'SELECT fooname FROM foo WHERE fooid = $1;' LANGUAGE SQL;
+ statement: SELECT * FROM getfoo3(1) AS t1;
+ statement: SELECT * FROM getfoo3(1) WITH ORDINALITY AS t1(v,o);
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo3(1);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo3(1) WITH ORDINALITY AS t1(v,o);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE FUNCTION getfoo4(int) RETURNS foo AS 'SELECT * FROM foo WHERE fooid = $1;' LANGUAGE SQL;
+ statement: SELECT * FROM getfoo4(1) AS t1;
+ statement: SELECT * FROM getfoo4(1) WITH ORDINALITY AS t1(a,b,c,o);
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo4(1);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo4(1) WITH ORDINALITY AS t1(a,b,c,o);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE FUNCTION getfoo5(int) RETURNS setof foo AS 'SELECT * FROM foo WHERE fooid = $1;' LANGUAGE SQL;
+ statement: SELECT * FROM getfoo5(1) AS t1;
+ statement: SELECT * FROM getfoo5(1) WITH ORDINALITY AS t1(a,b,c,o);
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo5(1);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo5(1) WITH ORDINALITY AS t1(a,b,c,o);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE FUNCTION getfoo6(int) RETURNS RECORD AS 'SELECT * FROM foo WHERE fooid = $1;' LANGUAGE SQL;
+ statement: SELECT * FROM getfoo6(1) AS t1(fooid int, foosubid int, fooname text);
+ statement: SELECT * FROM ROWS FROM( getfoo6(1) AS (fooid int, foosubid int, fooname text) ) WITH ORDINALITY;
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo6(1) AS                                                                                                                       +
+ (fooid int, foosubid int, fooname text);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE VIEW vw_getfoo AS                                                                                                                                                   +
+   SELECT * FROM ROWS FROM( getfoo6(1) AS (fooid int, foosubid int, fooname text) )                                                                                                    +
+                 WITH ORDINALITY;
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE FUNCTION getfoo7(int) RETURNS setof record AS 'SELECT * FROM foo WHERE fooid = $1;' LANGUAGE SQL;
+ statement: SELECT * FROM getfoo7(1) AS t1(fooid int, foosubid int, fooname text);
+ statement: SELECT * FROM ROWS FROM( getfoo7(1) AS (fooid int, foosubid int, fooname text) ) WITH ORDINALITY;
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo7(1) AS                                                                                                                       +
+ (fooid int, foosubid int, fooname text);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE VIEW vw_getfoo AS                                                                                                                                                   +
+   SELECT * FROM ROWS FROM( getfoo7(1) AS (fooid int, foosubid int, fooname text) )                                                                                                    +
+                 WITH ORDINALITY;
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE FUNCTION getfoo8(int) RETURNS int AS 'DECLARE fooint int; BEGIN SELECT fooid into fooint FROM foo WHERE fooid = $1; RETURN fooint; END;' LANGUAGE plpgsql;
+ statement: SELECT * FROM getfoo8(1) AS t1;
+ statement: SELECT * FROM getfoo8(1) WITH ORDINALITY AS t1(v,o);
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo8(1);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo8(1) WITH ORDINALITY AS t1(v,o);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE FUNCTION getfoo9(int) RETURNS foo AS 'DECLARE footup foo%ROWTYPE; BEGIN SELECT * into footup FROM foo WHERE fooid = $1; RETURN footup; END;' LANGUAGE plpgsql;
+ statement: SELECT * FROM getfoo9(1) AS t1;
+ statement: SELECT * FROM getfoo9(1) WITH ORDINALITY AS t1(a,b,c,o);
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo9(1);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: CREATE VIEW vw_getfoo AS SELECT * FROM getfoo9(1) WITH ORDINALITY AS t1(a,b,c,o);
+ statement: SELECT * FROM vw_getfoo;
+ statement: DROP VIEW vw_getfoo;
+ statement: select * from rows from(getfoo1(1),getfoo2(1),getfoo3(1),getfoo4(1),getfoo5(1),                                                                                            +
+                     getfoo6(1) AS (fooid int, foosubid int, fooname text),                                                                                                            +
+                     getfoo7(1) AS (fooid int, foosubid int, fooname text),                                                                                                            +
+                     getfoo8(1),getfoo9(1))                                                                                                                                            +
+               with ordinality as t1(a,b,c,d,e,f,g,h,i,j,k,l,m,o,p,q,r,s,t,u);
+ statement: select * from rows from(getfoo9(1),getfoo8(1),                                                                                                                             +
+                     getfoo7(1) AS (fooid int, foosubid int, fooname text),                                                                                                            +
+                     getfoo6(1) AS (fooid int, foosubid int, fooname text),                                                                                                            +
+                     getfoo5(1),getfoo4(1),getfoo3(1),getfoo2(1),getfoo1(1))                                                                                                           +
+               with ordinality as t1(a,b,c,d,e,f,g,h,i,j,k,l,m,o,p,q,r,s,t,u);
+ statement: create temporary view vw_foo as                                                                                                                                            +
+   select * from rows from(getfoo9(1),                                                                                                                                                 +
+                       getfoo7(1) AS (fooid int, foosubid int, fooname text),                                                                                                          +
+                       getfoo1(1))                                                                                                                                                     +
+                 with ordinality as t1(a,b,c,d,e,f,g,n);
+ statement: select * from vw_foo;
+ statement: select pg_get_viewdef('vw_foo');
+ statement: drop view vw_foo;
+ statement: DROP FUNCTION getfoo1(int);
+ statement: DROP FUNCTION getfoo2(int);
+ statement: DROP FUNCTION getfoo3(int);
+ statement: DROP FUNCTION getfoo4(int);
+ statement: DROP FUNCTION getfoo5(int);
+ statement: DROP FUNCTION getfoo6(int);
+ statement: DROP FUNCTION getfoo7(int);
+ statement: DROP FUNCTION getfoo8(int);
+ statement: DROP FUNCTION getfoo9(int);
+ statement: DROP FUNCTION foot(int);
+ statement: DROP TABLE foo2;
+ statement: DROP TABLE foo;
+ statement: CREATE TEMPORARY SEQUENCE foo_rescan_seq1;
+ statement: CREATE TEMPORARY SEQUENCE foo_rescan_seq2;
+ statement: CREATE TYPE foo_rescan_t AS (i integer, s bigint);
+ statement: CREATE FUNCTION foo_sql(int,int) RETURNS setof foo_rescan_t AS 'SELECT i, nextval(''foo_rescan_seq1'') FROM generate_series($1,$2) i;' LANGUAGE SQL;
+ statement: CREATE FUNCTION foo_mat(int,int) RETURNS setof foo_rescan_t AS 'begin for i in $1..$2 loop return next (i, nextval(''foo_rescan_seq2'')); end loop; end;' LANGUAGE plpgsql;
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN foo_sql(11,13) ON (r+i)<100;
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN foo_sql(11,13) WITH ORDINALITY AS f(i,s,o) ON (r+i)<100;
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN foo_mat(11,13) ON (r+i)<100;
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN foo_mat(11,13) WITH ORDINALITY AS f(i,s,o) ON (r+i)<100;
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN ROWS FROM( foo_sql(11,13), foo_mat(11,13) ) WITH ORDINALITY AS f(i1,s1,i2,s2,o) ON (r+i1+i2)<100;
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN generate_series(11,13) f(i) ON (r+i)<100;
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN generate_series(11,13) WITH ORDINALITY AS f(i,o) ON (r+i)<100;
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN unnest(array[10,20,30]) f(i) ON (r+i)<100;
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r) LEFT JOIN unnest(array[10,20,30]) WITH ORDINALITY AS f(i,o) ON (r+i)<100;
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_sql(10+r,13);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_sql(10+r,13) WITH ORDINALITY AS f(i,s,o);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_sql(11,10+r);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_sql(11,10+r) WITH ORDINALITY AS f(i,s,o);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (11,12),(13,15),(16,20)) v(r1,r2), foo_sql(r1,r2);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (11,12),(13,15),(16,20)) v(r1,r2), foo_sql(r1,r2) WITH ORDINALITY AS f(i,s,o);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_mat(10+r,13);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_mat(10+r,13) WITH ORDINALITY AS f(i,s,o);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_mat(11,10+r);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), foo_mat(11,10+r) WITH ORDINALITY AS f(i,s,o);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (11,12),(13,15),(16,20)) v(r1,r2), foo_mat(r1,r2);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (11,12),(13,15),(16,20)) v(r1,r2), foo_mat(r1,r2) WITH ORDINALITY AS f(i,s,o);
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), ROWS FROM( foo_sql(11,11), foo_mat(10+r,13) );
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), ROWS FROM( foo_sql(10+r,13), foo_mat(11,11) );
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), ROWS FROM( foo_sql(10+r,13), foo_mat(10+r,13) );
+ statement: SELECT setval('foo_rescan_seq1',1,false),setval('foo_rescan_seq2',1,false);
+ statement: SELECT * FROM generate_series(1,2) r1, generate_series(r1,3) r2, ROWS FROM( foo_sql(10+r1,13), foo_mat(10+r2,13) );
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), generate_series(10+r,20-r) f(i);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), generate_series(10+r,20-r) WITH ORDINALITY AS f(i,o);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), unnest(array[r*10,r*20,r*30]) f(i);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v(r), unnest(array[r*10,r*20,r*30]) WITH ORDINALITY AS f(i,o);
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v1(r1),                                                                                                                                 +
+               LATERAL (SELECT r1, * FROM (VALUES (10),(20),(30)) v2(r2)                                                                                                               +
+                                          LEFT JOIN generate_series(21,23) f(i) ON ((r2+i)<100) OFFSET 0) s1;
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v1(r1),                                                                                                                                 +
+               LATERAL (SELECT r1, * FROM (VALUES (10),(20),(30)) v2(r2)                                                                                                               +
+                                          LEFT JOIN generate_series(20+r1,23) f(i) ON ((r2+i)<100) OFFSET 0) s1;
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v1(r1),                                                                                                                                 +
+               LATERAL (SELECT r1, * FROM (VALUES (10),(20),(30)) v2(r2)                                                                                                               +
+                                          LEFT JOIN generate_series(r2,r2+3) f(i) ON ((r2+i)<100) OFFSET 0) s1;
+ statement: SELECT * FROM (VALUES (1),(2),(3)) v1(r1),                                                                                                                                 +
+               LATERAL (SELECT r1, * FROM (VALUES (10),(20),(30)) v2(r2)                                                                                                               +
+                                          LEFT JOIN generate_series(r1,2+r2/5) f(i) ON ((r2+i)<100) OFFSET 0) s1;
+ statement: DROP FUNCTION foo_sql(int,int);
+ statement: DROP FUNCTION foo_mat(int,int);
+ statement: DROP SEQUENCE foo_rescan_seq1;
+ statement: DROP SEQUENCE foo_rescan_seq2;
+ statement: CREATE FUNCTION foo(in f1 int, out f2 int)                                                                                                                                 +
+ AS 'select $1+1' LANGUAGE sql;
+ statement: SELECT foo(42);
+ statement: SELECT * FROM foo(42);
+ statement: SELECT * FROM foo(42) AS p(x);
+ statement: CREATE OR REPLACE FUNCTION foo(in f1 int, out f2 int) RETURNS int                                                                                                          +
+ AS 'select $1+1' LANGUAGE sql;
+ statement: CREATE OR REPLACE FUNCTION foo(in f1 int, out f2 int) RETURNS float                                                                                                        +
+ AS 'select $1+1' LANGUAGE sql;
+ statement: CREATE OR REPLACE FUNCTION foo(in f1 int, out f2 int, out f3 text) RETURNS int                                                                                             +
+ AS 'select $1+1' LANGUAGE sql;
+ statement: CREATE OR REPLACE FUNCTION foo(in f1 int, out f2 int, out f3 text)                                                                                                         +
+ RETURNS record                                                                                                                                                                        +
+ AS 'select $1+1' LANGUAGE sql;
+ statement: CREATE OR REPLACE FUNCTION foor(in f1 int, out f2 int, out text)                                                                                                           +
+ AS $$select $1-1, $1::text || 'z'$$ LANGUAGE sql;
+ statement: SELECT f1, foor(f1) FROM int4_tbl;
+ statement: SELECT * FROM foor(42);
+ statement: SELECT * FROM foor(42) AS p(a,b);
+ statement: CREATE OR REPLACE FUNCTION foob(in f1 int, inout f2 int, out text)                                                                                                         +
+ AS $$select $2-1, $1::text || 'z'$$ LANGUAGE sql;
+ statement: SELECT f1, foob(f1, f1/2) FROM int4_tbl;
+ statement: SELECT * FROM foob(42, 99);
+ statement: SELECT * FROM foob(42, 99) AS p(a,b);
+ statement: DROP FUNCTION foo(int);
+ statement: DROP FUNCTION foor(in f2 int, out f1 int, out text);
+ statement: DROP FUNCTION foob(in f1 int, inout f2 int);
+ statement: CREATE FUNCTION dup (f1 anyelement, f2 out anyelement, f3 out anyarray)                                                                                                    +
+ AS 'select $1, array[$1,$1]' LANGUAGE sql;
+ statement: SELECT dup(22);
+ statement: SELECT dup('xyz');
+ statement: SELECT dup('xyz'::text);
+ statement: SELECT * FROM dup('xyz'::text);
+ statement: CREATE OR REPLACE FUNCTION dup (inout f2 anyelement, out f3 anyarray)                                                                                                      +
+ AS 'select $1, array[$1,$1]' LANGUAGE sql;
+ statement: DROP FUNCTION dup(anyelement);
+ statement: CREATE OR REPLACE FUNCTION dup (inout f2 anyelement, out f3 anyarray)                                                                                                      +
+ AS 'select $1, array[$1,$1]' LANGUAGE sql;
+ statement: SELECT dup(22);
+ statement: DROP FUNCTION dup(anyelement);
+ statement: CREATE FUNCTION bad (f1 int, out f2 anyelement, out f3 anyarray)                                                                                                           +
+ AS 'select $1, array[$1,$1]' LANGUAGE sql;
+ statement: CREATE OR REPLACE FUNCTION foo()                                                                                                                                           +
+ RETURNS TABLE(a int)                                                                                                                                                                  +
+ AS $$ SELECT a FROM generate_series(1,5) a(a) $$ LANGUAGE sql;
+ statement: SELECT * FROM foo();
+ statement: DROP FUNCTION foo();
+ statement: CREATE OR REPLACE FUNCTION foo(int)                                                                                                                                        +
+ RETURNS TABLE(a int, b int)                                                                                                                                                           +
+ AS $$ SELECT a, b                                                                                                                                                                     +
+          FROM generate_series(1,$1) a(a),                                                                                                                                             +
+               generate_series(1,$1) b(b) $$ LANGUAGE sql;
+ statement: SELECT * FROM foo(3);
+ statement: DROP FUNCTION foo(int);
+ statement: CREATE OR REPLACE FUNCTION foo()                                                                                                                                           +
+ RETURNS TABLE(a varchar(5))                                                                                                                                                           +
+ AS $$ SELECT 'hello'::varchar(5) $$ LANGUAGE sql STABLE;
+ statement: SELECT * FROM foo() GROUP BY 1;
+ statement: DROP FUNCTION foo();
+ statement: create temp table tt(f1 serial, data text);
+ statement: create function insert_tt(text) returns int as                                                                                                                             +
+ $$ insert into tt(data) values($1) returning f1 $$                                                                                                                                    +
+ language sql;
+ statement: select insert_tt('foo');
+ statement: select insert_tt('bar');
+ statement: select * from tt;
+ statement: create or replace function insert_tt(text) returns int as                                                                                                                  +
+ $$ insert into tt(data) values($1),($1||$1) returning f1 $$                                                                                                                           +
+ language sql;
+ statement: select insert_tt('fool');
+ statement: select * from tt;
+ statement: create or replace function insert_tt2(text,text) returns setof int as                                                                                                      +
+ $$ insert into tt(data) values($1),($2) returning f1 $$                                                                                                                               +
+ language sql;
+ statement: select insert_tt2('foolish','barrish');
+ statement: select * from insert_tt2('baz','quux');
+ statement: select * from tt;
+ statement: select insert_tt2('foolish','barrish') limit 1;
+ statement: select * from tt;
+ statement: create function noticetrigger() returns trigger as $$                                                                                                                      +
+ begin                                                                                                                                                                                 +
+   raise notice 'noticetrigger % %', new.f1, new.data;                                                                                                                                 +
+   return null;                                                                                                                                                                        +
+ end $$ language plpgsql;
+ statement: create trigger tnoticetrigger after insert on tt for each row                                                                                                              +
+ execute procedure noticetrigger();
+ statement: select insert_tt2('foolme','barme') limit 1;
+ statement: select * from tt;
+ statement: create temp table tt_log(f1 int, data text);
+ statement: create rule insert_tt_rule as on insert to tt do also                                                                                                                      +
+   insert into tt_log values(new.*);
+ statement: select insert_tt2('foollog','barlog') limit 1;
+ statement: select * from tt;
+ statement: select * from tt_log;
+ statement: create function foo1(n integer, out a text, out b text)                                                                                                                    +
+   returns setof record                                                                                                                                                                +
+   language sql                                                                                                                                                                        +
+   as $$ select 'foo ' || i, 'bar ' || i from generate_series(1,$1) i $$;
+ statement: set work_mem='64kB';
+ statement: select t.a, t, t.a from foo1(10000) t limit 1;
+ statement: reset work_mem;
+ statement: select t.a, t, t.a from foo1(10000) t limit 1;
+ statement: drop function foo1(n integer);
+ statement: create function array_to_set(anyarray) returns setof record as $$                                                                                                          +
+   select i AS "index", $1[i] AS "value" from generate_subscripts($1, 1) i                                                                                                             +
+ $$ language sql strict immutable;
+ statement: select array_to_set(array['one', 'two']);
+ statement: select * from array_to_set(array['one', 'two']) as t(f1 int,f2 text);
+ statement: select * from array_to_set(array['one', 'two']);
+ statement: create temp table foo(f1 int8, f2 int8);
+ statement: create function testfoo() returns record as $$                                                                                                                             +
+   insert into foo values (1,2) returning *;                                                                                                                                           +
+ $$ language sql;
+ statement: select testfoo();
+ statement: select * from testfoo() as t(f1 int8,f2 int8);
+ statement: select * from testfoo();
+ statement: drop function testfoo();
+ statement: create function testfoo() returns setof record as $$                                                                                                                       +
+   insert into foo values (1,2), (3,4) returning *;                                                                                                                                    +
+ $$ language sql;
+ statement: select testfoo();
+ statement: select * from testfoo() as t(f1 int8,f2 int8);
+ statement: select * from testfoo();
+ statement: drop function testfoo();
+ statement: create temp table users (userid text, seq int, email text, todrop bool, moredrop int, enabled bool);
+ statement: insert into users values ('id',1,'email',true,11,true);
+ statement: insert into users values ('id2',2,'email2',true,12,true);
+ statement: alter table users drop column todrop;
+ statement: create or replace function get_first_user() returns users as                                                                                                               +
+ $$ SELECT * FROM users ORDER BY userid LIMIT 1; $$                                                                                                                                    +
+ language sql stable;
+ statement: SELECT get_first_user();
+ statement: SELECT * FROM get_first_user();
+ statement: create or replace function get_users() returns setof users as                                                                                                              +
+ $$ SELECT * FROM users ORDER BY userid; $$                                                                                                                                            +
+ language sql stable;
+ statement: SELECT get_users();
+ statement: SELECT * FROM get_users();
+ statement: SELECT * FROM get_users() WITH ORDINALITY;
+ statement: SELECT * FROM ROWS FROM(generate_series(10,11), get_users()) WITH ORDINALITY;
+ statement: SELECT * FROM ROWS FROM(get_users(), generate_series(10,11)) WITH ORDINALITY;
+ statement: create temp view usersview as                                                                                                                                              +
+ SELECT * FROM ROWS FROM(get_users(), generate_series(10,11)) WITH ORDINALITY;
+ statement: select * from usersview;
+ statement: alter table users drop column moredrop;
+ statement: select * from usersview;
+ statement: alter table users add column junk text;
+ statement: select * from usersview;
+ statement: alter table users alter column seq type numeric;
+ statement: select * from usersview;
+ statement: drop view usersview;
+ statement: drop function get_first_user();
+ statement: drop function get_users();
+ statement: drop table users;
+ statement: create or replace function foobar() returns setof text as                                                                                                                  +
+ $$ select 'foo'::varchar union all select 'bar'::varchar ; $$                                                                                                                         +
+ language sql stable;
+ statement: select foobar();
+ statement: select * from foobar();
+ statement: drop function foobar();
+ statement: create or replace function foobar(out integer, out numeric) as                                                                                                             +
+ $$ select (1, 2.1) $$ language sql;
+ statement: select * from foobar();
+ statement: create or replace function foobar(out integer, out numeric) as                                                                                                             +
+ $$ select (1, 2) $$ language sql;
+ statement: select * from foobar();
+ statement: create or replace function foobar(out integer, out numeric) as                                                                                                             +
+ $$ select (1, 2.1, 3) $$ language sql;
+ statement: select * from foobar();
+ statement: drop function foobar();
+ statement: SELECT *,                                                                                                                                                                  +
+   lower(CASE WHEN id = 2 THEN (regexp_matches(str, '^0*([1-9]\d+)$'))[1]                                                                                                              +
+         ELSE str                                                                                                                                                                      +
+         END)                                                                                                                                                                          +
+ FROM                                                                                                                                                                                  +
+   (VALUES (1,''), (2,'0000000049404'), (3,'FROM 10000000876')) v(id, str);
+ statement: create function extractq2(t int8_tbl) returns int8 as $$                                                                                                                   +
+   select t.q2                                                                                                                                                                         +
+ $$ language sql immutable;
+ statement: explain (verbose, costs off)                                                                                                                                               +
+ select x from int8_tbl, extractq2(int8_tbl) f(x);
+ statement: select x from int8_tbl, extractq2(int8_tbl) f(x);
+ statement: create function extractq2_2(t int8_tbl) returns table(ret1 int8) as $$                                                                                                     +
+   select extractq2(t) offset 0                                                                                                                                                        +
+ $$ language sql immutable;
+ statement: explain (verbose, costs off)                                                                                                                                               +
+ select x from int8_tbl, extractq2_2(int8_tbl) f(x);
+ statement: select x from int8_tbl, extractq2_2(int8_tbl) f(x);
+ statement: create function extractq2_2_opt(t int8_tbl) returns table(ret1 int8) as $$                                                                                                 +
+   select extractq2(t)                                                                                                                                                                 +
+ $$ language sql immutable;
+ statement: explain (verbose, costs off)                                                                                                                                               +
+ select x from int8_tbl, extractq2_2_opt(int8_tbl) f(x);
+ statement: select x from int8_tbl, extractq2_2_opt(int8_tbl) f(x);
+

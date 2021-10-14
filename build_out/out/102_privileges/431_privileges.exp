@@ -1,0 +1,6 @@
+SELECT has_table_privilege('regressuser1', 'atest4', 'SELECT WITH GRANT OPTION');
+ has_table_privilege 
+---------------------
+ f
+(1 row)
+

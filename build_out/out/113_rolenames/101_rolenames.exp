@@ -1,0 +1,10 @@
+SELECT n.nspname, r.rolname FROM pg_namespace n  JOIN pg_roles r ON (r.oid = n.nspowner)  WHERE n.nspname LIKE 'newschema_' ORDER BY 1;
+  nspname   |   rolname    
+------------+--------------
+ newschema1 | highgo
+ newschema2 | current_user
+ newschema3 | highgo
+ newschema4 | testrolx
+ newschema5 | Public
+(5 rows)
+

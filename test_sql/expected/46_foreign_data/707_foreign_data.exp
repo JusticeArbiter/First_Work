@@ -1,0 +1,4 @@
+DROP FOREIGN TABLE IF EXISTS no_table;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FOREIGN TABLE
+NOTICE:  00000: foreign table "no_table" does not exist, skipping
+DROP FOREIGN TABLE

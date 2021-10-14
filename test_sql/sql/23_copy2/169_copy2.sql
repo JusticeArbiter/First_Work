@@ -1,0 +1,1 @@
+DROP TABLE rls_t1 CASCADE;

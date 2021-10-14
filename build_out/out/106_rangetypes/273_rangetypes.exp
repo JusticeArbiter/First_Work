@@ -1,0 +1,6 @@
+select anyarray_anyrange_func(ARRAY[1,2], int4range(10,20));
+ anyarray_anyrange_func 
+------------------------
+                     11
+(1 row)
+

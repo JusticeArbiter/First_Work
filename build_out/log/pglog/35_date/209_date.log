@@ -1,0 +1,2 @@
+LOG:  00000: statement: select isfinite('infinity'::date), isfinite('-infinity'::date), isfinite('today'::date);
+LOCATION:  exec_simple_query, postgres.c:938

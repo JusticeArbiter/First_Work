@@ -1,0 +1,2 @@
+ALTER CONVERSION alt_conv1 RENAME TO alt_conv2;
+ERROR:  42710: conversion "alt_conv2" already exists in schema "public"

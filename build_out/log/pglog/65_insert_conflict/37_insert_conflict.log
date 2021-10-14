@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into insertconflicttest values (1, 'Apple') on conflict (key) do update set fruit = excluded.fruitt;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column excluded.fruitt does not exist at character 92
+HINT:  Perhaps you meant to reference the column "excluded.fruit".
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  insert into insertconflicttest values (1, 'Apple') on conflict (key) do update set fruit = excluded.fruitt;

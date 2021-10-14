@@ -1,0 +1,1 @@
+WITH t AS (  INSERT INTO y VALUES(0)  )  SELECT * FROM t;

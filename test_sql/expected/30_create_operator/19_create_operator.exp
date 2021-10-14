@@ -1,0 +1,2 @@
+CREATE OPERATOR #*# (  rightarg = SETOF int8,  procedure = numeric_fac  );
+ERROR:  42P13: SETOF type not allowed for operator argument

@@ -1,0 +1,7 @@
+SELECT n.nspname, proname, prorettype::regtype, proisagg, a.rolname  FROM pg_proc p, pg_namespace n, pg_authid a  WHERE p.pronamespace = n.oid AND p.proowner = a.oid  AND n.nspname IN ('alt_nsp1', 'alt_nsp2')  ORDER BY nspname, proname;
+ nspname  |  proname  | prorettype | proisagg |       rolname       
+----------+-----------+------------+----------+---------------------
+ alt_nsp2 | alt_agg2  | integer    | t        | regtest_alter_user3
+ alt_nsp2 | alt_func2 | integer    | f        | regtest_alter_user3
+(2 rows)
+

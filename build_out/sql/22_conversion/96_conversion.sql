@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'LATIN6', 'UTF8');

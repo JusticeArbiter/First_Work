@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from tt5,tt6 where tt5.f1 = tt6.f1 and tt5.f1 = tt5.f2 - tt6.f2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column tt5.f1 does not exist at character 29
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  select * from tt5,tt6 where tt5.f1 = tt6.f1 and tt5.f1 = tt5.f2 - tt6.f2;

@@ -1,0 +1,4 @@
+DROP SCHEMA IF EXISTS rls_regress_schema CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SCHEMA
+NOTICE:  00000: schema "rls_regress_schema" does not exist, skipping
+DROP SCHEMA

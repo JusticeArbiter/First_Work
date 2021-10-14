@@ -1,0 +1,6 @@
+DROP SCHEMA temp_view_test CASCADE;
+NOTICE:  00000: drop cascades to 3 other objects
+DETAIL:  drop cascades to table temp_view_test.base_table
+drop cascades to table temp_view_test.base_table2
+drop cascades to table temp_view_test.tx1
+DROP SCHEMA

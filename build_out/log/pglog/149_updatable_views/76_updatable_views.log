@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP SEQUENCE seq CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SEQUENCE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP SEQUENCE seq CASCADE;
+NOTICE:  00000: drop cascades to view ro_view19
+LOCATION:  reportDependentObjects, dependency.c:1009
+STATEMENT:  DROP SEQUENCE seq CASCADE;

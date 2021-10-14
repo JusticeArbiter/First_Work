@@ -1,0 +1,7 @@
+select testtext || testvarchar as concat, testnumeric + 42 as sum  from basictest;
+  concat   |  sum   
+-----------+--------
+ hahashort | 165.12
+ hahashort | 165.12
+(2 rows)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: select json '{ "a": "null \u0000 escape" }' as not_unescaped;
+LOCATION:  exec_simple_query, postgres.c:938

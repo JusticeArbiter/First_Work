@@ -1,0 +1,6 @@
+SELECT jsonb_build_array('a', NULL);
+ jsonb_build_array 
+-------------------
+ ["a", null]
+(1 row)
+

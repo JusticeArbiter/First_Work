@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS six, c AS cidr, i AS inet FROM INET_TBL  WHERE c = i;
+LOCATION:  exec_simple_query, postgres.c:938

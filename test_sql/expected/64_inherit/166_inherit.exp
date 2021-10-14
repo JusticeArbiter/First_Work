@@ -1,0 +1,7 @@
+select pc.relname, pgc.conname, pgc.contype, pgc.conislocal, pgc.coninhcount, pgc.consrc from pg_class as pc inner join pg_constraint as pgc on (pgc.conrelid = pc.oid) where pc.relname in ('ac', 'bc') order by 1,2;
+ relname | conname  | contype | conislocal | coninhcount |      consrc      
+---------+----------+---------+------------+-------------+------------------
+ ac      | ac_check | c       | t          |           0 | (aa IS NOT NULL)
+ bc      | ac_check | c       | f          |           1 | (aa IS NOT NULL)
+(2 rows)
+

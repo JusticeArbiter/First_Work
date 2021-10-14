@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into bytea_test_table values(decode('aa','hex'));
+LOCATION:  exec_simple_query, postgres.c:938

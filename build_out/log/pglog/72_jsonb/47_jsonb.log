@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT ' '::jsonb;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type json at character 8
+DETAIL:  The input string ended unexpectedly.
+CONTEXT:  JSON data, line 1:  
+LOCATION:  report_parse_error, json.c:1133
+STATEMENT:  SELECT ' '::jsonb;

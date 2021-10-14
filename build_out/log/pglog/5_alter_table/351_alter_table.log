@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter table atacc2 add constraint foo check (test2>0);
+LOCATION:  exec_simple_query, postgres.c:938

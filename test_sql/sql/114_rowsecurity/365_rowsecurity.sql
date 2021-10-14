@@ -1,0 +1,1 @@
+INSERT INTO x1 VALUES  (1, 'abc', 'rls_regress_user1'),  (2, 'bcd', 'rls_regress_user1'),  (3, 'cde', 'rls_regress_user2'),  (4, 'def', 'rls_regress_user2'),  (5, 'efg', 'rls_regress_user1'),  (6, 'fgh', 'rls_regress_user1'),  (7, 'fgh', 'rls_regress_user2'),  (8, 'fgh', 'rls_regress_user2');

@@ -1,0 +1,2 @@
+select jsonb_set('{"a": {"b": [1, 2, 3]}}', '{a, b, NULL}', '"new_value"');
+ERROR:  22004: path element at position 3 is null

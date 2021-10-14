@@ -1,0 +1,6 @@
+SELECT name 'name string' = name 'name string' AS "True";
+ True 
+------
+ t
+(1 row)
+

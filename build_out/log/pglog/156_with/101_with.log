@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH RECURSIVE outermost(x) AS (  WITH innermost as (SELECT 2 FROM outermost)  SELECT * FROM innermost  UNION SELECT * from outermost  )  SELECT * FROM outermost;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P19: recursive reference to query "outermost" must not appear within a subquery at character 68
+LOCATION:  checkWellFormedRecursionWalker, parse_cte.c:773
+STATEMENT:  WITH RECURSIVE outermost(x) AS (  WITH innermost as (SELECT 2 FROM outermost)  SELECT * FROM innermost  UNION SELECT * from outermost  )  SELECT * FROM outermost;

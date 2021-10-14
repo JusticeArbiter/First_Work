@@ -1,0 +1,1 @@
+INSERT INTO tenk2 SELECT * FROM tenk1;

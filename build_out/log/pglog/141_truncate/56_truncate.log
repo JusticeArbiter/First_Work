@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO trunc_fb VALUES (4, 444);
+LOCATION:  exec_simple_query, postgres.c:938

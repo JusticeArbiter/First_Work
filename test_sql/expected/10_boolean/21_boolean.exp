@@ -1,0 +1,4 @@
+SELECT bool 'off_' AS error;
+ERROR:  22P02: invalid input syntax for type boolean: "off_"
+LINE 1: SELECT bool 'off_' AS error;
+                    ^

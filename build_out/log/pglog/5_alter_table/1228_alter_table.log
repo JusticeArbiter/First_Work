@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE IF EXISTS tt8 ALTER COLUMN f SET DEFAULT 0;
+LOCATION:  exec_simple_query, postgres.c:938

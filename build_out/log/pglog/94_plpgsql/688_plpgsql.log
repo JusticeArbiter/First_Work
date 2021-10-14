@@ -1,0 +1,11 @@
+LOG:  00000: statement: select vari(variadic array[5,6,7]);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: 5
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select vari(variadic array[5,6,7]);
+NOTICE:  00000: 6
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select vari(variadic array[5,6,7]);
+NOTICE:  00000: 7
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select vari(variadic array[5,6,7]);

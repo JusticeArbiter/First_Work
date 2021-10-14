@@ -1,0 +1,2 @@
+ALTER FUNCTION alt_func2(int) SET SCHEMA alt_nsp2;
+ERROR:  42723: function alt_func2(integer) already exists in schema "alt_nsp2"

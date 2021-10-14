@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT COUNT(*) OVER w FROM tenk1 WHERE unique2 < 10 WINDOW w AS ();
+LOCATION:  exec_simple_query, postgres.c:938

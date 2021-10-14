@@ -1,0 +1,4 @@
+select t1.x from t1 join t3 on (t1.a = t3.x);
+ERROR:  42P01: relation "t3" does not exist
+LINE 1: select t1.x from t1 join t3 on (t1.a = t3.x);
+                                 ^

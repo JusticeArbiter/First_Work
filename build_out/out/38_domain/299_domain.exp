@@ -1,0 +1,2 @@
+create domain di as int;
+CREATE DOMAIN

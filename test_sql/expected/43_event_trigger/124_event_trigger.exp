@@ -1,0 +1,2 @@
+DROP EVENT TRIGGER end_rls_command;
+DROP EVENT TRIGGER

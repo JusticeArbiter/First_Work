@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE reindex_verbose(id integer primary key);
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT max(student.gpa) AS max_3_7 FROM student;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "student" does not exist at character 41
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT max(student.gpa) AS max_3_7 FROM student;

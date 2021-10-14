@@ -1,0 +1,4 @@
+CREATE TABLE d_star (  d float8  ) INHERITS (b_star, c_star);
+NOTICE:  00000: merging multiple inherited definitions of column "class"
+NOTICE:  00000: merging multiple inherited definitions of column "a"
+CREATE TABLE

@@ -1,0 +1,1 @@
+SELECT '' AS four, * FROM VARCHAR_TBL;

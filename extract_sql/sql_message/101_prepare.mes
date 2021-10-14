@@ -1,0 +1,43 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT name, statement, parameter_types FROM pg_prepared_statements;
+ statement: PREPARE q1 AS SELECT 1 AS a;
+ statement: EXECUTE q1;
+ statement: SELECT name, statement, parameter_types FROM pg_prepared_statements;
+ statement: PREPARE q1 AS SELECT 2;
+ statement: DEALLOCATE q1;
+ statement: PREPARE q1 AS SELECT 2;
+ statement: EXECUTE q1;
+ statement: PREPARE q2 AS SELECT 2 AS b;
+ statement: SELECT name, statement, parameter_types FROM pg_prepared_statements;
+ statement: DEALLOCATE PREPARE q1;
+ statement: SELECT name, statement, parameter_types FROM pg_prepared_statements;
+ statement: DEALLOCATE PREPARE q2;
+ statement: SELECT name, statement, parameter_types FROM pg_prepared_statements;
+ statement: PREPARE q2(text) AS                                                             +
+         SELECT datname, datistemplate, datallowconn                                        +
+         FROM pg_database WHERE datname = $1;
+ statement: EXECUTE q2('postgres');
+ statement: PREPARE q3(text, int, float, boolean, oid, smallint) AS                         +
+         SELECT * FROM tenk1 WHERE string4 = $1 AND (four = $2 OR                           +
+         ten = $3::bigint OR true = $4 OR oid = $5 OR odd = $6::int)                        +
+         ORDER BY unique1;
+ statement: EXECUTE q3('AAAAxx', 5::smallint, 10.5::float, false, 500::oid, 4::bigint);
+ statement: EXECUTE q3('bool');
+ statement: EXECUTE q3('bytea', 5::smallint, 10.5::float, false, 500::oid, 4::bigint, true);
+ statement: EXECUTE q3(5::smallint, 10.5::float, false, 500::oid, 4::bigint, 'bytea');
+ statement: PREPARE q4(nonexistenttype) AS SELECT $1;
+ statement: PREPARE q5(int, text) AS                                                        +
+         SELECT * FROM tenk1 WHERE unique1 = $1 OR stringu1 = $2                            +
+         ORDER BY unique1;
+ statement: CREATE TEMPORARY TABLE q5_prep_results AS EXECUTE q5(200, 'DTAAAA');
+ statement: SELECT * FROM q5_prep_results;
+ statement: PREPARE q6 AS                                                                   +
+     SELECT * FROM tenk1 WHERE unique1 = $1 AND stringu1 = $2;
+ statement: PREPARE q7(unknown) AS                                                          +
+     SELECT * FROM road WHERE thepath = $1;
+ statement: SELECT name, statement, parameter_types FROM pg_prepared_statements             +
+     ORDER BY name;
+ statement: DEALLOCATE ALL;
+ statement: SELECT name, statement, parameter_types FROM pg_prepared_statements             +
+     ORDER BY name;
+

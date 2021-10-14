@@ -1,0 +1,2 @@
+INSERT INTO delete_test (a) VALUES (100);
+INSERT 0 1

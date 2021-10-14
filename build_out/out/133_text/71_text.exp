@@ -1,0 +1,6 @@
+select format('>>%*s<<', 10, 'Hello');
+     format     
+----------------
+ >>     Hello<<
+(1 row)
+

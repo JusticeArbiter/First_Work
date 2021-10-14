@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT h.seqno AS emptyset  FROM hash_name_heap h  WHERE h.random = '76652222'::name;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table gc1 drop column name;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "name" of relation "gc1" does not exist
+LOCATION:  ATExecDropColumn, tablecmds.c:5708
+STATEMENT:  alter table gc1 drop column name;

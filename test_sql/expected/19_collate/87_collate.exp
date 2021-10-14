@@ -1,0 +1,5 @@
+WITH RECURSIVE foo(x) AS  (SELECT x FROM (VALUES('a' COLLATE "C"),('b')) t(x)  UNION ALL  SELECT (x || 'c') COLLATE "POSIX" FROM foo WHERE length(x) < 10)  SELECT * FROM foo;
+ERROR:  42P21: recursive query "foo" column 1 has collation "C" in non-recursive term but collation "POSIX" overall
+LINE 1: WITH RECURSIVE foo(x) AS  (SELECT x FROM (VALUES('a' COLLATE...
+                                          ^
+HINT:  Use the COLLATE clause to set the collation of the non-recursive term.

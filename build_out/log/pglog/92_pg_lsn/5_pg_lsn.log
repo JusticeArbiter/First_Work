@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO PG_LSN_TBL VALUES ('-1/0');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type pg_lsn: "-1/0" at character 32
+LOCATION:  pg_lsn_in, pg_lsn.c:44
+STATEMENT:  INSERT INTO PG_LSN_TBL VALUES ('-1/0');

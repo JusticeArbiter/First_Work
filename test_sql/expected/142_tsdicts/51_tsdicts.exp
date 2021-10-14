@@ -1,0 +1,6 @@
+SELECT to_tsvector('synonym_tst', 'Postgresql is often called as postgres or pgsql and pronounced as postgre');
+                    to_tsvector                    
+---------------------------------------------------
+ 'call':4 'often':3 'pgsql':1,6,8,12 'pronounc':10
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT collation for ((SELECT a FROM collate_test1 LIMIT 1));
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42804: collations are not supported by type integer
+LOCATION:  pg_collation_for, misc.c:547
+STATEMENT:  SELECT collation for ((SELECT a FROM collate_test1 LIMIT 1));

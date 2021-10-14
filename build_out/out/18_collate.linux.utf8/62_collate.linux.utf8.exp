@@ -1,0 +1,6 @@
+SELECT 'bıt' ILIKE 'BIT' COLLATE "en_US" AS "false";
+ false 
+-------
+ f
+(1 row)
+

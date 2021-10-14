@@ -1,0 +1,14 @@
+LOG:  00000: statement: select pl_qual_names(42);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: param1 = 2
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select pl_qual_names(42);
+NOTICE:  00000: pl_qual_names.param1 = 42
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select pl_qual_names(42);
+NOTICE:  00000: outerblock.param1 = 1
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select pl_qual_names(42);
+NOTICE:  00000: innerblock.param1 = 2
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select pl_qual_names(42);

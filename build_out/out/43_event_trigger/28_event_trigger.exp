@@ -1,0 +1,4 @@
+grant all on table event_trigger_fire1 to public;
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+NOTICE:  00000: test_event_trigger: ddl_command_end GRANT
+GRANT

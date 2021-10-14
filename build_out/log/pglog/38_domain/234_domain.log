@@ -1,0 +1,6 @@
+LOG:  00000: statement: select doubledecrement(3);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23514: value for domain pos_int violates check constraint "pos_int_check"
+CONTEXT:  PL/pgSQL function doubledecrement(pos_int) line 1 during statement block local variable initialization
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4060
+STATEMENT:  select doubledecrement(3);

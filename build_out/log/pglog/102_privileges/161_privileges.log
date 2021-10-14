@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT (j.*) IS NULL FROM (atest5 a JOIN atest5 b USING (one)) j;
+LOCATION:  exec_simple_query, postgres.c:938

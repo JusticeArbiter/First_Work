@@ -1,0 +1,4 @@
+insert into table_a values (42);
+ERROR:  42P01: relation "table_a" does not exist
+LINE 1: insert into table_a values (42);
+                    ^

@@ -1,0 +1,5 @@
+LOG:  00000: statement: FETCH RELATIVE 1 FROM current_check_cursor;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  34000: cursor "current_check_cursor" does not exist
+LOCATION:  PerformPortalFetch, portalcmds.c:168
+STATEMENT:  FETCH RELATIVE 1 FROM current_check_cursor;

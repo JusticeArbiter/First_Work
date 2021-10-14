@@ -1,0 +1,3 @@
+ALTER TYPE planets ADD VALUE IF NOT EXISTS 'mercury';
+NOTICE:  42710: enum label "mercury" already exists, skipping
+ALTER TYPE

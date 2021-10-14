@@ -1,0 +1,6 @@
+LOG:  00000: statement: SELECT xmlpi(name xml, null);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42601: invalid XML processing instruction
+DETAIL:  XML processing instruction target name cannot be "xml".
+LOCATION:  xmlpi, xml.c:733
+STATEMENT:  SELECT xmlpi(name xml, null);

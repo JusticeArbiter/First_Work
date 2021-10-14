@@ -1,0 +1,6 @@
+SELECT row_to_json(row(1,'foo'));
+     row_to_json     
+---------------------
+ {"f1":1,"f2":"foo"}
+(1 row)
+

@@ -1,0 +1,1 @@
+ALTER TABLE pt1 ADD CONSTRAINT pt1chk2 CHECK (c2 <> '');

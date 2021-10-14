@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO wo SELECT i+16 FROM wi;
+LOCATION:  exec_simple_query, postgres.c:938

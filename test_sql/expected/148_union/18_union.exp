@@ -1,0 +1,10 @@
+SELECT f1 AS five FROM FLOAT8_TBL  UNION  SELECT f1 FROM FLOAT8_TBL  ORDER BY 1;
+         five          
+-----------------------
+ -1.2345678901234e+200
+               -1004.3
+                -34.84
+ -1.2345678901234e-200
+                     0
+(5 rows)
+

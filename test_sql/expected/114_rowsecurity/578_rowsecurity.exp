@@ -1,0 +1,7 @@
+UPDATE current_check SET payload = payload || '_new' WHERE currentid = 2 RETURNING *;
+ currentid | payload |      rlsuser      
+-----------+---------+-------------------
+         2 | bcd_new | rls_regress_user1
+(1 row)
+
+UPDATE 1

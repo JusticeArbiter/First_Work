@@ -1,0 +1,6 @@
+SELECT TRIM(BOTH 'x' FROM 'xxxxxsome Xsxxxxx') = 'some Xs' AS "some Xs";
+ some Xs 
+---------
+ t
+(1 row)
+

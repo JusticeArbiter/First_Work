@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE deptest (a serial primary key, b text);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P07: relation "deptest" already exists
+LOCATION:  heap_create_with_catalog, heap.c:1066
+STATEMENT:  CREATE TABLE deptest (a serial primary key, b text);

@@ -1,0 +1,4 @@
+insert into patest2  select x, x from generate_series(0,1000) x;
+ERROR:  42P01: relation "patest2" does not exist
+LINE 1: insert into patest2  select x, x from generate_series(0,1000...
+                    ^

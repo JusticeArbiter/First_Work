@@ -1,0 +1,2 @@
+insert into syscolconflicttest values (1);
+INSERT 22471 1

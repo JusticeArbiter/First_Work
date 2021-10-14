@@ -1,0 +1,6 @@
+SELECT btrim(E'\\000trim\\000'::bytea, ''::bytea);
+     btrim      
+----------------
+ \x007472696d00
+(1 row)
+

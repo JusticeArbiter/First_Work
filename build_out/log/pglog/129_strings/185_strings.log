@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT strpos('abcdef', 'xy') AS "pos_0";
+LOCATION:  exec_simple_query, postgres.c:938

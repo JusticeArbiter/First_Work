@@ -1,0 +1,5 @@
+LOG:  00000: statement: create or replace function outer_outer_func(int)  returns int as $$  declare  myresult int;  begin  raise notice 'calling down into outer_func()';  myresult := outer_func($1);  raise notice 'outer_func() done';  return myresult;  end;  $$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create or replace function outer_outer_func(int)  returns int as $$  declare  myresult int;  begin  raise notice 'calling down into outer_func()';  myresult := outer_func($1);  raise notice 'outer_func() done';  return myresult;  end;  $$ language plpgsql;

@@ -1,0 +1,2 @@
+LOG:  00000: statement: create domain ddtest1d as ddtest1[];
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,6 @@
+select namedparmcursor_test9(6);
+ namedparmcursor_test9 
+-----------------------
+                     0
+(1 row)
+

@@ -1,0 +1,8 @@
+explain (costs off)  select * from ec1 where ff = f1 and f1 = '42'::int8alias1;
+              QUERY PLAN               
+---------------------------------------
+ Index Scan using ec1_pkey on ec1
+   Index Cond: (ff = '42'::int8alias1)
+   Filter: (f1 = '42'::int8alias1)
+(3 rows)
+

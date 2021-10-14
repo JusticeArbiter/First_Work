@@ -1,0 +1,5 @@
+LOG:  00000: statement: EXPLAIN (COSTS OFF)  SELECT * FROM fast_emp4000  WHERE home_base @ '(200,200),(2000,1000)'::box  ORDER BY (home_base[0])[0];
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "fast_emp4000" does not exist at character 36
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  EXPLAIN (COSTS OFF)  SELECT * FROM fast_emp4000  WHERE home_base @ '(200,200),(2000,1000)'::box  ORDER BY (home_base[0])[0];

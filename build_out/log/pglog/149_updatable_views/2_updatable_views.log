@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO base_tbl SELECT i, 'Row ' || i FROM generate_series(-2, 2) g(i);
+LOCATION:  exec_simple_query, postgres.c:938

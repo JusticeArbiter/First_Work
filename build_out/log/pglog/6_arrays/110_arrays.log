@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT a FROM arrtest WHERE b = ARRAY[[[113,142],[1,147]]];
+LOCATION:  exec_simple_query, postgres.c:938

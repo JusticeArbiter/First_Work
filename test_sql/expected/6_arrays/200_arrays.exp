@@ -1,0 +1,5 @@
+select array[];
+ERROR:  42P18: cannot determine type of empty array
+LINE 1: select array[];
+               ^
+HINT:  Explicitly cast to the desired type, for example ARRAY[]::integer[].

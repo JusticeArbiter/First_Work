@@ -1,0 +1,3 @@
+CREATE TRIGGER rw_view1_ins_trig INSTEAD OF INSERT ON rw_view1  FOR EACH ROW EXECUTE PROCEDURE rw_view1_trig_fn();
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TRIGGER
+CREATE TRIGGER

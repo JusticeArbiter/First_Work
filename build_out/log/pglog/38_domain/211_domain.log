@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into dtest values('x123');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "dtest" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  insert into dtest values('x123');

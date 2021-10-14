@@ -1,0 +1,8 @@
+LOG:  00000: statement: alter table rewriteme add column baz int default 0;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  alter table rewriteme add column baz int default 0;
+ERROR:  P0001: I'm sorry Sir, No Rewrite Allowed.
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  alter table rewriteme add column baz int default 0;

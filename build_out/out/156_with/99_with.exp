@@ -1,0 +1,6 @@
+WITH outermost(x) AS (  SELECT 1  UNION (WITH innermost as (SELECT 2)  SELECT * FROM outermost  UNION SELECT * FROM innermost)  )  SELECT * FROM outermost;
+ERROR:  42P01: relation "outermost" does not exist
+LINE 1: ...NION (WITH innermost as (SELECT 2)  SELECT * FROM outermost ...
+                                                             ^
+DETAIL:  There is a WITH item named "outermost", but it cannot be referenced from this part of the query.
+HINT:  Use WITH RECURSIVE, or re-order the WITH items to remove forward references.

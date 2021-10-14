@@ -1,0 +1,7 @@
+INSERT INTO city_view VALUES(234567, 'Birmingham', 1016800, 'UK', 'EU') RETURNING *;
+ city_id | city_name  | population | country_name | continent 
+---------+------------+------------+--------------+-----------
+  234567 | Birmingham |    1016800 | UK           | Europe
+(1 row)
+
+INSERT 0 1

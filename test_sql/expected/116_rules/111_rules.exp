@@ -1,0 +1,2 @@
+insert into rtest_admin values ('bm', 'neptun');
+INSERT 0 1

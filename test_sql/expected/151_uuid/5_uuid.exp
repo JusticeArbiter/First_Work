@@ -1,0 +1,4 @@
+INSERT INTO guid1(guid_field) VALUES('111-11111-1111-1111-1111-111111111111');
+ERROR:  22P02: invalid input syntax for uuid: "111-11111-1111-1111-1111-111111111111"
+LINE 1: INSERT INTO guid1(guid_field) VALUES('111-11111-1111-1111-11...
+                                             ^

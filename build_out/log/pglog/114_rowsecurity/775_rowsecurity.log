@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE r1 SET a = 30 RETURNING *;
+LOCATION:  exec_simple_query, postgres.c:938

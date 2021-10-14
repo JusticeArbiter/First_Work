@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into PHone values ('PH.hc001', 'Hicom standard', 'WS.001.1a');
+LOCATION:  exec_simple_query, postgres.c:938

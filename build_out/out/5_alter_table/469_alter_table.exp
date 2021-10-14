@@ -1,0 +1,2 @@
+alter table atacc1 alter oid drop not null;
+ERROR:  0A000: cannot alter system column "oid"

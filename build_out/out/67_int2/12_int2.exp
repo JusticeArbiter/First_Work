@@ -1,0 +1,4 @@
+INSERT INTO INT2_TBL(f1) VALUES ('4 444');
+ERROR:  22P02: invalid input syntax for integer: "4 444"
+LINE 1: INSERT INTO INT2_TBL(f1) VALUES ('4 444');
+                                         ^

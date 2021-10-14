@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT f1 AS eight FROM VARCHAR_TBL  UNION ALL  SELECT f1 FROM CHAR_TBL;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "varchar_tbl" does not exist at character 25
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT f1 AS eight FROM VARCHAR_TBL  UNION ALL  SELECT f1 FROM CHAR_TBL;

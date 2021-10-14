@@ -1,0 +1,2 @@
+FETCH RELATIVE 1 FROM current_check_cursor;
+ERROR:  34000: cursor "current_check_cursor" does not exist

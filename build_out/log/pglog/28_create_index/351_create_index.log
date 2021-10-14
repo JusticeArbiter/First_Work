@@ -1,0 +1,5 @@
+LOG:  00000: statement: create unique index hash_f8_index_3 on hash_f8_heap(random) where seqno > 1000;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "hash_f8_heap" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  create unique index hash_f8_index_3 on hash_f8_heap(random) where seqno > 1000;

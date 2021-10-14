@@ -1,0 +1,2 @@
+LOG:  00000: statement: explain (costs off)  select first_value(max(x)) over (), y  from (select unique1 as x, ten+four as y from tenk1) ss  group by y;
+LOCATION:  exec_simple_query, postgres.c:938

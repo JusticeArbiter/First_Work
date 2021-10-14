@@ -1,0 +1,4 @@
+DROP FOREIGN DATA WRAPPER IF EXISTS nonexistent;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FOREIGN DATA WRAPPER
+NOTICE:  00000: foreign-data wrapper "nonexistent" does not exist, skipping
+DROP FOREIGN DATA WRAPPER

@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE boxes SET b = '(2,2),(1,1)' WHERE id = 2;
+LOCATION:  exec_simple_query, postgres.c:938

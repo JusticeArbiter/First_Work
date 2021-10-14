@@ -1,0 +1,6 @@
+SELECT xpath_exists('count(/nosuchtag)', '<root/>'::xml);
+ xpath_exists 
+--------------
+ t
+(1 row)
+

@@ -1,0 +1,20 @@
+LOG:  00000: statement: DROP ROLE IF EXISTS foreign_data_user, regress_test_role, regress_test_role2, regress_test_role_super, regress_test_indirect, unpriviled_role;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: role "foreign_data_user" does not exist, skipping
+LOCATION:  DropRole, user.c:978
+STATEMENT:  DROP ROLE IF EXISTS foreign_data_user, regress_test_role, regress_test_role2, regress_test_role_super, regress_test_indirect, unpriviled_role;
+NOTICE:  00000: role "regress_test_role" does not exist, skipping
+LOCATION:  DropRole, user.c:978
+STATEMENT:  DROP ROLE IF EXISTS foreign_data_user, regress_test_role, regress_test_role2, regress_test_role_super, regress_test_indirect, unpriviled_role;
+NOTICE:  00000: role "regress_test_role2" does not exist, skipping
+LOCATION:  DropRole, user.c:978
+STATEMENT:  DROP ROLE IF EXISTS foreign_data_user, regress_test_role, regress_test_role2, regress_test_role_super, regress_test_indirect, unpriviled_role;
+NOTICE:  00000: role "regress_test_role_super" does not exist, skipping
+LOCATION:  DropRole, user.c:978
+STATEMENT:  DROP ROLE IF EXISTS foreign_data_user, regress_test_role, regress_test_role2, regress_test_role_super, regress_test_indirect, unpriviled_role;
+NOTICE:  00000: role "regress_test_indirect" does not exist, skipping
+LOCATION:  DropRole, user.c:978
+STATEMENT:  DROP ROLE IF EXISTS foreign_data_user, regress_test_role, regress_test_role2, regress_test_role_super, regress_test_indirect, unpriviled_role;
+NOTICE:  00000: role "unpriviled_role" does not exist, skipping
+LOCATION:  DropRole, user.c:978
+STATEMENT:  DROP ROLE IF EXISTS foreign_data_user, regress_test_role, regress_test_role2, regress_test_role_super, regress_test_indirect, unpriviled_role;

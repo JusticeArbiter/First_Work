@@ -1,0 +1,7 @@
+SELECT relname, conname, contype, conislocal, coninhcount, connoinherit  FROM pg_class AS pc JOIN pg_constraint AS pgc ON (conrelid = pc.oid)  WHERE pc.relname = 'pt1'  ORDER BY 1,2;
+ relname | conname | contype | conislocal | coninhcount | connoinherit 
+---------+---------+---------+------------+-------------+--------------
+ pt1     | pt1chk1 | c       | t          |           0 | t
+ pt1     | pt1chk2 | c       | t          |           0 | f
+(2 rows)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE users SET id = 4 WHERE id = 3;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "users" does not exist at character 8
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  UPDATE users SET id = 4 WHERE id = 3;

@@ -1,0 +1,4 @@
+DROP OWNED BY regress_test_role2 CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP OWNED
+NOTICE:  00000: drop cascades to user mapping for highgo on server s5
+DROP OWNED

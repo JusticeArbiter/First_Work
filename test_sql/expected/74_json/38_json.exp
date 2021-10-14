@@ -1,0 +1,6 @@
+SELECT 'true'::json;
+ json 
+------
+ true
+(1 row)
+

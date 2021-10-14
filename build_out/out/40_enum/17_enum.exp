@@ -1,0 +1,2 @@
+ALTER TYPE planets ADD VALUE 'mercury';
+ERROR:  42710: enum label "mercury" already exists

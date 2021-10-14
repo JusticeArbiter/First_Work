@@ -1,0 +1,6 @@
+select hex_to_decimal('0XABCDEF'::text);
+ hex_to_decimal 
+----------------
+       11259375
+(1 row)
+

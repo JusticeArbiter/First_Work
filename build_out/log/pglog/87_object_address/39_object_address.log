@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT pg_get_object_address('large object', '{123}', '{}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: large object 123 does not exist
+LOCATION:  get_object_address, objectaddress.c:855
+STATEMENT:  SELECT pg_get_object_address('large object', '{123}', '{}');

@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into twoconstraints values(2, '((0,0),(1,2))');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23P01: conflicting key value violates exclusion constraint "twoconstraints_f2_excl"
+DETAIL:  Key (f2)=((1,2),(0,0)) conflicts with existing key (f2)=((1,1),(0,0)).
+LOCATION:  check_exclusion_or_unique_constraint, execIndexing.c:839
+STATEMENT:  insert into twoconstraints values(2, '((0,0),(1,2))');

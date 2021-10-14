@@ -1,0 +1,3 @@
+GRANT ALL ON SCHEMA selinto_schema TO public;
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+GRANT

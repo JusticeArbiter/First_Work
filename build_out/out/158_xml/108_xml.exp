@@ -1,0 +1,3 @@
+SELECT xpath('', '<!-- error -->');
+ERROR:  22000: empty XPath expression
+CONTEXT:  SQL function "xpath" statement 1

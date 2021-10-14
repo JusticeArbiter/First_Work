@@ -1,0 +1,8 @@
+LOG:  00000: statement: DELETE FROM main_table WHERE a IN (123, 456);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: trigger_func(delete_a) called: action = DELETE, when = AFTER, level = ROW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DELETE FROM main_table WHERE a IN (123, 456);
+NOTICE:  00000: trigger_func(delete_when) called: action = DELETE, when = AFTER, level = STATEMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DELETE FROM main_table WHERE a IN (123, 456);

@@ -1,0 +1,3 @@
+DROP TABLE test_drop_constr_parent CASCADE;
+NOTICE:  00000: drop cascades to table test_drop_constr_child
+DROP TABLE

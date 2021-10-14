@@ -1,0 +1,2 @@
+select format('%1$1', 1);
+ERROR:  22023: unterminated format specifier

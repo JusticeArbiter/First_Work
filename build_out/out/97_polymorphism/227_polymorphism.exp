@@ -1,0 +1,5 @@
+select * from dfunc('Hello World', c := 20, b := '2009-07-25'::date);
+ERROR:  42883: function dfunc(unknown, c => integer, b => date) does not exist
+LINE 1: select * from dfunc('Hello World', c := 20, b := '2009-07-25...
+                      ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

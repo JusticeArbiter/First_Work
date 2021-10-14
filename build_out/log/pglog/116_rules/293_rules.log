@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE VIEW shoelace AS  SELECT s.sl_name,  s.sl_avail,  s.sl_color,  s.sl_len,  s.sl_unit,  s.sl_len * u.un_fact AS sl_len_cm  FROM shoelace_data s, unit u  WHERE s.sl_unit = u.un_name;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE VIEW shoelace AS  SELECT s.sl_name,  s.sl_avail,  s.sl_color,  s.sl_len,  s.sl_unit,  s.sl_len * u.un_fact AS sl_len_cm  FROM shoelace_data s, unit u  WHERE s.sl_unit = u.un_name;

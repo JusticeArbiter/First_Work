@@ -1,0 +1,1 @@
+INSERT INTO wi SELECT i+3 FROM wi;

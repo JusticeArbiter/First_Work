@@ -1,0 +1,6 @@
+SELECT count(oid) FROM wi;
+ count 
+-------
+  9136
+(1 row)
+

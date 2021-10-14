@@ -1,0 +1,5 @@
+LOG:  00000: statement: create or replace function case_test(bigint) returns text as $$  declare a int = 10;  b int = 1;  begin  case $1  when 1 then  return 'one';  when 2 then  return 'two';  when 3,4,3+5 then  return 'three, four or eight';  when a then  return 'ten';  when a+b, a+b+1 then  return 'eleven, twelve';  end case;  end;  $$ language plpgsql immutable;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create or replace function case_test(bigint) returns text as $$  declare a int = 10;  b int = 1;  begin  case $1  when 1 then  return 'one';  when 2 then  return 'two';  when 3,4,3+5 then  return 'three, four or eight';  when a then  return 'ten';  when a+b, a+b+1 then  return 'eleven, twelve';  end case;  end;  $$ language plpgsql immutable;

@@ -1,0 +1,129 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TEMP TABLE articles (                                                        +
+     id int CONSTRAINT articles_pkey PRIMARY KEY,                                               +
+     keywords text,                                                                             +
+     title text UNIQUE NOT NULL,                                                                +
+     body text UNIQUE,                                                                          +
+     created date                                                                               +
+ );
+ statement: CREATE TEMP TABLE articles_in_category (                                            +
+     article_id int,                                                                            +
+     category_id int,                                                                           +
+     changed date,                                                                              +
+     PRIMARY KEY (article_id, category_id)                                                      +
+ );
+ statement: SELECT id, keywords, title, body, created                                           +
+ FROM articles                                                                                  +
+ GROUP BY id;
+ statement: SELECT id, keywords, title, body, created                                           +
+ FROM articles                                                                                  +
+ GROUP BY title;
+ statement: SELECT id, keywords, title, body, created                                           +
+ FROM articles                                                                                  +
+ GROUP BY body;
+ statement: SELECT id, keywords, title, body, created                                           +
+ FROM articles                                                                                  +
+ GROUP BY keywords;
+ statement: SELECT a.id, a.keywords, a.title, a.body, a.created                                 +
+ FROM articles AS a, articles_in_category AS aic                                                +
+ WHERE a.id = aic.article_id AND aic.category_id in (14,62,70,53,138)                           +
+ GROUP BY a.id;
+ statement: SELECT a.id, a.keywords, a.title, a.body, a.created                                 +
+ FROM articles AS a, articles_in_category AS aic                                                +
+ WHERE a.id = aic.article_id AND aic.category_id in (14,62,70,53,138)                           +
+ GROUP BY aic.article_id, aic.category_id;
+ statement: SELECT a.id, a.keywords, a.title, a.body, a.created                                 +
+ FROM articles AS a JOIN articles_in_category AS aic ON a.id = aic.article_id                   +
+ WHERE aic.category_id in (14,62,70,53,138)                                                     +
+ GROUP BY a.id;
+ statement: SELECT a.id, a.keywords, a.title, a.body, a.created                                 +
+ FROM articles AS a JOIN articles_in_category AS aic ON a.id = aic.article_id                   +
+ WHERE aic.category_id in (14,62,70,53,138)                                                     +
+ GROUP BY aic.article_id, aic.category_id;
+ statement: SELECT aic.changed                                                                  +
+ FROM articles AS a JOIN articles_in_category AS aic ON a.id = aic.article_id                   +
+ WHERE aic.category_id in (14,62,70,53,138)                                                     +
+ GROUP BY aic.category_id, aic.article_id;
+ statement: SELECT aic.changed                                                                  +
+ FROM articles AS a JOIN articles_in_category AS aic ON a.id = aic.article_id                   +
+ WHERE aic.category_id in (14,62,70,53,138)                                                     +
+ GROUP BY aic.article_id;
+ statement: CREATE TEMP TABLE products (product_id int, name text, price numeric);
+ statement: CREATE TEMP TABLE sales (product_id int, units int);
+ statement: SELECT product_id, p.name, (sum(s.units) * p.price) AS sales                        +
+     FROM products p LEFT JOIN sales s USING (product_id)                                       +
+     GROUP BY product_id, p.name, p.price;
+ statement: SELECT product_id, p.name, (sum(s.units) * p.price) AS sales                        +
+     FROM products p LEFT JOIN sales s USING (product_id)                                       +
+     GROUP BY product_id;
+ statement: ALTER TABLE products ADD PRIMARY KEY (product_id);
+ statement: SELECT product_id, p.name, (sum(s.units) * p.price) AS sales                        +
+     FROM products p LEFT JOIN sales s USING (product_id)                                       +
+     GROUP BY product_id;
+ statement: CREATE TEMP TABLE node (                                                            +
+     nid SERIAL,                                                                                +
+     vid integer NOT NULL default '0',                                                          +
+     type varchar(32) NOT NULL default '',                                                      +
+     title varchar(128) NOT NULL default '',                                                    +
+     uid integer NOT NULL default '0',                                                          +
+     status integer NOT NULL default '1',                                                       +
+     created integer NOT NULL default '0',                                                      +
+                                                                                                +
+     PRIMARY KEY (nid, vid)                                                                     +
+ );
+ statement: CREATE TEMP TABLE users (                                                           +
+     uid integer NOT NULL default '0',                                                          +
+     name varchar(60) NOT NULL default '',                                                      +
+     pass varchar(32) NOT NULL default '',                                                      +
+                                                                                                +
+     PRIMARY KEY (uid),                                                                         +
+     UNIQUE (name)                                                                              +
+ );
+ statement: SELECT u.uid, u.name FROM node n                                                    +
+ INNER JOIN users u ON u.uid = n.uid                                                            +
+ WHERE n.type = 'blog' AND n.status = 1                                                         +
+ GROUP BY u.uid, u.name;
+ statement: SELECT u.uid, u.name FROM node n                                                    +
+ INNER JOIN users u ON u.uid = n.uid                                                            +
+ WHERE n.type = 'blog' AND n.status = 1                                                         +
+ GROUP BY u.uid;
+ statement: CREATE TEMP VIEW fdv1 AS                                                            +
+ SELECT id, keywords, title, body, created                                                      +
+ FROM articles                                                                                  +
+ GROUP BY body;
+ statement: CREATE TEMP VIEW fdv1 AS                                                            +
+ SELECT id, keywords, title, body, created                                                      +
+ FROM articles                                                                                  +
+ GROUP BY id;
+ statement: ALTER TABLE articles DROP CONSTRAINT articles_pkey RESTRICT;
+ statement: DROP VIEW fdv1;
+ statement: CREATE TEMP VIEW fdv2 AS                                                            +
+ SELECT a.id, a.keywords, a.title, aic.category_id, aic.changed                                 +
+ FROM articles AS a JOIN articles_in_category AS aic ON a.id = aic.article_id                   +
+ WHERE aic.category_id in (14,62,70,53,138)                                                     +
+ GROUP BY a.id, aic.category_id, aic.article_id;
+ statement: ALTER TABLE articles DROP CONSTRAINT articles_pkey RESTRICT;
+ statement: ALTER TABLE articles_in_category DROP CONSTRAINT articles_in_category_pkey RESTRICT;
+ statement: DROP VIEW fdv2;
+ statement: CREATE TEMP VIEW fdv3 AS                                                            +
+ SELECT id, keywords, title, body, created                                                      +
+ FROM articles                                                                                  +
+ GROUP BY id                                                                                    +
+ UNION                                                                                          +
+ SELECT id, keywords, title, body, created                                                      +
+ FROM articles                                                                                  +
+ GROUP BY id;
+ statement: ALTER TABLE articles DROP CONSTRAINT articles_pkey RESTRICT;
+ statement: DROP VIEW fdv3;
+ statement: CREATE TEMP VIEW fdv4 AS                                                            +
+ SELECT * FROM articles WHERE title IN (SELECT title FROM articles GROUP BY id);
+ statement: ALTER TABLE articles DROP CONSTRAINT articles_pkey RESTRICT;
+ statement: DROP VIEW fdv4;
+ statement: PREPARE foo AS                                                                      +
+   SELECT id, keywords, title, body, created                                                    +
+   FROM articles                                                                                +
+   GROUP BY id;
+ statement: EXECUTE foo;
+ statement: ALTER TABLE articles DROP CONSTRAINT articles_pkey RESTRICT;
+ statement: EXECUTE foo;
+

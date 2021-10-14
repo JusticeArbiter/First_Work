@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE constraint_rename_test (a int CONSTRAINT con1 CHECK (a > 0), b int, c int);
+LOCATION:  exec_simple_query, postgres.c:938

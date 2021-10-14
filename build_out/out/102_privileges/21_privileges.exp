@@ -1,0 +1,3 @@
+ALTER GROUP regressgroup2 ADD USER regressuser2;
+NOTICE:  00000: role "regressuser2" is already a member of role "regressgroup2"
+ALTER ROLE

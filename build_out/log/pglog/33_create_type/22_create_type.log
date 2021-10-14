@@ -1,0 +1,5 @@
+LOG:  00000: statement: COMMENT ON TYPE bad IS 'bad comment';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: type "bad" does not exist
+LOCATION:  get_object_address_type, objectaddress.c:1461
+STATEMENT:  COMMENT ON TYPE bad IS 'bad comment';

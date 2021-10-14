@@ -1,0 +1,6 @@
+select dfunc(0);
+  dfunc   
+----------
+ Hello, 0
+(1 row)
+

@@ -1,0 +1,2 @@
+ALTER COLLATION test11 OWNER TO nonsense;
+ERROR:  42704: role "nonsense" does not exist

@@ -1,0 +1,2 @@
+LOG:  00000: statement: update rtest_v1 set b = 99 where b = 42;
+LOCATION:  exec_simple_query, postgres.c:938

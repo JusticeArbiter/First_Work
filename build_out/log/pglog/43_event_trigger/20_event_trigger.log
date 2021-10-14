@@ -1,0 +1,2 @@
+LOG:  00000: statement: set role regression_bob;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,2 @@
+alter domain con drop constraint nonexistent;
+ERROR:  42704: constraint "nonexistent" of domain "con" does not exist

@@ -1,0 +1,6 @@
+select * from  (select 1 as id) as xx  left join  (tenk1 as a1 full join (select 1 as id) as yy on (a1.unique1 = yy.id))  on (xx.id = coalesce(yy.id));
+ id | unique1 | unique2 | two | four | ten | twenty | hundred | thousand | twothousand | fivethous | tenthous | odd | even | stringu1 | stringu2 | string4 | id 
+----+---------+---------+-----+------+-----+--------+---------+----------+-------------+-----------+----------+-----+------+----------+----------+---------+----
+  1 |         |         |     |      |     |        |         |          |             |           |          |     |      |          |          |         |  1
+(1 row)
+

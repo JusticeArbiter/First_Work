@@ -1,0 +1,5 @@
+LOG:  00000: statement: create index "testing_idx" on atacc1("........pg.dropped.1........");
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "........pg.dropped.1........" does not exist
+LOCATION:  ComputeIndexAttrs, indexcmds.c:1010
+STATEMENT:  create index "testing_idx" on atacc1("........pg.dropped.1........");

@@ -1,0 +1,6 @@
+select string_to_array('abc', ',', 'abc');
+ string_to_array 
+-----------------
+ {NULL}
+(1 row)
+

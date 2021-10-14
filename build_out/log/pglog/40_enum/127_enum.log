@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TYPE bogon ADD VALUE 'bad';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: enum label "bad" already exists
+LOCATION:  AddEnumLabel, pg_enum.c:239
+STATEMENT:  ALTER TYPE bogon ADD VALUE 'bad';

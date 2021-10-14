@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from domview;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23502: domain dom does not allow null values
+LOCATION:  ExecEvalCoerceToDomain, execQual.c:4021
+STATEMENT:  select * from domview;

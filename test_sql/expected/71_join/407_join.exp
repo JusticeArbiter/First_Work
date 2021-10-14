@@ -1,0 +1,5 @@
+select f1,g from int4_tbl a cross join (select f1 as g) ss;
+ERROR:  42703: column "f1" does not exist
+LINE 1: select f1,g from int4_tbl a cross join (select f1 as g) ss;
+                                                       ^
+HINT:  There is a column named "f1" in table "a", but it cannot be referenced from this part of the query.

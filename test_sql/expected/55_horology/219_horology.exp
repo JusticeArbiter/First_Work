@@ -1,0 +1,4 @@
+SELECT to_timestamp('19971)24', 'YYYYMMDD');
+ERROR:  22007: invalid value "1)" for "MM"
+DETAIL:  Field requires 2 characters, but only 1 could be parsed.
+HINT:  If your source string is not fixed-width, try using the "FM" modifier.

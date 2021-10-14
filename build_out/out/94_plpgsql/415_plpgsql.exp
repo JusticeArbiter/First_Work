@@ -1,0 +1,8 @@
+SELECT reraise_test();
+NOTICE:  00000: exception syntax_error thrown in inner block, reraising
+NOTICE:  00000: RIGHT - exception syntax_error caught in inner block
+ reraise_test 
+--------------
+ 
+(1 row)
+

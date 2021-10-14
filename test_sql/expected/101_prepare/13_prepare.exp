@@ -1,0 +1,2 @@
+DEALLOCATE PREPARE q2;
+ERROR:  26000: prepared statement "q2" does not exist

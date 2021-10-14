@@ -1,0 +1,15 @@
+explain (costs off)  select * from ec1,  (select ff + 1 as x from  (select ff + 2 as ff from ec1  union all  select ff + 3 as ff from ec1) ss0  union all  select ff + 4 as x from ec1) as ss1  where ss1.x = ec1.f1 and ec1.ff = 42::int8;
+                     QUERY PLAN                      
+-----------------------------------------------------
+ Nested Loop
+   ->  Index Scan using ec1_pkey on ec1
+         Index Cond: (ff = '42'::bigint)
+   ->  Append
+         ->  Index Scan using ec1_expr2 on ec1 ec1_1
+               Index Cond: (((ff + 2) + 1) = ec1.f1)
+         ->  Seq Scan on ec1 ec1_2
+               Filter: (((ff + 3) + 1) = ec1.f1)
+         ->  Index Scan using ec1_expr4 on ec1 ec1_3
+               Index Cond: ((ff + 4) = ec1.f1)
+(10 rows)
+

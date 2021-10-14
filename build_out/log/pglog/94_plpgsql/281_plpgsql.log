@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into IFace values ('IF', 'notthere', 'eth0', '');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  P0001: system "notthere" does not exist
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  insert into IFace values ('IF', 'notthere', 'eth0', '');

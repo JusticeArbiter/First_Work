@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP FUNCTION foor(in f2 int, out f1 int, out text);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP FUNCTION foor(in f2 int, out f1 int, out text);

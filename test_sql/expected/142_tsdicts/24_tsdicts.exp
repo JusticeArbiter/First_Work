@@ -1,0 +1,6 @@
+SELECT ts_lexize('hunspell', 'rebooking');
+   ts_lexize    
+----------------
+ {booking,book}
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: with recursive q as (  select * from department  union all  (with recursive x as (  select * from department  union all  (select * from q union all select * from x)  )  select * from x)  )  select * from q limit 32;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "department" does not exist at character 38
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  with recursive q as (  select * from department  union all  (with recursive x as (  select * from department  union all  (select * from q union all select * from x)  )  select * from x)  )  select * from q limit 32;

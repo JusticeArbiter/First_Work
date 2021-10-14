@@ -1,0 +1,17 @@
+SELECT a, CASE b WHEN 'abc' THEN 'abcd' ELSE b END FROM collate_test2 ORDER BY 2;
+ a |  b   
+---+------
+ 2 | Abc
+ 4 | ABC
+ 4 | ABC
+ 1 | abcd
+ 1 | abcd
+ 1 | abcd
+ 4 | ABD
+ 3 | bbc
+ 3 | bbc
+ 3 | bbc
+ 2 | äbc
+ 2 | äbc
+(12 rows)
+

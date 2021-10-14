@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT span * 8.2 AS product  FROM INTERVAL_MULDIV_TBL;
+LOCATION:  exec_simple_query, postgres.c:938

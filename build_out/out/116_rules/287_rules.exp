@@ -1,0 +1,11 @@
+select * from rtest_vcomp order by part;
+ part | size_in_cm 
+------+------------
+ p1   |        500
+ p2   |        300
+ p3   |          5
+ p4   |         15
+ p5   |      17.78
+ p6   |     11.176
+(6 rows)
+

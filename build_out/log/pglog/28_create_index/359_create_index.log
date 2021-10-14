@@ -1,0 +1,6 @@
+LOG:  00000: statement: INSERT INTO concur_heap VALUES ('b','x');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: duplicate key value violates unique constraint "concur_index2"
+DETAIL:  Key (f1)=(b) already exists.
+LOCATION:  _bt_check_unique, nbtinsert.c:432
+STATEMENT:  INSERT INTO concur_heap VALUES ('b','x');

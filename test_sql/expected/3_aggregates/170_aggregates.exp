@@ -1,0 +1,2 @@
+insert into bytea_test_table values(decode('ff','hex'));
+INSERT 0 1

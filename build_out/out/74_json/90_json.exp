@@ -1,0 +1,4 @@
+SELECT test_json -> 2  FROM test_json  WHERE json_type = 'array';
+ERROR:  42P01: relation "test_json" does not exist
+LINE 1: SELECT test_json -> 2  FROM test_json  WHERE json_type = 'ar...
+                                    ^

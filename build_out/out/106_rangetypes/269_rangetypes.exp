@@ -1,0 +1,6 @@
+select textrange2('a','z') @> 'b'::text;
+ ?column? 
+----------
+ t
+(1 row)
+

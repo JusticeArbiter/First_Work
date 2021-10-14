@@ -1,0 +1,2 @@
+DROP ROLE tr1;
+ERROR:  42704: role "tr1" does not exist

@@ -1,0 +1,2 @@
+COMMENT ON OPERATOR ###### (int4, NONE) IS 'bad right unary';
+ERROR:  42883: operator does not exist: integer ######

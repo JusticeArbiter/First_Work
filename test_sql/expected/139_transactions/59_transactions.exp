@@ -1,0 +1,4 @@
+PREPARE test AS UPDATE writetest SET a = 0;
+ERROR:  42P01: relation "writetest" does not exist
+LINE 1: PREPARE test AS UPDATE writetest SET a = 0;
+                               ^

@@ -1,0 +1,2 @@
+LOG:  00000: statement: create domain mynums2 as mynums;
+LOCATION:  exec_simple_query, postgres.c:938

@@ -1,0 +1,3 @@
+CREATE TABLE ctlt13_inh () INHERITS (ctlt1, ctlt3);
+NOTICE:  00000: merging multiple inherited definitions of column "a"
+CREATE TABLE

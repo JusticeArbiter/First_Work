@@ -1,0 +1,9 @@
+SELECT v, length(v) AS lv  FROM VARBIT_TABLE;
+      v      | lv 
+-------------+----
+             |  0
+ 0           |  1
+ 010101      |  6
+ 01010101010 | 11
+(4 rows)
+

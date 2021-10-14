@@ -1,0 +1,28 @@
+explain (costs off)  select b.unique1 from  tenk1 a join tenk1 b on a.unique1 = b.unique2  left join tenk1 c on b.unique1 = 42 and c.thousand = a.thousand  join int4_tbl i1 on b.thousand = f1  right join int4_tbl i2 on i2.f1 = b.tenthous  order by 1;
+                                QUERY PLAN                                
+--------------------------------------------------------------------------
+ Sort
+   Sort Key: b.unique1
+   ->  Merge Left Join
+         Merge Cond: (i2.f1 = b.tenthous)
+         ->  Sort
+               Sort Key: i2.f1
+               ->  Seq Scan on int4_tbl i2
+         ->  Sort
+               Sort Key: b.tenthous
+               ->  Hash Join
+                     Hash Cond: (i1.f1 = b.thousand)
+                     ->  Seq Scan on int4_tbl i1
+                     ->  Hash
+                           ->  Hash Left Join
+                                 Hash Cond: (a.thousand = c.thousand)
+                                 Join Filter: (b.unique1 = 42)
+                                 ->  Hash Join
+                                       Hash Cond: (a.unique1 = b.unique2)
+                                       ->  Seq Scan on tenk1 a
+                                       ->  Hash
+                                             ->  Seq Scan on tenk1 b
+                                 ->  Hash
+                                       ->  Seq Scan on tenk1 c
+(23 rows)
+

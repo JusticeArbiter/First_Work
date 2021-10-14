@@ -1,0 +1,2 @@
+insert into another values(1, 'one');
+INSERT 0 1

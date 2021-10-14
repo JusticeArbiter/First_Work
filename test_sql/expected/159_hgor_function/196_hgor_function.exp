@@ -1,0 +1,6 @@
+select ascii('A'::text),ascii('a'::text),ascii('1'::text),ascii(','::text);
+ ascii | ascii | ascii | ascii 
+-------+-------+-------+-------
+    65 |    97 |    49 |    44
+(1 row)
+

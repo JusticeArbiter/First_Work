@@ -1,0 +1,2 @@
+LOG:  00000: statement: DROP ROLE testrol0, testrol1, testrol2, testrolx;
+LOCATION:  exec_simple_query, postgres.c:938

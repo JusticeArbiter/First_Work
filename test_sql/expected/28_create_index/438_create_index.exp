@@ -1,0 +1,4 @@
+SELECT unique1, unique2 INTO onek_with_null FROM onek;
+ERROR:  42P01: relation "onek" does not exist
+LINE 1: SELECT unique1, unique2 INTO onek_with_null FROM onek;
+                                                         ^

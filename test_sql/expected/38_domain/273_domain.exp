@@ -1,0 +1,3 @@
+drop domain posint cascade;
+NOTICE:  00000: drop cascades to type posint2
+DROP DOMAIN

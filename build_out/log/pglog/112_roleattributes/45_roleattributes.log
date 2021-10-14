@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER USER test_user_canlogin WITH LOGIN;
+LOCATION:  exec_simple_query, postgres.c:938

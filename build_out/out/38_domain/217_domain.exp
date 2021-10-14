@@ -1,0 +1,2 @@
+drop table dtest;
+ERROR:  42P01: table "dtest" does not exist

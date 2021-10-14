@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE POLICY p1 ON t1 FOR ALL TO PUBLIC USING (a % 2 = 0);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE POLICY
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE POLICY p1 ON t1 FOR ALL TO PUBLIC USING (a % 2 = 0);
+ERROR:  42703: column "a" does not exist
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  CREATE POLICY p1 ON t1 FOR ALL TO PUBLIC USING (a % 2 = 0);

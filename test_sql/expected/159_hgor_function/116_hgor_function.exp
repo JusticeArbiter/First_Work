@@ -1,0 +1,6 @@
+select decode(2016,2016,'HGDB2.0.2'::varchar);
+  decode   
+-----------
+ HGDB2.0.2
+(1 row)
+

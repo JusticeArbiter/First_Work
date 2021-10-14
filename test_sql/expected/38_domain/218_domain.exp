@@ -1,0 +1,5 @@
+drop domain vchar4 cascade;
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to type dinter
+drop cascades to type dtop
+DROP DOMAIN

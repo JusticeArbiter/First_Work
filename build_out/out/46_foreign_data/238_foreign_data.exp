@@ -1,0 +1,2 @@
+EXPLAIN SELECT * FROM ft1;
+ERROR:  55000: foreign-data wrapper "dummy" has no handler

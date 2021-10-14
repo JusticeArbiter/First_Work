@@ -1,0 +1,6 @@
+SELECT regproc('pg_catalog.now');
+ regproc 
+---------
+ now
+(1 row)
+

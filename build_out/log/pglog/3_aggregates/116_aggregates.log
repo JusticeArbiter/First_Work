@@ -1,0 +1,2 @@
+LOG:  00000: statement: select array_agg(a order by b)  from (values (1,4),(2,3),(3,1),(4,2)) v(a,b);
+LOCATION:  exec_simple_query, postgres.c:938

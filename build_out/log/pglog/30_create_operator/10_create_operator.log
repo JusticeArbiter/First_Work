@@ -1,0 +1,2 @@
+LOG:  00000: statement: GRANT USAGE ON SCHEMA schema_op1 TO PUBLIC;
+LOCATION:  exec_simple_query, postgres.c:938

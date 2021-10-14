@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into rewriteme  select x * 1.001 from generate_series(1, 500) as t(x);
+LOCATION:  exec_simple_query, postgres.c:938

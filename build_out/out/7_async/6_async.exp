@@ -1,0 +1,2 @@
+SELECT pg_notify('notify_async_channel_name_too_long______________________________','sample_message1');
+ERROR:  22023: channel name too long

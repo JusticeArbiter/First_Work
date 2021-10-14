@@ -1,0 +1,6 @@
+select end_label1();
+ end_label1 
+------------
+ 
+(1 row)
+

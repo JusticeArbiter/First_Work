@@ -1,0 +1,2 @@
+LOG:  00000: statement: select 10 as "bad name"
+LOCATION:  exec_simple_query, postgres.c:938

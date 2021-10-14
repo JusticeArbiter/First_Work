@@ -1,0 +1,4 @@
+SELECT * FROM collate_test1 WHERE b COLLATE "C" >= 'bbc' COLLATE "POSIX";
+ERROR:  42P21: collation mismatch between explicit collations "C" and "POSIX"
+LINE 1: ...* FROM collate_test1 WHERE b COLLATE "C" >= 'bbc' COLLATE "P...
+                                                             ^

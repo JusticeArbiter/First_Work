@@ -1,0 +1,7 @@
+select strtest();
+NOTICE:  00000: foo\bar!baz
+   strtest   
+-------------
+ foo\bar!baz
+(1 row)
+

@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT '' AS six, diameter(f1) AS diameter  FROM CIRCLE_TBL;
+LOCATION:  exec_simple_query, postgres.c:938

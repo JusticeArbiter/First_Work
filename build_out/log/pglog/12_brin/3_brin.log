@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO brintest (inetcol, cidrcol, int4rangecol) SELECT  inet 'fe80::6e40:8ff:fea9:8c46' + tenthous,  cidr 'fe80::6e40:8ff:fea9:8c46' + tenthous,  'empty'::int4range  FROM tenk1 ORDER BY thousand, tenthous LIMIT 25;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tenk1" does not exist at character 178
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  INSERT INTO brintest (inetcol, cidrcol, int4rangecol) SELECT  inet 'fe80::6e40:8ff:fea9:8c46' + tenthous,  cidr 'fe80::6e40:8ff:fea9:8c46' + tenthous,  'empty'::int4range  FROM tenk1 ORDER BY thousand, tenthous LIMIT 25;

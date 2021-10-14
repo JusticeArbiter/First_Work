@@ -1,0 +1,11 @@
+select * from PSlot where slotname ~ 'PS.base.a' order by slotname;
+       slotname       | pfname |       slotlink       |       backlink       
+----------------------+--------+----------------------+----------------------
+ PS.base.a1           | PF0_1  |                      | WS.001.1a           
+ PS.base.a2           | PF0_1  |                      |                     
+ PS.base.a3           | PF0_1  |                      | WS.001.2a           
+ PS.base.a4           | PF0_1  |                      |                     
+ PS.base.a5           | PF0_1  |                      |                     
+ PS.base.a6           | PF0_1  |                      |                     
+(6 rows)
+

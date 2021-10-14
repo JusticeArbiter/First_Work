@@ -1,0 +1,1 @@
+SELECT * INTO TABLE onek2 FROM onek;

@@ -1,0 +1,3 @@
+DROP ROLE IF EXISTS regressuser2;
+NOTICE:  00000: role "regressuser2" does not exist, skipping
+DROP ROLE

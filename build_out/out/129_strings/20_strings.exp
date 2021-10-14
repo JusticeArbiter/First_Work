@@ -1,0 +1,4 @@
+SELECT E'De\\678dBeEf'::bytea;
+ERROR:  22P02: invalid input syntax for type bytea
+LINE 1: SELECT E'De\\678dBeEf'::bytea;
+               ^

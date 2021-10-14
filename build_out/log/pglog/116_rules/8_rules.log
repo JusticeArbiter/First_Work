@@ -1,0 +1,8 @@
+LOG:  00000: statement: COMMENT ON RULE rtest_v1_bad ON rtest_v1 IS 'bad rule';
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start COMMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  COMMENT ON RULE rtest_v1_bad ON rtest_v1 IS 'bad rule';
+ERROR:  42704: rule "rtest_v1_bad" for relation "rtest_v1" does not exist
+LOCATION:  get_rewrite_oid, rewriteSupport.c:113
+STATEMENT:  COMMENT ON RULE rtest_v1_bad ON rtest_v1 IS 'bad rule';

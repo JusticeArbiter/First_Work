@@ -1,0 +1,8 @@
+select * from another;
+ f1 |  f2   
+----+-------
+  1 | one
+  2 | two
+  3 | three
+(3 rows)
+

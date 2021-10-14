@@ -1,0 +1,3 @@
+ALTER TABLE atest6 DROP COLUMN two;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+ALTER TABLE

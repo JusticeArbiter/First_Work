@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE CASE_TBL (  i integer,  f double precision  );
+LOCATION:  exec_simple_query, postgres.c:938

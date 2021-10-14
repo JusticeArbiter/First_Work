@@ -1,0 +1,6 @@
+LOG:  00000: statement: insert into insertconflicttest values (26, 'Peach') on conflict (key) do update set fruit = excluded.fruit;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  23505: duplicate key value violates unique constraint "fruit_index"
+DETAIL:  Key (fruit)=(Peach) already exists.
+LOCATION:  _bt_check_unique, nbtinsert.c:432
+STATEMENT:  insert into insertconflicttest values (26, 'Peach') on conflict (key) do update set fruit = excluded.fruit;

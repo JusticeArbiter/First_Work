@@ -1,0 +1,11 @@
+DROP SCHEMA evttrig CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SCHEMA
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to table evttrig.one
+drop cascades to table evttrig.two
+NOTICE:  00000: NORMAL: orig=t normal=f istemp=f type=schema identity=evttrig name={evttrig} args={}
+NOTICE:  00000: NORMAL: orig=f normal=t istemp=f type=table identity=evttrig.one name={evttrig,one} args={}
+NOTICE:  00000: NORMAL: orig=f normal=t istemp=f type=sequence identity=evttrig.one_col_a_seq name={evttrig,one_col_a_seq} args={}
+NOTICE:  00000: NORMAL: orig=f normal=t istemp=f type=default value identity=for evttrig.one.col_a name={evttrig,one,col_a} args={}
+NOTICE:  00000: NORMAL: orig=f normal=t istemp=f type=table identity=evttrig.two name={evttrig,two} args={}
+DROP SCHEMA

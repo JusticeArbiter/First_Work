@@ -1,0 +1,2 @@
+execute q;
+ERROR:  26000: prepared statement "q" does not exist

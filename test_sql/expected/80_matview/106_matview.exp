@@ -1,0 +1,2 @@
+SELECT * FROM tvvm FOR SHARE;
+ERROR:  42809: cannot lock rows in materialized view "tvvm"

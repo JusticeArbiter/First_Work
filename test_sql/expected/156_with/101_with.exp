@@ -1,0 +1,4 @@
+WITH RECURSIVE outermost(x) AS (  WITH innermost as (SELECT 2 FROM outermost)  SELECT * FROM innermost  UNION SELECT * from outermost  )  SELECT * FROM outermost;
+ERROR:  42P19: recursive reference to query "outermost" must not appear within a subquery
+LINE 1: ...termost(x) AS (  WITH innermost as (SELECT 2 FROM outermost)...
+                                                             ^

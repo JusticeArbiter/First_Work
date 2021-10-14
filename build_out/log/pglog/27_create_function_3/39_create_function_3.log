@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION functext_E_3(int) RETURNS bool LANGUAGE 'sql'  LEAKPROOF AS 'SELECT $1 < 200';
+LOCATION:  exec_simple_query, postgres.c:938

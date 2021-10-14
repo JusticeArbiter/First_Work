@@ -1,0 +1,6 @@
+select numrange(1.0, 2.0) + numrange(2.0, 3.0);
+ ?column?  
+-----------
+ [1.0,3.0)
+(1 row)
+

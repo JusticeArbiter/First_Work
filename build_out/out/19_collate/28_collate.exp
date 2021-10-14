@@ -1,0 +1,2 @@
+INSERT INTO collate_test4 SELECT * FROM collate_test1;
+INSERT 0 8

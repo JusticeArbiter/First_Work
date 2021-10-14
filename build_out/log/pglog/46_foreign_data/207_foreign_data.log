@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP USER MAPPING IF EXISTS FOR regress_test_missing_role SERVER s4;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP USER MAPPING
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP USER MAPPING IF EXISTS FOR regress_test_missing_role SERVER s4;
+NOTICE:  00000: role "regress_test_missing_role" does not exist, skipping
+LOCATION:  RemoveUserMapping, foreigncmds.c:1347
+STATEMENT:  DROP USER MAPPING IF EXISTS FOR regress_test_missing_role SERVER s4;

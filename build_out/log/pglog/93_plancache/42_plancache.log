@@ -1,0 +1,5 @@
+LOG:  00000: statement: select f1 from abc;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "abc" does not exist at character 16
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select f1 from abc;

@@ -1,0 +1,8 @@
+LOG:  00000: statement: drop table minmaxtest cascade;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: drop cascades to 3 other objects
+DETAIL:  drop cascades to table minmaxtest1
+	drop cascades to table minmaxtest2
+	drop cascades to table minmaxtest3
+LOCATION:  reportDependentObjects, dependency.c:1003
+STATEMENT:  drop table minmaxtest cascade;

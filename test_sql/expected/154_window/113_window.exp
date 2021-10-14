@@ -1,0 +1,10 @@
+SELECT VAR_POP(n::bigint) OVER (ORDER BY i ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING)  FROM (VALUES(1,600),(2,470),(3,170),(4,430),(5,300)) r(i,n);
+        var_pop        
+-----------------------
+    21704.000000000000
+    13868.750000000000
+    11266.666666666667
+ 4225.0000000000000000
+                     0
+(5 rows)
+

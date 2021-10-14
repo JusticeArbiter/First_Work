@@ -1,0 +1,6 @@
+SELECT date 'today' - date 'yesterday' AS "One day";
+ One day 
+---------
+       1
+(1 row)
+

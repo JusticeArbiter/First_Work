@@ -1,0 +1,4 @@
+DELETE FROM empsalary RETURNING rank() OVER (ORDER BY random());
+ERROR:  42P01: relation "empsalary" does not exist
+LINE 1: DELETE FROM empsalary RETURNING rank() OVER (ORDER BY random...
+                    ^

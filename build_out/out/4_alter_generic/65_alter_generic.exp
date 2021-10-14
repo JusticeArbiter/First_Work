@@ -1,0 +1,2 @@
+ALTER CONVERSION alt_conv3 SET SCHEMA alt_nsp2;
+ERROR:  42704: conversion "alt_conv3" does not exist

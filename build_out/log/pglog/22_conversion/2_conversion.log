@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE USER conversion_test_user WITH NOCREATEDB NOCREATEUSER;
+LOCATION:  exec_simple_query, postgres.c:938

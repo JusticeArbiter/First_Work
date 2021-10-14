@@ -1,0 +1,20 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: CREATE TABLE TIME_TBL (f1 time(2));
+ statement: INSERT INTO TIME_TBL VALUES ('00:00');
+ statement: INSERT INTO TIME_TBL VALUES ('01:00');
+ statement: INSERT INTO TIME_TBL VALUES ('02:03 PST');
+ statement: INSERT INTO TIME_TBL VALUES ('11:59 EDT');
+ statement: INSERT INTO TIME_TBL VALUES ('12:00');
+ statement: INSERT INTO TIME_TBL VALUES ('12:01');
+ statement: INSERT INTO TIME_TBL VALUES ('23:59');
+ statement: INSERT INTO TIME_TBL VALUES ('11:59:59.99 PM');
+ statement: INSERT INTO TIME_TBL VALUES ('2003-03-07 15:36:39 America/New_York');
+ statement: INSERT INTO TIME_TBL VALUES ('2003-07-07 15:36:39 America/New_York');
+ statement: INSERT INTO TIME_TBL VALUES ('15:36:39 America/New_York');
+ statement: SELECT f1 AS "Time" FROM TIME_TBL;
+ statement: SELECT f1 AS "Three" FROM TIME_TBL WHERE f1 < '05:06:07';
+ statement: SELECT f1 AS "Five" FROM TIME_TBL WHERE f1 > '05:06:07';
+ statement: SELECT f1 AS "None" FROM TIME_TBL WHERE f1 < '00:00';
+ statement: SELECT f1 AS "Eight" FROM TIME_TBL WHERE f1 >= '00:00';
+ statement: SELECT f1 + time '00:01' AS "Illegal" FROM TIME_TBL;
+

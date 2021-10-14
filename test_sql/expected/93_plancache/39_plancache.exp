@@ -1,0 +1,4 @@
+prepare p1 as select f1 from abc;
+ERROR:  42P01: relation "abc" does not exist
+LINE 1: prepare p1 as select f1 from abc;
+                                     ^

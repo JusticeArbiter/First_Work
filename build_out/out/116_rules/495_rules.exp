@@ -1,0 +1,3 @@
+ALTER RULE NewInsertRule ON rule_v1 RENAME TO "_RETURN";
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER RULE
+ERROR:  42710: rule "_RETURN" for relation "rule_v1" already exists

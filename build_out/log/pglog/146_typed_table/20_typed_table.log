@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TABLE personsx OF person_type (myname WITH OPTIONS NOT NULL);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TABLE personsx OF person_type (myname WITH OPTIONS NOT NULL);
+ERROR:  42703: column "myname" does not exist
+LOCATION:  MergeAttributes, tablecmds.c:1461
+STATEMENT:  CREATE TABLE personsx OF person_type (myname WITH OPTIONS NOT NULL);

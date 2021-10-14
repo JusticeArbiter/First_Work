@@ -1,0 +1,6 @@
+select '42'::jsonb #> array['f2'];
+ ?column? 
+----------
+ 
+(1 row)
+

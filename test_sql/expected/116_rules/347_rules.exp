@@ -1,0 +1,6 @@
+create rule foorule as on insert to foo where f1 < 100  do instead insert into foo2 values (f1);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE RULE
+ERROR:  42703: column "f1" does not exist
+LINE 1: ...foo where f1 < 100  do instead insert into foo2 values (f1);
+                                                                   ^
+HINT:  There is a column named "f1" in table "old", but it cannot be referenced from this part of the query.

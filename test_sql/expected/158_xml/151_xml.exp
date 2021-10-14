@@ -1,0 +1,6 @@
+SELECT xml_is_well_formed('<>');
+ xml_is_well_formed 
+--------------------
+ f
+(1 row)
+

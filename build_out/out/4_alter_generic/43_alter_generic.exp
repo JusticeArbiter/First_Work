@@ -1,0 +1,2 @@
+ALTER AGGREGATE alt_agg1(int) RENAME TO alt_agg4;
+ERROR:  42723: function alt_agg4(integer) already exists in schema "public"

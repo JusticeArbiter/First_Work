@@ -1,0 +1,6 @@
+SELECT xmlparse(document '<abc>x</abc>');
+   xmlparse   
+--------------
+ <abc>x</abc>
+(1 row)
+

@@ -1,0 +1,6 @@
+SELECT count(*) FROM european_city_view;
+ count 
+-------
+     1
+(1 row)
+

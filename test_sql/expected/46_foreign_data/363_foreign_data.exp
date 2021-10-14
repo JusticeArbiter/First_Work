@@ -1,0 +1,4 @@
+ALTER FOREIGN DATA WRAPPER foo OWNER TO unprivileged_role;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN DATA WRAPPER
+ERROR:  42501: permission denied to change owner of foreign-data wrapper "foo"
+HINT:  The owner of a foreign-data wrapper must be a superuser.

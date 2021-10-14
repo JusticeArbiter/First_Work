@@ -1,0 +1,5 @@
+create temp view shipped_view as  select * from shipped where ttype = 'wt';
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE VIEW
+ERROR:  42P01: relation "shipped" does not exist
+LINE 1: create temp view shipped_view as  select * from shipped wher...
+                                                        ^

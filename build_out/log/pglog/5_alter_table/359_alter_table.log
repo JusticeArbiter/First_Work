@@ -1,0 +1,2 @@
+LOG:  00000: statement: update atacc3 set test2 = 4 where test2 is null;
+LOCATION:  exec_simple_query, postgres.c:938

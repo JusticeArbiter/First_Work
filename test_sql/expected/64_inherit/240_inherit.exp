@@ -1,0 +1,5 @@
+create table cc2(f4 float) inherits(pp1,cc1);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+NOTICE:  00000: merging multiple inherited definitions of column "f1"
+NOTICE:  00000: merging multiple inherited definitions of column "a1"
+CREATE TABLE

@@ -1,0 +1,2 @@
+ALTER AGGREGATE alt_agg3(int) OWNER TO regtest_alter_user2;
+ERROR:  42883: aggregate alt_agg3(integer) does not exist

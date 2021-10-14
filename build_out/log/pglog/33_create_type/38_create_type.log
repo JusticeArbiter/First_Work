@@ -1,0 +1,7 @@
+LOG:  00000: statement: DROP TYPE base_type CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to function base_fn_out(base_type)
+	drop cascades to function base_fn_in(cstring)
+LOCATION:  reportDependentObjects, dependency.c:1003
+STATEMENT:  DROP TYPE base_type CASCADE;

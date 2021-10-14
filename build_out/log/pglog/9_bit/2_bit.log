@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO BIT_TABLE VALUES (B'10');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22026: bit string length 2 does not match type bit(11)
+LOCATION:  bit, varbit.c:378
+STATEMENT:  INSERT INTO BIT_TABLE VALUES (B'10');

@@ -1,0 +1,2 @@
+select 1/0::int8;
+ERROR:  22012: division by zero

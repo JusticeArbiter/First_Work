@@ -1,0 +1,2 @@
+DROP FUNCTION base_fn_out(opaque);
+ERROR:  42883: function base_fn_out(opaque) does not exist

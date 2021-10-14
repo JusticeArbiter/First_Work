@@ -1,0 +1,5 @@
+LOG:  00000: statement: create or replace function raise_test() returns void as $$  begin  perform 1/0;  exception  when sqlstate '22012' then  raise notice using message = sqlstate;  raise sqlstate '22012' using message = 'substitute message';  end;  $$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create or replace function raise_test() returns void as $$  begin  perform 1/0;  exception  when sqlstate '22012' then  raise notice using message = sqlstate;  raise sqlstate '22012' using message = 'substitute message';  end;  $$ language plpgsql;

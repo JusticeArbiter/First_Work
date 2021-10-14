@@ -1,0 +1,4 @@
+INSERT INTO TINTERVAL_TBL (f1)  VALUES ('["" "infinity"]');
+ERROR:  22007: invalid input syntax for type abstime: ""
+LINE 1: INSERT INTO TINTERVAL_TBL (f1)  VALUES ('["" "infinity"]');
+                                                ^

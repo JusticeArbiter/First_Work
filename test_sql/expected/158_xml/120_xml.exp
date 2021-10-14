@@ -1,0 +1,6 @@
+SELECT xpath('name(/*)', '<root><sub/><sub/></root>');
+ xpath  
+--------
+ {root}
+(1 row)
+

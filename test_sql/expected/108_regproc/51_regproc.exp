@@ -1,0 +1,4 @@
+SELECT regnamespace('Nonexistent');
+ERROR:  3F000: schema "nonexistent" does not exist
+LINE 1: SELECT regnamespace('Nonexistent');
+                            ^

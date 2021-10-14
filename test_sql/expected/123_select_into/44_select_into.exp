@@ -1,0 +1,2 @@
+COPY (SELECT 1 INTO frak UNION SELECT 2) TO 'blob';
+ERROR:  0A000: COPY (SELECT INTO) is not supported

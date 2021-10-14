@@ -1,0 +1,2 @@
+LOG:  00000: statement: create or replace function doubledecrement(p1 pos_int) returns pos_int as $$  declare v pos_int := 0;  begin  return p1;  end$$ language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938

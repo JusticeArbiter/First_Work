@@ -1,0 +1,6 @@
+SELECT xmlelement(name element, xmlelement(name nested, 'stuff'));
+                xmlelement                 
+-------------------------------------------
+ <element><nested>stuff</nested></element>
+(1 row)
+

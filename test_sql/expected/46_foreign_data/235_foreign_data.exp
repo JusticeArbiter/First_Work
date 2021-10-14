@@ -1,0 +1,6 @@
+SELECT n.nspname AS "Schema",  c.relname AS "Table",  s.srvname AS "Server",  CASE WHEN ftoptions IS NULL THEN '' ELSE '(' || pg_catalog.array_to_string(ARRAY(SELECT pg_catalog.quote_ident(option_name) || ' ' || pg_catalog.quote_literal(option_value) FROM pg_catalog.pg_options_to_table(ftoptions)), ', ') || ')' END AS "FDW Options",  d.description AS "Description"  FROM pg_catalog.pg_foreign_table ft  INNER JOIN pg_catalog.pg_class c ON c.oid = ft.ftrelid  INNER JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace  INNER JOIN pg_catalog.pg_foreign_server s ON s.oid = ft.ftserver  LEFT JOIN pg_catalog.pg_description d  ON d.classoid = c.tableoid AND d.objoid = c.oid AND d.objsubid = 0  WHERE pg_catalog.pg_table_is_visible(c.oid)  ORDER BY 1, 2;
+ Schema | Table | Server |                   FDW Options                   | Description 
+--------+-------+--------+-------------------------------------------------+-------------
+ public | ft1   | s0     | (delimiter ',', quote '"', "be quoted" 'value') | ft1
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: select percentile_cont(0.5) within group (order by thousand) from tenk1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tenk1" does not exist at character 67
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select percentile_cont(0.5) within group (order by thousand) from tenk1;

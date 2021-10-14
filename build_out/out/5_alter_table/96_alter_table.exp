@@ -1,0 +1,4 @@
+SELECT unique1 FROM tenk1 WHERE unique1 < 5;
+ERROR:  42P01: relation "tenk1" does not exist
+LINE 1: SELECT unique1 FROM tenk1 WHERE unique1 < 5;
+                            ^

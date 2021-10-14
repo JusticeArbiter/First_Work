@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter function non_strict(text) returns null on null input;
+LOCATION:  exec_simple_query, postgres.c:938

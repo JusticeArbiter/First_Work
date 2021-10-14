@@ -1,0 +1,6 @@
+select timestamp_mi_int64('2016-11-18 14:00:59'::timestamp,1000::bigint);
+ timestamp_mi_int64  
+---------------------
+ 2014-02-22 14:00:59
+(1 row)
+

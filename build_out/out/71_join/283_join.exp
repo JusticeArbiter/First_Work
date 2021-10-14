@@ -1,0 +1,13 @@
+explain (costs off)  select * from  (select 1 as id) as xx  left join  (tenk1 as a1 full join (select 1 as id) as yy on (a1.unique1 = yy.id))  on (xx.id = coalesce(yy.id));
+              QUERY PLAN               
+---------------------------------------
+ Nested Loop Left Join
+   Join Filter: ((1) = COALESCE((1)))
+   ->  Result
+   ->  Hash Full Join
+         Hash Cond: (a1.unique1 = (1))
+         ->  Seq Scan on tenk1 a1
+         ->  Hash
+               ->  Result
+(8 rows)
+

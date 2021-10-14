@@ -1,0 +1,2 @@
+LOG:  00000: statement: insert into inserttest (col2, col3) values (3, DEFAULT);
+LOCATION:  exec_simple_query, postgres.c:938

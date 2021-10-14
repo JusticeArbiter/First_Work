@@ -1,0 +1,3 @@
+DROP OPERATOR FAMILY IF EXISTS test_operator_family USING btree;
+NOTICE:  00000: operator family "test_operator_family" does not exist for access method "btree", skipping
+DROP OPERATOR FAMILY

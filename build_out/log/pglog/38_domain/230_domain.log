@@ -1,0 +1,5 @@
+LOG:  00000: statement: execute s1(NULL);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  26000: prepared statement "s1" does not exist
+LOCATION:  FetchPreparedStatement, prepare.c:504
+STATEMENT:  execute s1(NULL);

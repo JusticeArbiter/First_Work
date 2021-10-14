@@ -1,0 +1,14 @@
+SELECT s.srvname AS "Name",  pg_catalog.pg_get_userbyid(s.srvowner) AS "Owner",  f.fdwname AS "Foreign-data wrapper",  pg_catalog.array_to_string(s.srvacl, E'\n') AS "Access privileges",  s.srvtype AS "Type",  s.srvversion AS "Version",  CASE WHEN srvoptions IS NULL THEN '' ELSE '(' || pg_catalog.array_to_string(ARRAY(SELECT pg_catalog.quote_ident(option_name) || ' ' || pg_catalog.quote_literal(option_value) FROM pg_catalog.pg_options_to_table(srvoptions)), ', ') || ')' END AS "FDW Options",  d.description AS "Description"  FROM pg_catalog.pg_foreign_server s  JOIN pg_catalog.pg_foreign_data_wrapper f ON f.oid=s.srvfdw  LEFT JOIN pg_catalog.pg_description d  ON d.classoid = s.tableoid AND d.objoid = s.oid AND d.objsubid = 0  ORDER BY 1;
+      Name      | Owner  | Foreign-data wrapper | Access privileges |  Type  | Version |            FDW Options            | Description 
+----------------+--------+----------------------+-------------------+--------+---------+-----------------------------------+-------------
+ s1             | highgo | foo                  |                   |        |         |                                   | 
+ s2             | highgo | foo                  |                   |        |         | (host 'a', dbname 'b')            | 
+ s3             | highgo | foo                  |                   | oracle |         |                                   | 
+ s4             | highgo | foo                  |                   | oracle |         | (host 'a', dbname 'b')            | 
+ s5             | highgo | foo                  |                   |        | 15.0    |                                   | 
+ s6             | highgo | foo                  |                   |        | 16.0    | (host 'a', dbname 'b')            | 
+ s7             | highgo | foo                  |                   | oracle | 17.0    | (host 'a', dbname 'b')            | 
+ s8             | highgo | postgresql           |                   |        |         | (host 'localhost', dbname 's8db') | 
+ useless_server | highgo | useless              |                   |        |         |                                   | 
+(9 rows)
+

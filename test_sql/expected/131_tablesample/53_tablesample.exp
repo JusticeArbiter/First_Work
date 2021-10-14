@@ -1,0 +1,2 @@
+SELECT id FROM test_tablesample TABLESAMPLE SYSTEM (50) REPEATABLE (NULL);
+ERROR:  2202G: TABLESAMPLE REPEATABLE parameter cannot be null

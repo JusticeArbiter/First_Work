@@ -1,0 +1,4 @@
+CREATE TABLE inh_error2 (LIKE ctlt4 INCLUDING STORAGE) INHERITS (ctlt1);
+NOTICE:  00000: merging column "a" with inherited definition
+ERROR:  42804: column "a" has a storage parameter conflict
+DETAIL:  MAIN versus EXTENDED

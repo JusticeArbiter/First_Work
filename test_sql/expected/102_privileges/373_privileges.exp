@@ -1,0 +1,2 @@
+select has_table_privilege('pg_shad','select');
+ERROR:  42P01: relation "pg_shad" does not exist

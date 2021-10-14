@@ -1,0 +1,139 @@
+SELECT schema_to_xml_and_xmlschema('testxmlschema', true, true, 'foo');
+                                          schema_to_xml_and_xmlschema                                          
+---------------------------------------------------------------------------------------------------------------
+ <testxmlschema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="foo" xsi:schemaLocation="foo #"> +
+                                                                                                              +
+ <xsd:schema                                                                                                  +
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"                                                             +
+     targetNamespace="foo"                                                                                    +
+     elementFormDefault="qualified">                                                                          +
+                                                                                                              +
+ <xsd:simpleType name="INTEGER">                                                                              +
+   <xsd:restriction base="xsd:int">                                                                           +
+     <xsd:maxInclusive value="2147483647"/>                                                                   +
+     <xsd:minInclusive value="-2147483648"/>                                                                  +
+   </xsd:restriction>                                                                                         +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="UDT.highgo.pg_catalog.text">                                                           +
+   <xsd:restriction base="xsd:string">                                                                        +
+   </xsd:restriction>                                                                                         +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="VARCHAR">                                                                              +
+   <xsd:restriction base="xsd:string">                                                                        +
+   </xsd:restriction>                                                                                         +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="CHAR">                                                                                 +
+   <xsd:restriction base="xsd:string">                                                                        +
+   </xsd:restriction>                                                                                         +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="NUMERIC">                                                                              +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="SMALLINT">                                                                             +
+   <xsd:restriction base="xsd:short">                                                                         +
+     <xsd:maxInclusive value="32767"/>                                                                        +
+     <xsd:minInclusive value="-32768"/>                                                                       +
+   </xsd:restriction>                                                                                         +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="BIGINT">                                                                               +
+   <xsd:restriction base="xsd:long">                                                                          +
+     <xsd:maxInclusive value="9223372036854775807"/>                                                          +
+     <xsd:minInclusive value="-9223372036854775808"/>                                                         +
+   </xsd:restriction>                                                                                         +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="REAL">                                                                                 +
+   <xsd:restriction base="xsd:float"></xsd:restriction>                                                       +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="TIME">                                                                                 +
+   <xsd:restriction base="xsd:time">                                                                          +
+     <xsd:pattern value="\p{Nd}{2}:\p{Nd}{2}:\p{Nd}{2}(.\p{Nd}+)?"/>                                          +
+   </xsd:restriction>                                                                                         +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="TIMESTAMP">                                                                            +
+   <xsd:restriction base="xsd:dateTime">                                                                      +
+     <xsd:pattern value="\p{Nd}{4}-\p{Nd}{2}-\p{Nd}{2}T\p{Nd}{2}:\p{Nd}{2}:\p{Nd}{2}(.\p{Nd}+)?"/>            +
+   </xsd:restriction>                                                                                         +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="DATE">                                                                                 +
+   <xsd:restriction base="xsd:date">                                                                          +
+     <xsd:pattern value="\p{Nd}{4}-\p{Nd}{2}-\p{Nd}{2}"/>                                                     +
+   </xsd:restriction>                                                                                         +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:complexType mixed="true">                                                                               +
+   <xsd:sequence>                                                                                             +
+     <xsd:any name="element" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>                     +
+   </xsd:sequence>                                                                                            +
+ </xsd:complexType>                                                                                           +
+                                                                                                              +
+ <xsd:simpleType name="Domain.highgo.public.testxmldomain">                                                   +
+   <xsd:restriction base="VARCHAR"/>                                                                          +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="BOOLEAN">                                                                              +
+   <xsd:restriction base="xsd:boolean"></xsd:restriction>                                                     +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:simpleType name="UDT.highgo.pg_catalog.bytea">                                                          +
+   <xsd:restriction base="xsd:base64Binary">                                                                  +
+   </xsd:restriction>                                                                                         +
+ </xsd:simpleType>                                                                                            +
+                                                                                                              +
+ <xsd:complexType name="SchemaType.highgo.testxmlschema">                                                     +
+   <xsd:sequence>                                                                                             +
+     <xsd:element name="test1" type="RowType.highgo.testxmlschema.test1" minOccurs="0" maxOccurs="unbounded"/>+
+     <xsd:element name="test2" type="RowType.highgo.testxmlschema.test2" minOccurs="0" maxOccurs="unbounded"/>+
+   </xsd:sequence>                                                                                            +
+ </xsd:complexType>                                                                                           +
+                                                                                                              +
+ <xsd:element name="testxmlschema" type="SchemaType.highgo.testxmlschema"/>                                   +
+                                                                                                              +
+ </xsd:schema>                                                                                                +
+                                                                                                              +
+ <test1>                                                                                                      +
+   <a>1</a>                                                                                                   +
+   <b>one</b>                                                                                                 +
+ </test1>                                                                                                     +
+                                                                                                              +
+ <test1>                                                                                                      +
+   <a>2</a>                                                                                                   +
+   <b>two</b>                                                                                                 +
+ </test1>                                                                                                     +
+                                                                                                              +
+ <test1>                                                                                                      +
+   <a>-1</a>                                                                                                  +
+   <b xsi:nil="true"/>                                                                                        +
+ </test1>                                                                                                     +
+                                                                                                              +
+                                                                                                              +
+ <test2>                                                                                                      +
+   <z>55</z>                                                                                                  +
+   <y>abc</y>                                                                                                 +
+   <x>def   </x>                                                                                              +
+   <w>98.60</w>                                                                                               +
+   <v>2</v>                                                                                                   +
+   <u>999</u>                                                                                                 +
+   <t>0</t>                                                                                                   +
+   <s>21:07:00</s>                                                                                            +
+   <r>2009-06-08T21:07:30</r>                                                                                 +
+   <q>2009-06-08</q>                                                                                          +
+   <p xsi:nil="true"/>                                                                                        +
+   <o>ABC</o>                                                                                                 +
+   <n>true</n>                                                                                                +
+   <m>WFla</m>                                                                                                +
+ </test2>                                                                                                     +
+                                                                                                              +
+                                                                                                              +
+ </testxmlschema>                                                                                             +
+ 
+(1 row)
+

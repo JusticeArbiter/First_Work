@@ -1,0 +1,7 @@
+SELECT * FROM temptest;
+ col 
+-----
+   1
+   2
+(2 rows)
+

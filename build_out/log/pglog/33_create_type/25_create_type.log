@@ -1,0 +1,5 @@
+LOG:  00000: statement: COMMENT ON COLUMN default_test_row.nope IS 'bad comment';
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "nope" of relation "default_test_row" does not exist
+LOCATION:  get_object_address_attribute, objectaddress.c:1339
+STATEMENT:  COMMENT ON COLUMN default_test_row.nope IS 'bad comment';

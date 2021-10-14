@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE DEFAULT CONVERSION public.mydef2 FOR 'LATIN1' TO 'UTF8' FROM iso8859_1_to_utf8;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42710: default conversion for LATIN1 to UTF8 already exists
+LOCATION:  ConversionCreate, pg_conversion.c:81
+STATEMENT:  CREATE DEFAULT CONVERSION public.mydef2 FOR 'LATIN1' TO 'UTF8' FROM iso8859_1_to_utf8;

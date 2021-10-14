@@ -1,0 +1,3 @@
+create table HSlot (  slotname char(20),  hubname char(14),  slotno integer,  slotlink char(20)  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+CREATE TABLE

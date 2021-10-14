@@ -1,0 +1,2 @@
+/* Doesn't copy constraint */  INSERT INTO inhg VALUES ('foo');
+INSERT 0 1

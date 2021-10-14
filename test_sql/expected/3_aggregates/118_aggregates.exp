@@ -1,0 +1,6 @@
+select array_agg(a order by a desc)  from (values (1,4),(2,3),(3,1),(4,2)) v(a,b);
+ array_agg 
+-----------
+ {4,3,2,1}
+(1 row)
+

@@ -1,0 +1,6 @@
+SELECT oid::int8 FROM pg_class WHERE relname = 'pg_class';
+ oid  
+------
+ 1259
+(1 row)
+

@@ -1,0 +1,9 @@
+LOG:  00000: statement: select raise_test();
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: SQLSTATE: 22012 SQLERRM: check me
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select raise_test();
+ERROR:  22012: check me
+DETAIL:  some detail info
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  select raise_test();

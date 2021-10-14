@@ -1,0 +1,7 @@
+select * from anothertab;
+ atcol1 | atcol2 
+--------+--------
+      1 | t
+      2 | f
+(2 rows)
+

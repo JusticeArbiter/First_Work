@@ -1,0 +1,8 @@
+LOG:  00000: statement: drop schema s1 cascade;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SCHEMA
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  drop schema s1 cascade;
+NOTICE:  00000: drop cascades to table s1.abc
+LOCATION:  reportDependentObjects, dependency.c:1009
+STATEMENT:  drop schema s1 cascade;

@@ -1,0 +1,18 @@
+select proname, oid from pg_catalog.pg_proc  where proname in (  'lo_open',  'lo_close',  'lo_creat',  'lo_create',  'lo_unlink',  'lo_lseek',  'lo_lseek64',  'lo_tell',  'lo_tell64',  'lo_truncate',  'lo_truncate64',  'loread',  'lowrite')  and pronamespace = (select oid from pg_catalog.pg_namespace  where nspname = 'pg_catalog')  order by 1;
+    proname    | oid  
+---------------+------
+ lo_close      |  953
+ lo_creat      |  957
+ lo_create     |  715
+ lo_lseek      |  956
+ lo_lseek64    | 3170
+ lo_open       |  952
+ lo_tell       |  958
+ lo_tell64     | 3171
+ lo_truncate   | 1004
+ lo_truncate64 | 3172
+ lo_unlink     |  964
+ loread        |  954
+ lowrite       |  955
+(13 rows)
+

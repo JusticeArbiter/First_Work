@@ -1,0 +1,5 @@
+select * from check_con_tbl;
+ f1 
+----
+(0 rows)
+

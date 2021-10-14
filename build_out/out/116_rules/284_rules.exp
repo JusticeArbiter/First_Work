@@ -1,0 +1,2 @@
+insert into rtest_comp values ('p4', 'cm', 15.0);
+INSERT 0 1

@@ -1,0 +1,5 @@
+LOG:  00000: statement: create table tttest (  price_id int4,  price_val int4,  price_on int4,  price_off int4 default 999999  );
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create table tttest (  price_id int4,  price_val int4,  price_on int4,  price_off int4 default 999999  );

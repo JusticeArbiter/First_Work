@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE ctlt13_like (LIKE ctlt3 INCLUDING CONSTRAINTS INCLUDING COMMENTS INCLUDING STORAGE) INHERITS (ctlt1);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging column "a" with inherited definition
+LOCATION:  MergeAttributes, tablecmds.c:1820
+STATEMENT:  CREATE TABLE ctlt13_like (LIKE ctlt3 INCLUDING CONSTRAINTS INCLUDING COMMENTS INCLUDING STORAGE) INHERITS (ctlt1);

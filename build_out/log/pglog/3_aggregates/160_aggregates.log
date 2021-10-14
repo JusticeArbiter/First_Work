@@ -1,0 +1,2 @@
+LOG:  00000: statement: select string_agg(a,',') from (values('aaaa'),('bbbb'),('cccc')) g(a);
+LOCATION:  exec_simple_query, postgres.c:938

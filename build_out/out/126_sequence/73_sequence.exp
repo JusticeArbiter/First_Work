@@ -1,0 +1,11 @@
+SELECT * FROM information_schema.sequences WHERE sequence_name IN  ('sequence_test2', 'serialtest2_f2_seq', 'serialtest2_f3_seq',  'serialtest2_f4_seq', 'serialtest2_f5_seq', 'serialtest2_f6_seq')  ORDER BY sequence_name ASC;
+ sequence_catalog | sequence_schema |   sequence_name    | data_type | numeric_precision | numeric_precision_radix | numeric_scale | start_value | minimum_value |    maximum_value    | increment | cycle_option 
+------------------+-----------------+--------------------+-----------+-------------------+-------------------------+---------------+-------------+---------------+---------------------+-----------+--------------
+ highgo           | public          | sequence_test2     | bigint    |                64 |                       2 |             0 | 32          | 5             | 36                  | 4         | YES
+ highgo           | public          | serialtest2_f2_seq | bigint    |                64 |                       2 |             0 | 1           | 1             | 9223372036854775807 | 1         | NO
+ highgo           | public          | serialtest2_f3_seq | bigint    |                64 |                       2 |             0 | 1           | 1             | 9223372036854775807 | 1         | NO
+ highgo           | public          | serialtest2_f4_seq | bigint    |                64 |                       2 |             0 | 1           | 1             | 9223372036854775807 | 1         | NO
+ highgo           | public          | serialtest2_f5_seq | bigint    |                64 |                       2 |             0 | 1           | 1             | 9223372036854775807 | 1         | NO
+ highgo           | public          | serialtest2_f6_seq | bigint    |                64 |                       2 |             0 | 1           | 1             | 9223372036854775807 | 1         | NO
+(6 rows)
+

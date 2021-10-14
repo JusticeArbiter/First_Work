@@ -1,0 +1,5 @@
+select formarray(1.1, array[1.2,55.5]);
+ERROR:  42883: function formarray(numeric, numeric[]) does not exist
+LINE 1: select formarray(1.1, array[1.2,55.5]);
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

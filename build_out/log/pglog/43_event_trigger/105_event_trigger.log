@@ -1,0 +1,11 @@
+LOG:  00000: statement: alter type rewritetype alter attribute a type text cascade;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TYPE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  alter type rewritetype alter attribute a type text cascade;
+NOTICE:  00000: Table is being rewritten (reason = 4)
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  alter type rewritetype alter attribute a type text cascade;
+NOTICE:  00000: Table is being rewritten (reason = 4)
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  alter type rewritetype alter attribute a type text cascade;

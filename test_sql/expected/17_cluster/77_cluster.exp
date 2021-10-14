@@ -1,0 +1,11 @@
+SELECT * FROM clstr_1 UNION ALL  SELECT * FROM clstr_2 UNION ALL  SELECT * FROM clstr_3;
+ a 
+---
+ 1
+ 2
+ 1
+ 2
+ 2
+ 1
+(6 rows)
+

@@ -1,0 +1,3 @@
+REVOKE USAGE ON FOREIGN DATA WRAPPER foo FROM unprivileged_role CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start REVOKE
+REVOKE

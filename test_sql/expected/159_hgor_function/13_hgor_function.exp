@@ -1,0 +1,6 @@
+select trunc('2016-11-16'::date,'month'::text);
+   trunc    
+------------
+ 2016-11-01
+(1 row)
+

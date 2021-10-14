@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO DATE_TBL VALUES ('1997-02-29');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22008: date/time field value out of range: "1997-02-29" at character 30
+LOCATION:  DateTimeParseError, datetime.c:3810
+STATEMENT:  INSERT INTO DATE_TBL VALUES ('1997-02-29');

@@ -1,0 +1,1 @@
+INSERT INTO wi VALUES (1);

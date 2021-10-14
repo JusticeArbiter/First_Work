@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from  (select distinct ten from tenk1) ss  where ten < 10 + nextval('ts1')  order by 1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "ts1" does not exist at character 78
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  select * from  (select distinct ten from tenk1) ss  where ten < 10 + nextval('ts1')  order by 1;

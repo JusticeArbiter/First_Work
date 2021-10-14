@@ -1,0 +1,4 @@
+INSERT INTO y VALUES ('Jackson, Sam', E'\\h');
+ERROR:  42P01: relation "y" does not exist
+LINE 1: INSERT INTO y VALUES ('Jackson, Sam', E'\\h');
+                    ^

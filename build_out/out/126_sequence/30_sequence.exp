@@ -1,0 +1,6 @@
+SELECT setval('sequence_test'::text, 32);
+ setval 
+--------
+     32
+(1 row)
+

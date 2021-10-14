@@ -1,0 +1,7 @@
+SELECT a, lower(x COLLATE "C"), lower(y COLLATE "C") FROM collate_test10;
+ a | lower | lower 
+---+-------+-------
+ 1 | hij   | hij
+ 2 | hij   | hij
+(2 rows)
+

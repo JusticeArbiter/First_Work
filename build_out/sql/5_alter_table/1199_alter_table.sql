@@ -1,0 +1,1 @@
+ALTER TABLE tt4 OF tt_t0;

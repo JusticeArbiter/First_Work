@@ -1,0 +1,5 @@
+SELECT * FROM writetest;
+ a 
+---
+(0 rows)
+

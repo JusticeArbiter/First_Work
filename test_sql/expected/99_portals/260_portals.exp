@@ -1,0 +1,4 @@
+DELETE FROM ucview WHERE CURRENT OF c1;
+ERROR:  42P01: relation "ucview" does not exist
+LINE 1: DELETE FROM ucview WHERE CURRENT OF c1;
+                    ^

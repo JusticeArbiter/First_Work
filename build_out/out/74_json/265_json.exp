@@ -1,0 +1,6 @@
+SELECT json_object('{}');
+ json_object 
+-------------
+ {}
+(1 row)
+

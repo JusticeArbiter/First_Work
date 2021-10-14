@@ -1,0 +1,5 @@
+select x, y from collate_test10 order by x || y;
+ERROR:  42P21: collation mismatch between implicit collations "en_US" and "tr_TR"
+LINE 1: select x, y from collate_test10 order by x || y;
+                                                      ^
+HINT:  You can choose the collation by applying the COLLATE clause to one or both expressions.

@@ -1,0 +1,6 @@
+SELECT 'red'::text::rainbow = 'red'::rainbow;
+ ?column? 
+----------
+ t
+(1 row)
+

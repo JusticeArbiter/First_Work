@@ -1,0 +1,2 @@
+INSERT INTO concur_heap VALUES ('b','b');
+INSERT 0 1

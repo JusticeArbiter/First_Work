@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT jsonb_array_length('{"f1":1,"f2":[5,6]}');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22023: cannot get array length of a non-array
+LOCATION:  jsonb_array_length, jsonfuncs.c:1368
+STATEMENT:  SELECT jsonb_array_length('{"f1":1,"f2":[5,6]}');

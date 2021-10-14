@@ -1,0 +1,2 @@
+alter table nonesuch rename to newnonesuch;
+ERROR:  42P01: relation "nonesuch" does not exist

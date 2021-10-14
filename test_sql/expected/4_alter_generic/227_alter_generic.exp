@@ -1,0 +1,2 @@
+ALTER OPERATOR FAMILY alt_opf17 USING btree ADD OPERATOR 1 < (int4, int4);
+ERROR:  42710: operator 1(integer,integer) already exists in operator family "alt_opf17"

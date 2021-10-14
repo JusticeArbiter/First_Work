@@ -1,0 +1,4 @@
+CREATE VIEW v6_temp AS SELECT * FROM base_table WHERE id IN (SELECT id FROM temp_table);
+ERROR:  42P01: relation "base_table" does not exist
+LINE 1: CREATE VIEW v6_temp AS SELECT * FROM base_table WHERE id IN ...
+                                             ^

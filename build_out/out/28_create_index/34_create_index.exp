@@ -1,0 +1,4 @@
+CREATE TEMP TABLE gcircle_tbl AS  SELECT circle(home_base) AS f1 FROM slow_emp4000;
+ERROR:  42P01: relation "slow_emp4000" does not exist
+LINE 1: ...ircle_tbl AS  SELECT circle(home_base) AS f1 FROM slow_emp40...
+                                                             ^

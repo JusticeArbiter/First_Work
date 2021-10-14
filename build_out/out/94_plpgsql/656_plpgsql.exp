@@ -1,0 +1,3 @@
+select stacked_diagnostics_test();
+ERROR:  0Z002: GET STACKED DIAGNOSTICS cannot be used outside an exception handler
+CONTEXT:  PL/pgSQL function stacked_diagnostics_test() line 1 at GET STACKED DIAGNOSTICS

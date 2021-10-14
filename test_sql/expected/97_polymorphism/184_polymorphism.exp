@@ -1,0 +1,6 @@
+select dfunc(to_date('20081215','YYYYMMDD'));
+       dfunc       
+-------------------
+ Hello, 2008-12-15
+(1 row)
+

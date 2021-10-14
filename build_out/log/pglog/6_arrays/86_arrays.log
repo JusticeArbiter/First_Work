@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT array_append(array[42], 6) AS "{42,6}";
+LOCATION:  exec_simple_query, postgres.c:938

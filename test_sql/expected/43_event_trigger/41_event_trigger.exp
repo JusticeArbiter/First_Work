@@ -1,0 +1,2 @@
+drop event trigger regress_event_trigger;
+ERROR:  42704: event trigger "regress_event_trigger" does not exist

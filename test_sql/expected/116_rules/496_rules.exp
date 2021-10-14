@@ -1,0 +1,3 @@
+ALTER RULE "_RETURN" ON rule_v1 RENAME TO abc;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER RULE
+ERROR:  42P17: renaming an ON SELECT rule is not allowed

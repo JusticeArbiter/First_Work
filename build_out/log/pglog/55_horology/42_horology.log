@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT time with time zone '040506.789+08';
+LOCATION:  exec_simple_query, postgres.c:938

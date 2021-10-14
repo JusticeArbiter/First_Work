@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE collate_test_fail (  a int,  b text COLLATE "foo"  );
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: collation "foo" for encoding "UTF8" does not exist at character 50
+LOCATION:  get_collation_oid, namespace.c:3370
+STATEMENT:  CREATE TABLE collate_test_fail (  a int,  b text COLLATE "foo"  );

@@ -1,0 +1,2 @@
+alter table atacc1 add constraint atacc_oid1 primary key(oid);
+ERROR:  42P16: multiple primary keys for table "atacc1" are not allowed

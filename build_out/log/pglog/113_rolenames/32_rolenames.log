@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER ROLE SESSION_ROLE WITH NOREPLICATION;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: role "session_role" does not exist
+LOCATION:  get_rolespec_tuple, acl.c:5207
+STATEMENT:  ALTER ROLE SESSION_ROLE WITH NOREPLICATION;

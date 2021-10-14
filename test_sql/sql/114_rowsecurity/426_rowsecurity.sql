@@ -1,0 +1,1 @@
+EXPLAIN (COSTS OFF) EXECUTE role_inval;

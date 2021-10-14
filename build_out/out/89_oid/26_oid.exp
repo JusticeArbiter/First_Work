@@ -1,0 +1,8 @@
+SELECT '' AS three, o.* FROM OID_TBL o WHERE o.f1 > '1234';
+ three |     f1     
+-------+------------
+       |       1235
+       | 4294966256
+       |   99999999
+(3 rows)
+

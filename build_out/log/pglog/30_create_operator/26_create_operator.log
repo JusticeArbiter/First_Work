@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE OPERATOR #@%# (  procedure = numeric_fac  );
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P13: at least one of leftarg or rightarg must be specified
+LOCATION:  DefineOperator, operatorcmds.c:167
+STATEMENT:  CREATE OPERATOR #@%# (  procedure = numeric_fac  );

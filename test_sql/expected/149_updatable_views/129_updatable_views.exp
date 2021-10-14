@@ -1,0 +1,7 @@
+DELETE FROM rw_view2 WHERE a=3 RETURNING *;
+ a |     b     
+---+-----------
+ 3 | Row three
+(1 row)
+
+DELETE 1

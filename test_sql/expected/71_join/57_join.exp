@@ -1,0 +1,4 @@
+INSERT INTO t1 VALUES ( 'bb', 11 );
+ERROR:  22P02: invalid input syntax for integer: "bb"
+LINE 1: INSERT INTO t1 VALUES ( 'bb', 11 );
+                                ^

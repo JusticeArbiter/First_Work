@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER TABLE constraint_rename_test RENAME CONSTRAINT con1 TO con1foo;
+LOCATION:  exec_simple_query, postgres.c:938

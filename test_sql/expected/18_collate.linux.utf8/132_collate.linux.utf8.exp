@@ -1,0 +1,21 @@
+SELECT a.b AS a, b.b AS b, a.b < b.b COLLATE "C" AS lt,  mylt(a.b, b.b COLLATE "C"), mylt_noninline(a.b, b.b COLLATE "C"),  mylt_plpgsql(a.b, b.b COLLATE "C")  FROM collate_test1 a, collate_test1 b  ORDER BY a.b, b.b;
+  a  |  b  | lt | mylt | mylt_noninline | mylt_plpgsql 
+-----+-----+----+------+----------------+--------------
+ abc | abc | f  | f    | f              | f
+ abc | ABC | f  | f    | f              | f
+ abc | äbc | t  | t    | t              | t
+ abc | bbc | t  | t    | t              | t
+ ABC | abc | t  | t    | t              | t
+ ABC | ABC | f  | f    | f              | f
+ ABC | äbc | t  | t    | t              | t
+ ABC | bbc | t  | t    | t              | t
+ äbc | abc | f  | f    | f              | f
+ äbc | ABC | f  | f    | f              | f
+ äbc | äbc | f  | f    | f              | f
+ äbc | bbc | f  | f    | f              | f
+ bbc | abc | f  | f    | f              | f
+ bbc | ABC | f  | f    | f              | f
+ bbc | äbc | t  | t    | t              | t
+ bbc | bbc | f  | f    | f              | f
+(16 rows)
+

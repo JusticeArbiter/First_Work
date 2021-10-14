@@ -1,0 +1,3 @@
+UPDATE rw_view15 SET upper='ROW 3' WHERE a=3;
+ERROR:  0A000: cannot update column "upper" of view "rw_view15"
+DETAIL:  View columns that are not columns of their base relation are not updatable.

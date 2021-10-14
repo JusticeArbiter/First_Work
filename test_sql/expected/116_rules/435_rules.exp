@@ -1,0 +1,8 @@
+drop table id cascade;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TABLE
+NOTICE:  00000: drop cascades to 4 other objects
+DETAIL:  drop cascades to view id_ordered
+drop cascades to table test_1
+drop cascades to table test_2
+drop cascades to table test_3
+DROP TABLE

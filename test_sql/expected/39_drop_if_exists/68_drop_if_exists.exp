@@ -1,0 +1,3 @@
+DROP FUNCTION IF EXISTS test_function_exists(int, text, int[]);
+NOTICE:  00000: function test_function_exists(pg_catalog.int4,text,pg_catalog.int4[]) does not exist, skipping
+DROP FUNCTION

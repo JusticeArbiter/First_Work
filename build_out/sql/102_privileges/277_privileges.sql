@@ -1,0 +1,1 @@
+GRANT USAGE ON LANGUAGE sql TO regressuser2;

@@ -1,0 +1,6 @@
+SELECT interval '4' hour;
+ interval 
+----------
+ 04:00:00
+(1 row)
+

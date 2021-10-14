@@ -1,0 +1,10 @@
+LOG:  00000: statement: DROP SERVER s10 CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP SERVER
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  DROP SERVER s10 CASCADE;
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to user mapping for public on server s10
+	drop cascades to user mapping for unprivileged_role on server s10
+LOCATION:  reportDependentObjects, dependency.c:1003
+STATEMENT:  DROP SERVER s10 CASCADE;

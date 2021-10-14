@@ -1,0 +1,4 @@
+INSERT INTO LINE_TBL VALUES ('[1,2,3, 4');
+ERROR:  22P02: invalid input syntax for type line: "[1,2,3, 4"
+LINE 1: INSERT INTO LINE_TBL VALUES ('[1,2,3, 4');
+                                     ^

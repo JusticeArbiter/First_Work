@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT loread(lo_open(1002, x'40000'::int), 32);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: large object 1002 does not exist
+LOCATION:  inv_open, inv_api.c:291
+STATEMENT:  SELECT loread(lo_open(1002, x'40000'::int), 32);

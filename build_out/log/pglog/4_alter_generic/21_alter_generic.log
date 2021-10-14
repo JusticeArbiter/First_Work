@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER FUNCTION alt_func1(int) RENAME TO alt_func2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42723: function alt_func2(integer) already exists in schema "public"
+LOCATION:  IsThereFunctionInNamespace, functioncmds.c:2036
+STATEMENT:  ALTER FUNCTION alt_func1(int) RENAME TO alt_func2;

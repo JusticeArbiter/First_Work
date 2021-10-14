@@ -1,0 +1,3 @@
+ALTER TYPE planets ADD VALUE  'plutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutopluto';
+ERROR:  42602: invalid enum label "plutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutoplutopluto"
+DETAIL:  Labels must be 63 characters or less.

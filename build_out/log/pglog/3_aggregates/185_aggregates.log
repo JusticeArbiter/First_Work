@@ -1,0 +1,5 @@
+LOG:  00000: statement: select sum(unique1) FILTER (WHERE  unique1 IN (SELECT unique1 FROM onek where unique1 < 100)) FROM tenk1;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "tenk1" does not exist at character 100
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select sum(unique1) FILTER (WHERE  unique1 IN (SELECT unique1 FROM onek where unique1 < 100)) FROM tenk1;

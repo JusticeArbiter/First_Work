@@ -1,0 +1,10 @@
+explain (costs off)  select * from ec1, ec2 where ff = x1 and ff = '42'::int8;
+                            QUERY PLAN                             
+-------------------------------------------------------------------
+ Nested Loop
+   Join Filter: (ec1.ff = ec2.x1)
+   ->  Index Scan using ec1_pkey on ec1
+         Index Cond: ((ff = '42'::bigint) AND (ff = '42'::bigint))
+   ->  Seq Scan on ec2
+(5 rows)
+

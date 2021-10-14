@@ -1,0 +1,2 @@
+select jsonb_set('{"a": {"b": [1, 2, 3]}}', '{a, b, non_integer}', '"new_value"');
+ERROR:  22P02: path element at position 3 is not an integer: "non_integer"

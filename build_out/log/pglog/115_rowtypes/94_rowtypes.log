@@ -1,0 +1,5 @@
+LOG:  00000: statement: select fullname::text from fullname;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "fullname" does not exist at character 28
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select fullname::text from fullname;

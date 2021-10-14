@@ -1,0 +1,7 @@
+LOG:  00000: statement: select arrayassign1();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: type "rtype" does not exist at character 34
+QUERY:  SELECT row(12, '{foo,bar,baz}')::rtype
+CONTEXT:  PL/pgSQL function arrayassign1() line 1 at assignment
+LOCATION:  typenameType, parse_type.c:257
+STATEMENT:  select arrayassign1();

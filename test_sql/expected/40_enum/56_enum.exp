@@ -1,0 +1,2 @@
+COPY enumtest FROM stdin;
+COPY 0

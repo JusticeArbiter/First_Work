@@ -1,0 +1,5 @@
+SELECT array_agg(a ORDER BY x||y) FROM collate_test10;
+ERROR:  42P21: collation mismatch between implicit collations "en_US" and "tr_TR"
+LINE 1: SELECT array_agg(a ORDER BY x||y) FROM collate_test10;
+                                       ^
+HINT:  You can choose the collation by applying the COLLATE clause to one or both expressions.

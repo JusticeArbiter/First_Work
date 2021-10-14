@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP RULE IF EXISTS test_rule_exists ON test_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: rule "test_rule_exists" for relation "test_exists" does not exist, skipping
+LOCATION:  does_not_exist_skipping, dropcmds.c:448
+STATEMENT:  DROP RULE IF EXISTS test_rule_exists ON test_exists;

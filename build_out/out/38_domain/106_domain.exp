@@ -1,0 +1,2 @@
+COPY nulltest FROM stdin;
+COPY 0

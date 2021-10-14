@@ -1,0 +1,4 @@
+insert into x values (3,null);
+ERROR:  42P01: relation "x" does not exist
+LINE 1: insert into x values (3,null);
+                    ^

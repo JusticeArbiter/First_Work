@@ -1,0 +1,2 @@
+LOG:  00000: statement: alter table tt8 add column z2 int;
+LOCATION:  exec_simple_query, postgres.c:938

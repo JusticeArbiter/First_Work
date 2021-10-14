@@ -1,0 +1,4 @@
+INSERT INTO ro_view17 VALUES (3, 'ROW 3');
+ERROR:  55000: cannot insert into view "ro_view1"
+DETAIL:  Views containing DISTINCT are not automatically updatable.
+HINT:  To enable inserting into the view, provide an INSTEAD OF INSERT trigger or an unconditional ON INSERT DO INSTEAD rule.

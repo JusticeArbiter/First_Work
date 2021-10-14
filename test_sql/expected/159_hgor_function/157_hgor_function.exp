@@ -1,0 +1,6 @@
+select regexp_instr('highgo db hi'::text,'h'::text,2::int4);
+ regexp_instr 
+--------------
+            4
+(1 row)
+

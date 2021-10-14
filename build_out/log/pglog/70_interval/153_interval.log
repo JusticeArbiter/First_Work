@@ -1,0 +1,5 @@
+LOG:  00000: statement: select make_interval(secs := 'NaN');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22008: interval out of range
+LOCATION:  make_interval, timestamp.c:1536
+STATEMENT:  select make_interval(secs := 'NaN');

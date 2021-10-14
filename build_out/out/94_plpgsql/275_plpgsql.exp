@@ -1,0 +1,3 @@
+update PSlot set backlink = 'XX.illegal' where slotname = 'PS.base.a1';
+ERROR:  P0001: illegal backlink beginning with XX
+CONTEXT:  PL/pgSQL function tg_backlink_a() line 1 at assignment

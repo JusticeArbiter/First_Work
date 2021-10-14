@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO INTERVAL_TBL (f1) VALUES ('badly formatted interval');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type interval: "badly formatted interval" at character 39
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  INSERT INTO INTERVAL_TBL (f1) VALUES ('badly formatted interval');

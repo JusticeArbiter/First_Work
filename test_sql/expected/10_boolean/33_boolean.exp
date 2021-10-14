@@ -1,0 +1,6 @@
+SELECT bool 't' >= bool 'f' AS true;
+ true 
+------
+ t
+(1 row)
+

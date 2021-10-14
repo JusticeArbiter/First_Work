@@ -1,0 +1,6 @@
+SELECT m + '123' FROM money_data;
+ ?column? 
+----------
+  $246.00
+(1 row)
+

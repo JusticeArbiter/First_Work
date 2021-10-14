@@ -1,0 +1,8 @@
+select * from sc_test();
+ sc_test 
+---------
+       3
+       6
+       9
+(3 rows)
+

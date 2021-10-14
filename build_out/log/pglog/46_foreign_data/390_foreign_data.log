@@ -1,0 +1,8 @@
+LOG:  00000: statement: ALTER USER MAPPING FOR regress_test_role SERVER s6 OPTIONS (gotcha 'true');
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER USER MAPPING
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  ALTER USER MAPPING FOR regress_test_role SERVER s6 OPTIONS (gotcha 'true');
+ERROR:  42704: user mapping "regress_test_role" does not exist for the server
+LOCATION:  AlterUserMapping, foreigncmds.c:1260
+STATEMENT:  ALTER USER MAPPING FOR regress_test_role SERVER s6 OPTIONS (gotcha 'true');

@@ -1,0 +1,12 @@
+select pg_get_viewdef('vv6', true);
+        pg_get_viewdef        
+------------------------------
+  SELECT tt11.x,             +
+     tt11.y,                 +
+     tt12.z,                 +
+     tt13.q                  +
+    FROM tt11 tt11(x, y, z_1)+
+      JOIN tt12 USING (x)    +
+      JOIN tt13 USING (z);
+(1 row)
+

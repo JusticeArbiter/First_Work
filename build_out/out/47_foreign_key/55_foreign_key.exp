@@ -1,0 +1,2 @@
+INSERT INTO PKTABLE VALUES (-1, -2, 'The Default!');
+INSERT 0 1

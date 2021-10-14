@@ -1,0 +1,4 @@
+WITH RECURSIVE t1 AS (  INSERT INTO yy SELECT * FROM t2 RETURNING *  ), t2 AS (  INSERT INTO y SELECT * FROM y RETURNING *  )  SELECT 1;
+ERROR:  42P01: relation "y" does not exist
+LINE 1: ...CT * FROM t2 RETURNING *  ), t2 AS (  INSERT INTO y SELECT *...
+                                                             ^

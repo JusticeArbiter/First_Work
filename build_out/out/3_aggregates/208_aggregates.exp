@@ -1,0 +1,4 @@
+select array(select percentile_disc(a) within group (order by x)  from (values (0.3),(0.7)) v(a) group by a)  from generate_series(1,5) g(x);
+ERROR:  42803: outer-level aggregate cannot contain a lower-level variable in its direct arguments
+LINE 1: select array(select percentile_disc(a) within group (order b...
+                                            ^

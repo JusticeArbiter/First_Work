@@ -1,0 +1,2 @@
+DROP USER tu2;
+ERROR:  42704: role "tu2" does not exist

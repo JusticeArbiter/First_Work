@@ -1,0 +1,5 @@
+SELECT gid FROM pg_prepared_xacts;
+ gid 
+-----
+(0 rows)
+

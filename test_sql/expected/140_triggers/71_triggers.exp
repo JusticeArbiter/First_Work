@@ -1,0 +1,2 @@
+COPY main_table (a,b) FROM stdin;
+COPY 0

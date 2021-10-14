@@ -1,0 +1,2 @@
+CREATE USER regressuser4;
+CREATE ROLE

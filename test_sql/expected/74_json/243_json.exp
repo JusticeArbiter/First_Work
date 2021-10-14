@@ -1,0 +1,6 @@
+SELECT json_build_object(VARIADIC '{}'::text[]);
+ json_build_object 
+-------------------
+ {}
+(1 row)
+

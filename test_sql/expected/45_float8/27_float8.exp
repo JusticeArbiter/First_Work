@@ -1,0 +1,6 @@
+SELECT 'Infinity'::float8 + 100.0;
+ ?column? 
+----------
+ Infinity
+(1 row)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: REINDEX INDEX unlogged2_pkey;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "unlogged2_pkey" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  REINDEX INDEX unlogged2_pkey;

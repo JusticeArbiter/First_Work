@@ -1,0 +1,6 @@
+SELECT enum_last('green'::rainbow);
+ enum_last 
+-----------
+ purple
+(1 row)
+

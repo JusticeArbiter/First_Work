@@ -1,0 +1,3 @@
+GRANT SELECT ON atest4 TO GROUP regressgroup1 WITH GRANT OPTION;
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+GRANT

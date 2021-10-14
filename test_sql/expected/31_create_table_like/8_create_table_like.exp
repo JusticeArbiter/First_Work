@@ -1,0 +1,5 @@
+/* Columns aa, bb, xx value NULL, ee */  SELECT * FROM inhx;
+ xx 
+----
+(0 rows)
+

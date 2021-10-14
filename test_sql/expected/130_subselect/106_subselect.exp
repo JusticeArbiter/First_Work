@@ -1,0 +1,4 @@
+select (select (a.*)::text) from view_a a;
+ERROR:  42P01: relation "view_a" does not exist
+LINE 1: select (select (a.*)::text) from view_a a;
+                                         ^

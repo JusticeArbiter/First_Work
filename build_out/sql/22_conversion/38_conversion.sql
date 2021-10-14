@@ -1,0 +1,1 @@
+SELECT CONVERT('foo', 'SJIS', 'EUC_JP');

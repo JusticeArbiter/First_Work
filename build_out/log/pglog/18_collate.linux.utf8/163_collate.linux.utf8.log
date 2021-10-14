@@ -1,0 +1,2 @@
+LOG:  00000: statement: ALTER COLLATION test1 RENAME TO test11;
+LOCATION:  exec_simple_query, postgres.c:938

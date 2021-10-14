@@ -1,0 +1,6 @@
+select case_test(13);
+ case_test 
+-----------
+ other
+(1 row)
+

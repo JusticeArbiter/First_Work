@@ -1,0 +1,9 @@
+LOG:  00000: statement: CREATE TABLE inh_error2 (LIKE ctlt4 INCLUDING STORAGE) INHERITS (ctlt1);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: merging column "a" with inherited definition
+LOCATION:  MergeAttributes, tablecmds.c:1820
+STATEMENT:  CREATE TABLE inh_error2 (LIKE ctlt4 INCLUDING STORAGE) INHERITS (ctlt1);
+ERROR:  42804: column "a" has a storage parameter conflict
+DETAIL:  MAIN versus EXTENDED
+LOCATION:  MergeAttributes, tablecmds.c:1857
+STATEMENT:  CREATE TABLE inh_error2 (LIKE ctlt4 INCLUDING STORAGE) INHERITS (ctlt1);

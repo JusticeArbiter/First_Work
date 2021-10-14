@@ -1,0 +1,6 @@
+SELECT '"abc  def"'::jsonb;
+   jsonb    
+------------
+ "abc  def"
+(1 row)
+

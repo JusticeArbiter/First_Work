@@ -1,0 +1,2 @@
+CLOSE foo19;
+ERROR:  34000: cursor "foo19" does not exist

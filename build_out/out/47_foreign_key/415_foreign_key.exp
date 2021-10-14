@@ -1,0 +1,4 @@
+update selfref set a = 123 where a = 0;
+ERROR:  42P01: relation "selfref" does not exist
+LINE 1: update selfref set a = 123 where a = 0;
+               ^

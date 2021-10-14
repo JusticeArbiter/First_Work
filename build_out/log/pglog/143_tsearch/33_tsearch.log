@@ -1,0 +1,2 @@
+LOG:  00000: statement: SET enable_bitmapscan=ON;
+LOCATION:  exec_simple_query, postgres.c:938

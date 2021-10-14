@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TYPE test_type DROP ATTRIBUTE c;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "c" of relation "test_type" does not exist
+LOCATION:  ATExecDropColumn, tablecmds.c:5708
+STATEMENT:  ALTER TYPE test_type DROP ATTRIBUTE c;

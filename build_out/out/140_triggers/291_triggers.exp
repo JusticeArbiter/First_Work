@@ -1,0 +1,7 @@
+INSERT INTO european_city_view(city_name, country_name)  VALUES ('Cambridge', 'USA') RETURNING *;
+ city_id | city_name | population | country_name |   continent   
+---------+-----------+------------+--------------+---------------
+       4 | Cambridge |            | USA          | North America
+(1 row)
+
+INSERT 0 1

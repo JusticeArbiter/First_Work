@@ -1,0 +1,4 @@
+insert into selfref (a, b)  values  (0, 0),  (1, 1);
+ERROR:  42P01: relation "selfref" does not exist
+LINE 1: insert into selfref (a, b)  values  (0, 0),  (1, 1);
+                    ^

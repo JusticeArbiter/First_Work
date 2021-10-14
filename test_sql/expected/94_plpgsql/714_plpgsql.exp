@@ -1,0 +1,5 @@
+SELECT nonsimple_expr_test();
+ERROR:  42883: function nonsimple_expr_test() does not exist
+LINE 1: SELECT nonsimple_expr_test();
+               ^
+HINT:  No function matches the given name and argument types. You might need to add explicit type casts.

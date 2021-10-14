@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE FUNCTION int4_casttesttype(int4) RETURNS casttesttype LANGUAGE SQL AS  $$ SELECT ('foo'::text || $1::text)::casttesttype; $$;
+LOCATION:  exec_simple_query, postgres.c:938

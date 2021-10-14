@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT '10 milliseconds 20 milliseconds'::interval;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type interval: "10 milliseconds 20 milliseconds" at character 8
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  SELECT '10 milliseconds 20 milliseconds'::interval;

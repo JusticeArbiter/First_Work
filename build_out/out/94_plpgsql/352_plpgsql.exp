@@ -1,0 +1,3 @@
+create temp table slave(f1 int references master deferrable);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+ERROR:  42P01: relation "master" does not exist

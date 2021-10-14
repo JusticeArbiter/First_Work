@@ -1,0 +1,4 @@
+SELECT 1234::int4::casttesttype;
+ERROR:  42846: cannot cast type integer to casttesttype
+LINE 1: SELECT 1234::int4::casttesttype;
+                         ^

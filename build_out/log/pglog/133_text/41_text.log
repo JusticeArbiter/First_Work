@@ -1,0 +1,5 @@
+LOG:  00000: statement: select format('INSERT INTO %I VALUES(%L,%L)', NULL, 10, 'Hello');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22004: null values cannot be formatted as an SQL identifier
+LOCATION:  text_format_string_conversion, varlena.c:5001
+STATEMENT:  select format('INSERT INTO %I VALUES(%L,%L)', NULL, 10, 'Hello');

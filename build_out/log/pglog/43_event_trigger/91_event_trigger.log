@@ -1,0 +1,5 @@
+LOG:  00000: statement: select pg_event_trigger_table_rewrite_oid();
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  39P03: pg_event_trigger_table_rewrite_oid() can only be called in a table_rewrite event trigger function
+LOCATION:  pg_event_trigger_table_rewrite_oid, event_trigger.c:1560
+STATEMENT:  select pg_event_trigger_table_rewrite_oid();

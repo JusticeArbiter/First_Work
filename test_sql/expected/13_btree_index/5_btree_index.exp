@@ -1,0 +1,4 @@
+SELECT b.*  FROM bt_name_heap b  WHERE b.seqno >= '9999'::name;
+ERROR:  42P01: relation "bt_name_heap" does not exist
+LINE 1: SELECT b.*  FROM bt_name_heap b  WHERE b.seqno >= '9999'::na...
+                         ^

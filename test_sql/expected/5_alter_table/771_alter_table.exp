@@ -1,0 +1,2 @@
+alter table foo alter f1 TYPE varchar(10);
+ERROR:  42P01: relation "foo" does not exist

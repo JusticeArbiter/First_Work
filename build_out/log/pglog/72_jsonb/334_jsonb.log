@@ -1,0 +1,2 @@
+LOG:  00000: statement: select '"foo"'::jsonb #>> array['z'];
+LOCATION:  exec_simple_query, postgres.c:938

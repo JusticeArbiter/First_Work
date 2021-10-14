@@ -1,0 +1,8 @@
+UPDATE main_table SET b = 10;
+NOTICE:  00000: trigger_func(after_upd_a_b_row) called: action = UPDATE, when = AFTER, level = ROW
+NOTICE:  00000: trigger_func(after_upd_b_row) called: action = UPDATE, when = AFTER, level = ROW
+NOTICE:  00000: trigger_func(after_upd_a_b_row) called: action = UPDATE, when = AFTER, level = ROW
+NOTICE:  00000: trigger_func(after_upd_b_row) called: action = UPDATE, when = AFTER, level = ROW
+NOTICE:  00000: trigger_func(after_upd_b_stmt) called: action = UPDATE, when = AFTER, level = STATEMENT
+NOTICE:  00000: trigger_func(after_upd_stmt) called: action = UPDATE, when = AFTER, level = STATEMENT
+UPDATE 2

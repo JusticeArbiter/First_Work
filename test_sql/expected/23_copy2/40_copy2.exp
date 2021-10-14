@@ -1,0 +1,2 @@
+COPY y TO STDOUT (FORMAT CSV)
+ERROR:  42P01: relation "y" does not exist

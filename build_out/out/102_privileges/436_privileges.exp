@@ -1,0 +1,3 @@
+GRANT regressgroup2 TO regressuser5;
+NOTICE:  00000: role "regressuser5" is already a member of role "regressgroup2"
+GRANT ROLE

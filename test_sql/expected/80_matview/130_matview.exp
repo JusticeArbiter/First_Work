@@ -1,0 +1,7 @@
+DROP VIEW v_test1 CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP VIEW
+NOTICE:  00000: drop cascades to 3 other objects
+DETAIL:  drop cascades to view v_test2
+drop cascades to materialized view mv_test2
+drop cascades to materialized view mv_test3
+DROP VIEW

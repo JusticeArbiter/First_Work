@@ -1,0 +1,3 @@
+CREATE AGGREGATE logging_agg_nonstrict (anyelement)  (  stype = text,  sfunc = logging_sfunc_nonstrict,  mstype = text,  msfunc = logging_msfunc_nonstrict,  minvfunc = logging_minvfunc_nonstrict  );
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE AGGREGATE
+CREATE AGGREGATE

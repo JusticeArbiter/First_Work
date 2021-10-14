@@ -1,0 +1,6 @@
+SELECT to_timestamp('05121445482000', 'MMDDHH24MISSYYYY');
+      to_timestamp      
+------------------------
+ 2000-05-12 14:45:48+08
+(1 row)
+

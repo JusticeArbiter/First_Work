@@ -1,0 +1,6 @@
+SELECT xmlconcat('hello', 'you');
+ xmlconcat 
+-----------
+ helloyou
+(1 row)
+

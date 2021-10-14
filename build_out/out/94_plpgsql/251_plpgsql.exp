@@ -1,0 +1,2 @@
+insert into PLine values ('PL.017', '-139', '', 'PS.first.ta4');
+INSERT 0 1

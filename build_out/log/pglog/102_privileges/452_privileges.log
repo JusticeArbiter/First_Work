@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT has_sequence_privilege('regressuser1', 'atest1', 'SELECT');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42809: "atest1" is not a sequence
+LOCATION:  has_sequence_privilege_name_name, acl.c:2078
+STATEMENT:  SELECT has_sequence_privilege('regressuser1', 'atest1', 'SELECT');

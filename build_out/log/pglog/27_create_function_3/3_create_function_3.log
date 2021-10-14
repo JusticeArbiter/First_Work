@@ -1,0 +1,2 @@
+LOG:  00000: statement: GRANT ALL ON SCHEMA temp_func_test TO public;
+LOCATION:  exec_simple_query, postgres.c:938

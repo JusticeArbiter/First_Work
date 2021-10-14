@@ -1,0 +1,2 @@
+analyze dual;
+ERROR:  42P01: relation "dual" does not exist

@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE OPERATOR #@%# (  leftarg = int8,  procedure = numeric_fac,  invalid_att = int8  );
+LOCATION:  exec_simple_query, postgres.c:938
+WARNING:  42601: operator attribute "invalid_att" not recognized
+LOCATION:  DefineOperator, operatorcmds.c:147
+STATEMENT:  CREATE OPERATOR #@%# (  leftarg = int8,  procedure = numeric_fac,  invalid_att = int8  );

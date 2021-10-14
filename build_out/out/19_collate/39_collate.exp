@@ -1,0 +1,6 @@
+SELECT 'bbc' COLLATE "POSIX" < 'Abc' COLLATE "POSIX" AS "false";
+ false 
+-------
+ f
+(1 row)
+

@@ -1,0 +1,4 @@
+select string_agg(distinct f1::text, ',' order by f1::text) from varchar_tbl;
+ERROR:  42P01: relation "varchar_tbl" does not exist
+LINE 1: ...gg(distinct f1::text, ',' order by f1::text) from varchar_tb...
+                                                             ^

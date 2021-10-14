@@ -1,0 +1,3 @@
+DROP GROUP regression_group;
+ERROR:  2BP01: role "regression_group" cannot be dropped because some objects depend on it
+DETAIL:  privileges for table deptest

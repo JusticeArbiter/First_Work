@@ -1,0 +1,6 @@
+SELECT 2 - -2 AS four;
+ four 
+------
+    4
+(1 row)
+

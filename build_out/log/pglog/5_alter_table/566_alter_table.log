@@ -1,0 +1,5 @@
+LOG:  00000: statement: analyze atacc1(a);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" of relation "atacc1" does not exist
+LOCATION:  do_analyze_rel, analyze.c:383
+STATEMENT:  analyze atacc1(a);

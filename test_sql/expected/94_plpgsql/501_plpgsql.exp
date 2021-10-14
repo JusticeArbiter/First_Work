@@ -1,0 +1,5 @@
+create or replace function footest() returns void as $$  declare x record;  begin  -- too many rows, no params  select * from foo where f1 > 3 into strict x;  raise notice 'x.f1 = %, x.f2 = %', x.f1, x.f2;  end$$ language plpgsql;
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+ERROR:  42601: syntax error at end of input
+LINE 1: ...aise notice 'x.f1 = %, x.f2 = %', x.f1, x.f2;  end$$ languag...
+                                                             ^

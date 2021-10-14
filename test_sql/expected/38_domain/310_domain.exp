@@ -1,0 +1,6 @@
+select 1::inotnull;
+ inotnull 
+----------
+        1
+(1 row)
+

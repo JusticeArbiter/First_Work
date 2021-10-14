@@ -1,0 +1,2 @@
+DROP OPERATOR @#@ (int, int);
+ERROR:  42883: operator does not exist: integer @#@ integer

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT generate_series(1, 100) OVER () FROM empsalary;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "empsalary" does not exist at character 45
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  SELECT generate_series(1, 100) OVER () FROM empsalary;

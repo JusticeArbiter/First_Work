@@ -1,0 +1,2 @@
+SELECT '127.0.0.1'::inet + 10000000000;
+ERROR:  22003: result is out of range

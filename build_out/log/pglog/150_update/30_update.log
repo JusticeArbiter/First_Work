@@ -1,0 +1,2 @@
+LOG:  00000: statement: UPDATE update_test SET c = repeat('x', 10000) WHERE c = 'car';
+LOCATION:  exec_simple_query, postgres.c:938

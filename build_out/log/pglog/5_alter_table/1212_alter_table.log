@@ -1,0 +1,2 @@
+LOG:  00000: statement: CREATE TABLE test_drop_constr_parent (c text CHECK (c IS NOT NULL));
+LOCATION:  exec_simple_query, postgres.c:938

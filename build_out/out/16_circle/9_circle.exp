@@ -1,0 +1,4 @@
+INSERT INTO CIRCLE_TBL VALUES ('1abc,3,5');
+ERROR:  22P02: invalid input syntax for type circle: "1abc,3,5"
+LINE 1: INSERT INTO CIRCLE_TBL VALUES ('1abc,3,5');
+                                       ^

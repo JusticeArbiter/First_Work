@@ -1,0 +1,3 @@
+select raise_test();
+NOTICE:  00000: 22012
+ERROR:  22012: substitute message

@@ -1,0 +1,5 @@
+LOG:  00000: statement: select numrange(1.0, 2.0) + numrange(2.5, 3.0);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22000: result of range union would not be contiguous
+LOCATION:  range_union_internal, rangetypes.c:1053
+STATEMENT:  select numrange(1.0, 2.0) + numrange(2.5, 3.0);

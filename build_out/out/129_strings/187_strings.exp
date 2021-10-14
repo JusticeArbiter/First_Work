@@ -1,0 +1,6 @@
+SELECT replace('yabadabadoo', 'ba', '123') AS "ya123da123doo";
+ ya123da123doo 
+---------------
+ ya123da123doo
+(1 row)
+

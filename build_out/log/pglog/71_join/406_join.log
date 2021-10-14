@@ -1,0 +1,6 @@
+LOG:  00000: statement: select f1,g from int4_tbl a, (select a.f1 as g) ss;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: invalid reference to FROM-clause entry for table "a" at character 38
+HINT:  There is an entry for table "a", but it cannot be referenced from this part of the query.
+LOCATION:  errorMissingRTE, parse_relation.c:3134
+STATEMENT:  select f1,g from int4_tbl a, (select a.f1 as g) ss;

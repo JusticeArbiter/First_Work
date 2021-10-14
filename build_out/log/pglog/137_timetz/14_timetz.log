@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO TIMETZ_TBL VALUES ('15:36:39 America/New_York');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22007: invalid input syntax for type time with time zone: "15:36:39 America/New_York" at character 32
+LOCATION:  DateTimeParseError, datetime.c:3837
+STATEMENT:  INSERT INTO TIMETZ_TBL VALUES ('15:36:39 America/New_York');

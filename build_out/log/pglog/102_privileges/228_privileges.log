@@ -1,0 +1,5 @@
+LOG:  00000: statement: UPDATE t1 SET c3 = 10;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "c3" of relation "t1" does not exist at character 15
+LOCATION:  transformUpdateTargetList, analyze.c:2160
+STATEMENT:  UPDATE t1 SET c3 = 10;

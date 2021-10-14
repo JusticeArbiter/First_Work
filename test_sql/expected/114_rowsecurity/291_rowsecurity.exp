@@ -1,0 +1,7 @@
+INSERT INTO document VALUES (2, (SELECT cid from category WHERE cname = 'technology'), 1, 'rls_regress_user1', 'my first novel')  ON CONFLICT (did) DO UPDATE SET cid = EXCLUDED.cid, dtitle = EXCLUDED.dtitle RETURNING *;
+ did | cid | dlevel |      dauthor      |     dtitle     
+-----+-----+--------+-------------------+----------------
+   2 |  33 |      2 | rls_regress_user2 | my first novel
+(1 row)
+
+INSERT 0 1

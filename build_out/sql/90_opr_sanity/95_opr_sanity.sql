@@ -1,0 +1,1 @@
+SELECT p1.amname, p2.amoplefttype, p2.amoprighttype  FROM pg_am AS p1, pg_amop AS p2  WHERE p2.amopmethod = p1.oid AND  p1.amstrategies <> 0 AND  p1.amstrategies != (SELECT count(*) FROM pg_amop AS p3  WHERE p3.amopfamily = p2.amopfamily AND  p3.amoplefttype = p2.amoplefttype AND  p3.amoprighttype = p2.amoprighttype AND  p3.amoppurpose = 's');

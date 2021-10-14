@@ -1,0 +1,5 @@
+LOG:  00000: statement: create function test_table_func_row() returns setof found_test_tbl as '  DECLARE  row found_test_tbl%ROWTYPE;  BEGIN  FOR row IN select * from found_test_tbl LOOP  RETURN NEXT row;  END LOOP;  RETURN;  END;' language plpgsql;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE FUNCTION
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  create function test_table_func_row() returns setof found_test_tbl as '  DECLARE  row found_test_tbl%ROWTYPE;  BEGIN  FOR row IN select * from found_test_tbl LOOP  RETURN NEXT row;  END LOOP;  RETURN;  END;' language plpgsql;

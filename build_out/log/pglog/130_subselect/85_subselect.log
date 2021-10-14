@@ -1,0 +1,5 @@
+LOG:  00000: statement: select * from numeric_table  where num_col in (select float_col from float_table);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "numeric_table" does not exist at character 15
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  select * from numeric_table  where num_col in (select float_col from float_table);

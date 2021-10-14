@@ -1,0 +1,4 @@
+INSERT INTO t1 (c3) VALUES (null);
+ERROR:  42703: column "c3" of relation "t1" does not exist
+LINE 1: INSERT INTO t1 (c3) VALUES (null);
+                        ^

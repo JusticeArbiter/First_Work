@@ -1,0 +1,4 @@
+select * from vw_ord;
+ERROR:  42P01: relation "vw_ord" does not exist
+LINE 1: select * from vw_ord;
+                      ^

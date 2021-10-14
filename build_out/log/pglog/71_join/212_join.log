@@ -1,0 +1,5 @@
+LOG:  00000: statement: insert into a (code) values ('q');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "code" of relation "a" does not exist at character 16
+LOCATION:  checkInsertTargets, parse_target.c:954
+STATEMENT:  insert into a (code) values ('q');

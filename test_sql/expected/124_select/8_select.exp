@@ -1,0 +1,2 @@
+ANALYZE onek2;
+ERROR:  42P01: relation "onek2" does not exist

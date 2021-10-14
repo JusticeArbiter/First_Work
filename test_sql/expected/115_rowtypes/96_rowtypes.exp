@@ -1,0 +1,4 @@
+select fullname.text from fullname;
+ERROR:  42P01: relation "fullname" does not exist
+LINE 1: select fullname.text from fullname;
+                                  ^

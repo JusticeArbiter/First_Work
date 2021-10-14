@@ -1,0 +1,6 @@
+SELECT has_type_privilege('regressuser2', 'testns.testdomain1', 'USAGE');
+ has_type_privilege 
+--------------------
+ t
+(1 row)
+

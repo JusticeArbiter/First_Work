@@ -1,0 +1,4 @@
+INSERT INTO a VALUES (0, 0), (1, NULL);
+ERROR:  42601: INSERT has more expressions than target columns
+LINE 1: INSERT INTO a VALUES (0, 0), (1, NULL);
+                                 ^

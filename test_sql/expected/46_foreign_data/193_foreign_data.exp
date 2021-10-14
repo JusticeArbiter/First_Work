@@ -1,0 +1,3 @@
+ALTER USER MAPPING FOR regress_test_missing_role SERVER s4 OPTIONS (gotcha 'true');
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER USER MAPPING
+ERROR:  42704: role "regress_test_missing_role" does not exist

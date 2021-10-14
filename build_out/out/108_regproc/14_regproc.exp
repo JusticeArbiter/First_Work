@@ -1,0 +1,6 @@
+SELECT regoper('pg_catalog.||/');
+ regoper 
+---------
+ ||/
+(1 row)
+

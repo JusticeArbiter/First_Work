@@ -1,0 +1,2 @@
+SELECT * FROM t1 FULL JOIN t2 USING (name) FULL JOIN t3 USING (name);
+ERROR:  42703: column "name" specified in USING clause does not exist in right table

@@ -1,0 +1,7 @@
+LOG:  00000: statement: SELECT 'truf'::jsonb;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type json at character 8
+DETAIL:  Token "truf" is invalid.
+CONTEXT:  JSON data, line 1: truf
+LOCATION:  report_invalid_token, json.c:1244
+STATEMENT:  SELECT 'truf'::jsonb;

@@ -1,0 +1,7 @@
+select * from tttest;
+ price_id | price_val | price_on | price_off 
+----------+-----------+----------+-----------
+        1 |         1 |          |    999999
+        3 |        30 |        0 |    999999
+(2 rows)
+

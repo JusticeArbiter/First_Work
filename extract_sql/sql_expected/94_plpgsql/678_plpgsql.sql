@@ -1,0 +1,1 @@
+create or replace function case_test(bigint) returns text as $$  declare a int = 10;  begin  case  when $1 = 1 then  return 'one';  when $1 = a + 2 then  return 'twelve';  else  return 'other';  end case;  end;  $$ language plpgsql immutable;

@@ -1,0 +1,4 @@
+SELECT * FROM writetest, temptest;
+ERROR:  42P01: relation "writetest" does not exist
+LINE 1: SELECT * FROM writetest, temptest;
+                      ^

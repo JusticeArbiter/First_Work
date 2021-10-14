@@ -1,0 +1,6 @@
+select regexp_substr('abc,abc,abc'::text,'[^,]+'::text);
+ regexp_substr 
+---------------
+ abc
+(1 row)
+

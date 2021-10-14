@@ -1,0 +1,1 @@
+INSERT INTO r1 VALUES (10), (20);

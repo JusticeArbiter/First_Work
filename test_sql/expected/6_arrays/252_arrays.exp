@@ -1,0 +1,3 @@
+select array_fill(1, array[[1,2],[3,4]]);
+ERROR:  2202E: wrong number of array subscripts
+DETAIL:  Dimension array must be one dimensional.

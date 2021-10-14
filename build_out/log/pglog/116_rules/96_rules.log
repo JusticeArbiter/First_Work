@@ -1,0 +1,2 @@
+LOG:  00000: statement: update rtest_t1 set a = a + 10 where b > 30;
+LOCATION:  exec_simple_query, postgres.c:938

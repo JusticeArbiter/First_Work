@@ -1,0 +1,6 @@
+SELECT '[1,[2]'::jsonb;
+ERROR:  22P02: invalid input syntax for type json
+LINE 1: SELECT '[1,[2]'::jsonb;
+               ^
+DETAIL:  The input string ended unexpectedly.
+CONTEXT:  JSON data, line 1: [1,[2]

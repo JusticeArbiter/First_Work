@@ -1,0 +1,2 @@
+create domain domaindroptest int4;
+CREATE DOMAIN

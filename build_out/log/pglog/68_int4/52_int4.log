@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT 4! AS twenty_four;
+LOCATION:  exec_simple_query, postgres.c:938

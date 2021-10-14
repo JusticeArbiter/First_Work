@@ -1,0 +1,5 @@
+SELECT p1.amprocfamily, p1.amprocnum,  p2.oid, p2.proname,  p3.opfname,  p4.amprocfamily, p4.amprocnum,  p5.oid, p5.proname,  p6.opfname  FROM pg_amproc AS p1, pg_proc AS p2, pg_opfamily AS p3,  pg_amproc AS p4, pg_proc AS p5, pg_opfamily AS p6  WHERE p1.amprocfamily = p3.oid AND p4.amprocfamily = p6.oid AND  p3.opfmethod = p6.opfmethod AND p1.amprocnum = p4.amprocnum AND  p1.amproc = p2.oid AND p4.amproc = p5.oid AND  (p2.proretset OR p5.proretset OR p2.pronargs != p5.pronargs);
+ amprocfamily | amprocnum | oid | proname | opfname | amprocfamily | amprocnum | oid | proname | opfname 
+--------------+-----------+-----+---------+---------+--------------+-----------+-----+---------+---------
+(0 rows)
+

@@ -1,0 +1,6 @@
+SELECT echo_me('red');
+ echo_me 
+---------
+ redwtf
+(1 row)
+

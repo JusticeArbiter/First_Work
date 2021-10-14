@@ -1,0 +1,4 @@
+CREATE USER MAPPING FOR user SERVER s8 OPTIONS (username 'test', password 'secret');
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE USER MAPPING
+ERROR:  42601: invalid option "username"
+HINT:  Valid options in this context are: user, password

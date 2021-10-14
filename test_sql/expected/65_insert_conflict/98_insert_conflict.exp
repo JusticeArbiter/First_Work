@@ -1,0 +1,7 @@
+insert into insertconflicttest as i values (23, 'Avocado') on conflict (key) do update set fruit = excluded.*::text  returning *;
+ key |    fruit     
+-----+--------------
+  23 | (23,Avocado)
+(1 row)
+
+INSERT 0 1

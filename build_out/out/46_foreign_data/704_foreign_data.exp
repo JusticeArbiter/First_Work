@@ -1,0 +1,3 @@
+IMPORT FOREIGN SCHEMA s1 EXCEPT (t1) FROM SERVER s9 INTO public;
+NOTICE:  00000: test_event_trigger: ddl_command_start IMPORT FOREIGN SCHEMA
+ERROR:  42704: server "s9" does not exist

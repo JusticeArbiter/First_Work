@@ -1,0 +1,5 @@
+SELECT * FROM atestv0;
+ x 
+---
+(0 rows)
+

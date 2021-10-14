@@ -1,0 +1,2 @@
+alter domain dnotnulltest set not null;
+ERROR:  23502: column "col2" of table "domnotnull" contains null values

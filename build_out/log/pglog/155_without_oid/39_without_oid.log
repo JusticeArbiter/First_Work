@@ -1,0 +1,8 @@
+LOG:  00000: statement: CREATE TABLE execute_without WITHOUT OIDS AS EXECUTE table_source(2);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE AS
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TABLE execute_without WITHOUT OIDS AS EXECUTE table_source(2);
+ERROR:  26000: prepared statement "table_source" does not exist
+LOCATION:  FetchPreparedStatement, prepare.c:504
+STATEMENT:  CREATE TABLE execute_without WITHOUT OIDS AS EXECUTE table_source(2);

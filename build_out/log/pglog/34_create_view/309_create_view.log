@@ -1,0 +1,2 @@
+LOG:  00000: statement: create view vv6 as select x,y,z,q from  (tt11 join tt12 using(x)) join tt13 using(z);
+LOCATION:  exec_simple_query, postgres.c:938

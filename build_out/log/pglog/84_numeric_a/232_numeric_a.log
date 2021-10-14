@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO num_exp_add VALUES (5,5,'32794.076982');
+LOCATION:  exec_simple_query, postgres.c:938

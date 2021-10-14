@@ -1,0 +1,1 @@
+SELECT '' AS seven, * FROM CHAR_TBL;

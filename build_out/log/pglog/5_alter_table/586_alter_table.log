@@ -1,0 +1,5 @@
+LOG:  00000: statement: alter table atacc1 add primary key(a);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" named in key does not exist
+LOCATION:  ComputeIndexAttrs, indexcmds.c:1005
+STATEMENT:  alter table atacc1 add primary key(a);

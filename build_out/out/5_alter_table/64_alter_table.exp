@@ -1,0 +1,2 @@
+CREATE TEMP TABLE tmp (tmptable int);
+CREATE TABLE

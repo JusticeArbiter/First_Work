@@ -1,0 +1,2 @@
+select 'x' ~ repeat('x*y*z*', 1000);
+ERROR:  2201B: invalid regular expression: regular expression is too complex

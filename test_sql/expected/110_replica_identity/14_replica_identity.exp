@@ -1,0 +1,3 @@
+ALTER TABLE test_replica_identity REPLICA IDENTITY USING INDEX test_replica_identity_nonkey;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER TABLE
+ERROR:  42809: index "test_replica_identity_nonkey" cannot be used as replica identity because column "nonkey" is nullable

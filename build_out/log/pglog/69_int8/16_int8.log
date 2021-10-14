@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM INT8_TBL WHERE q2 <> 4567890123456789;
+LOCATION:  exec_simple_query, postgres.c:938

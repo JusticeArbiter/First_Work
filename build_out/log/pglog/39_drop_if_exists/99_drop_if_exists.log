@@ -1,0 +1,5 @@
+LOG:  00000: statement: DROP SERVER test_server_exists;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: server "test_server_exists" does not exist
+LOCATION:  get_foreign_server_oid, foreign.c:691
+STATEMENT:  DROP SERVER test_server_exists;

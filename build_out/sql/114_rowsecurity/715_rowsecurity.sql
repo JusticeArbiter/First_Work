@@ -1,0 +1,1 @@
+CREATE POLICY p1 ON r1 USING (false);

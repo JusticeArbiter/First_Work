@@ -1,0 +1,7 @@
+select * from foobar();
+ foobar 
+--------
+ foo
+ bar
+(2 rows)
+

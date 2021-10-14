@@ -1,0 +1,431 @@
+LOG:  statement: select message from postgres_log where query is null;
+ statement: SELECT avg(four) AS avg_1 FROM onek;
+ statement: SELECT avg(a) AS avg_32 FROM aggtest WHERE a < 100;
+ statement: SELECT avg(b)::numeric(10,3) AS avg_107_943 FROM aggtest;
+ statement: SELECT avg(gpa) AS avg_3_4 FROM ONLY student;
+ statement: SELECT sum(four) AS sum_1500 FROM onek;
+ statement: SELECT sum(a) AS sum_198 FROM aggtest;
+ statement: SELECT sum(b) AS avg_431_773 FROM aggtest;
+ statement: SELECT sum(gpa) AS avg_6_8 FROM ONLY student;
+ statement: SELECT max(four) AS max_3 FROM onek;
+ statement: SELECT max(a) AS max_100 FROM aggtest;
+ statement: SELECT max(aggtest.b) AS max_324_78 FROM aggtest;
+ statement: SELECT max(student.gpa) AS max_3_7 FROM student;
+ statement: SELECT stddev_pop(b) FROM aggtest;
+ statement: SELECT stddev_samp(b) FROM aggtest;
+ statement: SELECT var_pop(b) FROM aggtest;
+ statement: SELECT var_samp(b) FROM aggtest;
+ statement: SELECT stddev_pop(b::numeric) FROM aggtest;
+ statement: SELECT stddev_samp(b::numeric) FROM aggtest;
+ statement: SELECT var_pop(b::numeric) FROM aggtest;
+ statement: SELECT var_samp(b::numeric) FROM aggtest;
+ statement: SELECT var_pop(1.0), var_samp(2.0);
+ statement: SELECT stddev_pop(3.0::numeric), stddev_samp(4.0::numeric);
+ statement: select sum(null::int4) from generate_series(1,3);
+ statement: select sum(null::int8) from generate_series(1,3);
+ statement: select sum(null::numeric) from generate_series(1,3);
+ statement: select sum(null::float8) from generate_series(1,3);
+ statement: select avg(null::int4) from generate_series(1,3);
+ statement: select avg(null::int8) from generate_series(1,3);
+ statement: select avg(null::numeric) from generate_series(1,3);
+ statement: select avg(null::float8) from generate_series(1,3);
+ statement: select sum('NaN'::numeric) from generate_series(1,3);
+ statement: select avg('NaN'::numeric) from generate_series(1,3);
+ statement: SELECT regr_count(b, a) FROM aggtest;
+ statement: SELECT regr_sxx(b, a) FROM aggtest;
+ statement: SELECT regr_syy(b, a) FROM aggtest;
+ statement: SELECT regr_sxy(b, a) FROM aggtest;
+ statement: SELECT regr_avgx(b, a), regr_avgy(b, a) FROM aggtest;
+ statement: SELECT regr_r2(b, a) FROM aggtest;
+ statement: SELECT regr_slope(b, a), regr_intercept(b, a) FROM aggtest;
+ statement: SELECT covar_pop(b, a), covar_samp(b, a) FROM aggtest;
+ statement: SELECT corr(b, a) FROM aggtest;
+ statement: SELECT count(four) AS cnt_1000 FROM onek;
+ statement: SELECT count(DISTINCT four) AS cnt_4 FROM onek;
+ statement: select ten, count(*), sum(four) from onek                                                          +
+ group by ten order by ten;
+ statement: select ten, count(four), sum(DISTINCT four) from onek                                              +
+ group by ten order by ten;
+ statement: SELECT newavg(four) AS avg_1 FROM onek;
+ statement: SELECT newsum(four) AS sum_1500 FROM onek;
+ statement: SELECT newcnt(four) AS cnt_1000 FROM onek;
+ statement: SELECT newcnt(*) AS cnt_1000 FROM onek;
+ statement: SELECT oldcnt(*) AS cnt_1000 FROM onek;
+ statement: SELECT sum2(q1,q2) FROM int8_tbl;
+ statement: select ten, sum(distinct four) from onek a                                                         +
+ group by ten                                                                                                  +
+ having exists (select 1 from onek b where sum(distinct a.four) = b.four);
+ statement: select ten, sum(distinct four) from onek a                                                         +
+ group by ten                                                                                                  +
+ having exists (select 1 from onek b                                                                           +
+                where sum(distinct a.four + b.four) = b.four);
+ statement: select                                                                                             +
+   (select max((select i.unique2 from tenk1 i where i.unique1 = o.unique1)))                                   +
+ from tenk1 o;
+ statement: explain (verbose, costs off)                                                                       +
+ select s1, s2, sm                                                                                             +
+ from generate_series(1, 3) s1,                                                                                +
+      lateral (select s2, sum(s1 + s2) sm                                                                      +
+               from generate_series(1, 3) s2 group by s2) ss                                                   +
+ order by 1, 2;
+ statement: select s1, s2, sm                                                                                  +
+ from generate_series(1, 3) s1,                                                                                +
+      lateral (select s2, sum(s1 + s2) sm                                                                      +
+               from generate_series(1, 3) s2 group by s2) ss                                                   +
+ order by 1, 2;
+ statement: explain (verbose, costs off)                                                                       +
+ select array(select sum(x+y) s                                                                                +
+             from generate_series(1,3) y group by y order by s)                                                +
+   from generate_series(1,3) x;
+ statement: select array(select sum(x+y) s                                                                     +
+             from generate_series(1,3) y group by y order by s)                                                +
+   from generate_series(1,3) x;
+ statement: CREATE TEMPORARY TABLE bitwise_test(                                                               +
+   i2 INT2,                                                                                                    +
+   i4 INT4,                                                                                                    +
+   i8 INT8,                                                                                                    +
+   i INTEGER,                                                                                                  +
+   x INT2,                                                                                                     +
+   y BIT(4)                                                                                                    +
+ );
+ statement: SELECT                                                                                             +
+   BIT_AND(i2) AS "?",                                                                                         +
+   BIT_OR(i4)  AS "?"                                                                                          +
+ FROM bitwise_test;
+ statement: COPY bitwise_test FROM STDIN NULL 'null';
+ statement: SELECT                                                                                             +
+   BIT_AND(i2) AS "1",                                                                                         +
+   BIT_AND(i4) AS "1",                                                                                         +
+   BIT_AND(i8) AS "1",                                                                                         +
+   BIT_AND(i)  AS "?",                                                                                         +
+   BIT_AND(x)  AS "0",                                                                                         +
+   BIT_AND(y)  AS "0100",                                                                                      +
+   BIT_OR(i2)  AS "7",                                                                                         +
+   BIT_OR(i4)  AS "7",                                                                                         +
+   BIT_OR(i8)  AS "7",                                                                                         +
+   BIT_OR(i)   AS "?",                                                                                         +
+   BIT_OR(x)   AS "7",                                                                                         +
+   BIT_OR(y)   AS "1101"                                                                                       +
+ FROM bitwise_test;
+ statement: SELECT                                                                                             +
+                                                                                                               +
+                                                                                                               +
+   booland_statefunc(NULL, NULL)  IS NULL AS "t",                                                              +
+   booland_statefunc(TRUE, NULL)  IS NULL AS "t",                                                              +
+   booland_statefunc(FALSE, NULL) IS NULL AS "t",                                                              +
+   booland_statefunc(NULL, TRUE)  IS NULL AS "t",                                                              +
+   booland_statefunc(NULL, FALSE) IS NULL AS "t",                                                              +
+                                                                                                               +
+   booland_statefunc(TRUE, TRUE) AS "t",                                                                       +
+   NOT booland_statefunc(TRUE, FALSE) AS "t",                                                                  +
+   NOT booland_statefunc(FALSE, TRUE) AS "t",                                                                  +
+   NOT booland_statefunc(FALSE, FALSE) AS "t";
+ statement: SELECT                                                                                             +
+                                                                                                               +
+                                                                                                               +
+   boolor_statefunc(NULL, NULL)  IS NULL AS "t",                                                               +
+   boolor_statefunc(TRUE, NULL)  IS NULL AS "t",                                                               +
+   boolor_statefunc(FALSE, NULL) IS NULL AS "t",                                                               +
+   boolor_statefunc(NULL, TRUE)  IS NULL AS "t",                                                               +
+   boolor_statefunc(NULL, FALSE) IS NULL AS "t",                                                               +
+                                                                                                               +
+   boolor_statefunc(TRUE, TRUE) AS "t",                                                                        +
+   boolor_statefunc(TRUE, FALSE) AS "t",                                                                       +
+   boolor_statefunc(FALSE, TRUE) AS "t",                                                                       +
+   NOT boolor_statefunc(FALSE, FALSE) AS "t";
+ statement: CREATE TEMPORARY TABLE bool_test(                                                                  +
+   b1 BOOL,                                                                                                    +
+   b2 BOOL,                                                                                                    +
+   b3 BOOL,                                                                                                    +
+   b4 BOOL);
+ statement: SELECT                                                                                             +
+   BOOL_AND(b1)   AS "n",                                                                                      +
+   BOOL_OR(b3)    AS "n"                                                                                       +
+ FROM bool_test;
+ statement: COPY bool_test FROM STDIN NULL 'null';
+ statement: SELECT                                                                                             +
+   BOOL_AND(b1)     AS "f",                                                                                    +
+   BOOL_AND(b2)     AS "t",                                                                                    +
+   BOOL_AND(b3)     AS "f",                                                                                    +
+   BOOL_AND(b4)     AS "n",                                                                                    +
+   BOOL_AND(NOT b2) AS "f",                                                                                    +
+   BOOL_AND(NOT b3) AS "t"                                                                                     +
+ FROM bool_test;
+ statement: SELECT                                                                                             +
+   EVERY(b1)     AS "f",                                                                                       +
+   EVERY(b2)     AS "t",                                                                                       +
+   EVERY(b3)     AS "f",                                                                                       +
+   EVERY(b4)     AS "n",                                                                                       +
+   EVERY(NOT b2) AS "f",                                                                                       +
+   EVERY(NOT b3) AS "t"                                                                                        +
+ FROM bool_test;
+ statement: SELECT                                                                                             +
+   BOOL_OR(b1)      AS "t",                                                                                    +
+   BOOL_OR(b2)      AS "t",                                                                                    +
+   BOOL_OR(b3)      AS "f",                                                                                    +
+   BOOL_OR(b4)      AS "n",                                                                                    +
+   BOOL_OR(NOT b2)  AS "f",                                                                                    +
+   BOOL_OR(NOT b3)  AS "t"                                                                                     +
+ FROM bool_test;
+ statement: explain (costs off)                                                                                +
+   select min(unique1) from tenk1;
+ statement: select min(unique1) from tenk1;
+ statement: explain (costs off)                                                                                +
+   select max(unique1) from tenk1;
+ statement: select max(unique1) from tenk1;
+ statement: explain (costs off)                                                                                +
+   select max(unique1) from tenk1 where unique1 < 42;
+ statement: select max(unique1) from tenk1 where unique1 < 42;
+ statement: explain (costs off)                                                                                +
+   select max(unique1) from tenk1 where unique1 > 42;
+ statement: select max(unique1) from tenk1 where unique1 > 42;
+ statement: explain (costs off)                                                                                +
+   select max(unique1) from tenk1 where unique1 > 42000;
+ statement: select max(unique1) from tenk1 where unique1 > 42000;
+ statement: explain (costs off)                                                                                +
+   select max(tenthous) from tenk1 where thousand = 33;
+ statement: select max(tenthous) from tenk1 where thousand = 33;
+ statement: explain (costs off)                                                                                +
+   select min(tenthous) from tenk1 where thousand = 33;
+ statement: select min(tenthous) from tenk1 where thousand = 33;
+ statement: explain (costs off)                                                                                +
+   select f1, (select min(unique1) from tenk1 where unique1 > f1) AS gt                                        +
+     from int4_tbl;
+ statement: select f1, (select min(unique1) from tenk1 where unique1 > f1) AS gt                               +
+   from int4_tbl;
+ statement: explain (costs off)                                                                                +
+   select distinct max(unique2) from tenk1;
+ statement: select distinct max(unique2) from tenk1;
+ statement: explain (costs off)                                                                                +
+   select max(unique2) from tenk1 order by 1;
+ statement: select max(unique2) from tenk1 order by 1;
+ statement: explain (costs off)                                                                                +
+   select max(unique2) from tenk1 order by max(unique2);
+ statement: select max(unique2) from tenk1 order by max(unique2);
+ statement: explain (costs off)                                                                                +
+   select max(unique2) from tenk1 order by max(unique2)+1;
+ statement: select max(unique2) from tenk1 order by max(unique2)+1;
+ statement: explain (costs off)                                                                                +
+   select max(unique2), generate_series(1,3) as g from tenk1 order by g desc;
+ statement: select max(unique2), generate_series(1,3) as g from tenk1 order by g desc;
+ statement: create table minmaxtest(f1 int);
+ statement: create table minmaxtest1() inherits (minmaxtest);
+ statement: create table minmaxtest2() inherits (minmaxtest);
+ statement: create table minmaxtest3() inherits (minmaxtest);
+ statement: create index minmaxtesti on minmaxtest(f1);
+ statement: create index minmaxtest1i on minmaxtest1(f1);
+ statement: create index minmaxtest2i on minmaxtest2(f1 desc);
+ statement: create index minmaxtest3i on minmaxtest3(f1) where f1 is not null;
+ statement: insert into minmaxtest values(11), (12);
+ statement: insert into minmaxtest1 values(13), (14);
+ statement: insert into minmaxtest2 values(15), (16);
+ statement: insert into minmaxtest3 values(17), (18);
+ statement: explain (costs off)                                                                                +
+   select min(f1), max(f1) from minmaxtest;
+ statement: select min(f1), max(f1) from minmaxtest;
+ statement: explain (costs off)                                                                                +
+   select distinct min(f1), max(f1) from minmaxtest;
+ statement: select distinct min(f1), max(f1) from minmaxtest;
+ statement: drop table minmaxtest cascade;
+ statement: select max(min(unique1)) from tenk1;
+ statement: select (select max(min(unique1)) from int8_tbl) from tenk1;
+ statement: select array_agg(a order by b)                                                                     +
+   from (values (1,4),(2,3),(3,1),(4,2)) v(a,b);
+ statement: select array_agg(a order by a)                                                                     +
+   from (values (1,4),(2,3),(3,1),(4,2)) v(a,b);
+ statement: select array_agg(a order by a desc)                                                                +
+   from (values (1,4),(2,3),(3,1),(4,2)) v(a,b);
+ statement: select array_agg(b order by a desc)                                                                +
+   from (values (1,4),(2,3),(3,1),(4,2)) v(a,b);
+ statement: select array_agg(distinct a)                                                                       +
+   from (values (1),(2),(1),(3),(null),(2)) v(a);
+ statement: select array_agg(distinct a order by a)                                                            +
+   from (values (1),(2),(1),(3),(null),(2)) v(a);
+ statement: select array_agg(distinct a order by a desc)                                                       +
+   from (values (1),(2),(1),(3),(null),(2)) v(a);
+ statement: select array_agg(distinct a order by a desc nulls last)                                            +
+   from (values (1),(2),(1),(3),(null),(2)) v(a);
+ statement: select aggfstr(a,b,c)                                                                              +
+   from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c);
+ statement: select aggfns(a,b,c)                                                                               +
+   from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c);
+ statement: select aggfstr(distinct a,b,c)                                                                     +
+   from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                   +
+        generate_series(1,3) i;
+ statement: select aggfns(distinct a,b,c)                                                                      +
+   from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                   +
+        generate_series(1,3) i;
+ statement: select aggfstr(distinct a,b,c order by b)                                                          +
+   from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                   +
+        generate_series(1,3) i;
+ statement: select aggfns(distinct a,b,c order by b)                                                           +
+   from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                   +
+        generate_series(1,3) i;
+ statement: select aggfns(distinct a,a,c order by c using ~<~,a)                                               +
+   from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                   +
+        generate_series(1,2) i;
+ statement: select aggfns(distinct a,a,c order by c using ~<~)                                                 +
+   from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                   +
+        generate_series(1,2) i;
+ statement: select aggfns(distinct a,a,c order by a)                                                           +
+   from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                   +
+        generate_series(1,2) i;
+ statement: select aggfns(distinct a,b,c order by a,c using ~<~,b)                                             +
+   from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                   +
+        generate_series(1,2) i;
+ statement: create view agg_view1 as                                                                           +
+   select aggfns(a,b,c)                                                                                        +
+     from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c);
+ statement: select * from agg_view1;
+ statement: select pg_get_viewdef('agg_view1'::regclass);
+ statement: create or replace view agg_view1 as                                                                +
+   select aggfns(distinct a,b,c)                                                                               +
+     from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                 +
+          generate_series(1,3) i;
+ statement: select * from agg_view1;
+ statement: select pg_get_viewdef('agg_view1'::regclass);
+ statement: create or replace view agg_view1 as                                                                +
+   select aggfns(distinct a,b,c order by b)                                                                    +
+     from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                 +
+          generate_series(1,3) i;
+ statement: select * from agg_view1;
+ statement: select pg_get_viewdef('agg_view1'::regclass);
+ statement: create or replace view agg_view1 as                                                                +
+   select aggfns(a,b,c order by b+1)                                                                           +
+     from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c);
+ statement: select * from agg_view1;
+ statement: select pg_get_viewdef('agg_view1'::regclass);
+ statement: create or replace view agg_view1 as                                                                +
+   select aggfns(a,a,c order by b)                                                                             +
+     from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c);
+ statement: select * from agg_view1;
+ statement: select pg_get_viewdef('agg_view1'::regclass);
+ statement: create or replace view agg_view1 as                                                                +
+   select aggfns(a,b,c order by c using ~<~)                                                                   +
+     from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c);
+ statement: select * from agg_view1;
+ statement: select pg_get_viewdef('agg_view1'::regclass);
+ statement: create or replace view agg_view1 as                                                                +
+   select aggfns(distinct a,b,c order by a,c using ~<~,b)                                                      +
+     from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                 +
+          generate_series(1,2) i;
+ statement: select * from agg_view1;
+ statement: select pg_get_viewdef('agg_view1'::regclass);
+ statement: drop view agg_view1;
+ statement: select aggfns(distinct a,b,c order by i)                                                           +
+   from (values (1,1,'foo')) v(a,b,c), generate_series(1,2) i;
+ statement: select aggfns(distinct a,b,c order by a,b+1)                                                       +
+   from (values (1,1,'foo')) v(a,b,c), generate_series(1,2) i;
+ statement: select aggfns(distinct a,b,c order by a,b,i,c)                                                     +
+   from (values (1,1,'foo')) v(a,b,c), generate_series(1,2) i;
+ statement: select aggfns(distinct a,a,c order by a,b)                                                         +
+   from (values (1,1,'foo')) v(a,b,c), generate_series(1,2) i;
+ statement: select string_agg(a,',') from (values('aaaa'),('bbbb'),('cccc')) g(a);
+ statement: select string_agg(a,',') from (values('aaaa'),(null),('bbbb'),('cccc')) g(a);
+ statement: select string_agg(a,'AB') from (values(null),(null),('bbbb'),('cccc')) g(a);
+ statement: select string_agg(a,',') from (values(null),(null)) g(a);
+ statement: select string_agg(distinct f1, ',' order by f1) from varchar_tbl;
+ statement: select string_agg(distinct f1::text, ',' order by f1) from varchar_tbl;
+ statement: select string_agg(distinct f1, ',' order by f1::text) from varchar_tbl;
+ statement: select string_agg(distinct f1::text, ',' order by f1::text) from varchar_tbl;
+ statement: create table bytea_test_table(v bytea);
+ statement: select string_agg(v, '') from bytea_test_table;
+ statement: insert into bytea_test_table values(decode('ff','hex'));
+ statement: select string_agg(v, '') from bytea_test_table;
+ statement: insert into bytea_test_table values(decode('aa','hex'));
+ statement: select string_agg(v, '') from bytea_test_table;
+ statement: select string_agg(v, NULL) from bytea_test_table;
+ statement: select string_agg(v, decode('ee', 'hex')) from bytea_test_table;
+ statement: drop table bytea_test_table;
+ statement: select min(unique1) filter (where unique1 > 100) from tenk1;
+ statement: select ten, sum(distinct four) filter (where four::text ~ '123') from onek a                       +
+ group by ten;
+ statement: select ten, sum(distinct four) filter (where four > 10) from onek a                                +
+ group by ten                                                                                                  +
+ having exists (select 1 from onek b where sum(distinct a.four) = b.four);
+ statement: select max(foo COLLATE "C") filter (where (bar collate "POSIX") > '0')                             +
+ from (values ('a', 'b')) AS v(foo,bar);
+ statement: select (select count(*)                                                                            +
+         from (values (1)) t0(inner_c))                                                                        +
+ from (values (2),(3)) t1(outer_c);
+ statement: select (select count(*) filter (where outer_c <> 0)                                                +
+         from (values (1)) t0(inner_c))                                                                        +
+ from (values (2),(3)) t1(outer_c);
+ statement: select (select count(inner_c) filter (where outer_c <> 0)                                          +
+         from (values (1)) t0(inner_c))                                                                        +
+ from (values (2),(3)) t1(outer_c);
+ statement: select                                                                                             +
+   (select max((select i.unique2 from tenk1 i where i.unique1 = o.unique1))                                    +
+      filter (where o.unique1 < 10))                                                                           +
+ from tenk1 o;
+ statement: select sum(unique1) FILTER (WHERE                                                                  +
+   unique1 IN (SELECT unique1 FROM onek where unique1 < 100)) FROM tenk1;
+ statement: select aggfns(distinct a,b,c order by a,c using ~<~,b) filter (where a > 1)                        +
+     from (values (1,3,'foo'),(0,null,null),(2,2,'bar'),(3,1,'baz')) v(a,b,c),                                 +
+     generate_series(1,2) i;
+ statement: select p, percentile_cont(p) within group (order by x::float8)                                     +
+ from generate_series(1,5) x,                                                                                  +
+      (values (0::float8),(0.1),(0.25),(0.4),(0.5),(0.6),(0.75),(0.9),(1)) v(p)                                +
+ group by p order by p;
+ statement: select p, sum() within group (order by x::float8)                                                  +
+ from generate_series(1,5) x,                                                                                  +
+      (values (0::float8),(0.1),(0.25),(0.4),(0.5),(0.6),(0.75),(0.9),(1)) v(p)                                +
+ group by p order by p;
+ statement: select p, percentile_cont(p,p)                                                                     +
+ from generate_series(1,5) x,                                                                                  +
+      (values (0::float8),(0.1),(0.25),(0.4),(0.5),(0.6),(0.75),(0.9),(1)) v(p)                                +
+ group by p order by p;
+ statement: select percentile_cont(0.5) within group (order by b) from aggtest;
+ statement: select percentile_cont(0.5) within group (order by b), sum(b) from aggtest;
+ statement: select percentile_cont(0.5) within group (order by thousand) from tenk1;
+ statement: select percentile_disc(0.5) within group (order by thousand) from tenk1;
+ statement: select rank(3) within group (order by x)                                                           +
+ from (values (1),(1),(2),(2),(3),(3),(4)) v(x);
+ statement: select cume_dist(3) within group (order by x)                                                      +
+ from (values (1),(1),(2),(2),(3),(3),(4)) v(x);
+ statement: select percent_rank(3) within group (order by x)                                                   +
+ from (values (1),(1),(2),(2),(3),(3),(4),(5)) v(x);
+ statement: select dense_rank(3) within group (order by x)                                                     +
+ from (values (1),(1),(2),(2),(3),(3),(4)) v(x);
+ statement: select percentile_disc(array[0,0.1,0.25,0.5,0.75,0.9,1]) within group (order by thousand)          +
+ from tenk1;
+ statement: select percentile_cont(array[0,0.25,0.5,0.75,1]) within group (order by thousand)                  +
+ from tenk1;
+ statement: select percentile_disc(array[[null,1,0.5],[0.75,0.25,null]]) within group (order by thousand)      +
+ from tenk1;
+ statement: select percentile_cont(array[0,1,0.25,0.75,0.5,1,0.3,0.32,0.35,0.38,0.4]) within group (order by x)+
+ from generate_series(1,6) x;
+ statement: select ten, mode() within group (order by string4) from tenk1 group by ten;
+ statement: select percentile_disc(array[0.25,0.5,0.75]) within group (order by x)                             +
+ from unnest('{fred,jim,fred,jack,jill,fred,jill,jim,jim,sheila,jim,sheila}'::text[]) u(x);
+ statement: select pg_collation_for(percentile_disc(1) within group (order by x collate "POSIX"))              +
+   from (values ('fred'),('jim')) v(x);
+ statement: select test_rank(3) within group (order by x)                                                      +
+ from (values (1),(1),(2),(2),(3),(3),(4)) v(x);
+ statement: select test_percentile_disc(0.5) within group (order by thousand) from tenk1;
+ statement: select rank(x) within group (order by x) from generate_series(1,5) x;
+ statement: select array(select percentile_disc(a) within group (order by x)                                   +
+                from (values (0.3),(0.7)) v(a) group by a)                                                     +
+   from generate_series(1,5) g(x);
+ statement: select rank(sum(x)) within group (order by x) from generate_series(1,5) x;
+ statement: select rank(3) within group (order by x) from (values ('fred'),('jim')) v(x);
+ statement: select rank(3) within group (order by stringu1,stringu2) from tenk1;
+ statement: select rank('fred') within group (order by x) from generate_series(1,5) x;
+ statement: select rank('adam'::text collate "C") within group (order by x collate "POSIX")                    +
+   from (values ('fred'),('jim')) v(x);
+ statement: select rank('adam'::varchar) within group (order by x) from (values ('fred'),('jim')) v(x);
+ statement: select rank('3') within group (order by x) from generate_series(1,5) x;
+ statement: select percent_rank(0) within group (order by x) from generate_series(1,0) x;
+ statement: create view aggordview1 as                                                                         +
+ select ten,                                                                                                   +
+        percentile_disc(0.5) within group (order by thousand) as p50,                                          +
+        percentile_disc(0.5) within group (order by thousand) filter (where hundred=1) as px,                  +
+        rank(5,'AZZZZ',50) within group (order by hundred, string4 desc, hundred)                              +
+   from tenk1                                                                                                  +
+  group by ten order by ten;
+ statement: select pg_get_viewdef('aggordview1');
+ statement: select * from aggordview1 order by ten;
+ statement: drop view aggordview1;
+ statement: select least_agg(q1,q2) from int8_tbl;
+ statement: select least_agg(variadic array[q1,q2]) from int8_tbl;
+

@@ -1,0 +1,4 @@
+explain (costs off)  SELECT a.* FROM a LEFT JOIN (b left join c on b.c_id = c.id)  ON (a.b_id = b.id);
+ERROR:  42703: column b.c_id does not exist
+LINE 1: ...f)  SELECT a.* FROM a LEFT JOIN (b left join c on b.c_id = c...
+                                                             ^

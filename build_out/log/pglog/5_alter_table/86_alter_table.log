@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT typname FROM pg_type WHERE oid = '_tmp_array[]'::regtype;
+LOCATION:  exec_simple_query, postgres.c:938

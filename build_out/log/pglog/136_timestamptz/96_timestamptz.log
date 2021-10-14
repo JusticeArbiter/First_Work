@@ -1,0 +1,2 @@
+LOG:  00000: statement: INSERT INTO TIMESTAMPTZ_TBL VALUES ('Feb 28 17:32:01 1997');
+LOCATION:  exec_simple_query, postgres.c:938

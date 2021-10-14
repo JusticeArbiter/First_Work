@@ -1,0 +1,5 @@
+LOG:  00000: statement: EXPLAIN (VERBOSE, COSTS OFF)  UPDATE v1 SET a=a+1 WHERE snoop(a) AND leakproof(a) AND a = 8;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42703: column "a" does not exist at character 63
+LOCATION:  errorMissingColumn, parse_relation.c:3194
+STATEMENT:  EXPLAIN (VERBOSE, COSTS OFF)  UPDATE v1 SET a=a+1 WHERE snoop(a) AND leakproof(a) AND a = 8;

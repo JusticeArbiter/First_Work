@@ -1,0 +1,2 @@
+LOG:  00000: statement: explain (costs off)  SELECT min(x) FROM  (SELECT unique1 AS x FROM tenk1 a  UNION ALL  SELECT unique2 AS x FROM tenk1 b) s;
+LOCATION:  exec_simple_query, postgres.c:938

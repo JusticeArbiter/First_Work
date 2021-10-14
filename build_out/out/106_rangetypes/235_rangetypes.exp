@@ -1,0 +1,3 @@
+create index test_range_elem_idx on test_range_elem (i);
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE INDEX
+CREATE INDEX

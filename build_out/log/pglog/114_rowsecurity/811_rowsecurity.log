@@ -1,0 +1,8 @@
+LOG:  00000: statement: DROP ROLE rls_regress_group2;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  2BP01: role "rls_regress_group2" cannot be dropped because some objects depend on it
+DETAIL:  target of policy p2 on table z1
+	privileges for table z2
+	privileges for table z1
+LOCATION:  DropRole, user.c:1027
+STATEMENT:  DROP ROLE rls_regress_group2;

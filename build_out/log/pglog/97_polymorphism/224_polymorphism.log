@@ -1,0 +1,2 @@
+LOG:  00000: statement: select * from dfunc(c := '2009-07-25'::date, a := 'Hello World', b := 20);
+LOCATION:  exec_simple_query, postgres.c:938

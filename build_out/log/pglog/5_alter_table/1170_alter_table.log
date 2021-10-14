@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER TYPE test_typex DROP ATTRIBUTE a CASCADE;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: drop cascades to constraint test_tblx_y_check on table test_tblx
+LOCATION:  reportDependentObjects, dependency.c:1009
+STATEMENT:  ALTER TYPE test_typex DROP ATTRIBUTE a CASCADE;

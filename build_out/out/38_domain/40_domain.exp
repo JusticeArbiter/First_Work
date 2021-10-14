@@ -1,0 +1,11 @@
+select testint4arr[1], testchar4arr[2:2] from domarrtest;
+ testint4arr | testchar4arr 
+-------------+--------------
+           2 | {{c,d}}
+             | {}
+           2 | {{c,d}}
+           2 | {{c}}
+             | {{d,e,f}}
+          11 | 
+(6 rows)
+

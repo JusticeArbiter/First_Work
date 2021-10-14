@@ -1,0 +1,6 @@
+DROP TYPE person_type CASCADE;
+NOTICE:  00000: test_event_trigger: ddl_command_start DROP TYPE
+NOTICE:  00000: drop cascades to 2 other objects
+DETAIL:  drop cascades to table persons
+drop cascades to function namelen(person_type)
+DROP TYPE

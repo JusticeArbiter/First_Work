@@ -1,0 +1,6 @@
+select make_interval(years := 2);
+ make_interval 
+---------------
+ 2 years
+(1 row)
+

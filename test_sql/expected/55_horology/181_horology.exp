@@ -1,0 +1,6 @@
+SELECT to_timestamp('97/2/16 8:14:30', 'FMYYYY/FMMM/FMDD FMHH:FMMI:FMSS');
+         to_timestamp         
+------------------------------
+ 0097-02-16 08:14:30+08:05:43
+(1 row)
+

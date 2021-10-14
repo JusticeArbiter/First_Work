@@ -1,0 +1,6 @@
+select null::int >= all ('{1,2,33}');
+ ?column? 
+----------
+ 
+(1 row)
+

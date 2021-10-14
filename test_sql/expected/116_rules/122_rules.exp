@@ -1,0 +1,2 @@
+update rtest_emp set ename = 'wiecx' where ename = 'wiecc';
+UPDATE 1

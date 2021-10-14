@@ -1,0 +1,6 @@
+SELECT to_regoper('||/');
+ to_regoper 
+------------
+ ||/
+(1 row)
+

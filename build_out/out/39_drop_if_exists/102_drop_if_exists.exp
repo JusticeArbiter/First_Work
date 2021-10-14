@@ -1,0 +1,3 @@
+DROP OPERATOR CLASS IF EXISTS test_operator_class USING btree;
+NOTICE:  00000: operator class "test_operator_class" does not exist for access method "btree", skipping
+DROP OPERATOR CLASS

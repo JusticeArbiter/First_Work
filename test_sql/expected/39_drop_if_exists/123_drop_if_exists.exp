@@ -1,0 +1,3 @@
+DROP FUNCTION IF EXISTS foo(no_such_type);
+NOTICE:  00000: type "no_such_type" does not exist, skipping
+DROP FUNCTION

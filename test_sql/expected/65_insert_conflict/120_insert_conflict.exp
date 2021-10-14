@@ -1,0 +1,6 @@
+select * from insertconflict;
+ f1 | f2  
+----+-----
+  1 | bar
+(1 row)
+

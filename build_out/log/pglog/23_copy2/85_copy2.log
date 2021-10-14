@@ -1,0 +1,5 @@
+LOG:  00000: statement: COPY vistest FROM stdin CSV FREEZE;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "vistest" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  COPY vistest FROM stdin CSV FREEZE;

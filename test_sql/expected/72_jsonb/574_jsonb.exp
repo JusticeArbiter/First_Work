@@ -1,0 +1,2 @@
+select '"a"'::jsonb - 'a';
+ERROR:  22023: cannot delete from scalar

@@ -1,0 +1,4 @@
+INSERT INTO LINE_TBL VALUES ('[(1,0),(1,0)]');
+ERROR:  22P02: invalid line specification: must be two distinct points
+LINE 1: INSERT INTO LINE_TBL VALUES ('[(1,0),(1,0)]');
+                                     ^

@@ -1,0 +1,6 @@
+SELECT * FROM mvtest1;
+ x 
+---
+ 1
+(1 row)
+

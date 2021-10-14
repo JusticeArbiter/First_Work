@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER OPERATOR FAMILY alt_opf18 USING btree DROP FUNCTION 2 (int4, int4);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: function 2(integer,integer) does not exist in operator family "alt_opf18"
+LOCATION:  dropProcedures, opclasscmds.c:1564
+STATEMENT:  ALTER OPERATOR FAMILY alt_opf18 USING btree DROP FUNCTION 2 (int4, int4);

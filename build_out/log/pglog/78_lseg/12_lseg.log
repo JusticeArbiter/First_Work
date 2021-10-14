@@ -1,0 +1,2 @@
+LOG:  00000: statement: SELECT * FROM LSEG_TBL WHERE s <= lseg '[(1,2),(3,4)]';
+LOCATION:  exec_simple_query, postgres.c:938

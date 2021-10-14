@@ -1,0 +1,2 @@
+LOG:  00000: statement: create domain str_domain2 as text check (value <> 'foo') default 'foo';
+LOCATION:  exec_simple_query, postgres.c:938

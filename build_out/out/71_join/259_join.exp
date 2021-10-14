@@ -1,0 +1,11 @@
+explain (costs off)  select q1, unique2, thousand, hundred  from int8_tbl a left join tenk1 b on q1 = unique2  where coalesce(thousand,123) = q1 and q1 = coalesce(hundred,123);
+                                      QUERY PLAN                                      
+--------------------------------------------------------------------------------------
+ Hash Left Join
+   Hash Cond: (a.q1 = b.unique2)
+   Filter: ((COALESCE(b.thousand, 123) = a.q1) AND (a.q1 = COALESCE(b.hundred, 123)))
+   ->  Seq Scan on int8_tbl a
+   ->  Hash
+         ->  Seq Scan on tenk1 b
+(6 rows)
+

@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER COLLATION test11 OWNER TO nonsense;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42704: role "nonsense" does not exist
+LOCATION:  get_role_oid, acl.c:5122
+STATEMENT:  ALTER COLLATION test11 OWNER TO nonsense;

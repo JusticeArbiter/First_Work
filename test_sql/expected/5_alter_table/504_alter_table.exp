@@ -1,0 +1,9 @@
+select * from def_test;
+ c1 |       c2        
+----+-----------------
+  5 | initial_default
+    | initial_default
+    | 
+ 10 | new_default
+(4 rows)
+

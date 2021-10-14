@@ -1,0 +1,5 @@
+LOG:  00000: statement: CREATE TABLE testxmlschema.test2 (z int, y varchar(500), x char(6), w numeric(9,2), v smallint, u bigint, t real, s time, r timestamp, q date, p xml, o testxmldomain, n bool, m bytea, aaa text);
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start CREATE TABLE
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  CREATE TABLE testxmlschema.test2 (z int, y varchar(500), x char(6), w numeric(9,2), v smallint, u bigint, t real, s time, r timestamp, q date, p xml, o testxmldomain, n bool, m bytea, aaa text);

@@ -1,0 +1,5 @@
+LOG:  00000: statement: SELECT 1234::int4::casttesttype;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42846: cannot cast type integer to casttesttype at character 18
+LOCATION:  transformTypeCast, parse_expr.c:2555
+STATEMENT:  SELECT 1234::int4::casttesttype;

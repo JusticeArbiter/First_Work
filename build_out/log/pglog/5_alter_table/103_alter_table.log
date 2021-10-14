@@ -1,0 +1,5 @@
+LOG:  00000: statement: ALTER INDEX onek_unique1_constraint RENAME TO onek_unique1_constraint_foo;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "onek_unique1_constraint" does not exist
+LOCATION:  RangeVarGetRelidExtended, namespace.c:420
+STATEMENT:  ALTER INDEX onek_unique1_constraint RENAME TO onek_unique1_constraint_foo;

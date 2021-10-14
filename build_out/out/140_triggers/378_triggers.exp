@@ -1,0 +1,10 @@
+select * from upsert;
+ key |            color            
+-----+-----------------------------
+   1 | black
+   3 | updated red trig modified
+   5 | updated green trig modified
+   7 | updated white trig modified
+   9 | yellow trig modified
+(5 rows)
+

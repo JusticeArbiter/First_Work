@@ -1,0 +1,4 @@
+select distinct on (foobar) * from pg_database;
+ERROR:  42703: column "foobar" does not exist
+LINE 1: select distinct on (foobar) * from pg_database;
+                            ^

@@ -1,0 +1,6 @@
+SELECT to_char(date '2010-04-01', 'DD TMMON YYYY');
+   to_char   
+-------------
+ 01 APR 2010
+(1 row)
+

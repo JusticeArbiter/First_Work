@@ -1,0 +1,2 @@
+LOG:  00000: statement: create function alter1.same(alter1.ctype, alter1.ctype) returns boolean language sql  as 'select $1.f1 is not distinct from $2.f1 and $1.f2 is not distinct from $2.f2';
+LOCATION:  exec_simple_query, postgres.c:938

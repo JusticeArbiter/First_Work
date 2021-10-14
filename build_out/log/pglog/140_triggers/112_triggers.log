@@ -1,0 +1,20 @@
+LOG:  00000: statement: UPDATE main_table SET b = 10;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: trigger_func(after_upd_a_b_row) called: action = UPDATE, when = AFTER, level = ROW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE main_table SET b = 10;
+NOTICE:  00000: trigger_func(after_upd_b_row) called: action = UPDATE, when = AFTER, level = ROW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE main_table SET b = 10;
+NOTICE:  00000: trigger_func(after_upd_a_b_row) called: action = UPDATE, when = AFTER, level = ROW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE main_table SET b = 10;
+NOTICE:  00000: trigger_func(after_upd_b_row) called: action = UPDATE, when = AFTER, level = ROW
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE main_table SET b = 10;
+NOTICE:  00000: trigger_func(after_upd_b_stmt) called: action = UPDATE, when = AFTER, level = STATEMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE main_table SET b = 10;
+NOTICE:  00000: trigger_func(after_upd_stmt) called: action = UPDATE, when = AFTER, level = STATEMENT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  UPDATE main_table SET b = 10;

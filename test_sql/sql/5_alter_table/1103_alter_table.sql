@@ -1,0 +1,1 @@
+ALTER TYPE test_type1 ALTER ATTRIBUTE b TYPE varchar;

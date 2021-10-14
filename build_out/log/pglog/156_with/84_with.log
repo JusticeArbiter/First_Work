@@ -1,0 +1,5 @@
+LOG:  00000: statement: WITH RECURSIVE  x (id) AS (SELECT 1 UNION ALL SELECT id+1 FROM y WHERE id < 5),  y (id) AS (SELECT 1 UNION ALL SELECT id+1 FROM x WHERE id < 5)  SELECT * FROM x;
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  0A000: mutual recursion between WITH items is not implemented at character 17
+LOCATION:  TopologicalSort, parse_cte.c:600
+STATEMENT:  WITH RECURSIVE  x (id) AS (SELECT 1 UNION ALL SELECT id+1 FROM y WHERE id < 5),  y (id) AS (SELECT 1 UNION ALL SELECT id+1 FROM x WHERE id < 5)  SELECT * FROM x;

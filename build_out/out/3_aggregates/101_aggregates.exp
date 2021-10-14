@@ -1,0 +1,2 @@
+create index minmaxtesti on minmaxtest(f1);
+CREATE INDEX

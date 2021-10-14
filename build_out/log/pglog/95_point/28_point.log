@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO point_gist_tbl SELECT '(0,0)' FROM generate_series(0,1000);
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  42P01: relation "point_gist_tbl" does not exist at character 13
+LOCATION:  parserOpenTable, parse_relation.c:1160
+STATEMENT:  INSERT INTO point_gist_tbl SELECT '(0,0)' FROM generate_series(0,1000);

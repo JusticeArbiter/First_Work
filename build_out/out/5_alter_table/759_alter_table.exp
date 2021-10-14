@@ -1,0 +1,2 @@
+create domain mytype as text;
+CREATE DOMAIN

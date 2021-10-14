@@ -1,0 +1,6 @@
+SELECT interval '3' day;
+ interval 
+----------
+ 3 days
+(1 row)
+

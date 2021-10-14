@@ -1,0 +1,9 @@
+SELECT '' AS four, center(f1) AS center  FROM BOX_TBL;
+ four | center  
+------+---------
+      | (1,1)
+      | (2,2)
+      | (2.5,3)
+      | (3,3)
+(4 rows)
+

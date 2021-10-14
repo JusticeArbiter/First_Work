@@ -1,0 +1,3 @@
+ALTER FOREIGN DATA WRAPPER foo VALIDATOR bar;
+NOTICE:  00000: test_event_trigger: ddl_command_start ALTER FOREIGN DATA WRAPPER
+ERROR:  42883: function bar(text[], oid) does not exist

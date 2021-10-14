@@ -1,0 +1,5 @@
+LOG:  00000: statement: INSERT INTO PATH_TBL VALUES ('[(,2),(3,4)]');
+LOCATION:  exec_simple_query, postgres.c:938
+ERROR:  22P02: invalid input syntax for type path: "[(,2),(3,4)]" at character 30
+LOCATION:  path_in, geo_ops.c:1411
+STATEMENT:  INSERT INTO PATH_TBL VALUES ('[(,2),(3,4)]');

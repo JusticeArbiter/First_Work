@@ -1,0 +1,8 @@
+LOG:  00000: statement: GRANT USAGE ON DOMAIN testtype1 TO regressuser2;
+LOCATION:  exec_simple_query, postgres.c:938
+NOTICE:  00000: test_event_trigger: ddl_command_start GRANT
+LOCATION:  exec_stmt_raise, pl_exec.c:3216
+STATEMENT:  GRANT USAGE ON DOMAIN testtype1 TO regressuser2;
+ERROR:  42809: "testtype1" is not a domain
+LOCATION:  ExecGrant_Type, aclchk.c:3092
+STATEMENT:  GRANT USAGE ON DOMAIN testtype1 TO regressuser2;

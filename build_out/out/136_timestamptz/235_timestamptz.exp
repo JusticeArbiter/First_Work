@@ -1,0 +1,6 @@
+SELECT make_timestamptz(2014, 10, 26, 0, 0, 0, 'MSK');
+    make_timestamptz    
+------------------------
+ 2014-10-26 04:00:00+08
+(1 row)
+
